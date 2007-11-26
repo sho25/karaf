@@ -174,7 +174,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @version $Revision: 1.1 $  */
+comment|/**  * Inspired by<a href="http://www.aqute.biz/Code/FileInstall">FileInstall</a> by Peter Kriens.  *   * @version $Revision: 1.1 $  */
 end_comment
 
 begin_class
