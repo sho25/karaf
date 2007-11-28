@@ -949,14 +949,17 @@ argument_list|(
 name|jardir
 argument_list|)
 expr_stmt|;
+name|File
+name|newBundle
+init|=
 name|createBundleJar
 argument_list|(
 name|jardir
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|deployBundle
 argument_list|(
-name|jardir
+name|newBundle
 argument_list|)
 expr_stmt|;
 block|}
@@ -1101,6 +1104,8 @@ operator|+
 literal|". Reason: "
 operator|+
 name|e
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
 block|}
@@ -1123,7 +1128,7 @@ name|File
 name|file
 parameter_list|)
 throws|throws
-name|FileNotFoundException
+name|IOException
 throws|,
 name|BundleException
 block|{
@@ -1137,7 +1142,7 @@ literal|"Deloying: "
 operator|+
 name|file
 operator|.
-name|getAbsolutePath
+name|getCanonicalPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1180,7 +1185,7 @@ literal|"Updated: "
 operator|+
 name|file
 operator|.
-name|getAbsolutePath
+name|getCanonicalPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1196,7 +1201,7 @@ name|installBundle
 argument_list|(
 name|file
 operator|.
-name|getAbsolutePath
+name|getCanonicalPath
 argument_list|()
 argument_list|,
 name|in
@@ -1223,7 +1228,7 @@ literal|"Installed: "
 operator|+
 name|file
 operator|.
-name|getAbsolutePath
+name|getCanonicalPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1247,6 +1252,8 @@ name|file
 parameter_list|)
 throws|throws
 name|BundleException
+throws|,
+name|IOException
 block|{
 name|changedBundles
 operator|=
@@ -1254,11 +1261,11 @@ literal|true
 expr_stmt|;
 name|log
 argument_list|(
-literal|"Uneloying: "
+literal|"Undeloying: "
 operator|+
 name|file
 operator|.
-name|getAbsolutePath
+name|getCanonicalPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1283,7 +1290,7 @@ literal|"Could not find Bundle for file: "
 operator|+
 name|file
 operator|.
-name|getAbsolutePath
+name|getCanonicalPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1309,13 +1316,15 @@ parameter_list|(
 name|File
 name|file
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 name|String
 name|absoluteFilePath
 init|=
 name|file
 operator|.
-name|getAbsolutePath
+name|getCanonicalPath
 argument_list|()
 decl_stmt|;
 name|Bundle
@@ -1375,7 +1384,7 @@ name|absoluteLocation
 init|=
 name|locationFile
 operator|.
-name|getAbsolutePath
+name|getCanonicalPath
 argument_list|()
 decl_stmt|;
 if|if
@@ -1927,7 +1936,7 @@ expr_stmt|;
 block|}
 block|}
 specifier|protected
-name|void
+name|File
 name|createBundleJar
 parameter_list|(
 name|File
@@ -1935,6 +1944,8 @@ name|dir
 parameter_list|)
 throws|throws
 name|BundleException
+throws|,
+name|IOException
 block|{
 name|Jar
 name|jar
@@ -2039,6 +2050,9 @@ operator|.
 name|perform
 argument_list|()
 expr_stmt|;
+return|return
+name|destFile
+return|;
 block|}
 comment|/**      * Returns the root directory of the expanded OSGi bundle if the file is part of an expanded OSGi bundle      * or null if it is not      */
 specifier|protected
@@ -2387,6 +2401,8 @@ argument_list|(
 literal|"Failed to close stream. "
 operator|+
 name|e
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
 block|}
@@ -2455,6 +2471,28 @@ literal|"WARN: "
 operator|+
 name|message
 argument_list|)
+expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|warn
+parameter_list|(
+name|String
+name|message
+parameter_list|,
+name|Throwable
+name|e
+parameter_list|)
+block|{
+name|warn
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
+name|e
+operator|.
+name|printStackTrace
+argument_list|()
 expr_stmt|;
 block|}
 block|}
