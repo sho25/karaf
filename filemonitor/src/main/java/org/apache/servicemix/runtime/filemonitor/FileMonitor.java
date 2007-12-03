@@ -331,7 +331,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-literal|"./conf"
+literal|"./etc"
 argument_list|)
 decl_stmt|;
 specifier|private
