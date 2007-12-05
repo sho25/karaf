@@ -245,13 +245,6 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|Thread
-operator|.
-name|sleep
-argument_list|(
-literal|5000
-argument_list|)
-expr_stmt|;
 name|shell
 operator|.
 name|run

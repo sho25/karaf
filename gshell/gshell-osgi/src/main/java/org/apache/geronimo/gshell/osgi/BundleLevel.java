@@ -99,7 +99,7 @@ name|CommandComponent
 argument_list|(
 name|id
 operator|=
-literal|"osgi:bundlelevel"
+literal|"osgi:bundleLevel"
 argument_list|,
 name|description
 operator|=
@@ -113,6 +113,15 @@ name|BundleCommand
 block|{
 annotation|@
 name|Argument
+argument_list|(
+name|required
+operator|=
+literal|false
+argument_list|,
+name|index
+operator|=
+literal|1
+argument_list|)
 name|Integer
 name|level
 decl_stmt|;
