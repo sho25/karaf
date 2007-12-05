@@ -23,6 +23,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|concurrent
 operator|.
 name|CountDownLatch
@@ -424,6 +434,24 @@ operator|.
 name|length
 operator|>
 literal|0
+operator|&&
+operator|(
+name|args
+operator|.
+name|length
+operator|>
+literal|1
+operator|||
+name|args
+index|[
+literal|0
+index|]
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
+operator|)
 condition|)
 block|{
 name|System
@@ -432,7 +460,14 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Executing 1 command:"
+literal|"Executing 1 command: "
+operator|+
+name|Arrays
+operator|.
+name|toString
+argument_list|(
+name|args
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Object
