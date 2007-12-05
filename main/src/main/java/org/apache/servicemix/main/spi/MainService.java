@@ -29,6 +29,19 @@ index|[]
 name|getArgs
 parameter_list|()
 function_decl|;
+specifier|public
+name|int
+name|getExitCode
+parameter_list|()
+function_decl|;
+specifier|public
+name|void
+name|setExitCode
+parameter_list|(
+name|int
+name|exitCode
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
