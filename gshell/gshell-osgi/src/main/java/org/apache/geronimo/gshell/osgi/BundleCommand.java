@@ -43,7 +43,7 @@ name|geronimo
 operator|.
 name|gshell
 operator|.
-name|osgi
+name|support
 operator|.
 name|OsgiCommandSupport
 import|;

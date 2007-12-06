@@ -840,7 +840,7 @@ operator|.
 name|getParent
 argument_list|()
 argument_list|,
-literal|"conf"
+literal|"etc"
 argument_list|)
 expr_stmt|;
 block|}
