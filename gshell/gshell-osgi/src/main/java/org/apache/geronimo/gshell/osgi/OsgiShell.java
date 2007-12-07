@@ -103,6 +103,22 @@ name|CommandComponent
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|geronimo
+operator|.
+name|gshell
+operator|.
+name|support
+operator|.
+name|OsgiCommandSupport
+import|;
+end_import
+
 begin_comment
 comment|/**  * Created by IntelliJ IDEA.  * User: gnodet  * Date: Oct 11, 2007  * Time: 10:20:37 PM  * To change this template use File | Settings | File Templates.  */
 end_comment
