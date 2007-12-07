@@ -267,6 +267,10 @@ argument_list|,
 name|description
 operator|=
 literal|"Display this help message"
+argument_list|,
+name|requireOverride
+operator|=
+literal|true
 argument_list|)
 specifier|private
 name|boolean
