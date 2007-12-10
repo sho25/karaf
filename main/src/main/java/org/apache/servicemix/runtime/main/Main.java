@@ -1954,6 +1954,10 @@ name|i
 init|=
 literal|0
 init|;
+name|bundles
+operator|!=
+literal|null
+operator|&&
 name|i
 operator|<
 name|bundles
