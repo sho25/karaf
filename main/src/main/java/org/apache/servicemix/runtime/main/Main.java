@@ -980,7 +980,7 @@ literal|" system property or the "
 operator|+
 name|ENV_SERVICEMIX_HOME
 operator|+
-literal|" enviorment variable."
+literal|" environment variable."
 argument_list|)
 throw|;
 block|}
