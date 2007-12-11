@@ -326,6 +326,10 @@ name|initialProperties
 argument_list|,
 name|FileMonitor
 operator|.
+name|CONFIG_DIR
+argument_list|,
+name|FileMonitor
+operator|.
 name|DEPLOY_DIR
 argument_list|,
 name|FileMonitor

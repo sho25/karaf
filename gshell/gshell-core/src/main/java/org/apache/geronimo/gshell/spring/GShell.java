@@ -23,31 +23,9 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|concurrent
 operator|.
 name|CountDownLatch
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|concurrent
-operator|.
-name|TimeUnit
 import|;
 end_import
 
@@ -92,6 +70,22 @@ operator|.
 name|command
 operator|.
 name|IO
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|geronimo
+operator|.
+name|gshell
+operator|.
+name|common
+operator|.
+name|Arguments
 import|;
 end_import
 
@@ -173,11 +167,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|osgi
+name|slf4j
 operator|.
-name|framework
-operator|.
-name|FrameworkEvent
+name|Logger
 import|;
 end_import
 
@@ -185,11 +177,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|osgi
+name|slf4j
 operator|.
-name|framework
-operator|.
-name|FrameworkListener
+name|LoggerFactory
 import|;
 end_import
 
@@ -208,7 +198,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Created by IntelliJ IDEA.  * User: gnodet  * Date: Oct 11, 2007  * Time: 10:20:37 PM  * To change this template use File | Settings | File Templates.  */
+comment|/**  * This class represents the local shell console and is also used when passing a command to execute on the command line.  * Such mechanism is done using the {@link MainService} service registered in the OSGi registry, which contains the  * command line arguments and a place holder for the exit code.  */
 end_comment
 
 begin_class
@@ -220,6 +210,21 @@ name|Runnable
 implements|,
 name|BundleContextAware
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|Logger
+name|log
+init|=
+name|LoggerFactory
+operator|.
+name|getLogger
+argument_list|(
+name|GShell
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 name|InteractiveShell
 name|shell
@@ -378,6 +383,11 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
+name|Thread
+operator|.
+name|dumpStack
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -437,6 +447,20 @@ condition|)
 block|{
 name|waitForFrameworkToStart
 argument_list|()
+expr_stmt|;
+name|log
+operator|.
+name|info
+argument_list|(
+literal|"Executing Shell with arguments: "
+operator|+
+name|Arguments
+operator|.
+name|asString
+argument_list|(
+name|args
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|Object
 name|value
@@ -546,6 +570,13 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+name|log
+operator|.
+name|info
+argument_list|(
+literal|"Exiting shell due received exit notification"
+argument_list|)
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
@@ -569,6 +600,17 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+name|log
+operator|.
+name|info
+argument_list|(
+literal|"Exiting shell due to caught exception "
+operator|+
+name|e
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
 block|}
 finally|finally
 block|{
@@ -592,15 +634,21 @@ name|BundleException
 name|e
 parameter_list|)
 block|{
-name|e
+name|log
 operator|.
-name|printStackTrace
-argument_list|()
+name|info
+argument_list|(
+literal|"Caught exception while shutting down framework: "
+operator|+
+name|e
+argument_list|,
+name|e
+argument_list|)
 expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Blocks until the framework has finished starting.  We do this so that any installed      * bundles for commands get fully registered.      *       * @throws InterruptedException      */
+comment|/**      * Blocks until the framework has finished starting.  We do this so that any installed      * bundles for commands get fully registered.      *      * @throws InterruptedException      */
 specifier|private
 name|void
 name|waitForFrameworkToStart
