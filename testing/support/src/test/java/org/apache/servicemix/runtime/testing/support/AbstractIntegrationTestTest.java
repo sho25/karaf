@@ -53,6 +53,18 @@ name|assertFalse
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -69,7 +81,7 @@ name|assertTrue
 argument_list|(
 name|AbstractIntegrationTest
 operator|.
-name|isSnapshot
+name|isTimestamped
 argument_list|(
 literal|"0.9.0-20070713.230317-1"
 argument_list|)
@@ -93,6 +105,25 @@ name|isSnapshot
 argument_list|(
 literal|"0.9.0"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"0.9.0-SNAPSHOT"
+argument_list|,
+name|AbstractIntegrationTest
+operator|.
+name|getSnapshot
+argument_list|(
+literal|"0.9.0-20070713.230317-1"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"0.9.0"
+argument_list|,
+literal|"0.9.0"
 argument_list|)
 expr_stmt|;
 block|}
