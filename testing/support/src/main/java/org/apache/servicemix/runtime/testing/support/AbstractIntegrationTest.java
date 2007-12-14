@@ -137,24 +137,6 @@ name|osgi
 operator|.
 name|internal
 operator|.
-name|test
-operator|.
-name|platform
-operator|.
-name|FelixPlatform
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
-name|osgi
-operator|.
-name|internal
-operator|.
 name|util
 operator|.
 name|concurrent
@@ -189,7 +171,7 @@ name|test
 operator|.
 name|platform
 operator|.
-name|OsgiPlatform
+name|Platforms
 import|;
 end_import
 
@@ -267,17 +249,6 @@ specifier|private
 name|Properties
 name|dependencies
 decl_stmt|;
-specifier|protected
-name|OsgiPlatform
-name|createPlatform
-parameter_list|()
-block|{
-return|return
-operator|new
-name|FelixPlatform
-argument_list|()
-return|;
-block|}
 specifier|protected
 name|String
 name|getBundle
@@ -560,6 +531,13 @@ argument_list|(
 literal|"org.springframework.osgi"
 argument_list|,
 literal|"spring-osgi-annotation"
+argument_list|)
+block|,
+name|getBundle
+argument_list|(
+literal|"org.apache.servicemix.runtime.testing"
+argument_list|,
+literal|"org.apache.servicemix.runtime.testing.support"
 argument_list|)
 block|, 		}
 return|;
