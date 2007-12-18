@@ -425,38 +425,8 @@ operator|.
 name|servicemixHome
 argument_list|)
 expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"ServiceMix Home: "
-operator|+
-name|main
-operator|.
-name|servicemixHome
-operator|.
-name|getPath
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"ServiceMix Base: "
-operator|+
-name|main
-operator|.
-name|servicemixBase
-operator|.
-name|getPath
-argument_list|()
-argument_list|)
-expr_stmt|;
+comment|//System.out.println("ServiceMix Home: "+main.servicemixHome.getPath());
+comment|//System.out.println("ServiceMix Base: "+main.servicemixBase.getPath());
 name|System
 operator|.
 name|setProperty
