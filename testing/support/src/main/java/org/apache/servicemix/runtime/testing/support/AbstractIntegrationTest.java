@@ -137,7 +137,7 @@ name|core
 operator|.
 name|io
 operator|.
-name|Resource
+name|FileSystemResource
 import|;
 end_import
 
@@ -151,7 +151,7 @@ name|core
 operator|.
 name|io
 operator|.
-name|FileSystemResource
+name|Resource
 import|;
 end_import
 
@@ -162,6 +162,8 @@ operator|.
 name|springframework
 operator|.
 name|osgi
+operator|.
+name|extender
 operator|.
 name|internal
 operator|.
