@@ -1262,7 +1262,13 @@ name|installBundle
 argument_list|(
 name|file
 operator|.
-name|getCanonicalPath
+name|getCanonicalFile
+argument_list|()
+operator|.
+name|toURI
+argument_list|()
+operator|.
+name|toString
 argument_list|()
 argument_list|,
 name|in
