@@ -13,7 +13,9 @@ name|geronimo
 operator|.
 name|gshell
 operator|.
-name|spring
+name|commands
+operator|.
+name|builtins
 package|;
 end_package
 
