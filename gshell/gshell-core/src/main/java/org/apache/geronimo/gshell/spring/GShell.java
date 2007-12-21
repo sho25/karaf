@@ -709,11 +709,9 @@ name|FrameworkEvent
 name|event
 parameter_list|)
 block|{
-name|System
+name|log
 operator|.
-name|out
-operator|.
-name|println
+name|debug
 argument_list|(
 literal|"Got event: "
 operator|+
@@ -759,11 +757,9 @@ name|SECONDS
 argument_list|)
 condition|)
 block|{
-name|System
+name|log
 operator|.
-name|out
-operator|.
-name|println
+name|info
 argument_list|(
 literal|"System completed startup."
 argument_list|)
@@ -771,11 +767,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|System
+name|log
 operator|.
-name|out
-operator|.
-name|println
+name|warn
 argument_list|(
 literal|"System took too long startup... continuing"
 argument_list|)
