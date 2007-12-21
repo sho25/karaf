@@ -31,6 +31,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|concurrent
+operator|.
+name|TimeUnit
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -160,6 +172,30 @@ operator|.
 name|framework
 operator|.
 name|BundleException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
+name|FrameworkEvent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
+name|FrameworkListener
 import|;
 end_import
 
@@ -656,20 +692,95 @@ parameter_list|()
 throws|throws
 name|InterruptedException
 block|{
-comment|//		getBundleContext().addFrameworkListener(new FrameworkListener(){
-comment|//			public void frameworkEvent(FrameworkEvent event) {
-comment|//				System.out.println("Got event: "+event.getType());
-comment|//				if( event.getType() == FrameworkEvent.STARTED ) {
-comment|//					frameworkStarted.countDown();
-comment|//				}
-comment|//			}
-comment|//		});
-comment|//
-comment|//		if( frameworkStarted.await(5, TimeUnit.SECONDS) ) {
-comment|//			System.out.println("System completed startup.");
-comment|//		} else {
-comment|//			System.out.println("System took too long startup... continuing");
-comment|//		}
+name|getBundleContext
+argument_list|()
+operator|.
+name|addFrameworkListener
+argument_list|(
+operator|new
+name|FrameworkListener
+argument_list|()
+block|{
+specifier|public
+name|void
+name|frameworkEvent
+parameter_list|(
+name|FrameworkEvent
+name|event
+parameter_list|)
+block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Got event: "
+operator|+
+name|event
+operator|.
+name|getType
+argument_list|()
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|event
+operator|.
+name|getType
+argument_list|()
+operator|==
+name|FrameworkEvent
+operator|.
+name|STARTED
+condition|)
+block|{
+name|frameworkStarted
+operator|.
+name|countDown
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+block|}
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|frameworkStarted
+operator|.
+name|await
+argument_list|(
+literal|5
+argument_list|,
+name|TimeUnit
+operator|.
+name|SECONDS
+argument_list|)
+condition|)
+block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"System completed startup."
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"System took too long startup... continuing"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|MainService
