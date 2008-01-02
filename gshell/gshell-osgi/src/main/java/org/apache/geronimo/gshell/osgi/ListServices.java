@@ -143,7 +143,7 @@ name|CommandComponent
 argument_list|(
 name|id
 operator|=
-literal|"osgi:listServices"
+literal|"osgi:list-services"
 argument_list|,
 name|description
 operator|=
