@@ -141,7 +141,7 @@ name|apache
 operator|.
 name|servicemix
 operator|.
-name|runtime
+name|kernel
 operator|.
 name|main
 operator|.
