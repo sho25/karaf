@@ -309,7 +309,7 @@ name|copyResourceToDir
 argument_list|(
 name|serviceMixBase
 argument_list|,
-literal|"etc/org.apache.servicemix.management.cfg"
+literal|"etc/org.apache.servicemix.features.cfg"
 argument_list|,
 literal|true
 argument_list|)
@@ -328,6 +328,15 @@ argument_list|(
 name|serviceMixBase
 argument_list|,
 literal|"etc/org.ops4j.pax.logging.cfg"
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+name|copyResourceToDir
+argument_list|(
+name|serviceMixBase
+argument_list|,
+literal|"etc/startup.properties"
 argument_list|,
 literal|true
 argument_list|)
