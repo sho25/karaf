@@ -3164,7 +3164,7 @@ name|STARTUP_PROPERTIES_FILE_NAME
 operator|+
 literal|" configuration not found: "
 operator|+
-name|file
+name|name
 argument_list|)
 expr_stmt|;
 block|}
