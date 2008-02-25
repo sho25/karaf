@@ -935,7 +935,7 @@ argument_list|)
 expr_stmt|;
 name|printValue
 argument_list|(
-literal|"Processrors"
+literal|"Processors"
 argument_list|,
 name|maxNameLen
 argument_list|,
