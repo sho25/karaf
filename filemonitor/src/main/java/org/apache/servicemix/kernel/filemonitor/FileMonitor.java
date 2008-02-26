@@ -488,8 +488,9 @@ literal|"_alias_factory_pid"
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|Log
-name|logger
+name|LOGGER
 init|=
 name|LogFactory
 operator|.
@@ -858,7 +859,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
-name|logger
+name|LOGGER
 operator|.
 name|info
 argument_list|(
@@ -880,7 +881,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|info
 argument_list|(
@@ -890,7 +891,7 @@ name|configDir
 argument_list|)
 expr_stmt|;
 block|}
-name|logger
+name|LOGGER
 operator|.
 name|info
 argument_list|(
@@ -1143,7 +1144,7 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|debug
 argument_list|(
@@ -1328,7 +1329,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
@@ -1431,7 +1432,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
@@ -1757,15 +1758,31 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-comment|// Ignore
+name|LOGGER
+operator|.
+name|debug
+argument_list|(
+literal|"Error transforming artifact"
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
 block|}
 finally|finally
+block|{
+if|if
+condition|(
+name|jar
+operator|!=
+literal|null
+condition|)
 block|{
 name|jar
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 return|return
 literal|null
@@ -1783,7 +1800,7 @@ name|IOException
 throws|,
 name|BundleException
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|info
 argument_list|(
@@ -1899,7 +1916,7 @@ name|BundleException
 throws|,
 name|IOException
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|info
 argument_list|(
@@ -1926,7 +1943,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
@@ -2073,7 +2090,7 @@ operator|!
 name|loggedConfigAdminWarning
 condition|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
@@ -2620,7 +2637,7 @@ operator|.
 name|update
 argument_list|()
 expr_stmt|;
-name|logger
+name|LOGGER
 operator|.
 name|info
 argument_list|(
@@ -2636,7 +2653,7 @@ name|BundleException
 name|e
 parameter_list|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
@@ -2668,7 +2685,7 @@ operator|.
 name|start
 argument_list|()
 expr_stmt|;
-name|logger
+name|LOGGER
 operator|.
 name|info
 argument_list|(
@@ -2684,7 +2701,7 @@ name|BundleException
 name|e
 parameter_list|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
@@ -2763,7 +2780,7 @@ name|delete
 argument_list|()
 expr_stmt|;
 block|}
-name|logger
+name|LOGGER
 operator|.
 name|info
 argument_list|(
@@ -3296,7 +3313,7 @@ name|IOException
 name|e
 parameter_list|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
