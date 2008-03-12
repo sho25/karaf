@@ -1762,7 +1762,12 @@ name|LOGGER
 operator|.
 name|debug
 argument_list|(
-literal|"Error transforming artifact"
+literal|"Error transforming artifact "
+operator|+
+name|file
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|e
 argument_list|)
