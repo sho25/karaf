@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates the features XML file  *  * @version $Revision: 1.1 $  * @goal generate-features-file  * @phase generate-resources  * @requiresDependencyResolution runtime  * @description Generates the features XML file  */
+comment|/**  * Generates the features XML file  *  * @version $Revision: 1.1 $  * @goal generate-features-file  * @phase compile  * @execute phase="compile"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Generates the features XML file  */
 end_comment
 
 begin_class
@@ -201,6 +201,20 @@ name|info
 argument_list|(
 literal|"Created: "
 operator|+
+name|outputFile
+argument_list|)
+expr_stmt|;
+comment|// now lets attach it
+name|projectHelper
+operator|.
+name|attachArtifact
+argument_list|(
+name|project
+argument_list|,
+literal|"features.xml"
+argument_list|,
+literal|null
+argument_list|,
 name|outputFile
 argument_list|)
 expr_stmt|;
