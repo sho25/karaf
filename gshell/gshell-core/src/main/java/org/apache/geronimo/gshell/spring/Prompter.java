@@ -115,6 +115,10 @@ name|ShellInfo
 import|;
 end_import
 
+begin_comment
+comment|/**  * A prompter that displays the current sub-shell.  */
+end_comment
+
 begin_class
 specifier|public
 class|class

@@ -374,7 +374,7 @@ argument_list|(
 name|environment
 argument_list|)
 expr_stmt|;
-name|IOTargetSource
+name|ProxyIO
 operator|.
 name|setIO
 argument_list|(
