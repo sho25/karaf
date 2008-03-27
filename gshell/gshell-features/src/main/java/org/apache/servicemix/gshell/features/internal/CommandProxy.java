@@ -394,15 +394,10 @@ name|String
 argument_list|>
 name|bundles
 init|=
-name|Arrays
-operator|.
-name|asList
-argument_list|(
 name|feature
 operator|.
 name|getBundles
 argument_list|()
-argument_list|)
 decl_stmt|;
 name|int
 name|idx0
