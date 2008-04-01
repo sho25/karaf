@@ -54,6 +54,13 @@ name|List
 argument_list|<
 name|String
 argument_list|>
+name|getDependencies
+parameter_list|()
+function_decl|;
+name|List
+argument_list|<
+name|String
+argument_list|>
 name|getBundles
 parameter_list|()
 function_decl|;
