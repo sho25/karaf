@@ -890,6 +890,14 @@ argument_list|(
 name|gn
 argument_list|)
 expr_stmt|;
+name|unregister
+argument_list|(
+name|lookup
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 name|unregister
