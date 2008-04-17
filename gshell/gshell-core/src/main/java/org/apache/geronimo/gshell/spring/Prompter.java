@@ -43,6 +43,22 @@ name|geronimo
 operator|.
 name|gshell
 operator|.
+name|branding
+operator|.
+name|Branding
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|geronimo
+operator|.
+name|gshell
+operator|.
 name|console
 operator|.
 name|Console
@@ -144,6 +160,10 @@ specifier|private
 name|Environment
 name|env
 decl_stmt|;
+specifier|private
+name|Branding
+name|branding
+decl_stmt|;
 specifier|public
 name|Prompter
 parameter_list|(
@@ -165,6 +185,30 @@ operator|.
 name|env
 operator|=
 name|env
+expr_stmt|;
+block|}
+specifier|public
+name|Branding
+name|getBranding
+parameter_list|()
+block|{
+return|return
+name|branding
+return|;
+block|}
+specifier|public
+name|void
+name|setBranding
+parameter_list|(
+name|Branding
+name|branding
+parameter_list|)
+block|{
+name|this
+operator|.
+name|branding
+operator|=
+name|branding
 expr_stmt|;
 block|}
 specifier|public
@@ -212,7 +256,7 @@ decl_stmt|;
 name|String
 name|path
 init|=
-literal|"/"
+literal|""
 decl_stmt|;
 if|if
 condition|(
@@ -228,7 +272,20 @@ operator|.
 name|getPath
 argument_list|()
 expr_stmt|;
+name|path
+operator|=
+name|path
+operator|.
+name|replace
+argument_list|(
+literal|'/'
+argument_list|,
+literal|' '
+argument_list|)
+expr_stmt|;
 block|}
+comment|// return renderer.render("@|bold " + userName + "|@" + hostName + ":@|bold " + path + "|> ");
+comment|// I think a simpler prompt would be best.
 return|return
 name|renderer
 operator|.
@@ -236,13 +293,10 @@ name|render
 argument_list|(
 literal|"@|bold "
 operator|+
-name|userName
-operator|+
-literal|"|@"
-operator|+
-name|hostName
-operator|+
-literal|":@|bold "
+name|branding
+operator|.
+name|getName
+argument_list|()
 operator|+
 name|path
 operator|+
