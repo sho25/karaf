@@ -711,12 +711,32 @@ name|features
 operator|=
 literal|null
 expr_stmt|;
+try|try
+block|{
 name|repo
 operator|.
 name|load
 argument_list|()
 expr_stmt|;
-comment|/*         Feature[] features = repo.getFeatures();         for (int i = 0; i< features.length; i++) {             CommandProxy cmd = new CommandProxy(features[i], bundleContext);         }         */
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+name|LOGGER
+operator|.
+name|warn
+argument_list|(
+literal|"Error loading features repository from url '"
+operator|+
+name|url
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|void

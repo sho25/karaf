@@ -255,6 +255,22 @@ name|geronimo
 operator|.
 name|gshell
 operator|.
+name|registry
+operator|.
+name|RegistryException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|geronimo
+operator|.
+name|gshell
+operator|.
 name|shell
 operator|.
 name|Environment
@@ -333,7 +349,7 @@ argument_list|>
 name|properties
 parameter_list|)
 throws|throws
-name|DuplicateRegistrationException
+name|RegistryException
 block|{
 comment|// Find command name
 name|String
@@ -726,7 +742,7 @@ argument_list|>
 name|properties
 parameter_list|)
 throws|throws
-name|NotRegisteredException
+name|RegistryException
 block|{
 comment|// Find command name
 name|String
