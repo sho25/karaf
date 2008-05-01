@@ -99,7 +99,7 @@ name|CommandComponent
 argument_list|(
 name|id
 operator|=
-literal|"osgi:bundleLevel"
+literal|"osgi:bundle-level"
 argument_list|,
 name|description
 operator|=

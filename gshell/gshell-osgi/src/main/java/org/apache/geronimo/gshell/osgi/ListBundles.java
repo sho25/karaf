@@ -127,7 +127,7 @@ name|CommandComponent
 argument_list|(
 name|id
 operator|=
-literal|"osgi:listBundles"
+literal|"osgi:list-bundles"
 argument_list|,
 name|description
 operator|=
