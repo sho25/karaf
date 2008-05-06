@@ -79,6 +79,8 @@ name|String
 index|[]
 name|listFeatures
 parameter_list|()
+throws|throws
+name|Exception
 function_decl|;
 name|String
 index|[]

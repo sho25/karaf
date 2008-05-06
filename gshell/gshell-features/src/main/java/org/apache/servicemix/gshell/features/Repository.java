@@ -54,6 +54,8 @@ name|Feature
 index|[]
 name|getFeatures
 parameter_list|()
+throws|throws
+name|Exception
 function_decl|;
 block|}
 end_interface
