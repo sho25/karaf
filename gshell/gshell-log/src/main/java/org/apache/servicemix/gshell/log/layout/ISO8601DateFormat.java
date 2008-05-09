@@ -70,6 +70,10 @@ import|;
 end_import
 
 begin_comment
+comment|/**  * Copied from log4j  */
+end_comment
+
+begin_comment
 comment|// Contributors: Arndt Schoenewald<arndt@ibm23093i821.mc.schoenewald.de>
 end_comment
 

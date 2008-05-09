@@ -119,6 +119,10 @@ name|PaxLoggingEvent
 import|;
 end_import
 
+begin_comment
+comment|/**  * Displays the last log entries  */
+end_comment
+
 begin_class
 annotation|@
 name|CommandComponent

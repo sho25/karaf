@@ -134,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * User: ewoodman  * Date: March 3, 2008  * Time: 11:10:10 AM  * To change this template use File | Settings | File Templates.  */
+comment|/**  * Set the log level for a given logger  */
 end_comment
 
 begin_class
@@ -392,6 +392,8 @@ operator|.
 name|getConfiguration
 argument_list|(
 name|CONFIGURATION_PID
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|Dictionary

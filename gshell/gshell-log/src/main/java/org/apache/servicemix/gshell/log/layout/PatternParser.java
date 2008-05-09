@@ -110,6 +110,10 @@ import|;
 end_import
 
 begin_comment
+comment|/**  * Copied from log4j  */
+end_comment
+
+begin_comment
 comment|// Contributors:   Nelson Minar<(nelson@monkey.org>
 end_comment
 
