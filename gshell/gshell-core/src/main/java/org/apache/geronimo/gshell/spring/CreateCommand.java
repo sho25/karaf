@@ -245,7 +245,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Creating new instance at:@|bold "
+literal|"Creating new instance at: @|bold "
 operator|+
 name|serviceMixBase
 operator|+
@@ -292,15 +292,6 @@ argument_list|(
 name|serviceMixBase
 argument_list|,
 literal|"etc/config.properties"
-argument_list|,
-literal|true
-argument_list|)
-expr_stmt|;
-name|copyResourceToDir
-argument_list|(
-name|serviceMixBase
-argument_list|,
-literal|"etc/login.conf"
 argument_list|,
 literal|true
 argument_list|)
@@ -505,7 +496,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Creating file:@|bold "
+literal|"Creating file: @|bold "
 operator|+
 name|outFile
 operator|.
