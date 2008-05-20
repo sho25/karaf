@@ -23,7 +23,37 @@ name|java
 operator|.
 name|io
 operator|.
-name|*
+name|File
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|FileNotFoundException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|InputStream
 import|;
 end_import
 
@@ -73,7 +103,77 @@ name|java
 operator|.
 name|util
 operator|.
-name|*
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Enumeration
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Properties
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|StringTokenizer
 import|;
 end_import
 
@@ -216,7 +316,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * This class is the default way to instantiate and execute the framework. It is not  * intended to be the only way to instantiate and execute the framework; rather, it is  * one example of how to do so. When embedding the framework in a host application,  * this class can serve as a simple guide of how to do so. It may even be  * worthwhile to reuse some of its property handling capabilities. This class  * is completely static and is only intended to start a single instance of  * the framework.  *</p> **/
+comment|/**  *<p>  * This class is the default way to instantiate and execute the framework. It is not  * intended to be the only way to instantiate and execute the framework; rather, it is  * one example of how to do so. When embedding the framework in a host application,  * this class can serve as a simple guide of how to do so. It may even be  * worthwhile to reuse some of its property handling capabilities. This class  * is completely static and is only intended to start a single instance of  * the framework.  *</p>  */
 end_comment
 
 begin_class
@@ -228,7 +328,7 @@ name|MainService
 implements|,
 name|BundleActivator
 block|{
-comment|/**      * The default name used for the system properties file.      **/
+comment|/**      * The default name used for the system properties file.      */
 specifier|public
 specifier|static
 specifier|final
@@ -237,7 +337,7 @@ name|SYSTEM_PROPERTIES_FILE_NAME
 init|=
 literal|"system.properties"
 decl_stmt|;
-comment|/**      * The default name used for the configuration properties file.      **/
+comment|/**      * The default name used for the configuration properties file.      */
 specifier|public
 specifier|static
 specifier|final
@@ -246,7 +346,7 @@ name|CONFIG_PROPERTIES_FILE_NAME
 init|=
 literal|"config.properties"
 decl_stmt|;
-comment|/**      * The default name used for the startup properties file.      **/
+comment|/**      * The default name used for the startup properties file.      */
 specifier|public
 specifier|static
 specifier|final
@@ -255,7 +355,7 @@ name|STARTUP_PROPERTIES_FILE_NAME
 init|=
 literal|"startup.properties"
 decl_stmt|;
-comment|/**      * The property name prefix for the launcher's auto-install property.      **/
+comment|/**      * The property name prefix for the launcher's auto-install property.      */
 specifier|public
 specifier|static
 specifier|final
@@ -264,7 +364,7 @@ name|PROPERTY_AUTO_INSTALL
 init|=
 literal|"felix.auto.install"
 decl_stmt|;
-comment|/**      * The property for auto-discovering the bundles       */
+comment|/**      * The property for auto-discovering the bundles      */
 specifier|public
 specifier|static
 specifier|final
@@ -309,7 +409,7 @@ name|ENV_SERVICEMIX_BASE
 init|=
 literal|"SERVICEMIX_BASE"
 decl_stmt|;
-comment|/**      * Config property which identifies directories which contain bundles to be loaded by SMX      *      */
+comment|/**      * Config property which identifies directories which contain bundles to be loaded by SMX      */
 specifier|public
 specifier|static
 specifier|final
@@ -365,7 +465,7 @@ operator|=
 name|args
 expr_stmt|;
 block|}
-comment|/**      * Used to instigate auto-install and auto-start configuration      * property processing via a custom framework activator during      * framework startup.      * @param context The system bundle context.      **/
+comment|/**      * Used to instigate auto-install and auto-start configuration      * property processing via a custom framework activator during      * framework startup.      *      * @param context The system bundle context.      */
 specifier|public
 name|void
 name|start
@@ -382,7 +482,7 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Currently does nothing as part of framework shutdown.      * @param context The system bundle context.      **/
+comment|/**      * Currently does nothing as part of framework shutdown.      *      * @param context The system bundle context.      */
 specifier|public
 name|void
 name|stop
@@ -393,7 +493,7 @@ parameter_list|)
 block|{
 comment|// Do nothing.
 block|}
-comment|/**      *<p>      * This method performs the main task of constructing an framework instance      * and starting its execution. The following functions are performed      * when invoked:      *</p>      *<ol>      *<li><i><b>Read the system properties file.<b></i> This is a file      *       containing properties to be pushed into<tt>System.setProperty()</tt>      *       before starting the framework. This mechanism is mainly shorthand      *       for people starting the framework from the command line to avoid having      *       to specify a bunch of<tt>-D</tt> system property definitions.      *       The only properties defined in this file that will impact the framework's      *       behavior are the those concerning setting HTTP proxies, such as      *<tt>http.proxyHost</tt>,<tt>http.proxyPort</tt>, and      *<tt>http.proxyAuth</tt>.      *</li>      *<li><i><b>Perform system property variable substitution on system      *       properties.</b></i> Any system properties in the system property      *       file whose value adheres to<tt>${&lt;system-prop-name&gt;}</tt>      *       syntax will have their value substituted with the appropriate      *       system property value.      *</li>      *<li><i><b>Read the framework's configuration property file.</b></i> This is      *       a file containing properties used to configure the framework      *       instance and to pass configuration information into      *       bundles installed into the framework instance. The configuration      *       property file is called<tt>config.properties</tt> by default      *       and is located in the<tt>conf/</tt> directory of the Felix      *       installation directory, which is the parent directory of the      *       directory containing the<tt>felix.jar</tt> file. It is possible      *       to use a different location for the property file by specifying      *       the desired URL using the<tt>felix.config.properties</tt>      *       system property; this should be set using the<tt>-D</tt> syntax      *       when executing the JVM. Refer to the      *<a href="Felix.html#Felix(java.util.Map, java.util.List)">      *<tt>Felix</tt></a> constructor documentation for more      *       information on the framework configuration options.      *</li>      *<li><i><b>Perform system property variable substitution on configuration      *       properties.</b></i> Any configuration properties whose value adheres to      *<tt>${&lt;system-prop-name&gt;}</tt> syntax will have their value      *       substituted with the appropriate system property value.      *</li>      *<li><i><b>Ensure the default bundle cache has sufficient information to      *       initialize.</b></i> The default implementation of the bundle cache      *       requires either a profile name or a profile directory in order to      *       start. The configuration properties are checked for at least one      *       of the<tt>felix.cache.profile</tt> or<tt>felix.cache.profiledir</tt>      *       properties. If neither is found, the user is asked to supply a profile      *       name that is added to the configuration property set. See the      *<a href="cache/DefaultBundleCache.html"><tt>DefaultBundleCache</tt></a>      *       documentation for more details its configuration options.      *</li>      *<li><i><b>Creates and starts a framework instance.</b></i> A       *       case insensitive      *<a href="util/StringMap.html"><tt>StringMap</tt></a>      *       is created for the configuration property file and is passed      *       into the framework.      *</li>      *</ol>      *<p>      * It should be noted that simply starting an instance of the framework is not enough      * to create an interactive session with it. It is necessary to install      * and start bundles that provide an interactive impl; this is generally      * done by specifying an "auto-start" property in the framework configuration      * property file. If no interactive impl bundles are installed or if      * the configuration property file cannot be found, the framework will appear to      * be hung or deadlocked. This is not the case, it is executing correctly,      * there is just no way to interact with it. Refer to the      *<a href="Felix.html#Felix(java.util.Map, java.util.List)">      *<tt>Felix</tt></a> constructor documentation for more information on      * framework configuration options.      *</p>      * @param args An array of arguments, all of which are ignored.      * @throws Exception If an error occurs.     **/
+comment|/**      *<p>      * This method performs the main task of constructing an framework instance      * and starting its execution. The following functions are performed      * when invoked:      *</p>      *<ol>      *<li><i><b>Read the system properties file.<b></i> This is a file      *       containing properties to be pushed into<tt>System.setProperty()</tt>      *       before starting the framework. This mechanism is mainly shorthand      *       for people starting the framework from the command line to avoid having      *       to specify a bunch of<tt>-D</tt> system property definitions.      *       The only properties defined in this file that will impact the framework's      *       behavior are the those concerning setting HTTP proxies, such as      *<tt>http.proxyHost</tt>,<tt>http.proxyPort</tt>, and      *<tt>http.proxyAuth</tt>.      *</li>      *<li><i><b>Perform system property variable substitution on system      *       properties.</b></i> Any system properties in the system property      *       file whose value adheres to<tt>${&lt;system-prop-name&gt;}</tt>      *       syntax will have their value substituted with the appropriate      *       system property value.      *</li>      *<li><i><b>Read the framework's configuration property file.</b></i> This is      *       a file containing properties used to configure the framework      *       instance and to pass configuration information into      *       bundles installed into the framework instance. The configuration      *       property file is called<tt>config.properties</tt> by default      *       and is located in the<tt>conf/</tt> directory of the Felix      *       installation directory, which is the parent directory of the      *       directory containing the<tt>felix.jar</tt> file. It is possible      *       to use a different location for the property file by specifying      *       the desired URL using the<tt>felix.config.properties</tt>      *       system property; this should be set using the<tt>-D</tt> syntax      *       when executing the JVM. Refer to the      *<a href="Felix.html#Felix(java.util.Map, java.util.List)">      *<tt>Felix</tt></a> constructor documentation for more      *       information on the framework configuration options.      *</li>      *<li><i><b>Perform system property variable substitution on configuration      *       properties.</b></i> Any configuration properties whose value adheres to      *<tt>${&lt;system-prop-name&gt;}</tt> syntax will have their value      *       substituted with the appropriate system property value.      *</li>      *<li><i><b>Ensure the default bundle cache has sufficient information to      *       initialize.</b></i> The default implementation of the bundle cache      *       requires either a profile name or a profile directory in order to      *       start. The configuration properties are checked for at least one      *       of the<tt>felix.cache.profile</tt> or<tt>felix.cache.profiledir</tt>      *       properties. If neither is found, the user is asked to supply a profile      *       name that is added to the configuration property set. See the      *<a href="cache/DefaultBundleCache.html"><tt>DefaultBundleCache</tt></a>      *       documentation for more details its configuration options.      *</li>      *<li><i><b>Creates and starts a framework instance.</b></i> A      *       case insensitive      *<a href="util/StringMap.html"><tt>StringMap</tt></a>      *       is created for the configuration property file and is passed      *       into the framework.      *</li>      *</ol>      *<p>      * It should be noted that simply starting an instance of the framework is not enough      * to create an interactive session with it. It is necessary to install      * and start bundles that provide an interactive impl; this is generally      * done by specifying an "auto-start" property in the framework configuration      * property file. If no interactive impl bundles are installed or if      * the configuration property file cannot be found, the framework will appear to      * be hung or deadlocked. This is not the case, it is executing correctly,      * there is just no way to interact with it. Refer to the      *<a href="Felix.html#Felix(java.util.Map, java.util.List)">      *<tt>Felix</tt></a> constructor documentation for more information on      * framework configuration options.      *</p>      * @param args An array of arguments, all of which are ignored.      * @throws Exception If an error occurs.      **/
 specifier|public
 specifier|static
 name|void
@@ -1248,7 +1348,7 @@ return|return
 name|rc
 return|;
 block|}
-comment|/**      *<p>      * Processes the auto-install and auto-start properties from the      * specified configuration properties.      */
+comment|/**      *<p/>      * Processes the auto-install and auto-start properties from the      * specified configuration properties.      */
 specifier|private
 specifier|static
 name|void
@@ -2079,7 +2179,7 @@ return|return
 name|retVal
 return|;
 block|}
-comment|/**      *<p>      * Loads the properties in the system property file associated with the      * framework installation into<tt>System.setProperty()</tt>. These properties      * are not directly used by the framework in anyway. By default, the system      * property file is located in the<tt>conf/</tt> directory of the Felix      * installation directory and is called "<tt>system.properties</tt>". The      * installation directory of Felix is assumed to be the parent directory of      * the<tt>felix.jar</tt> file as found on the system class path property.      * The precise file from which to load system properties can be set by      * initializing the "<tt>felix.system.properties</tt>" system property to an      * arbitrary URL.      *</p>     **/
+comment|/**      *<p>      * Loads the properties in the system property file associated with the      * framework installation into<tt>System.setProperty()</tt>. These properties      * are not directly used by the framework in anyway. By default, the system      * property file is located in the<tt>conf/</tt> directory of the Felix      * installation directory and is called "<tt>system.properties</tt>". The      * installation directory of Felix is assumed to be the parent directory of      * the<tt>felix.jar</tt> file as found on the system class path property.      * The precise file from which to load system properties can be set by      * initializing the "<tt>felix.system.properties</tt>" system property to an      * arbitrary URL.      *</p>      */
 specifier|private
 name|void
 name|loadSystemProperties
@@ -2292,7 +2392,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      *<p>      * Loads the configuration properties in the configuration property file      * associated with the framework installation; these properties      * are accessible to the framework and to bundles and are intended      * for configuration purposes. By default, the configuration property      * file is located in the<tt>conf/</tt> directory of the Felix      * installation directory and is called "<tt>config.properties</tt>".      * The installation directory of Felix is assumed to be the parent      * directory of the<tt>felix.jar</tt> file as found on the system class      * path property. The precise file from which to load configuration      * properties can be set by initializing the "<tt>felix.config.properties</tt>"      * system property to an arbitrary URL.      *</p>      * @return A<tt>Properties</tt> instance or<tt>null</tt> if there was an error.     **/
+comment|/**      *<p>      * Loads the configuration properties in the configuration property file      * associated with the framework installation; these properties      * are accessible to the framework and to bundles and are intended      * for configuration purposes. By default, the configuration property      * file is located in the<tt>conf/</tt> directory of the Felix      * installation directory and is called "<tt>config.properties</tt>".      * The installation directory of Felix is assumed to be the parent      * directory of the<tt>felix.jar</tt> file as found on the system class      * path property. The precise file from which to load configuration      * properties can be set by initializing the "<tt>felix.config.properties</tt>"      * system property to an arbitrary URL.      *</p>      *      * @return A<tt>Properties</tt> instance or<tt>null</tt> if there was an error.      */
 specifier|private
 name|Properties
 name|loadConfigProperties
@@ -2847,7 +2947,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Process properties to customize default felix behavior      * @param startupProps       */
+comment|/**      * Process properties to customize default felix behavior      *      * @param startupProps      */
 specifier|private
 specifier|static
 name|void
@@ -3512,7 +3612,7 @@ name|DELIM_STOP
 init|=
 literal|"}"
 decl_stmt|;
-comment|/**      *<p>      * This method performs property variable substitution on the      * specified value. If the specified value contains the syntax      *<tt>${&lt;prop-name&gt;}</tt>, where<tt>&lt;prop-name&gt;</tt>      * refers to either a configuration property or a system property,      * then the corresponding property value is substituted for the variable      * placeholder. Multiple variable placeholders may exist in the      * specified value as well as nested variable placeholders, which      * are substituted from inner most to outer most. Configuration      * properties override system properties.      *</p>      * @param val The string on which to perform property substitution.      * @param currentKey The key of the property being evaluated used to      *        detect cycles.      * @param cycleMap Map of variable references used to detect nested cycles.      * @param configProps Set of configuration properties.      * @return The value of the specified string after system property substitution.      * @throws IllegalArgumentException If there was a syntax error in the      *         property placeholder syntax or a recursive variable reference.     **/
+comment|/**      *<p>      * This method performs property variable substitution on the      * specified value. If the specified value contains the syntax      *<tt>${&lt;prop-name&gt;}</tt>, where<tt>&lt;prop-name&gt;</tt>      * refers to either a configuration property or a system property,      * then the corresponding property value is substituted for the variable      * placeholder. Multiple variable placeholders may exist in the      * specified value as well as nested variable placeholders, which      * are substituted from inner most to outer most. Configuration      * properties override system properties.      *</p>      *      * @param val         The string on which to perform property substitution.      * @param currentKey  The key of the property being evaluated used to      *                    detect cycles.      * @param cycleMap    Map of variable references used to detect nested cycles.      * @param configProps Set of configuration properties.      * @return The value of the specified string after system property substitution.      * @throws IllegalArgumentException If there was a syntax error in the      *                                  property placeholder syntax or a recursive variable reference.      */
 specifier|private
 specifier|static
 name|String
@@ -3858,7 +3958,7 @@ return|return
 name|val
 return|;
 block|}
-comment|/* (non-Javadoc) 	 * @see org.apache.servicemix.main.MainService#getArgs() 	 */
+comment|/* (non-Javadoc)       * @see org.apache.servicemix.main.MainService#getArgs()       */
 specifier|public
 name|String
 index|[]
