@@ -84,7 +84,7 @@ argument_list|>
 name|TLS_IO
 init|=
 operator|new
-name|ThreadLocal
+name|InheritableThreadLocal
 argument_list|<
 name|IO
 argument_list|>
