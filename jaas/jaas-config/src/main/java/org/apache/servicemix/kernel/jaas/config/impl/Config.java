@@ -16,6 +16,8 @@ operator|.
 name|jaas
 operator|.
 name|config
+operator|.
+name|impl
 package|;
 end_package
 
@@ -68,6 +70,24 @@ operator|.
 name|boot
 operator|.
 name|ProxyLoginModule
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|servicemix
+operator|.
+name|kernel
+operator|.
+name|jaas
+operator|.
+name|config
+operator|.
+name|JaasRealm
 import|;
 end_import
 

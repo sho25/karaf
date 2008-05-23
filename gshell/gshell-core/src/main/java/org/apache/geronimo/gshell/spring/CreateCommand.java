@@ -699,7 +699,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Creating file:@|bold "
+literal|"Creating file: @|bold "
 operator|+
 name|outFile
 operator|.
@@ -1003,7 +1003,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Creating dir:@|bold "
+literal|"Creating dir:  @|bold "
 operator|+
 name|file
 operator|.

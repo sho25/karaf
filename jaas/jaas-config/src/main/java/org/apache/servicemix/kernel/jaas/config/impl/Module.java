@@ -16,6 +16,8 @@ operator|.
 name|jaas
 operator|.
 name|config
+operator|.
+name|impl
 package|;
 end_package
 
