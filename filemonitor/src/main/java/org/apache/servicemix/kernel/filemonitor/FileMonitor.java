@@ -590,20 +590,6 @@ argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
-name|List
-argument_list|<
-name|Bundle
-argument_list|>
-name|bundlesToUpdate
-init|=
-operator|new
-name|ArrayList
-argument_list|<
-name|Bundle
-argument_list|>
-argument_list|()
-decl_stmt|;
-specifier|private
 name|Map
 argument_list|<
 name|String
@@ -647,6 +633,11 @@ specifier|public
 name|FileMonitor
 parameter_list|()
 block|{     }
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|FileMonitor
 parameter_list|(
@@ -1095,11 +1086,6 @@ name|clear
 argument_list|()
 expr_stmt|;
 name|bundlesToStart
-operator|.
-name|clear
-argument_list|()
-expr_stmt|;
-name|bundlesToUpdate
 operator|.
 name|clear
 argument_list|()
@@ -1809,7 +1795,7 @@ name|LOGGER
 operator|.
 name|info
 argument_list|(
-literal|"Deloying: "
+literal|"Deploying: "
 operator|+
 name|file
 operator|.
@@ -1844,13 +1830,6 @@ literal|null
 condition|)
 block|{
 name|changedBundles
-operator|.
-name|add
-argument_list|(
-name|bundle
-argument_list|)
-expr_stmt|;
-name|bundlesToUpdate
 operator|.
 name|add
 argument_list|(
@@ -2632,54 +2611,6 @@ control|(
 name|Bundle
 name|bundle
 range|:
-name|bundlesToUpdate
-control|)
-block|{
-try|try
-block|{
-name|bundle
-operator|.
-name|update
-argument_list|()
-expr_stmt|;
-name|LOGGER
-operator|.
-name|info
-argument_list|(
-literal|"Updated: "
-operator|+
-name|bundle
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|BundleException
-name|e
-parameter_list|)
-block|{
-name|LOGGER
-operator|.
-name|warn
-argument_list|(
-literal|"Failed to update bundle: "
-operator|+
-name|bundle
-operator|+
-literal|". Reason: "
-operator|+
-name|e
-argument_list|,
-name|e
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-for|for
-control|(
-name|Bundle
-name|bundle
-range|:
 name|bundlesToStart
 control|)
 block|{
@@ -3179,6 +3110,11 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|protected
 name|File
 name|getFileValue
@@ -3237,6 +3173,11 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|protected
 name|Long
 name|getLongValue
