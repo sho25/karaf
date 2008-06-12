@@ -430,7 +430,7 @@ name|putValue
 argument_list|(
 literal|"Spring-Context"
 argument_list|,
-literal|"*;publish-context:=true;create-asynchronously:=true"
+literal|"*;publish-context:=false;create-asynchronously:=true"
 argument_list|)
 expr_stmt|;
 name|InputStream
@@ -484,6 +484,18 @@ name|importPkgs
 argument_list|)
 expr_stmt|;
 block|}
+name|m
+operator|.
+name|getMainAttributes
+argument_list|()
+operator|.
+name|putValue
+argument_list|(
+literal|"DynamicImport-Package"
+argument_list|,
+literal|"*"
+argument_list|)
+expr_stmt|;
 name|JarOutputStream
 name|out
 init|=
