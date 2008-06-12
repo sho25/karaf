@@ -618,7 +618,7 @@ name|profileDirName
 operator|==
 literal|null
 operator|)
-operator|&&
+operator|||
 operator|(
 name|profileName
 operator|.
