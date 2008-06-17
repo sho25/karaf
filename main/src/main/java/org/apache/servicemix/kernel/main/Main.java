@@ -610,24 +610,6 @@ operator|.
 name|CACHE_PROFILE_DIR_PROP
 argument_list|)
 decl_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-name|profileDirName
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-name|profileName
-argument_list|)
-expr_stmt|;
 comment|// A profile directory or name must be specified.
 if|if
 condition|(
