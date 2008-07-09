@@ -844,6 +844,16 @@ name|dependency
 operator|.
 name|isOptional
 argument_list|()
+operator|||
+literal|"test"
+operator|.
+name|equals
+argument_list|(
+name|dependency
+operator|.
+name|getScope
+argument_list|()
+argument_list|)
 condition|)
 block|{
 comment|// omit optional dependencies
@@ -856,7 +866,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"Omitting optional dependency '%s' for '%s'"
+literal|"Omitting optional and/or test scoped dependency '%s' for '%s'"
 argument_list|,
 name|dependency
 argument_list|,
@@ -1101,7 +1111,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"Adding '%s' also provides '%s'"
+literal|"'%s' also provides '%s'"
 argument_list|,
 name|wrapper
 argument_list|,
