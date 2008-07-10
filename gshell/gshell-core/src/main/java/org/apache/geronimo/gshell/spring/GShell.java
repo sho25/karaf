@@ -844,6 +844,15 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+operator|new
+name|Thread
+argument_list|()
+block|{
+specifier|public
+name|void
+name|run
+parameter_list|()
+block|{
 try|try
 block|{
 name|getBundleContext
@@ -876,6 +885,12 @@ name|e2
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+block|}
+operator|.
+name|start
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 comment|/**      * Blocks until the framework has finished starting.  We do this so that any installed      * bundles for commands get fully registered.      *      * @throws InterruptedException      */
