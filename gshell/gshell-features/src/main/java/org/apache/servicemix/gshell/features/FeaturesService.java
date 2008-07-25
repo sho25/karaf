@@ -27,6 +27,16 @@ name|URL
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
+name|URI
+import|;
+end_import
+
 begin_comment
 comment|/**  * The service managing features repositories.  */
 end_comment
@@ -39,7 +49,7 @@ block|{
 name|void
 name|addRepository
 parameter_list|(
-name|URL
+name|URI
 name|url
 parameter_list|)
 throws|throws
@@ -48,7 +58,7 @@ function_decl|;
 name|void
 name|removeRepository
 parameter_list|(
-name|URL
+name|URI
 name|url
 parameter_list|)
 function_decl|;

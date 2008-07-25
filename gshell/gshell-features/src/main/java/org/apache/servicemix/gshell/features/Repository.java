@@ -37,6 +37,16 @@ name|URL
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
+name|URI
+import|;
+end_import
+
 begin_comment
 comment|/**  * A repository of features.  */
 end_comment
@@ -46,8 +56,8 @@ specifier|public
 interface|interface
 name|Repository
 block|{
-name|URL
-name|getURL
+name|URI
+name|getURI
 parameter_list|()
 function_decl|;
 name|Feature

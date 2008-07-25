@@ -37,7 +37,7 @@ name|java
 operator|.
 name|net
 operator|.
-name|URL
+name|URI
 import|;
 end_import
 
@@ -153,7 +153,7 @@ operator|.
 name|removeRepository
 argument_list|(
 operator|new
-name|URL
+name|URI
 argument_list|(
 name|url
 argument_list|)
