@@ -1159,6 +1159,13 @@ name|b
 operator|.
 name|getSymbolicName
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|b
+operator|.
+name|getSymbolicName
+argument_list|()
 operator|.
 name|equals
 argument_list|(
