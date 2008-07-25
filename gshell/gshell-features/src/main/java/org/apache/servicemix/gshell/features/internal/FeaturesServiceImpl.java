@@ -1137,11 +1137,6 @@ argument_list|(
 name|vStr
 argument_list|)
 decl_stmt|;
-name|boolean
-name|install
-init|=
-literal|true
-decl_stmt|;
 for|for
 control|(
 name|Bundle
