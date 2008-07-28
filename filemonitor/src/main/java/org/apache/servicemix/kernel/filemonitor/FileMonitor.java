@@ -1763,6 +1763,36 @@ decl_stmt|;
 try|try
 block|{
 comment|// Handle OSGi bundles with the default deployer
+if|if
+condition|(
+operator|!
+name|file
+operator|.
+name|getName
+argument_list|()
+operator|.
+name|endsWith
+argument_list|(
+literal|"zip"
+argument_list|)
+operator|&&
+operator|!
+name|file
+operator|.
+name|getName
+argument_list|()
+operator|.
+name|endsWith
+argument_list|(
+literal|"jar"
+argument_list|)
+condition|)
+block|{
+comment|// that's file type which is not supported as bundle
+return|return
+literal|null
+return|;
+block|}
 name|jar
 operator|=
 operator|new
