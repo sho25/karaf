@@ -1765,7 +1765,6 @@ block|{
 comment|// Handle OSGi bundles with the default deployer
 if|if
 condition|(
-operator|!
 name|file
 operator|.
 name|getName
@@ -1773,10 +1772,9 @@ argument_list|()
 operator|.
 name|endsWith
 argument_list|(
-literal|"zip"
+literal|"txt"
 argument_list|)
-operator|&&
-operator|!
+operator|||
 name|file
 operator|.
 name|getName
@@ -1784,11 +1782,21 @@ argument_list|()
 operator|.
 name|endsWith
 argument_list|(
-literal|"jar"
+literal|"xml"
+argument_list|)
+operator|||
+name|file
+operator|.
+name|getName
+argument_list|()
+operator|.
+name|endsWith
+argument_list|(
+literal|"properties"
 argument_list|)
 condition|)
 block|{
-comment|// that's file type which is not supported as bundle
+comment|// that's file type which is not supported as bundle and avoid exception in the log
 return|return
 literal|null
 return|;
