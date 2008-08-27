@@ -1450,6 +1450,23 @@ name|getFeatures
 argument_list|()
 control|)
 block|{
+name|String
+name|installStatus
+init|=
+name|installed
+operator|.
+name|containsKey
+argument_list|(
+name|f
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+condition|?
+literal|"installed"
+else|:
+literal|"uninstalled"
+decl_stmt|;
 name|features
 operator|.
 name|add
@@ -1458,6 +1475,10 @@ name|f
 operator|.
 name|getName
 argument_list|()
+operator|+
+literal|" "
+operator|+
+name|installStatus
 argument_list|)
 expr_stmt|;
 block|}
