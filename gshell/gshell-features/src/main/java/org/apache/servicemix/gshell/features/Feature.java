@@ -78,6 +78,17 @@ argument_list|>
 name|getConfigurations
 parameter_list|()
 function_decl|;
+name|boolean
+name|getInstallStatus
+parameter_list|()
+function_decl|;
+name|void
+name|setInstallStatus
+parameter_list|(
+name|boolean
+name|status
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

@@ -1039,6 +1039,13 @@ argument_list|,
 name|bundles
 argument_list|)
 expr_stmt|;
+name|f
+operator|.
+name|setInstallStatus
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|saveState
 argument_list|()
 expr_stmt|;
@@ -1453,17 +1460,12 @@ block|{
 name|String
 name|installStatus
 init|=
-name|installed
-operator|.
-name|containsKey
-argument_list|(
 name|f
 operator|.
-name|getName
+name|getInstallStatus
 argument_list|()
-argument_list|)
 condition|?
-literal|"installed"
+literal|"installed  "
 else|:
 literal|"uninstalled"
 decl_stmt|;
@@ -1471,14 +1473,16 @@ name|features
 operator|.
 name|add
 argument_list|(
+literal|"["
+operator|+
+name|installStatus
+operator|+
+literal|"] "
+operator|+
 name|f
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" "
-operator|+
-name|installStatus
 argument_list|)
 expr_stmt|;
 block|}

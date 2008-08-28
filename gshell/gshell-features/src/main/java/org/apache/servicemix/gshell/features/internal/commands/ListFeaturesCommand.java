@@ -43,22 +43,6 @@ name|org
 operator|.
 name|apache
 operator|.
-name|servicemix
-operator|.
-name|gshell
-operator|.
-name|features
-operator|.
-name|Repository
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
 name|geronimo
 operator|.
 name|gshell
@@ -154,6 +138,16 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|// Print column headers.
+name|io
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"  State       Name"
+argument_list|)
+expr_stmt|;
 name|features
 operator|=
 name|admin
