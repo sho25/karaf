@@ -145,7 +145,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"  State       Name"
+literal|"  State          Version       Name"
 argument_list|)
 expr_stmt|;
 name|features

@@ -1469,6 +1469,86 @@ literal|"installed  "
 else|:
 literal|"uninstalled"
 decl_stmt|;
+name|String
+name|version
+init|=
+name|f
+operator|.
+name|getVersion
+argument_list|()
+decl_stmt|;
+switch|switch
+condition|(
+name|version
+operator|.
+name|length
+argument_list|()
+condition|)
+block|{
+case|case
+literal|1
+case|:
+name|version
+operator|=
+literal|"       "
+operator|+
+name|version
+expr_stmt|;
+case|case
+literal|2
+case|:
+name|version
+operator|=
+literal|"      "
+operator|+
+name|version
+expr_stmt|;
+case|case
+literal|3
+case|:
+name|version
+operator|=
+literal|"     "
+operator|+
+name|version
+expr_stmt|;
+case|case
+literal|4
+case|:
+name|version
+operator|=
+literal|"    "
+operator|+
+name|version
+expr_stmt|;
+case|case
+literal|5
+case|:
+name|version
+operator|=
+literal|"   "
+operator|+
+name|version
+expr_stmt|;
+case|case
+literal|6
+case|:
+name|version
+operator|=
+literal|"  "
+operator|+
+name|version
+expr_stmt|;
+case|case
+literal|7
+case|:
+name|version
+operator|=
+literal|" "
+operator|+
+name|version
+expr_stmt|;
+block|}
 name|features
 operator|.
 name|add
@@ -1476,6 +1556,12 @@ argument_list|(
 literal|"["
 operator|+
 name|installStatus
+operator|+
+literal|"] "
+operator|+
+literal|" ["
+operator|+
+name|version
 operator|+
 literal|"] "
 operator|+

@@ -89,6 +89,17 @@ name|boolean
 name|status
 parameter_list|)
 function_decl|;
+name|void
+name|setVersion
+parameter_list|(
+name|String
+name|version
+parameter_list|)
+function_decl|;
+name|String
+name|getVersion
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
