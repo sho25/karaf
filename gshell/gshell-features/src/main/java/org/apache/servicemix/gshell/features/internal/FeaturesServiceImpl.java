@@ -821,9 +821,12 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|Feature
+name|FeatureImpl
 name|f
 init|=
+operator|(
+name|FeatureImpl
+operator|)
 name|getFeature
 argument_list|(
 name|name
@@ -1041,7 +1044,7 @@ argument_list|)
 expr_stmt|;
 name|f
 operator|.
-name|setInstallStatus
+name|setInstalled
 argument_list|(
 literal|true
 argument_list|)
@@ -1462,7 +1465,7 @@ name|installStatus
 init|=
 name|f
 operator|.
-name|getInstallStatus
+name|isInstalled
 argument_list|()
 condition|?
 literal|"installed  "
