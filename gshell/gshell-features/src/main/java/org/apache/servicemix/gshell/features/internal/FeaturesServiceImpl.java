@@ -1793,6 +1793,16 @@ range|:
 name|list
 control|)
 block|{
+if|if
+condition|(
+name|f
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
 try|try
 block|{
 name|installFeature
@@ -1818,6 +1828,7 @@ argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
