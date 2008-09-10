@@ -82,10 +82,6 @@ argument_list|>
 name|getConfigurations
 parameter_list|()
 function_decl|;
-name|boolean
-name|isInstalled
-parameter_list|()
-function_decl|;
 block|}
 end_interface
 

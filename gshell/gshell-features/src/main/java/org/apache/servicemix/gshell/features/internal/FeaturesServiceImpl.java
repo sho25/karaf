@@ -821,12 +821,9 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|FeatureImpl
+name|Feature
 name|f
 init|=
-operator|(
-name|FeatureImpl
-operator|)
 name|getFeature
 argument_list|(
 name|name
@@ -1040,13 +1037,6 @@ argument_list|(
 name|name
 argument_list|,
 name|bundles
-argument_list|)
-expr_stmt|;
-name|f
-operator|.
-name|setInstalled
-argument_list|(
-literal|true
 argument_list|)
 expr_stmt|;
 name|saveState
@@ -1463,10 +1453,15 @@ block|{
 name|String
 name|installStatus
 init|=
+name|installed
+operator|.
+name|containsKey
+argument_list|(
 name|f
 operator|.
-name|isInstalled
+name|getName
 argument_list|()
+argument_list|)
 condition|?
 literal|"installed  "
 else|:
