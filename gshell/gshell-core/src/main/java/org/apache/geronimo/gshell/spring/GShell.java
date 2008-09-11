@@ -911,13 +911,20 @@ parameter_list|()
 throws|throws
 name|InterruptedException
 block|{
+name|log
+operator|.
+name|info
+argument_list|(
+literal|"Waiting from framework to start."
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|frameworkStarted
 operator|.
 name|await
 argument_list|(
-literal|5
+literal|60
 argument_list|,
 name|TimeUnit
 operator|.
