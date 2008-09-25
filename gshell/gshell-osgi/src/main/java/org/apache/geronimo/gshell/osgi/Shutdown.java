@@ -64,7 +64,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Created by IntelliJ IDEA.  * User: gnodet  * Date: Oct 3, 2007  * Time: 1:59:04 PM  * To change this template use File | Settings | File Templates.  */
+comment|/**  * Command to shut down ServiceMix Kernel  */
 end_comment
 
 begin_class
@@ -92,6 +92,17 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+operator|new
+name|Thread
+argument_list|()
+block|{
+specifier|public
+name|void
+name|run
+parameter_list|()
+block|{
+try|try
+block|{
 name|Bundle
 name|bundle
 init|=
@@ -106,6 +117,29 @@ decl_stmt|;
 name|bundle
 operator|.
 name|stop
+argument_list|()
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|log
+operator|.
+name|error
+argument_list|(
+literal|"Error when shutting down ServiceMix Kernel"
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+operator|.
+name|start
 argument_list|()
 expr_stmt|;
 return|return
