@@ -297,6 +297,16 @@ operator|.
 name|destroy
 argument_list|()
 expr_stmt|;
+name|Thread
+operator|.
+name|currentThread
+argument_list|()
+operator|.
+name|sleep
+argument_list|(
+literal|1000
+argument_list|)
+expr_stmt|;
 name|System
 operator|.
 name|err
