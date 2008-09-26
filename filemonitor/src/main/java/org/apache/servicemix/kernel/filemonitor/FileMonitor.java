@@ -1235,27 +1235,19 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|Object
+name|String
 name|filename
 range|:
 name|filenames
 control|)
 block|{
-name|String
-name|name
-init|=
-name|filename
-operator|.
-name|toString
-argument_list|()
-decl_stmt|;
 name|File
 name|file
 init|=
 operator|new
 name|File
 argument_list|(
-name|name
+name|filename
 argument_list|)
 decl_stmt|;
 try|try
@@ -1267,16 +1259,6 @@ argument_list|(
 literal|"File changed: "
 operator|+
 name|filename
-operator|+
-literal|" with type: "
-operator|+
-name|filename
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// Handle config files
@@ -1451,7 +1433,7 @@ name|warn
 argument_list|(
 literal|"Unsupported deployment: "
 operator|+
-name|name
+name|filename
 argument_list|)
 expr_stmt|;
 name|rescheduleTransformation
@@ -1475,7 +1457,7 @@ name|artifactToBundle
 operator|.
 name|get
 argument_list|(
-name|name
+name|filename
 argument_list|)
 decl_stmt|;
 if|if
