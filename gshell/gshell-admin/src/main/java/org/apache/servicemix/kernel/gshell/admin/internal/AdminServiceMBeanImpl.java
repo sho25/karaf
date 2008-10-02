@@ -119,6 +119,9 @@ name|name
 parameter_list|,
 name|int
 name|port
+parameter_list|,
+name|String
+name|location
 parameter_list|)
 throws|throws
 name|Exception
@@ -130,6 +133,8 @@ argument_list|(
 name|name
 argument_list|,
 name|port
+argument_list|,
+name|location
 argument_list|)
 expr_stmt|;
 block|}
@@ -265,6 +270,9 @@ name|start
 parameter_list|(
 name|String
 name|name
+parameter_list|,
+name|String
+name|javaOpts
 parameter_list|)
 throws|throws
 name|Exception
@@ -275,7 +283,9 @@ name|name
 argument_list|)
 operator|.
 name|start
-argument_list|()
+argument_list|(
+name|javaOpts
+argument_list|)
 expr_stmt|;
 block|}
 specifier|public

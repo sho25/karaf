@@ -28,6 +28,10 @@ name|String
 name|getName
 parameter_list|()
 function_decl|;
+name|String
+name|getLocation
+parameter_list|()
+function_decl|;
 name|int
 name|getPid
 parameter_list|()
@@ -49,7 +53,10 @@ name|Exception
 function_decl|;
 name|void
 name|start
-parameter_list|()
+parameter_list|(
+name|String
+name|javaOpts
+parameter_list|)
 throws|throws
 name|Exception
 function_decl|;

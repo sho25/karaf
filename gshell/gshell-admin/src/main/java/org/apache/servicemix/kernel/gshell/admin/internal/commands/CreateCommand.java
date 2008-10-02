@@ -119,6 +119,27 @@ init|=
 literal|0
 decl_stmt|;
 annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
+literal|"-l"
+argument_list|,
+name|aliases
+operator|=
+block|{
+literal|"--location"
+block|}
+argument_list|,
+name|description
+operator|=
+literal|"Location of the new instance on the file system"
+argument_list|)
+specifier|private
+name|String
+name|location
+decl_stmt|;
+annotation|@
 name|Argument
 argument_list|(
 name|index
@@ -131,7 +152,7 @@ literal|true
 argument_list|,
 name|description
 operator|=
-literal|"Where to create the new ServiceMix instance"
+literal|"Name of the new ServiceMix instance"
 argument_list|)
 specifier|private
 name|String
@@ -154,6 +175,8 @@ argument_list|(
 name|instance
 argument_list|,
 name|port
+argument_list|,
+name|location
 argument_list|)
 expr_stmt|;
 return|return

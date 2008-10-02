@@ -273,6 +273,10 @@ name|String
 name|name
 decl_stmt|;
 specifier|private
+name|String
+name|location
+decl_stmt|;
+specifier|private
 name|Process
 name|process
 decl_stmt|;
@@ -285,6 +289,9 @@ name|service
 parameter_list|,
 name|String
 name|name
+parameter_list|,
+name|String
+name|location
 parameter_list|)
 block|{
 name|this
@@ -298,6 +305,12 @@ operator|.
 name|name
 operator|=
 name|name
+expr_stmt|;
+name|this
+operator|.
+name|location
+operator|=
+name|location
 expr_stmt|;
 block|}
 specifier|public
@@ -360,6 +373,15 @@ name|name
 return|;
 block|}
 specifier|public
+name|String
+name|getLocation
+parameter_list|()
+block|{
+return|return
+name|location
+return|;
+block|}
+specifier|public
 name|int
 name|getPid
 parameter_list|()
@@ -404,7 +426,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|name
+name|location
 argument_list|,
 literal|"etc/org.apache.servicemix.shell.cfg"
 argument_list|)
@@ -517,7 +539,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|name
+name|location
 argument_list|,
 literal|"etc/org.apache.servicemix.shell.cfg"
 argument_list|)
@@ -630,7 +652,10 @@ specifier|public
 specifier|synchronized
 name|void
 name|start
-parameter_list|()
+parameter_list|(
+name|String
+name|javaOpts
+parameter_list|)
 throws|throws
 name|Exception
 block|{
@@ -653,6 +678,18 @@ argument_list|(
 literal|"Instance already started"
 argument_list|)
 throw|;
+block|}
+if|if
+condition|(
+name|javaOpts
+operator|==
+literal|null
+condition|)
+block|{
+name|javaOpts
+operator|=
+literal|"-server -Xms128M -Xmx512M -Dcom.sun.management.jmxremote"
+expr_stmt|;
 block|}
 name|String
 name|command
@@ -684,7 +721,9 @@ operator|.
 name|getCanonicalPath
 argument_list|()
 operator|+
-literal|" -server -Xms128M -Xmx512M -Dcom.sun.management.jmxremote"
+literal|" "
+operator|+
+name|javaOpts
 operator|+
 literal|" -Dservicemix.home=\""
 operator|+
@@ -702,7 +741,7 @@ operator|+
 operator|new
 name|File
 argument_list|(
-name|name
+name|location
 argument_list|)
 operator|.
 name|getCanonicalPath
@@ -774,7 +813,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|name
+name|location
 argument_list|)
 argument_list|)
 operator|.
@@ -863,7 +902,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|name
+name|location
 argument_list|)
 argument_list|)
 expr_stmt|;

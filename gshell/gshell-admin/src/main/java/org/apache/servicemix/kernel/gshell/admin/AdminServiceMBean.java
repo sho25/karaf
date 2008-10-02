@@ -32,6 +32,9 @@ name|name
 parameter_list|,
 name|int
 name|port
+parameter_list|,
+name|String
+name|location
 parameter_list|)
 throws|throws
 name|Exception
@@ -76,6 +79,9 @@ name|start
 parameter_list|(
 name|String
 name|name
+parameter_list|,
+name|String
+name|javaOpts
 parameter_list|)
 throws|throws
 name|Exception
