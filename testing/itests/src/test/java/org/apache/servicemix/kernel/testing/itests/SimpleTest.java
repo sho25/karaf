@@ -21,16 +21,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Properties
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|xml
@@ -66,10 +56,6 @@ name|SimpleTest
 extends|extends
 name|AbstractIntegrationTest
 block|{
-specifier|private
-name|Properties
-name|dependencies
-decl_stmt|;
 comment|/** 	 * The manifest to use for the "virtual bundle" created 	 * out of the test classes and resources in this project 	 * 	 * This is actually the boilerplate manifest with one additional 	 * import-package added. We should provide a simpler customization 	 * point for such use cases that doesn't require duplication 	 * of the entire manifest... 	 */
 specifier|protected
 name|String
@@ -107,6 +93,22 @@ name|testWoodstox
 parameter_list|()
 throws|throws
 name|Exception
+block|{
+comment|//JDK 1.6 and above ship with a StaX implementation
+if|if
+condition|(
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"java.version"
+argument_list|)
+operator|.
+name|startsWith
+argument_list|(
+literal|"1.5"
+argument_list|)
+condition|)
 block|{
 name|Thread
 operator|.
@@ -213,6 +215,7 @@ name|newInstance
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_class
