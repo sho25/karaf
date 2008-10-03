@@ -65,8 +65,8 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-name|boolean
-name|isRunning
+name|String
+name|getState
 parameter_list|(
 name|String
 name|name

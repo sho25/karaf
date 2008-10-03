@@ -245,8 +245,8 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|boolean
-name|isRunning
+name|String
+name|getState
 parameter_list|(
 name|String
 name|name
@@ -260,7 +260,7 @@ argument_list|(
 name|name
 argument_list|)
 operator|.
-name|isRunning
+name|getState
 argument_list|()
 return|;
 block|}
