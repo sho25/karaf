@@ -285,7 +285,7 @@ name|client
 operator|.
 name|proxy
 operator|.
-name|RemoteShellProxy
+name|SpringRemoteShellProxy
 import|;
 end_import
 
@@ -790,11 +790,11 @@ argument_list|)
 expr_stmt|;
 comment|// client.echo("HELLO");
 comment|// Thread.sleep(1 * 1000);
-name|RemoteShellProxy
+name|SpringRemoteShellProxy
 name|shell
 init|=
 operator|new
-name|RemoteShellProxy
+name|SpringRemoteShellProxy
 argument_list|(
 name|client
 argument_list|,
