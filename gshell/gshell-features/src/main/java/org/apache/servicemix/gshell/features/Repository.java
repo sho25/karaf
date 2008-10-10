@@ -60,6 +60,13 @@ name|URI
 name|getURI
 parameter_list|()
 function_decl|;
+name|URI
+index|[]
+name|getRepositories
+parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
 name|Feature
 index|[]
 name|getFeatures
