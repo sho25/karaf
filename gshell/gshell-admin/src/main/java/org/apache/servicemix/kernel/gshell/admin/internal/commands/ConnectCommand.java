@@ -306,6 +306,10 @@ literal|" -p "
 operator|+
 name|password
 operator|+
+literal|" -n "
+operator|+
+name|instance
+operator|+
 literal|" tcp://localhost:"
 operator|+
 name|port
