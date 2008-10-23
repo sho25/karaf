@@ -185,7 +185,7 @@ name|gshell
 operator|.
 name|ansi
 operator|.
-name|Renderer
+name|AnsiRenderer
 import|;
 end_import
 
@@ -201,7 +201,7 @@ name|gshell
 operator|.
 name|ansi
 operator|.
-name|Code
+name|AnsiCode
 import|;
 end_import
 
@@ -317,11 +317,11 @@ name|IO
 name|io
 decl_stmt|;
 specifier|private
-name|Renderer
+name|AnsiRenderer
 name|renderer
 init|=
 operator|new
-name|Renderer
+name|AnsiRenderer
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -1388,7 +1388,7 @@ name|renderer
 operator|.
 name|render
 argument_list|(
-name|Renderer
+name|AnsiRenderer
 operator|.
 name|encode
 argument_list|(
@@ -1401,7 +1401,7 @@ argument_list|,
 name|pad
 argument_list|)
 argument_list|,
-name|Code
+name|AnsiCode
 operator|.
 name|BOLD
 argument_list|)

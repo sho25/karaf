@@ -195,9 +195,25 @@ name|geronimo
 operator|.
 name|gshell
 operator|.
-name|io
+name|shell
 operator|.
-name|IO
+name|ShellContextHolder
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|geronimo
+operator|.
+name|gshell
+operator|.
+name|shell
+operator|.
+name|ShellContext
 import|;
 end_import
 
@@ -1357,10 +1373,38 @@ name|String
 name|st
 parameter_list|)
 block|{
-comment|//IO io = ProxyIO.getIO();
-comment|//if (io != null) {
-comment|//    io.out.println(st);
-comment|//} else {
+name|ShellContext
+name|ctx
+init|=
+name|ShellContextHolder
+operator|.
+name|get
+argument_list|(
+literal|true
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|ctx
+operator|!=
+literal|null
+condition|)
+block|{
+name|ctx
+operator|.
+name|getIo
+argument_list|()
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+name|st
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|System
 operator|.
 name|out
@@ -1370,7 +1414,7 @@ argument_list|(
 name|st
 argument_list|)
 expr_stmt|;
-comment|//}
+block|}
 block|}
 specifier|private
 name|void

@@ -51,7 +51,7 @@ name|gshell
 operator|.
 name|ansi
 operator|.
-name|Buffer
+name|AnsiBuffer
 import|;
 end_import
 
@@ -67,7 +67,7 @@ name|gshell
 operator|.
 name|ansi
 operator|.
-name|Code
+name|AnsiCode
 import|;
 end_import
 
@@ -83,7 +83,7 @@ name|gshell
 operator|.
 name|ansi
 operator|.
-name|RenderWriter
+name|AnsiRenderWriter
 import|;
 end_import
 
@@ -176,7 +176,7 @@ name|PrintWriter
 name|out
 init|=
 operator|new
-name|RenderWriter
+name|AnsiRenderWriter
 argument_list|(
 name|writer
 argument_list|)
@@ -223,16 +223,16 @@ name|PrintWriter
 name|out
 init|=
 operator|new
-name|RenderWriter
+name|AnsiRenderWriter
 argument_list|(
 name|writer
 argument_list|)
 decl_stmt|;
-name|Buffer
+name|AnsiBuffer
 name|buff
 init|=
 operator|new
-name|Buffer
+name|AnsiBuffer
 argument_list|()
 decl_stmt|;
 for|for
@@ -249,7 +249,7 @@ name|attrib
 argument_list|(
 name|line
 argument_list|,
-name|Code
+name|AnsiCode
 operator|.
 name|CYAN
 argument_list|)
