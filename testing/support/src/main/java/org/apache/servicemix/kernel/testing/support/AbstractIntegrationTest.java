@@ -732,7 +732,7 @@ block|, 		}
 return|;
 block|}
 specifier|protected
-name|void
+name|Bundle
 name|installBundle
 parameter_list|(
 name|String
@@ -797,6 +797,9 @@ operator|.
 name|start
 argument_list|()
 expr_stmt|;
+return|return
+name|bundle
+return|;
 block|}
 specifier|protected
 name|Resource
