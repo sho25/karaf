@@ -59,36 +59,7 @@ name|Argument
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|geronimo
-operator|.
-name|gshell
-operator|.
-name|command
-operator|.
-name|annotation
-operator|.
-name|CommandComponent
-import|;
-end_import
-
 begin_class
-annotation|@
-name|CommandComponent
-argument_list|(
-name|id
-operator|=
-literal|"config:propset"
-argument_list|,
-name|description
-operator|=
-literal|"Set a property on the edited configuration"
-argument_list|)
 specifier|public
 class|class
 name|PropSetCommand

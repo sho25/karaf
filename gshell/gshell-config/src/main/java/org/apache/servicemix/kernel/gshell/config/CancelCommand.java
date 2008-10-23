@@ -23,24 +23,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|geronimo
-operator|.
-name|gshell
-operator|.
-name|command
-operator|.
-name|annotation
-operator|.
-name|CommandComponent
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|osgi
 operator|.
 name|service
@@ -52,17 +34,6 @@ import|;
 end_import
 
 begin_class
-annotation|@
-name|CommandComponent
-argument_list|(
-name|id
-operator|=
-literal|"config:cancel"
-argument_list|,
-name|description
-operator|=
-literal|"Abort the edition of the configuration"
-argument_list|)
 specifier|public
 class|class
 name|CancelCommand

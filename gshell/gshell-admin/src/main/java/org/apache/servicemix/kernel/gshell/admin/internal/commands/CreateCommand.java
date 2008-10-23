@@ -55,40 +55,11 @@ name|Option
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|geronimo
-operator|.
-name|gshell
-operator|.
-name|command
-operator|.
-name|annotation
-operator|.
-name|CommandComponent
-import|;
-end_import
-
 begin_comment
 comment|/**  * Creates a new servicemix instance   *  * @version $Rev: 679826 $ $Date: 2008-07-25 17:00:12 +0200 (Fri, 25 Jul 2008) $  */
 end_comment
 
 begin_class
-annotation|@
-name|CommandComponent
-argument_list|(
-name|id
-operator|=
-literal|"admin:create"
-argument_list|,
-name|description
-operator|=
-literal|"Create a new ServiceMix instance"
-argument_list|)
 specifier|public
 class|class
 name|CreateCommand
@@ -180,6 +151,8 @@ name|location
 argument_list|)
 expr_stmt|;
 return|return
+name|Result
+operator|.
 name|SUCCESS
 return|;
 block|}

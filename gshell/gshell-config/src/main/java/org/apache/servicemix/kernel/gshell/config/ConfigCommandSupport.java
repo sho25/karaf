@@ -35,11 +35,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|servicemix
+operator|.
+name|kernel
 operator|.
 name|gshell
 operator|.
-name|support
+name|core
 operator|.
 name|OsgiCommandSupport
 import|;
@@ -68,20 +70,6 @@ operator|.
 name|cm
 operator|.
 name|ConfigurationAdmin
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|cm
-operator|.
-name|Configuration
 import|;
 end_import
 

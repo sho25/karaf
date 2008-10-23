@@ -25,11 +25,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|servicemix
+operator|.
+name|kernel
 operator|.
 name|gshell
 operator|.
-name|support
+name|core
 operator|.
 name|OsgiCommandSupport
 import|;

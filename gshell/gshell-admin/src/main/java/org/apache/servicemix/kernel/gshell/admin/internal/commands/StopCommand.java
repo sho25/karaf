@@ -33,24 +33,6 @@ name|geronimo
 operator|.
 name|gshell
 operator|.
-name|command
-operator|.
-name|annotation
-operator|.
-name|CommandComponent
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|geronimo
-operator|.
-name|gshell
-operator|.
 name|clp
 operator|.
 name|Argument
@@ -58,17 +40,6 @@ import|;
 end_import
 
 begin_class
-annotation|@
-name|CommandComponent
-argument_list|(
-name|id
-operator|=
-literal|"admin:stop"
-argument_list|,
-name|description
-operator|=
-literal|"Stop an instance"
-argument_list|)
 specifier|public
 class|class
 name|StopCommand
@@ -112,6 +83,8 @@ name|stop
 argument_list|()
 expr_stmt|;
 return|return
+name|Result
+operator|.
 name|SUCCESS
 return|;
 block|}
