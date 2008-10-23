@@ -101,6 +101,15 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|System
+operator|.
+name|setProperty
+argument_list|(
+literal|"startLocalConsole"
+argument_list|,
+literal|"true"
+argument_list|)
+expr_stmt|;
 name|ClassPathXmlApplicationContext
 name|context
 init|=
@@ -116,6 +125,8 @@ block|,
 literal|"META-INF/spring/gshell-vfs.xml"
 block|,
 literal|"META-INF/spring/gshell-commands.xml"
+block|,
+literal|"org/apache/servicemix/kernel/gshell/core/gshell-test.xml"
 block|}
 argument_list|)
 decl_stmt|;
