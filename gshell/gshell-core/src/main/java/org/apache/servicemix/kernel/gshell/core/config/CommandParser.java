@@ -2112,6 +2112,13 @@ argument_list|)
 decl_stmt|;
 name|link
 operator|.
+name|addConstructorArgReference
+argument_list|(
+literal|"commandRegistry"
+argument_list|)
+expr_stmt|;
+name|link
+operator|.
 name|addConstructorArgValue
 argument_list|(
 name|child

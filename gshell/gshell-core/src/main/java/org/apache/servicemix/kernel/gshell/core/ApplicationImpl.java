@@ -123,9 +123,9 @@ name|geronimo
 operator|.
 name|gshell
 operator|.
-name|model
-operator|.
 name|application
+operator|.
+name|model
 operator|.
 name|ApplicationModel
 import|;
