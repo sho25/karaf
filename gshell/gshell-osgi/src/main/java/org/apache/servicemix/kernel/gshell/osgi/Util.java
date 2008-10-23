@@ -9,7 +9,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|servicemix
+operator|.
+name|kernel
 operator|.
 name|gshell
 operator|.

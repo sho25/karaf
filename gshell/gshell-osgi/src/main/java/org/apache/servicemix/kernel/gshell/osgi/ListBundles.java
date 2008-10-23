@@ -9,7 +9,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|servicemix
+operator|.
+name|kernel
 operator|.
 name|gshell
 operator|.
@@ -39,29 +41,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|servicemix
+operator|.
+name|kernel
 operator|.
 name|gshell
 operator|.
-name|command
-operator|.
-name|annotation
-operator|.
-name|CommandComponent
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|geronimo
-operator|.
-name|gshell
-operator|.
-name|support
+name|core
 operator|.
 name|OsgiCommandSupport
 import|;
@@ -117,22 +103,7 @@ name|StartLevel
 import|;
 end_import
 
-begin_comment
-comment|/**  * Created by IntelliJ IDEA.  * User: gnodet  * Date: Oct 3, 2007  * Time: 9:44:20 AM  * To change this template use File | Settings | File Templates.  */
-end_comment
-
 begin_class
-annotation|@
-name|CommandComponent
-argument_list|(
-name|id
-operator|=
-literal|"osgi:list-bundles"
-argument_list|,
-name|description
-operator|=
-literal|"List bundles"
-argument_list|)
 specifier|public
 class|class
 name|ListBundles
@@ -706,6 +677,8 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
+name|Result
+operator|.
 name|SUCCESS
 return|;
 block|}

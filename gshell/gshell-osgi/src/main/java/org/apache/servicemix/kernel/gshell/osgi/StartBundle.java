@@ -9,7 +9,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|servicemix
+operator|.
+name|kernel
 operator|.
 name|gshell
 operator|.
@@ -29,40 +31,7 @@ name|Bundle
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|geronimo
-operator|.
-name|gshell
-operator|.
-name|command
-operator|.
-name|annotation
-operator|.
-name|CommandComponent
-import|;
-end_import
-
-begin_comment
-comment|/**  * Created by IntelliJ IDEA.  * User: gnodet  * Date: Oct 3, 2007  * Time: 12:10:15 PM  * To change this template use File | Settings | File Templates.  */
-end_comment
-
 begin_class
-annotation|@
-name|CommandComponent
-argument_list|(
-name|id
-operator|=
-literal|"osgi:start"
-argument_list|,
-name|description
-operator|=
-literal|"Start bundle"
-argument_list|)
 specifier|public
 class|class
 name|StartBundle

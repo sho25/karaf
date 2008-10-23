@@ -113,6 +113,8 @@ index|[]
 block|{
 literal|"META-INF/spring/gshell.xml"
 block|,
+literal|"META-INF/spring/gshell-vfs.xml"
+block|,
 literal|"META-INF/spring/gshell-commands.xml"
 block|}
 argument_list|)
