@@ -457,9 +457,6 @@ specifier|public
 name|BeanContainer
 name|createChild
 parameter_list|(
-name|String
-name|s
-parameter_list|,
 name|Collection
 argument_list|<
 name|URL
@@ -476,10 +473,7 @@ block|}
 specifier|public
 name|BeanContainer
 name|createChild
-parameter_list|(
-name|String
-name|s
-parameter_list|)
+parameter_list|()
 block|{
 throw|throw
 operator|new
