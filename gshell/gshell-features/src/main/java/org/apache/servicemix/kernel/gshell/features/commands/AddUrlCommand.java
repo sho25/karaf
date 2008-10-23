@@ -17,8 +17,6 @@ name|gshell
 operator|.
 name|features
 operator|.
-name|internal
-operator|.
 name|commands
 package|;
 end_package
@@ -80,7 +78,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|RemoveUrlCommand
+name|AddUrlCommand
 extends|extends
 name|FeaturesCommandSupport
 block|{
@@ -125,7 +123,7 @@ control|)
 block|{
 name|admin
 operator|.
-name|removeRepository
+name|addRepository
 argument_list|(
 operator|new
 name|URI

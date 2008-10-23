@@ -17,8 +17,6 @@ name|gshell
 operator|.
 name|features
 operator|.
-name|internal
-operator|.
 name|commands
 package|;
 end_package
