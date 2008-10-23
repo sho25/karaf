@@ -255,6 +255,8 @@ return|return
 literal|null
 return|;
 block|}
+comment|// TODO: -n option does not exist in smx
+comment|//exec.execute("remote/rsh -u " + username + " -p " + password + " -n " + instance + " tcp://localhost:" + port);
 name|exec
 operator|.
 name|execute
@@ -266,10 +268,6 @@ operator|+
 literal|" -p "
 operator|+
 name|password
-operator|+
-literal|" -n "
-operator|+
-name|instance
 operator|+
 literal|" tcp://localhost:"
 operator|+
