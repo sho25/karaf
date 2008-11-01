@@ -210,13 +210,6 @@ name|getBundle
 argument_list|(
 literal|"org.apache.servicemix.bundles"
 argument_list|,
-literal|"org.apache.servicemix.bundles.jaxp-ri"
-argument_list|)
-block|,
-name|getBundle
-argument_list|(
-literal|"org.apache.servicemix.bundles"
-argument_list|,
 literal|"org.apache.servicemix.bundles.aopalliance"
 argument_list|)
 block|,
