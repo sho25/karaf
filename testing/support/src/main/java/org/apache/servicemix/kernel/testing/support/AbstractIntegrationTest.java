@@ -607,14 +607,7 @@ name|getBundle
 argument_list|(
 literal|"org.apache.servicemix.specs"
 argument_list|,
-literal|"org.apache.servicemix.specs.jaxp-api-1.3"
-argument_list|)
-block|,
-name|getBundle
-argument_list|(
-literal|"org.apache.servicemix.specs"
-argument_list|,
-literal|"org.apache.servicemix.specs.stax-api-1.0"
+literal|"org.apache.servicemix.specs.jaxp-api-1.4"
 argument_list|)
 block|,
 name|getBundle
