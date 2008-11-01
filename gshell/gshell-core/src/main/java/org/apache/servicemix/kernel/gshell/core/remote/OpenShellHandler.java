@@ -311,6 +311,15 @@ operator|=
 name|container
 expr_stmt|;
 comment|// Setup the shell context and related components
+if|if
+condition|(
+name|context
+operator|.
+name|io
+operator|==
+literal|null
+condition|)
+block|{
 name|context
 operator|.
 name|io
@@ -321,6 +330,16 @@ argument_list|(
 name|session
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|context
+operator|.
+name|variables
+operator|==
+literal|null
+condition|)
+block|{
 name|context
 operator|.
 name|variables
@@ -329,6 +348,7 @@ operator|new
 name|Variables
 argument_list|()
 expr_stmt|;
+block|}
 comment|// Create a new shell instance
 name|context
 operator|.
