@@ -128,6 +128,13 @@ argument_list|)
 block|,
 name|getBundle
 argument_list|(
+literal|"com.google.code.sshd"
+argument_list|,
+literal|"sshd"
+argument_list|)
+block|,
+name|getBundle
+argument_list|(
 literal|"org.apache.servicemix.kernel.gshell"
 argument_list|,
 literal|"org.apache.servicemix.kernel.gshell.core"

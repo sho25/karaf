@@ -614,13 +614,13 @@ name|getCanonicalFile
 argument_list|()
 decl_stmt|;
 name|int
-name|remoteShellPort
+name|sshPort
 init|=
 name|port
 decl_stmt|;
 if|if
 condition|(
-name|remoteShellPort
+name|sshPort
 operator|<=
 literal|0
 condition|)
@@ -637,7 +637,7 @@ argument_list|(
 literal|"AdminServiceState"
 argument_list|)
 decl_stmt|;
-name|remoteShellPort
+name|sshPort
 operator|=
 name|prefs
 operator|.
@@ -656,7 +656,7 @@ name|putInt
 argument_list|(
 literal|"port"
 argument_list|,
-name|remoteShellPort
+name|sshPort
 operator|+
 literal|1
 argument_list|)
@@ -689,7 +689,7 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
-name|remoteShellPort
+name|sshPort
 operator|=
 name|ss
 operator|.
@@ -711,12 +711,12 @@ block|{                 }
 block|}
 if|if
 condition|(
-name|remoteShellPort
+name|sshPort
 operator|<=
 literal|0
 condition|)
 block|{
-name|remoteShellPort
+name|sshPort
 operator|=
 name|defaultPortStart
 expr_stmt|;
@@ -726,7 +726,7 @@ name|println
 argument_list|(
 literal|"Creating new instance on port "
 operator|+
-name|remoteShellPort
+name|sshPort
 operator|+
 literal|" at: @|bold "
 operator|+
@@ -871,13 +871,13 @@ name|props
 operator|.
 name|put
 argument_list|(
-literal|"${servicemix.remoteShellPort}"
+literal|"${servicemix.sshPort}"
 argument_list|,
 name|Integer
 operator|.
 name|toString
 argument_list|(
-name|remoteShellPort
+name|sshPort
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -209,7 +209,7 @@ argument_list|()
 operator|.
 name|execute
 argument_list|(
-literal|"remote/rsh -u "
+literal|"remote/ssh -u "
 operator|+
 name|username
 operator|+
