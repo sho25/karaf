@@ -340,7 +340,7 @@ name|set
 argument_list|(
 literal|"gshell.prompt"
 argument_list|,
-literal|"@|bold %{gshell.user}|@%{application.localHost.hostName}:@|bold %{gshell.group.name}|> "
+literal|"@|bold %{gshell.user}|@%{application.localHost.hostName}:@|bold %{gshell.group}|> "
 argument_list|)
 expr_stmt|;
 name|shell
