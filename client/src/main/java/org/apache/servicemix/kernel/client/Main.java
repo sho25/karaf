@@ -27,7 +27,7 @@ name|code
 operator|.
 name|sshd
 operator|.
-name|SshClient
+name|ClientChannel
 import|;
 end_import
 
@@ -55,7 +55,7 @@ name|code
 operator|.
 name|sshd
 operator|.
-name|Channel
+name|SshClient
 import|;
 end_import
 
@@ -403,7 +403,7 @@ argument_list|,
 name|password
 argument_list|)
 expr_stmt|;
-name|Channel
+name|ClientChannel
 name|channel
 init|=
 name|session
@@ -452,7 +452,7 @@ name|channel
 operator|.
 name|waitFor
 argument_list|(
-name|Channel
+name|ClientChannel
 operator|.
 name|CLOSED
 argument_list|,

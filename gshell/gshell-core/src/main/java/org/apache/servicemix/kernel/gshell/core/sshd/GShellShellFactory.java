@@ -692,7 +692,7 @@ argument_list|>
 name|env
 parameter_list|)
 throws|throws
-name|Exception
+name|IOException
 block|{
 name|this
 operator|.
