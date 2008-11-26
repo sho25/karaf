@@ -274,7 +274,7 @@ name|println
 argument_list|(
 literal|" @|bold ServiceMix| ("
 operator|+
-literal|"1.0.0"
+literal|"1.1.0-SNAPSHOT"
 operator|+
 literal|")"
 argument_list|)
