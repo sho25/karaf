@@ -792,6 +792,15 @@ name|copyResourceToDir
 argument_list|(
 name|serviceMixBase
 argument_list|,
+literal|"etc/org.apache.servicemix.users.cfg"
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+name|copyResourceToDir
+argument_list|(
+name|serviceMixBase
+argument_list|,
 literal|"etc/org.ops4j.pax.logging.cfg"
 argument_list|,
 literal|true
