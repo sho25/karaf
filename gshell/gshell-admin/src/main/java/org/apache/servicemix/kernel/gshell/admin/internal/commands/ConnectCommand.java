@@ -209,21 +209,19 @@ argument_list|()
 operator|.
 name|execute
 argument_list|(
-literal|"remote/ssh -u "
+literal|"remote/ssh -l "
 operator|+
 name|username
 operator|+
-literal|" -p "
+literal|" -P "
 operator|+
 name|password
 operator|+
-literal|" -n "
-operator|+
-name|instance
-operator|+
-literal|" tcp://localhost:"
+literal|" -p "
 operator|+
 name|port
+operator|+
+literal|" localhost"
 argument_list|)
 expr_stmt|;
 return|return
