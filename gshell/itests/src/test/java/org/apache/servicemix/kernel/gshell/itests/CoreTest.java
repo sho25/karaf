@@ -88,6 +88,13 @@ name|getBundle
 argument_list|(
 literal|"org.apache.servicemix.bundles"
 argument_list|,
+literal|"org.apache.servicemix.bundles.jline"
+argument_list|)
+block|,
+name|getBundle
+argument_list|(
+literal|"org.apache.servicemix.bundles"
+argument_list|,
 literal|"org.apache.servicemix.bundles.commons-httpclient"
 argument_list|)
 block|,
