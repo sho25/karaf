@@ -780,10 +780,7 @@ if|if
 condition|(
 name|repositories
 operator|.
-name|values
-argument_list|()
-operator|.
-name|contains
+name|containsKey
 argument_list|(
 name|uri
 argument_list|)
