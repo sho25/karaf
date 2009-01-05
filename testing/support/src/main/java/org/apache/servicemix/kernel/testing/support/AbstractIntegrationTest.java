@@ -266,6 +266,15 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
+literal|"servicemix.name"
+argument_list|,
+literal|"root"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|setProperty
+argument_list|(
 literal|"servicemix.home"
 argument_list|,
 name|f

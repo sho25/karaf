@@ -29,52 +29,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|junit
-operator|.
-name|Test
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertFalse
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|apache
 operator|.
 name|servicemix
@@ -87,13 +41,23 @@ name|ScriptUtils
 import|;
 end_import
 
+begin_import
+import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
 name|ProcessTest
+extends|extends
+name|TestCase
 block|{
-annotation|@
-name|Test
 specifier|public
 name|void
 name|testCreate
@@ -402,7 +366,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*     @Test     @Ignore("When the process creation fails, no error is reported by the script")     public void testFailure() throws Exception {         ProcessBuilder builder = ProcessBuilderFactory.newInstance().newBuilder();         Process p = builder.command("ec").start();         fail("An exception should have been thrown");     }     */
+comment|/*      * When the process creation fails, no error is reported by the script      *      public void testFailure() throws Exception {         ProcessBuilder builder = ProcessBuilderFactory.newInstance().newBuilder();         Process p = builder.command("ec").start();         fail("An exception should have been thrown");     }     */
 block|}
 end_class
 
