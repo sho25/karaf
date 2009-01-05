@@ -792,7 +792,7 @@ name|copyResourceToDir
 argument_list|(
 name|serviceMixBase
 argument_list|,
-literal|"etc/org.apache.servicemix.users.cfg"
+literal|"etc/users.properties"
 argument_list|,
 literal|true
 argument_list|)
