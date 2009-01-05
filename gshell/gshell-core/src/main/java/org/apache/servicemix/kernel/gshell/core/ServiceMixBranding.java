@@ -131,6 +131,10 @@ block|,
 literal|"|____/ \\___|_|    \\_/ |_|\\___\\___|_|  |_|_/_/\\_\\"
 block|,     }
 decl_stmt|;
+specifier|private
+name|String
+name|prompt
+decl_stmt|;
 specifier|public
 name|String
 name|getName
@@ -302,6 +306,30 @@ operator|.
 name|toString
 argument_list|()
 return|;
+block|}
+specifier|public
+name|String
+name|getPrompt
+parameter_list|()
+block|{
+return|return
+name|prompt
+return|;
+block|}
+specifier|public
+name|void
+name|setPrompt
+parameter_list|(
+name|String
+name|prompt
+parameter_list|)
+block|{
+name|this
+operator|.
+name|prompt
+operator|=
+name|prompt
+expr_stmt|;
 block|}
 block|}
 end_class

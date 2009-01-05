@@ -338,22 +338,7 @@ argument_list|()
 operator|.
 name|set
 argument_list|(
-literal|"gshell.prompt"
-argument_list|,
-literal|"@|bold %{gshell.user}|@%{application.localHost.hostName}:@|bold %{gshell.group}|> "
-argument_list|)
-expr_stmt|;
-name|shell
-operator|.
-name|getContext
-argument_list|()
-operator|.
-name|getVariables
-argument_list|()
-operator|.
-name|set
-argument_list|(
-literal|"gshell.user"
+literal|"gshell.username"
 argument_list|,
 literal|"smx"
 argument_list|)
