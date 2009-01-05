@@ -114,6 +114,15 @@ argument_list|,
 literal|"true"
 argument_list|)
 expr_stmt|;
+name|System
+operator|.
+name|setProperty
+argument_list|(
+literal|"servicemix.name"
+argument_list|,
+literal|"root"
+argument_list|)
+expr_stmt|;
 name|ClassPathXmlApplicationContext
 name|context
 init|=
