@@ -78,18 +78,14 @@ argument_list|(
 literal|"java.home"
 argument_list|)
 argument_list|,
-literal|"bin/java"
-operator|+
-operator|(
 name|ScriptUtils
 operator|.
 name|isWindows
 argument_list|()
 condition|?
-literal|".exe"
+literal|"bin\\java.exe"
 else|:
-literal|""
-operator|)
+literal|"bin/java"
 argument_list|)
 operator|.
 name|getCanonicalPath
@@ -116,6 +112,13 @@ operator|.
 name|append
 argument_list|(
 name|javaPath
+argument_list|)
+expr_stmt|;
+name|command
+operator|.
+name|append
+argument_list|(
+literal|" -Dprop=\"key\""
 argument_list|)
 expr_stmt|;
 name|command
