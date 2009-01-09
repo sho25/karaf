@@ -34,6 +34,12 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+name|boolean
+name|isAlive
+parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
 block|}
 end_interface
 
