@@ -305,6 +305,24 @@ name|Autowired
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|servicemix
+operator|.
+name|kernel
+operator|.
+name|gshell
+operator|.
+name|core
+operator|.
+name|ServiceMixBranding
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -313,7 +331,7 @@ implements|implements
 name|CommandAction
 block|{
 specifier|private
-name|Branding
+name|ServiceMixBranding
 name|branding
 decl_stmt|;
 specifier|private
@@ -367,7 +385,7 @@ decl_stmt|;
 specifier|public
 name|InfoAction
 parameter_list|(
-name|Branding
+name|ServiceMixBranding
 name|branding
 parameter_list|)
 block|{
@@ -484,7 +502,7 @@ argument_list|)
 expr_stmt|;
 name|printValue
 argument_list|(
-literal|"ServiceMix version"
+literal|"ServiceMix kernel version"
 argument_list|,
 name|maxNameLen
 argument_list|,
@@ -497,6 +515,41 @@ name|getVersion
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|branding
+operator|.
+name|getApplicationName
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|branding
+operator|.
+name|getApplicationVersion
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|printValue
+argument_list|(
+name|branding
+operator|.
+name|getApplicationName
+argument_list|()
+operator|+
+literal|" version"
+argument_list|,
+name|maxNameLen
+argument_list|,
+name|branding
+operator|.
+name|getApplicationVersion
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 name|io
 operator|.
 name|out
