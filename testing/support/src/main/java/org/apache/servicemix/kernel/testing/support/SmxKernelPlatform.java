@@ -415,7 +415,7 @@ specifier|final
 name|String
 name|FELIX_CONF_FILE
 init|=
-literal|"felix.config.properties"
+literal|"config.properties"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -423,7 +423,7 @@ specifier|final
 name|String
 name|FELIX_CONFIG_PROPERTY
 init|=
-literal|"felix.config.properties"
+literal|"config.properties"
 decl_stmt|;
 specifier|private
 specifier|static
