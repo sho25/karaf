@@ -502,7 +502,7 @@ argument_list|)
 expr_stmt|;
 name|printValue
 argument_list|(
-literal|"ServiceMix kernel version"
+literal|"ServiceMix Kernel version"
 argument_list|,
 name|maxNameLen
 argument_list|,
