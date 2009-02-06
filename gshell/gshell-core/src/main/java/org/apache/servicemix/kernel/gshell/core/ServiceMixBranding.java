@@ -232,7 +232,7 @@ name|kernelBanner
 expr_stmt|;
 name|displayName
 operator|=
-literal|"Servicemix Kernel"
+literal|"ServiceMix Kernel"
 expr_stmt|;
 name|displayLocation
 operator|=
