@@ -222,13 +222,6 @@ operator|.
 name|err
 argument_list|)
 decl_stmt|;
-name|bundles
-operator|.
-name|add
-argument_list|(
-name|bundle
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|bundle
@@ -236,6 +229,13 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|bundles
+operator|.
+name|add
+argument_list|(
+name|bundle
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|sb
