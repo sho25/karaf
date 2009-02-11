@@ -49,6 +49,10 @@ interface|interface
 name|Feature
 block|{
 name|String
+name|getId
+parameter_list|()
+function_decl|;
+name|String
 name|getName
 parameter_list|()
 function_decl|;
