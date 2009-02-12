@@ -366,7 +366,20 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-comment|// Ignore
+name|LOGGER
+operator|.
+name|error
+argument_list|(
+literal|"Unable to parse deployed file "
+operator|+
+name|artifact
+operator|.
+name|getAbsolutePath
+argument_list|()
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 literal|false
@@ -439,7 +452,7 @@ parameter_list|)
 block|{
 name|LOGGER
 operator|.
-name|info
+name|error
 argument_list|(
 literal|"Unable to build spring application bundle"
 argument_list|,
