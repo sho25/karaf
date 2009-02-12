@@ -640,12 +640,6 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
-throw|throw
-name|e
-throw|;
-block|}
 block|}
 catch|catch
 parameter_list|(
