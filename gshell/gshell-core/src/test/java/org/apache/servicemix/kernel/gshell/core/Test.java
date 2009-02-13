@@ -412,7 +412,7 @@ literal|"META-INF/spring/gshell.xml"
 block|,
 literal|"META-INF/spring/gshell-vfs.xml"
 block|,
-literal|"META-INF/spring/gshell-commands.xml"
+literal|"org/apache/servicemix/kernel/gshell/core/gshell-test-commands.xml"
 block|,
 literal|"org/apache/servicemix/kernel/gshell/core/gshell-test.xml"
 block|}
@@ -556,7 +556,7 @@ literal|"META-INF/spring/gshell.xml"
 block|,
 literal|"META-INF/spring/gshell-vfs.xml"
 block|,
-literal|"META-INF/spring/gshell-commands.xml"
+literal|"org/apache/servicemix/kernel/gshell/core/gshell-test-commands.xml"
 block|,
 literal|"org/apache/servicemix/kernel/gshell/core/gshell-test.xml"
 block|}
@@ -714,7 +714,7 @@ literal|"META-INF/spring/gshell.xml"
 block|,
 literal|"META-INF/spring/gshell-vfs.xml"
 block|,
-literal|"META-INF/spring/gshell-commands.xml"
+literal|"org/apache/servicemix/kernel/gshell/core/gshell-test-commands.xml"
 block|,
 literal|"org/apache/servicemix/kernel/gshell/core/gshell-test.xml"
 block|}
