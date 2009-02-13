@@ -190,6 +190,13 @@ literal|"org.apache.servicemix.kernel.gshell"
 argument_list|,
 literal|"org.apache.servicemix.kernel.gshell.core"
 argument_list|)
+block|,
+name|getBundle
+argument_list|(
+literal|"org.apache.servicemix.kernel.gshell"
+argument_list|,
+literal|"org.apache.servicemix.kernel.gshell.osgi"
+argument_list|)
 block|}
 return|;
 block|}
@@ -363,7 +370,7 @@ name|shell
 operator|.
 name|execute
 argument_list|(
-literal|"vfs"
+literal|"osgi"
 argument_list|)
 expr_stmt|;
 name|shell
@@ -381,6 +388,7 @@ literal|".."
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * TODO: This test seems to fail, there must be a timing issue somewhere      *     public void testCommandGroupAfterInstall() throws Exception {         Bundle b = installBundle("org.apache.servicemix.kernel.gshell", "org.apache.servicemix.kernel.gshell.log", null, "jar");         Shell shell = getOsgiService(Shell.class);         shell.execute("log");         shell.execute("help");         shell.execute("..");     }      */
 block|}
 end_class
 
