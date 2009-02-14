@@ -71,6 +71,34 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|Log
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|LogFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|osgi
 operator|.
 name|framework
@@ -165,6 +193,20 @@ name|org
 operator|.
 name|osgi
 operator|.
+name|service
+operator|.
+name|prefs
+operator|.
+name|PreferencesService
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
 name|util
 operator|.
 name|tracker
@@ -174,7 +216,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Inspired by<a href="http://www.aqute.biz/Code/FileInstall">FileInstall</a> by Peter Kriens.  *   * @version $Revision: 1.1 $  */
+comment|/**  * Inspired by<a href="http://www.aqute.biz/Code/FileInstall">FileInstall</a>  * by Peter Kriens.  *   * @version $Revision: 1.1 $  */
 end_comment
 
 begin_class
@@ -187,6 +229,21 @@ implements|,
 name|ManagedServiceFactory
 block|{
 specifier|private
+specifier|static
+specifier|final
+name|Log
+name|LOGGER
+init|=
+name|LogFactory
+operator|.
+name|getLog
+argument_list|(
+name|FileMonitorActivator
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+specifier|private
 name|BundleContext
 name|context
 decl_stmt|;
@@ -197,6 +254,10 @@ decl_stmt|;
 specifier|private
 name|ServiceTracker
 name|configurationAdminTracker
+decl_stmt|;
+specifier|private
+name|ServiceTracker
+name|preferenceServiceTracker
 decl_stmt|;
 specifier|private
 name|Map
@@ -217,7 +278,7 @@ argument_list|>
 argument_list|()
 decl_stmt|;
 comment|// BundleActivator interface
-comment|//-------------------------------------------------------------------------
+comment|// -------------------------------------------------------------------------
 specifier|public
 name|void
 name|start
@@ -313,6 +374,28 @@ operator|.
 name|open
 argument_list|()
 expr_stmt|;
+name|preferenceServiceTracker
+operator|=
+operator|new
+name|ServiceTracker
+argument_list|(
+name|context
+argument_list|,
+name|PreferencesService
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|null
+argument_list|)
+expr_stmt|;
+name|preferenceServiceTracker
+operator|.
+name|open
+argument_list|()
+expr_stmt|;
 name|Hashtable
 name|initialProperties
 init|=
@@ -382,6 +465,7 @@ control|)
 block|{
 try|try
 block|{
+comment|// stop the monitor
 name|monitor
 operator|.
 name|stop
@@ -404,6 +488,11 @@ operator|.
 name|clear
 argument_list|()
 expr_stmt|;
+name|preferenceServiceTracker
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
 name|configurationAdminTracker
 operator|.
 name|close
@@ -416,7 +505,7 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|// ManagedServiceFactory interface
-comment|//-------------------------------------------------------------------------
+comment|// -------------------------------------------------------------------------
 specifier|public
 name|String
 name|getName
@@ -453,6 +542,8 @@ argument_list|(
 name|this
 argument_list|,
 name|properties
+argument_list|,
+name|pid
 argument_list|)
 decl_stmt|;
 name|fileMonitors
@@ -503,7 +594,7 @@ expr_stmt|;
 block|}
 block|}
 comment|// Properties
-comment|//-------------------------------------------------------------------------
+comment|// -------------------------------------------------------------------------
 specifier|public
 name|BundleContext
 name|getContext
@@ -547,8 +638,17 @@ name|getService
 argument_list|()
 return|;
 block|}
+specifier|public
+name|ServiceTracker
+name|getPreferenceServiceTracker
+parameter_list|()
+block|{
+return|return
+name|preferenceServiceTracker
+return|;
+block|}
 comment|// Implementation methods
-comment|//-------------------------------------------------------------------------
+comment|// -------------------------------------------------------------------------
 specifier|protected
 name|void
 name|setPropertiesFromContext

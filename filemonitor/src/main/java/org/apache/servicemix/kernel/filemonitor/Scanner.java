@@ -105,7 +105,97 @@ name|java
 operator|.
 name|util
 operator|.
-name|*
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Timer
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|TimerTask
 import|;
 end_import
 
@@ -138,7 +228,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Scanner  *<p/>  * Utility for scanning a directory for added, removed and changed  * files and reporting these events via registered Listeners.  *<p/>  * From the<a href="http://jetty.codehaus.org/">Jetty Util project</a>  *  * @version $Revision: 1.1 $  */
+comment|/**  * Scanner  *<p/>  * Utility for scanning a directory for added, removed and changed files and  * reporting these events via registered Listeners.  *<p/>  * From the<a href="http://jetty.codehaus.org/">Jetty Util project</a>  *   * @version $Revision: 1.1 $  */
 end_comment
 
 begin_class
@@ -192,9 +282,13 @@ name|Long
 argument_list|>
 name|_prevScan
 init|=
-name|Collections
-operator|.
-name|emptyMap
+operator|new
+name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Long
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -296,7 +390,7 @@ specifier|public
 name|Scanner
 parameter_list|()
 block|{     }
-comment|/**      * Get the scan interval      *      * @return interval between scans in millis      */
+comment|/**      * Get the scan interval      *       * @return interval between scans in millis      */
 specifier|public
 name|long
 name|getScanInterval
@@ -306,7 +400,7 @@ return|return
 name|_scanInterval
 return|;
 block|}
-comment|/**      * Set the scan interval      *      * @param scanInterval pause between scans in millis      */
+comment|/**      * Set the scan interval      *       * @param scanInterval pause between scans in millis      */
 specifier|public
 specifier|synchronized
 name|void
@@ -353,7 +447,7 @@ literal|true
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Set the location of the directory to scan.      *      * @param dir      * @deprecated use setScanDirs(List dirs) instead      */
+comment|/**      * Set the location of the directory to scan.      *       * @param dir      * @deprecated use setScanDirs(List dirs) instead      */
 specifier|public
 name|void
 name|setScanDir
@@ -379,7 +473,7 @@ name|dir
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Get the location of the directory to scan      *      * @return      * @deprecated use getScanDirs() instead      */
+comment|/**      * Get the location of the directory to scan      *       * @return      * @deprecated use getScanDirs() instead      */
 specifier|public
 name|File
 name|getScanDir
@@ -433,7 +527,7 @@ return|return
 name|_scanDirs
 return|;
 block|}
-comment|/**      * Apply a filter to files found in the scan directory.      * Only files matching the filter will be reported as added/changed/removed.      *      * @param filter      */
+comment|/**      * Apply a filter to files found in the scan directory. Only files matching      * the filter will be reported as added/changed/removed.      *       * @param filter      */
 specifier|public
 name|void
 name|setFilenameFilter
@@ -449,7 +543,7 @@ operator|=
 name|filter
 expr_stmt|;
 block|}
-comment|/**      * Get any filter applied to files in the scan dir.      *      * @return      */
+comment|/**      * Get any filter applied to files in the scan dir.      *       * @return      */
 specifier|public
 name|FilenameFilter
 name|getFilenameFilter
@@ -459,7 +553,7 @@ return|return
 name|_filter
 return|;
 block|}
-comment|/**      * Whether or not an initial scan will report all files as being      * added.      *      * @param reportExisting if true, all files found on initial scan will be      *                       reported as being added, otherwise not      */
+comment|/**      * Whether or not an initial scan will report all files as being added.      *       * @param reportExisting if true, all files found on initial scan will be      *            reported as being added, otherwise not      */
 specifier|public
 name|void
 name|setReportExistingFilesOnStartup
@@ -475,7 +569,7 @@ operator|=
 name|reportExisting
 expr_stmt|;
 block|}
-comment|/**      * Add an added/removed/changed listener      *      * @param listener      */
+comment|/**      * Add an added/removed/changed listener      *       * @param listener      */
 specifier|public
 specifier|synchronized
 name|void
@@ -502,7 +596,7 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Remove a registered listener      *      * @param listener the Listener to be removed      */
+comment|/**      * Remove a registered listener      *       * @param listener the Listener to be removed      */
 specifier|public
 specifier|synchronized
 name|void
@@ -559,7 +653,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|//just register the list of existing files and only report changes
+comment|// just register the list of existing files and only report changes
 name|_prevScan
 operator|=
 name|scanFiles
@@ -748,7 +842,7 @@ operator|=
 name|currentScan
 expr_stmt|;
 block|}
-comment|/**      * Recursively scan all files in the designated directories.      *      * @return Map of name of file to last modified time      */
+comment|/**      * Recursively scan all files in the designated directories.      *       * @return Map of name of file to last modified time      */
 specifier|public
 name|Map
 argument_list|<
@@ -849,7 +943,7 @@ return|return
 name|scanInfo
 return|;
 block|}
-comment|/**      * Report the adds/changes/removes to the registered listeners      *      * @param currentScan the info from the most recent pass      * @param oldScan     info from the previous pass      */
+comment|/**      * Report the adds/changes/removes to the registered listeners      *       * @param currentScan the info from the most recent pass      * @param oldScan info from the previous pass      */
 specifier|public
 name|void
 name|reportDifferences
@@ -1144,7 +1238,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Get last modified time on a single file or recurse if      * the file is a directory.      *      * @param f           file or directory      * @param scanInfoMap map of filenames to last modified times      */
+comment|/**      * Get last modified time on a single file or recurse if the file is a      * directory.      *       * @param f file or directory      * @param scanInfoMap map of filenames to last modified times      */
 specifier|private
 name|void
 name|scanFile
@@ -1310,7 +1404,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Report a file addition to the registered FileAddedListeners      *      * @param filename      */
+comment|/**      * Report a file addition to the registered FileAddedListeners      *       * @param filename      */
 specifier|private
 name|void
 name|reportAddition
@@ -1399,7 +1493,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Report a file removal to the FileRemovedListeners      *      * @param filename      */
+comment|/**      * Report a file removal to the FileRemovedListeners      *       * @param filename      */
 specifier|private
 name|void
 name|reportRemoval
@@ -1488,7 +1582,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Report a file change to the FileChangedListeners      *      * @param filename      */
+comment|/**      * Report a file change to the FileChangedListeners      *       * @param filename      */
 specifier|private
 name|void
 name|reportChange
@@ -1666,6 +1760,82 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+block|}
+specifier|protected
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Long
+argument_list|>
+name|getLastScanResults
+parameter_list|()
+block|{
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Long
+argument_list|>
+name|result
+init|=
+operator|new
+name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Long
+argument_list|>
+argument_list|()
+decl_stmt|;
+synchronized|synchronized
+init|(
+name|_prevScan
+init|)
+block|{
+name|result
+operator|.
+name|putAll
+argument_list|(
+name|_prevScan
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|result
+return|;
+block|}
+specifier|protected
+name|void
+name|setLastScanResults
+parameter_list|(
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Long
+argument_list|>
+name|results
+parameter_list|)
+block|{
+synchronized|synchronized
+init|(
+name|_prevScan
+init|)
+block|{
+name|_prevScan
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
+name|_prevScan
+operator|.
+name|putAll
+argument_list|(
+name|results
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}
