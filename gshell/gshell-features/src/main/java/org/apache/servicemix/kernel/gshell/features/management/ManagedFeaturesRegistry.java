@@ -450,15 +450,6 @@ parameter_list|)
 block|{
 try|try
 block|{
-name|LOG
-operator|.
-name|info
-argument_list|(
-literal|"Registering feature: "
-operator|+
-name|feature
-argument_list|)
-expr_stmt|;
 name|ManagedFeature
 name|mf
 init|=
@@ -532,15 +523,6 @@ parameter_list|)
 block|{
 try|try
 block|{
-name|LOG
-operator|.
-name|info
-argument_list|(
-literal|"Unregistering feature: "
-operator|+
-name|feature
-argument_list|)
-expr_stmt|;
 name|ManagedFeature
 name|mf
 init|=
@@ -602,15 +584,6 @@ parameter_list|)
 block|{
 try|try
 block|{
-name|LOG
-operator|.
-name|info
-argument_list|(
-literal|"Registering installed feature: "
-operator|+
-name|feature
-argument_list|)
-expr_stmt|;
 name|ManagedFeature
 name|mf
 init|=
@@ -686,15 +659,6 @@ parameter_list|)
 block|{
 try|try
 block|{
-name|LOG
-operator|.
-name|info
-argument_list|(
-literal|"Unregistering installed feature: "
-operator|+
-name|feature
-argument_list|)
-expr_stmt|;
 name|ManagedFeature
 name|mf
 init|=
@@ -758,15 +722,6 @@ parameter_list|)
 block|{
 try|try
 block|{
-name|LOG
-operator|.
-name|info
-argument_list|(
-literal|"Registering repository: "
-operator|+
-name|repository
-argument_list|)
-expr_stmt|;
 name|ManagedRepository
 name|mr
 init|=
@@ -861,15 +816,6 @@ parameter_list|)
 block|{
 try|try
 block|{
-name|LOG
-operator|.
-name|info
-argument_list|(
-literal|"Unregistering repository: "
-operator|+
-name|repository
-argument_list|)
-expr_stmt|;
 name|ManagedRepository
 name|mr
 init|=

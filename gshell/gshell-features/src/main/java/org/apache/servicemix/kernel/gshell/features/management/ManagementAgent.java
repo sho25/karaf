@@ -457,13 +457,6 @@ parameter_list|)
 block|{
 comment|// If this is not a "normal" MBean, then try to deploy it using JMX
 comment|// annotations
-name|LOG
-operator|.
-name|info
-argument_list|(
-literal|"It's not a normal MBean"
-argument_list|)
-expr_stmt|;
 name|ModelMBeanInfo
 name|mbi
 init|=
