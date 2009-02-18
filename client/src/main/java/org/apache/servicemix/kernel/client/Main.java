@@ -306,6 +306,13 @@ argument_list|(
 literal|"If no commands are specified, the client will be put in an interactive mode"
 argument_list|)
 expr_stmt|;
+name|System
+operator|.
+name|exit
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
