@@ -209,6 +209,13 @@ argument_list|>
 name|properties
 parameter_list|)
 block|{
+if|if
+condition|(
+name|realms
+operator|!=
+literal|null
+condition|)
+block|{
 name|realms
 operator|.
 name|remove
@@ -216,6 +223,7 @@ argument_list|(
 name|realm
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|AppConfigurationEntry
