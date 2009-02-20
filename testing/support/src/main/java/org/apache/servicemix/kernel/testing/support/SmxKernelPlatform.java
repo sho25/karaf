@@ -403,6 +403,18 @@ name|ServiceRegistration
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
+name|Constants
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -441,13 +453,13 @@ name|FELIX_CONFIG_PROPERTY
 init|=
 literal|"config.properties"
 decl_stmt|;
-specifier|private
-specifier|static
+specifier|public
 specifier|final
+specifier|static
 name|String
-name|FELIX_PROFILE_DIR_PROPERTY
+name|FRAMEWORK_STORAGE
 init|=
-literal|"felix.cache.profiledir"
+literal|"org.osgi.framework.storage"
 decl_stmt|;
 specifier|private
 name|BundleContext
@@ -1149,7 +1161,7 @@ name|props
 operator|.
 name|setProperty
 argument_list|(
-name|FELIX_PROFILE_DIR_PROPERTY
+name|FRAMEWORK_STORAGE
 argument_list|,
 name|this
 operator|.
