@@ -802,7 +802,7 @@ expr_stmt|;
 block|}
 block|}
 specifier|protected
-name|void
+name|RepositoryImpl
 name|internalAddRepository
 parameter_list|(
 name|URI
@@ -840,6 +840,9 @@ name|features
 operator|=
 literal|null
 expr_stmt|;
+return|return
+name|repo
+return|;
 block|}
 specifier|public
 name|void
