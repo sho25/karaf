@@ -25,7 +25,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Enumeration
+name|Dictionary
 import|;
 end_import
 
@@ -35,7 +35,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Dictionary
+name|Enumeration
 import|;
 end_import
 
@@ -43,13 +43,15 @@ begin_import
 import|import
 name|org
 operator|.
-name|osgi
+name|apache
 operator|.
-name|service
+name|geronimo
 operator|.
-name|cm
+name|gshell
 operator|.
-name|ConfigurationAdmin
+name|clp
+operator|.
+name|Argument
 import|;
 end_import
 
@@ -71,15 +73,13 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|osgi
 operator|.
-name|geronimo
+name|service
 operator|.
-name|gshell
+name|cm
 operator|.
-name|clp
-operator|.
-name|Argument
+name|ConfigurationAdmin
 import|;
 end_import
 

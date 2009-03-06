@@ -23,9 +23,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|util
+name|net
 operator|.
-name|Arrays
+name|URL
 import|;
 end_import
 
@@ -35,7 +35,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Map
+name|Arrays
 import|;
 end_import
 
@@ -53,9 +53,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|net
+name|util
 operator|.
-name|URL
+name|Map
 import|;
 end_import
 
@@ -101,9 +101,11 @@ name|org
 operator|.
 name|springframework
 operator|.
-name|context
+name|beans
 operator|.
-name|ApplicationContext
+name|factory
+operator|.
+name|NoSuchBeanDefinitionException
 import|;
 end_import
 
@@ -113,11 +115,9 @@ name|org
 operator|.
 name|springframework
 operator|.
-name|beans
+name|context
 operator|.
-name|factory
-operator|.
-name|NoSuchBeanDefinitionException
+name|ApplicationContext
 import|;
 end_import
 

@@ -27,7 +27,7 @@ name|javax
 operator|.
 name|management
 operator|.
-name|ObjectName
+name|MalformedObjectNameException
 import|;
 end_import
 
@@ -37,7 +37,7 @@ name|javax
 operator|.
 name|management
 operator|.
-name|MalformedObjectNameException
+name|ObjectName
 import|;
 end_import
 

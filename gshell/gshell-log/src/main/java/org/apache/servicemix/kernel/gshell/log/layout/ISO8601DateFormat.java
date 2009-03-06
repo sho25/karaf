@@ -25,9 +25,19 @@ begin_import
 import|import
 name|java
 operator|.
-name|util
+name|text
 operator|.
-name|Calendar
+name|FieldPosition
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|text
+operator|.
+name|ParsePosition
 import|;
 end_import
 
@@ -37,7 +47,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|TimeZone
+name|Calendar
 import|;
 end_import
 
@@ -55,19 +65,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
+name|util
 operator|.
-name|FieldPosition
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|text
-operator|.
-name|ParsePosition
+name|TimeZone
 import|;
 end_import
 

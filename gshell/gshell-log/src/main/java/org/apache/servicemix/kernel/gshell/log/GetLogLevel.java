@@ -25,7 +25,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|List
+name|Dictionary
 import|;
 end_import
 
@@ -35,7 +35,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Dictionary
+name|Enumeration
 import|;
 end_import
 
@@ -56,16 +56,6 @@ operator|.
 name|util
 operator|.
 name|TreeMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Enumeration
 import|;
 end_import
 
@@ -125,7 +115,7 @@ name|service
 operator|.
 name|cm
 operator|.
-name|ConfigurationAdmin
+name|Configuration
 import|;
 end_import
 
@@ -139,7 +129,7 @@ name|service
 operator|.
 name|cm
 operator|.
-name|Configuration
+name|ConfigurationAdmin
 import|;
 end_import
 

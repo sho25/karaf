@@ -29,7 +29,7 @@ name|java
 operator|.
 name|net
 operator|.
-name|URL
+name|MalformedURLException
 import|;
 end_import
 
@@ -39,7 +39,7 @@ name|java
 operator|.
 name|net
 operator|.
-name|MalformedURLException
+name|URL
 import|;
 end_import
 
@@ -97,9 +97,7 @@ name|vfs
 operator|.
 name|provider
 operator|.
-name|url
-operator|.
-name|UrlFileObject
+name|URLFileName
 import|;
 end_import
 
@@ -115,7 +113,9 @@ name|vfs
 operator|.
 name|provider
 operator|.
-name|URLFileName
+name|url
+operator|.
+name|UrlFileObject
 import|;
 end_import
 

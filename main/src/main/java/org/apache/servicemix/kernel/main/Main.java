@@ -101,6 +101,26 @@ begin_import
 import|import
 name|java
 operator|.
+name|security
+operator|.
+name|Provider
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|security
+operator|.
+name|Security
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|ArrayList
@@ -191,26 +211,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|security
-operator|.
-name|Security
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|security
-operator|.
-name|Provider
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -251,7 +251,7 @@ name|framework
 operator|.
 name|util
 operator|.
-name|StringMap
+name|FelixConstants
 import|;
 end_import
 
@@ -267,7 +267,7 @@ name|framework
 operator|.
 name|util
 operator|.
-name|FelixConstants
+name|StringMap
 import|;
 end_import
 
@@ -333,7 +333,7 @@ name|osgi
 operator|.
 name|framework
 operator|.
-name|ServiceRegistration
+name|Constants
 import|;
 end_import
 
@@ -357,7 +357,7 @@ name|osgi
 operator|.
 name|framework
 operator|.
-name|Constants
+name|ServiceRegistration
 import|;
 end_import
 

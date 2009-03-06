@@ -31,7 +31,7 @@ name|javax
 operator|.
 name|servlet
 operator|.
-name|ServletContextListener
+name|ServletContextEvent
 import|;
 end_import
 
@@ -41,7 +41,7 @@ name|javax
 operator|.
 name|servlet
 operator|.
-name|ServletContextEvent
+name|ServletContextListener
 import|;
 end_import
 

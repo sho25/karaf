@@ -25,7 +25,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|List
+name|Iterator
 import|;
 end_import
 
@@ -35,7 +35,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
+name|List
 import|;
 end_import
 
@@ -49,27 +49,9 @@ name|geronimo
 operator|.
 name|gshell
 operator|.
-name|wisdom
+name|clp
 operator|.
-name|command
-operator|.
-name|AliasCommand
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|geronimo
-operator|.
-name|gshell
-operator|.
-name|commandline
-operator|.
-name|CommandLineExecutor
+name|Argument
 import|;
 end_import
 
@@ -117,7 +99,7 @@ name|gshell
 operator|.
 name|command
 operator|.
-name|Variables
+name|CommandResult
 import|;
 end_import
 
@@ -133,7 +115,7 @@ name|gshell
 operator|.
 name|command
 operator|.
-name|CommandResult
+name|Variables
 import|;
 end_import
 
@@ -147,9 +129,25 @@ name|geronimo
 operator|.
 name|gshell
 operator|.
-name|clp
+name|commandline
 operator|.
-name|Argument
+name|CommandLineExecutor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|geronimo
+operator|.
+name|gshell
+operator|.
+name|io
+operator|.
+name|IO
 import|;
 end_import
 
@@ -165,7 +163,7 @@ name|gshell
 operator|.
 name|shell
 operator|.
-name|ShellContextHolder
+name|Shell
 import|;
 end_import
 
@@ -197,7 +195,7 @@ name|gshell
 operator|.
 name|shell
 operator|.
-name|Shell
+name|ShellContextHolder
 import|;
 end_import
 
@@ -211,9 +209,11 @@ name|geronimo
 operator|.
 name|gshell
 operator|.
-name|io
+name|wisdom
 operator|.
-name|IO
+name|command
+operator|.
+name|AliasCommand
 import|;
 end_import
 

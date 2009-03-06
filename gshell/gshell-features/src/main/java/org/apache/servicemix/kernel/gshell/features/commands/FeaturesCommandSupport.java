@@ -33,9 +33,9 @@ name|kernel
 operator|.
 name|gshell
 operator|.
-name|features
+name|core
 operator|.
-name|FeaturesService
+name|OsgiCommandSupport
 import|;
 end_import
 
@@ -51,9 +51,9 @@ name|kernel
 operator|.
 name|gshell
 operator|.
-name|core
+name|features
 operator|.
-name|OsgiCommandSupport
+name|FeaturesService
 import|;
 end_import
 

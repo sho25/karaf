@@ -39,9 +39,9 @@ name|geronimo
 operator|.
 name|gshell
 operator|.
-name|registry
+name|command
 operator|.
-name|AliasRegistry
+name|Alias
 import|;
 end_import
 
@@ -55,9 +55,9 @@ name|geronimo
 operator|.
 name|gshell
 operator|.
-name|command
+name|registry
 operator|.
-name|Alias
+name|AliasRegistry
 import|;
 end_import
 

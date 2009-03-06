@@ -93,17 +93,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Set
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|TreeSet
+name|Enumeration
 import|;
 end_import
 
@@ -123,7 +113,17 @@ name|java
 operator|.
 name|util
 operator|.
-name|Enumeration
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|TreeSet
 import|;
 end_import
 
@@ -333,7 +333,7 @@ name|w3c
 operator|.
 name|dom
 operator|.
-name|NodeList
+name|Element
 import|;
 end_import
 
@@ -345,7 +345,7 @@ name|w3c
 operator|.
 name|dom
 operator|.
-name|Element
+name|NodeList
 import|;
 end_import
 

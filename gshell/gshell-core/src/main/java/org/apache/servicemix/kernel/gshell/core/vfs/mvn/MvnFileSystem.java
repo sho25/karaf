@@ -47,7 +47,7 @@ name|commons
 operator|.
 name|vfs
 operator|.
-name|FileSystemOptions
+name|FileObject
 import|;
 end_import
 
@@ -61,7 +61,7 @@ name|commons
 operator|.
 name|vfs
 operator|.
-name|FileObject
+name|FileSystemOptions
 import|;
 end_import
 

@@ -91,7 +91,7 @@ name|export
 operator|.
 name|annotation
 operator|.
-name|ManagedResource
+name|ManagedAttribute
 import|;
 end_import
 
@@ -107,7 +107,7 @@ name|export
 operator|.
 name|annotation
 operator|.
-name|ManagedAttribute
+name|ManagedResource
 import|;
 end_import
 

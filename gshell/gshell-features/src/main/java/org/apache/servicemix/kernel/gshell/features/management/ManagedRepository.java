@@ -113,7 +113,7 @@ name|export
 operator|.
 name|annotation
 operator|.
-name|ManagedResource
+name|ManagedOperation
 import|;
 end_import
 
@@ -129,7 +129,7 @@ name|export
 operator|.
 name|annotation
 operator|.
-name|ManagedOperation
+name|ManagedResource
 import|;
 end_import
 

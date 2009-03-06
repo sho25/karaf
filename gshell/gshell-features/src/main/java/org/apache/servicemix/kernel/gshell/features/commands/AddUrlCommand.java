@@ -25,9 +25,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|util
+name|net
 operator|.
-name|List
+name|URI
 import|;
 end_import
 
@@ -35,9 +35,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|net
+name|util
 operator|.
-name|URI
+name|List
 import|;
 end_import
 

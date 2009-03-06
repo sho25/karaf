@@ -35,7 +35,7 @@ name|gshell
 operator|.
 name|admin
 operator|.
-name|AdminServiceMBean
+name|AdminService
 import|;
 end_import
 
@@ -53,7 +53,7 @@ name|gshell
 operator|.
 name|admin
 operator|.
-name|AdminService
+name|AdminServiceMBean
 import|;
 end_import
 

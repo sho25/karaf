@@ -69,11 +69,9 @@ name|org
 operator|.
 name|osgi
 operator|.
-name|service
+name|framework
 operator|.
-name|cm
-operator|.
-name|ConfigurationAdmin
+name|ServiceReference
 import|;
 end_import
 
@@ -97,9 +95,11 @@ name|org
 operator|.
 name|osgi
 operator|.
-name|framework
+name|service
 operator|.
-name|ServiceReference
+name|cm
+operator|.
+name|ConfigurationAdmin
 import|;
 end_import
 

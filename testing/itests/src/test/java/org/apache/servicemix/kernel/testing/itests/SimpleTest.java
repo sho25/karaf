@@ -25,9 +25,9 @@ name|javax
 operator|.
 name|xml
 operator|.
-name|stream
+name|parsers
 operator|.
-name|XMLInputFactory
+name|DocumentBuilderFactory
 import|;
 end_import
 
@@ -37,9 +37,9 @@ name|javax
 operator|.
 name|xml
 operator|.
-name|parsers
+name|stream
 operator|.
-name|DocumentBuilderFactory
+name|XMLInputFactory
 import|;
 end_import
 

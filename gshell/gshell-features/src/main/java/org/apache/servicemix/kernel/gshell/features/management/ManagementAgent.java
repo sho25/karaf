@@ -27,7 +27,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Set
+name|HashSet
 import|;
 end_import
 
@@ -37,7 +37,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashSet
+name|Set
 import|;
 end_import
 
@@ -47,17 +47,7 @@ name|javax
 operator|.
 name|management
 operator|.
-name|MBeanServer
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|management
-operator|.
-name|ObjectName
+name|InstanceAlreadyExistsException
 import|;
 end_import
 
@@ -68,6 +58,16 @@ operator|.
 name|management
 operator|.
 name|JMException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|management
+operator|.
+name|MBeanServer
 import|;
 end_import
 
@@ -97,7 +97,19 @@ name|javax
 operator|.
 name|management
 operator|.
-name|InstanceAlreadyExistsException
+name|ObjectName
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|management
+operator|.
+name|modelmbean
+operator|.
+name|InvalidTargetObjectTypeException
 import|;
 end_import
 
@@ -127,13 +139,29 @@ end_import
 
 begin_import
 import|import
-name|javax
+name|org
 operator|.
-name|management
+name|apache
 operator|.
-name|modelmbean
+name|commons
 operator|.
-name|InvalidTargetObjectTypeException
+name|logging
+operator|.
+name|Log
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|LogFactory
 import|;
 end_import
 
@@ -143,13 +171,11 @@ name|org
 operator|.
 name|springframework
 operator|.
-name|jmx
+name|beans
 operator|.
-name|export
+name|factory
 operator|.
-name|assembler
-operator|.
-name|MetadataMBeanInfoAssembler
+name|DisposableBean
 import|;
 end_import
 
@@ -175,39 +201,13 @@ name|org
 operator|.
 name|springframework
 operator|.
-name|beans
+name|jmx
 operator|.
-name|factory
+name|export
 operator|.
-name|DisposableBean
-import|;
-end_import
-
-begin_import
-import|import
-name|org
+name|assembler
 operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|Log
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|LogFactory
+name|MetadataMBeanInfoAssembler
 import|;
 end_import
 

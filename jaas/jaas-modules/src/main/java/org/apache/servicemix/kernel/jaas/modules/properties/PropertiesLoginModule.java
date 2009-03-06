@@ -45,9 +45,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|util
+name|security
 operator|.
-name|Enumeration
+name|Principal
 import|;
 end_import
 
@@ -88,16 +88,6 @@ operator|.
 name|util
 operator|.
 name|Set
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|security
-operator|.
-name|Principal
 import|;
 end_import
 
@@ -267,7 +257,7 @@ name|jaas
 operator|.
 name|modules
 operator|.
-name|UserPrincipal
+name|RolePrincipal
 import|;
 end_import
 
@@ -285,7 +275,7 @@ name|jaas
 operator|.
 name|modules
 operator|.
-name|RolePrincipal
+name|UserPrincipal
 import|;
 end_import
 

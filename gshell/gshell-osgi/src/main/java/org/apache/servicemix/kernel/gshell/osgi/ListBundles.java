@@ -97,9 +97,9 @@ name|osgi
 operator|.
 name|service
 operator|.
-name|startlevel
+name|packageadmin
 operator|.
-name|StartLevel
+name|PackageAdmin
 import|;
 end_import
 
@@ -111,21 +111,9 @@ name|osgi
 operator|.
 name|service
 operator|.
-name|packageadmin
+name|startlevel
 operator|.
-name|PackageAdmin
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
-name|util
-operator|.
-name|StringUtils
+name|StartLevel
 import|;
 end_import
 

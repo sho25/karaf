@@ -27,15 +27,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|servicemix
-operator|.
-name|kernel
+name|geronimo
 operator|.
 name|gshell
 operator|.
-name|features
+name|clp
 operator|.
-name|FeaturesService
+name|Option
 import|;
 end_import
 
@@ -45,13 +43,15 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|servicemix
+operator|.
+name|kernel
 operator|.
 name|gshell
 operator|.
-name|clp
+name|features
 operator|.
-name|Option
+name|FeaturesService
 import|;
 end_import
 

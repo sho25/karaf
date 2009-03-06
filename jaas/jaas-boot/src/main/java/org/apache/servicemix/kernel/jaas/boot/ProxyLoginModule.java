@@ -25,7 +25,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Map
+name|HashMap
 import|;
 end_import
 
@@ -35,21 +35,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|security
-operator|.
-name|auth
-operator|.
-name|spi
-operator|.
-name|LoginModule
+name|Map
 import|;
 end_import
 
@@ -62,6 +48,20 @@ operator|.
 name|auth
 operator|.
 name|Subject
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|security
+operator|.
+name|auth
+operator|.
+name|callback
+operator|.
+name|CallbackHandler
 import|;
 end_import
 
@@ -87,21 +87,9 @@ name|security
 operator|.
 name|auth
 operator|.
-name|callback
+name|spi
 operator|.
-name|CallbackHandler
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|framework
-operator|.
-name|BundleContext
+name|LoginModule
 import|;
 end_import
 
@@ -114,6 +102,18 @@ operator|.
 name|framework
 operator|.
 name|Bundle
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
+name|BundleContext
 import|;
 end_import
 

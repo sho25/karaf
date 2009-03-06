@@ -59,11 +59,7 @@ name|springframework
 operator|.
 name|beans
 operator|.
-name|factory
-operator|.
-name|config
-operator|.
-name|BeanPostProcessor
+name|BeansException
 import|;
 end_import
 
@@ -89,19 +85,11 @@ name|springframework
 operator|.
 name|beans
 operator|.
-name|BeansException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
+name|factory
 operator|.
-name|springframework
+name|config
 operator|.
-name|context
-operator|.
-name|ApplicationContextAware
+name|BeanPostProcessor
 import|;
 end_import
 
@@ -114,6 +102,18 @@ operator|.
 name|context
 operator|.
 name|ApplicationContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|springframework
+operator|.
+name|context
+operator|.
+name|ApplicationContextAware
 import|;
 end_import
 

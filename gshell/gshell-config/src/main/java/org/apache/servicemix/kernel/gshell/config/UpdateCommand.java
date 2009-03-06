@@ -39,7 +39,7 @@ name|service
 operator|.
 name|cm
 operator|.
-name|ConfigurationAdmin
+name|Configuration
 import|;
 end_import
 
@@ -53,7 +53,7 @@ name|service
 operator|.
 name|cm
 operator|.
-name|Configuration
+name|ConfigurationAdmin
 import|;
 end_import
 

@@ -27,7 +27,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Map
+name|HashMap
 import|;
 end_import
 
@@ -37,7 +37,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashMap
+name|Map
 import|;
 end_import
 
@@ -95,13 +95,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|springframework
-operator|.
 name|osgi
 operator|.
-name|context
+name|framework
 operator|.
-name|BundleContextAware
+name|BundleContext
 import|;
 end_import
 
@@ -109,11 +107,13 @@ begin_import
 import|import
 name|org
 operator|.
+name|springframework
+operator|.
 name|osgi
 operator|.
-name|framework
+name|context
 operator|.
-name|BundleContext
+name|BundleContextAware
 import|;
 end_import
 

@@ -53,7 +53,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|OutputStream
+name|InputStream
 import|;
 end_import
 
@@ -63,7 +63,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|InputStream
+name|OutputStream
 import|;
 end_import
 

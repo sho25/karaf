@@ -25,9 +25,19 @@ begin_import
 import|import
 name|java
 operator|.
-name|util
+name|security
 operator|.
-name|Map
+name|GeneralSecurityException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|security
+operator|.
+name|SecureRandom
 import|;
 end_import
 
@@ -47,29 +57,19 @@ name|java
 operator|.
 name|util
 operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|concurrent
 operator|.
 name|CopyOnWriteArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|security
-operator|.
-name|GeneralSecurityException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|security
-operator|.
-name|SecureRandom
 import|;
 end_import
 
@@ -141,7 +141,7 @@ name|jaas
 operator|.
 name|config
 operator|.
-name|KeystoreManager
+name|KeystoreIsLocked
 import|;
 end_import
 
@@ -159,7 +159,7 @@ name|jaas
 operator|.
 name|config
 operator|.
-name|KeystoreIsLocked
+name|KeystoreManager
 import|;
 end_import
 

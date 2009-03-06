@@ -29,7 +29,7 @@ name|java
 operator|.
 name|net
 operator|.
-name|URL
+name|MalformedURLException
 import|;
 end_import
 
@@ -39,7 +39,21 @@ name|java
 operator|.
 name|net
 operator|.
-name|MalformedURLException
+name|URL
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|vfs
+operator|.
+name|FileName
 import|;
 end_import
 
@@ -54,6 +68,20 @@ operator|.
 name|vfs
 operator|.
 name|FileObject
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|vfs
+operator|.
+name|FileSystem
 import|;
 end_import
 
@@ -82,34 +110,6 @@ operator|.
 name|vfs
 operator|.
 name|FileSystemOptions
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|vfs
-operator|.
-name|FileSystem
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|vfs
-operator|.
-name|FileName
 import|;
 end_import
 

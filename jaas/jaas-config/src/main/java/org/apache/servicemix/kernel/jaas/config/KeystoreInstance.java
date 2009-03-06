@@ -95,24 +95,6 @@ name|TrustManager
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|servicemix
-operator|.
-name|kernel
-operator|.
-name|jaas
-operator|.
-name|config
-operator|.
-name|KeystoreIsLocked
-import|;
-end_import
-
 begin_comment
 comment|/**  * Based on http://svn.apache.org/repos/asf/geronimo/trunk/modules/management/  *              src/java/org/apache/geronimo/management/geronimo/KeystoreInstance.java  *  * @version $Rev: $ $Date: $  */
 end_comment

@@ -23,7 +23,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|FileOutputStream
+name|BufferedOutputStream
 import|;
 end_import
 
@@ -43,16 +43,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|FileInputStream
 import|;
 end_import
@@ -63,7 +53,17 @@ name|java
 operator|.
 name|io
 operator|.
-name|BufferedOutputStream
+name|FileOutputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
 import|;
 end_import
 
@@ -73,9 +73,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|zip
-operator|.
-name|ZipOutputStream
+name|Collections
 import|;
 end_import
 
@@ -85,21 +83,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|zip
-operator|.
-name|ZipEntry
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|jar
-operator|.
-name|JarOutputStream
+name|Set
 import|;
 end_import
 
@@ -121,7 +105,9 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
+name|jar
+operator|.
+name|JarOutputStream
 import|;
 end_import
 
@@ -131,7 +117,21 @@ name|java
 operator|.
 name|util
 operator|.
-name|Set
+name|zip
+operator|.
+name|ZipEntry
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|zip
+operator|.
+name|ZipOutputStream
 import|;
 end_import
 

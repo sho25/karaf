@@ -25,18 +25,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|osgi
-operator|.
-name|framework
-operator|.
-name|BundleContext
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|apache
 operator|.
 name|servicemix
@@ -48,6 +36,18 @@ operator|.
 name|boot
 operator|.
 name|ProxyLoginModule
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
+name|BundleContext
 import|;
 end_import
 

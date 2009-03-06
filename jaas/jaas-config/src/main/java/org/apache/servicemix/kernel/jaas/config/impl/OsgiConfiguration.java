@@ -27,16 +27,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -47,9 +37,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|concurrent
-operator|.
-name|ConcurrentHashMap
+name|Map
 import|;
 end_import
 
@@ -75,7 +63,7 @@ name|auth
 operator|.
 name|login
 operator|.
-name|Configuration
+name|AppConfigurationEntry
 import|;
 end_import
 
@@ -89,7 +77,7 @@ name|auth
 operator|.
 name|login
 operator|.
-name|AppConfigurationEntry
+name|Configuration
 import|;
 end_import
 
