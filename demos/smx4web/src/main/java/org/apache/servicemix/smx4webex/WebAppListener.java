@@ -107,7 +107,7 @@ argument_list|(
 literal|"/"
 argument_list|)
 operator|+
-literal|"WEB-INF/apache-servicemix-kernel-1.1.0-SNAPSHOT"
+literal|"WEB-INF/servicemix"
 argument_list|)
 operator|.
 name|getAbsolutePath
