@@ -141,8 +141,6 @@ operator|=
 name|featuresRegistry
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|int
 name|complete
