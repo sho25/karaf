@@ -3149,6 +3149,32 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+elseif|else
+if|if
+condition|(
+name|event
+operator|.
+name|getType
+argument_list|()
+operator|==
+name|BundleEvent
+operator|.
+name|UNINSTALLED
+condition|)
+block|{
+comment|// bundle was uninstalled meanwhile, so remove
+comment|// it from the list of pending bundles
+name|pendingStartBundles
+operator|.
+name|remove
+argument_list|(
+name|event
+operator|.
+name|getBundle
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 expr_stmt|;
