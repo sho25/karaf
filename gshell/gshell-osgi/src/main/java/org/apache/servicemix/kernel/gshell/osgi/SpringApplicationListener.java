@@ -376,6 +376,15 @@ condition|(
 name|state
 operator|==
 literal|null
+operator|||
+name|bundle
+operator|.
+name|getState
+argument_list|()
+operator|!=
+name|Bundle
+operator|.
+name|ACTIVE
 condition|)
 block|{
 name|state
