@@ -23,11 +23,9 @@ end_package
 
 begin_import
 import|import
-name|com
+name|org
 operator|.
-name|google
-operator|.
-name|code
+name|apache
 operator|.
 name|sshd
 operator|.

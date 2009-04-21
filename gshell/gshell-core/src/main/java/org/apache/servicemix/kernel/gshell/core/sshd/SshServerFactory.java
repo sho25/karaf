@@ -23,11 +23,9 @@ end_package
 
 begin_import
 import|import
-name|com
+name|org
 operator|.
-name|google
-operator|.
-name|code
+name|apache
 operator|.
 name|sshd
 operator|.
@@ -43,10 +41,6 @@ block|{
 specifier|private
 name|SshServer
 name|server
-decl_stmt|;
-specifier|private
-name|String
-name|location
 decl_stmt|;
 specifier|private
 name|boolean

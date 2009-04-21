@@ -179,9 +179,9 @@ argument_list|)
 block|,
 name|getBundle
 argument_list|(
-literal|"org.apache.servicemix.bundles"
+literal|"org.apache.mina"
 argument_list|,
-literal|"org.apache.servicemix.bundles.mina"
+literal|"mina-core"
 argument_list|)
 block|,
 name|getBundle
@@ -200,9 +200,9 @@ argument_list|)
 block|,
 name|getBundle
 argument_list|(
-literal|"com.google.code.sshd"
+literal|"org.apache.sshd"
 argument_list|,
-literal|"sshd"
+literal|"sshd-core"
 argument_list|)
 block|,
 name|getBundle

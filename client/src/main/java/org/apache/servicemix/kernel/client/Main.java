@@ -19,11 +19,9 @@ end_package
 
 begin_import
 import|import
-name|com
+name|org
 operator|.
-name|google
-operator|.
-name|code
+name|apache
 operator|.
 name|sshd
 operator|.
@@ -33,11 +31,9 @@ end_import
 
 begin_import
 import|import
-name|com
+name|org
 operator|.
-name|google
-operator|.
-name|code
+name|apache
 operator|.
 name|sshd
 operator|.
@@ -47,15 +43,29 @@ end_import
 
 begin_import
 import|import
-name|com
+name|org
 operator|.
-name|google
-operator|.
-name|code
+name|apache
 operator|.
 name|sshd
 operator|.
 name|SshClient
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|sshd
+operator|.
+name|client
+operator|.
+name|future
+operator|.
+name|ConnectFuture
 import|;
 end_import
 
@@ -412,8 +422,8 @@ operator|.
 name|start
 argument_list|()
 expr_stmt|;
-name|ClientSession
-name|session
+name|ConnectFuture
+name|future
 init|=
 name|client
 operator|.
@@ -423,6 +433,19 @@ name|host
 argument_list|,
 name|port
 argument_list|)
+decl_stmt|;
+name|future
+operator|.
+name|await
+argument_list|()
+expr_stmt|;
+name|ClientSession
+name|session
+init|=
+name|future
+operator|.
+name|getSession
+argument_list|()
 decl_stmt|;
 name|session
 operator|.
