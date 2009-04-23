@@ -224,6 +224,8 @@ argument_list|)
 specifier|private
 name|boolean
 name|background
+init|=
+literal|true
 decl_stmt|;
 specifier|private
 name|BeanContainer
