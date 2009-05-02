@@ -51,9 +51,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|servicemix
+name|felix
 operator|.
-name|kernel
+name|karaf
 operator|.
 name|main
 operator|.
