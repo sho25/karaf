@@ -168,7 +168,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|ServiceMixBranding
+name|DefaultBranding
 extends|extends
 name|Branding
 block|{
@@ -208,35 +208,35 @@ decl_stmt|;
 specifier|private
 name|String
 index|[]
-name|kernelBanner
+name|defaultBanner
 init|=
 block|{
-literal|" ____                  _          __  __ _      "
+literal|"        __ __                  ____"
 block|,
-literal|"/ ___|  ___ _ ____   _(_) ___ ___|  \\/  (_)_  __"
+literal|"       / //_/____ __________ _/ __/"
 block|,
-literal|"\\___ \\ / _ \\ '__\\ \\ / / |/ __/ _ \\ |\\/| | \\ \\/ /"
+literal|"      / ,<  / __ `/ ___/ __ `/ /_"
 block|,
-literal|" ___) |  __/ |   \\ V /| | (_|  __/ |  | | |>< "
+literal|"     / /| |/ /_/ / /  / /_/ / __/"
 block|,
-literal|"|____/ \\___|_|    \\_/ |_|\\___\\___|_|  |_|_/_/\\_\\"
-block|,     }
+literal|"    /_/ |_|\\__,_/_/   \\__,_/_/"
+block|}
 decl_stmt|;
 specifier|public
-name|ServiceMixBranding
+name|DefaultBranding
 parameter_list|()
 block|{
 name|banner
 operator|=
-name|kernelBanner
+name|defaultBanner
 expr_stmt|;
 name|displayName
 operator|=
-literal|"ServiceMix Kernel"
+literal|"Apache Felix Karaf"
 expr_stmt|;
 name|displayLocation
 operator|=
-literal|"http://servicemix.apache.org/kernel/"
+literal|"http://felix.apache.org/site/apache-felix-karaf.html"
 expr_stmt|;
 block|}
 specifier|public
@@ -378,7 +378,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"servicemix"
+literal|"karaf"
 return|;
 block|}
 specifier|public
@@ -792,7 +792,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"ServicemixBranding: "
+literal|"DefaultBranding: "
 operator|+
 name|ex
 argument_list|)

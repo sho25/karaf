@@ -251,7 +251,7 @@ name|gshell
 operator|.
 name|core
 operator|.
-name|ServiceMixBranding
+name|DefaultBranding
 import|;
 end_import
 
@@ -277,7 +277,7 @@ implements|implements
 name|CommandAction
 block|{
 specifier|private
-name|ServiceMixBranding
+name|DefaultBranding
 name|branding
 decl_stmt|;
 specifier|private
@@ -331,7 +331,7 @@ decl_stmt|;
 specifier|public
 name|InfoAction
 parameter_list|(
-name|ServiceMixBranding
+name|DefaultBranding
 name|branding
 parameter_list|)
 block|{

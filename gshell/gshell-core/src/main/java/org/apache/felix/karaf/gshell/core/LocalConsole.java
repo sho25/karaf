@@ -341,7 +341,7 @@ name|set
 argument_list|(
 literal|"gshell.username"
 argument_list|,
-literal|"smx"
+literal|"karaf"
 argument_list|)
 expr_stmt|;
 name|frameworkStarted

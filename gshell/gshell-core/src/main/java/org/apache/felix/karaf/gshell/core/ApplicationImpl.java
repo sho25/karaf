@@ -316,11 +316,11 @@ argument_list|(
 name|kernelVersion
 argument_list|)
 expr_stmt|;
-name|ServiceMixBranding
-name|smxBranding
+name|DefaultBranding
+name|branding
 init|=
 operator|(
-name|ServiceMixBranding
+name|DefaultBranding
 operator|)
 name|this
 operator|.
@@ -329,7 +329,7 @@ operator|.
 name|getBranding
 argument_list|()
 decl_stmt|;
-name|smxBranding
+name|branding
 operator|.
 name|setVersion
 argument_list|(
@@ -369,7 +369,7 @@ argument_list|(
 name|EMBEDDED_PROPS
 argument_list|)
 expr_stmt|;
-name|smxBranding
+name|branding
 operator|.
 name|setEmbeddedResource
 argument_list|(
