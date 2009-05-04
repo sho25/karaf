@@ -145,7 +145,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|servicemix
+name|felix
+operator|.
+name|karaf
 operator|.
 name|jpm
 operator|.
@@ -159,7 +161,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|servicemix
+name|felix
+operator|.
+name|karaf
 operator|.
 name|jpm
 operator|.
@@ -173,7 +177,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|servicemix
+name|felix
+operator|.
+name|karaf
 operator|.
 name|jpm
 operator|.

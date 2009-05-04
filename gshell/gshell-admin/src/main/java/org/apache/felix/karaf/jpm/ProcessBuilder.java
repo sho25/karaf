@@ -9,7 +9,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|servicemix
+name|felix
+operator|.
+name|karaf
 operator|.
 name|jpm
 package|;
@@ -32,6 +34,16 @@ operator|.
 name|io
 operator|.
 name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|lang
+operator|.
+name|*
 import|;
 end_import
 
@@ -61,6 +73,16 @@ name|command
 parameter_list|)
 function_decl|;
 comment|/**      * Create and start the process      *      * @return the process that has been started      * @throws IOException if the process can not be created      */
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|karaf
+operator|.
+name|jpm
+operator|.
 name|Process
 name|start
 parameter_list|()
@@ -68,6 +90,16 @@ throws|throws
 name|IOException
 function_decl|;
 comment|/**      * Attach to an existing process      *      * @return the process that has been attached      * @throws IOException if the process can not be attached to      */
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|karaf
+operator|.
+name|jpm
+operator|.
 name|Process
 name|attach
 parameter_list|(

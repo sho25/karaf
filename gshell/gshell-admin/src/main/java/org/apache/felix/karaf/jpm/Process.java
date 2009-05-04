@@ -9,52 +9,66 @@ name|org
 operator|.
 name|apache
 operator|.
-name|servicemix
+name|felix
+operator|.
+name|karaf
 operator|.
 name|jpm
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
 begin_comment
-comment|/**  * Factory for process builders.  */
+comment|/**  * Interface representing a process  */
 end_comment
 
-begin_class
+begin_interface
 specifier|public
-specifier|abstract
-class|class
-name|ProcessBuilderFactory
+interface|interface
+name|Process
+extends|extends
+name|Serializable
 block|{
-specifier|public
-specifier|static
-name|ProcessBuilderFactory
-name|newInstance
-parameter_list|()
-block|{
-return|return
-operator|new
-name|org
-operator|.
-name|apache
-operator|.
-name|servicemix
-operator|.
-name|jpm
-operator|.
-name|impl
-operator|.
-name|ProcessBuilderFactoryImpl
-argument_list|()
-return|;
-block|}
-specifier|public
-specifier|abstract
-name|ProcessBuilder
-name|newBuilder
+comment|/**      * Retrieves the PID of the process      * @return the pid      */
+name|int
+name|getPid
 parameter_list|()
 function_decl|;
+comment|/**      * Check if this process is still running      * @return<code>true</code> if the process is running      * @throws IOException if an error occurs      */
+name|boolean
+name|isRunning
+parameter_list|()
+throws|throws
+name|IOException
+function_decl|;
+comment|/**      * Destroy the process.      *      * @throws IOException      */
+name|void
+name|destroy
+parameter_list|()
+throws|throws
+name|IOException
+function_decl|;
 block|}
-end_class
+end_interface
 
 end_unit
 

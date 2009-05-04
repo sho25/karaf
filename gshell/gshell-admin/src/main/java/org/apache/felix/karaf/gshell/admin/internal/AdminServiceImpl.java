@@ -259,28 +259,12 @@ name|PreferencesService
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
-name|beans
-operator|.
-name|factory
-operator|.
-name|InitializingBean
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
 name|AdminServiceImpl
 implements|implements
 name|AdminService
-implements|,
-name|InitializingBean
 block|{
 specifier|private
 specifier|static
@@ -352,7 +336,7 @@ block|}
 specifier|public
 specifier|synchronized
 name|void
-name|afterPropertiesSet
+name|init
 parameter_list|()
 throws|throws
 name|Exception
