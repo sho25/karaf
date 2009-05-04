@@ -187,8 +187,6 @@ class|class
 name|ApplicationImpl
 implements|implements
 name|Application
-implements|,
-name|InitializingBean
 block|{
 specifier|private
 specifier|static
@@ -269,7 +267,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|afterPropertiesSet
+name|init
 parameter_list|()
 throws|throws
 name|Exception
