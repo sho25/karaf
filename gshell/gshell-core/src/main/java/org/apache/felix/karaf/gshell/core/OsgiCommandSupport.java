@@ -155,20 +155,6 @@ name|ServiceReference
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
-name|osgi
-operator|.
-name|context
-operator|.
-name|BundleContextAware
-import|;
-end_import
-
 begin_class
 specifier|public
 specifier|abstract
@@ -176,8 +162,6 @@ class|class
 name|OsgiCommandSupport
 implements|implements
 name|CommandAction
-implements|,
-name|BundleContextAware
 block|{
 specifier|protected
 name|Log

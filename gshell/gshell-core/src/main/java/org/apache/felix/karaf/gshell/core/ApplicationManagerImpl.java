@@ -213,10 +213,6 @@ implements|implements
 name|ApplicationManager
 implements|,
 name|ApplicationContextAware
-implements|,
-name|InitializingBean
-implements|,
-name|DisposableBean
 block|{
 specifier|private
 specifier|final
@@ -268,7 +264,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|afterPropertiesSet
+name|init
 parameter_list|()
 throws|throws
 name|Exception

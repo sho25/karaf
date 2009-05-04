@@ -327,18 +327,6 @@ name|KeystoreIsLocked
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
-name|util
-operator|.
-name|StringUtils
-import|;
-end_import
-
 begin_comment
 comment|/**  *  */
 end_comment
@@ -530,15 +518,13 @@ name|URI
 operator|.
 name|create
 argument_list|(
-name|StringUtils
-operator|.
-name|replace
-argument_list|(
 name|keystorePath
 operator|.
 name|toString
 argument_list|()
-argument_list|,
+operator|.
+name|replace
+argument_list|(
 literal|" "
 argument_list|,
 literal|"%20"

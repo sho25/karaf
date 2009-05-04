@@ -447,6 +447,15 @@ argument_list|)
 decl_stmt|;
 name|bd
 operator|.
+name|addPropertyReference
+argument_list|(
+literal|"bundleContext"
+argument_list|,
+literal|"bundleContext"
+argument_list|)
+expr_stmt|;
+name|bd
+operator|.
 name|addPropertyValue
 argument_list|(
 literal|"target"

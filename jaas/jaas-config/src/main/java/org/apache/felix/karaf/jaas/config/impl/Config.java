@@ -103,20 +103,6 @@ name|BundleContext
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
-name|osgi
-operator|.
-name|context
-operator|.
-name|BundleContextAware
-import|;
-end_import
-
 begin_comment
 comment|/**  * An implementation of JaasRealm which is created  * by the spring namespace handler.  */
 end_comment
@@ -127,8 +113,6 @@ class|class
 name|Config
 implements|implements
 name|JaasRealm
-implements|,
-name|BundleContextAware
 block|{
 specifier|private
 name|String

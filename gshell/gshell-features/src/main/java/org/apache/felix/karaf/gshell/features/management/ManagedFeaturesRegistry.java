@@ -225,8 +225,6 @@ specifier|public
 class|class
 name|ManagedFeaturesRegistry
 implements|implements
-name|InitializingBean
-implements|,
 name|FeaturesRegistry
 block|{
 specifier|private
@@ -932,7 +930,7 @@ block|}
 block|}
 specifier|public
 name|void
-name|afterPropertiesSet
+name|init
 parameter_list|()
 throws|throws
 name|Exception
