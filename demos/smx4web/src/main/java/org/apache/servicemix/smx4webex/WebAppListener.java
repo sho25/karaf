@@ -128,7 +128,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-literal|"servicemix.home"
+literal|"karaf.home"
 argument_list|,
 name|root
 argument_list|)
@@ -137,7 +137,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-literal|"servicemix.base"
+literal|"karaf.base"
 argument_list|,
 name|root
 argument_list|)
@@ -146,7 +146,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-literal|"servicemix.startLocalConsole"
+literal|"karaf.startLocalConsole"
 argument_list|,
 literal|"false"
 argument_list|)
@@ -155,7 +155,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-literal|"servicemix.startRemoteShell"
+literal|"karaf.startRemoteShell"
 argument_list|,
 literal|"true"
 argument_list|)

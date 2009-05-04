@@ -845,7 +845,7 @@ name|props
 operator|.
 name|put
 argument_list|(
-literal|"${servicemix.name}"
+literal|"${karaf.name}"
 argument_list|,
 name|name
 argument_list|)
@@ -854,13 +854,13 @@ name|props
 operator|.
 name|put
 argument_list|(
-literal|"${servicemix.home}"
+literal|"${karaf.home}"
 argument_list|,
 name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"servicemix.home"
+literal|"karaf.home"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -868,7 +868,7 @@ name|props
 operator|.
 name|put
 argument_list|(
-literal|"${servicemix.base}"
+literal|"${karaf.base}"
 argument_list|,
 name|serviceMixBase
 operator|.
@@ -880,7 +880,7 @@ name|props
 operator|.
 name|put
 argument_list|(
-literal|"${servicemix.sshPort}"
+literal|"${karaf.sshPort}"
 argument_list|,
 name|Integer
 operator|.
@@ -903,7 +903,7 @@ name|copyFilteredResourceToDir
 argument_list|(
 name|serviceMixBase
 argument_list|,
-literal|"etc/org.apache.servicemix.shell.cfg"
+literal|"etc/org.apache.felix.karaf.shell.cfg"
 argument_list|,
 name|props
 argument_list|)

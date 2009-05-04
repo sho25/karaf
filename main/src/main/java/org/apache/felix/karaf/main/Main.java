@@ -438,36 +438,36 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|PROP_SERVICEMIX_HOME
+name|PROP_KARAF_HOME
 init|=
-literal|"servicemix.home"
+literal|"karaf.home"
 decl_stmt|;
 comment|/**      * The environment variable for specifying the ServiceMix home directory.  The home directory      * hold the binary install of ServiceMix.      */
 specifier|public
 specifier|static
 specifier|final
 name|String
-name|ENV_SERVICEMIX_HOME
+name|ENV_KARAF_HOME
 init|=
-literal|"SERVICEMIX_HOME"
+literal|"KARAF_HOME"
 decl_stmt|;
 comment|/**      * The system property for specifying the ServiceMix base directory.  The base directory      * holds the configuration and data for a ServiceMix instance.      */
 specifier|public
 specifier|static
 specifier|final
 name|String
-name|PROP_SERVICEMIX_BASE
+name|PROP_KARAF_BASE
 init|=
-literal|"servicemix.base"
+literal|"karaf.base"
 decl_stmt|;
 comment|/**      * The environment variable for specifying the ServiceMix base directory.  The base directory      * holds the configuration and data for a ServiceMix instance.      */
 specifier|public
 specifier|static
 specifier|final
 name|String
-name|ENV_SERVICEMIX_BASE
+name|ENV_KARAF_BASE
 init|=
-literal|"SERVICEMIX_BASE"
+literal|"KARAF_BASE"
 decl_stmt|;
 comment|/**      * Config property which identifies directories which contain bundles to be loaded by SMX      */
 specifier|public
@@ -485,7 +485,7 @@ specifier|final
 name|String
 name|PROPERTY_CONVERT_TO_MAVEN_URL
 init|=
-literal|"servicemix.maven.convert"
+literal|"karaf.maven.convert"
 decl_stmt|;
 comment|/**      * If a lock should be used before starting the runtime      */
 specifier|public
@@ -494,7 +494,7 @@ specifier|final
 name|String
 name|PROPERTY_USE_LOCK
 init|=
-literal|"servicemix.lock"
+literal|"karaf.lock"
 decl_stmt|;
 comment|/**      * The lock implementation      */
 specifier|public
@@ -503,7 +503,7 @@ specifier|final
 name|String
 name|PROPERTY_LOCK_CLASS
 init|=
-literal|"servicemix.lock.class"
+literal|"karaf.lock.class"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -511,7 +511,7 @@ specifier|final
 name|String
 name|PROPERTY_LOCK_DELAY
 init|=
-literal|"servicemix.lock.delay"
+literal|"karaf.lock.delay"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -519,7 +519,7 @@ specifier|final
 name|String
 name|PROPERTY_LOCK_LEVEL
 init|=
-literal|"servicemix.lock.level"
+literal|"karaf.lock.level"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -644,7 +644,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-name|PROP_SERVICEMIX_HOME
+name|PROP_KARAF_HOME
 argument_list|,
 name|servicemixHome
 operator|.
@@ -656,7 +656,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-name|PROP_SERVICEMIX_BASE
+name|PROP_KARAF_BASE
 argument_list|,
 name|servicemixBase
 operator|.
@@ -1132,7 +1132,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-name|PROP_SERVICEMIX_HOME
+name|PROP_KARAF_HOME
 argument_list|)
 decl_stmt|;
 if|if
@@ -1150,7 +1150,7 @@ name|path
 argument_list|,
 literal|"Invalid "
 operator|+
-name|PROP_SERVICEMIX_HOME
+name|PROP_KARAF_HOME
 operator|+
 literal|" system property"
 argument_list|)
@@ -1169,7 +1169,7 @@ name|System
 operator|.
 name|getenv
 argument_list|(
-name|ENV_SERVICEMIX_HOME
+name|ENV_KARAF_HOME
 argument_list|)
 expr_stmt|;
 if|if
@@ -1187,7 +1187,7 @@ name|path
 argument_list|,
 literal|"Invalid "
 operator|+
-name|ENV_SERVICEMIX_HOME
+name|ENV_KARAF_HOME
 operator|+
 literal|" environment variable"
 argument_list|)
@@ -1387,11 +1387,11 @@ name|IOException
 argument_list|(
 literal|"The ServiceMix install directory could not be determined.  Please set the "
 operator|+
-name|PROP_SERVICEMIX_HOME
+name|PROP_KARAF_HOME
 operator|+
 literal|" system property or the "
 operator|+
-name|ENV_SERVICEMIX_HOME
+name|ENV_KARAF_HOME
 operator|+
 literal|" environment variable."
 argument_list|)
@@ -1526,7 +1526,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-name|PROP_SERVICEMIX_BASE
+name|PROP_KARAF_BASE
 argument_list|)
 decl_stmt|;
 if|if
@@ -1544,7 +1544,7 @@ name|path
 argument_list|,
 literal|"Invalid "
 operator|+
-name|PROP_SERVICEMIX_BASE
+name|PROP_KARAF_BASE
 operator|+
 literal|" system property"
 argument_list|)
@@ -1563,7 +1563,7 @@ name|System
 operator|.
 name|getenv
 argument_list|(
-name|ENV_SERVICEMIX_BASE
+name|ENV_KARAF_BASE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1581,7 +1581,7 @@ name|path
 argument_list|,
 literal|"Invalid "
 operator|+
-name|ENV_SERVICEMIX_BASE
+name|ENV_KARAF_BASE
 operator|+
 literal|" environment variable"
 argument_list|)

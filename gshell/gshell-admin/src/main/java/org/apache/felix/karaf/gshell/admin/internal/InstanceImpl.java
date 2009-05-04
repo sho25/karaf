@@ -386,7 +386,7 @@ name|File
 argument_list|(
 name|location
 argument_list|,
-literal|"etc/org.apache.servicemix.shell.cfg"
+literal|"etc/org.apache.felix.karaf.shell.cfg"
 argument_list|)
 decl_stmt|;
 name|is
@@ -492,7 +492,7 @@ name|File
 argument_list|(
 name|location
 argument_list|,
-literal|"etc/org.apache.servicemix.shell.cfg"
+literal|"etc/org.apache.felix.karaf.shell.cfg"
 argument_list|)
 decl_stmt|;
 name|InputStream
@@ -619,7 +619,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"servicemix.home"
+literal|"karaf.home"
 argument_list|)
 argument_list|,
 literal|"lib"
@@ -739,18 +739,18 @@ literal|" "
 operator|+
 name|javaOpts
 operator|+
-literal|" -Dservicemix.home=\""
+literal|" -Dkaraf.home=\""
 operator|+
 name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"servicemix.home"
+literal|"karaf.home"
 argument_list|)
 operator|+
 literal|"\""
 operator|+
-literal|" -Dservicemix.base=\""
+literal|" -Dkaraf.base=\""
 operator|+
 operator|new
 name|File
@@ -763,9 +763,9 @@ argument_list|()
 operator|+
 literal|"\""
 operator|+
-literal|" -Dservicemix.startLocalConsole=false"
+literal|" -Dkaraf.startLocalConsole=false"
 operator|+
-literal|" -Dservicemix.startRemoteShell=true"
+literal|" -Dkaraf.startRemoteShell=true"
 operator|+
 literal|" -classpath "
 operator|+

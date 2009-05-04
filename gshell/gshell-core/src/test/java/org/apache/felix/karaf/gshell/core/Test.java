@@ -102,7 +102,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-literal|"servicemix.name"
+literal|"karaf.name"
 argument_list|,
 literal|"root"
 argument_list|)
@@ -209,7 +209,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-literal|"servicemix.name"
+literal|"karaf.name"
 argument_list|,
 literal|"root"
 argument_list|)
@@ -353,7 +353,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-literal|"servicemix.name"
+literal|"karaf.name"
 argument_list|,
 literal|"root"
 argument_list|)
@@ -497,7 +497,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-literal|"servicemix.name"
+literal|"karaf.name"
 argument_list|,
 literal|"root"
 argument_list|)
@@ -655,7 +655,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-literal|"servicemix.name"
+literal|"karaf.name"
 argument_list|,
 literal|"root"
 argument_list|)

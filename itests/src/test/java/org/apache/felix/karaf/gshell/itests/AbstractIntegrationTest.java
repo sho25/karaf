@@ -840,7 +840,7 @@ argument_list|)
 argument_list|,
 name|systemProperty
 argument_list|(
-literal|"servicemix.name"
+literal|"karaf.name"
 argument_list|)
 operator|.
 name|value
@@ -850,7 +850,7 @@ argument_list|)
 argument_list|,
 name|systemProperty
 argument_list|(
-literal|"servicemix.base"
+literal|"karaf.base"
 argument_list|)
 operator|.
 name|value
@@ -860,7 +860,7 @@ argument_list|)
 argument_list|,
 name|systemProperty
 argument_list|(
-literal|"servicemix.startLocalConsole"
+literal|"karaf.startLocalConsole"
 argument_list|)
 operator|.
 name|value
@@ -870,7 +870,7 @@ argument_list|)
 argument_list|,
 name|systemProperty
 argument_list|(
-literal|"servicemix.startRemoteShell"
+literal|"karaf.startRemoteShell"
 argument_list|)
 operator|.
 name|value

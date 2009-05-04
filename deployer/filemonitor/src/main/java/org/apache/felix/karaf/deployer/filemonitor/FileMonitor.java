@@ -520,7 +520,7 @@ specifier|static
 name|String
 name|CONFIG_DIR
 init|=
-literal|"org.apache.servicemix.filemonitor.configDir"
+literal|"org.apache.felix.karaf.filemonitor.configDir"
 decl_stmt|;
 specifier|public
 specifier|final
@@ -528,7 +528,7 @@ specifier|static
 name|String
 name|DEPLOY_DIR
 init|=
-literal|"org.apache.servicemix.filemonitor.monitorDir"
+literal|"org.apache.felix.karaf.filemonitor.monitorDir"
 decl_stmt|;
 specifier|public
 specifier|final
@@ -536,7 +536,7 @@ specifier|static
 name|String
 name|GENERATED_JAR_DIR
 init|=
-literal|"org.apache.servicemix.filemonitor.generatedJarDir"
+literal|"org.apache.felix.karaf.filemonitor.generatedJarDir"
 decl_stmt|;
 specifier|public
 specifier|final
@@ -544,7 +544,7 @@ specifier|static
 name|String
 name|SCAN_INTERVAL
 init|=
-literal|"org.apache.servicemix.filemonitor.scanInterval"
+literal|"org.apache.felix.karaf.filemonitor.scanInterval"
 decl_stmt|;
 specifier|public
 specifier|final
@@ -714,7 +714,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"servicemix.base"
+literal|"karaf.base"
 argument_list|,
 literal|"."
 argument_list|)

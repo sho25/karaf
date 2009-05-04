@@ -84,7 +84,7 @@ specifier|final
 name|String
 name|PROPERTY_LOCK_URL
 init|=
-literal|"servicemix.lock.jdbc.url"
+literal|"karaf.lock.jdbc.url"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -92,7 +92,7 @@ specifier|final
 name|String
 name|PROPERTY_LOCK_JDBC_DRIVER
 init|=
-literal|"servicemix.lock.jdbc.driver"
+literal|"karaf.lock.jdbc.driver"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -100,7 +100,7 @@ specifier|final
 name|String
 name|PROPERTY_LOCK_JDBC_USER
 init|=
-literal|"servicemix.lock.jdbc.user"
+literal|"karaf.lock.jdbc.user"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -108,7 +108,7 @@ specifier|final
 name|String
 name|PROPERTY_LOCK_JDBC_PASSWORD
 init|=
-literal|"servicemix.lock.jdbc.password"
+literal|"karaf.lock.jdbc.password"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -116,7 +116,7 @@ specifier|final
 name|String
 name|PROPERTY_LOCK_JDBC_TABLE
 init|=
-literal|"servicemix.lock.jdbc.table"
+literal|"karaf.lock.jdbc.table"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -124,7 +124,7 @@ specifier|final
 name|String
 name|PROPERTY_LOCK_JDBC_CLUSTERNAME
 init|=
-literal|"servicemix.lock.jdbc.clustername"
+literal|"karaf.lock.jdbc.clustername"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -132,7 +132,7 @@ specifier|final
 name|String
 name|PROPERTY_LOCK_JDBC_TIMEOUT
 init|=
-literal|"servicemix.lock.jdbc.timeout"
+literal|"karaf.lock.jdbc.timeout"
 decl_stmt|;
 specifier|private
 specifier|final

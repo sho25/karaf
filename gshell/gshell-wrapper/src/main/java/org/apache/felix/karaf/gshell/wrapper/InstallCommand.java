@@ -285,7 +285,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"servicemix.base"
+literal|"karaf.base"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -343,13 +343,13 @@ name|props
 operator|.
 name|put
 argument_list|(
-literal|"${servicemix.home}"
+literal|"${karaf.home}"
 argument_list|,
 name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"servicemix.home"
+literal|"karaf.home"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -357,7 +357,7 @@ name|props
 operator|.
 name|put
 argument_list|(
-literal|"${servicemix.base}"
+literal|"${karaf.base}"
 argument_list|,
 name|base
 operator|.
@@ -2260,7 +2260,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"servicemix.base"
+literal|"karaf.base"
 argument_list|)
 argument_list|)
 decl_stmt|;

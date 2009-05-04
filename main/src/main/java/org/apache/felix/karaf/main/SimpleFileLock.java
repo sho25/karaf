@@ -82,15 +82,15 @@ specifier|final
 name|String
 name|PROPERTY_LOCK_DIR
 init|=
-literal|"servicemix.lock.dir"
+literal|"karaf.lock.dir"
 decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
 name|String
-name|PROP_SERVICEMIX_BASE
+name|PROP_KARAF_BASE
 init|=
-literal|"servicemix.base"
+literal|"karaf.base"
 decl_stmt|;
 specifier|private
 name|RandomAccessFile
@@ -165,7 +165,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-name|PROP_SERVICEMIX_BASE
+name|PROP_KARAF_BASE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -359,7 +359,7 @@ name|props
 operator|.
 name|getProperty
 argument_list|(
-name|PROP_SERVICEMIX_BASE
+name|PROP_KARAF_BASE
 argument_list|)
 expr_stmt|;
 if|if
@@ -377,7 +377,7 @@ name|path
 argument_list|,
 literal|"Invalid "
 operator|+
-name|PROP_SERVICEMIX_BASE
+name|PROP_KARAF_BASE
 operator|+
 literal|" property"
 argument_list|)
