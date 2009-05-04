@@ -50,7 +50,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Command to shut down ServiceMix Kernel  */
+comment|/**  * Command to shut down Karaf  */
 end_comment
 
 begin_class
@@ -105,7 +105,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"Error when shutting down ServiceMix Kernel"
+literal|"Error when shutting down Apache Felix Karaf"
 argument_list|,
 name|e
 argument_list|)

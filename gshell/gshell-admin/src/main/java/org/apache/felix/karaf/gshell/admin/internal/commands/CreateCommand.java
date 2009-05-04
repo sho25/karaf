@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates a new servicemix instance   *  * @version $Rev: 679826 $ $Date: 2008-07-25 17:00:12 +0200 (Fri, 25 Jul 2008) $  */
+comment|/**  * Creates a new Karaf instance   *  * @version $Rev: 679826 $ $Date: 2008-07-25 17:00:12 +0200 (Fri, 25 Jul 2008) $  */
 end_comment
 
 begin_class
@@ -123,7 +123,7 @@ literal|true
 argument_list|,
 name|description
 operator|=
-literal|"Name of the new ServiceMix instance"
+literal|"Name of the new Karaf instance"
 argument_list|)
 specifier|private
 name|String

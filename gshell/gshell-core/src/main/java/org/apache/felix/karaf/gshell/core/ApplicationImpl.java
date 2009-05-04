@@ -202,7 +202,7 @@ specifier|final
 name|String
 name|SERVICEMIX_VERSION
 init|=
-literal|"org/apache/felix/karaf/gshell/core/servicemix-version.properties"
+literal|"org/apache/felix/karaf/gshell/core/karaf-version.properties"
 decl_stmt|;
 specifier|private
 specifier|static

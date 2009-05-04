@@ -433,7 +433,7 @@ name|PROPERTY_AUTO_START
 init|=
 literal|"felix.auto.start"
 decl_stmt|;
-comment|/**      * The system property for specifying the ServiceMix home directory.  The home directory      * hold the binary install of ServiceMix.      */
+comment|/**      * The system property for specifying the Karaf home directory.  The home directory      * hold the binary install of Karaf.      */
 specifier|public
 specifier|static
 specifier|final
@@ -442,7 +442,7 @@ name|PROP_KARAF_HOME
 init|=
 literal|"karaf.home"
 decl_stmt|;
-comment|/**      * The environment variable for specifying the ServiceMix home directory.  The home directory      * hold the binary install of ServiceMix.      */
+comment|/**      * The environment variable for specifying the Karaf home directory.  The home directory      * hold the binary install of Karaf.      */
 specifier|public
 specifier|static
 specifier|final
@@ -451,7 +451,7 @@ name|ENV_KARAF_HOME
 init|=
 literal|"KARAF_HOME"
 decl_stmt|;
-comment|/**      * The system property for specifying the ServiceMix base directory.  The base directory      * holds the configuration and data for a ServiceMix instance.      */
+comment|/**      * The system property for specifying the Karaf base directory.  The base directory      * holds the configuration and data for a Karaf instance.      */
 specifier|public
 specifier|static
 specifier|final
@@ -460,7 +460,7 @@ name|PROP_KARAF_BASE
 init|=
 literal|"karaf.base"
 decl_stmt|;
-comment|/**      * The environment variable for specifying the ServiceMix base directory.  The base directory      * holds the configuration and data for a ServiceMix instance.      */
+comment|/**      * The environment variable for specifying the Karaf base directory.  The base directory      * holds the configuration and data for a Karaf instance.      */
 specifier|public
 specifier|static
 specifier|final
@@ -536,11 +536,11 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|File
-name|servicemixHome
+name|karafHome
 decl_stmt|;
 specifier|private
 name|File
-name|servicemixBase
+name|karafBase
 decl_stmt|;
 specifier|private
 specifier|static
@@ -626,27 +626,27 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|servicemixHome
+name|karafHome
 operator|=
 name|getServiceMixHome
 argument_list|()
 expr_stmt|;
-name|servicemixBase
+name|karafBase
 operator|=
 name|getServiceMixBase
 argument_list|(
-name|servicemixHome
+name|karafHome
 argument_list|)
 expr_stmt|;
-comment|//System.out.println("ServiceMix Home: "+main.servicemixHome.getPath());
-comment|//System.out.println("ServiceMix Base: "+main.servicemixBase.getPath());
+comment|//System.out.println("Karaf Home: "+main.servicemixHome.getPath());
+comment|//System.out.println("Karaf Base: "+main.servicemixBase.getPath());
 name|System
 operator|.
 name|setProperty
 argument_list|(
 name|PROP_KARAF_HOME
 argument_list|,
-name|servicemixHome
+name|karafHome
 operator|.
 name|getPath
 argument_list|()
@@ -658,7 +658,7 @@ name|setProperty
 argument_list|(
 name|PROP_KARAF_BASE
 argument_list|,
-name|servicemixBase
+name|karafBase
 operator|.
 name|getPath
 argument_list|()
@@ -695,7 +695,7 @@ name|BundleCache
 operator|.
 name|CACHE_ROOTDIR_PROP
 argument_list|,
-name|servicemixBase
+name|karafBase
 operator|.
 name|getPath
 argument_list|()
@@ -1320,7 +1320,7 @@ argument_list|()
 operator|.
 name|indexOf
 argument_list|(
-literal|"servicemix.jar"
+literal|"karaf.jar"
 argument_list|)
 decl_stmt|;
 name|int
@@ -1385,7 +1385,7 @@ throw|throw
 operator|new
 name|IOException
 argument_list|(
-literal|"The ServiceMix install directory could not be determined.  Please set the "
+literal|"The Karaf install directory could not be determined.  Please set the "
 operator|+
 name|PROP_KARAF_HOME
 operator|+
@@ -1620,7 +1620,7 @@ name|m_configProps
 operator|.
 name|getProperty
 argument_list|(
-literal|"org.apache.servicemix.security.providers"
+literal|"org.apache.felix.karaf.security.providers"
 argument_list|)
 decl_stmt|;
 if|if
@@ -3056,7 +3056,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|servicemixBase
+name|karafBase
 argument_list|,
 literal|"etc"
 argument_list|)
@@ -3290,7 +3290,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|servicemixBase
+name|karafBase
 argument_list|,
 literal|"etc"
 argument_list|)
@@ -3313,7 +3313,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|servicemixBase
+name|karafBase
 argument_list|,
 literal|"etc"
 argument_list|)
@@ -3330,11 +3330,11 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
-name|servicemixBase
+name|karafBase
 operator|.
 name|equals
 argument_list|(
-name|servicemixHome
+name|karafHome
 argument_list|)
 condition|)
 block|{
@@ -3345,7 +3345,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|servicemixHome
+name|karafHome
 argument_list|,
 literal|"system"
 argument_list|)
@@ -3361,7 +3361,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|servicemixBase
+name|karafBase
 argument_list|,
 literal|"system"
 argument_list|)
@@ -3374,7 +3374,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|servicemixHome
+name|karafHome
 argument_list|,
 literal|"system"
 argument_list|)
@@ -3793,7 +3793,7 @@ name|key
 operator|.
 name|startsWith
 argument_list|(
-literal|"servicemix."
+literal|"karaf."
 argument_list|)
 operator|||
 name|key
@@ -4849,7 +4849,7 @@ return|return
 name|val
 return|;
 block|}
-comment|/* (non-Javadoc)       * @see org.apache.servicemix.main.MainService#getArgs()       */
+comment|/* (non-Javadoc)       * @see org.apache.felix.karaf.main.MainService#getArgs()       */
 specifier|public
 name|String
 index|[]
@@ -4886,20 +4886,20 @@ expr_stmt|;
 block|}
 specifier|public
 name|File
-name|getServicemixHome
+name|getKarafHome
 parameter_list|()
 block|{
 return|return
-name|servicemixHome
+name|karafHome
 return|;
 block|}
 specifier|public
 name|File
-name|getServicemixBase
+name|getKarafBase
 parameter_list|()
 block|{
 return|return
-name|servicemixBase
+name|karafBase
 return|;
 block|}
 specifier|public

@@ -403,7 +403,7 @@ name|getIo
 argument_list|()
 expr_stmt|;
 comment|//
-comment|// print ServiceMix informations
+comment|// print Karaf informations
 comment|//
 name|maxNameLen
 operator|=
@@ -415,12 +415,12 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"ServiceMix"
+literal|"Apache Felix Karaf"
 argument_list|)
 expr_stmt|;
 name|printValue
 argument_list|(
-literal|"ServiceMix home"
+literal|"Karaf home"
 argument_list|,
 name|maxNameLen
 argument_list|,
@@ -434,7 +434,7 @@ argument_list|)
 expr_stmt|;
 name|printValue
 argument_list|(
-literal|"ServiceMix base"
+literal|"Karaf base"
 argument_list|,
 name|maxNameLen
 argument_list|,
@@ -448,7 +448,7 @@ argument_list|)
 expr_stmt|;
 name|printValue
 argument_list|(
-literal|"ServiceMix Kernel version"
+literal|"Karaf version"
 argument_list|,
 name|maxNameLen
 argument_list|,

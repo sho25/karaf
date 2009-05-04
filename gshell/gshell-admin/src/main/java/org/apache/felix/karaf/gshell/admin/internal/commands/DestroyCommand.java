@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates a new servicemix instance  *  * @version $Rev: 679826 $ $Date: 2008-07-25 17:00:12 +0200 (Fri, 25 Jul 2008) $  */
+comment|/**  * Destroy an existing Karaf instance  *  * @version $Rev: 679826 $ $Date: 2008-07-25 17:00:12 +0200 (Fri, 25 Jul 2008) $  */
 end_comment
 
 begin_class
@@ -63,7 +63,7 @@ literal|true
 argument_list|,
 name|description
 operator|=
-literal|"The name of the ServiceMix instance to destroy"
+literal|"The name of the Karaf instance to destroy"
 argument_list|)
 specifier|private
 name|String

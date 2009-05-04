@@ -160,7 +160,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Installs this ServiceMix instance as a service in your operating systems.   *  * @version $Rev: 603634 $ $Date: 2007-12-12 16:07:16 +0100 (Wed, 12 Dec 2007) $  */
+comment|/**  * Installs this Karaf instance as a service in your operating systems.  *  * @version $Rev: 603634 $ $Date: 2007-12-12 16:07:16 +0100 (Wed, 12 Dec 2007) $  */
 end_comment
 
 begin_class
@@ -191,7 +191,7 @@ specifier|private
 name|String
 name|name
 init|=
-literal|"servicemix"
+literal|"karaf"
 decl_stmt|;
 annotation|@
 name|Option
@@ -448,7 +448,7 @@ operator|+
 literal|"-wrapper.exe"
 argument_list|)
 argument_list|,
-literal|"windows/servicemix-wrapper.exe"
+literal|"windows/karaf-wrapper.exe"
 argument_list|,
 literal|false
 argument_list|)
@@ -469,7 +469,7 @@ name|copyFilteredResourceTo
 argument_list|(
 name|serviceFile
 argument_list|,
-literal|"windows/servicemix-service.bat"
+literal|"windows/karaf-service.bat"
 argument_list|,
 name|props
 argument_list|)
@@ -528,7 +528,7 @@ name|copyResourceTo
 argument_list|(
 name|file
 argument_list|,
-literal|"macosx/servicemix-wrapper"
+literal|"macosx/karaf-wrapper"
 argument_list|,
 literal|false
 argument_list|)
@@ -556,7 +556,7 @@ name|copyFilteredResourceTo
 argument_list|(
 name|serviceFile
 argument_list|,
-literal|"unix/servicemix-service"
+literal|"unix/karaf-service"
 argument_list|,
 name|props
 argument_list|)
@@ -624,7 +624,7 @@ name|copyResourceTo
 argument_list|(
 name|file
 argument_list|,
-literal|"linux/servicemix-wrapper"
+literal|"linux/karaf-wrapper"
 argument_list|,
 literal|false
 argument_list|)
@@ -652,7 +652,7 @@ name|copyFilteredResourceTo
 argument_list|(
 name|serviceFile
 argument_list|,
-literal|"unix/servicemix-service"
+literal|"unix/karaf-service"
 argument_list|,
 name|props
 argument_list|)
@@ -719,10 +719,10 @@ name|File
 argument_list|(
 name|lib
 argument_list|,
-literal|"servicemix-wrapper.jar"
+literal|"karaf-wrapper.jar"
 argument_list|)
 argument_list|,
-literal|"all/servicemix-wrapper.jar"
+literal|"all/karaf-wrapper.jar"
 argument_list|,
 literal|false
 argument_list|)
@@ -749,7 +749,7 @@ name|copyFilteredResourceTo
 argument_list|(
 name|wrapperConf
 argument_list|,
-literal|"all/servicemix-wrapper.conf"
+literal|"all/karaf-wrapper.conf"
 argument_list|,
 name|props
 argument_list|)
@@ -989,7 +989,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"when OS X starts, please email dev@servicemix.apache.org and let us know how so"
+literal|"when OS X starts, please email dev@felix.apache.org and let us know how so"
 argument_list|)
 expr_stmt|;
 name|io

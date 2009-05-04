@@ -527,7 +527,7 @@ name|LOGGER
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to reload ServiceMix instance list"
+literal|"Unable to reload Karaf instance list"
 argument_list|,
 name|e
 argument_list|)
@@ -767,7 +767,7 @@ name|copyResourceToDir
 argument_list|(
 name|serviceMixBase
 argument_list|,
-literal|"etc/org.apache.servicemix.features.cfg"
+literal|"etc/org.apache.felix.karaf.features.cfg"
 argument_list|,
 literal|true
 argument_list|)
@@ -911,7 +911,7 @@ name|copyFilteredResourceToDir
 argument_list|(
 name|serviceMixBase
 argument_list|,
-literal|"bin/servicemix.bat"
+literal|"bin/karaf.bat"
 argument_list|,
 name|props
 argument_list|)
@@ -923,7 +923,7 @@ name|copyFilteredResourceToDir
 argument_list|(
 name|serviceMixBase
 argument_list|,
-literal|"bin/servicemix"
+literal|"bin/karaf"
 argument_list|,
 name|props
 argument_list|)
@@ -935,7 +935,7 @@ name|File
 argument_list|(
 name|serviceMixBase
 argument_list|,
-literal|"bin/servicemix"
+literal|"bin/karaf"
 argument_list|)
 argument_list|,
 literal|"a+x"
