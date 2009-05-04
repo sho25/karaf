@@ -51,26 +51,10 @@ name|BundleContext
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
-name|osgi
-operator|.
-name|context
-operator|.
-name|BundleContextAware
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
 name|ProxyLoginModuleInitializer
-implements|implements
-name|BundleContextAware
 block|{
 specifier|private
 name|BundleContext
