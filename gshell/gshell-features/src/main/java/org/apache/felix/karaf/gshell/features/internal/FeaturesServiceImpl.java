@@ -684,6 +684,15 @@ name|featuresRegistry
 operator|=
 name|featuresRegistry
 expr_stmt|;
+name|this
+operator|.
+name|featuresRegistry
+operator|.
+name|setFeaturesService
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void

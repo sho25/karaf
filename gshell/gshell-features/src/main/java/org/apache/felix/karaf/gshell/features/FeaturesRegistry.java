@@ -29,6 +29,13 @@ interface|interface
 name|FeaturesRegistry
 block|{
 name|void
+name|setFeaturesService
+parameter_list|(
+name|FeaturesService
+name|service
+parameter_list|)
+function_decl|;
+name|void
 name|register
 parameter_list|(
 name|Feature
