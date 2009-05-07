@@ -153,6 +153,7 @@ name|commandRegistry
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|register
 parameter_list|(
@@ -180,6 +181,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|unregister
 parameter_list|(
@@ -207,6 +209,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|register
 parameter_list|(
@@ -262,6 +265,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|unregister
 parameter_list|(
