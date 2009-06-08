@@ -662,12 +662,7 @@ name|void
 name|start
 parameter_list|(
 specifier|final
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+name|Environment
 name|env
 parameter_list|)
 throws|throws
@@ -724,6 +719,9 @@ argument_list|>
 name|entry
 range|:
 name|env
+operator|.
+name|getEnv
+argument_list|()
 operator|.
 name|entrySet
 argument_list|()
@@ -790,6 +788,9 @@ argument_list|(
 literal|"gshell.username"
 argument_list|,
 name|env
+operator|.
+name|getEnv
+argument_list|()
 operator|.
 name|get
 argument_list|(
