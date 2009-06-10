@@ -945,6 +945,12 @@ name|void
 name|close
 parameter_list|()
 block|{
+if|if
+condition|(
+operator|!
+name|closed
+condition|)
+block|{
 name|closed
 operator|=
 literal|true
@@ -967,6 +973,7 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|boolean
