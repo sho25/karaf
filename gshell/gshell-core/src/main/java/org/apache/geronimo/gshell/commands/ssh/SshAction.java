@@ -305,6 +305,10 @@ operator|=
 block|{
 literal|"--username"
 block|}
+argument_list|,
+name|description
+operator|=
+literal|"Username"
 argument_list|)
 specifier|private
 name|String
@@ -322,6 +326,10 @@ operator|=
 block|{
 literal|"--password"
 block|}
+argument_list|,
+name|description
+operator|=
+literal|"Password"
 argument_list|)
 specifier|private
 name|String
@@ -333,6 +341,10 @@ argument_list|(
 name|required
 operator|=
 literal|true
+argument_list|,
+name|description
+operator|=
+literal|"Host"
 argument_list|)
 specifier|private
 name|String
@@ -350,6 +362,10 @@ operator|=
 block|{
 literal|"--port"
 block|}
+argument_list|,
+name|description
+operator|=
+literal|"Port"
 argument_list|)
 specifier|private
 name|int

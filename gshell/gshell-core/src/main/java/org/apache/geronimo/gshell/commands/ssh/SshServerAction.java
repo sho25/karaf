@@ -201,6 +201,10 @@ operator|=
 block|{
 literal|"--port"
 block|}
+argument_list|,
+name|description
+operator|=
+literal|"Port"
 argument_list|)
 specifier|private
 name|int
@@ -220,6 +224,10 @@ operator|=
 block|{
 literal|"--background"
 block|}
+argument_list|,
+name|description
+operator|=
+literal|"Background"
 argument_list|)
 specifier|private
 name|boolean
