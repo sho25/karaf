@@ -712,19 +712,10 @@ argument_list|()
 expr_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|String
+name|value
+range|:
 name|s
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|this
@@ -736,10 +727,7 @@ argument_list|(
 operator|new
 name|URI
 argument_list|(
-name|s
-index|[
-name|i
-index|]
+name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -775,10 +763,7 @@ condition|(
 operator|!
 name|repositories
 operator|.
-name|values
-argument_list|()
-operator|.
-name|contains
+name|containsKey
 argument_list|(
 name|uri
 argument_list|)
@@ -1341,8 +1326,6 @@ argument_list|)
 expr_stmt|;
 name|InputStream
 name|is
-init|=
-literal|null
 decl_stmt|;
 try|try
 block|{
@@ -1718,9 +1701,15 @@ operator|.
 name|append
 argument_list|(
 literal|"Feature named '"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|name
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"' has multiple versions installed ("
 argument_list|)
 expr_stmt|;
@@ -2395,10 +2384,7 @@ condition|(
 operator|!
 name|repositories
 operator|.
-name|keySet
-argument_list|()
-operator|.
-name|contains
+name|containsKey
 argument_list|(
 name|uri
 argument_list|)
@@ -3537,7 +3523,6 @@ return|return
 name|set
 return|;
 block|}
-comment|/**      * Clean up version parameters. Other builders use more fuzzy definitions of      * the version syntax. This method cleans up such a version to match an OSGi      * version.      *      * @param version      * @return      */
 specifier|static
 name|Pattern
 name|fuzzyVersion
@@ -3568,6 +3553,7 @@ operator|.
 name|DOTALL
 argument_list|)
 decl_stmt|;
+comment|/**      * Clean up version parameters. Other builders use more fuzzy definitions of      * the version syntax. This method cleans up such a version to match an OSGi      * version.      *      * @param version      * @return      */
 specifier|static
 specifier|public
 name|String
