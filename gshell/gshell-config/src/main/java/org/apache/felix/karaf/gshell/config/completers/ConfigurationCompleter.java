@@ -53,16 +53,6 @@ end_import
 
 begin_import
 import|import
-name|javax
-operator|.
-name|annotation
-operator|.
-name|PostConstruct
-import|;
-end_import
-
-begin_import
-import|import
 name|jline
 operator|.
 name|Completor
@@ -184,8 +174,6 @@ operator|=
 name|admin
 expr_stmt|;
 block|}
-annotation|@
-name|PostConstruct
 specifier|public
 name|void
 name|init

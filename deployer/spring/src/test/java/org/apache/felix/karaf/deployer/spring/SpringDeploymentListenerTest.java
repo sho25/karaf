@@ -196,7 +196,7 @@ argument_list|()
 operator|.
 name|getResource
 argument_list|(
-literal|"META-INF/spring/spring-deployer.xml"
+literal|"test.xml"
 argument_list|)
 operator|.
 name|toURI

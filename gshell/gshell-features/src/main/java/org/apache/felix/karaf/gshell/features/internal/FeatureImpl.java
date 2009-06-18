@@ -79,54 +79,11 @@ name|Feature
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
-name|jmx
-operator|.
-name|export
-operator|.
-name|annotation
-operator|.
-name|ManagedAttribute
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
-name|jmx
-operator|.
-name|export
-operator|.
-name|annotation
-operator|.
-name|ManagedResource
-import|;
-end_import
-
 begin_comment
 comment|/**  * A feature  */
 end_comment
 
 begin_class
-annotation|@
-name|ManagedResource
-argument_list|(
-name|description
-operator|=
-literal|"Managed Feature"
-argument_list|,
-name|currencyTimeLimit
-operator|=
-literal|15
-argument_list|)
 specifier|public
 class|class
 name|FeatureImpl
@@ -263,13 +220,6 @@ operator|+
 name|version
 expr_stmt|;
 block|}
-annotation|@
-name|ManagedAttribute
-argument_list|(
-name|description
-operator|=
-literal|"Feature Unique ID"
-argument_list|)
 specifier|public
 name|String
 name|getId
@@ -279,13 +229,6 @@ return|return
 name|id
 return|;
 block|}
-annotation|@
-name|ManagedAttribute
-argument_list|(
-name|description
-operator|=
-literal|"Feature Name"
-argument_list|)
 specifier|public
 name|String
 name|getName
@@ -295,13 +238,6 @@ return|return
 name|name
 return|;
 block|}
-annotation|@
-name|ManagedAttribute
-argument_list|(
-name|description
-operator|=
-literal|"Feature Version"
-argument_list|)
 specifier|public
 name|String
 name|getVersion
@@ -326,13 +262,6 @@ operator|=
 name|version
 expr_stmt|;
 block|}
-annotation|@
-name|ManagedAttribute
-argument_list|(
-name|description
-operator|=
-literal|"List of Dependencies"
-argument_list|)
 specifier|public
 name|List
 argument_list|<

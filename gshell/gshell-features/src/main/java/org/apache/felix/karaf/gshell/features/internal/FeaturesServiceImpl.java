@@ -461,20 +461,6 @@ name|PreferencesService
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
-name|osgi
-operator|.
-name|context
-operator|.
-name|BundleContextAware
-import|;
-end_import
-
 begin_comment
 comment|/**  * The Features service implementation.  * Adding a repository url will load the features contained in this repository and  * create dummy sub shells.  When invoked, these commands will prompt the user for  * installing the needed bundles.  *  */
 end_comment
@@ -485,8 +471,6 @@ class|class
 name|FeaturesServiceImpl
 implements|implements
 name|FeaturesService
-implements|,
-name|BundleContextAware
 block|{
 specifier|private
 specifier|static

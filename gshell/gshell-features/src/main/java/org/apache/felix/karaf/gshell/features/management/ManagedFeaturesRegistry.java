@@ -1075,6 +1075,21 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|public
+name|void
+name|unregisterMBeanServer
+parameter_list|(
+name|MBeanServer
+name|mbeanServer
+parameter_list|,
+name|Map
+name|props
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+comment|// TODO
+block|}
 block|}
 end_class
 
