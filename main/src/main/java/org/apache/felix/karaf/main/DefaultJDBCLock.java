@@ -269,7 +269,7 @@ condition|)
 block|{
 name|table
 operator|=
-literal|"SERVICEMIX_LOCK"
+literal|"KARAF_LOCK"
 expr_stmt|;
 block|}
 if|if
@@ -281,7 +281,7 @@ condition|)
 block|{
 name|clusterName
 operator|=
-literal|"smx4"
+literal|"karaf"
 expr_stmt|;
 block|}
 name|this

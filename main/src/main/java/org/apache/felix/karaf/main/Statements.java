@@ -66,13 +66,13 @@ specifier|private
 name|String
 name|lockTableName
 init|=
-literal|"SERVICEMIX_LOCK"
+literal|"KARAF_LOCK"
 decl_stmt|;
 specifier|private
 name|String
 name|clusterName
 init|=
-literal|"smx4"
+literal|"karaf"
 decl_stmt|;
 specifier|private
 name|String
