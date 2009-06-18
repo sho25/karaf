@@ -800,7 +800,7 @@ argument_list|)
 expr_stmt|;
 name|service
 operator|.
-name|addInterfaceName
+name|addInterface
 argument_list|(
 name|JaasRealm
 operator|.
@@ -1081,7 +1081,7 @@ argument_list|)
 expr_stmt|;
 name|service
 operator|.
-name|addInterfaceName
+name|addInterface
 argument_list|(
 name|KeystoreInstance
 operator|.

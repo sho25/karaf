@@ -1527,7 +1527,7 @@ argument_list|)
 expr_stmt|;
 name|commandService
 operator|.
-name|addInterfaceName
+name|addInterface
 argument_list|(
 name|Command
 operator|.
@@ -2056,7 +2056,7 @@ argument_list|)
 expr_stmt|;
 name|linkService
 operator|.
-name|addInterfaceName
+name|addInterface
 argument_list|(
 name|Link
 operator|.
@@ -2190,7 +2190,7 @@ argument_list|)
 expr_stmt|;
 name|aliasService
 operator|.
-name|addInterfaceName
+name|addInterface
 argument_list|(
 name|Alias
 operator|.

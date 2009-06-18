@@ -63,8 +63,8 @@ parameter_list|(
 name|Object
 name|o
 parameter_list|,
-name|Class
-name|aClass
+name|Object
+name|type
 parameter_list|)
 block|{
 return|return
@@ -72,7 +72,7 @@ name|o
 operator|instanceof
 name|String
 operator|&&
-name|aClass
+name|type
 operator|==
 name|CacheStrategy
 operator|.
@@ -86,8 +86,8 @@ parameter_list|(
 name|Object
 name|o
 parameter_list|,
-name|Class
-name|aClass
+name|Object
+name|type
 parameter_list|)
 throws|throws
 name|Exception
@@ -98,7 +98,7 @@ name|canConvert
 argument_list|(
 name|o
 argument_list|,
-name|aClass
+name|type
 argument_list|)
 condition|)
 block|{
