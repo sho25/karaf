@@ -4432,6 +4432,11 @@ name|lockLogged
 init|=
 literal|false
 decl_stmt|;
+name|setStartLevel
+argument_list|(
+name|lockStartLevel
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 init|;
@@ -4552,6 +4557,14 @@ name|lockDelay
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+else|else
+block|{
+name|setStartLevel
+argument_list|(
+name|defaultStartLevel
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 catch|catch
