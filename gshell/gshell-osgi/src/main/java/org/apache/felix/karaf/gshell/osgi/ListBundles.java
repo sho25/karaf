@@ -416,7 +416,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"   ID   State         Spring   "
+literal|"   ID   State         Blueprint   "
 operator|+
 name|level
 operator|+
