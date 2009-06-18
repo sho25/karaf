@@ -493,14 +493,11 @@ argument_list|)
 decl_stmt|;
 name|bean
 operator|.
-name|setClassName
+name|setRuntimeClass
 argument_list|(
 name|Config
 operator|.
 name|class
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|String
@@ -661,14 +658,11 @@ argument_list|)
 decl_stmt|;
 name|md
 operator|.
-name|setClassName
+name|setRuntimeClass
 argument_list|(
 name|Module
 operator|.
 name|class
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|md
@@ -866,14 +860,11 @@ argument_list|)
 decl_stmt|;
 name|bean
 operator|.
-name|setClassName
+name|setRuntimeClass
 argument_list|(
 name|ResourceKeystoreInstance
 operator|.
 name|class
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// Parse name
