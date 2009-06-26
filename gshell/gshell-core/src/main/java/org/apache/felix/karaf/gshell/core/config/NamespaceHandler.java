@@ -1583,11 +1583,11 @@ argument_list|)
 decl_stmt|;
 name|action
 operator|.
-name|setInitialization
+name|setActivation
 argument_list|(
 name|MutableBeanMetadata
 operator|.
-name|INITIALIZATION_LAZY
+name|ACTIVATION_LAZY
 argument_list|)
 expr_stmt|;
 name|action
