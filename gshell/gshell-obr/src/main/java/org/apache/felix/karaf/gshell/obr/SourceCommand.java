@@ -45,13 +45,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
 operator|.
-name|gshell
+name|gogo
 operator|.
-name|clp
+name|commands
 operator|.
-name|Argument
+name|Option
 import|;
 end_import
 
@@ -61,13 +61,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
 operator|.
-name|gshell
+name|gogo
 operator|.
-name|clp
+name|commands
 operator|.
-name|Option
+name|Argument
 import|;
 end_import
 
@@ -218,7 +218,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|err
 operator|.
@@ -264,11 +264,11 @@ name|FileUtil
 operator|.
 name|downloadSource
 argument_list|(
-name|io
+name|System
 operator|.
 name|out
 argument_list|,
-name|io
+name|System
 operator|.
 name|err
 argument_list|,
@@ -282,7 +282,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|io
+name|System
 operator|.
 name|err
 operator|.

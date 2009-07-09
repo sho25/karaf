@@ -41,7 +41,7 @@ name|karaf
 operator|.
 name|gshell
 operator|.
-name|core
+name|console
 operator|.
 name|OsgiCommandSupport
 import|;
@@ -132,7 +132,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -168,7 +168,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -215,10 +215,7 @@ name|Dictionary
 operator|)
 name|this
 operator|.
-name|variables
-operator|.
-name|parent
-argument_list|()
+name|session
 operator|.
 name|get
 argument_list|(

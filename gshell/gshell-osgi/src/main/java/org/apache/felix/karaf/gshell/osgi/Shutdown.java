@@ -31,7 +31,7 @@ name|karaf
 operator|.
 name|gshell
 operator|.
-name|core
+name|console
 operator|.
 name|OsgiCommandSupport
 import|;
@@ -118,9 +118,7 @@ name|start
 argument_list|()
 expr_stmt|;
 return|return
-name|Result
-operator|.
-name|SUCCESS
+literal|null
 return|;
 block|}
 block|}

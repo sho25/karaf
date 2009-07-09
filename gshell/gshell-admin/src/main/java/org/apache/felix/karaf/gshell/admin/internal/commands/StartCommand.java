@@ -29,13 +29,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
 operator|.
-name|gshell
+name|gogo
 operator|.
-name|clp
+name|commands
 operator|.
-name|Argument
+name|Option
 import|;
 end_import
 
@@ -45,13 +45,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
 operator|.
-name|gshell
+name|gogo
 operator|.
-name|clp
+name|commands
 operator|.
-name|Option
+name|Argument
 import|;
 end_import
 
@@ -122,9 +122,7 @@ name|javaOpts
 argument_list|)
 expr_stmt|;
 return|return
-name|Result
-operator|.
-name|SUCCESS
+literal|null
 return|;
 block|}
 block|}

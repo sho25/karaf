@@ -35,13 +35,15 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
+operator|.
+name|karaf
 operator|.
 name|gshell
 operator|.
-name|clp
+name|console
 operator|.
-name|Argument
+name|OsgiCommandSupport
 import|;
 end_import
 
@@ -53,13 +55,11 @@ name|apache
 operator|.
 name|felix
 operator|.
-name|karaf
+name|gogo
 operator|.
-name|gshell
+name|commands
 operator|.
-name|core
-operator|.
-name|OsgiCommandSupport
+name|Argument
 import|;
 end_import
 
@@ -297,7 +297,7 @@ name|level
 argument_list|)
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|err
 operator|.
@@ -307,9 +307,7 @@ literal|"level must be set to TRACE, DEBUG, INFO, WARN or ERROR (or - to unset i
 argument_list|)
 expr_stmt|;
 return|return
-name|Result
-operator|.
-name|FAILURE
+literal|null
 return|;
 block|}
 if|if
@@ -326,7 +324,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|err
 operator|.
@@ -336,9 +334,7 @@ literal|"Can not unset the ROOT logger"
 argument_list|)
 expr_stmt|;
 return|return
-name|Result
-operator|.
-name|FAILURE
+literal|null
 return|;
 block|}
 name|ConfigurationAdmin
@@ -577,9 +573,7 @@ name|props
 argument_list|)
 expr_stmt|;
 return|return
-name|Result
-operator|.
-name|SUCCESS
+literal|null
 return|;
 block|}
 specifier|protected

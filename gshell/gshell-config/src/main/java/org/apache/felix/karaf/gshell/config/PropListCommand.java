@@ -120,7 +120,7 @@ operator|.
 name|nextElement
 argument_list|()
 decl_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.

@@ -29,6 +29,22 @@ name|Arrays
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|logging
+operator|.
+name|spi
+operator|.
+name|PaxLoggingEvent
+import|;
+end_import
+
 begin_comment
 comment|/**  * A list that only keep the last N elements added  */
 end_comment
@@ -37,12 +53,9 @@ begin_class
 specifier|public
 class|class
 name|LruList
-parameter_list|<
-name|E
-parameter_list|>
 block|{
 specifier|private
-name|E
+name|PaxLoggingEvent
 index|[]
 name|elements
 decl_stmt|;
@@ -96,12 +109,8 @@ throw|;
 block|}
 name|elements
 operator|=
-operator|(
-name|E
-index|[]
-operator|)
 operator|new
-name|Object
+name|PaxLoggingEvent
 index|[
 name|size
 index|]
@@ -181,7 +190,7 @@ specifier|public
 name|void
 name|add
 parameter_list|(
-name|E
+name|PaxLoggingEvent
 name|element
 parameter_list|)
 block|{
@@ -291,7 +300,7 @@ block|}
 specifier|public
 name|Iterable
 argument_list|<
-name|E
+name|PaxLoggingEvent
 argument_list|>
 name|getElements
 parameter_list|()
@@ -313,7 +322,7 @@ block|}
 specifier|public
 name|Iterable
 argument_list|<
-name|E
+name|PaxLoggingEvent
 argument_list|>
 name|getElements
 parameter_list|(
@@ -350,16 +359,12 @@ argument_list|,
 name|s
 argument_list|)
 expr_stmt|;
-name|E
+name|PaxLoggingEvent
 index|[]
 name|e
 init|=
-operator|(
-name|E
-index|[]
-operator|)
 operator|new
-name|Object
+name|PaxLoggingEvent
 index|[
 name|nb
 index|]

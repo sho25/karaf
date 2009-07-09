@@ -25,11 +25,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
 operator|.
-name|gshell
+name|gogo
 operator|.
-name|clp
+name|commands
 operator|.
 name|Argument
 import|;
@@ -128,7 +128,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -158,7 +158,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -176,7 +176,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -225,7 +225,7 @@ operator|new
 name|StringBuffer
 argument_list|()
 decl_stmt|;
-name|io
+name|System
 operator|.
 name|err
 operator|.
@@ -234,7 +234,7 @@ argument_list|(
 literal|"You are about to designate bundle as a system bundle.  Do you want to continue (yes/no): "
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|err
 operator|.
@@ -250,7 +250,7 @@ block|{
 name|int
 name|c
 init|=
-name|io
+name|System
 operator|.
 name|in
 operator|.
@@ -266,7 +266,7 @@ condition|)
 block|{
 return|return;
 block|}
-name|io
+name|System
 operator|.
 name|err
 operator|.

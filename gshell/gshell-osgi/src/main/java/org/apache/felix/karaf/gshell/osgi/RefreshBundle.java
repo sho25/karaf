@@ -25,13 +25,15 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
+operator|.
+name|karaf
 operator|.
 name|gshell
 operator|.
-name|clp
+name|console
 operator|.
-name|Argument
+name|OsgiCommandSupport
 import|;
 end_import
 
@@ -43,13 +45,11 @@ name|apache
 operator|.
 name|felix
 operator|.
-name|karaf
+name|gogo
 operator|.
-name|gshell
+name|commands
 operator|.
-name|core
-operator|.
-name|OsgiCommandSupport
+name|Argument
 import|;
 end_import
 
@@ -139,7 +139,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -149,9 +149,7 @@ literal|"PackageAdmin service is unavailable."
 argument_list|)
 expr_stmt|;
 return|return
-name|Result
-operator|.
-name|FAILURE
+literal|null
 return|;
 block|}
 try|try
@@ -177,7 +175,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -187,9 +185,7 @@ literal|"PackageAdmin service is unavailable."
 argument_list|)
 expr_stmt|;
 return|return
-name|Result
-operator|.
-name|FAILURE
+literal|null
 return|;
 block|}
 if|if
@@ -227,7 +223,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -241,9 +237,7 @@ literal|" not found"
 argument_list|)
 expr_stmt|;
 return|return
-name|Result
-operator|.
-name|FAILURE
+literal|null
 return|;
 block|}
 name|pa
@@ -272,9 +266,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|Result
-operator|.
-name|SUCCESS
+literal|null
 return|;
 block|}
 block|}

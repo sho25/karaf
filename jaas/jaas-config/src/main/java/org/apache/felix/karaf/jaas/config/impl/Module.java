@@ -27,7 +27,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Map
+name|Properties
 import|;
 end_import
 
@@ -49,12 +49,7 @@ name|String
 name|flags
 decl_stmt|;
 specifier|private
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+name|Properties
 name|options
 decl_stmt|;
 specifier|public
@@ -106,12 +101,7 @@ name|flags
 expr_stmt|;
 block|}
 specifier|public
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+name|Properties
 name|getOptions
 parameter_list|()
 block|{
@@ -123,12 +113,7 @@ specifier|public
 name|void
 name|setOptions
 parameter_list|(
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+name|Properties
 name|options
 parameter_list|)
 block|{

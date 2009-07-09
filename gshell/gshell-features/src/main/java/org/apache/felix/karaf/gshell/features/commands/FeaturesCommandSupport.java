@@ -33,9 +33,9 @@ name|karaf
 operator|.
 name|gshell
 operator|.
-name|core
+name|features
 operator|.
-name|OsgiCommandSupport
+name|FeaturesService
 import|;
 end_import
 
@@ -51,9 +51,9 @@ name|karaf
 operator|.
 name|gshell
 operator|.
-name|features
+name|console
 operator|.
-name|FeaturesService
+name|OsgiCommandSupport
 import|;
 end_import
 
@@ -108,7 +108,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -144,7 +144,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.

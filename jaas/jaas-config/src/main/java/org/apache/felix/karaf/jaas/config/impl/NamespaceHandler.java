@@ -582,8 +582,10 @@ name|childElements
 init|=
 name|element
 operator|.
-name|getElementsByTagName
+name|getElementsByTagNameNS
 argument_list|(
+literal|"http://felix.apache.org/karaf/xmlns/jaas/v1.0.0"
+argument_list|,
 literal|"module"
 argument_list|)
 decl_stmt|;

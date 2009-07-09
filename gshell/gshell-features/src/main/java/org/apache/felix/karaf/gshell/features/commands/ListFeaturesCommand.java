@@ -27,13 +27,15 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
+operator|.
+name|karaf
 operator|.
 name|gshell
 operator|.
-name|clp
+name|features
 operator|.
-name|Option
+name|FeaturesService
 import|;
 end_import
 
@@ -45,13 +47,11 @@ name|apache
 operator|.
 name|felix
 operator|.
-name|karaf
+name|gogo
 operator|.
-name|gshell
+name|commands
 operator|.
-name|features
-operator|.
-name|FeaturesService
+name|Option
 import|;
 end_import
 
@@ -112,7 +112,7 @@ block|}
 else|else
 block|{
 comment|// Print column headers.
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -163,7 +163,7 @@ name|i
 operator|++
 control|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -184,7 +184,7 @@ condition|(
 name|installed
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -196,7 +196,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.

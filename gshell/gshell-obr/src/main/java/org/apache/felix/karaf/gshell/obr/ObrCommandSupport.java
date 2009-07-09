@@ -25,7 +25,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|PrintWriter
+name|PrintStream
 import|;
 end_import
 
@@ -51,7 +51,7 @@ name|karaf
 operator|.
 name|gshell
 operator|.
-name|core
+name|console
 operator|.
 name|OsgiCommandSupport
 import|;
@@ -196,7 +196,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -232,7 +232,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -610,7 +610,7 @@ specifier|protected
 name|void
 name|printUnderline
 parameter_list|(
-name|PrintWriter
+name|PrintStream
 name|out
 parameter_list|,
 name|int
@@ -730,7 +730,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|io
+name|System
 operator|.
 name|err
 operator|.
@@ -777,7 +777,7 @@ name|resolve
 argument_list|()
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -788,7 +788,7 @@ argument_list|)
 expr_stmt|;
 name|printUnderline
 argument_list|(
-name|io
+name|System
 operator|.
 name|out
 argument_list|,
@@ -829,7 +829,7 @@ name|resIdx
 operator|++
 control|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -883,7 +883,7 @@ literal|0
 operator|)
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -894,7 +894,7 @@ argument_list|)
 expr_stmt|;
 name|printUnderline
 argument_list|(
-name|io
+name|System
 operator|.
 name|out
 argument_list|,
@@ -918,7 +918,7 @@ name|resIdx
 operator|++
 control|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -973,7 +973,7 @@ literal|0
 operator|)
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -984,7 +984,7 @@ argument_list|)
 expr_stmt|;
 name|printUnderline
 argument_list|(
-name|io
+name|System
 operator|.
 name|out
 argument_list|,
@@ -1008,7 +1008,7 @@ name|resIdx
 operator|++
 control|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1041,7 +1041,7 @@ block|}
 block|}
 try|try
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1057,7 +1057,7 @@ argument_list|(
 name|start
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1073,7 +1073,7 @@ name|IllegalStateException
 name|ex
 parameter_list|)
 block|{
-name|io
+name|System
 operator|.
 name|err
 operator|.
@@ -1112,7 +1112,7 @@ literal|0
 operator|)
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1123,7 +1123,7 @@ argument_list|)
 expr_stmt|;
 name|printUnderline
 argument_list|(
-name|io
+name|System
 operator|.
 name|out
 argument_list|,
@@ -1147,7 +1147,7 @@ name|reqIdx
 operator|++
 control|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1195,7 +1195,7 @@ name|resIdx
 operator|++
 control|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1217,7 +1217,7 @@ block|}
 block|}
 else|else
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.

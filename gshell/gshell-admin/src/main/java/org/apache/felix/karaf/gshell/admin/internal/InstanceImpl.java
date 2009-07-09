@@ -117,25 +117,15 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|felix
 operator|.
-name|logging
+name|karaf
 operator|.
-name|Log
-import|;
-end_import
-
-begin_import
-import|import
-name|org
+name|gshell
 operator|.
-name|apache
+name|admin
 operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|LogFactory
+name|Instance
 import|;
 end_import
 
@@ -193,17 +183,19 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|slf4j
 operator|.
-name|felix
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|karaf
+name|slf4j
 operator|.
-name|gshell
-operator|.
-name|admin
-operator|.
-name|Instance
+name|LoggerFactory
 import|;
 end_import
 
@@ -217,12 +209,12 @@ block|{
 specifier|private
 specifier|static
 specifier|final
-name|Log
+name|Logger
 name|LOG
 init|=
-name|LogFactory
+name|LoggerFactory
 operator|.
-name|getLog
+name|getLogger
 argument_list|(
 name|InstanceImpl
 operator|.
@@ -745,6 +737,21 @@ literal|" "
 operator|+
 name|javaOpts
 operator|+
+literal|" -Djava.util.logging.config.file=\""
+operator|+
+operator|new
+name|File
+argument_list|(
+name|location
+argument_list|,
+literal|"etc/java.util.logging.properties"
+argument_list|)
+operator|.
+name|getCanonicalPath
+argument_list|()
+operator|+
+literal|"\""
+operator|+
 literal|" -Dkaraf.home=\""
 operator|+
 name|System
@@ -780,7 +787,7 @@ operator|.
 name|toString
 argument_list|()
 operator|+
-literal|" org.apache.felix.karaf.main.Main"
+literal|" org.apache.felix.karaf.main.Bootstrap"
 decl_stmt|;
 name|LOG
 operator|.

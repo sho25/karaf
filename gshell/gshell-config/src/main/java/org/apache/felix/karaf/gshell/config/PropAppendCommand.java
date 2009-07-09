@@ -35,11 +35,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
 operator|.
-name|gshell
+name|gogo
 operator|.
-name|clp
+name|commands
 operator|.
 name|Argument
 import|;

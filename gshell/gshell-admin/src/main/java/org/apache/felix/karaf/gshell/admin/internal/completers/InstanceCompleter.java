@@ -75,7 +75,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
+operator|.
+name|karaf
 operator|.
 name|gshell
 operator|.
@@ -89,9 +91,19 @@ end_import
 
 begin_import
 import|import
-name|jline
+name|org
 operator|.
-name|Completor
+name|apache
+operator|.
+name|felix
+operator|.
+name|karaf
+operator|.
+name|gshell
+operator|.
+name|console
+operator|.
+name|Completer
 import|;
 end_import
 
@@ -104,7 +116,7 @@ specifier|public
 class|class
 name|InstanceCompleter
 implements|implements
-name|Completor
+name|Completer
 block|{
 specifier|private
 name|AdminService

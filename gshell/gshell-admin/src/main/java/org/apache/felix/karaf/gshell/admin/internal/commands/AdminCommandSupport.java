@@ -71,7 +71,7 @@ name|karaf
 operator|.
 name|gshell
 operator|.
-name|core
+name|console
 operator|.
 name|OsgiCommandSupport
 import|;

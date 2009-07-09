@@ -47,13 +47,15 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
+operator|.
+name|karaf
 operator|.
 name|gshell
 operator|.
-name|clp
+name|features
 operator|.
-name|Argument
+name|FeaturesService
 import|;
 end_import
 
@@ -65,13 +67,11 @@ name|apache
 operator|.
 name|felix
 operator|.
-name|karaf
+name|gogo
 operator|.
-name|gshell
+name|commands
 operator|.
-name|features
-operator|.
-name|FeaturesService
+name|Argument
 import|;
 end_import
 

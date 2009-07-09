@@ -55,13 +55,15 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
+operator|.
+name|karaf
 operator|.
 name|gshell
 operator|.
-name|clp
+name|console
 operator|.
-name|Argument
+name|OsgiCommandSupport
 import|;
 end_import
 
@@ -73,13 +75,11 @@ name|apache
 operator|.
 name|felix
 operator|.
-name|karaf
+name|gogo
 operator|.
-name|gshell
+name|commands
 operator|.
-name|core
-operator|.
-name|OsgiCommandSupport
+name|Argument
 import|;
 end_import
 
@@ -177,7 +177,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|io
+name|System
 operator|.
 name|err
 operator|.
@@ -233,9 +233,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|Result
-operator|.
-name|SUCCESS
+literal|null
 return|;
 block|}
 specifier|protected
@@ -258,7 +256,7 @@ argument_list|(
 name|bundle
 argument_list|)
 decl_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -269,7 +267,7 @@ operator|+
 name|title
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -328,7 +326,7 @@ argument_list|(
 name|k
 argument_list|)
 decl_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.

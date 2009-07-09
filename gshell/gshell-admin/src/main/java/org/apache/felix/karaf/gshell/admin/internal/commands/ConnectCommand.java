@@ -29,27 +29,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
 operator|.
-name|gshell
+name|gogo
 operator|.
-name|clp
-operator|.
-name|Argument
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|geronimo
-operator|.
-name|gshell
-operator|.
-name|clp
+name|commands
 operator|.
 name|Option
 import|;
@@ -61,13 +45,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
 operator|.
-name|gshell
+name|gogo
 operator|.
-name|shell
+name|commands
 operator|.
-name|ShellContextHolder
+name|Argument
 import|;
 end_import
 
@@ -84,6 +68,10 @@ argument_list|(
 name|index
 operator|=
 literal|0
+argument_list|,
+name|name
+operator|=
+literal|"INSTANCE"
 argument_list|,
 name|required
 operator|=
@@ -112,10 +100,6 @@ block|{
 literal|"--username"
 block|}
 argument_list|,
-name|token
-operator|=
-literal|"USERNAME"
-argument_list|,
 name|description
 operator|=
 literal|"Remote user name"
@@ -124,7 +108,7 @@ specifier|private
 name|String
 name|username
 init|=
-literal|"smx"
+literal|"karaf"
 decl_stmt|;
 annotation|@
 name|Option
@@ -139,10 +123,6 @@ block|{
 literal|"--password"
 block|}
 argument_list|,
-name|token
-operator|=
-literal|"PASSWORD"
-argument_list|,
 name|description
 operator|=
 literal|"Remote user password"
@@ -151,7 +131,7 @@ specifier|private
 name|String
 name|password
 init|=
-literal|"smx"
+literal|"karaf"
 decl_stmt|;
 specifier|protected
 name|Object
@@ -171,13 +151,7 @@ operator|.
 name|getPort
 argument_list|()
 decl_stmt|;
-name|ShellContextHolder
-operator|.
-name|get
-argument_list|()
-operator|.
-name|getShell
-argument_list|()
+name|session
 operator|.
 name|execute
 argument_list|(
@@ -197,9 +171,7 @@ literal|" localhost"
 argument_list|)
 expr_stmt|;
 return|return
-name|Result
-operator|.
-name|SUCCESS
+literal|null
 return|;
 block|}
 block|}

@@ -105,7 +105,7 @@ name|i
 operator|++
 control|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -124,7 +124,7 @@ block|}
 block|}
 else|else
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.

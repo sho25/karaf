@@ -25,7 +25,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|PrintWriter
+name|PrintStream
 import|;
 end_import
 
@@ -45,11 +45,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
 operator|.
-name|gshell
+name|gogo
 operator|.
-name|clp
+name|commands
 operator|.
 name|Argument
 import|;
@@ -61,11 +61,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
 operator|.
-name|gshell
+name|gogo
 operator|.
-name|clp
+name|commands
 operator|.
 name|Option
 import|;
@@ -222,7 +222,7 @@ condition|)
 block|{
 name|printExports
 argument_list|(
-name|io
+name|System
 operator|.
 name|out
 argument_list|,
@@ -239,7 +239,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|io
+name|System
 operator|.
 name|err
 operator|.
@@ -259,7 +259,7 @@ else|else
 block|{
 name|printExports
 argument_list|(
-name|io
+name|System
 operator|.
 name|out
 argument_list|,
@@ -282,7 +282,7 @@ specifier|protected
 name|void
 name|printExports
 parameter_list|(
-name|PrintWriter
+name|PrintStream
 name|out
 parameter_list|,
 name|Bundle

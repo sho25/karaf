@@ -64,16 +64,10 @@ name|PaxAppender
 block|{
 specifier|protected
 name|LruList
-argument_list|<
-name|PaxLoggingEvent
-argument_list|>
 name|events
 decl_stmt|;
 specifier|public
 name|LruList
-argument_list|<
-name|PaxLoggingEvent
-argument_list|>
 name|getEvents
 parameter_list|()
 block|{
@@ -86,9 +80,6 @@ name|void
 name|setEvents
 parameter_list|(
 name|LruList
-argument_list|<
-name|PaxLoggingEvent
-argument_list|>
 name|events
 parameter_list|)
 block|{

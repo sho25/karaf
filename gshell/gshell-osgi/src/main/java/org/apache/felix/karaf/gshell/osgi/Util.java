@@ -33,22 +33,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|geronimo
-operator|.
-name|gshell
-operator|.
-name|io
-operator|.
-name|IO
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|osgi
 operator|.
 name|framework
@@ -104,6 +88,20 @@ operator|.
 name|startlevel
 operator|.
 name|StartLevel
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|service
+operator|.
+name|command
+operator|.
+name|CommandSession
 import|;
 end_import
 
@@ -594,7 +592,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Ask the user to confirm the access to a system bundle      *       * @param bundleId      * @param io      * @return true if the user confirm      * @throws IOException      */
+comment|/**      * Ask the user to confirm the access to a system bundle      *       * @param bundleId      * @param session      * @return true if the user confirm      * @throws IOException      */
 specifier|public
 specifier|static
 name|boolean
@@ -603,8 +601,8 @@ parameter_list|(
 name|long
 name|bundleId
 parameter_list|,
-name|IO
-name|io
+name|CommandSession
+name|session
 parameter_list|)
 throws|throws
 name|IOException
@@ -622,7 +620,7 @@ operator|new
 name|StringBuffer
 argument_list|()
 decl_stmt|;
-name|io
+name|System
 operator|.
 name|err
 operator|.
@@ -635,7 +633,7 @@ operator|+
 literal|".  Do you want to continue (yes/no): "
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|err
 operator|.
@@ -651,9 +649,10 @@ block|{
 name|int
 name|c
 init|=
-name|io
+name|session
 operator|.
-name|in
+name|getKeyboard
+argument_list|()
 operator|.
 name|read
 argument_list|()
@@ -669,7 +668,7 @@ return|return
 literal|false
 return|;
 block|}
-name|io
+name|System
 operator|.
 name|err
 operator|.

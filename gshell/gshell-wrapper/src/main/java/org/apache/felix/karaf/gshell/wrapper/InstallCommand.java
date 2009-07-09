@@ -115,29 +115,15 @@ name|org
 operator|.
 name|apache
 operator|.
-name|geronimo
+name|felix
+operator|.
+name|karaf
 operator|.
 name|gshell
 operator|.
-name|clp
+name|console
 operator|.
-name|Option
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|geronimo
-operator|.
-name|gshell
-operator|.
-name|io
-operator|.
-name|PumpStreamHandler
+name|OsgiCommandSupport
 import|;
 end_import
 
@@ -149,13 +135,11 @@ name|apache
 operator|.
 name|felix
 operator|.
-name|karaf
+name|gogo
 operator|.
-name|gshell
+name|commands
 operator|.
-name|core
-operator|.
-name|OsgiCommandSupport
+name|Option
 import|;
 end_import
 
@@ -689,7 +673,7 @@ comment|// when the machine boots up.
 block|}
 else|else
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -754,7 +738,7 @@ argument_list|,
 name|props
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -763,7 +747,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -777,7 +761,7 @@ name|getPath
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -786,7 +770,7 @@ argument_list|(
 literal|"before installing and starting the service."
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -805,7 +789,7 @@ literal|"Win"
 argument_list|)
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -814,7 +798,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -823,7 +807,7 @@ argument_list|(
 literal|"To install the service, run: "
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -839,7 +823,7 @@ operator|+
 literal|" install"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -848,7 +832,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -857,7 +841,7 @@ argument_list|(
 literal|"Once installed, to start the service run: "
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -870,7 +854,7 @@ operator|+
 literal|"\""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -879,7 +863,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -888,7 +872,7 @@ argument_list|(
 literal|"Once running, to stop the service run: "
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -901,7 +885,7 @@ operator|+
 literal|"\""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -910,7 +894,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -919,7 +903,7 @@ argument_list|(
 literal|"Once stopped, to remove the installed the service run: "
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -935,7 +919,7 @@ operator|+
 literal|" remove"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -956,7 +940,7 @@ literal|"Mac OS X"
 argument_list|)
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -965,7 +949,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -974,7 +958,7 @@ argument_list|(
 literal|"At this time it is not known how to get this service to start when the machine is rebooted."
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -983,7 +967,7 @@ argument_list|(
 literal|"If you know how to install the following service script so that it gets started"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -992,7 +976,7 @@ argument_list|(
 literal|"when OS X starts, please email dev@felix.apache.org and let us know how so"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1001,7 +985,7 @@ argument_list|(
 literal|"we can update this message."
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1010,7 +994,7 @@ argument_list|(
 literal|" "
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1019,7 +1003,7 @@ argument_list|(
 literal|"  To start the service:"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1035,7 +1019,7 @@ operator|+
 literal|" start"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1044,7 +1028,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1053,7 +1037,7 @@ argument_list|(
 literal|"  To stop the service:"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1069,7 +1053,7 @@ operator|+
 literal|" stop"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1090,7 +1074,7 @@ literal|"Linux"
 argument_list|)
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1100,7 +1084,7 @@ literal|"The way the service is installed depends upon your flavor of Linux."
 argument_list|)
 expr_stmt|;
 comment|// TODO: figure out if we can detect the Linux flavor
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1109,7 +1093,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1118,7 +1102,7 @@ argument_list|(
 literal|"@|cyan On Redhat/Fedora/CentOS Systems:|"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1127,7 +1111,7 @@ argument_list|(
 literal|"  To install the service:"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1143,7 +1127,7 @@ operator|+
 literal|" /etc/init.d/"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1159,7 +1143,7 @@ operator|+
 literal|" --add"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1168,7 +1152,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1177,7 +1161,7 @@ argument_list|(
 literal|"  To start the service when the machine is rebooted:"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1193,7 +1177,7 @@ operator|+
 literal|" on"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1202,7 +1186,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1211,7 +1195,7 @@ argument_list|(
 literal|"  To disable starting the service when the machine is rebooted:"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1227,7 +1211,7 @@ operator|+
 literal|" off"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1236,7 +1220,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1245,7 +1229,7 @@ argument_list|(
 literal|"  To start the service:"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1261,7 +1245,7 @@ operator|+
 literal|" start"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1270,7 +1254,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1279,7 +1263,7 @@ argument_list|(
 literal|"  To stop the service:"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1295,7 +1279,7 @@ operator|+
 literal|" stop"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1304,7 +1288,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1313,7 +1297,7 @@ argument_list|(
 literal|"  To uninstall the service :"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1329,7 +1313,7 @@ operator|+
 literal|" --del"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1343,7 +1327,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1352,7 +1336,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1361,7 +1345,7 @@ argument_list|(
 literal|"@|cyan On Ubuntu/Debian Systems:|"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1370,7 +1354,7 @@ argument_list|(
 literal|"  To install the service:"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1386,7 +1370,7 @@ operator|+
 literal|" /etc/init.d/"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1395,7 +1379,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1404,7 +1388,7 @@ argument_list|(
 literal|"  To start the service when the machine is rebooted:"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1420,7 +1404,7 @@ operator|+
 literal|" defaults"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1429,7 +1413,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1438,7 +1422,7 @@ argument_list|(
 literal|"  To disable starting the service when the machine is rebooted:"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1454,7 +1438,7 @@ operator|+
 literal|" remove"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1463,7 +1447,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1472,7 +1456,7 @@ argument_list|(
 literal|"  To start the service:"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1488,7 +1472,7 @@ operator|+
 literal|" start"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1497,7 +1481,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1506,7 +1490,7 @@ argument_list|(
 literal|"  To stop the service:"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1522,7 +1506,7 @@ operator|+
 literal|" stop"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1531,7 +1515,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1540,7 +1524,7 @@ argument_list|(
 literal|"  To uninstall the service :"
 argument_list|)
 expr_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1623,17 +1607,17 @@ init|=
 operator|new
 name|PumpStreamHandler
 argument_list|(
-name|io
+name|System
 operator|.
-name|inputStream
+name|in
 argument_list|,
-name|io
+name|System
 operator|.
-name|outputStream
+name|out
 argument_list|,
-name|io
+name|System
 operator|.
-name|errorStream
+name|err
 argument_list|)
 decl_stmt|;
 name|handler
@@ -1690,7 +1674,7 @@ name|exists
 argument_list|()
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1766,7 +1750,7 @@ operator|.
 name|nextLine
 argument_list|()
 decl_stmt|;
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1858,7 +1842,7 @@ block|}
 block|}
 else|else
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -1906,7 +1890,7 @@ name|exists
 argument_list|()
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -2015,7 +1999,7 @@ block|}
 block|}
 else|else
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
@@ -2215,7 +2199,7 @@ name|exists
 argument_list|()
 condition|)
 block|{
-name|io
+name|System
 operator|.
 name|out
 operator|.
