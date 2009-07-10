@@ -1136,6 +1136,15 @@ argument_list|)
 decl_stmt|;
 name|commandService
 operator|.
+name|setActivation
+argument_list|(
+name|MutableServiceMetadata
+operator|.
+name|ACTIVATION_LAZY
+argument_list|)
+expr_stmt|;
+name|commandService
+operator|.
 name|setId
 argument_list|(
 name|getName
