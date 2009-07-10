@@ -85,9 +85,7 @@ name|gshell
 operator|.
 name|console
 operator|.
-name|ansi
-operator|.
-name|AnsiOutputStream
+name|Completer
 import|;
 end_import
 
@@ -95,17 +93,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|fusesource
 operator|.
-name|felix
+name|jansi
 operator|.
-name|karaf
-operator|.
-name|gshell
-operator|.
-name|console
-operator|.
-name|Completer
+name|Ansi
 import|;
 end_import
 
@@ -156,18 +148,6 @@ operator|.
 name|io
 operator|.
 name|PrintStream
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|lang
-operator|.
-name|reflect
-operator|.
-name|Method
 import|;
 end_import
 
@@ -226,7 +206,7 @@ specifier|final
 name|String
 name|DEFAULT_PROMPT
 init|=
-literal|"\"@|bold ${USER}|@${APPLICATION}:@|bold ${SCOPE}|> \""
+literal|"\"\u001B\\[1m${USER}\u001B\\[0m@${APPLICATION}> \""
 decl_stmt|;
 specifier|private
 name|CommandSession
@@ -511,24 +491,14 @@ block|{
 try|try
 block|{
 name|String
-name|prompt
-init|=
-name|AnsiOutputStream
-operator|.
-name|decode
-argument_list|(
-name|getPrompt
-argument_list|()
-argument_list|)
-decl_stmt|;
-name|String
 name|line
 init|=
 name|reader
 operator|.
 name|readLine
 argument_list|(
-name|prompt
+name|getPrompt
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
@@ -672,8 +642,6 @@ operator|>
 literal|0
 condition|)
 block|{
-try|try
-block|{
 name|session
 operator|.
 name|getConsole
@@ -681,23 +649,9 @@ argument_list|()
 operator|.
 name|println
 argument_list|(
-name|AnsiOutputStream
-operator|.
-name|decode
-argument_list|(
 name|welcome
 argument_list|)
-argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-comment|//
-block|}
 block|}
 block|}
 specifier|private
@@ -904,7 +858,6 @@ name|interrupt
 operator|=
 literal|true
 expr_stmt|;
-comment|//System.err.println("Interrupt ^C");
 block|}
 specifier|private
 class|class

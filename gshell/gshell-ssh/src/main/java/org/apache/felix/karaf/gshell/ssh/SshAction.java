@@ -1,627 +1,759 @@
 begin_unit|revision:0.9.5;language:Java;cregit-version:0.0.1
 begin_comment
-comment|///*
+comment|/*  * Licensed to the Apache Software Foundation (ASF) under one  * or more contributor license agreements.  See the NOTICE file  * distributed with this work for additional information  * regarding copyright ownership.  The ASF licenses this file  * to you under the Apache License, Version 2.0 (the  * "License"); you may not use this file except in compliance  * with the License.  You may obtain a copy of the License at  *  *  http://www.apache.org/licenses/LICENSE-2.0  *  * Unless required by applicable law or agreed to in writing,  * software distributed under the License is distributed on an  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  * KIND, either express or implied.  See the License for the  * specific language governing permissions and limitations  * under the License.  */
 end_comment
 
-begin_comment
-comment|// * Licensed to the Apache Software Foundation (ASF) under one
-end_comment
+begin_package
+package|package
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|karaf
+operator|.
+name|gshell
+operator|.
+name|ssh
+package|;
+end_package
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|sshd
+operator|.
+name|ClientChannel
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|sshd
+operator|.
+name|ClientSession
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|sshd
+operator|.
+name|SshClient
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|sshd
+operator|.
+name|client
+operator|.
+name|future
+operator|.
+name|ConnectFuture
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|sshd
+operator|.
+name|common
+operator|.
+name|util
+operator|.
+name|NoCloseInputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|sshd
+operator|.
+name|common
+operator|.
+name|util
+operator|.
+name|NoCloseOutputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|karaf
+operator|.
+name|gshell
+operator|.
+name|console
+operator|.
+name|OsgiCommandSupport
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|karaf
+operator|.
+name|gshell
+operator|.
+name|console
+operator|.
+name|BlueprintContainerAware
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|gogo
+operator|.
+name|commands
+operator|.
+name|Option
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|gogo
+operator|.
+name|commands
+operator|.
+name|Argument
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|service
+operator|.
+name|blueprint
+operator|.
+name|container
+operator|.
+name|BlueprintContainer
+import|;
+end_import
 
 begin_comment
-comment|// * or more contributor license agreements.  See the NOTICE file
+comment|/**  * Connect to a SSH server.  *  * @version $Rev: 721244 $ $Date: 2008-11-27 18:19:56 +0100 (Thu, 27 Nov 2008) $  */
 end_comment
 
-begin_comment
-comment|// * distributed with this work for additional information
-end_comment
-
-begin_comment
-comment|// * regarding copyright ownership.  The ASF licenses this file
-end_comment
-
-begin_comment
-comment|// * to you under the Apache License, Version 2.0 (the
-end_comment
-
-begin_comment
-comment|// * "License"); you may not use this file except in compliance
-end_comment
-
-begin_comment
-comment|// * with the License.  You may obtain a copy of the License at
-end_comment
-
-begin_comment
-comment|// *
-end_comment
-
-begin_comment
-comment|// *  http://www.apache.org/licenses/LICENSE-2.0
-end_comment
-
-begin_comment
-comment|// *
-end_comment
-
-begin_comment
-comment|// * Unless required by applicable law or agreed to in writing,
-end_comment
-
-begin_comment
-comment|// * software distributed under the License is distributed on an
-end_comment
-
-begin_comment
-comment|// * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-end_comment
-
-begin_comment
-comment|// * KIND, either express or implied.  See the License for the
-end_comment
-
-begin_comment
-comment|// * specific language governing permissions and limitations
-end_comment
-
-begin_comment
-comment|// * under the License.
-end_comment
-
-begin_comment
-comment|// */
-end_comment
-
-begin_comment
+begin_class
+specifier|public
+class|class
+name|SshAction
+extends|extends
+name|OsgiCommandSupport
+implements|implements
+name|BlueprintContainerAware
+block|{
+specifier|private
+specifier|final
+name|Logger
+name|log
+init|=
+name|LoggerFactory
+operator|.
+name|getLogger
+argument_list|(
+name|getClass
+argument_list|()
+argument_list|)
+decl_stmt|;
+annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
+literal|"-l"
+argument_list|,
+name|aliases
+operator|=
+block|{
+literal|"--username"
+block|}
+argument_list|,
+name|description
+operator|=
+literal|"Username"
+argument_list|)
+specifier|private
+name|String
+name|username
+decl_stmt|;
+annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
+literal|"-P"
+argument_list|,
+name|aliases
+operator|=
+block|{
+literal|"--password"
+block|}
+argument_list|,
+name|description
+operator|=
+literal|"Password"
+argument_list|)
+specifier|private
+name|String
+name|password
+decl_stmt|;
+annotation|@
+name|Argument
+argument_list|(
+name|required
+operator|=
+literal|true
+argument_list|,
+name|description
+operator|=
+literal|"Host"
+argument_list|)
+specifier|private
+name|String
+name|hostname
+decl_stmt|;
+annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
+literal|"-p"
+argument_list|,
+name|aliases
+operator|=
+block|{
+literal|"--port"
+block|}
+argument_list|,
+name|description
+operator|=
+literal|"Port"
+argument_list|)
+specifier|private
+name|int
+name|port
+init|=
+literal|22
+decl_stmt|;
+specifier|private
+name|BlueprintContainer
+name|container
+decl_stmt|;
+specifier|private
+name|ClientSession
+name|session
+decl_stmt|;
+specifier|public
+name|void
+name|setBlueprintContainer
+parameter_list|(
+specifier|final
+name|BlueprintContainer
+name|container
+parameter_list|)
+block|{
+assert|assert
+name|container
+operator|!=
+literal|null
+assert|;
+name|this
+operator|.
+name|container
+operator|=
+name|container
+expr_stmt|;
+block|}
+annotation|@
+name|Override
+specifier|protected
+name|Object
+name|doExecute
+parameter_list|()
+throws|throws
+name|Exception
+block|{
 comment|//
-end_comment
-
-begin_comment
-comment|//package org.apache.felix.karaf.gshell.ssh;
-end_comment
-
-begin_comment
+comment|// TODO: Parse hostname for<username>@<hostname>
 comment|//
-end_comment
-
-begin_comment
-comment|//import org.apache.sshd.ClientChannel;
-end_comment
-
-begin_comment
-comment|//import org.apache.sshd.ClientSession;
-end_comment
-
-begin_comment
-comment|//import org.apache.sshd.SshClient;
-end_comment
-
-begin_comment
-comment|//import org.apache.sshd.client.future.ConnectFuture;
-end_comment
-
-begin_comment
-comment|//import org.apache.sshd.common.util.NoCloseInputStream;
-end_comment
-
-begin_comment
-comment|//import org.apache.sshd.common.util.NoCloseOutputStream;
-end_comment
-
-begin_comment
-comment|//import org.apache.felix.karaf.gshell.console.OsgiCommandSupport;
-end_comment
-
-begin_comment
-comment|//import org.apache.felix.karaf.gshell.console.BlueprintContainerAware;
-end_comment
-
-begin_comment
-comment|//import org.apache.felix.gogo.commands.Option;
-end_comment
-
-begin_comment
-comment|//import org.apache.felix.gogo.commands.Argument;
-end_comment
-
-begin_comment
-comment|//import org.slf4j.Logger;
-end_comment
-
-begin_comment
-comment|//import org.slf4j.LoggerFactory;
-end_comment
-
-begin_comment
-comment|//import org.osgi.service.blueprint.container.BlueprintContainer;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|///**
-end_comment
-
-begin_comment
-comment|// * Connect to a SSH server.
-end_comment
-
-begin_comment
-comment|// *
-end_comment
-
-begin_comment
-comment|// * @version $Rev: 721244 $ $Date: 2008-11-27 18:19:56 +0100 (Thu, 27 Nov 2008) $
-end_comment
-
-begin_comment
-comment|// */
-end_comment
-
-begin_comment
-comment|//public class SshAction
-end_comment
-
-begin_comment
-comment|//    extends OsgiCommandSupport implements BlueprintContainerAware
-end_comment
-
-begin_comment
-comment|//{
-end_comment
-
-begin_comment
-comment|//    private final Logger log = LoggerFactory.getLogger(getClass());
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//    @Option(name="-l", aliases={"--username"}, description = "Username")
-end_comment
-
-begin_comment
-comment|//    private String username;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//    @Option(name="-P", aliases={"--password"}, description = "Password")
-end_comment
-
-begin_comment
-comment|//    private String password;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//    @Argument(required=true, description = "Host")
-end_comment
-
-begin_comment
-comment|//    private String hostname;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//    @Option(name="-p", aliases={"--port"}, description = "Port")
-end_comment
-
-begin_comment
-comment|//    private int port = 22;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//    private BlueprintContainer container;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//	private ClientSession session;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//    public void setBlueprintContainer(final BlueprintContainer container) {
-end_comment
-
-begin_comment
-comment|//        assert container != null;
-end_comment
-
-begin_comment
-comment|//        this.container = container;
-end_comment
-
-begin_comment
-comment|//    }
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//    /**
-end_comment
-
-begin_comment
-comment|//     * Helper to validate that prompted username or password is not null or empty.
-end_comment
-
-begin_comment
-comment|//     */
-end_comment
-
-begin_comment
-comment|//    private class UsernamePasswordValidator
-end_comment
-
-begin_comment
-comment|//        implements PromptReader.Validator
-end_comment
-
-begin_comment
-comment|//    {
-end_comment
-
-begin_comment
-comment|//        private String type;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        private int count = 0;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        private int max = 3;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        public UsernamePasswordValidator(final String type) {
-end_comment
-
-begin_comment
-comment|//            assert type != null;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            this.type = type;
-end_comment
-
-begin_comment
-comment|//        }
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        public boolean isValid(final String value) {
-end_comment
-
-begin_comment
-comment|//            count++;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            if (value != null&& value.trim().length()> 0) {
-end_comment
-
-begin_comment
-comment|//                return true;
-end_comment
-
-begin_comment
-comment|//            }
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            if (count>= max) {
-end_comment
-
-begin_comment
-comment|//                throw new RuntimeException("Too many attempts; failed to prompt user for " + type + " after " + max + " tries");
-end_comment
-
-begin_comment
-comment|//            }
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            return false;
-end_comment
-
-begin_comment
-comment|//        }
-end_comment
-
-begin_comment
-comment|//    }
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//    @Override
-end_comment
-
-begin_comment
-comment|//    protected Object doExecute() throws Exception {
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        //
-end_comment
-
-begin_comment
-comment|//        // TODO: Parse hostname for<username>@<hostname>
-end_comment
-
-begin_comment
-comment|//        //
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        System.out.println("Connecting to host " + hostname + " on port " + port);
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        // If the username/password was not configured via cli, then prompt the user for the values
-end_comment
-
-begin_comment
-comment|//        if (username == null || password == null) {
-end_comment
-
-begin_comment
-comment|//            PromptReader prompter = new PromptReader(io);
-end_comment
-
-begin_comment
-comment|//            log.debug("Prompting user for credentials");
-end_comment
-
-begin_comment
-comment|//            if (username == null) {
-end_comment
-
-begin_comment
-comment|//                username = prompter.readLine("Login: ", new UsernamePasswordValidator("login"));
-end_comment
-
-begin_comment
-comment|//            }
-end_comment
-
-begin_comment
-comment|//            if (password == null) {
-end_comment
-
-begin_comment
-comment|//                text = messages.getMessage("prompt.password");
-end_comment
-
-begin_comment
-comment|//                password = prompter.readPassword("Password: ", new UsernamePasswordValidator("password"));
-end_comment
-
-begin_comment
-comment|//            }
-end_comment
-
-begin_comment
-comment|//        }
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        // Create the client from prototype
-end_comment
-
-begin_comment
-comment|//        SshClient client = (SshClient) container.getComponentInstance(SshClient.class.getName());
-end_comment
-
-begin_comment
-comment|//        log.debug("Created client: {}", client);
-end_comment
-
-begin_comment
-comment|//        client.start();;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        try {
-end_comment
-
-begin_comment
-comment|//            ConnectFuture future = client.connect(hostname, port);
-end_comment
-
-begin_comment
-comment|//            future.await();
-end_comment
-
-begin_comment
-comment|//            session = future.getSession();
-end_comment
-
-begin_comment
-comment|//            try {
-end_comment
-
-begin_comment
-comment|//                System.out.println("Connected");
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//                session.authPassword(username, password);
-end_comment
-
-begin_comment
-comment|//                int ret = session.waitFor(ClientSession.WAIT_AUTH | ClientSession.CLOSED | ClientSession.AUTHED, 0);
-end_comment
-
-begin_comment
-comment|//                if ((ret& ClientSession.AUTHED) == 0) {
-end_comment
-
-begin_comment
-comment|//                    System.err.println("Authentication failed");
-end_comment
-
-begin_comment
-comment|//                    return null;
-end_comment
-
-begin_comment
-comment|//                }
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//                ClientChannel channel = session.createChannel("shell");
-end_comment
-
-begin_comment
-comment|//                channel.setIn(new NoCloseInputStream(System.in));
-end_comment
-
-begin_comment
-comment|//                channel.setOut(new NoCloseOutputStream(System.out));
-end_comment
-
-begin_comment
-comment|//                channel.setErr(new NoCloseOutputStream(System.err));
-end_comment
-
-begin_comment
-comment|//                channel.open();
-end_comment
-
-begin_comment
-comment|//                channel.waitFor(ClientChannel.CLOSED, 0);
-end_comment
-
-begin_comment
-comment|//            } finally {
-end_comment
-
-begin_comment
-comment|//                session.close(false);
-end_comment
-
-begin_comment
-comment|//            }
-end_comment
-
-begin_comment
-comment|//        } finally {
-end_comment
-
-begin_comment
-comment|//            client.stop();
-end_comment
-
-begin_comment
-comment|//        }
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        return null;
-end_comment
-
-begin_comment
-comment|//    }
-end_comment
-
-begin_comment
-comment|//}
-end_comment
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Connecting to host "
+operator|+
+name|hostname
+operator|+
+literal|" on port "
+operator|+
+name|port
+argument_list|)
+expr_stmt|;
+comment|// If the username/password was not configured via cli, then prompt the user for the values
+if|if
+condition|(
+name|username
+operator|==
+literal|null
+operator|||
+name|password
+operator|==
+literal|null
+condition|)
+block|{
+name|log
+operator|.
+name|debug
+argument_list|(
+literal|"Prompting user for credentials"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|username
+operator|==
+literal|null
+condition|)
+block|{
+name|username
+operator|=
+name|readLine
+argument_list|(
+literal|"Login: "
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|password
+operator|==
+literal|null
+condition|)
+block|{
+name|password
+operator|=
+name|readLine
+argument_list|(
+literal|"Password: "
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+comment|// Create the client from prototype
+name|SshClient
+name|client
+init|=
+operator|(
+name|SshClient
+operator|)
+name|container
+operator|.
+name|getComponentInstance
+argument_list|(
+name|SshClient
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|log
+operator|.
+name|debug
+argument_list|(
+literal|"Created client: {}"
+argument_list|,
+name|client
+argument_list|)
+expr_stmt|;
+name|client
+operator|.
+name|start
+argument_list|()
+expr_stmt|;
+empty_stmt|;
+try|try
+block|{
+name|ConnectFuture
+name|future
+init|=
+name|client
+operator|.
+name|connect
+argument_list|(
+name|hostname
+argument_list|,
+name|port
+argument_list|)
+decl_stmt|;
+name|future
+operator|.
+name|await
+argument_list|()
+expr_stmt|;
+name|session
+operator|=
+name|future
+operator|.
+name|getSession
+argument_list|()
+expr_stmt|;
+try|try
+block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Connected"
+argument_list|)
+expr_stmt|;
+name|session
+operator|.
+name|authPassword
+argument_list|(
+name|username
+argument_list|,
+name|password
+argument_list|)
+expr_stmt|;
+name|int
+name|ret
+init|=
+name|session
+operator|.
+name|waitFor
+argument_list|(
+name|ClientSession
+operator|.
+name|WAIT_AUTH
+operator||
+name|ClientSession
+operator|.
+name|CLOSED
+operator||
+name|ClientSession
+operator|.
+name|AUTHED
+argument_list|,
+literal|0
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|(
+name|ret
+operator|&
+name|ClientSession
+operator|.
+name|AUTHED
+operator|)
+operator|==
+literal|0
+condition|)
+block|{
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+literal|"Authentication failed"
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
+name|ClientChannel
+name|channel
+init|=
+name|session
+operator|.
+name|createChannel
+argument_list|(
+literal|"shell"
+argument_list|)
+decl_stmt|;
+name|channel
+operator|.
+name|setIn
+argument_list|(
+operator|new
+name|NoCloseInputStream
+argument_list|(
+name|System
+operator|.
+name|in
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|channel
+operator|.
+name|setOut
+argument_list|(
+operator|new
+name|NoCloseOutputStream
+argument_list|(
+name|System
+operator|.
+name|out
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|channel
+operator|.
+name|setErr
+argument_list|(
+operator|new
+name|NoCloseOutputStream
+argument_list|(
+name|System
+operator|.
+name|err
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|channel
+operator|.
+name|open
+argument_list|()
+expr_stmt|;
+name|channel
+operator|.
+name|waitFor
+argument_list|(
+name|ClientChannel
+operator|.
+name|CLOSED
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+block|}
+finally|finally
+block|{
+name|session
+operator|.
+name|close
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+finally|finally
+block|{
+name|client
+operator|.
+name|stop
+argument_list|()
+expr_stmt|;
+block|}
+return|return
+literal|null
+return|;
+block|}
+specifier|public
+name|String
+name|readLine
+parameter_list|(
+name|String
+name|msg
+parameter_list|)
+throws|throws
+name|IOException
+block|{
+name|StringBuffer
+name|sb
+init|=
+operator|new
+name|StringBuffer
+argument_list|()
+decl_stmt|;
+name|System
+operator|.
+name|err
+operator|.
+name|print
+argument_list|(
+name|msg
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|err
+operator|.
+name|flush
+argument_list|()
+expr_stmt|;
+for|for
+control|(
+init|;
+condition|;
+control|)
+block|{
+name|int
+name|c
+init|=
+name|super
+operator|.
+name|session
+operator|.
+name|getKeyboard
+argument_list|()
+operator|.
+name|read
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|c
+operator|<
+literal|0
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
+name|System
+operator|.
+name|err
+operator|.
+name|print
+argument_list|(
+operator|(
+name|char
+operator|)
+name|c
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|c
+operator|==
+literal|'\r'
+operator|||
+name|c
+operator|==
+literal|'\n'
+condition|)
+block|{
+break|break;
+block|}
+name|sb
+operator|.
+name|append
+argument_list|(
+operator|(
+name|char
+operator|)
+name|c
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|sb
+operator|.
+name|toString
+argument_list|()
+return|;
+block|}
+block|}
+end_class
 
 end_unit
 
