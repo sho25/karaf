@@ -31,6 +31,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Properties
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -177,6 +187,20 @@ operator|.
 name|getProperties
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|props
+operator|==
+literal|null
+condition|)
+block|{
+name|props
+operator|=
+operator|new
+name|Properties
+argument_list|()
+expr_stmt|;
+block|}
 name|this
 operator|.
 name|session
