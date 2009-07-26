@@ -75,6 +75,22 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|gogo
+operator|.
+name|commands
+operator|.
+name|Command
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|osgi
 operator|.
 name|service
@@ -100,6 +116,21 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|Command
+argument_list|(
+name|scope
+operator|=
+literal|"obr"
+argument_list|,
+name|name
+operator|=
+literal|"source"
+argument_list|,
+name|description
+operator|=
+literal|"Download the sources for an OBR bundle."
+argument_list|)
 specifier|public
 class|class
 name|SourceCommand

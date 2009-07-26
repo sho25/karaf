@@ -49,6 +49,22 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|gogo
+operator|.
+name|commands
+operator|.
+name|Command
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|osgi
 operator|.
 name|service
@@ -64,6 +80,21 @@ comment|/**  * Appends a value to the current property value.  */
 end_comment
 
 begin_class
+annotation|@
+name|Command
+argument_list|(
+name|scope
+operator|=
+literal|"config"
+argument_list|,
+name|name
+operator|=
+literal|"propappend"
+argument_list|,
+name|description
+operator|=
+literal|"Append the given value to an existing property or create the property with the specified value."
+argument_list|)
 specifier|public
 class|class
 name|PropAppendCommand

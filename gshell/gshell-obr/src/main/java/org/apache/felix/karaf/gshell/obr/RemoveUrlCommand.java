@@ -59,6 +59,22 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|gogo
+operator|.
+name|commands
+operator|.
+name|Command
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|osgi
 operator|.
 name|service
@@ -70,6 +86,21 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|Command
+argument_list|(
+name|scope
+operator|=
+literal|"obr"
+argument_list|,
+name|name
+operator|=
+literal|"removeUrl"
+argument_list|,
+name|description
+operator|=
+literal|"Remove a list of repository URLs from the OBR service."
+argument_list|)
 specifier|public
 class|class
 name|RemoveUrlCommand

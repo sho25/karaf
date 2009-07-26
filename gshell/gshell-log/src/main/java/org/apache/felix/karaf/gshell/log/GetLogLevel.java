@@ -133,11 +133,42 @@ name|Argument
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|gogo
+operator|.
+name|commands
+operator|.
+name|Command
+import|;
+end_import
+
 begin_comment
 comment|/**  * Get the log level for a given logger  */
 end_comment
 
 begin_class
+annotation|@
+name|Command
+argument_list|(
+name|scope
+operator|=
+literal|"log"
+argument_list|,
+name|name
+operator|=
+literal|"get"
+argument_list|,
+name|description
+operator|=
+literal|"Show log level."
+argument_list|)
 specifier|public
 class|class
 name|GetLogLevel
@@ -150,6 +181,10 @@ argument_list|(
 name|required
 operator|=
 literal|false
+argument_list|,
+name|name
+operator|=
+literal|"LOGGER"
 argument_list|,
 name|description
 operator|=

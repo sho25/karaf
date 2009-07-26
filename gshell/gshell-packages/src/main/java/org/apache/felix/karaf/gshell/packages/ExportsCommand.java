@@ -75,6 +75,22 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|gogo
+operator|.
+name|commands
+operator|.
+name|Command
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|osgi
 operator|.
 name|framework
@@ -124,6 +140,21 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|Command
+argument_list|(
+name|scope
+operator|=
+literal|"packages"
+argument_list|,
+name|name
+operator|=
+literal|"exports"
+argument_list|,
+name|description
+operator|=
+literal|"Display exported packages"
+argument_list|)
 specifier|public
 class|class
 name|ExportsCommand

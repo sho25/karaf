@@ -77,6 +77,22 @@ name|OsgiCommandSupport
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|gogo
+operator|.
+name|commands
+operator|.
+name|Command
+import|;
+end_import
+
 begin_class
 specifier|public
 specifier|abstract
