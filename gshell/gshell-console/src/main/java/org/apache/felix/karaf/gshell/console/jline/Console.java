@@ -344,6 +344,17 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
+name|session
+operator|.
+name|put
+argument_list|(
+literal|"SCOPE"
+argument_list|,
+literal|"shell:osgi:*"
+argument_list|)
+expr_stmt|;
+name|this
+operator|.
 name|terminal
 operator|=
 name|term
