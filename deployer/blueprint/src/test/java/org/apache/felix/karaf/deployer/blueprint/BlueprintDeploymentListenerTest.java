@@ -199,7 +199,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|2
+literal|1
 argument_list|,
 name|pkgs
 operator|.
@@ -218,16 +218,6 @@ operator|.
 name|iterator
 argument_list|()
 decl_stmt|;
-name|assertEquals
-argument_list|(
-literal|"java.lang"
-argument_list|,
-name|it
-operator|.
-name|next
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|assertEquals
 argument_list|(
 literal|"org.apache.geronimo.blueprint.sample"
