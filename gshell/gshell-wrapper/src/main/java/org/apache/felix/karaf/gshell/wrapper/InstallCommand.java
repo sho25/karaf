@@ -143,11 +143,42 @@ name|Option
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|gogo
+operator|.
+name|commands
+operator|.
+name|Command
+import|;
+end_import
+
 begin_comment
 comment|/**  * Installs this Karaf instance as a service in your operating systems.  *  * @version $Rev: 603634 $ $Date: 2007-12-12 16:07:16 +0100 (Wed, 12 Dec 2007) $  */
 end_comment
 
 begin_class
+annotation|@
+name|Command
+argument_list|(
+name|scope
+operator|=
+literal|"wrapper"
+argument_list|,
+name|name
+operator|=
+literal|"install"
+argument_list|,
+name|description
+operator|=
+literal|"Install Karaf as a system service in the OS."
+argument_list|)
 specifier|public
 class|class
 name|InstallCommand
