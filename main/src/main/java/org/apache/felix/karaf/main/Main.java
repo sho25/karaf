@@ -358,7 +358,7 @@ specifier|final
 name|String
 name|PROPERTY_AUTO_INSTALL
 init|=
-literal|"felix.auto.install"
+literal|"karaf.auto.install"
 decl_stmt|;
 comment|/**      * The property for auto-discovering the bundles      */
 specifier|public
@@ -367,7 +367,7 @@ specifier|final
 name|String
 name|PROPERTY_AUTO_START
 init|=
-literal|"felix.auto.start"
+literal|"karaf.auto.start"
 decl_stmt|;
 comment|/**      * The system property for specifying the Karaf home directory.  The home directory      * hold the binary install of Karaf.      */
 specifier|public
@@ -1242,6 +1242,55 @@ argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;
+comment|// Set the default bundle start level
+name|int
+name|ibsl
+init|=
+literal|60
+decl_stmt|;
+try|try
+block|{
+name|String
+name|str
+init|=
+name|configProps
+operator|.
+name|getProperty
+argument_list|(
+literal|"karaf.startlevel.bundle"
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|str
+operator|!=
+literal|null
+condition|)
+block|{
+name|ibsl
+operator|=
+name|Integer
+operator|.
+name|parseInt
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|Throwable
+name|t
+parameter_list|)
+block|{         }
+name|sl
+operator|.
+name|setInitialBundleStartLevel
+argument_list|(
+name|ibsl
+argument_list|)
+expr_stmt|;
 comment|// The auto-install property specifies a space-delimited list of
 comment|// bundle URLs to be automatically installed into each new profile;
 comment|// the start level to which the bundles are assigned is specified by
