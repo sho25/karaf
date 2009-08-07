@@ -14,6 +14,8 @@ operator|.
 name|karaf
 operator|.
 name|webconsole
+operator|.
+name|features
 package|;
 end_package
 
