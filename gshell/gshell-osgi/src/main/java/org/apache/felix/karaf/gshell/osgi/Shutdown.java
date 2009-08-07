@@ -41,6 +41,22 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|gogo
+operator|.
+name|commands
+operator|.
+name|Command
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|osgi
 operator|.
 name|framework
@@ -54,6 +70,21 @@ comment|/**  * Command to shut down Karaf  */
 end_comment
 
 begin_class
+annotation|@
+name|Command
+argument_list|(
+name|scope
+operator|=
+literal|"osgi"
+argument_list|,
+name|name
+operator|=
+literal|"shutdown"
+argument_list|,
+name|description
+operator|=
+literal|"Shut the framework down"
+argument_list|)
 specifier|public
 class|class
 name|Shutdown
