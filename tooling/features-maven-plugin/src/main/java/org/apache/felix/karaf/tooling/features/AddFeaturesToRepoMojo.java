@@ -612,7 +612,7 @@ operator|>
 literal|3
 condition|)
 block|{
-name|classifier
+name|type
 operator|=
 name|parts
 index|[
@@ -628,7 +628,7 @@ operator|>
 literal|4
 condition|)
 block|{
-name|type
+name|classifier
 operator|=
 name|parts
 index|[
