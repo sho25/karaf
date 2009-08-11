@@ -111,6 +111,13 @@ index|[]
 name|listInstalledFeatures
 parameter_list|()
 function_decl|;
+name|boolean
+name|isInstalled
+parameter_list|(
+name|Feature
+name|f
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
