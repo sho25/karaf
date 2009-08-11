@@ -900,6 +900,11 @@ argument_list|(
 name|uri
 argument_list|)
 decl_stmt|;
+name|repo
+operator|.
+name|load
+argument_list|()
+expr_stmt|;
 name|repositories
 operator|.
 name|put
