@@ -109,7 +109,7 @@ literal|"Echo or print arguments to STDOUT"
 argument_list|)
 specifier|public
 class|class
-name|EchoCommand
+name|EchoAction
 extends|extends
 name|OsgiCommandSupport
 block|{
@@ -126,9 +126,9 @@ literal|"Do not print the trailing newline character"
 argument_list|)
 specifier|private
 name|boolean
-name|trailingNewline
+name|noTrailingNewline
 init|=
-literal|true
+literal|false
 decl_stmt|;
 annotation|@
 name|Argument
@@ -136,6 +136,10 @@ argument_list|(
 name|description
 operator|=
 literal|"Arguments"
+argument_list|,
+name|multiValued
+operator|=
+literal|true
 argument_list|)
 specifier|private
 name|List
@@ -207,7 +211,8 @@ block|}
 block|}
 if|if
 condition|(
-name|trailingNewline
+operator|!
+name|noTrailingNewline
 condition|)
 block|{
 name|System
