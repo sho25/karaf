@@ -242,6 +242,11 @@ name|FEATURE_EVENT_EVENT_TYPE
 block|}
 decl_stmt|;
 name|String
+name|REPOSITORY_NAME
+init|=
+literal|"Name"
+decl_stmt|;
+name|String
 name|REPOSITORY_URI
 init|=
 literal|"Uri"
@@ -283,6 +288,8 @@ index|[]
 name|REPOSITORY
 init|=
 block|{
+name|REPOSITORY_NAME
+block|,
 name|REPOSITORY_URI
 block|,
 name|REPOSITORY_REPOSITORIES
@@ -296,6 +303,8 @@ index|[]
 name|REPOSITORY_EVENT
 init|=
 block|{
+name|REPOSITORY_NAME
+block|,
 name|REPOSITORY_URI
 block|,
 name|REPOSITORY_EVENT_EVENT_TYPE

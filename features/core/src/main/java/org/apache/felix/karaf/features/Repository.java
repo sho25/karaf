@@ -36,6 +36,10 @@ specifier|public
 interface|interface
 name|Repository
 block|{
+name|String
+name|getName
+parameter_list|()
+function_decl|;
 name|URI
 name|getURI
 parameter_list|()
