@@ -1587,7 +1587,7 @@ name|e
 throw|;
 block|}
 return|return
-literal|0
+literal|null
 return|;
 block|}
 specifier|private
