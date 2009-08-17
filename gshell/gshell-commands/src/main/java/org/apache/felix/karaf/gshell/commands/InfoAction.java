@@ -189,6 +189,18 @@ name|Command
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|fusesource
+operator|.
+name|jansi
+operator|.
+name|Ansi
+import|;
+end_import
+
 begin_class
 annotation|@
 name|Command
@@ -1230,10 +1242,32 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"  @|bold "
-operator|+
+name|Ansi
+operator|.
+name|ansi
+argument_list|()
+operator|.
+name|a
+argument_list|(
+literal|"  "
+argument_list|)
+operator|.
+name|a
+argument_list|(
+name|Ansi
+operator|.
+name|Attribute
+operator|.
+name|INTENSITY_BOLD
+argument_list|)
+operator|.
+name|a
+argument_list|(
 name|name
-operator|+
+argument_list|)
+operator|.
+name|a
+argument_list|(
 name|spaces
 argument_list|(
 name|pad
@@ -1243,10 +1277,29 @@ operator|.
 name|length
 argument_list|()
 argument_list|)
-operator|+
-literal|"|   "
-operator|+
+argument_list|)
+operator|.
+name|a
+argument_list|(
+name|Ansi
+operator|.
+name|Attribute
+operator|.
+name|RESET
+argument_list|)
+operator|.
+name|a
+argument_list|(
+literal|"   "
+argument_list|)
+operator|.
+name|a
+argument_list|(
 name|value
+argument_list|)
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
