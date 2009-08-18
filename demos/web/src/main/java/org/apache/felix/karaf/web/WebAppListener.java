@@ -9,9 +9,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|servicemix
+name|felix
 operator|.
-name|smx4webex
+name|karaf
+operator|.
+name|web
 package|;
 end_package
 
@@ -61,6 +63,22 @@ name|Main
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|karaf
+operator|.
+name|main
+operator|.
+name|Bootstrap
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -107,7 +125,7 @@ argument_list|(
 literal|"/"
 argument_list|)
 operator|+
-literal|"WEB-INF/servicemix"
+literal|"WEB-INF/karaf"
 argument_list|)
 operator|.
 name|getAbsolutePath
@@ -162,8 +180,9 @@ argument_list|)
 expr_stmt|;
 name|main
 operator|=
-operator|new
-name|Main
+name|Bootstrap
+operator|.
+name|launch
 argument_list|(
 operator|new
 name|String
@@ -171,11 +190,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-expr_stmt|;
-name|main
-operator|.
-name|launch
-argument_list|()
 expr_stmt|;
 block|}
 catch|catch
