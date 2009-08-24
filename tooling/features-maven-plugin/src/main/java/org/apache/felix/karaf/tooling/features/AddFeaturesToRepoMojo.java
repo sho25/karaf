@@ -1129,6 +1129,25 @@ argument_list|(
 name|feature
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|f
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"Unable to find the feature '"
+operator|+
+name|feature
+operator|+
+literal|"'"
+argument_list|)
+throw|;
+block|}
 name|transitiveFeatures
 operator|.
 name|add
