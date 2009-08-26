@@ -40,6 +40,11 @@ init|=
 literal|"Started"
 decl_stmt|;
 name|String
+name|ERROR
+init|=
+literal|"Error"
+decl_stmt|;
+name|String
 name|getName
 parameter_list|()
 function_decl|;
@@ -54,8 +59,6 @@ function_decl|;
 name|int
 name|getPort
 parameter_list|()
-throws|throws
-name|Exception
 function_decl|;
 name|void
 name|changePort

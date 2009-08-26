@@ -50,8 +50,6 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
 name|void
 name|changePort
