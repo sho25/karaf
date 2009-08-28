@@ -87,6 +87,22 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|gogo
+operator|.
+name|commands
+operator|.
+name|Command
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|slf4j
 operator|.
 name|Logger
@@ -124,6 +140,21 @@ comment|/**  * Start a SSH server.  *  * @version $Rev: 720411 $ $Date: 2008-11-
 end_comment
 
 begin_class
+annotation|@
+name|Command
+argument_list|(
+name|scope
+operator|=
+literal|"ssh"
+argument_list|,
+name|name
+operator|=
+literal|"sshd"
+argument_list|,
+name|description
+operator|=
+literal|"Create an SSH server"
+argument_list|)
 specifier|public
 class|class
 name|SshServerAction
