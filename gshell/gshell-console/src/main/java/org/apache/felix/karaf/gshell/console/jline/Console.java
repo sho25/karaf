@@ -1045,10 +1045,6 @@ condition|(
 name|i
 operator|==
 literal|null
-operator|||
-name|i
-operator|==
-literal|4
 condition|)
 block|{
 return|return
@@ -1290,20 +1286,8 @@ name|c
 operator|==
 operator|-
 literal|1
-operator|||
-name|c
-operator|==
-literal|4
 condition|)
 block|{
-comment|//System.err.println("Received  " + c + " ... closing");
-name|err
-operator|.
-name|println
-argument_list|(
-literal|"^D"
-argument_list|)
-expr_stmt|;
 name|queue
 operator|.
 name|put
@@ -1312,6 +1296,22 @@ name|c
 argument_list|)
 expr_stmt|;
 return|return;
+block|}
+elseif|else
+if|if
+condition|(
+name|c
+operator|==
+literal|4
+condition|)
+block|{
+name|err
+operator|.
+name|println
+argument_list|(
+literal|"^D"
+argument_list|)
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -1339,6 +1339,7 @@ expr_stmt|;
 name|interrupt
 argument_list|()
 expr_stmt|;
+block|}
 name|queue
 operator|.
 name|put
@@ -1346,17 +1347,6 @@ argument_list|(
 name|c
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|queue
-operator|.
-name|put
-argument_list|(
-name|c
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 catch|catch
 parameter_list|(
@@ -1364,14 +1354,12 @@ name|Throwable
 name|t
 parameter_list|)
 block|{
-comment|//System.err.println("Exception in pipe: " + t);
 return|return;
 block|}
 block|}
 block|}
 finally|finally
 block|{
-comment|//System.err.println("Exiting pipe thread");
 name|close
 argument_list|()
 expr_stmt|;
