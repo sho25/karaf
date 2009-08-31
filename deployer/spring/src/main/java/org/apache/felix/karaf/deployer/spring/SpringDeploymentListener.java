@@ -111,13 +111,11 @@ name|apache
 operator|.
 name|felix
 operator|.
-name|karaf
+name|fileinstall
 operator|.
-name|deployer
+name|listener
 operator|.
-name|filemonitor
-operator|.
-name|DeploymentListener
+name|ArtifactTransformer
 import|;
 end_import
 
@@ -130,7 +128,7 @@ specifier|public
 class|class
 name|SpringDeploymentListener
 implements|implements
-name|DeploymentListener
+name|ArtifactTransformer
 block|{
 specifier|private
 specifier|static
@@ -259,7 +257,7 @@ return|;
 block|}
 specifier|public
 name|File
-name|handle
+name|transform
 parameter_list|(
 name|File
 name|artifact
