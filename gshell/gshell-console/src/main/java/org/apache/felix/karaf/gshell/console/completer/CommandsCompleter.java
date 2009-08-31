@@ -389,6 +389,13 @@ name|ServiceReference
 name|reference
 parameter_list|)
 block|{
+if|if
+condition|(
+name|reference
+operator|!=
+literal|null
+condition|)
+block|{
 name|completers
 operator|.
 name|remove
@@ -396,6 +403,7 @@ argument_list|(
 name|reference
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|private
 name|Set
