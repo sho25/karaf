@@ -313,8 +313,6 @@ name|felix
 operator|.
 name|fileinstall
 operator|.
-name|listener
-operator|.
 name|ArtifactTransformer
 import|;
 end_import
