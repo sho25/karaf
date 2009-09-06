@@ -168,6 +168,17 @@ name|listFeatures
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+operator|!
+name|featuresService
+operator|.
+name|isInstalled
+argument_list|(
+name|feature
+argument_list|)
+condition|)
+block|{
 name|delegate
 operator|.
 name|getStrings
@@ -181,6 +192,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 catch|catch
