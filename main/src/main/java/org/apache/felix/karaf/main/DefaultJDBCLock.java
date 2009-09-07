@@ -67,6 +67,18 @@ name|Properties
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|logging
+operator|.
+name|Logger
+import|;
+end_import
+
 begin_comment
 comment|/**  * Represents an exclusive lock on a database,  * used to avoid multiple Karaf instances attempting  * to become master.  *   * @version $Revision: $  */
 end_comment
@@ -78,6 +90,24 @@ name|DefaultJDBCLock
 implements|implements
 name|Lock
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|Logger
+name|LOG
+init|=
+name|Logger
+operator|.
+name|getLogger
+argument_list|(
+name|DefaultJDBCLock
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
@@ -178,6 +208,16 @@ name|Properties
 name|props
 parameter_list|)
 block|{
+name|LOG
+operator|.
+name|addHandler
+argument_list|(
+name|BootstrapLogManager
+operator|.
+name|getDefaultHandler
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|this
 operator|.
 name|url
@@ -448,11 +488,9 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|System
+name|LOG
 operator|.
-name|err
-operator|.
-name|println
+name|warning
 argument_list|(
 literal|"Could not obtain connection: "
 operator|+
@@ -474,11 +512,9 @@ condition|)
 block|{
 try|try
 block|{
-name|System
+name|LOG
 operator|.
-name|err
-operator|.
-name|println
+name|severe
 argument_list|(
 literal|"Cleaning up DB connection."
 argument_list|)
@@ -495,11 +531,9 @@ name|SQLException
 name|e1
 parameter_list|)
 block|{
-name|System
+name|LOG
 operator|.
-name|err
-operator|.
-name|println
+name|severe
 argument_list|(
 literal|"Caught while closing statement: "
 operator|+
@@ -516,11 +550,9 @@ literal|null
 expr_stmt|;
 block|}
 block|}
-name|System
+name|LOG
 operator|.
-name|out
-operator|.
-name|println
+name|info
 argument_list|(
 literal|"Connected to data source: "
 operator|+
@@ -556,11 +588,9 @@ name|setUpdateCursor
 argument_list|()
 condition|)
 block|{
-name|System
+name|LOG
 operator|.
-name|err
-operator|.
-name|println
+name|severe
 argument_list|(
 literal|"Could not set DB update cursor"
 argument_list|)
@@ -618,11 +648,9 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|System
+name|LOG
 operator|.
-name|err
-operator|.
-name|println
+name|warning
 argument_list|(
 literal|"Failed to acquire database lock: "
 operator|+
@@ -656,11 +684,9 @@ name|SQLException
 name|e
 parameter_list|)
 block|{
-name|System
+name|LOG
 operator|.
-name|err
-operator|.
-name|println
+name|severe
 argument_list|(
 literal|"Failed to close statement"
 operator|+
@@ -735,11 +761,9 @@ argument_list|()
 operator|)
 condition|)
 block|{
-name|System
+name|LOG
 operator|.
-name|err
-operator|.
-name|println
+name|severe
 argument_list|(
 literal|"Lost lock!"
 argument_list|)
@@ -809,11 +833,9 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
-name|System
+name|LOG
 operator|.
-name|err
-operator|.
-name|println
+name|severe
 argument_list|(
 literal|"Error occured while testing lock: "
 operator|+
@@ -854,11 +876,9 @@ name|Exception
 name|ex1
 parameter_list|)
 block|{
-name|System
+name|LOG
 operator|.
-name|err
-operator|.
-name|println
+name|severe
 argument_list|(
 literal|"Error occured after testing lock: "
 operator|+
@@ -958,11 +978,9 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|System
+name|LOG
 operator|.
-name|err
-operator|.
-name|println
+name|severe
 argument_list|(
 literal|"Error occured while setting up JDBC connection: "
 operator|+

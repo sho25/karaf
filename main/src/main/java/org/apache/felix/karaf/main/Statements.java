@@ -57,11 +57,40 @@ name|Statement
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|logging
+operator|.
+name|Logger
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
 name|Statements
 block|{
+specifier|private
+specifier|static
+name|Logger
+name|LOG
+init|=
+name|Logger
+operator|.
+name|getLogger
+argument_list|(
+name|Statements
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+decl_stmt|;
 specifier|private
 name|String
 name|lockTableName
@@ -96,6 +125,16 @@ name|String
 name|clusterName
 parameter_list|)
 block|{
+name|LOG
+operator|.
+name|addHandler
+argument_list|(
+name|BootstrapLogManager
+operator|.
+name|getDefaultHandler
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|this
 operator|.
 name|lockTableName
@@ -249,12 +288,12 @@ name|Throwable
 name|ignore
 parameter_list|)
 block|{
-name|System
+name|LOG
 operator|.
-name|err
-operator|.
-name|println
+name|severe
 argument_list|(
+literal|"Error testing for db table: "
+operator|+
 name|ignore
 argument_list|)
 expr_stmt|;
@@ -329,11 +368,9 @@ name|SQLException
 name|e
 parameter_list|)
 block|{
-name|System
+name|LOG
 operator|.
-name|err
-operator|.
-name|println
+name|severe
 argument_list|(
 literal|"Could not create JDBC tables; they could already exist."
 operator|+
@@ -380,12 +417,12 @@ name|Exception
 name|ignore
 parameter_list|)
 block|{
-name|System
+name|LOG
 operator|.
-name|err
-operator|.
-name|println
+name|severe
 argument_list|(
+literal|"Error occured during initialization: "
+operator|+
 name|ignore
 argument_list|)
 expr_stmt|;
@@ -414,7 +451,15 @@ name|Throwable
 name|e
 parameter_list|)
 block|{
-comment|// ignore
+name|LOG
+operator|.
+name|severe
+argument_list|(
+literal|"Error occured while closing connection: "
+operator|+
+name|e
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}
@@ -441,7 +486,15 @@ name|Throwable
 name|e
 parameter_list|)
 block|{
-comment|// ignore
+name|LOG
+operator|.
+name|severe
+argument_list|(
+literal|"Error occured while releasing ResultSet: "
+operator|+
+name|e
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}

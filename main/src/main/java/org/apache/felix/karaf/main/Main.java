@@ -203,6 +203,18 @@ name|java
 operator|.
 name|util
 operator|.
+name|logging
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|concurrent
 operator|.
 name|CountDownLatch
@@ -470,6 +482,22 @@ operator|.
 name|getName
 argument_list|()
 decl_stmt|;
+name|Logger
+name|LOG
+init|=
+name|Logger
+operator|.
+name|getLogger
+argument_list|(
+name|this
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+decl_stmt|;
 specifier|private
 name|File
 name|karafHome
@@ -601,6 +629,23 @@ name|configProps
 operator|=
 name|loadConfigProperties
 argument_list|()
+expr_stmt|;
+name|BootstrapLogManager
+operator|.
+name|setProperties
+argument_list|(
+name|configProps
+argument_list|)
+expr_stmt|;
+name|LOG
+operator|.
+name|addHandler
+argument_list|(
+name|BootstrapLogManager
+operator|.
+name|getDefaultHandler
+argument_list|()
+argument_list|)
 expr_stmt|;
 comment|// Copy framework properties from the system properties.
 name|Main
@@ -4414,11 +4459,9 @@ condition|(
 name|lockLogged
 condition|)
 block|{
-name|System
+name|LOG
 operator|.
-name|out
-operator|.
-name|println
+name|info
 argument_list|(
 literal|"Lock acquired."
 argument_list|)
@@ -4469,11 +4512,9 @@ operator|!
 name|exiting
 condition|)
 block|{
-name|System
+name|LOG
 operator|.
-name|out
-operator|.
-name|println
+name|info
 argument_list|(
 literal|"Lost the lock, stopping this instance ..."
 argument_list|)
@@ -4493,11 +4534,9 @@ operator|!
 name|lockLogged
 condition|)
 block|{
-name|System
+name|LOG
 operator|.
-name|out
-operator|.
-name|println
+name|info
 argument_list|(
 literal|"Waiting for the lock ..."
 argument_list|)
