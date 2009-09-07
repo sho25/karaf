@@ -1043,9 +1043,9 @@ name|factory
 operator|.
 name|createArtifact
 argument_list|(
-literal|"org.apache.servicemix.kernel"
+literal|"org.apache.felix.karaf"
 argument_list|,
-literal|"apache-servicemix-kernel"
+literal|"apache-felix-karaf"
 argument_list|,
 name|kernelVersion
 argument_list|,
