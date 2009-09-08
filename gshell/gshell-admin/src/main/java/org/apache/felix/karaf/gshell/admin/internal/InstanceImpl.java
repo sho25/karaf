@@ -828,7 +828,11 @@ name|LOG
 operator|.
 name|debug
 argument_list|(
-literal|"Starting instance with command: "
+literal|"Starting instance "
+operator|+
+name|name
+operator|+
+literal|" with command: "
 operator|+
 name|command
 argument_list|)
