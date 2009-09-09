@@ -541,7 +541,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"storage.file"
+literal|"storage.location"
 argument_list|)
 decl_stmt|;
 if|if
