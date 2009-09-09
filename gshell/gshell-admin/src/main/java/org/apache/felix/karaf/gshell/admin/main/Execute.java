@@ -557,7 +557,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"System property 'storage.file' is not set. \n"
+literal|"System property 'storage.location' is not set. \n"
 operator|+
 literal|"This property needs to be set to the full path of the instance.properties file."
 argument_list|)
