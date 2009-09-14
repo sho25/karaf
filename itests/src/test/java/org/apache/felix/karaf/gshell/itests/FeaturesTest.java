@@ -471,9 +471,9 @@ argument_list|,
 comment|// Blueprint
 name|mavenBundle
 argument_list|(
-literal|"org.apache.geronimo"
+literal|"org.apache.geronimo.blueprint"
 argument_list|,
-literal|"blueprint-bundle"
+literal|"geronimo-blueprint"
 argument_list|)
 argument_list|,
 comment|// Bundles
