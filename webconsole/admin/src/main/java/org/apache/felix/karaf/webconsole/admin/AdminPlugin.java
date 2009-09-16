@@ -236,7 +236,7 @@ specifier|public
 class|class
 name|AdminPlugin
 extends|extends
-name|AbstractWebConsolePlugin
+name|AbstractResourceAwareWebConsolePlugin
 block|{
 specifier|public
 specifier|static

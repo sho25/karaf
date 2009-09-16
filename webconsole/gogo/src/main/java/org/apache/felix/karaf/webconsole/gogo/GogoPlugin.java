@@ -328,7 +328,7 @@ specifier|public
 class|class
 name|GogoPlugin
 extends|extends
-name|AbstractWebConsolePlugin
+name|AbstractResourceAwareWebConsolePlugin
 block|{
 comment|/** Pseudo class version ID to keep the IDE quite. */
 specifier|private
