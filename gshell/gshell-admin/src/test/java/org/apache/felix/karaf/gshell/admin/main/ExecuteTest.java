@@ -1002,6 +1002,9 @@ argument_list|()
 expr_stmt|;
 return|return
 name|tempFile
+operator|.
+name|getCanonicalFile
+argument_list|()
 return|;
 block|}
 specifier|private
