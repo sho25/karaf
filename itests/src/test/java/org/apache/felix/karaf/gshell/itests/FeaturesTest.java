@@ -45,6 +45,18 @@ begin_import
 import|import static
 name|org
 operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
 name|ops4j
 operator|.
 name|pax
@@ -69,7 +81,7 @@ name|exam
 operator|.
 name|CoreOptions
 operator|.
-name|felix
+name|equinox
 import|;
 end_import
 
@@ -134,22 +146,6 @@ operator|.
 name|CoreOptions
 operator|.
 name|systemProperty
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|ops4j
-operator|.
-name|pax
-operator|.
-name|exam
-operator|.
-name|CoreOptions
-operator|.
-name|equinox
 import|;
 end_import
 
@@ -227,6 +223,22 @@ name|osgi
 operator|.
 name|service
 operator|.
+name|blueprint
+operator|.
+name|container
+operator|.
+name|BlueprintContainer
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|service
+operator|.
 name|command
 operator|.
 name|CommandProcessor
@@ -270,13 +282,36 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Thread
-operator|.
-name|sleep
+comment|// Make sure the command services are available
+name|assertNotNull
 argument_list|(
-literal|5000
+name|getOsgiService
+argument_list|(
+name|BlueprintContainer
+operator|.
+name|class
+argument_list|,
+literal|"osgi.blueprint.container.symbolicname=org.apache.felix.karaf.gshell.obr"
+argument_list|,
+literal|20000
+argument_list|)
 argument_list|)
 expr_stmt|;
+name|assertNotNull
+argument_list|(
+name|getOsgiService
+argument_list|(
+name|BlueprintContainer
+operator|.
+name|class
+argument_list|,
+literal|"osgi.blueprint.container.symbolicname=org.apache.felix.karaf.gshell.wrapper"
+argument_list|,
+literal|20000
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|// Run some commands to make sure they are installed properly
 name|CommandProcessor
 name|cp
 init|=
