@@ -408,7 +408,7 @@ name|systemPackages
 argument_list|(
 literal|"org.apache.felix.karaf.main.spi;version=1.0.0"
 argument_list|,
-literal|"org.apache.felix.karaf.jaas.boot;version=1.2.0"
+literal|"org.apache.felix.karaf.jaas.boot;version=0.9.0"
 argument_list|)
 argument_list|,
 name|bootClasspathLibrary
