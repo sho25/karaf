@@ -41,7 +41,7 @@ name|felix
 operator|.
 name|karaf
 operator|.
-name|gshell
+name|shell
 operator|.
 name|console
 operator|.
@@ -59,7 +59,7 @@ name|felix
 operator|.
 name|karaf
 operator|.
-name|gshell
+name|shell
 operator|.
 name|console
 operator|.

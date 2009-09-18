@@ -13,7 +13,7 @@ name|felix
 operator|.
 name|karaf
 operator|.
-name|gshell
+name|shell
 operator|.
 name|itests
 package|;
@@ -408,7 +408,7 @@ name|b
 init|=
 name|getInstalledBundle
 argument_list|(
-literal|"org.apache.felix.karaf.gshell.log"
+literal|"org.apache.felix.karaf.shell.log"
 argument_list|)
 decl_stmt|;
 name|b
@@ -497,7 +497,7 @@ comment|//    }
 comment|//
 comment|//    @Test
 comment|//    public void testCommandGroupAfterInstall() throws Exception {
-comment|//        Bundle b = getInstalledBundle("org.apache.felix.karaf.gshell.log");
+comment|//        Bundle b = getInstalledBundle("org.apache.felix.karaf.shell.log");
 comment|//        b.start();
 comment|//
 comment|//        Thread.sleep(5000);
@@ -680,23 +680,23 @@ argument_list|)
 argument_list|,
 name|mavenBundle
 argument_list|(
-literal|"org.apache.felix.karaf.gshell"
+literal|"org.apache.felix.karaf.shell"
 argument_list|,
-literal|"org.apache.felix.karaf.gshell.console"
+literal|"org.apache.felix.karaf.shell.console"
 argument_list|)
 argument_list|,
 name|mavenBundle
 argument_list|(
-literal|"org.apache.felix.karaf.gshell"
+literal|"org.apache.felix.karaf.shell"
 argument_list|,
-literal|"org.apache.felix.karaf.gshell.osgi"
+literal|"org.apache.felix.karaf.shell.osgi"
 argument_list|)
 argument_list|,
 name|mavenBundle
 argument_list|(
-literal|"org.apache.felix.karaf.gshell"
+literal|"org.apache.felix.karaf.shell"
 argument_list|,
-literal|"org.apache.felix.karaf.gshell.log"
+literal|"org.apache.felix.karaf.shell.log"
 argument_list|)
 operator|.
 name|noStart

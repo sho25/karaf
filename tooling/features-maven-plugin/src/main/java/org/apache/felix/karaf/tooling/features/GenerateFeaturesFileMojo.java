@@ -526,7 +526,7 @@ decl_stmt|;
 comment|/**      * The kernel version for which to generate the bundle      *       * @parameter      */
 specifier|private
 name|String
-name|kernelVersion
+name|karafVersion
 decl_stmt|;
 comment|/**      * A properties file containing bundle translations      *       * @parameter      */
 specifier|private
@@ -1074,7 +1074,7 @@ literal|"org.apache.felix.karaf"
 argument_list|,
 literal|"apache-felix-karaf"
 argument_list|,
-name|kernelVersion
+name|karafVersion
 argument_list|,
 name|Artifact
 operator|.
@@ -1099,9 +1099,9 @@ argument_list|()
 operator|.
 name|info
 argument_list|(
-literal|"-- List of bundles provided by ServiceMix Kernel "
+literal|"-- List of bundles provided by Karaf "
 operator|+
-name|kernelVersion
+name|karafVersion
 operator|+
 literal|" --"
 argument_list|)

@@ -949,7 +949,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"GShell Features service is unavailable."
+literal|"Shell Features service is unavailable."
 argument_list|)
 expr_stmt|;
 block|}
@@ -1020,7 +1020,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"GShell Features service is unavailable."
+literal|"Shell Features service is unavailable."
 argument_list|)
 expr_stmt|;
 block|}
@@ -1088,7 +1088,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"GShell Features service is unavailable."
+literal|"Shell Features service is unavailable."
 argument_list|)
 expr_stmt|;
 block|}
@@ -1158,7 +1158,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"GShell Features service is unavailable."
+literal|"Shell Features service is unavailable."
 argument_list|)
 expr_stmt|;
 block|}
@@ -1239,7 +1239,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"GShell Features service is unavailable."
+literal|"Shell Features service is unavailable."
 argument_list|)
 expr_stmt|;
 block|}
@@ -1638,7 +1638,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"GShell Features service is unavailable."
+literal|"Shell Features service is unavailable."
 argument_list|)
 expr_stmt|;
 return|return
@@ -1730,7 +1730,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"GShell Features service is unavailable."
+literal|"Shell Features service is unavailable."
 argument_list|)
 expr_stmt|;
 return|return

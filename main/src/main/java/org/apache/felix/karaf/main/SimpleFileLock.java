@@ -167,9 +167,9 @@ literal|null
 condition|)
 block|{
 name|File
-name|servicemixLock
+name|karafLock
 init|=
-name|getServiceMixLock
+name|getKarafLock
 argument_list|(
 operator|new
 name|File
@@ -186,7 +186,7 @@ name|setProperty
 argument_list|(
 name|PROPERTY_LOCK_DIR
 argument_list|,
-name|servicemixLock
+name|karafLock
 operator|.
 name|getPath
 argument_list|()
@@ -357,7 +357,7 @@ block|}
 specifier|private
 specifier|static
 name|File
-name|getServiceMixLock
+name|getKarafLock
 parameter_list|(
 name|File
 name|lock

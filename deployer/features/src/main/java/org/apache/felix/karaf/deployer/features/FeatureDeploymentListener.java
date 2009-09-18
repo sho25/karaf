@@ -432,7 +432,7 @@ specifier|final
 name|String
 name|FEATURE_PATH
 init|=
-literal|"org.apache.felix.karaf.gshell.features"
+literal|"org.apache.felix.karaf.shell.features"
 decl_stmt|;
 specifier|private
 specifier|static

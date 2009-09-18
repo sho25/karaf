@@ -245,18 +245,6 @@ name|PreferencesService
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
-name|context
-operator|.
-name|ApplicationContext
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -274,7 +262,7 @@ block|{
 name|String
 name|name
 init|=
-name|ApplicationContext
+name|Bundle
 operator|.
 name|class
 operator|.
@@ -1054,7 +1042,7 @@ block|{
 name|String
 name|name
 init|=
-name|ApplicationContext
+name|Bundle
 operator|.
 name|class
 operator|.
@@ -2201,7 +2189,7 @@ block|{
 name|String
 name|name
 init|=
-name|ApplicationContext
+name|Bundle
 operator|.
 name|class
 operator|.
@@ -2781,7 +2769,7 @@ block|{
 name|String
 name|name
 init|=
-name|ApplicationContext
+name|Bundle
 operator|.
 name|class
 operator|.
@@ -4570,7 +4558,7 @@ block|{
 name|String
 name|name
 init|=
-name|ApplicationContext
+name|Bundle
 operator|.
 name|class
 operator|.

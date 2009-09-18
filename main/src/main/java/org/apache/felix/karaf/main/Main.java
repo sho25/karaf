@@ -594,8 +594,8 @@ argument_list|(
 name|karafHome
 argument_list|)
 expr_stmt|;
-comment|//System.out.println("Karaf Home: "+main.servicemixHome.getPath());
-comment|//System.out.println("Karaf Base: "+main.servicemixBase.getPath());
+comment|//System.out.println("Karaf Home: "+main.karafHome.getPath());
+comment|//System.out.println("Karaf Base: "+main.karafBase.getPath());
 name|System
 operator|.
 name|setProperty

@@ -526,7 +526,7 @@ block|{
 name|String
 name|uri
 init|=
-literal|"src/test/resources/org/apache/felix/karaf/gshell/features/repo1.xml"
+literal|"src/test/resources/org/apache/felix/karaf/shell/features/repo1.xml"
 decl_stmt|;
 name|RepositoryImpl
 name|r
