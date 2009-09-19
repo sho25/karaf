@@ -20,6 +20,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
 import|import
 name|org
 operator|.
@@ -38,18 +50,6 @@ operator|.
 name|runner
 operator|.
 name|RunWith
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
 import|;
 end_import
 
@@ -150,6 +150,22 @@ import|;
 end_import
 
 begin_import
+import|import static
+name|org
+operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|exam
+operator|.
+name|CoreOptions
+operator|.
+name|when
+import|;
+end_import
+
+begin_import
 import|import
 name|org
 operator|.
@@ -180,6 +196,26 @@ operator|.
 name|PaxRunnerOptions
 operator|.
 name|scanFeatures
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|exam
+operator|.
+name|container
+operator|.
+name|def
+operator|.
+name|PaxRunnerOptions
+operator|.
+name|vmOption
 import|;
 end_import
 
@@ -291,7 +327,7 @@ name|BlueprintContainer
 operator|.
 name|class
 argument_list|,
-literal|"osgi.blueprint.container.symbolicname=org.apache.felix.karaf.gshell.obr"
+literal|"osgi.blueprint.container.symbolicname=org.apache.felix.karaf.shell.obr"
 argument_list|,
 literal|20000
 argument_list|)
@@ -305,7 +341,7 @@ name|BlueprintContainer
 operator|.
 name|class
 argument_list|,
-literal|"osgi.blueprint.container.symbolicname=org.apache.felix.karaf.gshell.wrapper"
+literal|"osgi.blueprint.container.symbolicname=org.apache.felix.karaf.shell.wrapper"
 argument_list|,
 literal|20000
 argument_list|)
