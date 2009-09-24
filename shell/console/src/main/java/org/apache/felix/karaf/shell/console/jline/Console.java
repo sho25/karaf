@@ -667,14 +667,14 @@ name|loadProps
 argument_list|(
 name|props
 argument_list|,
-literal|"/org/apache/felix/karaf/shell/console/branding.properties"
+literal|"org/apache/felix/karaf/shell/console/branding.properties"
 argument_list|)
 expr_stmt|;
 name|loadProps
 argument_list|(
 name|props
 argument_list|,
-literal|"/org/apache/felix/karaf/branding/branding.properties"
+literal|"org/apache/felix/karaf/branding/branding.properties"
 argument_list|)
 expr_stmt|;
 name|String
