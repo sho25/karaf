@@ -113,7 +113,7 @@ literal|"refreshUrl"
 argument_list|,
 name|description
 operator|=
-literal|"Reload the repositories to obtain a fresh list of bundles."
+literal|"Reloads the repositories to obtain a fresh list of bundles."
 argument_list|)
 specifier|public
 class|class
@@ -124,6 +124,18 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"urls"
+argument_list|,
+name|description
+operator|=
+literal|"Repository URLs to refresh (leave empty for all)"
+argument_list|,
 name|required
 operator|=
 literal|false
@@ -131,10 +143,6 @@ argument_list|,
 name|multiValued
 operator|=
 literal|true
-argument_list|,
-name|description
-operator|=
-literal|"Repository URLs (leave empty for all)"
 argument_list|)
 name|List
 argument_list|<

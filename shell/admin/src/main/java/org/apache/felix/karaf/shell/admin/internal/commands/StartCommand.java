@@ -85,7 +85,7 @@ literal|"start"
 argument_list|,
 name|description
 operator|=
-literal|"Start an existing instance."
+literal|"Starts an existing container instance."
 argument_list|)
 specifier|public
 class|class
@@ -109,6 +109,14 @@ argument_list|,
 name|description
 operator|=
 literal|"Java options when launching the instance"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -121,13 +129,21 @@ name|index
 operator|=
 literal|0
 argument_list|,
+name|name
+operator|=
+literal|"name"
+argument_list|,
+name|description
+operator|=
+literal|"The name of the container instance"
+argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"The instance name"
+literal|false
 argument_list|)
 specifier|private
 name|String

@@ -108,9 +108,21 @@ name|index
 operator|=
 literal|0
 argument_list|,
+name|name
+operator|=
+literal|"format"
+argument_list|,
+name|description
+operator|=
+literal|"The format pattern to use"
+argument_list|,
 name|required
 operator|=
 literal|true
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -123,11 +135,19 @@ name|index
 operator|=
 literal|1
 argument_list|,
-name|multiValued
+name|name
+operator|=
+literal|"arguments"
+argument_list|,
+name|description
+operator|=
+literal|"The arguments for the given format pattern"
+argument_list|,
+name|required
 operator|=
 literal|true
 argument_list|,
-name|required
+name|multiValued
 operator|=
 literal|true
 argument_list|)

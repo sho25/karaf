@@ -121,7 +121,7 @@ literal|"refresh"
 argument_list|,
 name|description
 operator|=
-literal|"Refresh bundle(s)"
+literal|"Refresh a bundle"
 argument_list|)
 specifier|public
 class|class
@@ -132,7 +132,23 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"id"
+argument_list|,
+name|description
+operator|=
+literal|"The ID of the bundle to refresh"
+argument_list|,
 name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
 operator|=
 literal|false
 argument_list|)

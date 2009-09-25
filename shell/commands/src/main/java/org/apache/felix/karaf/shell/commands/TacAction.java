@@ -187,7 +187,7 @@ literal|"tac"
 argument_list|,
 name|description
 operator|=
-literal|"Capture the stdin and return it as a string. Optionally write the content to a file"
+literal|"Captures the STDIN and returns it as a string. Optionally writes the content to a file"
 argument_list|)
 specifier|public
 class|class
@@ -202,9 +202,21 @@ name|name
 operator|=
 literal|"-f"
 argument_list|,
+name|aliases
+operator|=
+block|{}
+argument_list|,
 name|description
 operator|=
-literal|"Specify a file to write the content to"
+literal|"Outputs the content to the given file"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|File

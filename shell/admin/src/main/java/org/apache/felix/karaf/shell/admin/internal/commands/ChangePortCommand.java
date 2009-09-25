@@ -69,7 +69,7 @@ literal|"change-port"
 argument_list|,
 name|description
 operator|=
-literal|"Change the port of an existing instance."
+literal|"Changes the port of an existing container instance."
 argument_list|)
 specifier|public
 class|class
@@ -84,13 +84,21 @@ name|index
 operator|=
 literal|0
 argument_list|,
+name|name
+operator|=
+literal|"name"
+argument_list|,
+name|description
+operator|=
+literal|"The name of the container instance"
+argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"The instance name"
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -105,13 +113,21 @@ name|index
 operator|=
 literal|1
 argument_list|,
+name|name
+operator|=
+literal|"port"
+argument_list|,
+name|description
+operator|=
+literal|"The new port to set"
+argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"The new port"
+literal|false
 argument_list|)
 specifier|private
 name|int

@@ -144,9 +144,21 @@ name|name
 operator|=
 literal|"-x"
 argument_list|,
+name|aliases
+operator|=
+block|{}
+argument_list|,
 name|description
 operator|=
-literal|"Extract"
+literal|"Extract the archive"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 name|boolean
 name|extract
@@ -154,17 +166,25 @@ decl_stmt|;
 annotation|@
 name|Argument
 argument_list|(
-name|required
-operator|=
-literal|true
-argument_list|,
 name|index
 operator|=
 literal|0
 argument_list|,
+name|name
+operator|=
+literal|"folder"
+argument_list|,
 name|description
 operator|=
-literal|"Local directory"
+literal|"Local folder for storing sources"
+argument_list|,
+name|required
+operator|=
+literal|true
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 name|String
 name|localDir
@@ -172,21 +192,25 @@ decl_stmt|;
 annotation|@
 name|Argument
 argument_list|(
-name|required
-operator|=
-literal|true
-argument_list|,
 name|index
 operator|=
 literal|1
 argument_list|,
-name|multiValued
+name|name
 operator|=
-literal|true
+literal|"bundles"
 argument_list|,
 name|description
 operator|=
-literal|"List of bundles"
+literal|"List of bundles to download the sources for"
+argument_list|,
+name|required
+operator|=
+literal|true
+argument_list|,
+name|multiValued
+operator|=
+literal|true
 argument_list|)
 name|List
 argument_list|<

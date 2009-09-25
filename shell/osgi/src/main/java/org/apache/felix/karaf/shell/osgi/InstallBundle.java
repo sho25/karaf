@@ -153,7 +153,7 @@ literal|"install"
 argument_list|,
 name|description
 operator|=
-literal|"Install bundle(s)"
+literal|"Installs one or more bundles"
 argument_list|)
 specifier|public
 class|class
@@ -164,6 +164,18 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"urls"
+argument_list|,
+name|description
+operator|=
+literal|"Bundle URLs separated by whitespaces"
+argument_list|,
 name|required
 operator|=
 literal|true
@@ -171,10 +183,6 @@ argument_list|,
 name|multiValued
 operator|=
 literal|true
-argument_list|,
-name|description
-operator|=
-literal|"Bundle URLs"
 argument_list|)
 name|List
 argument_list|<
@@ -197,7 +205,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Start the bundles after installation"
+literal|"Starts the bundles after installation"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 name|boolean
 name|start

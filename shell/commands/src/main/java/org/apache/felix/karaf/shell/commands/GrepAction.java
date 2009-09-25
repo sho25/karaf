@@ -141,7 +141,7 @@ literal|"grep"
 argument_list|,
 name|description
 operator|=
-literal|"Print lines matching a pattern"
+literal|"Prints lines matching the given pattern"
 argument_list|)
 specifier|public
 class|class
@@ -152,17 +152,25 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
 name|name
 operator|=
-literal|"PATTERN"
+literal|"pattern"
+argument_list|,
+name|description
+operator|=
+literal|"Regular expression"
 argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"Regular expression"
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -183,7 +191,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Prefix each line of output with the line number within its input file."
+literal|"Prefixes each line of output with the line number within its input file."
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|boolean
@@ -204,7 +220,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Invert the sense of matching, to select non-matching lines."
+literal|"Inverts the sense of matching, to select non-matching lines."
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|boolean
@@ -225,7 +249,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Select only those lines containing matches that form whole "
+literal|"Selects only those lines containing matches that form whole "
 operator|+
 literal|"words.  The test is that the matching substring must either be "
 operator|+
@@ -236,6 +260,14 @@ operator|+
 literal|"the line or followed by a non-word constituent character.  "
 operator|+
 literal|"Word-constituent characters are letters, digits, and the underscore."
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|boolean
@@ -256,7 +288,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Select only those matches that exactly match the whole line."
+literal|"Selects only those matches that exactly match the whole line."
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|boolean
@@ -277,7 +317,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Ignore case distinctions in both the PATTERN and the input files."
+literal|"Ignores case distinctions in both the PATTERN and the input files."
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|boolean

@@ -215,7 +215,7 @@ literal|"info"
 argument_list|,
 name|description
 operator|=
-literal|"Print Karaf informations"
+literal|"Prints system informations"
 argument_list|)
 specifier|public
 class|class

@@ -153,7 +153,7 @@ literal|"sshd"
 argument_list|,
 name|description
 operator|=
-literal|"Create an SSH server"
+literal|"Creates a SSH server"
 argument_list|)
 specifier|public
 class|class
@@ -191,7 +191,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Port"
+literal|"The port to setup the SSH server (Default: 8101)"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|int
@@ -214,7 +222,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Background"
+literal|"The service will run in the background (Default: true)"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|boolean

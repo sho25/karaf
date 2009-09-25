@@ -89,7 +89,7 @@ literal|"create"
 argument_list|,
 name|description
 operator|=
-literal|"Create a new instance."
+literal|"Creates a new container instance."
 argument_list|)
 specifier|public
 class|class
@@ -113,6 +113,14 @@ argument_list|,
 name|description
 operator|=
 literal|"Port number for remote shell connection"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|int
@@ -135,7 +143,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Location of the new instance on the file system"
+literal|"Location of the new container instance in the file system"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -148,13 +164,21 @@ name|index
 operator|=
 literal|0
 argument_list|,
+name|name
+operator|=
+literal|"name"
+argument_list|,
+name|description
+operator|=
+literal|"The name of the new container instance"
+argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"Name of the new Karaf instance"
+literal|false
 argument_list|)
 specifier|private
 name|String

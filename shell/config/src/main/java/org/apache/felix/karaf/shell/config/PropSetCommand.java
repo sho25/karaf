@@ -89,7 +89,7 @@ literal|"propset"
 argument_list|,
 name|description
 operator|=
-literal|"Set a property on the edited configuration."
+literal|"Sets a property in the currently edited configuration."
 argument_list|)
 specifier|public
 class|class
@@ -104,13 +104,21 @@ name|index
 operator|=
 literal|0
 argument_list|,
+name|name
+operator|=
+literal|"property"
+argument_list|,
+name|description
+operator|=
+literal|"The name of the property to set"
+argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"the property to set"
+literal|false
 argument_list|)
 name|String
 name|prop
@@ -122,13 +130,21 @@ name|index
 operator|=
 literal|1
 argument_list|,
+name|name
+operator|=
+literal|"value"
+argument_list|,
+name|description
+operator|=
+literal|"The value of the property"
+argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"the value of the property"
+literal|false
 argument_list|)
 name|String
 name|value

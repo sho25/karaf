@@ -218,9 +218,21 @@ name|name
 operator|=
 literal|"-n"
 argument_list|,
+name|aliases
+operator|=
+block|{}
+argument_list|,
 name|description
 operator|=
-literal|"Number the output lines, starting at 1."
+literal|"The number the output lines, starting at 1."
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|boolean
@@ -229,6 +241,18 @@ decl_stmt|;
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"paths or urls"
+argument_list|,
+name|description
+operator|=
+literal|"A list of file paths or urls to display separated by whitespaces (use - for STDIN)"
+argument_list|,
 name|required
 operator|=
 literal|true

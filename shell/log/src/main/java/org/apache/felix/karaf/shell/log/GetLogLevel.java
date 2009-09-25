@@ -167,7 +167,7 @@ literal|"get"
 argument_list|,
 name|description
 operator|=
-literal|"Show log level."
+literal|"Shows the currently set log level."
 argument_list|)
 specifier|public
 class|class
@@ -178,17 +178,25 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"logger"
+argument_list|,
+name|description
+operator|=
+literal|"The name of the logger, ALL or ROOT (default)"
+argument_list|,
 name|required
 operator|=
 literal|false
 argument_list|,
-name|name
+name|multiValued
 operator|=
-literal|"LOGGER"
-argument_list|,
-name|description
-operator|=
-literal|"Logger name, ALL or ROOT (default)"
+literal|false
 argument_list|)
 name|String
 name|logger

@@ -137,7 +137,7 @@ literal|"set"
 argument_list|,
 name|description
 operator|=
-literal|"Set the log level."
+literal|"Sets the log level."
 argument_list|)
 specifier|public
 class|class
@@ -152,17 +152,21 @@ name|index
 operator|=
 literal|0
 argument_list|,
+name|name
+operator|=
+literal|"level"
+argument_list|,
+name|description
+operator|=
+literal|"The log level to set (TRACE, DEBUG, INFO, WARN, ERROR or - to unset)"
+argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|name
+name|multiValued
 operator|=
-literal|"LEVEL"
-argument_list|,
-name|description
-operator|=
-literal|"Level (TRACE, DEBUG, INFO, WARN, ERROR or - to unset"
+literal|false
 argument_list|)
 name|String
 name|level
@@ -174,17 +178,21 @@ name|index
 operator|=
 literal|1
 argument_list|,
-name|required
-operator|=
-literal|false
-argument_list|,
 name|name
 operator|=
-literal|"LOGGER"
+literal|"logger"
 argument_list|,
 name|description
 operator|=
 literal|"Logger name or ROOT (default)"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 name|String
 name|logger

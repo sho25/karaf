@@ -69,7 +69,7 @@ literal|"stop"
 argument_list|,
 name|description
 operator|=
-literal|"Stop an existing instance."
+literal|"Stops an existing container instance."
 argument_list|)
 specifier|public
 class|class
@@ -84,13 +84,21 @@ name|index
 operator|=
 literal|0
 argument_list|,
+name|name
+operator|=
+literal|"name"
+argument_list|,
+name|description
+operator|=
+literal|"The name of the container instance"
+argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"The instance name"
+literal|false
 argument_list|)
 specifier|private
 name|String

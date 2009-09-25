@@ -173,7 +173,7 @@ literal|"info"
 argument_list|,
 name|description
 operator|=
-literal|"Print informations about OBR bundles"
+literal|"Prints information about OBR bundles"
 argument_list|)
 specifier|public
 class|class
@@ -184,6 +184,18 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"bundles"
+argument_list|,
+name|description
+operator|=
+literal|"Specify bundles to query for information (separated by whitespaces)"
+argument_list|,
 name|required
 operator|=
 literal|true

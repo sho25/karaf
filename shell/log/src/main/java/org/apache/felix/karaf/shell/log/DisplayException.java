@@ -83,7 +83,7 @@ literal|"display-exception"
 argument_list|,
 name|description
 operator|=
-literal|"Display the last exception from the log."
+literal|"Displays the last occured exception from the log."
 argument_list|)
 specifier|public
 class|class

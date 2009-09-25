@@ -147,7 +147,7 @@ literal|"ls"
 argument_list|,
 name|description
 operator|=
-literal|"List services"
+literal|"Lists OSGi services"
 argument_list|)
 specifier|public
 class|class
@@ -162,9 +162,21 @@ name|name
 operator|=
 literal|"-a"
 argument_list|,
+name|aliases
+operator|=
+block|{}
+argument_list|,
 name|description
 operator|=
-literal|"Show all"
+literal|"Shows all services"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 name|boolean
 name|showAll
@@ -176,9 +188,21 @@ name|name
 operator|=
 literal|"-u"
 argument_list|,
+name|aliases
+operator|=
+block|{}
+argument_list|,
 name|description
 operator|=
-literal|"Show in use"
+literal|"Shows services which are in use"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 name|boolean
 name|inUse
@@ -186,6 +210,18 @@ decl_stmt|;
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"ids"
+argument_list|,
+name|description
+operator|=
+literal|"Show only services for the given bundle ids"
+argument_list|,
 name|required
 operator|=
 literal|false
@@ -193,10 +229,6 @@ argument_list|,
 name|multiValued
 operator|=
 literal|true
-argument_list|,
-name|description
-operator|=
-literal|"Bundles ids"
 argument_list|)
 name|List
 argument_list|<

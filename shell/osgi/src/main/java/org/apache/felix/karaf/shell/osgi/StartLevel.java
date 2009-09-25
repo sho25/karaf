@@ -95,7 +95,7 @@ literal|"start-level"
 argument_list|,
 name|description
 operator|=
-literal|"Get or set the start level"
+literal|"Get or set the system start level"
 argument_list|)
 specifier|public
 class|class
@@ -106,13 +106,25 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"level"
+argument_list|,
+name|description
+operator|=
+literal|"The new system start level to set"
+argument_list|,
 name|required
 operator|=
 literal|false
 argument_list|,
-name|index
+name|multiValued
 operator|=
-literal|0
+literal|false
 argument_list|)
 name|Integer
 name|level

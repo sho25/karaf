@@ -189,7 +189,7 @@ literal|"install"
 argument_list|,
 name|description
 operator|=
-literal|"Install Karaf as a system service in the OS."
+literal|"Install the container as a system service in the OS."
 argument_list|)
 specifier|public
 class|class
@@ -212,7 +212,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"The service name that will be used when installing the service."
+literal|"The service name that will be used when installing the service. (Default: karaf)"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -236,6 +244,14 @@ argument_list|,
 name|description
 operator|=
 literal|"The display name of the service."
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -257,6 +273,14 @@ argument_list|,
 name|description
 operator|=
 literal|"The description of the service."
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -279,7 +303,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Mode in which the service is installed.  AUTO_START or DEMAND_START"
+literal|"Mode in which the service is installed. AUTO_START or DEMAND_START (Default: AUTO_START)"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String

@@ -85,7 +85,7 @@ literal|"connect"
 argument_list|,
 name|description
 operator|=
-literal|"Connect to an existing instance."
+literal|"Connects to an existing container instance."
 argument_list|)
 specifier|public
 class|class
@@ -102,15 +102,19 @@ literal|0
 argument_list|,
 name|name
 operator|=
-literal|"INSTANCE"
+literal|"name"
+argument_list|,
+name|description
+operator|=
+literal|"The name of the container instance"
 argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"The instance name"
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -133,7 +137,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Remote user name"
+literal|"Remote user name (Default: karaf)"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -156,7 +168,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Remote user password"
+literal|"Remote user password (Default: karaf)"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String

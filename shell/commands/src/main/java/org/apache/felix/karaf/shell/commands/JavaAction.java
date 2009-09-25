@@ -149,6 +149,14 @@ argument_list|,
 name|description
 operator|=
 literal|"Invoke a named method"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -174,6 +182,10 @@ argument_list|,
 name|required
 operator|=
 literal|true
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -188,11 +200,19 @@ literal|1
 argument_list|,
 name|name
 operator|=
-literal|"args"
+literal|"arguments"
 argument_list|,
 name|description
 operator|=
-literal|"Arguments to pass to the METHOD of CLASSNAME"
+literal|"Arguments to pass to the method of the given class"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|List

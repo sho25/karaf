@@ -91,7 +91,7 @@ literal|"list"
 argument_list|,
 name|description
 operator|=
-literal|"List existing instances."
+literal|"List all existing container instances."
 argument_list|)
 specifier|public
 class|class
@@ -114,7 +114,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Display instances location"
+literal|"Displays the location of the container instances"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 name|boolean
 name|location

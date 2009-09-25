@@ -99,7 +99,7 @@ literal|"addUrl"
 argument_list|,
 name|description
 operator|=
-literal|"Add a list of repository URLs to the OBR service."
+literal|"Adds a list of repository URLs to the OBR service."
 argument_list|)
 specifier|public
 class|class
@@ -110,6 +110,18 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"urls"
+argument_list|,
+name|description
+operator|=
+literal|"Repository URLs to add to the OBR service separated by whitespaces"
+argument_list|,
 name|required
 operator|=
 literal|true
@@ -117,10 +129,6 @@ argument_list|,
 name|multiValued
 operator|=
 literal|true
-argument_list|,
-name|description
-operator|=
-literal|"Repository URLs"
 argument_list|)
 name|List
 argument_list|<

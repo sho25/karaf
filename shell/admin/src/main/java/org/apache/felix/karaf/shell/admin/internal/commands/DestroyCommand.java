@@ -73,7 +73,7 @@ literal|"destroy"
 argument_list|,
 name|description
 operator|=
-literal|"Destroy an existing instance."
+literal|"Destroys an existing container instance."
 argument_list|)
 specifier|public
 class|class
@@ -88,13 +88,21 @@ name|index
 operator|=
 literal|0
 argument_list|,
+name|name
+operator|=
+literal|"name"
+argument_list|,
+name|description
+operator|=
+literal|"The name of the container instance to destroy"
+argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"The name of the Karaf instance to destroy"
+literal|false
 argument_list|)
 specifier|private
 name|String

@@ -163,7 +163,7 @@ literal|"list"
 argument_list|,
 name|description
 operator|=
-literal|"List existing features."
+literal|"Lists all existing features available from the defined repositories."
 argument_list|)
 specifier|public
 class|class
@@ -186,7 +186,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Display the list of installed features"
+literal|"Display a list of all installed features only"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 name|boolean
 name|installed

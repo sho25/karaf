@@ -257,7 +257,7 @@ literal|"sort"
 argument_list|,
 name|description
 operator|=
-literal|"Write sorted concatenation of all FILE(s) to standard output."
+literal|"Write sorted concatenation of all files to standard output."
 argument_list|)
 specifier|public
 class|class
@@ -281,6 +281,14 @@ argument_list|,
 name|description
 operator|=
 literal|"fold lower case to upper case characters"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|boolean
@@ -302,6 +310,14 @@ argument_list|,
 name|description
 operator|=
 literal|"reverse the result of comparisons"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|boolean
@@ -323,6 +339,14 @@ argument_list|,
 name|description
 operator|=
 literal|"output only the first of an equal run"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|boolean
@@ -344,6 +368,14 @@ argument_list|,
 name|description
 operator|=
 literal|"use SEP instead of non-blank to blank transition"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -365,6 +397,14 @@ argument_list|,
 name|description
 operator|=
 literal|"ignore leading blanks"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|boolean
@@ -382,6 +422,14 @@ operator|=
 block|{
 literal|"--key"
 block|}
+argument_list|,
+name|description
+operator|=
+literal|"Fields to use for sorting separated by whitespaces"
+argument_list|,
+name|required
+operator|=
+literal|false
 argument_list|,
 name|multiValued
 operator|=
@@ -410,6 +458,14 @@ argument_list|,
 name|description
 operator|=
 literal|"compare according to string numerical value"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|boolean
@@ -421,6 +477,14 @@ argument_list|(
 name|index
 operator|=
 literal|0
+argument_list|,
+name|name
+operator|=
+literal|"files"
+argument_list|,
+name|description
+operator|=
+literal|"A list of files separated by whitespaces"
 argument_list|,
 name|required
 operator|=

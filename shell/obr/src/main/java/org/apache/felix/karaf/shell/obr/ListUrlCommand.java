@@ -77,7 +77,7 @@ literal|"listUrl"
 argument_list|,
 name|description
 operator|=
-literal|"Display the repository URLs currently associated with the OBR service."
+literal|"Displays the repository URLs currently associated with the OBR service."
 argument_list|)
 specifier|public
 class|class

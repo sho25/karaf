@@ -81,7 +81,7 @@ literal|"install"
 argument_list|,
 name|description
 operator|=
-literal|"Install a feature."
+literal|"Installs a feature with the specified name and version."
 argument_list|)
 specifier|public
 class|class
@@ -92,13 +92,25 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
-name|required
+name|index
 operator|=
-literal|true
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"name"
 argument_list|,
 name|description
 operator|=
 literal|"The name of the feature"
+argument_list|,
+name|required
+operator|=
+literal|true
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 name|String
 name|name
@@ -106,13 +118,25 @@ decl_stmt|;
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|1
+argument_list|,
+name|name
+operator|=
+literal|"version"
+argument_list|,
 name|description
 operator|=
 literal|"The version of the feature"
 argument_list|,
-name|index
+name|required
 operator|=
-literal|1
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 name|String
 name|version

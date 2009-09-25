@@ -89,7 +89,7 @@ literal|"deploy"
 argument_list|,
 name|description
 operator|=
-literal|"Deploy a list of bundles using OBR"
+literal|"Deploys a list of bundles using OBR service"
 argument_list|)
 specifier|public
 class|class
@@ -100,6 +100,18 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"bundles"
+argument_list|,
+name|description
+operator|=
+literal|"List of bundle names to deploy (separated by whitespaces)"
+argument_list|,
 name|required
 operator|=
 literal|true
@@ -107,10 +119,6 @@ argument_list|,
 name|multiValued
 operator|=
 literal|true
-argument_list|,
-name|description
-operator|=
-literal|"List of bundles"
 argument_list|)
 specifier|protected
 name|List

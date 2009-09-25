@@ -83,7 +83,7 @@ literal|"sleep"
 argument_list|,
 name|description
 operator|=
-literal|"Sleep for a bit then wake up"
+literal|"Sleeps for a bit then wakes up"
 argument_list|)
 specifier|public
 class|class
@@ -94,12 +94,28 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"duration"
+argument_list|,
+name|description
+operator|=
+literal|"The amount of millis to sleep"
+argument_list|,
 name|required
 operator|=
 literal|true
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
-name|int
+name|long
 name|time
 init|=
 operator|-

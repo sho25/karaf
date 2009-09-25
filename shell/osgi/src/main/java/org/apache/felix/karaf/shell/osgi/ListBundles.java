@@ -157,7 +157,7 @@ literal|"list"
 argument_list|,
 name|description
 operator|=
-literal|"List bundles"
+literal|"Lists all installed bundles"
 argument_list|)
 specifier|public
 class|class
@@ -172,9 +172,21 @@ name|name
 operator|=
 literal|"-l"
 argument_list|,
+name|aliases
+operator|=
+block|{}
+argument_list|,
 name|description
 operator|=
-literal|"Show locations"
+literal|"Show the locations"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 name|boolean
 name|showLoc
@@ -188,7 +200,15 @@ literal|"-s"
 argument_list|,
 name|description
 operator|=
-literal|"Show symbolic name"
+literal|"Shows the symbolic name"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 name|boolean
 name|showSymbolic
@@ -202,7 +222,15 @@ literal|"-u"
 argument_list|,
 name|description
 operator|=
-literal|"Show update"
+literal|"Shows the update locations"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 name|boolean
 name|showUpdate

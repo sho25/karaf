@@ -115,7 +115,7 @@ literal|"list"
 argument_list|,
 name|description
 operator|=
-literal|"List OBR bundles"
+literal|"Lists OBR bundles"
 argument_list|)
 specifier|public
 class|class
@@ -126,6 +126,18 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"args"
+argument_list|,
+name|description
+operator|=
+literal|"The arguments"
+argument_list|,
 name|required
 operator|=
 literal|false

@@ -143,7 +143,7 @@ literal|"display"
 argument_list|,
 name|description
 operator|=
-literal|"Display log entries."
+literal|"Displays log entries."
 argument_list|)
 specifier|public
 class|class
@@ -158,9 +158,21 @@ name|name
 operator|=
 literal|"-n"
 argument_list|,
+name|aliases
+operator|=
+block|{}
+argument_list|,
 name|description
 operator|=
 literal|"Number of entries to display"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|protected
 name|int
@@ -173,9 +185,21 @@ name|name
 operator|=
 literal|"-p"
 argument_list|,
+name|aliases
+operator|=
+block|{}
+argument_list|,
 name|description
 operator|=
-literal|"Output formatting pattern"
+literal|"Pattern for formatting the output"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|protected
 name|String

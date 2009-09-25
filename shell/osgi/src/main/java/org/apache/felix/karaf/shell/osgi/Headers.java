@@ -125,7 +125,7 @@ literal|"headers"
 argument_list|,
 name|description
 operator|=
-literal|"Display OSGi headers of a given bundle"
+literal|"Displays OSGi headers of a given bundle"
 argument_list|)
 specifier|public
 class|class
@@ -136,6 +136,18 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"ids"
+argument_list|,
+name|description
+operator|=
+literal|"A list of bundle IDs separated by whitespaces"
+argument_list|,
 name|required
 operator|=
 literal|false
@@ -143,10 +155,6 @@ argument_list|,
 name|multiValued
 operator|=
 literal|true
-argument_list|,
-name|description
-operator|=
-literal|"Bundles ids"
 argument_list|)
 name|List
 argument_list|<

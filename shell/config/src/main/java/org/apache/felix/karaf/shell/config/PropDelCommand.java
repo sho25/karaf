@@ -89,7 +89,7 @@ literal|"propdel"
 argument_list|,
 name|description
 operator|=
-literal|"Delete a property from the edited configuration."
+literal|"Deletes a property from the edited configuration."
 argument_list|)
 specifier|public
 class|class
@@ -100,21 +100,25 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
-name|name
-operator|=
-literal|"prop"
-argument_list|,
 name|index
 operator|=
 literal|0
+argument_list|,
+name|name
+operator|=
+literal|"property"
+argument_list|,
+name|description
+operator|=
+literal|"The name of the property to delete"
 argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"the property to delete"
+literal|false
 argument_list|)
 name|String
 name|prop

@@ -99,7 +99,7 @@ literal|"removeUrl"
 argument_list|,
 name|description
 operator|=
-literal|"Remove a list of repository URLs from the OBR service."
+literal|"Removes a list of repository URLs from the OBR service."
 argument_list|)
 specifier|public
 class|class
@@ -110,6 +110,18 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"urls"
+argument_list|,
+name|description
+operator|=
+literal|"Repository URLs to remove from OBR service"
+argument_list|,
 name|required
 operator|=
 literal|true
@@ -117,10 +129,6 @@ argument_list|,
 name|multiValued
 operator|=
 literal|true
-argument_list|,
-name|description
-operator|=
-literal|"Repository URLs"
 argument_list|)
 name|List
 argument_list|<

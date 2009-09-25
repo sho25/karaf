@@ -114,13 +114,25 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|1
+argument_list|,
+name|name
+operator|=
+literal|"startLevel"
+argument_list|,
+name|description
+operator|=
+literal|"The bundles new start level"
+argument_list|,
 name|required
 operator|=
 literal|false
 argument_list|,
-name|index
+name|multiValued
 operator|=
-literal|1
+literal|false
 argument_list|)
 name|Integer
 name|level

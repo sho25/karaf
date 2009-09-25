@@ -83,7 +83,7 @@ literal|"proplist"
 argument_list|,
 name|description
 operator|=
-literal|"List properties from the edited configuration."
+literal|"Lists properties from the currently edited configuration."
 argument_list|)
 specifier|public
 class|class

@@ -117,7 +117,7 @@ literal|"exec"
 argument_list|,
 name|description
 operator|=
-literal|"Execute system processes"
+literal|"Executes system processes"
 argument_list|)
 specifier|public
 class|class
@@ -128,9 +128,17 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"command"
+argument_list|,
 name|description
 operator|=
-literal|"Arguments"
+literal|"Execution command with arguments"
 argument_list|,
 name|required
 operator|=

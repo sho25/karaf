@@ -251,7 +251,7 @@ literal|"ssh"
 argument_list|,
 name|description
 operator|=
-literal|"Connect to a remote SSH server"
+literal|"Connects to a remote SSH server"
 argument_list|)
 specifier|public
 class|class
@@ -289,7 +289,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Username"
+literal|"The user name for remote login"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -310,7 +318,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Password"
+literal|"The password for remote login"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -319,13 +335,25 @@ decl_stmt|;
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"hostname"
+argument_list|,
+name|description
+operator|=
+literal|"The host name to connect to via SSH"
+argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"Host"
+literal|false
 argument_list|)
 specifier|private
 name|String
@@ -346,7 +374,15 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Port"
+literal|"The port to use for SSH connection"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|int

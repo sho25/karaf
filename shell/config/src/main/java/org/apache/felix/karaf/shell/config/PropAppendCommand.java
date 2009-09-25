@@ -93,7 +93,7 @@ literal|"propappend"
 argument_list|,
 name|description
 operator|=
-literal|"Append the given value to an existing property or create the property with the specified value."
+literal|"Appends the given value to an existing property or creates the property with the specified name and value."
 argument_list|)
 specifier|public
 class|class
@@ -108,13 +108,21 @@ name|index
 operator|=
 literal|0
 argument_list|,
+name|name
+operator|=
+literal|"name"
+argument_list|,
+name|description
+operator|=
+literal|"The name of the property"
+argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"the property to set"
+literal|false
 argument_list|)
 name|String
 name|prop
@@ -126,13 +134,21 @@ name|index
 operator|=
 literal|1
 argument_list|,
+name|name
+operator|=
+literal|"value"
+argument_list|,
+name|description
+operator|=
+literal|"The value to append to the property"
+argument_list|,
 name|required
 operator|=
 literal|true
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"the value to be appended"
+literal|false
 argument_list|)
 name|String
 name|value

@@ -105,7 +105,7 @@ literal|"echo"
 argument_list|,
 name|description
 operator|=
-literal|"Echo or print arguments to STDOUT"
+literal|"Echoes or prints arguments to STDOUT"
 argument_list|)
 specifier|public
 class|class
@@ -120,9 +120,21 @@ name|name
 operator|=
 literal|"-n"
 argument_list|,
+name|aliases
+operator|=
+block|{}
+argument_list|,
 name|description
 operator|=
 literal|"Do not print the trailing newline character"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
 argument_list|)
 specifier|private
 name|boolean
@@ -133,9 +145,21 @@ decl_stmt|;
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"arguments"
+argument_list|,
 name|description
 operator|=
-literal|"Arguments"
+literal|"Arguments to display separated by whitespaces"
+argument_list|,
+name|required
+operator|=
+literal|false
 argument_list|,
 name|multiValued
 operator|=

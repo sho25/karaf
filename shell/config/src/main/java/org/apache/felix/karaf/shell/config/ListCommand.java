@@ -113,7 +113,7 @@ literal|"list"
 argument_list|,
 name|description
 operator|=
-literal|"List existing configurations."
+literal|"Lists existing configurations."
 argument_list|)
 specifier|public
 class|class
@@ -124,13 +124,25 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"query"
+argument_list|,
+name|description
+operator|=
+literal|"Specify a LDAP query"
+argument_list|,
 name|required
 operator|=
 literal|false
 argument_list|,
-name|description
+name|multiValued
 operator|=
-literal|"LDAP query"
+literal|false
 argument_list|)
 name|String
 name|query

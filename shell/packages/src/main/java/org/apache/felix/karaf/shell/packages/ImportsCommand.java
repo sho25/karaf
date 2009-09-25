@@ -178,6 +178,18 @@ block|{
 annotation|@
 name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
+name|name
+operator|=
+literal|"ids"
+argument_list|,
+name|description
+operator|=
+literal|"The IDs of bundles to check"
+argument_list|,
 name|required
 operator|=
 literal|false
@@ -185,10 +197,6 @@ argument_list|,
 name|multiValued
 operator|=
 literal|true
-argument_list|,
-name|description
-operator|=
-literal|"bundle ids"
 argument_list|)
 name|List
 argument_list|<
