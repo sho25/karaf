@@ -353,6 +353,35 @@ literal|"karaf.base"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|printValue
+argument_list|(
+literal|"OSGi Framework"
+argument_list|,
+name|maxNameLen
+argument_list|,
+name|bundleContext
+operator|.
+name|getBundle
+argument_list|(
+literal|0
+argument_list|)
+operator|.
+name|getSymbolicName
+argument_list|()
+operator|+
+literal|" - "
+operator|+
+name|bundleContext
+operator|.
+name|getBundle
+argument_list|(
+literal|0
+argument_list|)
+operator|.
+name|getVersion
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|System
 operator|.
 name|out
