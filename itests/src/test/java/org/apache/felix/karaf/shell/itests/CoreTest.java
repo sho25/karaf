@@ -109,6 +109,22 @@ name|exam
 operator|.
 name|CoreOptions
 operator|.
+name|maven
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|exam
+operator|.
+name|CoreOptions
+operator|.
 name|options
 import|;
 end_import
@@ -162,6 +178,22 @@ import|;
 end_import
 
 begin_import
+import|import static
+name|org
+operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|exam
+operator|.
+name|CoreOptions
+operator|.
+name|wrappedBundle
+import|;
+end_import
+
+begin_import
 import|import
 name|org
 operator|.
@@ -172,6 +204,22 @@ operator|.
 name|exam
 operator|.
 name|Option
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|exam
+operator|.
+name|OptionUtils
+operator|.
+name|combine
 import|;
 end_import
 
@@ -706,6 +754,51 @@ name|equinox
 argument_list|()
 argument_list|)
 decl_stmt|;
+comment|// We need to add pax-exam-junit here when running with the ibm
+comment|// jdk to avoid the following exception during the test run:
+comment|// ClassNotFoundException: org.ops4j.pax.exam.junit.Configuration
+if|if
+condition|(
+literal|"IBM Corporation"
+operator|.
+name|equals
+argument_list|(
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"java.vendor"
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|Option
+index|[]
+name|ibmOptions
+init|=
+name|options
+argument_list|(
+name|wrappedBundle
+argument_list|(
+name|maven
+argument_list|(
+literal|"org.ops4j.pax.exam"
+argument_list|,
+literal|"pax-exam-junit"
+argument_list|)
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|options
+operator|=
+name|combine
+argument_list|(
+name|ibmOptions
+argument_list|,
+name|options
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|options
 return|;
