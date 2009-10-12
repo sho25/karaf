@@ -27,6 +27,16 @@ name|URI
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|EnumSet
+import|;
+end_import
+
 begin_comment
 comment|/**  * The service managing features repositories.  */
 end_comment
@@ -36,6 +46,15 @@ specifier|public
 interface|interface
 name|FeaturesService
 block|{
+enum|enum
+name|Option
+block|{
+name|NoCleanIfFailure
+block|,
+name|PrintBundlesToRefresh
+block|,
+name|NoAutoRefreshBundles
+block|,     }
 name|void
 name|addRepository
 parameter_list|(
@@ -87,8 +106,11 @@ parameter_list|,
 name|String
 name|version
 parameter_list|,
-name|boolean
-name|cleanIfFailure
+name|EnumSet
+argument_list|<
+name|Option
+argument_list|>
+name|options
 parameter_list|)
 throws|throws
 name|Exception
