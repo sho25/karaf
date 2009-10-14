@@ -632,7 +632,7 @@ decl_stmt|;
 if|if
 condition|(
 name|rows
-operator|==
+operator|>=
 literal|1
 condition|)
 block|{
@@ -817,7 +817,7 @@ decl_stmt|;
 if|if
 condition|(
 name|rows
-operator|!=
+operator|<
 literal|1
 condition|)
 block|{
