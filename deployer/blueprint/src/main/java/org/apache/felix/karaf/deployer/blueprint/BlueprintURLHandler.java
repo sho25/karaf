@@ -25,6 +25,26 @@ name|java
 operator|.
 name|io
 operator|.
+name|ByteArrayInputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|ByteArrayOutputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|File
 import|;
 end_import
@@ -238,7 +258,7 @@ name|logger
 operator|.
 name|debug
 argument_list|(
-literal|"Spring xml URL is: ["
+literal|"Blueprint xml URL is: ["
 operator|+
 name|blueprintXmlURL
 operator|+
@@ -301,27 +321,12 @@ name|IOException
 block|{
 try|try
 block|{
-specifier|final
-name|File
-name|f
-init|=
-name|File
-operator|.
-name|createTempFile
-argument_list|(
-literal|"smx"
-argument_list|,
-literal|"xml"
-argument_list|)
-decl_stmt|;
-name|FileOutputStream
+name|ByteArrayOutputStream
 name|os
 init|=
 operator|new
-name|FileOutputStream
-argument_list|(
-name|f
-argument_list|)
+name|ByteArrayOutputStream
+argument_list|()
 decl_stmt|;
 name|BlueprintTransformer
 operator|.
@@ -339,30 +344,13 @@ argument_list|()
 expr_stmt|;
 return|return
 operator|new
-name|FileInputStream
+name|ByteArrayInputStream
 argument_list|(
-name|f
+name|os
+operator|.
+name|toByteArray
+argument_list|()
 argument_list|)
-block|{
-specifier|public
-name|void
-name|close
-parameter_list|()
-throws|throws
-name|IOException
-block|{
-name|super
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-name|f
-operator|.
-name|delete
-argument_list|()
-expr_stmt|;
-block|}
-block|}
 return|;
 block|}
 catch|catch
@@ -375,7 +363,7 @@ name|logger
 operator|.
 name|error
 argument_list|(
-literal|"Error opening spring xml url"
+literal|"Error opening blueprint xml url"
 argument_list|,
 name|e
 argument_list|)
@@ -387,7 +375,7 @@ operator|)
 operator|new
 name|IOException
 argument_list|(
-literal|"Error opening spring xml url"
+literal|"Error opening blueprint xml url"
 argument_list|)
 operator|.
 name|initCause
