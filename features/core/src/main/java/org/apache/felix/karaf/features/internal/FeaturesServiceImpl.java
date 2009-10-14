@@ -1922,14 +1922,14 @@ argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|final
-name|Set
+name|List
 argument_list|<
 name|Bundle
 argument_list|>
 name|bundles
 init|=
 operator|new
-name|HashSet
+name|ArrayList
 argument_list|<
 name|Bundle
 argument_list|>
