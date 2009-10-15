@@ -281,6 +281,15 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
+name|init
+parameter_list|()
+block|{
+name|createListener
+argument_list|()
+expr_stmt|;
+block|}
+specifier|public
+name|void
 name|destroy
 parameter_list|()
 throws|throws
