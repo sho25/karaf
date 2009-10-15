@@ -105,37 +105,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Properties
 import|;
 end_import
 
@@ -304,7 +274,7 @@ specifier|public
 class|class
 name|FeaturesPlugin
 extends|extends
-name|AbstractResourceAwareWebConsolePlugin
+name|AbstractWebConsolePlugin
 block|{
 comment|/** Pseudo class version ID to keep the IDE quite. */
 specifier|private
