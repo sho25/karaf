@@ -635,9 +635,7 @@ argument_list|,
 comment|// hack system packages
 name|systemPackages
 argument_list|(
-literal|"org.apache.felix.karaf.main.spi;version=1.0.0"
-argument_list|,
-literal|"org.apache.felix.karaf.jaas.boot;version=0.9.0"
+literal|"org.apache.felix.karaf.jaas.boot;version=1.99"
 argument_list|)
 argument_list|,
 name|bootClasspathLibrary
@@ -751,6 +749,9 @@ name|noStart
 argument_list|()
 argument_list|,
 name|equinox
+argument_list|()
+argument_list|,
+name|felix
 argument_list|()
 argument_list|)
 decl_stmt|;

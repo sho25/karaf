@@ -97,6 +97,22 @@ name|exam
 operator|.
 name|CoreOptions
 operator|.
+name|felix
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|exam
+operator|.
+name|CoreOptions
+operator|.
 name|maven
 import|;
 end_import
@@ -473,9 +489,7 @@ argument_list|,
 comment|// hack system packages
 name|systemPackages
 argument_list|(
-literal|"org.apache.felix.karaf.main.spi;version=1.0.0"
-argument_list|,
-literal|"org.apache.felix.karaf.jaas.boot;version=0.9.0"
+literal|"org.apache.felix.karaf.jaas.boot;version=1.99"
 argument_list|)
 argument_list|,
 name|bootClasspathLibrary
@@ -630,6 +644,9 @@ literal|"wrapper"
 argument_list|)
 argument_list|,
 name|equinox
+argument_list|()
+argument_list|,
+name|felix
 argument_list|()
 argument_list|)
 decl_stmt|;
