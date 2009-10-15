@@ -459,15 +459,6 @@ name|PROPERTY_CONVERT_TO_MAVEN_URL
 init|=
 literal|"karaf.maven.convert"
 decl_stmt|;
-comment|/**      * ConfigAdmin properties directory      */
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|PROPERTY_CM_DIRECTORY
-init|=
-literal|"karaf.cm.dir"
-decl_stmt|;
 comment|/**      * If a lock should be used before starting the runtime      */
 specifier|public
 specifier|static
