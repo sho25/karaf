@@ -150,7 +150,6 @@ name|multiValued
 operator|=
 literal|false
 argument_list|)
-specifier|private
 name|int
 name|port
 init|=
@@ -181,7 +180,6 @@ name|multiValued
 operator|=
 literal|false
 argument_list|)
-specifier|private
 name|String
 name|location
 decl_stmt|;
@@ -270,7 +268,6 @@ name|multiValued
 operator|=
 literal|false
 argument_list|)
-specifier|private
 name|String
 name|instance
 init|=

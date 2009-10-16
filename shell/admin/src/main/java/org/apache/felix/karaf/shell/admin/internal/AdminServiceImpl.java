@@ -1206,7 +1206,6 @@ return|return
 name|instance
 return|;
 block|}
-specifier|private
 name|void
 name|handleFeatures
 parameter_list|(
@@ -1299,6 +1298,9 @@ name|getProperty
 argument_list|(
 name|key
 argument_list|)
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 decl_stmt|;
 for|for
