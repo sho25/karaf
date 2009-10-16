@@ -30,11 +30,8 @@ parameter_list|(
 name|String
 name|name
 parameter_list|,
-name|int
-name|port
-parameter_list|,
-name|String
-name|location
+name|InstanceSettings
+name|settings
 parameter_list|)
 throws|throws
 name|Exception
