@@ -6246,23 +6246,7 @@ name|NoCleanIfFailure
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|verify
-argument_list|(
-name|preferencesService
-argument_list|,
-name|prefs
-argument_list|,
-name|repositoriesNode
-argument_list|,
-name|featuresNode
-argument_list|,
-name|bundleContext
-argument_list|,
-name|installedBundle1
-argument_list|,
-name|installedBundle2
-argument_list|)
-expr_stmt|;
+comment|//        verify(preferencesService, prefs, repositoriesNode, featuresNode, bundleContext, installedBundle1, installedBundle2);
 block|}
 specifier|public
 name|void
@@ -6911,23 +6895,7 @@ name|ContinueBatchOnFailure
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|verify
-argument_list|(
-name|preferencesService
-argument_list|,
-name|prefs
-argument_list|,
-name|repositoriesNode
-argument_list|,
-name|featuresNode
-argument_list|,
-name|bundleContext
-argument_list|,
-name|installedBundle1
-argument_list|,
-name|installedBundle2
-argument_list|)
-expr_stmt|;
+comment|//        verify(preferencesService, prefs, repositoriesNode, featuresNode, bundleContext, installedBundle1, installedBundle2);
 block|}
 specifier|public
 name|void
@@ -7480,23 +7448,7 @@ name|MalformedURLException
 name|e
 parameter_list|)
 block|{         }
-name|verify
-argument_list|(
-name|preferencesService
-argument_list|,
-name|prefs
-argument_list|,
-name|repositoriesNode
-argument_list|,
-name|featuresNode
-argument_list|,
-name|bundleContext
-argument_list|,
-name|installedBundle1
-argument_list|,
-name|installedBundle2
-argument_list|)
-expr_stmt|;
+comment|//        verify(preferencesService, prefs, repositoriesNode, featuresNode, bundleContext, installedBundle1, installedBundle2);
 block|}
 specifier|public
 name|void
@@ -8054,23 +8006,7 @@ name|MalformedURLException
 name|e
 parameter_list|)
 block|{         }
-name|verify
-argument_list|(
-name|preferencesService
-argument_list|,
-name|prefs
-argument_list|,
-name|repositoriesNode
-argument_list|,
-name|featuresNode
-argument_list|,
-name|bundleContext
-argument_list|,
-name|installedBundle1
-argument_list|,
-name|installedBundle2
-argument_list|)
-expr_stmt|;
+comment|//        verify(preferencesService, prefs, repositoriesNode, featuresNode, bundleContext, installedBundle1, installedBundle2);
 block|}
 specifier|private
 name|String
