@@ -64,7 +64,9 @@ block|,
 name|PrintBundlesToRefresh
 block|,
 name|NoAutoRefreshBundles
-block|,     }
+block|,
+name|ContinueBatchOnFailure
+block|}
 name|void
 name|addRepository
 parameter_list|(
