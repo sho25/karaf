@@ -640,7 +640,7 @@ argument_list|()
 operator|==
 name|BundleEvent
 operator|.
-name|INSTALLED
+name|RESOLVED
 condition|)
 block|{
 name|Enumeration
