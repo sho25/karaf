@@ -1452,6 +1452,8 @@ range|:
 name|features
 control|)
 block|{
+try|try
+block|{
 name|doInstallFeature
 argument_list|(
 name|state
@@ -1459,6 +1461,33 @@ argument_list|,
 name|f
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|LOGGER
+operator|.
+name|error
+argument_list|(
+literal|"can't install Feature with name "
+operator|+
+name|f
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" for "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|// Find bundles to refresh
 name|boolean
