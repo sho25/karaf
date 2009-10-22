@@ -145,8 +145,6 @@ name|felix
 operator|.
 name|karaf
 operator|.
-name|shell
-operator|.
 name|admin
 operator|.
 name|AdminService
@@ -163,8 +161,6 @@ name|felix
 operator|.
 name|karaf
 operator|.
-name|shell
-operator|.
 name|admin
 operator|.
 name|Instance
@@ -180,8 +176,6 @@ operator|.
 name|felix
 operator|.
 name|karaf
-operator|.
-name|shell
 operator|.
 name|admin
 operator|.
