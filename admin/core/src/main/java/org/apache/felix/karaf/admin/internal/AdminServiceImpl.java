@@ -898,6 +898,15 @@ name|copyResourceToDir
 argument_list|(
 name|karafBase
 argument_list|,
+literal|"etc/org.apache.felix.fileinstall-deploy.cfg"
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+name|copyResourceToDir
+argument_list|(
+name|karafBase
+argument_list|,
 literal|"etc/org.apache.felix.karaf.log.cfg"
 argument_list|,
 literal|true
