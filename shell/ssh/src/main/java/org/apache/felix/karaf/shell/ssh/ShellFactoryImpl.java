@@ -420,12 +420,16 @@ operator|new
 name|PrintStream
 argument_list|(
 name|out
+argument_list|,
+literal|true
 argument_list|)
 argument_list|,
 operator|new
 name|PrintStream
 argument_list|(
 name|err
+argument_list|,
+literal|true
 argument_list|)
 argument_list|,
 operator|new
