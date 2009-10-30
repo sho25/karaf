@@ -71,6 +71,20 @@ name|ShellFactory
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|sshd
+operator|.
+name|server
+operator|.
+name|Signal
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -364,10 +378,10 @@ specifier|public
 name|void
 name|signal
 parameter_list|(
-name|int
+name|Signal
 name|signal
 parameter_list|)
-block|{      }
+block|{     }
 specifier|public
 name|int
 name|readVirtualKey
