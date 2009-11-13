@@ -81,7 +81,7 @@ name|sshd
 operator|.
 name|server
 operator|.
-name|ShellFactory
+name|Environment
 import|;
 end_import
 
@@ -99,6 +99,20 @@ name|Signal
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|sshd
+operator|.
+name|server
+operator|.
+name|SignalListener
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -106,8 +120,6 @@ name|SshTerminal
 extends|extends
 name|Terminal
 implements|implements
-name|ShellFactory
-operator|.
 name|SignalListener
 block|{
 specifier|public
@@ -199,8 +211,6 @@ init|=
 literal|126
 decl_stmt|;
 specifier|private
-name|ShellFactory
-operator|.
 name|Environment
 name|environment
 decl_stmt|;
@@ -244,8 +254,6 @@ decl_stmt|;
 specifier|public
 name|SshTerminal
 parameter_list|(
-name|ShellFactory
-operator|.
 name|Environment
 name|environment
 parameter_list|)
@@ -384,8 +392,6 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-name|ShellFactory
-operator|.
 name|Environment
 operator|.
 name|ENV_COLUMNS
@@ -412,8 +418,6 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-name|ShellFactory
-operator|.
 name|Environment
 operator|.
 name|ENV_LINES
