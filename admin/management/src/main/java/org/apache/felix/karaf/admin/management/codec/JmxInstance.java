@@ -271,6 +271,16 @@ index|]
 operator|=
 name|instance
 operator|.
+name|isRoot
+argument_list|()
+expr_stmt|;
+name|itemValues
+index|[
+literal|3
+index|]
+operator|=
+name|instance
+operator|.
 name|getPort
 argument_list|()
 expr_stmt|;
@@ -278,7 +288,7 @@ try|try
 block|{
 name|itemValues
 index|[
-literal|3
+literal|4
 index|]
 operator|=
 name|instance
@@ -295,7 +305,7 @@ parameter_list|)
 block|{
 name|itemValues
 index|[
-literal|3
+literal|4
 index|]
 operator|=
 literal|"Error"
@@ -303,7 +313,7 @@ expr_stmt|;
 block|}
 name|itemValues
 index|[
-literal|4
+literal|5
 index|]
 operator|=
 name|instance
@@ -425,14 +435,14 @@ index|]
 operator|=
 name|SimpleType
 operator|.
-name|INTEGER
+name|BOOLEAN
 expr_stmt|;
 name|descriptions
 index|[
 literal|2
 index|]
 operator|=
-literal|"The SSH port that can be used to connect to the instance."
+literal|"Whether the instance is root."
 expr_stmt|;
 name|itemTypes
 index|[
@@ -441,18 +451,34 @@ index|]
 operator|=
 name|SimpleType
 operator|.
-name|STRING
+name|INTEGER
 expr_stmt|;
 name|descriptions
 index|[
 literal|3
+index|]
+operator|=
+literal|"The SSH port that can be used to connect to the instance."
+expr_stmt|;
+name|itemTypes
+index|[
+literal|4
+index|]
+operator|=
+name|SimpleType
+operator|.
+name|STRING
+expr_stmt|;
+name|descriptions
+index|[
+literal|4
 index|]
 operator|=
 literal|"The state of the instance."
 expr_stmt|;
 name|itemTypes
 index|[
-literal|4
+literal|5
 index|]
 operator|=
 name|SimpleType
@@ -461,7 +487,7 @@ name|STRING
 expr_stmt|;
 name|descriptions
 index|[
-literal|4
+literal|5
 index|]
 operator|=
 literal|"The location of the instance."

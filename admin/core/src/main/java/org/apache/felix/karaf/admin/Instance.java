@@ -46,6 +46,10 @@ name|String
 name|getName
 parameter_list|()
 function_decl|;
+name|boolean
+name|isRoot
+parameter_list|()
+function_decl|;
 name|String
 name|getLocation
 parameter_list|()

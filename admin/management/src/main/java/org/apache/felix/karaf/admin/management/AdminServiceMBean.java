@@ -47,6 +47,11 @@ init|=
 literal|"Name"
 decl_stmt|;
 name|String
+name|INSTANCE_IS_ROOT
+init|=
+literal|"Is Root"
+decl_stmt|;
+name|String
 name|INSTANCE_PORT
 init|=
 literal|"Port"
@@ -69,6 +74,8 @@ block|{
 name|INSTANCE_PID
 block|,
 name|INSTANCE_NAME
+block|,
+name|INSTANCE_IS_ROOT
 block|,
 name|INSTANCE_PORT
 block|,
