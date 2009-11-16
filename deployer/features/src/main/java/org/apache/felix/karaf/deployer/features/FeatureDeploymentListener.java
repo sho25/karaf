@@ -35,6 +35,16 @@ name|java
 operator|.
 name|net
 operator|.
+name|URISyntaxException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
 name|URL
 import|;
 end_import
@@ -621,8 +631,6 @@ name|BundleEvent
 name|bundleEvent
 parameter_list|)
 block|{
-try|try
-block|{
 name|Bundle
 name|bundle
 init|=
@@ -684,6 +692,8 @@ operator|.
 name|nextElement
 argument_list|()
 decl_stmt|;
+try|try
+block|{
 name|featuresService
 operator|.
 name|addRepository
@@ -744,8 +754,6 @@ argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;
-try|try
-block|{
 name|featuresService
 operator|.
 name|installFeatures
@@ -765,6 +773,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+block|}
 catch|catch
 parameter_list|(
 name|Exception
@@ -780,8 +790,6 @@ argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
-block|}
-block|}
 block|}
 block|}
 block|}
@@ -849,6 +857,8 @@ operator|.
 name|listRepositories
 argument_list|()
 control|)
+block|{
+try|try
 block|{
 if|if
 condition|(
@@ -919,6 +929,27 @@ block|}
 block|}
 block|}
 block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|LOGGER
+operator|.
+name|error
+argument_list|(
+literal|"Unable to uninstall features: "
+operator|+
+name|url
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+try|try
+block|{
 name|featuresService
 operator|.
 name|removeRepository
@@ -930,11 +961,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-block|}
 catch|catch
 parameter_list|(
-name|Exception
+name|URISyntaxException
 name|e
 parameter_list|)
 block|{
@@ -942,11 +971,15 @@ name|LOGGER
 operator|.
 name|error
 argument_list|(
-literal|"Unable to install / uninstall feature"
+literal|"Unable to remove repository: "
+operator|+
+name|url
 argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 block|}
 block|}
 specifier|protected

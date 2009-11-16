@@ -156,6 +156,8 @@ range|:
 name|urls
 control|)
 block|{
+try|try
+block|{
 name|admin
 operator|.
 name|addRepository
@@ -167,6 +169,25 @@ name|url
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Could not add Feature Repository:\n"
+operator|+
+name|e
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 block|}
