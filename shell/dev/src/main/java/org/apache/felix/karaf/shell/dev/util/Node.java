@@ -281,6 +281,14 @@ parameter_list|(
 name|PrintWriter
 name|writer
 parameter_list|,
+name|Tree
+operator|.
+name|Converter
+argument_list|<
+name|T
+argument_list|>
+name|converter
+parameter_list|,
 name|boolean
 modifier|...
 name|indents
@@ -314,7 +322,12 @@ name|printf
 argument_list|(
 literal|"+- %s%n"
 argument_list|,
-name|value
+name|converter
+operator|.
+name|toString
+argument_list|(
+name|this
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -334,6 +347,8 @@ operator|.
 name|write
 argument_list|(
 name|writer
+argument_list|,
+name|converter
 argument_list|,
 name|concat
 argument_list|(
