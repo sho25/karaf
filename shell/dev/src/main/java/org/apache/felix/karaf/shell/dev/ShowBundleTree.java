@@ -917,6 +917,17 @@ name|Bundle
 argument_list|>
 name|exporters
 init|=
+operator|new
+name|HashSet
+argument_list|<
+name|Bundle
+argument_list|>
+argument_list|()
+decl_stmt|;
+name|exporters
+operator|.
+name|addAll
+argument_list|(
 name|getWiredBundles
 argument_list|(
 name|bundle
@@ -924,7 +935,8 @@ argument_list|)
 operator|.
 name|values
 argument_list|()
-decl_stmt|;
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Bundle
