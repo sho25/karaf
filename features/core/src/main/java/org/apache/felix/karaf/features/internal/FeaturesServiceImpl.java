@@ -545,6 +545,18 @@ name|LoggerFactory
 import|;
 end_import
 
+begin_import
+import|import static
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+operator|.
+name|format
+import|;
+end_import
+
 begin_comment
 comment|/**  * The Features service implementation.  * Adding a repository url will load the features contained in this repository and  * create dummy sub shells.  When invoked, these commands will prompt the user for  * installing the needed bundles.  *  */
 end_comment
@@ -4250,11 +4262,35 @@ range|:
 name|uris
 control|)
 block|{
+try|try
+block|{
 name|internalAddRepository
 argument_list|(
 name|uri
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|LOGGER
+operator|.
+name|warn
+argument_list|(
+name|format
+argument_list|(
+literal|"Unable to add features repository %s at startup"
+argument_list|,
+name|uri
+argument_list|)
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 name|saveState
