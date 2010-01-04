@@ -726,15 +726,15 @@ name|getDefaultHandler
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|updateClassLoader
-argument_list|(
-name|configProps
-argument_list|)
-expr_stmt|;
 comment|// Copy framework properties from the system properties.
 name|Main
 operator|.
 name|copySystemProperties
+argument_list|(
+name|configProps
+argument_list|)
+expr_stmt|;
+name|updateClassLoader
 argument_list|(
 name|configProps
 argument_list|)
