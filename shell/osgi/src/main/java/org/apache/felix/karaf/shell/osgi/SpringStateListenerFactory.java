@@ -343,13 +343,41 @@ parameter_list|()
 block|{
 try|try
 block|{
+comment|// Use dynamic class loading to make sure we actually try to reload the class for
+comment|// dynamic imports to kick in   if possible
+name|Class
+name|cl
+init|=
+name|getClass
+argument_list|()
+operator|.
+name|getClassLoader
+argument_list|()
+operator|.
+name|loadClass
+argument_list|(
+literal|"org.apache.felix.karaf.shell.osgi.SpringStateListenerFactory$SpringApplicationListener"
+argument_list|)
+decl_stmt|;
 return|return
-operator|new
-name|SpringApplicationListener
+operator|(
+name|BundleStateListener
+operator|)
+name|cl
+operator|.
+name|getConstructor
+argument_list|(
+name|BundleContext
+operator|.
+name|class
+argument_list|)
+operator|.
+name|newInstance
 argument_list|(
 name|bundleContext
 argument_list|)
 return|;
+comment|//            return new SpringApplicationListener(bundleContext);
 block|}
 catch|catch
 parameter_list|(
