@@ -978,6 +978,25 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|path
+operator|.
+name|length
+argument_list|()
+operator|==
+literal|0
+condition|)
+block|{
+comment|//it means input parameter path is just plugin name like /admin but not real resource path.
+comment|//on felix the return url would be null in this case, which is correct expected behavior.
+comment|//but on equinox the return url is like bundleresource://184.fwk1674485910/,
+comment|//which cause NPE in AbstractWebConsolePlugin.spoolResource
+comment|//so just return null ensure it works both with felix and equinox
+return|return
+literal|null
+return|;
+block|}
 name|URL
 name|url
 init|=
