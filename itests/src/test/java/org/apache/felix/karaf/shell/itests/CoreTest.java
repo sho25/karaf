@@ -241,6 +241,22 @@ name|pax
 operator|.
 name|exam
 operator|.
+name|CoreOptions
+operator|.
+name|waitForFrameworkStartup
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|exam
+operator|.
 name|OptionUtils
 operator|.
 name|combine
@@ -566,6 +582,9 @@ name|workingDirectory
 argument_list|(
 literal|"target/paxrunner/core/"
 argument_list|)
+argument_list|,
+name|waitForFrameworkStartup
+argument_list|()
 argument_list|,
 comment|// Test on both equinox and felix
 name|equinox
