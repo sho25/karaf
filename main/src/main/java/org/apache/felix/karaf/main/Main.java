@@ -5749,6 +5749,17 @@ condition|(
 name|match
 condition|)
 block|{
+name|LOG
+operator|.
+name|log
+argument_list|(
+name|Level
+operator|.
+name|INFO
+argument_list|,
+literal|"Karaf shutdown socket: received shutdown command. Stopping framework..."
+argument_list|)
+expr_stmt|;
 name|framework
 operator|.
 name|stop
