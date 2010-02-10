@@ -818,6 +818,7 @@ name|sourceObject
 return|;
 block|}
 block|}
+comment|// TODO: remove this class when sshd use lf->crlf conversion by default
 specifier|public
 class|class
 name|LfToCrLfFilterOutputStream
