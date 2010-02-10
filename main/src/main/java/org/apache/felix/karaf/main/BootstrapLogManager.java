@@ -199,7 +199,14 @@ operator|=
 operator|new
 name|FileInputStream
 argument_list|(
-literal|"../etc/org.ops4j.pax.logging.cfg"
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"karaf.base"
+argument_list|)
+operator|+
+literal|"/etc/org.ops4j.pax.logging.cfg"
 argument_list|)
 expr_stmt|;
 name|props
