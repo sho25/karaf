@@ -279,7 +279,7 @@ name|def
 operator|.
 name|PaxRunnerOptions
 operator|.
-name|rawPaxRunnerOption
+name|vmOption
 import|;
 end_import
 
@@ -581,7 +581,7 @@ decl_stmt|;
 name|String
 name|vmOptions
 init|=
-literal|"-Dorg.ops4j.pax.exam.rbc.rmi.port=1099"
+literal|""
 decl_stmt|;
 for|for
 control|(
@@ -779,10 +779,8 @@ name|options
 operator|.
 name|add
 argument_list|(
-name|rawPaxRunnerOption
+name|vmOption
 argument_list|(
-literal|"--vmOptions"
-argument_list|,
 name|vmOptions
 argument_list|)
 argument_list|)
