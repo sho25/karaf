@@ -284,7 +284,7 @@ name|void
 name|init
 parameter_list|()
 block|{
-name|createListener
+name|getListener
 argument_list|()
 expr_stmt|;
 block|}
@@ -315,6 +315,7 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|BundleStateListener
 name|getListener
 parameter_list|()
