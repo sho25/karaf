@@ -680,6 +680,8 @@ operator|.
 name|RESOLVED
 condition|)
 block|{
+try|try
+block|{
 name|Enumeration
 name|featuresUrlEnumeration
 init|=
@@ -822,6 +824,15 @@ expr_stmt|;
 block|}
 block|}
 block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+comment|// Ignore exceptions thrown when searching or iterating over the bundle entries
+block|}
+block|}
 elseif|else
 if|if
 condition|(
@@ -834,6 +845,8 @@ name|BundleEvent
 operator|.
 name|UNINSTALLED
 condition|)
+block|{
+try|try
 block|{
 name|Enumeration
 name|featuresUrlEnumeration
@@ -1008,6 +1021,15 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+comment|// Ignore exceptions thrown when searching or iterating over the bundle entries
 block|}
 block|}
 block|}
