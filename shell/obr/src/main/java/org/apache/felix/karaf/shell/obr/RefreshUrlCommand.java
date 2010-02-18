@@ -165,7 +165,8 @@ condition|(
 name|urls
 operator|!=
 literal|null
-operator|||
+operator|&&
+operator|!
 name|urls
 operator|.
 name|isEmpty
