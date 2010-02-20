@@ -572,6 +572,16 @@ index|[
 name|i
 index|]
 operator|.
+name|getName
+argument_list|()
+operator|+
+literal|":"
+operator|+
+name|reqs
+index|[
+name|i
+index|]
+operator|.
 name|getFilter
 argument_list|()
 argument_list|)
@@ -633,6 +643,16 @@ operator|.
 name|println
 argument_list|(
 literal|"   "
+operator|+
+name|caps
+index|[
+name|i
+index|]
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|":"
 operator|+
 name|caps
 index|[

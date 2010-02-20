@@ -584,6 +584,8 @@ operator|.
 name|substring
 argument_list|(
 name|idx
+operator|+
+literal|1
 argument_list|)
 block|}
 expr_stmt|;
