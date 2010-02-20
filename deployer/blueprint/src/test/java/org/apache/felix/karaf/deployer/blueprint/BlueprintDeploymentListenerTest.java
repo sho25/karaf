@@ -220,7 +220,7 @@ argument_list|()
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"org.apache.geronimo.blueprint.sample"
+literal|"org.apache.aries.blueprint.sample"
 argument_list|,
 name|it
 operator|.
