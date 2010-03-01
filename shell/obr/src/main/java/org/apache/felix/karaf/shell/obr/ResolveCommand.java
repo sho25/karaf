@@ -437,7 +437,7 @@ literal|0
 else|:
 name|Resolver
 operator|.
-name|NO_OPTIONAL_REQUIREMENTS
+name|NO_OPTIONAL_RESOURCES
 argument_list|)
 condition|)
 block|{
