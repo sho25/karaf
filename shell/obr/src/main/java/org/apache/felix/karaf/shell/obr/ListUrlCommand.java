@@ -147,7 +147,7 @@ index|[
 name|i
 index|]
 operator|.
-name|getURL
+name|getURI
 argument_list|()
 argument_list|)
 expr_stmt|;
