@@ -680,7 +680,7 @@ literal|"SELECT * FROM "
 operator|+
 name|table
 operator|+
-literal|" FOR UPDATE"
+literal|" FOR UPDATE NOWAIT"
 decl_stmt|;
 name|statement
 operator|=
