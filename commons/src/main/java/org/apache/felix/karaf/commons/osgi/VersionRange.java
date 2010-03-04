@@ -13,9 +13,9 @@ name|felix
 operator|.
 name|karaf
 operator|.
-name|features
+name|commons
 operator|.
-name|internal
+name|osgi
 package|;
 end_package
 
