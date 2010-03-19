@@ -1367,6 +1367,9 @@ block|}
 return|return
 name|admin
 operator|.
+name|getHelper
+argument_list|()
+operator|.
 name|requirement
 argument_list|(
 name|name

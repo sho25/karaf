@@ -659,7 +659,7 @@ index|[
 name|i
 index|]
 operator|.
-name|getProperties
+name|getPropertiesAsMap
 argument_list|()
 argument_list|)
 expr_stmt|;
