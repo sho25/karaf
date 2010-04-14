@@ -115,6 +115,18 @@ name|java
 operator|.
 name|util
 operator|.
+name|jar
+operator|.
+name|Manifest
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|zip
 operator|.
 name|ZipException
@@ -180,6 +192,22 @@ operator|.
 name|internal
 operator|.
 name|RepositoryImpl
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|utils
+operator|.
+name|manifest
+operator|.
+name|Clause
 import|;
 end_import
 
@@ -397,42 +425,6 @@ name|DependencyNodeVisitor
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|impl
-operator|.
-name|bundle
-operator|.
-name|obr
-operator|.
-name|resource
-operator|.
-name|Manifest
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|impl
-operator|.
-name|bundle
-operator|.
-name|obr
-operator|.
-name|resource
-operator|.
-name|ManifestEntry
-import|;
-end_import
-
 begin_comment
 comment|/**  * Validates a features XML file  *   * @version $Revision: 1.1 $  * @goal validate  * @execute phase="process-resources"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Validates the features XML file  */
 end_comment
@@ -530,7 +522,7 @@ name|String
 argument_list|,
 name|Set
 argument_list|<
-name|ManifestEntry
+name|Clause
 argument_list|>
 argument_list|>
 name|featureExports
@@ -542,7 +534,7 @@ name|String
 argument_list|,
 name|Set
 argument_list|<
-name|ManifestEntry
+name|Clause
 argument_list|>
 argument_list|>
 argument_list|()
@@ -992,8 +984,8 @@ try|try
 block|{
 for|for
 control|(
-name|ManifestEntry
-name|entry
+name|Clause
+name|clause
 range|:
 name|ManifestUtils
 operator|.
@@ -1013,7 +1005,7 @@ name|debug
 argument_list|(
 literal|" adding "
 operator|+
-name|entry
+name|clause
 operator|.
 name|getName
 argument_list|()
@@ -1025,7 +1017,7 @@ name|systemExports
 operator|.
 name|add
 argument_list|(
-name|entry
+name|clause
 operator|.
 name|getName
 argument_list|()
@@ -1200,14 +1192,14 @@ control|)
 block|{
 name|Set
 argument_list|<
-name|ManifestEntry
+name|Clause
 argument_list|>
 name|exports
 init|=
 operator|new
 name|HashSet
 argument_list|<
-name|ManifestEntry
+name|Clause
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -1420,7 +1412,7 @@ name|Exception
 block|{
 name|Map
 argument_list|<
-name|ManifestEntry
+name|Clause
 argument_list|,
 name|String
 argument_list|>
@@ -1429,7 +1421,7 @@ init|=
 operator|new
 name|HashMap
 argument_list|<
-name|ManifestEntry
+name|Clause
 argument_list|,
 name|String
 argument_list|>
@@ -1437,14 +1429,14 @@ argument_list|()
 decl_stmt|;
 name|Set
 argument_list|<
-name|ManifestEntry
+name|Clause
 argument_list|>
 name|exports
 init|=
 operator|new
 name|HashSet
 argument_list|<
-name|ManifestEntry
+name|Clause
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -1548,8 +1540,8 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|ManifestEntry
-name|entry
+name|Clause
+name|clause
 range|:
 name|getMandatoryImports
 argument_list|(
@@ -1561,7 +1553,7 @@ name|imports
 operator|.
 name|put
 argument_list|(
-name|entry
+name|clause
 argument_list|,
 name|bundle
 argument_list|)
@@ -1571,14 +1563,14 @@ block|}
 comment|// setting up the set of required imports
 name|Set
 argument_list|<
-name|ManifestEntry
+name|Clause
 argument_list|>
 name|requirements
 init|=
 operator|new
 name|HashSet
 argument_list|<
-name|ManifestEntry
+name|Clause
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -1595,7 +1587,7 @@ expr_stmt|;
 comment|// now, let's remove requirements whenever we find a matching export for them
 for|for
 control|(
-name|ManifestEntry
+name|Clause
 name|element
 range|:
 name|imports
@@ -1635,7 +1627,7 @@ continue|continue;
 block|}
 for|for
 control|(
-name|ManifestEntry
+name|Clause
 name|export
 range|:
 name|exports
@@ -1702,7 +1694,7 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|ManifestEntry
+name|Clause
 name|entry
 range|:
 name|requirements
