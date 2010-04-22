@@ -472,6 +472,11 @@ specifier|private
 name|String
 name|karafConfig
 decl_stmt|;
+comment|/**      * which jre version we wanna parse to get jre exported package in config.properties      *       * @parameter default-value="jre-1.5"      */
+specifier|private
+name|String
+name|jreVersion
+decl_stmt|;
 comment|/**      *  The repositories which are included from the plugin config         *  @parameter       */
 specifier|private
 name|List
@@ -1244,7 +1249,7 @@ name|properties
 operator|.
 name|get
 argument_list|(
-literal|"jre-1.5"
+name|jreVersion
 argument_list|)
 decl_stmt|;
 for|for
