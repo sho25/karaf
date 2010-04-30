@@ -5072,7 +5072,6 @@ name|lockStartLevel
 argument_list|)
 expr_stmt|;
 block|}
-break|break;
 block|}
 elseif|else
 if|if
