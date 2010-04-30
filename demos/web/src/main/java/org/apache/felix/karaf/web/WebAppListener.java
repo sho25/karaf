@@ -63,22 +63,6 @@ name|Main
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|felix
-operator|.
-name|karaf
-operator|.
-name|main
-operator|.
-name|Bootstrap
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -180,9 +164,8 @@ argument_list|)
 expr_stmt|;
 name|main
 operator|=
-name|Bootstrap
-operator|.
-name|launch
+operator|new
+name|Main
 argument_list|(
 operator|new
 name|String
@@ -190,6 +173,11 @@ index|[
 literal|0
 index|]
 argument_list|)
+expr_stmt|;
+name|main
+operator|.
+name|launch
+argument_list|()
 expr_stmt|;
 block|}
 catch|catch

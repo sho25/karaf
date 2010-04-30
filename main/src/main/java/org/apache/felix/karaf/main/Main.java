@@ -3801,7 +3801,7 @@ init|=
 operator|(
 name|URLClassLoader
 operator|)
-name|Bootstrap
+name|Main
 operator|.
 name|class
 operator|.
