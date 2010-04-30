@@ -379,7 +379,7 @@ name|callbackHandler
 argument_list|,
 name|sharedState
 argument_list|,
-name|options
+name|newOptions
 argument_list|)
 expr_stmt|;
 block|}
