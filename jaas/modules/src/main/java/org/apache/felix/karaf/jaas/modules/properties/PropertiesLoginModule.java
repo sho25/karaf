@@ -609,6 +609,12 @@ block|}
 name|String
 name|userInfos
 init|=
+literal|null
+decl_stmt|;
+try|try
+block|{
+name|userInfos
+operator|=
 operator|(
 name|String
 operator|)
@@ -618,7 +624,16 @@ name|get
 argument_list|(
 name|user
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|NullPointerException
+name|e
+parameter_list|)
+block|{
+comment|//error handled in the next statement
+block|}
 if|if
 condition|(
 name|userInfos
@@ -630,7 +645,11 @@ throw|throw
 operator|new
 name|FailedLoginException
 argument_list|(
-literal|"User does not exist"
+literal|"User "
+operator|+
+name|user
+operator|+
+literal|" does not exist"
 argument_list|)
 throw|;
 block|}
@@ -667,7 +686,11 @@ throw|throw
 operator|new
 name|FailedLoginException
 argument_list|(
-literal|"Password does not match"
+literal|"Password for "
+operator|+
+name|user
+operator|+
+literal|" does not match"
 argument_list|)
 throw|;
 block|}
@@ -737,7 +760,7 @@ name|LOG
 operator|.
 name|debug
 argument_list|(
-literal|"login "
+literal|"Successfully logged in "
 operator|+
 name|user
 argument_list|)
