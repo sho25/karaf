@@ -105,6 +105,15 @@ operator|.
 name|stop
 argument_list|()
 expr_stmt|;
+block|}
+for|for
+control|(
+name|Bundle
+name|bundle
+range|:
+name|bundles
+control|)
+block|{
 name|bundle
 operator|.
 name|start
