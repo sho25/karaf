@@ -5972,6 +5972,8 @@ parameter_list|(
 name|Bundle
 name|bundle
 parameter_list|)
+throws|throws
+name|Exception
 block|{
 name|Set
 argument_list|<
@@ -5998,7 +6000,8 @@ name|featureMap
 range|:
 name|this
 operator|.
-name|features
+name|getFeatures
+argument_list|()
 operator|.
 name|values
 argument_list|()
@@ -6052,6 +6055,8 @@ parameter_list|(
 name|Bundle
 name|bundle
 parameter_list|)
+throws|throws
+name|Exception
 block|{
 name|Set
 argument_list|<
