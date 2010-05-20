@@ -22,18 +22,21 @@ specifier|public
 interface|interface
 name|Lock
 block|{
+comment|/**      * A KeepAlive function to maintain the lock.       * Indicates whether or not the lock could be aquired.      *       * @return true if connection lock retained, false otherwise.      * @throws Exception      */
 name|boolean
 name|lock
 parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Terminate the lock connection safely.      *       * @throws Exception      */
 name|void
 name|release
 parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Indicates whether or not the lock still exists.      *       * @return true, if the lock still exists, otherwise false.      * @throws Exception      */
 name|boolean
 name|isAlive
 parameter_list|()
