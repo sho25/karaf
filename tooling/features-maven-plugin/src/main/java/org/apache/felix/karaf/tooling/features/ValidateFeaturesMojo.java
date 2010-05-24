@@ -714,6 +714,13 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// add the repositories from the plugin configuration
+if|if
+condition|(
+name|repositories
+operator|!=
+literal|null
+condition|)
+block|{
 for|for
 control|(
 name|String
@@ -774,6 +781,7 @@ argument_list|(
 name|dependency
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 for|for
 control|(
