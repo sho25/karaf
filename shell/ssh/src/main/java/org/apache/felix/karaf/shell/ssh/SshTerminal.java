@@ -119,8 +119,6 @@ class|class
 name|SshTerminal
 extends|extends
 name|Terminal
-implements|implements
-name|SignalListener
 block|{
 specifier|public
 specifier|static
@@ -263,15 +261,6 @@ operator|.
 name|environment
 operator|=
 name|environment
-expr_stmt|;
-name|this
-operator|.
-name|environment
-operator|.
-name|addSignalListener
-argument_list|(
-name|this
-argument_list|)
 expr_stmt|;
 try|try
 block|{
@@ -461,14 +450,6 @@ specifier|public
 name|void
 name|disableEcho
 parameter_list|()
-block|{     }
-specifier|public
-name|void
-name|signal
-parameter_list|(
-name|Signal
-name|signal
-parameter_list|)
 block|{     }
 specifier|public
 name|int

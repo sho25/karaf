@@ -706,6 +706,8 @@ condition|)
 block|{
 name|printUsage
 argument_list|(
+name|session
+argument_list|,
 name|action
 operator|.
 name|getClass
@@ -1430,6 +1432,9 @@ specifier|protected
 name|void
 name|printUsage
 parameter_list|(
+name|CommandSession
+name|session
+parameter_list|,
 name|Command
 name|command
 parameter_list|,
