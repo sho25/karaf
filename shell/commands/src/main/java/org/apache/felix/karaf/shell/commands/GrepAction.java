@@ -1133,6 +1133,13 @@ operator|<
 name|lineMatch
 operator|+
 name|after
+operator|&&
+name|i
+operator|<
+name|lines
+operator|.
+name|size
+argument_list|()
 condition|;
 name|i
 operator|++
