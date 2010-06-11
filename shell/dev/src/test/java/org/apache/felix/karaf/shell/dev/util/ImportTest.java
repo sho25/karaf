@@ -63,11 +63,9 @@ name|apache
 operator|.
 name|felix
 operator|.
-name|karaf
+name|utils
 operator|.
-name|commons
-operator|.
-name|osgi
+name|version
 operator|.
 name|VersionRange
 import|;
@@ -149,7 +147,7 @@ name|assertEquals
 argument_list|(
 name|VersionRange
 operator|.
-name|parse
+name|parseVersionRange
 argument_list|(
 literal|"2.0.0"
 argument_list|)

@@ -49,11 +49,9 @@ name|apache
 operator|.
 name|felix
 operator|.
-name|karaf
+name|utils
 operator|.
-name|commons
-operator|.
-name|osgi
+name|version
 operator|.
 name|VersionRange
 import|;
@@ -137,7 +135,7 @@ name|version
 operator|=
 name|VersionRange
 operator|.
-name|infiniteRange
+name|ANY_VERSION
 expr_stmt|;
 block|}
 block|}
@@ -184,7 +182,7 @@ block|{
 return|return
 name|VersionRange
 operator|.
-name|parse
+name|parseVersionRange
 argument_list|(
 name|unquote
 argument_list|(
@@ -203,7 +201,7 @@ block|{
 return|return
 name|VersionRange
 operator|.
-name|parse
+name|parseVersionRange
 argument_list|(
 name|unquote
 argument_list|(

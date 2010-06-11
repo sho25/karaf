@@ -893,7 +893,7 @@ operator|.
 name|getVersion
 argument_list|()
 operator|.
-name|isInRange
+name|contains
 argument_list|(
 name|ep
 operator|.
