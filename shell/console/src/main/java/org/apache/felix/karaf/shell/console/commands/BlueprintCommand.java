@@ -523,6 +523,7 @@ name|BlueprintActionPreparator
 argument_list|()
 return|;
 block|}
+specifier|protected
 class|class
 name|BlueprintActionPreparator
 extends|extends
