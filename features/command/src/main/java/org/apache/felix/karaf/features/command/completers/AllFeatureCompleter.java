@@ -38,13 +38,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * {@link jline.Completor} for installed features.  */
+comment|/**  * {@link jline.Completor} for available features.  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|InstalledFeatureCompleter
+name|AllFeatureCompleter
 extends|extends
 name|FeatureCompleterSupport
 block|{
@@ -59,12 +59,7 @@ name|feature
 parameter_list|)
 block|{
 return|return
-name|featuresService
-operator|.
-name|isInstalled
-argument_list|(
-name|feature
-argument_list|)
+literal|true
 return|;
 block|}
 block|}

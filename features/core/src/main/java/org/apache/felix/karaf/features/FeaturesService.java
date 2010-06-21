@@ -200,6 +200,27 @@ name|Feature
 name|f
 parameter_list|)
 function_decl|;
+name|Feature
+name|getFeature
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|version
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+name|Feature
+name|getFeature
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 block|}
 end_interface
 
