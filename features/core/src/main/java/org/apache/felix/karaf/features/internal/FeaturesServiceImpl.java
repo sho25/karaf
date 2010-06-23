@@ -2425,7 +2425,7 @@ argument_list|>
 name|bundles
 init|=
 operator|new
-name|HashSet
+name|TreeSet
 argument_list|<
 name|Long
 argument_list|>

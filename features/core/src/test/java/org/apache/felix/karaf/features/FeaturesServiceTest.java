@@ -8764,7 +8764,7 @@ name|FeatureImpl
 operator|.
 name|DEFAULT_VERSION
 argument_list|,
-literal|"54321,12345"
+literal|"12345,54321"
 argument_list|)
 expr_stmt|;
 name|prefs
