@@ -107,6 +107,16 @@ name|javax
 operator|.
 name|management
 operator|.
+name|NotCompliantMBeanException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|management
+operator|.
 name|Notification
 import|;
 end_import
@@ -128,16 +138,6 @@ operator|.
 name|management
 operator|.
 name|ObjectName
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|management
-operator|.
-name|StandardEmitterMBean
 import|;
 end_import
 
@@ -416,6 +416,8 @@ decl_stmt|;
 specifier|public
 name|FeaturesServiceMBeanImpl
 parameter_list|()
+throws|throws
+name|NotCompliantMBeanException
 block|{
 name|super
 argument_list|(
@@ -425,15 +427,25 @@ name|class
 argument_list|,
 operator|new
 name|NotificationBroadcasterSupport
-argument_list|(
+argument_list|()
+block|{
+annotation|@
+name|Override
+specifier|public
+name|MBeanNotificationInfo
+index|[]
+name|getNotificationInfo
+parameter_list|()
+block|{
+return|return
 name|getBroadcastInfo
 argument_list|()
-argument_list|)
+return|;
+block|}
+block|}
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|ObjectName
 name|preRegister
@@ -461,8 +473,6 @@ return|return
 name|name
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|postRegister
@@ -493,8 +503,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|preDeregister
@@ -508,6 +516,11 @@ name|unregister
 argument_list|()
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|postDeregister
+parameter_list|()
+block|{     }
 comment|/**      * {@inheritDoc}      */
 specifier|public
 name|TabularData
