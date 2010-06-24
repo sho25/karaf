@@ -105,6 +105,12 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|event
+operator|.
+name|getProperties
+argument_list|()
+expr_stmt|;
+comment|// ensure MDC properties are copied
 name|events
 operator|.
 name|add
