@@ -9,8 +9,6 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
-operator|.
 name|karaf
 operator|.
 name|main
@@ -208,22 +206,6 @@ operator|.
 name|regex
 operator|.
 name|Pattern
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|felix
-operator|.
-name|karaf
-operator|.
-name|main
-operator|.
-name|Utils
 import|;
 end_import
 
@@ -1219,7 +1201,7 @@ name|m_configProps
 operator|.
 name|getProperty
 argument_list|(
-literal|"org.apache.felix.karaf.security.providers"
+literal|"org.apache.karaf.security.providers"
 argument_list|)
 decl_stmt|;
 if|if
@@ -4903,7 +4885,7 @@ return|return
 name|val
 return|;
 block|}
-comment|/* (non-Javadoc)       * @see org.apache.felix.karaf.main.MainService#getArgs()       */
+comment|/* (non-Javadoc)       * @see org.apache.karaf.main.MainService#getArgs()       */
 specifier|public
 name|String
 index|[]
