@@ -81,6 +81,15 @@ name|URI
 name|url
 parameter_list|)
 function_decl|;
+name|void
+name|restoreRepository
+parameter_list|(
+name|URI
+name|url
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 name|Repository
 index|[]
 name|listRepositories

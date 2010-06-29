@@ -269,6 +269,18 @@ name|getMessage
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|//get chance to restore previous, fix for KARAF-4
+name|admin
+operator|.
+name|restoreRepository
+argument_list|(
+operator|new
+name|URI
+argument_list|(
+name|strUri
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}
