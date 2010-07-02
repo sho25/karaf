@@ -775,6 +775,9 @@ name|get
 argument_list|(
 literal|0
 argument_list|)
+operator|.
+name|getLocation
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|verify

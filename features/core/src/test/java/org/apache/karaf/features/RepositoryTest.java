@@ -340,6 +340,9 @@ name|get
 argument_list|(
 literal|0
 argument_list|)
+operator|.
+name|getLocation
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -358,6 +361,9 @@ name|get
 argument_list|(
 literal|1
 argument_list|)
+operator|.
+name|getLocation
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|assertNotNull
@@ -507,6 +513,9 @@ name|get
 argument_list|(
 literal|0
 argument_list|)
+operator|.
+name|getLocation
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
