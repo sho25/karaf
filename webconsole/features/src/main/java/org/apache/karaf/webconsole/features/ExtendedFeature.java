@@ -259,6 +259,20 @@ name|getVersion
 argument_list|()
 return|;
 block|}
+specifier|public
+name|String
+name|getResolver
+parameter_list|()
+block|{
+return|return
+name|this
+operator|.
+name|feature
+operator|.
+name|getResolver
+argument_list|()
+return|;
+block|}
 comment|//
 comment|// Additional methods
 comment|//
