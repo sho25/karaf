@@ -15,32 +15,26 @@ name|features
 package|;
 end_package
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
+begin_comment
+comment|/**  * A bundle info holds info about a Bundle.  */
+end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|Resolver
-block|{
-name|List
-argument_list|<
 name|BundleInfo
-argument_list|>
-name|resolve
-parameter_list|(
-name|Feature
-name|feature
-parameter_list|)
-throws|throws
-name|Exception
+block|{
+name|String
+name|getLocation
+parameter_list|()
+function_decl|;
+name|int
+name|getStartLevel
+parameter_list|()
+function_decl|;
+name|boolean
+name|isStart
+parameter_list|()
 function_decl|;
 block|}
 end_interface

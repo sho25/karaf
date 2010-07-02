@@ -67,6 +67,20 @@ name|karaf
 operator|.
 name|features
 operator|.
+name|BundleInfo
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
 name|Feature
 import|;
 end_import
@@ -112,17 +126,19 @@ name|Feature
 argument_list|>
 argument_list|()
 decl_stmt|;
+comment|// TODO
+comment|// private List<String> bundles = new ArrayList<String>();
 specifier|private
 name|List
 argument_list|<
-name|String
+name|BundleInfo
 argument_list|>
 name|bundles
 init|=
 operator|new
 name|ArrayList
 argument_list|<
-name|String
+name|BundleInfo
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -301,7 +317,7 @@ block|}
 specifier|public
 name|List
 argument_list|<
-name|String
+name|BundleInfo
 argument_list|>
 name|getBundles
 parameter_list|()
@@ -349,7 +365,7 @@ specifier|public
 name|void
 name|addBundle
 parameter_list|(
-name|String
+name|BundleInfo
 name|bundle
 parameter_list|)
 block|{

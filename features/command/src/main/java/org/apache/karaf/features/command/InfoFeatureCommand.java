@@ -95,6 +95,20 @@ name|karaf
 operator|.
 name|features
 operator|.
+name|BundleInfo
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
 name|Feature
 import|;
 end_import
@@ -551,9 +565,9 @@ parameter_list|)
 block|{
 name|List
 argument_list|<
-name|String
+name|BundleInfo
 argument_list|>
-name|bundles
+name|bundleInfos
 init|=
 name|feature
 operator|.
@@ -562,7 +576,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|bundles
+name|bundleInfos
 operator|.
 name|isEmpty
 argument_list|()
@@ -591,10 +605,10 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|String
+name|BundleInfo
 name|featureBundle
 range|:
-name|bundles
+name|bundleInfos
 control|)
 block|{
 name|System
@@ -606,6 +620,9 @@ argument_list|(
 literal|"  "
 operator|+
 name|featureBundle
+operator|.
+name|getLocation
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -884,7 +901,7 @@ condition|)
 block|{
 name|List
 argument_list|<
-name|String
+name|BundleInfo
 argument_list|>
 name|bundles
 init|=

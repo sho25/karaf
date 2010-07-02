@@ -69,7 +69,7 @@ parameter_list|()
 function_decl|;
 name|List
 argument_list|<
-name|String
+name|BundleInfo
 argument_list|>
 name|getBundles
 parameter_list|()
