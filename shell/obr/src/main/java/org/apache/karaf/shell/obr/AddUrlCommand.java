@@ -150,6 +150,11 @@ name|url
 argument_list|)
 expr_stmt|;
 block|}
+name|persistRepositoryList
+argument_list|(
+name|admin
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class
