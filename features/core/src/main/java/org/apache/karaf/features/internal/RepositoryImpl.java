@@ -71,16 +71,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|rmi
-operator|.
-name|UnknownHostException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|ArrayList
@@ -1195,7 +1185,7 @@ operator|.
 name|addBundle
 argument_list|(
 operator|new
-name|BundleImpl
+name|BundleInfoImpl
 argument_list|(
 name|b
 operator|.
@@ -1236,7 +1226,7 @@ operator|.
 name|addBundle
 argument_list|(
 operator|new
-name|BundleImpl
+name|BundleInfoImpl
 argument_list|(
 name|b
 operator|.
