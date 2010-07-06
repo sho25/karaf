@@ -130,6 +130,8 @@ operator|.
 name|PROP_KARAF_HOME
 operator|+
 literal|" system property"
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -171,6 +173,8 @@ operator|.
 name|ENV_KARAF_HOME
 operator|+
 literal|" environment variable"
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -396,6 +400,9 @@ name|path
 parameter_list|,
 name|String
 name|errPrefix
+parameter_list|,
+name|boolean
+name|createDirectory
 parameter_list|)
 block|{
 name|File
@@ -447,6 +454,9 @@ name|rc
 operator|.
 name|exists
 argument_list|()
+operator|&&
+operator|!
+name|createDirectory
 condition|)
 block|{
 throw|throw
@@ -462,6 +472,49 @@ operator|+
 literal|"' : does not exist"
 argument_list|)
 throw|;
+block|}
+if|if
+condition|(
+operator|!
+name|rc
+operator|.
+name|exists
+argument_list|()
+condition|)
+block|{
+try|try
+block|{
+name|rc
+operator|.
+name|mkdirs
+argument_list|()
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|SecurityException
+name|se
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+name|errPrefix
+operator|+
+literal|" '"
+operator|+
+name|path
+operator|+
+literal|"' : "
+operator|+
+name|se
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+throw|;
+block|}
 block|}
 if|if
 condition|(
@@ -493,10 +546,19 @@ block|}
 specifier|public
 specifier|static
 name|File
-name|getKarafBase
+name|getKarafDirectory
 parameter_list|(
+name|String
+name|directoryProperty
+parameter_list|,
+name|String
+name|directoryEnvironmentVariable
+parameter_list|,
 name|File
 name|defaultValue
+parameter_list|,
+name|boolean
+name|create
 parameter_list|)
 block|{
 name|File
@@ -511,9 +573,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-name|Main
-operator|.
-name|PROP_KARAF_BASE
+name|directoryProperty
 argument_list|)
 decl_stmt|;
 if|if
@@ -531,11 +591,11 @@ name|path
 argument_list|,
 literal|"Invalid "
 operator|+
-name|Main
-operator|.
-name|PROP_KARAF_BASE
+name|directoryProperty
 operator|+
 literal|" system property"
+argument_list|,
+name|create
 argument_list|)
 expr_stmt|;
 block|}
@@ -552,9 +612,7 @@ name|System
 operator|.
 name|getenv
 argument_list|(
-name|Main
-operator|.
-name|ENV_KARAF_BASE
+name|directoryEnvironmentVariable
 argument_list|)
 expr_stmt|;
 if|if
@@ -572,11 +630,11 @@ name|path
 argument_list|,
 literal|"Invalid "
 operator|+
-name|Main
-operator|.
-name|ENV_KARAF_BASE
+name|directoryEnvironmentVariable
 operator|+
 literal|" environment variable"
+argument_list|,
+name|create
 argument_list|)
 expr_stmt|;
 block|}

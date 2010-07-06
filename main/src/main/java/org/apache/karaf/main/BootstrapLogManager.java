@@ -227,7 +227,7 @@ name|setProperty
 argument_list|(
 literal|"log4j.appender.out.file"
 argument_list|,
-literal|"${karaf.base}/data/log/karaf.log"
+literal|"${karaf.data}/log/karaf.log"
 argument_list|)
 expr_stmt|;
 block|}
