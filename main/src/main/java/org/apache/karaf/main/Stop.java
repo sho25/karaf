@@ -265,6 +265,8 @@ operator|.
 name|loadPropertiesFile
 argument_list|(
 name|configPropURL
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 name|Main
