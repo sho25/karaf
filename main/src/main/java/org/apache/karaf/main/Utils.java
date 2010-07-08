@@ -559,6 +559,9 @@ name|defaultValue
 parameter_list|,
 name|boolean
 name|create
+parameter_list|,
+name|boolean
+name|validate
 parameter_list|)
 block|{
 name|File
@@ -581,6 +584,8 @@ condition|(
 name|path
 operator|!=
 literal|null
+operator|&&
+name|validate
 condition|)
 block|{
 name|rc
@@ -620,6 +625,8 @@ condition|(
 name|path
 operator|!=
 literal|null
+operator|&&
+name|validate
 condition|)
 block|{
 name|rc

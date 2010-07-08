@@ -419,6 +419,24 @@ name|ENV_KARAF_DATA
 init|=
 literal|"KARAF_DATA"
 decl_stmt|;
+comment|/**      * The system property for specifying the Karaf data directory. The data directory      * holds the bundles data and cache for a Karaf instance.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|PROP_KARAF_INSTANCES
+init|=
+literal|"karaf.instances"
+decl_stmt|;
+comment|/**      * The system property for specifying the Karaf data directory. The data directory      * holds the bundles data and cache for a Karaf instance.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|ENV_KARAF_INSTANCES
+init|=
+literal|"KARAF_INSTANCES"
+decl_stmt|;
 comment|/**      * Config property which identifies directories which contain bundles to be loaded by SMX      */
 specifier|public
 specifier|static
@@ -577,6 +595,10 @@ name|File
 name|karafData
 decl_stmt|;
 specifier|private
+name|File
+name|karafInstances
+decl_stmt|;
+specifier|private
 name|Properties
 name|configProps
 init|=
@@ -676,6 +698,8 @@ argument_list|,
 name|karafHome
 argument_list|,
 literal|false
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|karafData
@@ -696,14 +720,40 @@ operator|new
 name|File
 argument_list|(
 name|karafBase
-operator|.
-name|getPath
-argument_list|()
-operator|+
-literal|"/data"
+argument_list|,
+literal|"data"
 argument_list|)
 argument_list|,
 literal|true
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+name|karafInstances
+operator|=
+name|Utils
+operator|.
+name|getKarafDirectory
+argument_list|(
+name|Main
+operator|.
+name|PROP_KARAF_INSTANCES
+argument_list|,
+name|Main
+operator|.
+name|ENV_KARAF_INSTANCES
+argument_list|,
+operator|new
+name|File
+argument_list|(
+name|karafHome
+argument_list|,
+literal|"instances"
+argument_list|)
+argument_list|,
+literal|false
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 comment|//System.out.println("Karaf Home: "+main.karafHome.getPath());
@@ -740,6 +790,18 @@ argument_list|(
 name|PROP_KARAF_DATA
 argument_list|,
 name|karafData
+operator|.
+name|getPath
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|setProperty
+argument_list|(
+name|PROP_KARAF_INSTANCES
+argument_list|,
+name|karafInstances
 operator|.
 name|getPath
 argument_list|()
@@ -1426,7 +1488,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"storage.location"
+literal|"karaf.instances"
 argument_list|)
 decl_stmt|;
 if|if
@@ -1440,7 +1502,7 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"System property 'storage.location' is not set. \n"
+literal|"System property 'karaf.instances' is not set. \n"
 operator|+
 literal|"This property needs to be set to the full path of the instance.properties file."
 argument_list|)

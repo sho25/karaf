@@ -142,6 +142,8 @@ argument_list|,
 name|karafHome
 argument_list|,
 literal|false
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 name|File
@@ -166,9 +168,11 @@ name|karafBase
 operator|.
 name|getPath
 argument_list|()
-operator|+
-literal|"/data"
+argument_list|,
+literal|"data"
 argument_list|)
+argument_list|,
+literal|true
 argument_list|,
 literal|true
 argument_list|)

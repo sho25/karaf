@@ -504,7 +504,7 @@ name|s
 operator|.
 name|contains
 argument_list|(
-literal|"storage.location"
+literal|"karaf.instances"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -591,7 +591,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-literal|"storage.location"
+literal|"karaf.instances"
 argument_list|,
 name|tempFile
 operator|.
@@ -655,7 +655,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"storage.location"
+literal|"karaf.instances"
 argument_list|)
 argument_list|)
 expr_stmt|;

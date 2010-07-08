@@ -144,7 +144,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-literal|"storage.location"
+literal|"karaf.instances"
 argument_list|,
 name|root
 operator|+
