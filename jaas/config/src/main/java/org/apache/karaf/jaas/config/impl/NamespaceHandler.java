@@ -636,7 +636,7 @@ name|element
 operator|.
 name|getElementsByTagNameNS
 argument_list|(
-literal|"http://felix.apache.org/karaf/xmlns/jaas/v1.0.0"
+literal|"http://karaf.apache.org/xmlns/jaas/v1.0.0"
 argument_list|,
 literal|"module"
 argument_list|)
