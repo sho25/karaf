@@ -1119,9 +1119,15 @@ argument_list|)
 decl_stmt|;
 name|boolean
 name|bs
+init|=
+literal|true
 decl_stmt|;
-comment|// Check if the value of the attribute "start"
-comment|// is parseable
+name|int
+name|bsl
+init|=
+literal|0
+decl_stmt|;
+comment|// Check the value of the "start" attribute
 if|if
 condition|(
 name|bStart
@@ -1146,14 +1152,7 @@ name|bStart
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
-comment|// Assign true when the value is not readable
-name|bs
-operator|=
-literal|true
-expr_stmt|;
-block|}
+comment|// Check start level
 if|if
 condition|(
 name|bStartLevel
@@ -1170,32 +1169,13 @@ condition|)
 block|{
 try|try
 block|{
-name|int
 name|bsl
-init|=
+operator|=
 name|Integer
 operator|.
 name|parseInt
 argument_list|(
 name|bStartLevel
-argument_list|)
-decl_stmt|;
-name|f
-operator|.
-name|addBundle
-argument_list|(
-operator|new
-name|BundleInfoImpl
-argument_list|(
-name|b
-operator|.
-name|getTextContent
-argument_list|()
-argument_list|,
-name|bsl
-argument_list|,
-name|bs
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1219,8 +1199,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-else|else
-block|{
 name|f
 operator|.
 name|addBundle
@@ -1233,11 +1211,12 @@ operator|.
 name|getTextContent
 argument_list|()
 argument_list|,
+name|bsl
+argument_list|,
 name|bs
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|features
 operator|.
