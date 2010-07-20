@@ -56,6 +56,10 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+name|boolean
+name|isValid
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

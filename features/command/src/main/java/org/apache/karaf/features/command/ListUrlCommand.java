@@ -136,6 +136,21 @@ name|i
 operator|++
 control|)
 block|{
+name|String
+name|status
+init|=
+name|repos
+index|[
+name|i
+index|]
+operator|.
+name|isValid
+argument_list|()
+condition|?
+literal|"    valid"
+else|:
+literal|"    invalid"
+decl_stmt|;
 name|System
 operator|.
 name|out
@@ -149,6 +164,11 @@ index|]
 operator|.
 name|getURI
 argument_list|()
+operator|.
+name|toString
+argument_list|()
+operator|+
+name|status
 argument_list|)
 expr_stmt|;
 block|}
