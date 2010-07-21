@@ -1566,7 +1566,7 @@ operator|.
 name|startField
 operator|*
 literal|2
-operator|<
+operator|<=
 name|fields
 operator|.
 name|size
@@ -1699,7 +1699,7 @@ operator|.
 name|endField
 operator|*
 literal|2
-operator|<
+operator|<=
 name|fields
 operator|.
 name|size
