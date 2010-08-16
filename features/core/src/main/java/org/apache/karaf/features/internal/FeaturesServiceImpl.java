@@ -3749,6 +3749,21 @@ operator|.
 name|getManifest
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|m
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|BundleException
+argument_list|(
+literal|"Manifest not present in the first entry of the zip"
+argument_list|)
+throw|;
+block|}
 name|String
 name|sn
 init|=
