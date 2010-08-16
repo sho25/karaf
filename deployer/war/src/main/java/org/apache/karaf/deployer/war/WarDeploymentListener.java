@@ -350,6 +350,10 @@ decl_stmt|;
 if|if
 condition|(
 name|m
+operator|!=
+literal|null
+operator|&&
+name|m
 operator|.
 name|getMainAttributes
 argument_list|()
@@ -690,7 +694,7 @@ name|LOGGER
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to create Weapp-Context from web.xml"
+literal|"Unable to create Webapp-Context from web.xml"
 argument_list|,
 name|e
 argument_list|)
