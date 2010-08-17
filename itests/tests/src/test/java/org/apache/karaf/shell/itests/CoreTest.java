@@ -568,7 +568,7 @@ argument_list|)
 operator|.
 name|value
 argument_list|(
-literal|"DEBUG"
+literal|"TRACE"
 argument_list|)
 argument_list|)
 argument_list|,
