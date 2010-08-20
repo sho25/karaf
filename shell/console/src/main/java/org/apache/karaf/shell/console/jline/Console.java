@@ -1417,7 +1417,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-specifier|private
+specifier|protected
 name|Properties
 name|loadBrandingProperties
 parameter_list|()
