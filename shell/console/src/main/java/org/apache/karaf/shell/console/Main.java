@@ -572,7 +572,8 @@ name|cl
 operator|.
 name|getResources
 argument_list|(
-literal|"META-INF/services/org/apache/karaf/shell/commands"
+name|getDiscoveryResource
+argument_list|()
 argument_list|)
 decl_stmt|;
 while|while
@@ -983,6 +984,16 @@ operator|.
 name|destroy
 argument_list|()
 expr_stmt|;
+block|}
+comment|/**      * Sub classes can override so that their registered commands do not conflict with the default shell      * implementation.      *      * @return      */
+specifier|public
+name|String
+name|getDiscoveryResource
+parameter_list|()
+block|{
+return|return
+literal|"META-INF/services/org/apache/karaf/shell/commands"
+return|;
 block|}
 specifier|public
 name|String
