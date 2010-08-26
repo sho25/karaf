@@ -1165,7 +1165,8 @@ name|cl
 operator|.
 name|getResources
 argument_list|(
-literal|"META-INF/services/org/apache/karaf/shell/commands"
+name|getDiscoveryResource
+argument_list|()
 argument_list|)
 decl_stmt|;
 while|while
