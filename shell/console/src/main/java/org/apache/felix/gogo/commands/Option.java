@@ -65,6 +65,10 @@ name|ElementType
 import|;
 end_import
 
+begin_comment
+comment|/**  * Used to mark an optional named command line option who's name typically starts with "--"  */
+end_comment
+
 begin_annotation_defn
 annotation|@
 name|Retention

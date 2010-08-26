@@ -156,6 +156,9 @@ name|err
 parameter_list|,
 name|Terminal
 name|terminal
+parameter_list|,
+name|Completer
+name|completer
 parameter_list|)
 throws|throws
 name|Exception
@@ -174,7 +177,7 @@ name|err
 argument_list|,
 name|terminal
 argument_list|,
-literal|null
+name|completer
 argument_list|,
 literal|null
 argument_list|)

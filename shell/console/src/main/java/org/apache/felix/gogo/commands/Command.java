@@ -65,6 +65,10 @@ name|ElementType
 import|;
 end_import
 
+begin_comment
+comment|/**  * Used to denote a class represents a command which is executable within a shell/scope or as a  * command line process.  */
+end_comment
+
 begin_annotation_defn
 annotation|@
 name|Retention
@@ -86,14 +90,17 @@ specifier|public
 annotation_defn|@interface
 name|Command
 block|{
+comment|/**      * Returns the scope or sub shell of the command      */
 name|String
 name|scope
 parameter_list|()
 function_decl|;
+comment|/**      * REturns the name of the command if used inside a shell      */
 name|String
 name|name
 parameter_list|()
 function_decl|;
+comment|/**      * Returns the description of the command which is used to generate command line help      */
 name|String
 name|description
 parameter_list|()

@@ -65,6 +65,10 @@ name|ElementType
 import|;
 end_import
 
+begin_comment
+comment|/**  * Represents a positional argument on a command line (as opposed to an optional named {@link Option}  */
+end_comment
+
 begin_annotation_defn
 annotation|@
 name|Retention
