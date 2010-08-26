@@ -456,6 +456,7 @@ specifier|private
 name|Thread
 name|pipe
 decl_stmt|;
+specifier|volatile
 specifier|private
 name|boolean
 name|running
@@ -783,11 +784,6 @@ expr_stmt|;
 name|pipe
 operator|.
 name|interrupt
-argument_list|()
-expr_stmt|;
-name|Thread
-operator|.
-name|interrupted
 argument_list|()
 expr_stmt|;
 block|}
@@ -1219,6 +1215,9 @@ comment|// ignore
 block|}
 block|}
 block|}
+name|close
+argument_list|()
+expr_stmt|;
 comment|//System.err.println("Exiting console...");
 if|if
 condition|(
