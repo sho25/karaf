@@ -218,6 +218,13 @@ name|location
 operator|=
 name|location
 expr_stmt|;
+if|if
+condition|(
+name|location
+operator|.
+name|exists
+argument_list|()
+condition|)
 name|load
 argument_list|(
 name|location
@@ -854,6 +861,10 @@ decl_stmt|;
 if|if
 condition|(
 name|l
+operator|!=
+literal|null
+operator|&&
+name|l
 operator|.
 name|getCommentLines
 argument_list|()
@@ -883,6 +894,10 @@ block|}
 block|}
 if|if
 condition|(
+name|l
+operator|!=
+literal|null
+operator|&&
 name|l
 operator|.
 name|getValueLines
