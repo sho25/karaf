@@ -50,6 +50,14 @@ name|Felix
 extends|extends
 name|Framework
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|NAME
+init|=
+literal|"Felix"
+decl_stmt|;
 comment|/**      * Create a instance of Karaf running with Felix in the given base directory      *      * @param base the base directory      */
 specifier|public
 name|Felix
@@ -70,7 +78,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Felix"
+name|NAME
 return|;
 block|}
 specifier|public

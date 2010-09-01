@@ -68,6 +68,14 @@ name|Equinox
 extends|extends
 name|Framework
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|NAME
+init|=
+literal|"Equinox"
+decl_stmt|;
 comment|/**      * Create a new instance      *      * @param base       */
 specifier|public
 name|Equinox
@@ -88,7 +96,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Equinox"
+name|NAME
 return|;
 block|}
 specifier|public
