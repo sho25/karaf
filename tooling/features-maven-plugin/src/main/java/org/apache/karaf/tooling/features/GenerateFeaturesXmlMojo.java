@@ -2805,7 +2805,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"%s/%s/%s"
+literal|"%s/%s/%s/%s"
 argument_list|,
 name|artifact
 operator|.
@@ -2820,6 +2820,11 @@ argument_list|,
 name|artifact
 operator|.
 name|getVersion
+argument_list|()
+argument_list|,
+name|artifact
+operator|.
+name|getType
 argument_list|()
 argument_list|)
 return|;
@@ -3078,7 +3083,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"<bundle>mvn:%s/%s/%s</bundle>"
+literal|"<bundle>mvn:%s/%s/%s/%s</bundle>"
 argument_list|,
 name|next
 operator|.
@@ -3093,6 +3098,11 @@ argument_list|,
 name|next
 operator|.
 name|getBaseVersion
+argument_list|()
+argument_list|,
+name|next
+operator|.
+name|getType
 argument_list|()
 argument_list|)
 argument_list|)
