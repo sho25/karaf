@@ -99,6 +99,10 @@ name|Command
 import|;
 end_import
 
+begin_comment
+comment|/**  * A very simple {@link Function} which creates {@link Action} based on a class name.  */
+end_comment
+
 begin_class
 specifier|public
 class|class
