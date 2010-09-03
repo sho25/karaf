@@ -91,10 +91,15 @@ annotation_defn|@interface
 name|Argument
 block|{
 name|String
+name|DEFAULT
+init|=
+literal|"##default"
+decl_stmt|;
+name|String
 name|name
 parameter_list|()
 default|default
-literal|"VAL"
+name|DEFAULT
 function_decl|;
 name|String
 name|description
