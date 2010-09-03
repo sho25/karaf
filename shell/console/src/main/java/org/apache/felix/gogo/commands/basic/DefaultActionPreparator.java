@@ -2133,7 +2133,9 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-specifier|protected
+comment|// TODO move this to a helper class?
+specifier|public
+specifier|static
 name|void
 name|printFormatted
 parameter_list|(
@@ -2220,7 +2222,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|protected
+specifier|public
+specifier|static
 name|int
 name|length
 parameter_list|(
