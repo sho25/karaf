@@ -303,8 +303,6 @@ specifier|private
 name|String
 name|usersFile
 decl_stmt|;
-annotation|@
-name|Override
 specifier|public
 name|void
 name|initialize
