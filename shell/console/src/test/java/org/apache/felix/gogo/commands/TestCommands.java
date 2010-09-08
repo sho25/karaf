@@ -315,7 +315,7 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|IllegalArgumentException
+name|CommandException
 name|e
 parameter_list|)
 block|{         }
