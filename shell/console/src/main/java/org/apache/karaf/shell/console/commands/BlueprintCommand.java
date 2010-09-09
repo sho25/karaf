@@ -394,12 +394,10 @@ argument_list|)
 return|;
 block|}
 block|}
-specifier|protected
+specifier|public
 name|Action
 name|createNewAction
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Action
 name|action

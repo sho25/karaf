@@ -57,7 +57,7 @@ name|current
 init|=
 literal|0
 decl_stmt|;
-name|CharSequence
+name|String
 name|text
 decl_stmt|;
 name|boolean
@@ -76,7 +76,7 @@ name|List
 argument_list|<
 name|List
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 argument_list|>
 argument_list|>
@@ -86,14 +86,14 @@ name|List
 argument_list|<
 name|List
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 argument_list|>
 name|statements
 decl_stmt|;
 name|List
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 name|statement
 decl_stmt|;
@@ -121,7 +121,7 @@ decl_stmt|;
 specifier|public
 name|Parser
 parameter_list|(
-name|CharSequence
+name|String
 name|text
 parameter_list|,
 name|int
@@ -521,7 +521,7 @@ name|List
 argument_list|<
 name|List
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 argument_list|>
 argument_list|>
@@ -537,7 +537,7 @@ name|List
 argument_list|<
 name|List
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 argument_list|>
 argument_list|>
@@ -576,7 +576,7 @@ name|List
 argument_list|<
 name|List
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 argument_list|>
 name|pipeline
@@ -619,7 +619,7 @@ name|List
 argument_list|<
 name|List
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 argument_list|>
 argument_list|>
@@ -679,7 +679,7 @@ name|List
 argument_list|<
 name|List
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 argument_list|>
 name|pipeline
@@ -692,7 +692,7 @@ name|ArrayList
 argument_list|<
 name|List
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 argument_list|>
 argument_list|()
@@ -744,7 +744,7 @@ argument_list|(
 operator|new
 name|ArrayList
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 argument_list|()
 argument_list|)
@@ -756,7 +756,7 @@ name|List
 argument_list|<
 name|List
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 argument_list|>
 name|s
@@ -774,7 +774,7 @@ block|}
 specifier|public
 name|List
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 name|statement
 parameter_list|()
@@ -784,7 +784,7 @@ operator|=
 operator|new
 name|ArrayList
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -840,7 +840,7 @@ block|}
 block|}
 name|List
 argument_list|<
-name|CharSequence
+name|String
 argument_list|>
 name|s
 init|=
@@ -855,10 +855,14 @@ name|s
 return|;
 block|}
 specifier|public
-name|CharSequence
+name|String
 name|messy
 parameter_list|()
 block|{
+name|start
+operator|=
+name|current
+expr_stmt|;
 name|char
 name|c
 init|=
@@ -881,8 +885,6 @@ operator|<
 literal|0
 condition|)
 block|{
-name|start
-operator|=
 name|current
 operator|++
 expr_stmt|;
@@ -932,7 +934,7 @@ block|}
 return|return
 name|text
 operator|.
-name|subSequence
+name|substring
 argument_list|(
 name|start
 argument_list|,
@@ -957,7 +959,7 @@ argument_list|()
 return|;
 block|}
 block|}
-name|CharSequence
+name|String
 name|value
 parameter_list|()
 block|{
@@ -993,7 +995,7 @@ case|:
 return|return
 name|text
 operator|.
-name|subSequence
+name|substring
 argument_list|(
 name|start
 argument_list|,
@@ -1011,7 +1013,7 @@ case|:
 return|return
 name|text
 operator|.
-name|subSequence
+name|substring
 argument_list|(
 name|start
 argument_list|,
@@ -1029,7 +1031,7 @@ case|:
 return|return
 name|text
 operator|.
-name|subSequence
+name|substring
 argument_list|(
 name|start
 argument_list|,
@@ -1047,7 +1049,7 @@ case|:
 return|return
 name|text
 operator|.
-name|subSequence
+name|substring
 argument_list|(
 name|start
 argument_list|,
@@ -1065,7 +1067,7 @@ case|:
 return|return
 name|text
 operator|.
-name|subSequence
+name|substring
 argument_list|(
 name|start
 argument_list|,
@@ -1246,7 +1248,7 @@ block|}
 return|return
 name|text
 operator|.
-name|subSequence
+name|substring
 argument_list|(
 name|start
 argument_list|,
