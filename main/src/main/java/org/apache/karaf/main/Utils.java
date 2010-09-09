@@ -142,6 +142,8 @@ operator|+
 literal|" system property"
 argument_list|,
 literal|false
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -185,6 +187,8 @@ operator|+
 literal|" environment variable"
 argument_list|,
 literal|false
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -413,6 +417,9 @@ name|errPrefix
 parameter_list|,
 name|boolean
 name|createDirectory
+parameter_list|,
+name|boolean
+name|validate
 parameter_list|)
 block|{
 name|File
@@ -467,6 +474,8 @@ argument_list|()
 operator|&&
 operator|!
 name|createDirectory
+operator|&&
+name|validate
 condition|)
 block|{
 throw|throw
@@ -490,6 +499,8 @@ name|rc
 operator|.
 name|exists
 argument_list|()
+operator|&&
+name|createDirectory
 condition|)
 block|{
 try|try
@@ -528,6 +539,11 @@ block|}
 block|}
 if|if
 condition|(
+name|rc
+operator|.
+name|exists
+argument_list|()
+operator|&&
 operator|!
 name|rc
 operator|.
@@ -594,8 +610,6 @@ condition|(
 name|path
 operator|!=
 literal|null
-operator|&&
-name|validate
 condition|)
 block|{
 name|rc
@@ -611,6 +625,8 @@ operator|+
 literal|" system property"
 argument_list|,
 name|create
+argument_list|,
+name|validate
 argument_list|)
 expr_stmt|;
 block|}
@@ -652,6 +668,8 @@ operator|+
 literal|" environment variable"
 argument_list|,
 name|create
+argument_list|,
+name|validate
 argument_list|)
 expr_stmt|;
 block|}
