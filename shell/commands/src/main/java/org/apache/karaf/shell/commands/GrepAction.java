@@ -198,6 +198,10 @@ argument_list|,
 name|description
 operator|=
 literal|"Prints lines matching the given pattern"
+argument_list|,
+name|detailedDescription
+operator|=
+literal|"classpath:grep.txt"
 argument_list|)
 specifier|public
 class|class

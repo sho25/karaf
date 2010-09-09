@@ -107,6 +107,13 @@ parameter_list|()
 default|default
 literal|""
 function_decl|;
+comment|/**      * Returns a detailed description of the command      */
+name|String
+name|detailedDescription
+parameter_list|()
+default|default
+literal|""
+function_decl|;
 block|}
 end_annotation_defn
 
