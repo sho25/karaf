@@ -2604,6 +2604,10 @@ decl_stmt|;
 name|Terminal
 name|term
 init|=
+name|session
+operator|!=
+literal|null
+condition|?
 operator|(
 name|Terminal
 operator|)
@@ -2613,6 +2617,8 @@ name|get
 argument_list|(
 literal|".jline.terminal"
 argument_list|)
+else|:
+literal|null
 decl_stmt|;
 name|List
 argument_list|<

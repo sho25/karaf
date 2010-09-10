@@ -1090,6 +1090,14 @@ literal|"* ["
 operator|+
 name|key
 operator|+
+literal|":"
+operator|+
+name|cmd
+operator|+
+literal|"|"
+operator|+
+name|key
+operator|+
 literal|"-"
 operator|+
 name|cmd

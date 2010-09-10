@@ -365,6 +365,21 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+if|if
+condition|(
+name|args
+operator|==
+literal|null
+condition|)
+block|{
+name|args
+operator|=
+name|Collections
+operator|.
+name|emptyList
+argument_list|()
+expr_stmt|;
+block|}
 comment|// Map of matching constructors
 name|Map
 argument_list|<

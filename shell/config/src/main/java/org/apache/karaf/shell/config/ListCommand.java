@@ -166,6 +166,13 @@ argument_list|(
 name|query
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|configs
+operator|!=
+literal|null
+condition|)
+block|{
 for|for
 control|(
 name|Configuration
@@ -308,6 +315,7 @@ name|key
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
