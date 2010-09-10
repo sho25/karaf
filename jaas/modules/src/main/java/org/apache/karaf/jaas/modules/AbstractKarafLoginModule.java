@@ -111,20 +111,6 @@ name|LoginModule
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|jasypt
-operator|.
-name|util
-operator|.
-name|password
-operator|.
-name|ConfigurablePasswordEncryptor
-import|;
-end_import
-
 begin_comment
 comment|/**  *<p>  * Abstract JAAS login module extended by all Karaf Login Modules.  *</p>  *   * @author iocanel, jbonofre  */
 end_comment
@@ -184,18 +170,9 @@ specifier|protected
 name|String
 name|roleDiscriminator
 decl_stmt|;
-comment|/**       * Algorithm used to encrypt password such as:      *  MD2      *  MD5      *  SHA-1      *  SHA-256      *  SHA-384      *  SHA-512       */
-specifier|protected
-name|String
-name|encryptionAlgorithm
-init|=
-literal|"MD5"
-decl_stmt|;
-comment|/** Jasypt password encryptor */
-specifier|private
-name|ConfigurablePasswordEncryptor
-name|passwordEncryptor
-decl_stmt|;
+comment|// TODO add an encryption attribute types to the Encryption interface
+comment|// If null, no encryption is used, else the encryption and password
+comment|// checking is delegated to the encryption service.
 specifier|public
 name|boolean
 name|commit
@@ -262,56 +239,6 @@ name|user
 operator|=
 literal|null
 expr_stmt|;
-block|}
-comment|/**      *<p>      * Util method to encrypt a password given in plain format.      *</p>      *       * @param plain the plain password.      * @return the encrypted password.      */
-specifier|public
-name|String
-name|encryptPassword
-parameter_list|(
-name|String
-name|plain
-parameter_list|)
-block|{
-name|ConfigurablePasswordEncryptor
-name|encryptor
-init|=
-operator|new
-name|ConfigurablePasswordEncryptor
-argument_list|()
-decl_stmt|;
-name|encryptor
-operator|.
-name|setAlgorithm
-argument_list|(
-name|encryptionAlgorithm
-argument_list|)
-expr_stmt|;
-return|return
-literal|null
-return|;
-block|}
-comment|/**      *<p>      * Check a password in plain with an encrypted password.      *</p>      *       * @param plainPassword a plain password in plain.      * @param encryptedPassword an encrypted password.      * @return true if the plain password match the encrypted one, false else.      */
-specifier|public
-name|boolean
-name|checkPassword
-parameter_list|(
-name|String
-name|plainPassword
-parameter_list|,
-name|String
-name|encryptedPassword
-parameter_list|)
-block|{
-return|return
-name|passwordEncryptor
-operator|.
-name|checkPassword
-argument_list|(
-name|plainPassword
-argument_list|,
-name|encryptedPassword
-argument_list|)
-return|;
 block|}
 specifier|public
 name|void
@@ -384,20 +311,6 @@ name|get
 argument_list|(
 literal|"debug"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|encryptionAlgorithm
-operator|=
-operator|(
-name|String
-operator|)
-name|options
-operator|.
-name|get
-argument_list|(
-literal|"encryptionAlgorithm"
 argument_list|)
 expr_stmt|;
 block|}
