@@ -125,20 +125,6 @@ name|ConfigurablePasswordEncryptor
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|jasypt
-operator|.
-name|util
-operator|.
-name|password
-operator|.
-name|PasswordEncryptor
-import|;
-end_import
-
 begin_comment
 comment|/**  *<p>  * Abstract JAAS login module extended by all Karaf Login Modules.  *</p>  *   * @author iocanel, jbonofre  */
 end_comment
@@ -378,16 +364,16 @@ name|options
 operator|.
 name|get
 argument_list|(
-literal|"roleDisciriminator"
+literal|"roleDiscriminator"
 argument_list|)
 expr_stmt|;
 name|this
 operator|.
 name|debug
 operator|=
-literal|"true"
+name|Boolean
 operator|.
-name|equalsIgnoreCase
+name|parseBoolean
 argument_list|(
 operator|(
 name|String
