@@ -170,9 +170,11 @@ specifier|protected
 name|String
 name|roleDiscriminator
 decl_stmt|;
-comment|// TODO add an encryption attribute types to the Encryption interface
-comment|// If null, no encryption is used, else the encryption and password
-comment|// checking is delegated to the encryption service.
+comment|/** define the encryption algorithm to use to encrypt password */
+specifier|protected
+name|String
+name|encryption
+decl_stmt|;
 specifier|public
 name|boolean
 name|commit
@@ -313,6 +315,82 @@ literal|"debug"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
+name|encryption
+operator|=
+operator|(
+name|String
+operator|)
+name|options
+operator|.
+name|get
+argument_list|(
+literal|"encryption"
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      *<p>      * Encrypt password.      *</p>      *       * @param password the password in plain format.      * @return the encrypted password format.      */
+specifier|public
+name|String
+name|encryptPassword
+parameter_list|(
+name|String
+name|password
+parameter_list|)
+block|{
+if|if
+condition|(
+name|this
+operator|.
+name|encryption
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+name|password
+return|;
+block|}
+comment|// TODO call the encryption service
+return|return
+literal|null
+return|;
+block|}
+comment|/**      *<p>      * Check if the provided password match the reference one.      *</p>      *       * @param input the provided password (plain format).      * @param password the reference one (encrypted format).      * @return true if the passwords match, false else.      */
+specifier|public
+name|boolean
+name|checkPassword
+parameter_list|(
+name|String
+name|input
+parameter_list|,
+name|String
+name|password
+parameter_list|)
+block|{
+if|if
+condition|(
+name|this
+operator|.
+name|encryption
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+name|input
+operator|.
+name|equals
+argument_list|(
+name|password
+argument_list|)
+return|;
+block|}
+comment|// TODO call the encryption service
+return|return
+literal|true
+return|;
 block|}
 block|}
 end_class
