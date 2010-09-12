@@ -152,7 +152,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"org.apache.karaf.test/test-artifact/1.2.3/jar"
+literal|"org.apache.karaf.test/test-artifact/1.2.3"
 argument_list|,
 name|GenerateFeaturesXmlMojo
 operator|.
