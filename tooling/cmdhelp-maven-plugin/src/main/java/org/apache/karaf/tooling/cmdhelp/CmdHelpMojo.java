@@ -2148,7 +2148,7 @@ name|syntax
 operator|.
 name|append
 argument_list|(
-literal|" [options]"
+literal|" \\[options\\]"
 argument_list|)
 expr_stmt|;
 block|}
