@@ -281,6 +281,14 @@ block|{
 specifier|private
 specifier|static
 specifier|final
+name|String
+name|PATH_SEPERATOR
+init|=
+literal|"/"
+decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
 name|Log
 name|LOGGER
 init|=
@@ -435,51 +443,18 @@ operator|.
 name|getProtocol
 argument_list|()
 decl_stmt|;
+comment|// match the last slash to retrieve the name of the archive
 name|int
 name|lastSlash
 init|=
-literal|0
+name|path
+operator|.
+name|lastIndexOf
+argument_list|(
+name|PATH_SEPERATOR
+argument_list|)
 decl_stmt|;
-if|if
-condition|(
-literal|"jardir"
-operator|.
-name|equalsIgnoreCase
-argument_list|(
-name|protocol
-argument_list|)
-condition|)
-block|{
-name|lastSlash
-operator|=
-name|path
-operator|.
-name|lastIndexOf
-argument_list|(
-name|File
-operator|.
-name|separator
-argument_list|)
-expr_stmt|;
-comment|// match the last File.seperator to
-comment|// retrieve the name of the archive
-block|}
-else|else
-block|{
-name|lastSlash
-operator|=
-name|path
-operator|.
-name|lastIndexOf
-argument_list|(
-name|File
-operator|.
-name|separator
-argument_list|)
-expr_stmt|;
-comment|// match the last slash to
-comment|// retrieve the name of the archive
-block|}
+comment|// match the suffix so we get rid of it for displaying
 name|int
 name|suffixPos
 init|=
@@ -490,8 +465,6 @@ argument_list|(
 literal|".war"
 argument_list|)
 decl_stmt|;
-comment|// match the suffix so we get
-comment|// rid of it for displaying
 comment|// Fall back if there is no display-name set in the web.xml or if the
 comment|// web.xml can't be read.
 name|String
