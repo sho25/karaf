@@ -310,6 +310,23 @@ name|Object
 argument_list|>
 argument_list|()
 decl_stmt|;
+comment|// put the bundle context in the options map
+comment|// it's required to be able to use the encryption service
+comment|// in the AbstractKarafLoginModule
+name|options
+operator|.
+name|put
+argument_list|(
+name|BundleContext
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|bundleContext
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|modules

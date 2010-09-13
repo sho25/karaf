@@ -111,6 +111,30 @@ name|LoginModule
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
+name|BundleContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
+name|ServiceReference
+import|;
+end_import
+
 begin_comment
 comment|/**  *<p>  * Abstract JAAS login module extended by all Karaf Login Modules.  *</p>  *   * @author iocanel, jbonofre  */
 end_comment
@@ -174,6 +198,11 @@ comment|/** define the encryption algorithm to use to encrypt password */
 specifier|protected
 name|String
 name|encryption
+decl_stmt|;
+comment|/** the bundle context is required to use the encryption service */
+specifier|protected
+name|BundleContext
+name|bundleContext
 decl_stmt|;
 specifier|public
 name|boolean
@@ -329,6 +358,26 @@ argument_list|(
 literal|"encryption"
 argument_list|)
 expr_stmt|;
+comment|// the bundle context is set in the Config JaasRealm by default
+name|this
+operator|.
+name|bundleContext
+operator|=
+operator|(
+name|BundleContext
+operator|)
+name|options
+operator|.
+name|get
+argument_list|(
+name|BundleContext
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 comment|/**      *<p>      * Encrypt password.      *</p>      *       * @param password the password in plain format.      * @return the encrypted password format.      */
 specifier|public
@@ -352,9 +401,95 @@ return|return
 name|password
 return|;
 block|}
-comment|// TODO call the encryption service
-return|return
+comment|// lookup the encryption service reference
+name|ServiceReference
+name|encryptionServiceReference
+init|=
+name|bundleContext
+operator|.
+name|getServiceReference
+argument_list|(
+name|Encryption
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|encryptionServiceReference
+operator|==
 literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Encryption service not found. Please install the Karaf encryption feature."
+argument_list|)
+throw|;
+block|}
+comment|// get the encryption service implementation
+name|Encryption
+name|encryptionService
+init|=
+operator|(
+name|Encryption
+operator|)
+name|bundleContext
+operator|.
+name|getService
+argument_list|(
+name|encryptionServiceReference
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|encryptionService
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Encryption service not found. Please install the Karaf encryption feature."
+argument_list|)
+throw|;
+block|}
+comment|// set the encryption algorithm
+name|encryptionService
+operator|.
+name|setAlgorithm
+argument_list|(
+name|encryption
+argument_list|)
+expr_stmt|;
+comment|// encrypt the password
+name|String
+name|encryptedPassword
+init|=
+name|encryptionService
+operator|.
+name|encryptPassword
+argument_list|(
+name|password
+argument_list|)
+decl_stmt|;
+comment|// release the encryption service reference
+name|bundleContext
+operator|.
+name|ungetService
+argument_list|(
+name|encryptionServiceReference
+argument_list|)
+expr_stmt|;
+return|return
+name|encryptedPassword
 return|;
 block|}
 comment|/**      *<p>      * Check if the provided password match the reference one.      *</p>      *       * @param input the provided password (plain format).      * @param password the reference one (encrypted format).      * @return true if the passwords match, false else.      */
@@ -387,9 +522,97 @@ name|password
 argument_list|)
 return|;
 block|}
-comment|// TODO call the encryption service
+comment|// lookup the encryption service reference
+name|ServiceReference
+name|encryptionServiceReference
+init|=
+name|bundleContext
+operator|.
+name|getServiceReference
+argument_list|(
+name|Encryption
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|encryptionServiceReference
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Encryption service not found. Please install the Karaf encryption feature."
+argument_list|)
+throw|;
+block|}
+comment|// get the encryption service implementation
+name|Encryption
+name|encryptionService
+init|=
+operator|(
+name|Encryption
+operator|)
+name|bundleContext
+operator|.
+name|getService
+argument_list|(
+name|encryptionServiceReference
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|encryptionService
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Encryption service not found. Please install the Karaf encryption feature."
+argument_list|)
+throw|;
+block|}
+comment|// set the encryption algorithm
+name|encryptionService
+operator|.
+name|setAlgorithm
+argument_list|(
+name|encryption
+argument_list|)
+expr_stmt|;
+comment|// checks passwords
+name|boolean
+name|equals
+init|=
+name|encryptionService
+operator|.
+name|checkPassword
+argument_list|(
+name|input
+argument_list|,
+name|password
+argument_list|)
+decl_stmt|;
+comment|// release the encryption service reference
+name|bundleContext
+operator|.
+name|ungetService
+argument_list|(
+name|encryptionServiceReference
+argument_list|)
+expr_stmt|;
 return|return
-literal|true
+name|equals
 return|;
 block|}
 block|}
