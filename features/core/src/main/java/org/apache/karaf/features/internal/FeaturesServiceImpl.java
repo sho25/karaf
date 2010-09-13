@@ -522,18 +522,6 @@ import|;
 end_import
 
 begin_import
-import|import
-name|org
-operator|.
-name|slf4j
-operator|.
-name|helpers
-operator|.
-name|MessageFormatter
-import|;
-end_import
-
-begin_import
 import|import static
 name|java
 operator|.
@@ -2026,13 +2014,24 @@ decl_stmt|;
 name|String
 name|msg
 init|=
-name|MessageFormatter
-operator|.
-name|arrayFormat
+name|format
 argument_list|(
-literal|"Could not start bundle {} in feature(s) {}: {}"
+literal|"Could not start bundle %s in feature(s) %s: %s"
 argument_list|,
-name|msgdata
+name|b
+operator|.
+name|getLocation
+argument_list|()
+argument_list|,
+name|getFeaturesContainingBundleList
+argument_list|(
+name|b
+argument_list|)
+argument_list|,
+name|be
+operator|.
+name|getMessage
+argument_list|()
 argument_list|)
 decl_stmt|;
 throw|throw
