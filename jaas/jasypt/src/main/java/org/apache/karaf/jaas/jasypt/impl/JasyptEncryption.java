@@ -140,8 +140,6 @@ name|password
 parameter_list|)
 block|{
 return|return
-name|this
-operator|.
 name|passwordEncryptor
 operator|.
 name|checkPassword
