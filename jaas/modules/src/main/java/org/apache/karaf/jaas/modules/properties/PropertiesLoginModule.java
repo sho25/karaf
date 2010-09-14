@@ -672,7 +672,7 @@ name|LOG
 operator|.
 name|debug
 argument_list|(
-literal|"The password isn't flag as encrypted, encrypt it."
+literal|"The password isn't flagged as encrypted, encrypt it."
 argument_list|)
 expr_stmt|;
 block|}
