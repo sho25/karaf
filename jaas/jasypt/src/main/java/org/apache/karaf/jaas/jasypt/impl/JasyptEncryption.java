@@ -1,5 +1,9 @@
 begin_unit|revision:0.9.5;language:Java;cregit-version:0.0.1
 begin_comment
+comment|/*  *  Licensed under the Apache License, Version 2.0 (the "License");  *  you may not use this file except in compliance with the License.  *  You may obtain a copy of the License at  *  *       http://www.apache.org/licenses/LICENSE-2.0  *  *  Unless required by applicable law or agreed to in writing, software  *  distributed under the License is distributed on an "AS IS" BASIS,  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  *  See the License for the specific language governing permissions and  *  limitations under the License.  *  under the License.  */
+end_comment
+
+begin_comment
 comment|/*  *  Licensed under the Apache License, Version 2.0 (the "License");  *  you may not use this file except in compliance with the License.  *  You may obtain a copy of the License at  *   *       http://www.apache.org/licenses/LICENSE-2.0  *   *  Unless required by applicable law or agreed to in writing, software  *  distributed under the License is distributed on an "AS IS" BASIS,  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  *  See the License for the specific language governing permissions and  *  limitations under the License.  *  under the License.  */
 end_comment
 
@@ -18,6 +22,16 @@ operator|.
 name|impl
 package|;
 end_package
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
 
 begin_import
 import|import
@@ -64,12 +78,17 @@ specifier|private
 name|ConfigurablePasswordEncryptor
 name|passwordEncryptor
 decl_stmt|;
-comment|/**      *<p>      * Default constructor with the encryption algorithm.      *</p>      *       * @algorithm the encryption algorithm to use.      */
+comment|/**      *<p>      * Default constructor with the encryption algorithm.      *</p>      *       * @param params encryption parameters      */
 specifier|public
 name|JasyptEncryption
 parameter_list|(
+name|Map
+argument_list|<
 name|String
-name|algorithm
+argument_list|,
+name|String
+argument_list|>
+name|params
 parameter_list|)
 block|{
 name|this
@@ -80,15 +99,7 @@ operator|new
 name|ConfigurablePasswordEncryptor
 argument_list|()
 expr_stmt|;
-name|this
-operator|.
-name|passwordEncryptor
-operator|.
-name|setAlgorithm
-argument_list|(
-name|algorithm
-argument_list|)
-expr_stmt|;
+comment|// TODO: configure
 block|}
 comment|/*      * (non-Javadoc)      * @see org.apache.karaf.jaas.modules.Encryption#encryptPassword(java.lang.String)      */
 specifier|public
