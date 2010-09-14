@@ -32,12 +32,6 @@ operator|-
 literal|3387516993124229948L
 decl_stmt|;
 specifier|private
-specifier|static
-specifier|volatile
-name|SecurityManagerEx
-name|sm
-decl_stmt|;
-specifier|private
 specifier|transient
 name|Class
 index|[]
@@ -45,7 +39,7 @@ name|classContext
 init|=
 name|SecurityManagerEx
 operator|.
-name|getSm
+name|getInstance
 argument_list|()
 operator|.
 name|getThrowableContext
@@ -129,9 +123,16 @@ block|{
 specifier|private
 specifier|static
 name|SecurityManagerEx
-name|getSm
+name|sm
+decl_stmt|;
+specifier|public
+specifier|static
+name|SecurityManagerEx
+name|getInstance
 parameter_list|()
 block|{
+comment|// No synchronized block because we don't really care
+comment|// if multiple instances are created at some point
 if|if
 condition|(
 name|sm
@@ -148,19 +149,6 @@ expr_stmt|;
 block|}
 return|return
 name|sm
-return|;
-block|}
-specifier|public
-name|Class
-index|[]
-name|getClassContext
-parameter_list|()
-block|{
-return|return
-name|super
-operator|.
-name|getClassContext
-argument_list|()
 return|;
 block|}
 specifier|public
