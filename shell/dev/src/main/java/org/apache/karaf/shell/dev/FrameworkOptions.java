@@ -153,10 +153,6 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|shell
-operator|.
-name|dev
-operator|.
 name|util
 operator|.
 name|Properties
