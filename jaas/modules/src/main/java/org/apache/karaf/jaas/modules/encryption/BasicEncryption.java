@@ -155,7 +155,7 @@ argument_list|)
 decl_stmt|;
 specifier|private
 name|String
-name|digest
+name|algorithm
 decl_stmt|;
 specifier|private
 name|String
@@ -200,7 +200,7 @@ name|key
 argument_list|)
 condition|)
 block|{
-name|digest
+name|algorithm
 operator|=
 name|params
 operator|.
@@ -248,7 +248,7 @@ block|}
 block|}
 if|if
 condition|(
-name|digest
+name|algorithm
 operator|==
 literal|null
 condition|)
@@ -261,7 +261,7 @@ literal|"Digest algorithm must be specified"
 argument_list|)
 throw|;
 block|}
-comment|// Check if the digest algorithm is available
+comment|// Check if the algorithm algorithm is available
 try|try
 block|{
 name|md
@@ -270,7 +270,7 @@ name|MessageDigest
 operator|.
 name|getInstance
 argument_list|(
-name|digest
+name|algorithm
 argument_list|)
 expr_stmt|;
 block|}
@@ -286,7 +286,7 @@ name|error
 argument_list|(
 literal|"Initialization failed. Digest algorithm "
 operator|+
-name|digest
+name|algorithm
 operator|+
 literal|" is not available."
 argument_list|,
@@ -314,8 +314,17 @@ name|encoding
 operator|!=
 literal|null
 operator|&&
+name|encoding
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
+operator|&&
 operator|!
-literal|"hex"
+name|EncryptionService
+operator|.
+name|ENCODING_HEXADECIMAL
 operator|.
 name|equalsIgnoreCase
 argument_list|(
@@ -323,7 +332,9 @@ name|encoding
 argument_list|)
 operator|&&
 operator|!
-literal|"base64"
+name|EncryptionService
+operator|.
+name|ENCODING_BASE64
 operator|.
 name|equalsIgnoreCase
 argument_list|(
@@ -335,7 +346,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"Initialization failed. Digest Encoding "
+literal|"Initialization failed. Digest encoding "
 operator|+
 name|encoding
 operator|+
@@ -395,7 +406,16 @@ name|encoding
 operator|==
 literal|null
 operator|||
-literal|"hex"
+name|encoding
+operator|.
+name|length
+argument_list|()
+operator|==
+literal|0
+operator|||
+name|EncryptionService
+operator|.
+name|ENCODING_HEXADECIMAL
 operator|.
 name|equalsIgnoreCase
 argument_list|(
@@ -413,7 +433,9 @@ block|}
 elseif|else
 if|if
 condition|(
-literal|"base64"
+name|EncryptionService
+operator|.
+name|ENCODING_BASE64
 operator|.
 name|equalsIgnoreCase
 argument_list|(
@@ -499,7 +521,16 @@ name|encoding
 operator|==
 literal|null
 operator|||
-literal|"hex"
+name|encoding
+operator|.
+name|length
+argument_list|()
+operator|==
+literal|0
+operator|||
+name|EncryptionService
+operator|.
+name|ENCODING_HEXADECIMAL
 operator|.
 name|equalsIgnoreCase
 argument_list|(
@@ -519,7 +550,9 @@ block|}
 elseif|else
 if|if
 condition|(
-literal|"base64"
+name|EncryptionService
+operator|.
+name|ENCODING_BASE64
 operator|.
 name|equalsIgnoreCase
 argument_list|(

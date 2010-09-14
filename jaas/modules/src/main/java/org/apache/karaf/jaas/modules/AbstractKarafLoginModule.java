@@ -579,6 +579,13 @@ condition|(
 name|name
 operator|!=
 literal|null
+operator|&&
+name|name
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
 condition|)
 block|{
 name|LOG
