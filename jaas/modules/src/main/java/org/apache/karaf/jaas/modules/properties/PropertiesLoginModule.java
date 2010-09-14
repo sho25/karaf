@@ -799,6 +799,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// TODO use Karaf Properties (to maintain comments, etc)
+comment|// TODO close the stream to avoid leaks
 name|users
 operator|.
 name|store

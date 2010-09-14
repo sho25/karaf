@@ -500,12 +500,6 @@ comment|// lookup the encryption service reference
 name|ServiceReference
 index|[]
 name|encryptionServiceReferences
-init|=
-operator|new
-name|ServiceReference
-index|[
-literal|0
-index|]
 decl_stmt|;
 try|try
 block|{
