@@ -56,13 +56,6 @@ name|encryption
 operator|=
 operator|new
 name|JasyptEncryption
-argument_list|()
-expr_stmt|;
-name|this
-operator|.
-name|encryption
-operator|.
-name|setAlgorithm
 argument_list|(
 literal|"MD5"
 argument_list|)

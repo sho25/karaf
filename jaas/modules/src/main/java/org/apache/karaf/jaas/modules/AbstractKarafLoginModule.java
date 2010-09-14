@@ -159,6 +159,18 @@ name|osgi
 operator|.
 name|framework
 operator|.
+name|InvalidSyntaxException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
 name|ServiceReference
 import|;
 end_import
@@ -486,11 +498,22 @@ expr_stmt|;
 block|}
 comment|// lookup the encryption service reference
 name|ServiceReference
-name|encryptionServiceReference
+index|[]
+name|encryptionServiceReferences
 init|=
+operator|new
+name|ServiceReference
+index|[
+literal|0
+index|]
+decl_stmt|;
+try|try
+block|{
+name|encryptionServiceReferences
+operator|=
 name|bundleContext
 operator|.
-name|getServiceReference
+name|getServiceReferences
 argument_list|(
 name|Encryption
 operator|.
@@ -498,20 +521,49 @@ name|class
 operator|.
 name|getName
 argument_list|()
+argument_list|,
+literal|"(algorithm="
+operator|+
+name|encryption
+operator|+
+literal|")"
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|InvalidSyntaxException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"The encryption service filter is not well formed."
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
 if|if
 condition|(
-name|encryptionServiceReference
+name|encryptionServiceReferences
+operator|.
+name|length
 operator|==
-literal|null
+literal|0
 condition|)
 block|{
 throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Encryption service not found. Please install the Karaf encryption feature."
+literal|"Encryption service not found for encryption algorithm "
+operator|+
+name|encryption
+operator|+
+literal|". Please install the Karaf encryption feature and check that the encryption algorithm is supported.."
 argument_list|)
 throw|;
 block|}
@@ -526,7 +578,10 @@ name|bundleContext
 operator|.
 name|getService
 argument_list|(
-name|encryptionServiceReference
+name|encryptionServiceReferences
+index|[
+literal|0
+index|]
 argument_list|)
 decl_stmt|;
 if|if
@@ -544,14 +599,6 @@ literal|"Encryption service not found. Please install the Karaf encryption featu
 argument_list|)
 throw|;
 block|}
-comment|// set the encryption algorithm
-name|encryptionService
-operator|.
-name|setAlgorithm
-argument_list|(
-name|encryption
-argument_list|)
-expr_stmt|;
 comment|// encrypt the password
 name|String
 name|encryptedPassword
@@ -568,7 +615,10 @@ name|bundleContext
 operator|.
 name|ungetService
 argument_list|(
-name|encryptionServiceReference
+name|encryptionServiceReferences
+index|[
+literal|0
+index|]
 argument_list|)
 expr_stmt|;
 return|return
@@ -647,11 +697,22 @@ expr_stmt|;
 block|}
 comment|// lookup the encryption service reference
 name|ServiceReference
-name|encryptionServiceReference
+index|[]
+name|encryptionServiceReferences
 init|=
+operator|new
+name|ServiceReference
+index|[
+literal|0
+index|]
+decl_stmt|;
+try|try
+block|{
+name|encryptionServiceReferences
+operator|=
 name|bundleContext
 operator|.
-name|getServiceReference
+name|getServiceReferences
 argument_list|(
 name|Encryption
 operator|.
@@ -659,27 +720,49 @@ name|class
 operator|.
 name|getName
 argument_list|()
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|encryptionServiceReference
-operator|==
-literal|null
-condition|)
-block|{
-name|LOG
-operator|.
-name|error
-argument_list|(
-literal|"Encryption service not found."
+argument_list|,
+literal|"(algorithm="
+operator|+
+name|encryption
+operator|+
+literal|")"
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|InvalidSyntaxException
+name|e
+parameter_list|)
+block|{
 throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Encryption service not found. Please install the Karaf encryption feature."
+literal|"The encryption service filter is not well formed."
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+name|encryptionServiceReferences
+operator|.
+name|length
+operator|==
+literal|0
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Encryption service not found for encryption algorithm "
+operator|+
+name|encryption
+operator|+
+literal|". Please install the Karaf encryption feature and check that the encryption algorithm is supported.."
 argument_list|)
 throw|;
 block|}
@@ -694,7 +777,10 @@ name|bundleContext
 operator|.
 name|getService
 argument_list|(
-name|encryptionServiceReference
+name|encryptionServiceReferences
+index|[
+literal|0
+index|]
 argument_list|)
 decl_stmt|;
 if|if
@@ -704,13 +790,6 @@ operator|==
 literal|null
 condition|)
 block|{
-name|LOG
-operator|.
-name|error
-argument_list|(
-literal|"Encryption service not found."
-argument_list|)
-expr_stmt|;
 throw|throw
 operator|new
 name|IllegalStateException
@@ -719,15 +798,7 @@ literal|"Encryption service not found. Please install the Karaf encryption featu
 argument_list|)
 throw|;
 block|}
-comment|// set the encryption algorithm
-name|encryptionService
-operator|.
-name|setAlgorithm
-argument_list|(
-name|encryption
-argument_list|)
-expr_stmt|;
-comment|// checks passwords
+comment|// check password
 name|boolean
 name|equals
 init|=
@@ -740,12 +811,25 @@ argument_list|,
 name|password
 argument_list|)
 decl_stmt|;
+name|String
+name|encryptedPassword
+init|=
+name|encryptionService
+operator|.
+name|encryptPassword
+argument_list|(
+name|password
+argument_list|)
+decl_stmt|;
 comment|// release the encryption service reference
 name|bundleContext
 operator|.
 name|ungetService
 argument_list|(
-name|encryptionServiceReference
+name|encryptionServiceReferences
+index|[
+literal|0
+index|]
 argument_list|)
 expr_stmt|;
 return|return

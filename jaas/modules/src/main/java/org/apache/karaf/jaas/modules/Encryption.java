@@ -47,15 +47,6 @@ name|String
 name|password
 parameter_list|)
 function_decl|;
-comment|/**      *<p>      * Set the encryption algorithm to use.      *</p>      *       * @param algorithm the encryption algorithm.      */
-specifier|public
-name|void
-name|setAlgorithm
-parameter_list|(
-name|String
-name|algorithm
-parameter_list|)
-function_decl|;
 block|}
 end_interface
 

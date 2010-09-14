@@ -64,10 +64,13 @@ specifier|private
 name|ConfigurablePasswordEncryptor
 name|passwordEncryptor
 decl_stmt|;
-comment|/**      *<p>      * Default constructor.      *</p>      */
+comment|/**      *<p>      * Default constructor with the encryption algorithm.      *</p>      *       * @algorithm the encryption algorithm to use.      */
 specifier|public
 name|JasyptEncryption
-parameter_list|()
+parameter_list|(
+name|String
+name|algorithm
+parameter_list|)
 block|{
 name|this
 operator|.
@@ -77,26 +80,6 @@ operator|new
 name|ConfigurablePasswordEncryptor
 argument_list|()
 expr_stmt|;
-comment|// set MD5 encryption algorithm by default
-name|this
-operator|.
-name|passwordEncryptor
-operator|.
-name|setAlgorithm
-argument_list|(
-literal|"MD5"
-argument_list|)
-expr_stmt|;
-block|}
-comment|/*      * (non-Javadoc)      * @see org.apache.karaf.jaas.modules.Encryption#setAlgorithm(java.lang.String)      */
-specifier|public
-name|void
-name|setAlgorithm
-parameter_list|(
-name|String
-name|algorithm
-parameter_list|)
-block|{
 name|this
 operator|.
 name|passwordEncryptor
