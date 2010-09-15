@@ -560,6 +560,21 @@ argument_list|(
 literal|"        "
 argument_list|)
 expr_stmt|;
+name|String
+name|key
+init|=
+name|NameScoping
+operator|.
+name|getCommandNameWithoutGlobalPrefix
+argument_list|(
+name|session
+argument_list|,
+name|entry
+operator|.
+name|getKey
+argument_list|()
+argument_list|)
+decl_stmt|;
 name|out
 operator|.
 name|println
@@ -580,10 +595,7 @@ argument_list|)
 operator|.
 name|a
 argument_list|(
-name|entry
-operator|.
-name|getKey
-argument_list|()
+name|key
 argument_list|)
 operator|.
 name|a
