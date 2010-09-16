@@ -417,6 +417,8 @@ argument_list|(
 operator|new
 name|ArgumentCompleter
 argument_list|(
+name|session
+argument_list|,
 operator|(
 name|AbstractCommand
 operator|)
