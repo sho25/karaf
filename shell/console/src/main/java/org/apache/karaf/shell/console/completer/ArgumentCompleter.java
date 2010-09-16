@@ -885,17 +885,6 @@ literal|null
 condition|)
 block|{
 comment|// lets invoke the method
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"About to invoke method: "
-operator|+
-name|method
-argument_list|)
-expr_stmt|;
 name|Action
 name|action
 init|=
