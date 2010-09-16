@@ -396,7 +396,7 @@ name|options
 operator|.
 name|get
 argument_list|(
-literal|"rolePolicy"
+literal|"role.policy"
 argument_list|)
 expr_stmt|;
 name|this
@@ -410,7 +410,7 @@ name|options
 operator|.
 name|get
 argument_list|(
-literal|"roleDiscriminator"
+literal|"role.discriminator"
 argument_list|)
 expr_stmt|;
 name|this
