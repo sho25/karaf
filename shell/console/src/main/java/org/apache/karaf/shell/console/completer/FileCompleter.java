@@ -23,7 +23,11 @@ begin_import
 import|import
 name|jline
 operator|.
-name|FileNameCompletor
+name|console
+operator|.
+name|completer
+operator|.
+name|FileNameCompleter
 import|;
 end_import
 
@@ -94,11 +98,11 @@ name|CommandSession
 name|session
 decl_stmt|;
 specifier|private
-name|FileNameCompletor
+name|FileNameCompleter
 name|completor
 init|=
 operator|new
-name|FileNameCompletor
+name|FileNameCompleter
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -126,9 +130,6 @@ name|int
 name|cursor
 parameter_list|,
 name|List
-argument_list|<
-name|String
-argument_list|>
 name|candidates
 parameter_list|)
 block|{

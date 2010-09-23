@@ -979,7 +979,7 @@ condition|)
 block|{
 name|terminal
 operator|.
-name|restoreTerminal
+name|restore
 argument_list|()
 expr_stmt|;
 block|}

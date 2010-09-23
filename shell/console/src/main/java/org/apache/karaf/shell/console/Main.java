@@ -985,7 +985,7 @@ name|toString
 argument_list|(
 name|terminal
 operator|.
-name|getTerminalHeight
+name|getHeight
 argument_list|()
 argument_list|)
 argument_list|)
@@ -1002,7 +1002,7 @@ name|toString
 argument_list|(
 name|terminal
 operator|.
-name|getTerminalWidth
+name|getWidth
 argument_list|()
 argument_list|)
 argument_list|)

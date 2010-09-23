@@ -333,12 +333,20 @@ name|void
 name|checkData
 parameter_list|()
 block|{
+comment|// Copy the set to avoid concurrent modification exceptions
+comment|// TODO: fix that in gogo instead
 name|Set
 argument_list|<
 name|String
 argument_list|>
 name|names
 init|=
+operator|new
+name|HashSet
+argument_list|<
+name|String
+argument_list|>
+argument_list|(
 operator|(
 name|Set
 argument_list|<
@@ -352,6 +360,7 @@ argument_list|(
 name|CommandSessionImpl
 operator|.
 name|COMMANDS
+argument_list|)
 argument_list|)
 decl_stmt|;
 if|if

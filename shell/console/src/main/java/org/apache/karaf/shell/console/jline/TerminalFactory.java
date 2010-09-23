@@ -154,7 +154,7 @@ argument_list|)
 expr_stmt|;
 name|t
 operator|.
-name|initializeTerminal
+name|init
 argument_list|()
 expr_stmt|;
 name|term
@@ -173,7 +173,7 @@ argument_list|()
 decl_stmt|;
 name|t
 operator|.
-name|initializeTerminal
+name|init
 argument_list|()
 expr_stmt|;
 name|term
@@ -227,7 +227,7 @@ condition|)
 block|{
 name|term
 operator|.
-name|restoreTerminal
+name|restore
 argument_list|()
 expr_stmt|;
 name|term

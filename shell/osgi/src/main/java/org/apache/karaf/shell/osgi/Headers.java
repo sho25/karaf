@@ -1840,7 +1840,7 @@ literal|null
 condition|?
 name|term
 operator|.
-name|getTerminalWidth
+name|getWidth
 argument_list|()
 else|:
 literal|80
