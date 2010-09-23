@@ -35,7 +35,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|PrintStream
+name|OutputStream
 import|;
 end_import
 
@@ -45,7 +45,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|OutputStream
+name|PrintStream
 import|;
 end_import
 
@@ -63,23 +63,9 @@ end_import
 
 begin_import
 import|import
-name|java
+name|jline
 operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|concurrent
-operator|.
-name|Callable
+name|Terminal
 import|;
 end_import
 
@@ -89,51 +75,7 @@ name|org
 operator|.
 name|apache
 operator|.
-name|karaf
-operator|.
-name|shell
-operator|.
-name|console
-operator|.
-name|Completer
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|shell
-operator|.
-name|console
-operator|.
-name|completer
-operator|.
-name|AggregateCompleter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|framework
-operator|.
-name|BundleContext
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
+name|felix
 operator|.
 name|service
 operator|.
@@ -147,7 +89,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|osgi
+name|apache
+operator|.
+name|felix
 operator|.
 name|service
 operator|.
@@ -171,9 +115,13 @@ end_import
 
 begin_import
 import|import
-name|jline
+name|org
 operator|.
-name|Terminal
+name|osgi
+operator|.
+name|framework
+operator|.
+name|BundleContext
 import|;
 end_import
 

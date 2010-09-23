@@ -33,13 +33,15 @@ begin_import
 import|import
 name|org
 operator|.
-name|osgi
+name|apache
 operator|.
-name|service
+name|felix
 operator|.
-name|command
+name|gogo
 operator|.
-name|CommandSession
+name|commands
+operator|.
+name|Action
 import|;
 end_import
 
@@ -51,11 +53,11 @@ name|apache
 operator|.
 name|felix
 operator|.
-name|gogo
+name|service
 operator|.
-name|commands
+name|command
 operator|.
-name|Action
+name|CommandSession
 import|;
 end_import
 

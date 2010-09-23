@@ -85,7 +85,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|osgi
+name|apache
+operator|.
+name|felix
 operator|.
 name|service
 operator|.
@@ -99,7 +101,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|osgi
+name|apache
+operator|.
+name|felix
 operator|.
 name|service
 operator|.

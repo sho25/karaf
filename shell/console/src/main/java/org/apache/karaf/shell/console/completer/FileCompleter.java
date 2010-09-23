@@ -37,21 +37,7 @@ name|org
 operator|.
 name|apache
 operator|.
-name|karaf
-operator|.
-name|shell
-operator|.
-name|console
-operator|.
-name|Completer
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
+name|felix
 operator|.
 name|service
 operator|.
@@ -63,11 +49,17 @@ end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|io
+name|apache
 operator|.
-name|File
+name|karaf
+operator|.
+name|shell
+operator|.
+name|console
+operator|.
+name|Completer
 import|;
 end_import
 

@@ -21,20 +21,6 @@ end_package
 
 begin_import
 import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|command
-operator|.
-name|CommandSession
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|io
@@ -50,6 +36,22 @@ operator|.
 name|io
 operator|.
 name|PrintStream
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|service
+operator|.
+name|command
+operator|.
+name|CommandSession
 import|;
 end_import
 

@@ -75,13 +75,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|karaf
+name|felix
 operator|.
-name|shell
+name|service
 operator|.
-name|console
+name|command
 operator|.
-name|AbstractAction
+name|Function
 import|;
 end_import
 
@@ -97,21 +97,7 @@ name|shell
 operator|.
 name|console
 operator|.
-name|OsgiCommandSupport
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|command
-operator|.
-name|Function
+name|AbstractAction
 import|;
 end_import
 

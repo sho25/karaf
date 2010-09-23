@@ -37,9 +37,7 @@ name|gogo
 operator|.
 name|runtime
 operator|.
-name|shell
-operator|.
-name|CommandShellImpl
+name|CommandProcessorImpl
 import|;
 end_import
 
@@ -142,7 +140,7 @@ specifier|protected
 name|Console
 name|createConsole
 parameter_list|(
-name|CommandShellImpl
+name|CommandProcessorImpl
 name|commandProcessor
 parameter_list|,
 name|InputStream
