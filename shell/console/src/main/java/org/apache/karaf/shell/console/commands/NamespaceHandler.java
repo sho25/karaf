@@ -89,6 +89,22 @@ begin_import
 import|import
 name|org
 operator|.
+name|osgi
+operator|.
+name|service
+operator|.
+name|blueprint
+operator|.
+name|reflect
+operator|.
+name|*
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|w3c
 operator|.
 name|dom
@@ -257,150 +273,6 @@ name|service
 operator|.
 name|blueprint
 operator|.
-name|reflect
-operator|.
-name|BeanArgument
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|blueprint
-operator|.
-name|reflect
-operator|.
-name|BeanProperty
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|blueprint
-operator|.
-name|reflect
-operator|.
-name|ComponentMetadata
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|blueprint
-operator|.
-name|reflect
-operator|.
-name|IdRefMetadata
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|blueprint
-operator|.
-name|reflect
-operator|.
-name|Metadata
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|blueprint
-operator|.
-name|reflect
-operator|.
-name|ValueMetadata
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|blueprint
-operator|.
-name|reflect
-operator|.
-name|RefMetadata
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|blueprint
-operator|.
-name|reflect
-operator|.
-name|NullMetadata
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|blueprint
-operator|.
-name|reflect
-operator|.
-name|BeanMetadata
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|blueprint
-operator|.
 name|container
 operator|.
 name|ComponentDefinitionException
@@ -434,22 +306,6 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|DESCRIPTION
-init|=
-literal|"description"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|PLUGIN_TEMPLATE
-init|=
-literal|"pluginTemplate"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
 name|ACTION
 init|=
 literal|"action"
@@ -461,14 +317,6 @@ name|String
 name|ACTION_ID
 init|=
 literal|"actionId"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|COMMAND_TEMPLATE_SUFFIX
-init|=
-literal|"CommandTemplate"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -490,41 +338,9 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|LOCATION
-init|=
-literal|"location"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|COMMANDS
-init|=
-literal|"commands"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
 name|COMMAND
 init|=
 literal|"command"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|DOCUMENTER
-init|=
-literal|"documenter"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|COMPLETER
-init|=
-literal|"completer"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -557,70 +373,6 @@ name|String
 name|NULL
 init|=
 literal|"null"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|MESSAGE_SOURCE
-init|=
-literal|"message-source"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|MESSAGES
-init|=
-literal|"messages"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|PROTOTYPE
-init|=
-literal|"prototype"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|ALIAS
-init|=
-literal|"alias"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|ALIASES
-init|=
-literal|"aliases"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|LINK
-init|=
-literal|"link"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|LINKS
-init|=
-literal|"links"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|TARGET
-init|=
-literal|"target"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -840,32 +592,6 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
-elseif|else
-if|if
-condition|(
-name|nodeNameEquals
-argument_list|(
-name|element
-argument_list|,
-name|LINK
-argument_list|)
-condition|)
-block|{
-comment|//            parseLink(element, context);
-block|}
-elseif|else
-if|if
-condition|(
-name|nodeNameEquals
-argument_list|(
-name|element
-argument_list|,
-name|ALIAS
-argument_list|)
-condition|)
-block|{
-comment|//            parseAlias(element, context);
-block|}
 block|}
 specifier|private
 name|void
@@ -927,16 +653,6 @@ name|BLUEPRINT_CONVERTER
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//        MutableBeanMetadata documenter = context.createMetadata(MutableBeanMetadata.class);
-comment|//        documenter.setRuntimeClass(MessageSourceCommandDocumenter.class);
-comment|//        command.addProperty(DOCUMENTER, documenter);
-comment|//        MutableBeanMetadata messages = context.createMetadata(MutableBeanMetadata.class);
-comment|//        messages.setRuntimeClass(CommandMessageSource.class);
-comment|//        command.addProperty(MESSAGES, messages);
-comment|//        MutableBeanMetadata location = context.createMetadata(MutableBeanMetadata.class);
-comment|//        location.setRuntimeClass(CommandLocationImpl.class);
-comment|//        location.addArgument(createStringValue(context, element.getAttribute(NAME)), String.class.getName(), 0);
-comment|//        command.addProperty(LOCATION, location);
 name|String
 name|location
 init|=
@@ -1207,26 +923,11 @@ argument_list|)
 expr_stmt|;
 name|commandService
 operator|.
-name|addInterface
+name|setAutoExport
 argument_list|(
-name|Function
+name|ServiceMetadata
 operator|.
-name|class
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|commandService
-operator|.
-name|addInterface
-argument_list|(
-name|CompletableFunction
-operator|.
-name|class
-operator|.
-name|getName
-argument_list|()
+name|AUTO_EXPORT_ALL_CLASSES
 argument_list|)
 expr_stmt|;
 name|commandService
@@ -1661,32 +1362,6 @@ return|return
 name|collection
 return|;
 block|}
-comment|//    private void parseLink(Element element, ParserContext context) {
-comment|//        MutableBeanMetadata link = context.createMetadata(MutableBeanMetadata.class);
-comment|//        link.setRuntimeClass(LinkImpl.class);
-comment|//        link.addArgument(createStringValue(context, element.getAttribute(NAME)), String.class.getName(), 0);
-comment|//        link.addArgument(createStringValue(context, element.getAttribute(TARGET)), String.class.getName(), 0);
-comment|//
-comment|//        MutableServiceMetadata linkService = context.createMetadata(MutableServiceMetadata.class);
-comment|//        linkService.setId(getName());
-comment|//        linkService.addInterface(Link.class.getName());
-comment|//        linkService.setServiceComponent(link);
-comment|//        context.getComponentDefinitionRegistry().registerComponentDefinition(linkService);
-comment|//    }
-comment|//
-comment|//    private void parseAlias(Element element, ParserContext context) {
-comment|//        MutableBeanMetadata alias = context.createMetadata(MutableBeanMetadata.class);
-comment|//        alias.setRuntimeClass(AliasImpl.class);
-comment|//        alias.addArgument(createStringValue(context, element.getAttribute(NAME)), String.class.getName(), 0);
-comment|//        alias.addArgument(createStringValue(context, element.getAttribute(ALIAS)), String.class.getName(), 0);
-comment|//
-comment|//        MutableServiceMetadata aliasService = context.createMetadata(MutableServiceMetadata.class);
-comment|//        aliasService.setId(getName());
-comment|//        aliasService.addInterface(Alias.class.getName());
-comment|//        aliasService.setServiceComponent(alias);
-comment|//        context.getComponentDefinitionRegistry().registerComponentDefinition(aliasService);
-comment|//    }
-comment|//
 specifier|private
 name|ValueMetadata
 name|createStringValue
