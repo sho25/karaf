@@ -971,6 +971,9 @@ name|get
 argument_list|(
 name|i
 argument_list|)
+operator|.
+name|getLocation
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
