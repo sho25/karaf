@@ -126,8 +126,6 @@ name|Feature
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|// TODO
-comment|// private List<String> bundles = new ArrayList<String>();
 specifier|private
 name|List
 argument_list|<

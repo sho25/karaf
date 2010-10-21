@@ -543,6 +543,22 @@ name|expect
 argument_list|(
 name|resolver
 operator|.
+name|getAddedResources
+argument_list|()
+argument_list|)
+operator|.
+name|andReturn
+argument_list|(
+operator|new
+name|Resource
+index|[]
+block|{ }
+argument_list|)
+expr_stmt|;
+name|expect
+argument_list|(
+name|resolver
+operator|.
 name|getRequiredResources
 argument_list|()
 argument_list|)
