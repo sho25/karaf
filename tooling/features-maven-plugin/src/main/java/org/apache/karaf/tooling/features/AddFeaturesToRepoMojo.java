@@ -543,7 +543,7 @@ name|index
 argument_list|)
 expr_stmt|;
 block|}
-comment|// Truncate the URL when a '#' or a '?' is encountered
+comment|// Truncate the URL when a '#', a '?' or a '$' is encountered
 specifier|final
 name|int
 name|index1
@@ -635,6 +635,36 @@ argument_list|(
 literal|0
 argument_list|,
 name|endIndex
+argument_list|)
+expr_stmt|;
+block|}
+specifier|final
+name|int
+name|index3
+init|=
+name|bundle
+operator|.
+name|indexOf
+argument_list|(
+literal|'$'
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|index3
+operator|>
+literal|0
+condition|)
+block|{
+name|bundle
+operator|=
+name|bundle
+operator|.
+name|substring
+argument_list|(
+literal|0
+argument_list|,
+name|index3
 argument_list|)
 expr_stmt|;
 block|}
