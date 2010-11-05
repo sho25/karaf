@@ -504,6 +504,10 @@ block|}
 if|if
 condition|(
 name|encryptionServiceReferences
+operator|==
+literal|null
+operator|||
+name|encryptionServiceReferences
 operator|.
 name|length
 operator|==

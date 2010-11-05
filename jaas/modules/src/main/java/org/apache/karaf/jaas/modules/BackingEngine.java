@@ -17,6 +17,16 @@ name|modules
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author iocanel  */
 end_comment
@@ -43,6 +53,25 @@ name|deleteUser
 parameter_list|(
 name|String
 name|username
+parameter_list|)
+function_decl|;
+comment|/**      * List Users      */
+name|List
+argument_list|<
+name|UserPrincipal
+argument_list|>
+name|listUsers
+parameter_list|()
+function_decl|;
+comment|/**      * List Roles for {@param user}.      *      * @param user      * @return      */
+name|List
+argument_list|<
+name|RolePrincipal
+argument_list|>
+name|listRoles
+parameter_list|(
+name|UserPrincipal
+name|user
 parameter_list|)
 function_decl|;
 comment|/**      * Add a role to the user      *      * @param username      * @param role      */
