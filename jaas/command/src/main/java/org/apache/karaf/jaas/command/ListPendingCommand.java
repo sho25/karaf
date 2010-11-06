@@ -275,7 +275,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"No JAAS command¾ in queue."
+literal|"No JAAS command in queue."
 argument_list|)
 expr_stmt|;
 block|}
