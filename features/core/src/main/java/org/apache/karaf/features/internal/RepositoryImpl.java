@@ -666,6 +666,9 @@ name|e
 operator|.
 name|getTextContent
 argument_list|()
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|repositories
@@ -1257,6 +1260,9 @@ argument_list|(
 name|b
 operator|.
 name|getTextContent
+argument_list|()
+operator|.
+name|trim
 argument_list|()
 argument_list|,
 name|bsl
