@@ -258,7 +258,7 @@ argument_list|()
 operator|.
 name|getResource
 argument_list|(
-literal|"/org/apache/karaf/jaas/config/karaf-jaas.xsd"
+literal|"/org/apache/karaf/jaas/config/karaf-jaas-1.1.0.xsd"
 argument_list|)
 return|;
 block|}
