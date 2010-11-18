@@ -235,22 +235,6 @@ name|AbstractAction
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|shell
-operator|.
-name|console
-operator|.
-name|OsgiCommandSupport
-import|;
-end_import
-
 begin_comment
 comment|/**  * Sort lines of text  *  * @version $Rev: 722776 $ $Date: 2008-12-03 05:59:59 +0100 (Wed, 03 Dec 2008) $  */
 end_comment

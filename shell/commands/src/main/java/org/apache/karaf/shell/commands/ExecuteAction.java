@@ -93,22 +93,6 @@ name|AbstractAction
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|shell
-operator|.
-name|console
-operator|.
-name|OsgiCommandSupport
-import|;
-end_import
-
 begin_comment
 comment|/**  * Execute system processes.  *  * @version $Rev: 593392 $ $Date: 2007-11-09 03:14:15 +0100 (Fri, 09 Nov 2007) $  */
 end_comment
