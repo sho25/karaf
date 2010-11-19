@@ -635,6 +635,19 @@ literal|"location"
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|String
+name|javaopts
+init|=
+name|parseString
+argument_list|(
+name|req
+operator|.
+name|getParameter
+argument_list|(
+literal|"javaopts"
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|List
 argument_list|<
 name|String
@@ -676,6 +689,8 @@ argument_list|(
 name|port
 argument_list|,
 name|location
+argument_list|,
+name|javaopts
 argument_list|,
 name|featureURLs
 argument_list|,
@@ -1212,6 +1227,7 @@ range|:
 name|instances
 control|)
 block|{
+comment|//                if (!i.isRoot()) {
 name|instanceInfo
 argument_list|(
 name|jw
@@ -1219,6 +1235,7 @@ argument_list|,
 name|i
 argument_list|)
 expr_stmt|;
+comment|//                }
 block|}
 name|jw
 operator|.
@@ -1385,6 +1402,32 @@ operator|.
 name|key
 argument_list|(
 literal|"location"
+argument_list|)
+expr_stmt|;
+name|jw
+operator|.
+name|value
+argument_list|(
+name|instance
+operator|.
+name|getJavaOpts
+argument_list|()
+operator|!=
+literal|null
+condition|?
+name|instance
+operator|.
+name|getJavaOpts
+argument_list|()
+else|:
+literal|""
+argument_list|)
+expr_stmt|;
+name|jw
+operator|.
+name|key
+argument_list|(
+literal|"javaopts"
 argument_list|)
 expr_stmt|;
 name|jw

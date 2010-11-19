@@ -237,6 +237,8 @@ literal|null
 argument_list|,
 literal|null
 argument_list|,
+literal|null
+argument_list|,
 name|Arrays
 operator|.
 name|asList
@@ -373,6 +375,8 @@ literal|8122
 argument_list|,
 name|getName
 argument_list|()
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|,

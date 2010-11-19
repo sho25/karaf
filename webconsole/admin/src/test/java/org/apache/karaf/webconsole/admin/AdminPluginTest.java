@@ -358,6 +358,8 @@ literal|1234
 argument_list|,
 literal|null
 argument_list|,
+literal|null
+argument_list|,
 name|Collections
 operator|.
 name|singletonList

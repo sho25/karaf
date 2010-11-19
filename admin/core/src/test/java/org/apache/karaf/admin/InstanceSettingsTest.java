@@ -101,6 +101,8 @@ literal|1
 argument_list|,
 literal|null
 argument_list|,
+literal|null
+argument_list|,
 name|Collections
 operator|.
 expr|<
@@ -177,6 +179,8 @@ literal|1
 argument_list|,
 literal|"top"
 argument_list|,
+literal|"foo"
+argument_list|,
 name|Collections
 operator|.
 expr|<
@@ -202,6 +206,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -214,6 +220,9 @@ name|port
 parameter_list|,
 name|String
 name|location
+parameter_list|,
+name|String
+name|javaOpts
 parameter_list|,
 name|List
 argument_list|<
@@ -238,6 +247,8 @@ name|port
 argument_list|,
 name|location
 argument_list|,
+name|javaOpts
+argument_list|,
 name|featureURLs
 argument_list|,
 name|features
@@ -252,6 +263,8 @@ argument_list|(
 name|port
 argument_list|,
 name|location
+argument_list|,
+name|javaOpts
 argument_list|,
 name|featureURLs
 argument_list|,
@@ -293,6 +306,8 @@ argument_list|(
 literal|1
 argument_list|,
 literal|"top"
+argument_list|,
+literal|"foo"
 argument_list|,
 name|Collections
 operator|.

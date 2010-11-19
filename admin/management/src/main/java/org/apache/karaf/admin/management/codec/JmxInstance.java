@@ -315,6 +315,16 @@ operator|.
 name|getLocation
 argument_list|()
 expr_stmt|;
+name|itemValues
+index|[
+literal|6
+index|]
+operator|=
+name|instance
+operator|.
+name|getJavaOpts
+argument_list|()
+expr_stmt|;
 name|data
 operator|=
 operator|new
@@ -485,6 +495,22 @@ literal|5
 index|]
 operator|=
 literal|"The location of the instance."
+expr_stmt|;
+name|itemTypes
+index|[
+literal|6
+index|]
+operator|=
+name|SimpleType
+operator|.
+name|STRING
+expr_stmt|;
+name|descriptions
+index|[
+literal|6
+index|]
+operator|=
+literal|"The java options of the instance."
 expr_stmt|;
 return|return
 operator|new

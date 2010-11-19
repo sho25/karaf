@@ -65,6 +65,11 @@ init|=
 literal|"Location"
 decl_stmt|;
 name|String
+name|INSTANCE_JAVAOPTS
+init|=
+literal|"JavaOpts"
+decl_stmt|;
+name|String
 index|[]
 name|INSTANCE
 init|=
@@ -80,6 +85,8 @@ block|,
 name|INSTANCE_STATE
 block|,
 name|INSTANCE_LOCATION
+block|,
+name|INSTANCE_JAVAOPTS
 block|}
 decl_stmt|;
 comment|// Operations
@@ -94,6 +101,9 @@ name|port
 parameter_list|,
 name|String
 name|location
+parameter_list|,
+name|String
+name|javaOpts
 parameter_list|,
 name|String
 name|features
@@ -112,6 +122,18 @@ name|name
 parameter_list|,
 name|int
 name|port
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+name|void
+name|changeJavaOpts
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|javaopts
 parameter_list|)
 throws|throws
 name|Exception

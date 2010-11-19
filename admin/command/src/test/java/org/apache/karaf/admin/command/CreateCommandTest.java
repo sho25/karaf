@@ -146,6 +146,12 @@ literal|"top"
 expr_stmt|;
 name|cc
 operator|.
+name|javaOpts
+operator|=
+literal|"foo"
+expr_stmt|;
+name|cc
+operator|.
 name|features
 operator|=
 name|Arrays
@@ -198,6 +204,8 @@ argument_list|(
 literal|9941
 argument_list|,
 literal|"top"
+argument_list|,
+literal|"foo"
 argument_list|,
 name|Collections
 operator|.
