@@ -105,7 +105,7 @@ argument_list|(
 literal|"/"
 argument_list|)
 operator|+
-literal|"WEB-INF/karaf"
+literal|"/WEB-INF/karaf"
 argument_list|)
 operator|.
 name|getAbsolutePath
