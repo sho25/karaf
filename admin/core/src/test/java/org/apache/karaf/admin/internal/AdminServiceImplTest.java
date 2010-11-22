@@ -233,6 +233,8 @@ name|InstanceSettings
 argument_list|(
 literal|8122
 argument_list|,
+literal|1122
+argument_list|,
 literal|null
 argument_list|,
 literal|null
@@ -372,6 +374,8 @@ operator|new
 name|InstanceSettings
 argument_list|(
 literal|8122
+argument_list|,
+literal|1122
 argument_list|,
 name|getName
 argument_list|()

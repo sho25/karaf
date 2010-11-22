@@ -50,9 +50,14 @@ init|=
 literal|"Is Root"
 decl_stmt|;
 name|String
-name|INSTANCE_PORT
+name|INSTANCE_SSH_PORT
 init|=
-literal|"Port"
+literal|"SSH Port"
+decl_stmt|;
+name|String
+name|INSTANCE_RMI_PORT
+init|=
+literal|"RMI Port"
 decl_stmt|;
 name|String
 name|INSTANCE_STATE
@@ -80,7 +85,9 @@ name|INSTANCE_NAME
 block|,
 name|INSTANCE_IS_ROOT
 block|,
-name|INSTANCE_PORT
+name|INSTANCE_SSH_PORT
+block|,
+name|INSTANCE_RMI_PORT
 block|,
 name|INSTANCE_STATE
 block|,
@@ -97,7 +104,10 @@ name|String
 name|name
 parameter_list|,
 name|int
-name|port
+name|sshPort
+parameter_list|,
+name|int
+name|rmiPort
 parameter_list|,
 name|String
 name|location
@@ -115,7 +125,19 @@ throws|throws
 name|Exception
 function_decl|;
 name|void
-name|changePort
+name|changeSshPort
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|int
+name|port
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+name|void
+name|changeRmiRegistryPort
 parameter_list|(
 name|String
 name|name

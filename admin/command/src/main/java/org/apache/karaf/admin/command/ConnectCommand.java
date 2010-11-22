@@ -193,7 +193,7 @@ argument_list|(
 name|instance
 argument_list|)
 operator|.
-name|getPort
+name|getSshPort
 argument_list|()
 decl_stmt|;
 name|session

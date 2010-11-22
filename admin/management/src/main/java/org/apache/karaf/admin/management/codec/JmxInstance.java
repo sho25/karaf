@@ -275,14 +275,24 @@ index|]
 operator|=
 name|instance
 operator|.
-name|getPort
+name|getSshPort
+argument_list|()
+expr_stmt|;
+name|itemValues
+index|[
+literal|4
+index|]
+operator|=
+name|instance
+operator|.
+name|getRmiRegistryPort
 argument_list|()
 expr_stmt|;
 try|try
 block|{
 name|itemValues
 index|[
-literal|4
+literal|5
 index|]
 operator|=
 name|instance
@@ -299,7 +309,7 @@ parameter_list|)
 block|{
 name|itemValues
 index|[
-literal|4
+literal|5
 index|]
 operator|=
 literal|"Error"
@@ -307,7 +317,7 @@ expr_stmt|;
 block|}
 name|itemValues
 index|[
-literal|5
+literal|6
 index|]
 operator|=
 name|instance
@@ -317,7 +327,7 @@ argument_list|()
 expr_stmt|;
 name|itemValues
 index|[
-literal|6
+literal|7
 index|]
 operator|=
 name|instance
@@ -471,14 +481,14 @@ index|]
 operator|=
 name|SimpleType
 operator|.
-name|STRING
+name|INTEGER
 expr_stmt|;
 name|descriptions
 index|[
 literal|4
 index|]
 operator|=
-literal|"The state of the instance."
+literal|"The RMI registry port that can be used to manage the instance."
 expr_stmt|;
 name|itemTypes
 index|[
@@ -492,13 +502,29 @@ expr_stmt|;
 name|descriptions
 index|[
 literal|5
+index|]
+operator|=
+literal|"The state of the instance."
+expr_stmt|;
+name|itemTypes
+index|[
+literal|6
+index|]
+operator|=
+name|SimpleType
+operator|.
+name|STRING
+expr_stmt|;
+name|descriptions
+index|[
+literal|6
 index|]
 operator|=
 literal|"The location of the instance."
 expr_stmt|;
 name|itemTypes
 index|[
-literal|6
+literal|7
 index|]
 operator|=
 name|SimpleType
@@ -507,7 +533,7 @@ name|STRING
 expr_stmt|;
 name|descriptions
 index|[
-literal|6
+literal|7
 index|]
 operator|=
 literal|"The java options of the instance."

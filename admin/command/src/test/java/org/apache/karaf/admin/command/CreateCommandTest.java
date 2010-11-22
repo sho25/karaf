@@ -134,9 +134,15 @@ argument_list|)
 expr_stmt|;
 name|cc
 operator|.
-name|port
+name|sshPort
 operator|=
 literal|9941
+expr_stmt|;
+name|cc
+operator|.
+name|rmiPort
+operator|=
+literal|1122
 expr_stmt|;
 name|cc
 operator|.
@@ -202,6 +208,8 @@ operator|new
 name|InstanceSettings
 argument_list|(
 literal|9941
+argument_list|,
+literal|1122
 argument_list|,
 literal|"top"
 argument_list|,

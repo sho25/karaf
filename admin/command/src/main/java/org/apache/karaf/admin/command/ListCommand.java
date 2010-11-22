@@ -173,7 +173,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"  Port   State       Pid  JavaOpts"
+literal|"  SSH Port   RMI Port   State       Pid  JavaOpts"
 argument_list|)
 expr_stmt|;
 block|}
@@ -189,7 +189,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"  Port   State       Pid  Location"
+literal|"  SSH Port   RMI Port   State       Pid  Location"
 argument_list|)
 expr_stmt|;
 block|}
@@ -201,7 +201,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"  Port   State       Pid  Name"
+literal|"  SSH Port   RMI Port   State       Pid  Name"
 argument_list|)
 expr_stmt|;
 block|}
@@ -236,7 +236,7 @@ name|toString
 argument_list|(
 name|instance
 operator|.
-name|getPort
+name|getSshPort
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -252,7 +252,7 @@ argument_list|()
 init|;
 name|i
 operator|<
-literal|5
+literal|8
 condition|;
 name|i
 operator|++
@@ -271,6 +271,59 @@ operator|.
 name|append
 argument_list|(
 name|s
+argument_list|)
+expr_stmt|;
+name|sb
+operator|.
+name|append
+argument_list|(
+literal|"] ["
+argument_list|)
+expr_stmt|;
+name|String
+name|r
+init|=
+name|Integer
+operator|.
+name|toString
+argument_list|(
+name|instance
+operator|.
+name|getRmiRegistryPort
+argument_list|()
+argument_list|)
+decl_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+name|r
+operator|.
+name|length
+argument_list|()
+init|;
+name|i
+operator|<
+literal|8
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|sb
+operator|.
+name|append
+argument_list|(
+literal|' '
+argument_list|)
+expr_stmt|;
+block|}
+name|sb
+operator|.
+name|append
+argument_list|(
+name|r
 argument_list|)
 expr_stmt|;
 name|sb

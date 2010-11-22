@@ -59,15 +59,15 @@ literal|"admin"
 argument_list|,
 name|name
 operator|=
-literal|"change-port"
+literal|"change-ssh-port"
 argument_list|,
 name|description
 operator|=
-literal|"Changes the port of an existing container instance."
+literal|"Changes the secure shell port of an existing container instance."
 argument_list|)
 specifier|public
 class|class
-name|ChangePortCommand
+name|ChangeSshPortCommand
 extends|extends
 name|AdminCommandSupport
 block|{
@@ -113,7 +113,7 @@ literal|"port"
 argument_list|,
 name|description
 operator|=
-literal|"The new port to set"
+literal|"The new secure shell port to set"
 argument_list|,
 name|required
 operator|=
@@ -141,7 +141,7 @@ argument_list|(
 name|instance
 argument_list|)
 operator|.
-name|changePort
+name|changeSshPort
 argument_list|(
 name|port
 argument_list|)
