@@ -53,6 +53,14 @@ name|getName
 parameter_list|()
 function_decl|;
 name|String
+name|getDescription
+parameter_list|()
+function_decl|;
+name|String
+name|getDetails
+parameter_list|()
+function_decl|;
+name|String
 name|getVersion
 parameter_list|()
 function_decl|;
