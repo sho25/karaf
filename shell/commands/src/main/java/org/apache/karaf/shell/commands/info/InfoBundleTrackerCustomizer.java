@@ -21,36 +21,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Dictionary
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Properties
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|StringTokenizer
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|osgi
@@ -131,8 +101,38 @@ name|LoggerFactory
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Dictionary
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Properties
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|StringTokenizer
+import|;
+end_import
+
 begin_comment
-comment|/**  * @author splatch  * Bundle tracker which check manifest headers for informations.  */
+comment|/**  * @author splatch  *         Bundle tracker which check manifest headers for informations.  */
 end_comment
 
 begin_class
@@ -142,7 +142,7 @@ name|InfoBundleTrackerCustomizer
 implements|implements
 name|BundleTrackerCustomizer
 block|{
-comment|/** 	 * Logger. 	 */
+comment|/**      * Logger.      */
 specifier|private
 name|Logger
 name|logger
@@ -156,7 +156,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|/** 	 * Bundle context. 	 */
+comment|/**      * Bundle context.      */
 specifier|private
 specifier|final
 name|BundleContext
@@ -176,7 +176,7 @@ operator|=
 name|context
 expr_stmt|;
 block|}
-comment|/** 	 * {@inheritDoc} 	 */
+comment|/**      * {@inheritDoc}      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -229,9 +229,17 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
 name|logger
 operator|.
-name|info
+name|isDebugEnabled
+argument_list|()
+condition|)
+block|{
+name|logger
+operator|.
+name|debug
 argument_list|(
 literal|"Ignore incorrect info {} provided by bundle {}"
 argument_list|,
@@ -243,6 +251,7 @@ name|getSymbolicName
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 literal|null
 return|;
@@ -281,7 +290,7 @@ parameter_list|,
 name|Object
 name|object
 parameter_list|)
-block|{ 	}
+block|{     }
 specifier|public
 name|void
 name|removedBundle
@@ -410,6 +419,14 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|logger
+operator|.
+name|isDebugEnabled
+argument_list|()
+condition|)
+block|{
 name|logger
 operator|.
 name|debug
@@ -419,6 +436,7 @@ argument_list|,
 name|property
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 do|while
