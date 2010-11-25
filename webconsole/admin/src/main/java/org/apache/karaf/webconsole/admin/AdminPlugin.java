@@ -649,7 +649,7 @@ argument_list|)
 argument_list|)
 decl_stmt|;
 name|String
-name|javaopts
+name|javaOpts
 init|=
 name|parseString
 argument_list|(
@@ -657,7 +657,7 @@ name|req
 operator|.
 name|getParameter
 argument_list|(
-literal|"javaopts"
+literal|"javaOpts"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -705,7 +705,7 @@ name|rmiPort
 argument_list|,
 name|location
 argument_list|,
-name|javaopts
+name|javaOpts
 argument_list|,
 name|featureURLs
 argument_list|,

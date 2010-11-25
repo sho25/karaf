@@ -184,7 +184,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author iocanel  */
+comment|/**  * @author iocanel, jbonofre  */
 end_comment
 
 begin_class
@@ -821,7 +821,7 @@ name|usersResultSet
 operator|.
 name|getString
 argument_list|(
-literal|0
+literal|"USERNAME"
 argument_list|)
 decl_stmt|;
 name|users

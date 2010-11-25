@@ -3567,16 +3567,6 @@ argument_list|,
 name|location
 argument_list|)
 expr_stmt|;
-name|f
-operator|=
-operator|new
-name|File
-argument_list|(
-name|karafHome
-argument_list|,
-name|location
-argument_list|)
-expr_stmt|;
 block|}
 if|if
 condition|(

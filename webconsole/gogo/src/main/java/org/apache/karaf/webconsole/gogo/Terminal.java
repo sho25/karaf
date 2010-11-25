@@ -2748,7 +2748,7 @@ name|vt100_saved
 operator|=
 name|vt100_saved2
 expr_stmt|;
-name|vt100_saved
+name|vt100_saved2
 operator|=
 name|map
 expr_stmt|;
