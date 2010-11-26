@@ -5500,6 +5500,16 @@ operator|<
 name|ps
 operator|.
 name|length
+operator|&&
+name|ps
+index|[
+name|i
+index|]
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
 condition|)
 block|{
 name|value
