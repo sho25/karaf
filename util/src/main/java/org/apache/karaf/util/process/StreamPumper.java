@@ -11,11 +11,9 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|shell
+name|util
 operator|.
-name|commands
-operator|.
-name|utils
+name|process
 package|;
 end_package
 
@@ -99,7 +97,7 @@ name|boolean
 name|autoflush
 decl_stmt|;
 specifier|private
-name|Exception
+name|Throwable
 name|exception
 decl_stmt|;
 specifier|private
@@ -247,9 +245,6 @@ name|available
 argument_list|()
 operator|>
 literal|0
-operator|&&
-operator|!
-name|finish
 condition|)
 block|{
 name|length
@@ -311,15 +306,13 @@ do|while
 condition|(
 operator|!
 name|finish
-operator|&&
-name|closeWhenExhausted
 condition|)
 do|;
 block|}
 catch|catch
 parameter_list|(
-name|Exception
-name|e
+name|Throwable
+name|t
 parameter_list|)
 block|{
 synchronized|synchronized
@@ -329,7 +322,7 @@ init|)
 block|{
 name|exception
 operator|=
-name|e
+name|t
 expr_stmt|;
 block|}
 block|}
@@ -446,7 +439,7 @@ block|}
 comment|/**      * Get the exception encountered, if any.      *      * @return The Exception encountered; or null if there was none.      */
 specifier|public
 specifier|synchronized
-name|Exception
+name|Throwable
 name|getException
 parameter_list|()
 block|{

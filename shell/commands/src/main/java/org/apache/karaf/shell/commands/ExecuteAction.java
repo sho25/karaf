@@ -69,11 +69,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|console
 operator|.
-name|utils
-operator|.
-name|PumpStreamHandler
+name|AbstractAction
 import|;
 end_import
 
@@ -85,11 +83,11 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|shell
+name|util
 operator|.
-name|console
+name|process
 operator|.
-name|AbstractAction
+name|PumpStreamHandler
 import|;
 end_import
 
@@ -182,6 +180,13 @@ argument_list|,
 name|System
 operator|.
 name|err
+argument_list|,
+literal|"Command"
+operator|+
+name|args
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|log
