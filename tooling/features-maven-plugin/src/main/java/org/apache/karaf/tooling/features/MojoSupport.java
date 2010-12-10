@@ -1789,9 +1789,7 @@ literal|"%20"
 argument_list|)
 decl_stmt|;
 return|return
-name|localRepo
-operator|.
-name|getProtocol
+name|extractProtocolFromLocalMavenRepo
 argument_list|()
 operator|+
 literal|":///"
@@ -1807,6 +1805,46 @@ operator|.
 name|getUrl
 argument_list|()
 return|;
+block|}
+block|}
+comment|/**      * Required because maven3 returns null in {@link ArtifactRepository#getProtocol()} (see KARAF-244)      */
+specifier|private
+name|String
+name|extractProtocolFromLocalMavenRepo
+parameter_list|()
+block|{
+try|try
+block|{
+return|return
+operator|new
+name|URL
+argument_list|(
+name|localRepo
+operator|.
+name|getUrl
+argument_list|()
+argument_list|)
+operator|.
+name|getProtocol
+argument_list|()
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|MalformedURLException
+name|e
+parameter_list|)
+block|{
+comment|// Basically this should not happen; if though cancel the process
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"Repository URL is not valid"
+argument_list|,
+name|e
+argument_list|)
+throw|;
 block|}
 block|}
 block|}
