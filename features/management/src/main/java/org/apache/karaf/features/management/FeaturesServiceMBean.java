@@ -132,6 +132,11 @@ init|=
 literal|"Configurations"
 decl_stmt|;
 name|String
+name|FEATURE_CONFIGURATIONFILES
+init|=
+literal|"Configuration Files"
+decl_stmt|;
+name|String
 name|FEATURE_INSTALLED
 init|=
 literal|"Installed"
@@ -155,6 +160,11 @@ name|String
 name|FEATURE_CONFIG_ELEMENT_VALUE
 init|=
 literal|"Value"
+decl_stmt|;
+name|String
+name|FEATURE_CONFIG_FILES_ELEMENTS
+init|=
+literal|"Files"
 decl_stmt|;
 comment|/**      * The type of the event which is emitted for features events      */
 name|String
@@ -193,6 +203,8 @@ name|FEATURE_BUNDLES
 block|,
 name|FEATURE_CONFIGURATIONS
 block|,
+name|FEATURE_CONFIGURATIONFILES
+block|,
 name|FEATURE_INSTALLED
 block|}
 decl_stmt|;
@@ -214,6 +226,14 @@ block|{
 name|FEATURE_CONFIG_PID
 block|,
 name|FEATURE_CONFIG_ELEMENTS
+block|}
+decl_stmt|;
+name|String
+index|[]
+name|FEATURE_CONFIG_FILES
+init|=
+block|{
+name|FEATURE_CONFIG_FILES_ELEMENTS
 block|}
 decl_stmt|;
 name|String
