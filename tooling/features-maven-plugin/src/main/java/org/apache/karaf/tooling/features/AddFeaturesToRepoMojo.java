@@ -512,6 +512,32 @@ range|:
 name|bundles
 control|)
 block|{
+comment|// get rid of of possible line-breaks KARAF-313
+name|bundle
+operator|=
+name|bundle
+operator|.
+name|replace
+argument_list|(
+literal|"\r\n"
+argument_list|,
+literal|""
+argument_list|)
+operator|.
+name|replace
+argument_list|(
+literal|"\n"
+argument_list|,
+literal|""
+argument_list|)
+operator|.
+name|replace
+argument_list|(
+literal|" "
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
 specifier|final
 name|int
 name|index
