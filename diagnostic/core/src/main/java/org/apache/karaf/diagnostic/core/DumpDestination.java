@@ -13,6 +13,16 @@ name|core
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|OutputStream
+import|;
+end_import
+
 begin_comment
 comment|/**  * Destination for created dumps.  *   * @author ldywicki  */
 end_comment
@@ -22,12 +32,11 @@ specifier|public
 interface|interface
 name|DumpDestination
 block|{
-name|void
+name|OutputStream
 name|add
 parameter_list|(
-name|Dump
-modifier|...
-name|dump
+name|String
+name|name
 parameter_list|)
 throws|throws
 name|Exception

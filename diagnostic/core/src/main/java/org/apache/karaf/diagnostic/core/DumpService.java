@@ -21,30 +21,56 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
+name|util
 operator|.
-name|InputStream
+name|List
 import|;
 end_import
 
 begin_comment
-comment|/**  * Base class which represents dumped data.  *   * @author ldywicki  */
+comment|/**  * Dump service which allows to customize dump creation process.  *   * @author ldywicki  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|Dump
+name|DumpService
 block|{
-name|InputStream
-name|createResource
+comment|/** 	 * Return registered providers. 	 *  	 * @return Providers registered in OSGi service registry. 	 */
+name|List
+argument_list|<
+name|DumpProvider
+argument_list|>
+name|listProviders
 parameter_list|()
-throws|throws
-name|Exception
 function_decl|;
-name|String
-name|getName
+comment|/** 	 * List destinations where dumps can be stored. 	 *  	 * @return Destinations registered in OSGi service registry. 	 */
+name|List
+argument_list|<
+name|DumpDestination
+argument_list|>
+name|listDestinations
 parameter_list|()
+function_decl|;
+comment|/** 	 * Make dump using given providers. 	 *  	 * @param destination Store destination. 	 * @param providers Dump providers to use. 	 * @return True if dump was created. 	 */
+name|boolean
+name|dump
+parameter_list|(
+name|DumpDestination
+name|destination
+parameter_list|,
+name|DumpProvider
+modifier|...
+name|providers
+parameter_list|)
+function_decl|;
+comment|/** 	 * Creates data witch all dump providers. 	 *  	 * @param destination Store destination. 	 * @return True if dump was created. 	 */
+name|boolean
+name|dumpAll
+parameter_list|(
+name|DumpDestination
+name|destination
+parameter_list|)
 function_decl|;
 block|}
 end_interface
