@@ -321,8 +321,13 @@ literal|null
 operator|||
 name|fileName
 operator|.
-name|isEmpty
+name|trim
 argument_list|()
+operator|.
+name|length
+argument_list|()
+operator|==
+literal|0
 condition|)
 block|{
 name|fileName
