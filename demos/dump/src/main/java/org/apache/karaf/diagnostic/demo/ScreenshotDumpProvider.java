@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|diagnostic
 operator|.
-name|common
+name|demo
 package|;
 end_package
 
@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Create screenshot from all devices.  *   * @author ldywicki  */
+comment|/**  * This demo provider creates images in dump destination which  * contains screenshots from all attached displays.  *   * @author ldywicki  */
 end_comment
 
 begin_class
@@ -142,6 +142,7 @@ name|ScreenshotDumpProvider
 implements|implements
 name|DumpProvider
 block|{
+comment|/** 	 * {@inheritDoc} 	 */
 specifier|public
 name|void
 name|createDump
@@ -160,6 +161,7 @@ operator|.
 name|getLocalGraphicsEnvironment
 argument_list|()
 decl_stmt|;
+comment|// get all graphic devices attached to computer
 name|GraphicsDevice
 index|[]
 name|gs
@@ -169,6 +171,7 @@ operator|.
 name|getScreenDevices
 argument_list|()
 decl_stmt|;
+comment|// create dump entry for each device
 for|for
 control|(
 name|int
@@ -235,6 +238,7 @@ argument_list|(
 name|bounds
 argument_list|)
 decl_stmt|;
+comment|// to attach your entry to destination you have to execute this line
 name|OutputStream
 name|outputStream
 init|=
@@ -246,7 +250,7 @@ literal|"screenshot/display_"
 operator|+
 name|i
 operator|+
-literal|".jpg"
+literal|".png"
 argument_list|)
 decl_stmt|;
 name|ImageIO
@@ -259,6 +263,11 @@ literal|"PNG"
 argument_list|,
 name|outputStream
 argument_list|)
+expr_stmt|;
+name|outputStream
+operator|.
+name|close
+argument_list|()
 expr_stmt|;
 block|}
 block|}

@@ -71,6 +71,10 @@ name|DumpProvider
 import|;
 end_import
 
+begin_comment
+comment|/**  * Base class for dump providers which writes text to destination.  *   * @author ldywicki  */
+end_comment
+
 begin_class
 specifier|public
 specifier|abstract
@@ -79,11 +83,13 @@ name|TextDumpProvider
 implements|implements
 name|DumpProvider
 block|{
+comment|/**      * Name of the file.      */
 specifier|private
 specifier|final
 name|String
 name|name
 decl_stmt|;
+comment|/**      * Creates new dump provider.      *       * @param name Name of the file.      */
 specifier|protected
 name|TextDumpProvider
 parameter_list|(
@@ -98,7 +104,9 @@ operator|=
 name|name
 expr_stmt|;
 block|}
+comment|/**      * {@inheritDoc}      */
 specifier|public
+specifier|final
 name|void
 name|createDump
 parameter_list|(
@@ -133,13 +141,14 @@ name|close
 argument_list|()
 expr_stmt|;
 block|}
+comment|/**      * This method should create output.      *       * @param outputStreamWriter Stream which points to file specified in constructor.      * @throws Exception If any problem occur.      */
 specifier|protected
 specifier|abstract
 name|void
 name|writeDump
 parameter_list|(
 name|OutputStreamWriter
-name|outputStream
+name|outputStreamWriter
 parameter_list|)
 throws|throws
 name|Exception

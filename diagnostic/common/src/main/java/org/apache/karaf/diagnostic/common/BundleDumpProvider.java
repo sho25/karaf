@@ -110,7 +110,7 @@ name|BundleDumpProvider
 extends|extends
 name|TextDumpProvider
 block|{
-comment|/** 	 * Static map with state mask to string representation. 	 */
+comment|/**      * Static map with state mask to string representation.      */
 specifier|private
 specifier|static
 name|Map
@@ -130,6 +130,7 @@ name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
+comment|/**      * Map bundle states to string representation.      */
 static|static
 block|{
 name|stateMap
@@ -141,7 +142,6 @@ argument_list|,
 literal|"UNINSTALLED"
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 name|stateMap
 operator|.
 name|put
@@ -151,7 +151,6 @@ argument_list|,
 literal|"INSTALLED"
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 name|stateMap
 operator|.
 name|put
@@ -161,7 +160,6 @@ argument_list|,
 literal|"RESOLVED"
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 name|stateMap
 operator|.
 name|put
@@ -171,7 +169,6 @@ argument_list|,
 literal|"STARTING"
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 name|stateMap
 operator|.
 name|put
@@ -181,7 +178,6 @@ argument_list|,
 literal|"STOPPING"
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 name|stateMap
 operator|.
 name|put
@@ -191,12 +187,13 @@ argument_list|,
 literal|"ACTIVE"
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 block|}
+comment|/**      * Bundle context.      */
 specifier|private
 name|BundleContext
 name|bundleContext
 decl_stmt|;
+comment|/**      * Creates new bundle information file.      *        * @param context Bundle context to access framework state.      */
 specifier|public
 name|BundleDumpProvider
 parameter_list|(
@@ -216,6 +213,7 @@ operator|=
 name|context
 expr_stmt|;
 block|}
+comment|/**      * {@inheritDoc}      */
 specifier|protected
 name|void
 name|writeDump
@@ -226,6 +224,7 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+comment|// get bundle states
 name|Bundle
 index|[]
 name|bundles
@@ -248,6 +247,7 @@ operator|+
 literal|"\n"
 argument_list|)
 expr_stmt|;
+comment|// create file header
 name|writer
 operator|.
 name|write
@@ -263,6 +263,7 @@ range|:
 name|bundles
 control|)
 block|{
+comment|// write row :)
 name|writer
 operator|.
 name|write
@@ -295,6 +296,11 @@ literal|"\n"
 argument_list|)
 expr_stmt|;
 block|}
+name|writer
+operator|.
+name|flush
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_class

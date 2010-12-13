@@ -110,10 +110,12 @@ name|ZipDumpDestination
 implements|implements
 name|DumpDestination
 block|{
+comment|/**      * Destination streem.      */
 specifier|private
 name|ZipOutputStream
 name|outputStream
 decl_stmt|;
+comment|/**      * Creates new dump in given directory.      *       * @param directory Target directory.      * @param name Name of the archive.      */
 specifier|public
 name|ZipDumpDestination
 parameter_list|(
@@ -136,6 +138,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Creates new dump in given file (zip archive).       *       * @param file Destination file.      */
 specifier|public
 name|ZipDumpDestination
 parameter_list|(
@@ -164,6 +167,8 @@ name|FileNotFoundException
 name|e
 parameter_list|)
 block|{
+comment|// sometimes this can occur, but we simply re throw and let
+comment|// caller handle exception
 throw|throw
 operator|new
 name|RuntimeException
@@ -175,6 +180,7 @@ argument_list|)
 throw|;
 block|}
 block|}
+comment|/**      * {@inheritDoc}      */
 specifier|public
 name|OutputStream
 name|add
@@ -209,6 +215,7 @@ name|outputStream
 argument_list|)
 return|;
 block|}
+comment|/**      * Closes archive handle.      */
 specifier|public
 name|void
 name|save

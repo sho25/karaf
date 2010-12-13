@@ -26,7 +26,7 @@ specifier|public
 interface|interface
 name|DumpProvider
 block|{
-comment|/** 	 * Creates dump. 	 */
+comment|/**      * Creates dump in given entry.      */
 name|void
 name|createDump
 parameter_list|(

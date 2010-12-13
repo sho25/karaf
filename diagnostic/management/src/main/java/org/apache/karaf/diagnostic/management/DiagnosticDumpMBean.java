@@ -13,64 +13,41 @@ name|karaf
 operator|.
 name|diagnostic
 operator|.
-name|core
+name|management
 package|;
 end_package
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
 begin_comment
-comment|/**  * Dump service which allows to customize dump creation process.  *   * @author ldywicki  */
+comment|/**  * Diagnostic MBean which allows to create dumps over JMX.  *   * @author ldywicki  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|DumpService
+name|DiagnosticDumpMBean
 block|{
-comment|/** 	 * Return registered providers. 	 *  	 * @return Providers registered in OSGi service registry. 	 */
-name|List
-argument_list|<
-name|DumpProvider
-argument_list|>
-name|listProviders
-parameter_list|()
-function_decl|;
-comment|/** 	 * List destinations where dumps can be stored. 	 *  	 * @return Destinations registered in OSGi service registry. 	 */
-name|List
-argument_list|<
-name|DumpDestination
-argument_list|>
-name|listDestinations
-parameter_list|()
-function_decl|;
-comment|/** 	 * Make dump using given providers. 	 *  	 * @param destination Store destination. 	 * @param providers Dump providers to use. 	 * @return True if dump was created. 	 */
-name|boolean
-name|dump
+comment|/**      * Creates dump over JMX.      *       * @param name Name of the dump.      * @throws Exception In case of any problems.      */
+name|void
+name|createDump
 parameter_list|(
-name|DumpDestination
-name|destination
+name|String
+name|name
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * Create dump with directory switch and name.      *       * @param directory Should dump be created in directory.      * @param name Name of the dump.      * @throws Exception In case of any problems.      */
+name|void
+name|createDump
+parameter_list|(
+name|boolean
+name|directory
 parameter_list|,
-name|DumpProvider
-modifier|...
-name|providers
+name|String
+name|name
 parameter_list|)
-function_decl|;
-comment|/** 	 * Creates data witch all dump providers. 	 *  	 * @param destination Store destination. 	 * @return True if dump was created. 	 */
-name|boolean
-name|dumpAll
-parameter_list|(
-name|DumpDestination
-name|destination
-parameter_list|)
+throws|throws
+name|Exception
 function_decl|;
 block|}
 end_interface

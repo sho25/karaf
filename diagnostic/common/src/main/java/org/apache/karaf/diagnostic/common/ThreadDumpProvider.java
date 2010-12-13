@@ -92,6 +92,7 @@ name|ThreadDumpProvider
 extends|extends
 name|TextDumpProvider
 block|{
+comment|/**      * Creates new dump entry which contains information about threads.      */
 specifier|public
 name|ThreadDumpProvider
 parameter_list|()
