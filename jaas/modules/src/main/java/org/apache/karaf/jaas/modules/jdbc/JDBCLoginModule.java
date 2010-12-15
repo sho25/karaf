@@ -915,7 +915,7 @@ throw|throw
 operator|new
 name|LoginException
 argument_list|(
-literal|"Error has occured while retrieving credentials from databse:"
+literal|"Error has occured while retrieving credentials from database:"
 operator|+
 name|ex
 operator|.
