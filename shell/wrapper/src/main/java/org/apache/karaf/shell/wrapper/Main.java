@@ -21,6 +21,20 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|main
+operator|.
+name|ShutdownCallback
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|tanukisoftware
 operator|.
 name|wrapper
@@ -51,7 +65,27 @@ class|class
 name|Main
 implements|implements
 name|WrapperListener
+implements|,
+name|ShutdownCallback
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|int
+name|TIMEOUT
+init|=
+literal|1000
+decl_stmt|;
+comment|//wainting timeout for a second should be enough
+specifier|private
+specifier|static
+specifier|final
+name|int
+name|TIMEOUT_OFFSET
+init|=
+literal|500
+decl_stmt|;
+comment|// the offset for the wrapper, to leave us some time to breath
 specifier|private
 name|org
 operator|.
@@ -150,7 +184,11 @@ name|main
 operator|.
 name|destroy
 argument_list|(
-literal|false
+literal|true
+argument_list|,
+name|TIMEOUT
+argument_list|,
+name|this
 argument_list|)
 expr_stmt|;
 block|}
@@ -184,6 +222,22 @@ block|}
 return|return
 name|exitCode
 return|;
+block|}
+comment|/**      * Call-back method is called by the @{link org.apache.karaf.main.Main} for Signaling       * that the stopping process is in progress and the wrapper doesn't kill the JVM.        */
+specifier|public
+name|void
+name|waitingForShutdown
+parameter_list|()
+block|{
+name|WrapperManager
+operator|.
+name|signalStopping
+argument_list|(
+name|TIMEOUT
+operator|+
+name|TIMEOUT_OFFSET
+argument_list|)
+expr_stmt|;
 block|}
 comment|/**      * Called whenever the native Wrapper code traps a system control signal      *  against the Java process.  It is up to the callback to take any actions      *  necessary.  Possible values are: WrapperManager.WRAPPER_CTRL_C_EVENT,      *    WRAPPER_CTRL_CLOSE_EVENT, WRAPPER_CTRL_LOGOFF_EVENT, or      *    WRAPPER_CTRL_SHUTDOWN_EVENT      *      * @param event The system control signal.      */
 specifier|public
