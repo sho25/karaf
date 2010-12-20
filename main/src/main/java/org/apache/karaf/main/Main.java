@@ -2499,6 +2499,11 @@ literal|null
 condition|)
 do|;
 comment|// Now loop through and start the installed bundles.
+if|if
+condition|(
+name|start
+condition|)
+block|{
 for|for
 control|(
 name|Bundle
@@ -2575,6 +2580,7 @@ operator|+
 name|ex
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
