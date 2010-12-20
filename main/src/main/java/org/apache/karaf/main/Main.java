@@ -2143,6 +2143,8 @@ argument_list|,
 name|sl
 argument_list|,
 name|convertToMavenUrls
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 comment|// The auto-start property specifies a space-delimited list of
@@ -2150,14 +2152,8 @@ comment|// bundle URLs to be automatically installed and started into each
 comment|// new profile; the start level to which the bundles are assigned
 comment|// is specified by appending a ".n" to the auto-start property name,
 comment|// where "n" is the desired start level for the list of bundles.
-comment|// The following code starts bundles in two passes, first it installs
-comment|// them, then it starts them.
-name|List
-argument_list|<
-name|Bundle
-argument_list|>
-name|bundlesToStart
-init|=
+comment|// The following code starts bundles in one pass, installing bundles
+comment|// for a given level, then starting them, then moving to the next level.
 name|autoInstall
 argument_list|(
 name|PROPERTY_AUTO_START
@@ -2167,44 +2163,10 @@ argument_list|,
 name|sl
 argument_list|,
 name|convertToMavenUrls
-argument_list|)
-decl_stmt|;
-comment|// Now loop through and start the installed bundles.
-for|for
-control|(
-name|Bundle
-name|b
-range|:
-name|bundlesToStart
-control|)
-block|{
-try|try
-block|{
-name|b
-operator|.
-name|start
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|ex
-parameter_list|)
-block|{
-name|System
-operator|.
-name|err
-operator|.
-name|println
-argument_list|(
-literal|"Auto-properties start: "
-operator|+
-name|ex
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
-block|}
-block|}
 block|}
 specifier|private
 name|List
@@ -2224,6 +2186,9 @@ name|sl
 parameter_list|,
 name|boolean
 name|convertToMavenUrls
+parameter_list|,
+name|boolean
+name|start
 parameter_list|)
 block|{
 name|Map
@@ -2408,6 +2373,19 @@ operator|>
 literal|0
 condition|)
 block|{
+name|List
+argument_list|<
+name|Bundle
+argument_list|>
+name|bundlesLevel
+init|=
+operator|new
+name|ArrayList
+argument_list|<
+name|Bundle
+argument_list|>
+argument_list|()
+decl_stmt|;
 name|String
 name|location
 decl_stmt|;
@@ -2481,6 +2459,13 @@ argument_list|(
 name|b
 argument_list|)
 expr_stmt|;
+name|bundlesLevel
+operator|.
+name|add
+argument_list|(
+name|b
+argument_list|)
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
@@ -2494,7 +2479,11 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"Auto-properties install:"
+literal|"Error installing bundle  "
+operator|+
+name|location
+operator|+
+literal|": "
 operator|+
 name|ex
 argument_list|)
@@ -2509,6 +2498,85 @@ operator|!=
 literal|null
 condition|)
 do|;
+comment|// Now loop through and start the installed bundles.
+for|for
+control|(
+name|Bundle
+name|b
+range|:
+name|bundlesLevel
+control|)
+block|{
+try|try
+block|{
+name|String
+name|fragmentHostHeader
+init|=
+operator|(
+name|String
+operator|)
+name|b
+operator|.
+name|getHeaders
+argument_list|()
+operator|.
+name|get
+argument_list|(
+name|Constants
+operator|.
+name|FRAGMENT_HOST
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|fragmentHostHeader
+operator|==
+literal|null
+operator|||
+name|fragmentHostHeader
+operator|.
+name|trim
+argument_list|()
+operator|.
+name|length
+argument_list|()
+operator|==
+literal|0
+condition|)
+block|{
+name|b
+operator|.
+name|start
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|ex
+parameter_list|)
+block|{
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+literal|"Error starting bundle "
+operator|+
+name|b
+operator|.
+name|getSymbolicName
+argument_list|()
+operator|+
+literal|": "
+operator|+
+name|ex
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 block|}
 return|return
