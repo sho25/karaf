@@ -580,11 +580,19 @@ name|waitForFrameworkStartup
 argument_list|()
 argument_list|,
 comment|// Test on both equinox and felix
+comment|// TODO: pax-exam does not support the latest felix version :-(
+comment|// TODO: so we use the higher supported which should be the same
+comment|// TODO: as the one specified in itests/dependencies/pom.xml
 name|equinox
 argument_list|()
 argument_list|,
 name|felix
 argument_list|()
+operator|.
+name|version
+argument_list|(
+literal|"3.0.2"
+argument_list|)
 argument_list|,
 name|felixProvisionalApis
 argument_list|()
