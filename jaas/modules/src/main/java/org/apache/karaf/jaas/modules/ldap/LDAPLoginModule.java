@@ -777,13 +777,23 @@ name|startsWith
 argument_list|(
 literal|"ldap:"
 argument_list|)
+operator|&&
+operator|!
+name|connectionURL
+operator|.
+name|startsWith
+argument_list|(
+literal|"ldaps:"
+argument_list|)
 condition|)
 block|{
 name|LOG
 operator|.
 name|error
 argument_list|(
-literal|"Invalid LDAP URL."
+literal|"Invalid LDAP URL: "
+operator|+
+name|connectionURL
 argument_list|)
 expr_stmt|;
 block|}
