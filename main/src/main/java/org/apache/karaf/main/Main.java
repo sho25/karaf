@@ -2373,19 +2373,6 @@ operator|>
 literal|0
 condition|)
 block|{
-name|List
-argument_list|<
-name|Bundle
-argument_list|>
-name|bundlesLevel
-init|=
-operator|new
-name|ArrayList
-argument_list|<
-name|Bundle
-argument_list|>
-argument_list|()
-decl_stmt|;
 name|String
 name|location
 decl_stmt|;
@@ -2459,13 +2446,6 @@ argument_list|(
 name|b
 argument_list|)
 expr_stmt|;
-name|bundlesLevel
-operator|.
-name|add
-argument_list|(
-name|b
-argument_list|)
-expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
@@ -2498,6 +2478,8 @@ operator|!=
 literal|null
 condition|)
 do|;
+block|}
+block|}
 comment|// Now loop through and start the installed bundles.
 if|if
 condition|(
@@ -2509,7 +2491,7 @@ control|(
 name|Bundle
 name|b
 range|:
-name|bundlesLevel
+name|bundles
 control|)
 block|{
 try|try
@@ -2580,8 +2562,6 @@ operator|+
 name|ex
 argument_list|)
 expr_stmt|;
-block|}
-block|}
 block|}
 block|}
 block|}
