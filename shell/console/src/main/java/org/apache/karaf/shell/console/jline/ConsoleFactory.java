@@ -390,7 +390,14 @@ name|put
 argument_list|(
 literal|"USER"
 argument_list|,
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"user.name"
+argument_list|,
 literal|"karaf"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|session
