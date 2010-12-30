@@ -3785,18 +3785,6 @@ name|IOException
 throws|,
 name|BundleException
 block|{
-name|LOGGER
-operator|.
-name|debug
-argument_list|(
-literal|"Checking "
-operator|+
-name|bundleInfo
-operator|.
-name|getLocation
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|InputStream
 name|is
 decl_stmt|;
@@ -3808,6 +3796,15 @@ operator|.
 name|getLocation
 argument_list|()
 decl_stmt|;
+name|LOGGER
+operator|.
+name|debug
+argument_list|(
+literal|"Checking "
+operator|+
+name|bundleLocation
+argument_list|)
+expr_stmt|;
 try|try
 block|{
 name|is
@@ -3885,7 +3882,9 @@ throw|throw
 operator|new
 name|BundleException
 argument_list|(
-literal|"Manifest not present in the first entry of the zip"
+literal|"Manifest not present in the first entry of the zip "
+operator|+
+name|bundleLocation
 argument_list|)
 throw|;
 block|}
