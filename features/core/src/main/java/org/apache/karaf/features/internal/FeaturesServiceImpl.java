@@ -2152,6 +2152,46 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"Installing feature "
+operator|+
+name|feature
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|feature
+operator|.
+name|getVersion
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Installing feature "
+operator|+
+name|feature
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|feature
+operator|.
+name|getVersion
+argument_list|()
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Feature
@@ -4014,9 +4054,20 @@ condition|)
 block|{
 name|LOGGER
 operator|.
-name|debug
+name|info
 argument_list|(
-literal|"  found installed bundle: "
+literal|"Found installed bundle: "
+operator|+
+name|b
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Found installed bundle: "
 operator|+
 name|b
 argument_list|)
@@ -4071,9 +4122,20 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Installing bundle "
+operator|+
+name|bundleLocation
+argument_list|)
+expr_stmt|;
 name|LOGGER
 operator|.
-name|debug
+name|info
 argument_list|(
 literal|"Installing bundle "
 operator|+
@@ -4166,9 +4228,20 @@ name|IOException
 block|{
 name|LOGGER
 operator|.
-name|debug
+name|info
 argument_list|(
-literal|"Checking "
+literal|"Checking configuration file "
+operator|+
+name|fileLocation
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Checking configuration file "
 operator|+
 name|fileLocation
 argument_list|)
