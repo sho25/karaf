@@ -64,6 +64,8 @@ block|,
 name|NoAutoRefreshBundles
 block|,
 name|ContinueBatchOnFailure
+block|,
+name|Verbose
 block|}
 name|void
 name|addRepository

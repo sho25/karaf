@@ -1295,6 +1295,20 @@ operator|new
 name|InstallationState
 argument_list|()
 decl_stmt|;
+name|boolean
+name|verbose
+init|=
+name|options
+operator|.
+name|contains
+argument_list|(
+name|FeaturesService
+operator|.
+name|Option
+operator|.
+name|Verbose
+argument_list|)
+decl_stmt|;
 try|try
 block|{
 comment|// Install everything
@@ -1320,6 +1334,8 @@ argument_list|(
 name|s
 argument_list|,
 name|f
+argument_list|,
+name|verbose
 argument_list|)
 expr_stmt|;
 name|state
@@ -2148,6 +2164,9 @@ name|state
 parameter_list|,
 name|Feature
 name|feature
+parameter_list|,
+name|boolean
+name|verbose
 parameter_list|)
 throws|throws
 name|Exception
@@ -2171,6 +2190,11 @@ name|getVersion
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|verbose
+condition|)
+block|{
 name|System
 operator|.
 name|out
@@ -2192,6 +2216,7 @@ name|getVersion
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 for|for
 control|(
 name|Feature
@@ -2456,6 +2481,8 @@ argument_list|(
 name|state
 argument_list|,
 name|fi
+argument_list|,
+name|verbose
 argument_list|)
 expr_stmt|;
 block|}
@@ -2638,6 +2665,8 @@ name|configFile
 operator|.
 name|getFinalname
 argument_list|()
+argument_list|,
+name|verbose
 argument_list|)
 expr_stmt|;
 block|}
@@ -2673,6 +2702,8 @@ argument_list|(
 name|state
 argument_list|,
 name|bInfo
+argument_list|,
+name|verbose
 argument_list|)
 decl_stmt|;
 name|bundles
@@ -3819,6 +3850,9 @@ name|state
 parameter_list|,
 name|BundleInfo
 name|bundleInfo
+parameter_list|,
+name|boolean
+name|verbose
 parameter_list|)
 throws|throws
 name|IOException
@@ -4061,6 +4095,11 @@ operator|+
 name|b
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|verbose
+condition|)
+block|{
 name|System
 operator|.
 name|out
@@ -4072,6 +4111,7 @@ operator|+
 name|b
 argument_list|)
 expr_stmt|;
+block|}
 name|state
 operator|.
 name|bundles
@@ -4122,6 +4162,20 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"Installing bundle "
+operator|+
+name|bundleLocation
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|verbose
+condition|)
+block|{
 name|System
 operator|.
 name|out
@@ -4133,15 +4187,7 @@ operator|+
 name|bundleLocation
 argument_list|)
 expr_stmt|;
-name|LOGGER
-operator|.
-name|info
-argument_list|(
-literal|"Installing bundle "
-operator|+
-name|bundleLocation
-argument_list|)
-expr_stmt|;
+block|}
 name|Bundle
 name|b
 init|=
@@ -4222,6 +4268,9 @@ name|fileLocation
 parameter_list|,
 name|String
 name|finalname
+parameter_list|,
+name|boolean
+name|verbose
 parameter_list|)
 throws|throws
 name|IOException
@@ -4235,6 +4284,11 @@ operator|+
 name|fileLocation
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|verbose
+condition|)
+block|{
 name|System
 operator|.
 name|out
@@ -4246,6 +4300,7 @@ operator|+
 name|fileLocation
 argument_list|)
 expr_stmt|;
+block|}
 name|String
 name|basePath
 init|=
