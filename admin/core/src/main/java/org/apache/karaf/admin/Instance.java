@@ -44,6 +44,13 @@ name|String
 name|getName
 parameter_list|()
 function_decl|;
+name|void
+name|setName
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+function_decl|;
 name|boolean
 name|isRoot
 parameter_list|()
@@ -51,6 +58,13 @@ function_decl|;
 name|String
 name|getLocation
 parameter_list|()
+function_decl|;
+name|void
+name|setLocation
+parameter_list|(
+name|String
+name|location
+parameter_list|)
 function_decl|;
 name|int
 name|getPid
