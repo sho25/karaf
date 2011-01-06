@@ -264,9 +264,7 @@ block|{
 name|main
 operator|.
 name|destroy
-argument_list|(
-literal|false
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 block|}
