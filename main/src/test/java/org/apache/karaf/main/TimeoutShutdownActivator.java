@@ -15,25 +15,74 @@ name|main
 package|;
 end_package
 
-begin_comment
-comment|/**  *<p>  * This interface is a callback interface for the stoping process.   * It's main purpose is to give the ServiceWrapper a way of waiting   * for the Framework to gracefully stop the Server.   *<p>  */
-end_comment
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
+name|BundleActivator
+import|;
+end_import
 
-begin_interface
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
+name|BundleContext
+import|;
+end_import
+
+begin_class
 specifier|public
-interface|interface
-name|ShutdownCallback
+class|class
+name|TimeoutShutdownActivator
+implements|implements
+name|BundleActivator
 block|{
-comment|/** 	 * The callback method invoked to inform anyone listening that the  	 * Main class is still waiting for the completion of the shutdown.  	 */
-name|void
-name|waitingForShutdown
-parameter_list|(
+specifier|public
+specifier|static
 name|int
-name|delay
+name|TIMEOUT
+init|=
+literal|10000
+decl_stmt|;
+specifier|public
+name|void
+name|start
+parameter_list|(
+name|BundleContext
+name|context
 parameter_list|)
-function_decl|;
+throws|throws
+name|Exception
+block|{     }
+specifier|public
+name|void
+name|stop
+parameter_list|(
+name|BundleContext
+name|context
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+name|TIMEOUT
+argument_list|)
+expr_stmt|;
 block|}
-end_interface
+block|}
+end_class
 
 end_unit
 
