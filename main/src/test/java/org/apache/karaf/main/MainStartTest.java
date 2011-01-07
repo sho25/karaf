@@ -515,6 +515,15 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|System
+operator|.
+name|setProperty
+argument_list|(
+literal|"karaf.framework.factory"
+argument_list|,
+literal|"org.apache.felix.framework.FrameworkFactory"
+argument_list|)
+expr_stmt|;
 name|Main
 name|main
 init|=
