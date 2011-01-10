@@ -67,6 +67,16 @@ name|ContinueBatchOnFailure
 block|,
 name|Verbose
 block|}
+comment|/**      * Validate repository contents.      *       * @param uri Repository uri.      * @throws Exception When validation fails.      */
+name|void
+name|validateRepository
+parameter_list|(
+name|URI
+name|uri
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 name|void
 name|addRepository
 parameter_list|(
