@@ -376,6 +376,13 @@ name|failOnArtifactResolutionError
 init|=
 literal|true
 decl_stmt|;
+comment|/**      * @parameter      */
+specifier|private
+name|boolean
+name|addTransitiveFeatures
+init|=
+literal|true
+decl_stmt|;
 specifier|public
 name|void
 name|execute
@@ -484,6 +491,19 @@ name|Set
 argument_list|<
 name|String
 argument_list|>
+name|featuresBundles
+init|=
+operator|new
+name|HashSet
+argument_list|<
+name|String
+argument_list|>
+argument_list|()
+decl_stmt|;
+name|Set
+argument_list|<
+name|String
+argument_list|>
 name|transitiveFeatures
 init|=
 operator|new
@@ -497,11 +517,30 @@ name|addFeatures
 argument_list|(
 name|features
 argument_list|,
+name|featuresBundles
+argument_list|,
 name|transitiveFeatures
 argument_list|,
 name|featuresMap
 argument_list|)
 expr_stmt|;
+comment|// add the bundles of the configured features to the bundles list
+name|bundles
+operator|.
+name|addAll
+argument_list|(
+name|featuresBundles
+argument_list|)
+expr_stmt|;
+comment|// if transitive features are enabled we add the contents of those
+comment|// features to the bundles list
+if|if
+condition|(
+name|this
+operator|.
+name|addTransitiveFeatures
+condition|)
+block|{
 for|for
 control|(
 name|String
@@ -510,6 +549,16 @@ range|:
 name|transitiveFeatures
 control|)
 block|{
+name|getLog
+argument_list|()
+operator|.
+name|info
+argument_list|(
+literal|"Adding contents of transitive feature: "
+operator|+
+name|feature
+argument_list|)
+expr_stmt|;
 name|bundles
 operator|.
 name|addAll
@@ -541,6 +590,7 @@ name|getConfigFiles
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|getLog
 argument_list|()
@@ -1102,6 +1152,12 @@ name|Set
 argument_list|<
 name|String
 argument_list|>
+name|featuresBundles
+parameter_list|,
+name|Set
+argument_list|<
+name|String
+argument_list|>
 name|transitiveFeatures
 parameter_list|,
 name|Map
@@ -1150,6 +1206,21 @@ literal|"'"
 argument_list|)
 throw|;
 block|}
+comment|// only add the feature to transitives if it is not
+comment|// listed in the features list defined by the config
+if|if
+condition|(
+operator|!
+name|this
+operator|.
+name|features
+operator|.
+name|contains
+argument_list|(
+name|feature
+argument_list|)
+condition|)
+block|{
 name|transitiveFeatures
 operator|.
 name|add
@@ -1157,12 +1228,60 @@ argument_list|(
 name|feature
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+comment|// add the bundles of the feature to the bundle set
+name|getLog
+argument_list|()
+operator|.
+name|info
+argument_list|(
+literal|"Adding contents for feature: "
+operator|+
+name|feature
+argument_list|)
+expr_stmt|;
+name|featuresBundles
+operator|.
+name|addAll
+argument_list|(
+name|featuresMap
+operator|.
+name|get
+argument_list|(
+name|feature
+argument_list|)
+operator|.
+name|getBundles
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|//Treat the config files as bundles, since it is only copying
+name|featuresBundles
+operator|.
+name|addAll
+argument_list|(
+name|featuresMap
+operator|.
+name|get
+argument_list|(
+name|feature
+argument_list|)
+operator|.
+name|getConfigFiles
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 name|addFeatures
 argument_list|(
 name|f
 operator|.
 name|getDependencies
 argument_list|()
+argument_list|,
+name|featuresBundles
 argument_list|,
 name|transitiveFeatures
 argument_list|,
