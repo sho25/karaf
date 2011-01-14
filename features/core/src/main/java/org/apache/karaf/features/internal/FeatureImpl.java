@@ -219,6 +219,13 @@ init|=
 literal|"0.0.0"
 decl_stmt|;
 specifier|public
+specifier|static
+name|String
+name|VERSION_PREFIX
+init|=
+literal|"version="
+decl_stmt|;
+specifier|public
 name|FeatureImpl
 parameter_list|()
 block|{     }
