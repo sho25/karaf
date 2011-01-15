@@ -63,6 +63,44 @@ begin_import
 import|import
 name|org
 operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|web
+operator|.
+name|service
+operator|.
+name|spi
+operator|.
+name|WebEvent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|web
+operator|.
+name|service
+operator|.
+name|spi
+operator|.
+name|WebEvent
+operator|.
+name|WebTopic
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|osgi
 operator|.
 name|framework
@@ -149,7 +187,7 @@ name|Map
 argument_list|<
 name|Long
 argument_list|,
-name|String
+name|WebEvent
 argument_list|>
 name|bundleEvents
 init|=
@@ -207,7 +245,7 @@ name|webState
 operator|+
 name|level
 operator|+
-literal|"  Web-ContextPath           Name"
+literal|" Web-ContextPath           Name"
 expr_stmt|;
 name|System
 operator|.
@@ -700,7 +738,7 @@ name|Map
 argument_list|<
 name|Long
 argument_list|,
-name|String
+name|WebEvent
 argument_list|>
 name|bundleEvents
 init|=
@@ -708,6 +746,11 @@ name|eventHandler
 operator|.
 name|getBundleEvents
 argument_list|()
+decl_stmt|;
+name|String
+name|topic
+init|=
+literal|"Unknown    "
 decl_stmt|;
 if|if
 condition|(
@@ -719,8 +762,8 @@ name|bundleId
 argument_list|)
 condition|)
 block|{
-name|String
-name|topic
+name|WebEvent
+name|webEvent
 init|=
 name|bundleEvents
 operator|.
@@ -729,82 +772,92 @@ argument_list|(
 name|bundleId
 argument_list|)
 decl_stmt|;
+switch|switch
+condition|(
+name|webEvent
+operator|.
+name|getType
+argument_list|()
+condition|)
+block|{
+case|case
+name|WebEvent
+operator|.
+name|DEPLOYING
+case|:
 name|topic
 operator|=
-name|topic
-operator|.
-name|substring
-argument_list|(
-literal|21
-argument_list|)
+literal|"Deploying  "
 expr_stmt|;
-if|if
-condition|(
-literal|"UNDEPLOYING"
+break|break;
+case|case
+name|WebEvent
 operator|.
-name|equalsIgnoreCase
-argument_list|(
+name|DEPLOYED
+case|:
 name|topic
-argument_list|)
-condition|)
-return|return
-literal|"Undeploying "
-return|;
-elseif|else
-if|if
-condition|(
-literal|"DEPLOYING"
+operator|=
+literal|"Deployed   "
+expr_stmt|;
+break|break;
+case|case
+name|WebEvent
 operator|.
-name|equalsIgnoreCase
-argument_list|(
+name|UNDEPLOYING
+case|:
 name|topic
-argument_list|)
-condition|)
-return|return
-literal|"Deploying   "
-return|;
-elseif|else
-if|if
-condition|(
-literal|"DEPLOYED"
+operator|=
+literal|"Undeploying"
+expr_stmt|;
+break|break;
+case|case
+name|WebEvent
 operator|.
-name|equalsIgnoreCase
-argument_list|(
+name|UNDEPLOYED
+case|:
 name|topic
-argument_list|)
-condition|)
-return|return
-literal|"Deployed    "
-return|;
-elseif|else
-if|if
-condition|(
-literal|"FAILED"
+operator|=
+literal|"Undeployed "
+expr_stmt|;
+break|break;
+case|case
+name|WebEvent
 operator|.
-name|equalsIgnoreCase
-argument_list|(
+name|FAILED
+case|:
 name|topic
-argument_list|)
-condition|)
-return|return
-literal|"Failed      "
-return|;
-elseif|else
-if|if
+operator|=
+literal|"Unknown    "
+expr_stmt|;
+name|topic
+operator|=
+literal|"Failed     "
+expr_stmt|;
+break|break;
+default|default:
+name|topic
+operator|=
+literal|"Failed     "
+expr_stmt|;
+block|}
+block|}
+while|while
 condition|(
-literal|"UNDEPLOYED"
-operator|.
-name|equalsIgnoreCase
-argument_list|(
 name|topic
-argument_list|)
+operator|.
+name|length
+argument_list|()
+operator|<
+literal|11
 condition|)
-return|return
-literal|"Undeployed  "
-return|;
+block|{
+name|topic
+operator|+=
+literal|" "
+expr_stmt|;
 block|}
 return|return
-literal|"Unknown     "
+name|topic
 return|;
 block|}
 comment|/** 	 * @param startLevelService the startLevelService to set 	 */
