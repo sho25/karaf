@@ -342,6 +342,8 @@ specifier|private
 name|String
 name|version
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp
@@ -516,6 +518,8 @@ name|getVersion
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|tearDown
