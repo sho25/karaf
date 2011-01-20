@@ -841,6 +841,9 @@ name|format
 argument_list|,
 name|arg
 argument_list|)
+operator|.
+name|getMessage
+argument_list|()
 decl_stmt|;
 name|doLog
 argument_list|(
@@ -891,6 +894,9 @@ name|arg1
 argument_list|,
 name|arg2
 argument_list|)
+operator|.
+name|getMessage
+argument_list|()
 decl_stmt|;
 name|doLog
 argument_list|(
@@ -937,6 +943,9 @@ name|format
 argument_list|,
 name|args
 argument_list|)
+operator|.
+name|getMessage
+argument_list|()
 decl_stmt|;
 name|doLog
 argument_list|(
