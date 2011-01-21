@@ -69,11 +69,13 @@ begin_import
 import|import
 name|org
 operator|.
-name|fusesource
+name|apache
 operator|.
-name|jansi
+name|karaf
 operator|.
-name|Ansi
+name|util
+operator|.
+name|StringEscapeUtils
 import|;
 end_import
 
@@ -383,7 +385,12 @@ name|out
 operator|.
 name|println
 argument_list|(
+name|StringEscapeUtils
+operator|.
+name|unescapeJava
+argument_list|(
 name|line
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
