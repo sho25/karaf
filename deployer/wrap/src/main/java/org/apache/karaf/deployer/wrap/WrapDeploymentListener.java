@@ -108,6 +108,25 @@ parameter_list|)
 block|{
 try|try
 block|{
+comment|// only handle .jar files
+if|if
+condition|(
+operator|!
+name|artifact
+operator|.
+name|getPath
+argument_list|()
+operator|.
+name|endsWith
+argument_list|(
+literal|".jar"
+argument_list|)
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
 name|JarFile
 name|jar
 init|=
