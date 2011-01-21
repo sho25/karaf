@@ -325,7 +325,6 @@ name|title
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g
 name|URL
 name|bundleInfo
 init|=
