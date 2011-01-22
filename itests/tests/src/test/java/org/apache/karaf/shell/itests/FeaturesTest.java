@@ -407,7 +407,7 @@ argument_list|,
 comment|// add two features
 name|Helper
 operator|.
-name|loadKarafFeatures
+name|loadKarafStandardFeatures
 argument_list|(
 literal|"obr"
 argument_list|,
