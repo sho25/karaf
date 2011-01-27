@@ -324,14 +324,7 @@ specifier|final
 name|String
 name|user
 init|=
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"user.name"
-argument_list|,
 literal|"karaf"
-argument_list|)
 decl_stmt|;
 name|subject
 operator|.
