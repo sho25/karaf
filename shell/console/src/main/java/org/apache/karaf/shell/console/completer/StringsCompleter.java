@@ -307,13 +307,22 @@ name|toLowerCase
 argument_list|()
 expr_stmt|;
 block|}
+comment|// KARAF-421, use getStrings() instead strings field.
 name|SortedSet
 argument_list|<
 name|String
 argument_list|>
 name|matches
 init|=
-name|strings
+operator|new
+name|TreeSet
+argument_list|<
+name|String
+argument_list|>
+argument_list|(
+name|getStrings
+argument_list|()
+argument_list|)
 operator|.
 name|tailSet
 argument_list|(
