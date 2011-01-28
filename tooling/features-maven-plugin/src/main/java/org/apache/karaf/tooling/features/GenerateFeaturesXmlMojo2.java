@@ -159,13 +159,13 @@ end_import
 
 begin_import
 import|import
-name|java
+name|javax
 operator|.
-name|util
+name|xml
 operator|.
-name|zip
+name|bind
 operator|.
-name|ZipException
+name|JAXBException
 import|;
 end_import
 
@@ -182,6 +182,70 @@ operator|.
 name|version
 operator|.
 name|VersionRange
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
+operator|.
+name|Bundle
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
+operator|.
+name|Feature
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
+operator|.
+name|FeaturesRoot
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
+operator|.
+name|ObjectFactory
 import|;
 end_import
 
@@ -528,7 +592,7 @@ specifier|private
 name|DependencyTreeBuilder
 name|dependencyTreeBuilder
 decl_stmt|;
-comment|/**      * The file to generate      *       * @parameter default-value="${project.build.directory}/classes/feature.xml"      */
+comment|/**      * The file to generate      *       * @parameter default-value="${project.build.directory}/feature/feature.xml"      */
 specifier|private
 name|File
 name|outputFile
@@ -669,6 +733,19 @@ literal|null
 decl_stmt|;
 try|try
 block|{
+name|File
+name|dir
+init|=
+name|outputFile
+operator|.
+name|getParentFile
+argument_list|()
+decl_stmt|;
+name|dir
+operator|.
+name|mkdirs
+argument_list|()
+expr_stmt|;
 name|out
 operator|=
 operator|new
@@ -956,9 +1033,9 @@ name|ArtifactResolutionException
 throws|,
 name|ArtifactNotFoundException
 throws|,
-name|ZipException
-throws|,
 name|IOException
+throws|,
+name|JAXBException
 block|{
 name|getLogger
 argument_list|()
@@ -973,33 +1050,53 @@ name|getAbsolutePath
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|out
+name|ObjectFactory
+name|objectFactory
+init|=
+operator|new
+name|ObjectFactory
+argument_list|()
+decl_stmt|;
+name|FeaturesRoot
+name|featuresRoot
+init|=
+name|objectFactory
 operator|.
-name|println
+name|createFeaturesRoot
+argument_list|()
+decl_stmt|;
+name|Feature
+name|feature
+init|=
+name|objectFactory
+operator|.
+name|createFeature
+argument_list|()
+decl_stmt|;
+name|featuresRoot
+operator|.
+name|getFeature
+argument_list|()
+operator|.
+name|add
 argument_list|(
-literal|"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+name|feature
 argument_list|)
 expr_stmt|;
-name|out
+name|feature
 operator|.
-name|println
+name|setName
 argument_list|(
-literal|"<features>"
-argument_list|)
-expr_stmt|;
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"<feature name='"
-operator|+
 name|project
 operator|.
 name|getArtifactId
 argument_list|()
-operator|+
-literal|"' version='"
-operator|+
+argument_list|)
+expr_stmt|;
+name|feature
+operator|.
+name|setVersion
+argument_list|(
 name|project
 operator|.
 name|getArtifact
@@ -1007,8 +1104,6 @@ argument_list|()
 operator|.
 name|getBaseVersion
 argument_list|()
-operator|+
-literal|"'>"
 argument_list|)
 expr_stmt|;
 for|for
@@ -1019,6 +1114,9 @@ range|:
 name|localDependencies
 control|)
 block|{
+name|String
+name|bundleName
+decl_stmt|;
 if|if
 condition|(
 name|artifact
@@ -1032,15 +1130,13 @@ literal|"jar"
 argument_list|)
 condition|)
 block|{
-name|out
-operator|.
-name|println
-argument_list|(
+name|bundleName
+operator|=
 name|String
 operator|.
 name|format
 argument_list|(
-literal|"<bundle>mvn:%s/%s/%s</bundle>"
+literal|"mvn:%s/%s/%s"
 argument_list|,
 name|artifact
 operator|.
@@ -1057,20 +1153,17 @@ operator|.
 name|getBaseVersion
 argument_list|()
 argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 else|else
 block|{
-name|out
-operator|.
-name|println
-argument_list|(
+name|bundleName
+operator|=
 name|String
 operator|.
 name|format
 argument_list|(
-literal|"<bundle>mvn:%s/%s/%s/%s</bundle>"
+literal|"mvn:%s/%s/%s/%s"
 argument_list|,
 name|artifact
 operator|.
@@ -1092,30 +1185,67 @@ operator|.
 name|getType
 argument_list|()
 argument_list|)
+expr_stmt|;
+block|}
+name|Bundle
+name|bundle
+init|=
+name|objectFactory
+operator|.
+name|createBundle
+argument_list|()
+decl_stmt|;
+name|bundle
+operator|.
+name|setValue
+argument_list|(
+name|bundleName
+argument_list|)
+expr_stmt|;
+name|feature
+operator|.
+name|getBundle
+argument_list|()
+operator|.
+name|add
+argument_list|(
+name|bundle
 argument_list|)
 expr_stmt|;
 block|}
-comment|//            if (!artifact.getScope().equals(Artifact.SCOPE_PROVIDED)&& !artifact.getType().equals("pom")) {
-comment|//                getLogger().info(" Generating feature " + artifact.getArtifactId() + " from " + artifact);
-comment|//                Feature feature = getFeature(artifact);
-comment|//                feature.write(out);
-comment|////                registerFeature(artifact, feature);
+name|JaxbUtil
+operator|.
+name|marshal
+argument_list|(
+name|FeaturesRoot
+operator|.
+name|class
+argument_list|,
+name|featuresRoot
+argument_list|,
+name|out
+argument_list|)
+expr_stmt|;
+comment|//        out.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+comment|//        out.println("<features>");
+comment|//        out.println("<feature name='" + project.getArtifactId() + "' version='"
+comment|//                + project.getArtifact().getBaseVersion() + "'>");
+comment|//
+comment|//        for (Artifact artifact : localDependencies) {
+comment|//            if (artifact.getType().equals("jar")) {
+comment|//                out.println(String.format("<bundle>mvn:%s/%s/%s</bundle>", artifact.getGroupId(), artifact.getArtifactId(), artifact.getBaseVersion()));
+comment|//            } else {
+comment|//                out.println(String.format("<bundle>mvn:%s/%s/%s/%s</bundle>", artifact.getGroupId(), artifact.getArtifactId(), artifact.getBaseVersion(), artifact.getType()));
 comment|//            }
-block|}
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"</feature>"
-argument_list|)
-expr_stmt|;
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"</features>"
-argument_list|)
-expr_stmt|;
+comment|////            if (!artifact.getScope().equals(Artifact.SCOPE_PROVIDED)&& !artifact.getType().equals("pom")) {
+comment|////                getLogger().info(" Generating feature " + artifact.getArtifactId() + " from " + artifact);
+comment|////                Feature feature = getFeature(artifact);
+comment|////                feature.write(out);
+comment|//////                registerFeature(artifact, feature);
+comment|////            }
+comment|//        }
+comment|//        out.println("</feature>");
+comment|//        out.println("</features>");
 name|getLogger
 argument_list|()
 operator|.
