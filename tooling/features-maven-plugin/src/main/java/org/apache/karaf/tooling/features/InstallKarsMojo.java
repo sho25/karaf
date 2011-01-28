@@ -223,10 +223,6 @@ specifier|protected
 name|String
 name|localRepoDirectory
 decl_stmt|;
-specifier|private
-name|Properties
-name|featuresCfgProperties
-decl_stmt|;
 specifier|public
 name|void
 name|execute
