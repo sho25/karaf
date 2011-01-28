@@ -252,7 +252,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * assembles a kar archive from a features.xml file  *  * @version $Revision: 1.1 $  * @goal archive-kar  * @phase compile  * @execute phase="package"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Assemble a kar archive from a features.xml file  */
+comment|/**  * assembles a kar archive from a features.xml file  *  * @version $Revision: 1.1 $  * @goal archive-kar  * @phase package  * @execute phase="package"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Assemble a kar archive from a features.xml file  */
 end_comment
 
 begin_class
@@ -320,6 +320,8 @@ comment|/**      * The internal repository in the kar.      *      * @parameter 
 specifier|private
 name|String
 name|repositoryPath
+init|=
+literal|"repository/"
 decl_stmt|;
 comment|//
 comment|// Mojo
