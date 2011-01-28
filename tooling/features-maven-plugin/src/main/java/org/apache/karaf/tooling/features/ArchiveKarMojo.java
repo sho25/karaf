@@ -111,7 +111,7 @@ name|features
 operator|.
 name|internal
 operator|.
-name|FeaturesRoot
+name|Features
 import|;
 end_import
 
@@ -201,20 +201,6 @@ name|apache
 operator|.
 name|maven
 operator|.
-name|model
-operator|.
-name|Resource
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|maven
-operator|.
 name|plugin
 operator|.
 name|MojoExecutionException
@@ -278,13 +264,6 @@ name|jarArchiver
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * The module base directory.      *      * @parameter expression="${project.basedir}"      * @required      * @readonly      */
-specifier|private
-name|File
-name|baseDirectory
-init|=
-literal|null
-decl_stmt|;
 comment|/**      * Directory containing the generated archive.      *      * @parameter expression="${project.build.directory}"      * @required      */
 specifier|private
 name|File
@@ -299,14 +278,7 @@ name|finalName
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * The Geronimo repository where modules will be packaged up from.      *      * @parameter expression="${project.build.directory}/repository"      * @required      */
-specifier|private
-name|File
-name|targetRepository
-init|=
-literal|null
-decl_stmt|;
-comment|/**      * Location of resources directory for additional content to include in the car.      *      * @parameter expression="${project.build.directory}/classes/resources"      */
+comment|/**      * Location of resources directory for additional content to include in the car.      * Note that it includes everything under classes so as to include maven-remote-resources goo      *      * @parameter expression="${project.build.directory}/classes"      */
 specifier|private
 name|File
 name|resourcesDir
@@ -401,17 +373,13 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-name|FeaturesRoot
+name|Features
 name|features
 init|=
 name|JaxbUtil
 operator|.
 name|unmarshal
 argument_list|(
-name|FeaturesRoot
-operator|.
-name|class
-argument_list|,
 name|in
 argument_list|,
 literal|false
@@ -569,6 +537,7 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
+comment|//TODO should .kar be a bundle?
 comment|//            archive.addManifestEntry(Constants.BUNDLE_NAME, project.getName());
 comment|//            archive.addManifestEntry(Constants.BUNDLE_VENDOR, project.getOrganization().getName());
 comment|//            ArtifactVersion version = project.getArtifact().getSelectedVersion();
@@ -689,12 +658,6 @@ name|targetFileName
 argument_list|)
 expr_stmt|;
 block|}
-comment|//            // Include the generated artifact contents
-comment|//            File artifactDirectory = this.getArtifactInRepositoryDir();
-comment|//
-comment|//            if (artifactDirectory.exists()) {
-comment|//                archiver.addArchivedFileSet(artifactDirectory);
-comment|//            }
 if|if
 condition|(
 name|resourcesDir
@@ -711,101 +674,9 @@ operator|.
 name|addDirectory
 argument_list|(
 name|resourcesDir
-argument_list|,
-literal|"resources/"
 argument_list|)
 expr_stmt|;
 block|}
-comment|//
-comment|//            for (Resource resource: (List<Resource>)project.getResources()) {
-comment|//                File resourceDir = new File(resource.getDirectory());
-comment|//                if (resourceDir.exists()) {
-comment|//                    jarArchiver.addDirectory(resourceDir, resource.getTargetPath());
-comment|//                }
-comment|//            }
-comment|//
-comment|// HACK: Include legal files here for sanity
-comment|//
-comment|//
-comment|// NOTE: Would be nice to share this with the copy-legal-files mojo
-comment|//
-comment|//            String[] includes = {
-comment|//                    "LICENSE.txt",
-comment|//                    "LICENSE",
-comment|//
-comment|//                    "NOTICE.txt",
-comment|//                    "NOTICE",
-comment|//                    "DISCLAIMER.txt",
-comment|//                    "DISCLAIMER"
-comment|//            };
-comment|//
-comment|//            archiver.getArchiver().addDirectory(baseDirectory, "META-INF/", includes, new String[0]);
-comment|//For no plan car, do nothing
-comment|//            if (artifactDirectory.exists()) {
-comment|//
-comment|//                JarFile includedJarFile = new JarFile(artifactDirectory) ;
-comment|//
-comment|//                if (includedJarFile.getEntry("META-INF/MANIFEST.MF") != null) {
-comment|//                    JarArchiver.FilesetManifestConfig mergeFilesetManifestConfig = new JarArchiver.FilesetManifestConfig();
-comment|//                    mergeFilesetManifestConfig.setValue("merge");
-comment|//                    archiver.getArchiver().setFilesetmanifest(mergeFilesetManifestConfig);
-comment|//                } else {
-comment|//                    //File configFile = new File(new File(getArtifactInRepositoryDir(), "META-INF"), "imports.txt");
-comment|//                    ZipEntry importTxtEntry = includedJarFile.getEntry("META-INF/imports.txt");
-comment|//                    if (importTxtEntry != null) {
-comment|//                        StringBuilder imports = new StringBuilder("org.apache.geronimo.kernel.osgi,");
-comment|//                        if (boot) {
-comment|//                            archive.addManifestEntry(Constants.BUNDLE_ACTIVATOR, BootActivator.class.getName());
-comment|//                            imports.append("org.apache.geronimo.system.osgi,");
-comment|//                        } else {
-comment|//                            archive.addManifestEntry(Constants.BUNDLE_ACTIVATOR, ConfigurationActivator.class.getName());
-comment|//                        }
-comment|//                        archive.addManifestEntry(Constants.BUNDLE_NAME, project.getName());
-comment|//                        archive.addManifestEntry(Constants.BUNDLE_VENDOR, project.getOrganization().getName());
-comment|//                        ArtifactVersion version = project.getArtifact().getSelectedVersion();
-comment|//                        String versionString = "" + version.getMajorVersion() + "." + version.getMinorVersion() + "." + version.getIncrementalVersion();
-comment|//                        if (version.getQualifier() != null) {
-comment|//                            versionString += "." + version.getQualifier();
-comment|//                        }
-comment|//                        archive.addManifestEntry(Constants.BUNDLE_VERSION, versionString);
-comment|//                        archive.addManifestEntry(Constants.BUNDLE_MANIFESTVERSION, "2");
-comment|//                        archive.addManifestEntry(Constants.BUNDLE_DESCRIPTION, project.getDescription());
-comment|//                        // NB, no constant for this one
-comment|//                        archive.addManifestEntry("Bundle-License", ((License) project.getLicenses().get(0)).getUrl());
-comment|//                        archive.addManifestEntry(Constants.BUNDLE_DOCURL, project.getUrl());
-comment|//                        archive.addManifestEntry(Constants.BUNDLE_SYMBOLICNAME, project.getGroupId() + "." + project.getArtifactId());
-comment|//                        Reader in = new InputStreamReader(includedJarFile.getInputStream(importTxtEntry));
-comment|//                        char[] buf = new char[1024];
-comment|//                        try {
-comment|//                            int i;
-comment|//                            while ((i = in.read(buf))> 0) {
-comment|//                                imports.append(buf, 0, i);
-comment|//                            }
-comment|//                        } finally {
-comment|//                            in.close();
-comment|//                        }
-comment|//                        // do we have any additional processing directives?
-comment|//                        if (instructions != null) {
-comment|//                            String explicitImports = (String) instructions.get(Constants.IMPORT_PACKAGE);
-comment|//                            // if there is an Import-Package instructions, then add these imports to the
-comment|//                            // list
-comment|//                            if (explicitImports != null) {
-comment|//                                // if specified on multiple lines, remove the line-ends.
-comment|//                                explicitImports = explicitImports.replaceAll("[\r\n]", "");
-comment|//                                imports.append(',');
-comment|//                                imports.append(explicitImports);
-comment|//                            }
-comment|//                            String requiredBundles = (String) instructions.get(Constants.REQUIRE_BUNDLE);
-comment|//                            if (requiredBundles != null) {
-comment|//                                requiredBundles = requiredBundles.replaceAll("[\r\n]", "");
-comment|//                                archive.addManifestEntry(Constants.REQUIRE_BUNDLE, requiredBundles);
-comment|//                            }
-comment|//                        }
-comment|//                        archive.addManifestEntry(Constants.IMPORT_PACKAGE, imports.toString());
-comment|//                        archive.addManifestEntry(Constants.DYNAMICIMPORT_PACKAGE, "*");
-comment|//                    }
-comment|//                }
-comment|//            }
 name|archiver
 operator|.
 name|createArchive
@@ -834,8 +705,6 @@ argument_list|,
 name|e
 argument_list|)
 throw|;
-comment|//        } finally {
-comment|//            archiver.cleanup();
 block|}
 block|}
 specifier|protected
@@ -910,56 +779,6 @@ literal|".kar"
 argument_list|)
 return|;
 block|}
-comment|//    private static class GeronimoArchiver extends MavenArchiver {
-comment|//
-comment|//        private ArchiverManager archiverManager;
-comment|//        private List<File> tmpDirs = new ArrayList<File>();
-comment|//
-comment|//        public GeronimoArchiver(ArchiverManager archiverManager) {
-comment|//            this.archiverManager = archiverManager;
-comment|//        }
-comment|//
-comment|//        public void addArchivedFileSet(File archiveFile) throws ArchiverException {
-comment|//            UnArchiver unArchiver;
-comment|//            try {
-comment|//                unArchiver = archiverManager.getUnArchiver(archiveFile);
-comment|//            } catch (NoSuchArchiverException e) {
-comment|//                throw new ArchiverException(
-comment|//                        "Error adding archived file-set. UnArchiver not found for: " + archiveFile,
-comment|//                        e);
-comment|//            }
-comment|//
-comment|//            File tempDir = FileUtils.createTempFile("archived-file-set.", ".tmp", null);
-comment|//
-comment|//            tempDir.mkdirs();
-comment|//
-comment|//            tmpDirs.add(tempDir);
-comment|//
-comment|//            unArchiver.setSourceFile(archiveFile);
-comment|//            unArchiver.setDestDirectory(tempDir);
-comment|//
-comment|//            try {
-comment|//                unArchiver.extract();
-comment|//            } catch (IOException e) {
-comment|//                throw new ArchiverException("Error adding archived file-set. Failed to extract: "
-comment|//                        + archiveFile, e);
-comment|//            }
-comment|//
-comment|//            getArchiver().addDirectory(tempDir, null, null, null);
-comment|//        }
-comment|//
-comment|//        public void cleanup() {
-comment|//            for (File dir : tmpDirs) {
-comment|//                try {
-comment|//                    FileUtils.deleteDirectory(dir);
-comment|//                } catch (IOException e) {
-comment|//                    e.printStackTrace();
-comment|//                }
-comment|//            }
-comment|//            tmpDirs.clear();
-comment|//        }
-comment|//
-comment|//    }
 block|}
 end_class
 

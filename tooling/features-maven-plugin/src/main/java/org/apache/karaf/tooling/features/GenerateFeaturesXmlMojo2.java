@@ -33,6 +33,16 @@ name|java
 operator|.
 name|io
 operator|.
+name|FileInputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|FileOutputStream
 import|;
 end_import
@@ -44,6 +54,16 @@ operator|.
 name|io
 operator|.
 name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|InputStream
 import|;
 end_import
 
@@ -73,26 +93,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|LinkedHashMap
 import|;
 end_import
@@ -104,16 +104,6 @@ operator|.
 name|util
 operator|.
 name|LinkedHashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|LinkedList
 import|;
 end_import
 
@@ -143,16 +133,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Properties
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Set
 import|;
 end_import
@@ -171,17 +151,25 @@ end_import
 
 begin_import
 import|import
-name|org
+name|javax
 operator|.
-name|apache
+name|xml
 operator|.
-name|felix
+name|parsers
 operator|.
-name|utils
+name|ParserConfigurationException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
 operator|.
-name|version
+name|xml
 operator|.
-name|VersionRange
+name|stream
+operator|.
+name|XMLStreamException
 import|;
 end_import
 
@@ -229,7 +217,7 @@ name|features
 operator|.
 name|internal
 operator|.
-name|FeaturesRoot
+name|Features
 import|;
 end_import
 
@@ -561,8 +549,20 @@ name|AbstractLogEnabled
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|xml
+operator|.
+name|sax
+operator|.
+name|SAXException
+import|;
+end_import
+
 begin_comment
-comment|/**  * Generates the features XML file  *   * @version $Revision: 1.1 $  * @goal generate-features-xml2  * @phase compile  * @execute phase="compile"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Generates the features XML file  */
+comment|/**  * Generates the features XML file  *  * @version $Revision: 1.1 $  * @goal generate-features-xml2  * @phase compile  * @execute phase="compile"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Generates the features XML file  */
 end_comment
 
 begin_class
@@ -579,128 +579,37 @@ name|AbstractLogEnabled
 implements|implements
 name|Mojo
 block|{
-specifier|protected
-specifier|static
-specifier|final
-name|String
-name|SEPARATOR
-init|=
-literal|"/"
-decl_stmt|;
-comment|/**      * The dependency tree builder to use.      *       * @component      * @required      * @readonly      */
+comment|/**      * The dependency tree builder to use.      *      * @component      * @required      * @readonly      */
+comment|//    private DependencyTreeBuilder dependencyTreeBuilder;
+comment|/**      * The (optional) input feature.file to extend      *      * @parameter default-value="${project.build.directory}/src/main/feature/feature.xml"      */
 specifier|private
-name|DependencyTreeBuilder
-name|dependencyTreeBuilder
+name|File
+name|inputFile
 decl_stmt|;
-comment|/**      * The file to generate      *       * @parameter default-value="${project.build.directory}/feature/feature.xml"      */
+comment|/**      * The file to generate      *      * @parameter default-value="${project.build.directory}/feature/feature.xml"      */
 specifier|private
 name|File
 name|outputFile
 decl_stmt|;
-comment|/**      * The artifact type for attaching the generated file to the project      *       * @parameter default-value="xml"      */
+comment|/**      * The resolver to use for the feature.  Normally null or "OBR" or "(OBR)"      *      * @parameter default-value="${resolver}"      */
+specifier|private
+name|String
+name|resolver
+decl_stmt|;
+comment|/**      * The artifact type for attaching the generated file to the project      *      * @parameter default-value="xml"      */
 specifier|private
 name|String
 name|attachmentArtifactType
 init|=
 literal|"xml"
 decl_stmt|;
-comment|/**      * The artifact classifier for attaching the generated file to the project      *       * @parameter default-value="features"      */
+comment|/**      * The artifact classifier for attaching the generated file to the project      *      * @parameter default-value="features"      */
 specifier|private
 name|String
 name|attachmentArtifactClassifier
 init|=
 literal|"features"
 decl_stmt|;
-comment|/**      * The kernel version for which to generate the bundle      *       * @parameter      */
-specifier|private
-name|String
-name|kernelVersion
-decl_stmt|;
-comment|/*      * A list of packages exported by the kernel      */
-specifier|private
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|VersionRange
-argument_list|>
-name|kernelExports
-init|=
-operator|new
-name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|VersionRange
-argument_list|>
-argument_list|()
-decl_stmt|;
-comment|/**      * A file containing the list of bundles      *       * @parameter      */
-specifier|private
-name|File
-name|bundles
-decl_stmt|;
-comment|/*      * A set of known bundles      */
-specifier|private
-name|Set
-argument_list|<
-name|String
-argument_list|>
-name|knownBundles
-init|=
-operator|new
-name|HashSet
-argument_list|<
-name|String
-argument_list|>
-argument_list|()
-decl_stmt|;
-comment|/*      * A list of exports by the bundles      */
-specifier|private
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Map
-argument_list|<
-name|VersionRange
-argument_list|,
-name|Artifact
-argument_list|>
-argument_list|>
-name|bundleExports
-init|=
-operator|new
-name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Map
-argument_list|<
-name|VersionRange
-argument_list|,
-name|Artifact
-argument_list|>
-argument_list|>
-argument_list|()
-decl_stmt|;
-comment|/*      * The set of system exports      */
-specifier|private
-name|List
-argument_list|<
-name|String
-argument_list|>
-name|systemExports
-init|=
-operator|new
-name|LinkedList
-argument_list|<
-name|String
-argument_list|>
-argument_list|()
-decl_stmt|;
-comment|/*      * These bundles are the features that will be built      */
-comment|//    private Map<Artifact, Feature> features = new HashMap<Artifact, Feature>();
 comment|//new
 comment|/**      * The maven project.      *      * @parameter expression="${project}"      * @required      * @readonly      */
 specifier|protected
@@ -758,12 +667,6 @@ name|outputFile
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|readSystemPackages
-argument_list|()
-expr_stmt|;
-comment|//            readKernelBundles();
-comment|//            readBundles();
-comment|//            discoverBundles();
 name|getDependencies
 argument_list|(
 name|project
@@ -837,189 +740,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/*     * Read all the system provided packages from the<code>config.properties</code> file     */
-specifier|private
-name|void
-name|readSystemPackages
-parameter_list|()
-throws|throws
-name|IOException
-block|{
-name|Properties
-name|properties
-init|=
-operator|new
-name|Properties
-argument_list|()
-decl_stmt|;
-name|properties
-operator|.
-name|load
-argument_list|(
-name|getClass
-argument_list|()
-operator|.
-name|getClassLoader
-argument_list|()
-operator|.
-name|getResourceAsStream
-argument_list|(
-literal|"config.properties"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|readSystemPackages
-argument_list|(
-name|properties
-argument_list|,
-literal|"jre-1.5"
-argument_list|)
-expr_stmt|;
-name|readSystemPackages
-argument_list|(
-name|properties
-argument_list|,
-literal|"osgi"
-argument_list|)
-expr_stmt|;
-block|}
-specifier|private
-name|void
-name|readSystemPackages
-parameter_list|(
-name|Properties
-name|properties
-parameter_list|,
-name|String
-name|key
-parameter_list|)
-block|{
-name|String
-name|packages
-init|=
-operator|(
-name|String
-operator|)
-name|properties
-operator|.
-name|get
-argument_list|(
-name|key
-argument_list|)
-decl_stmt|;
-for|for
-control|(
-name|String
-name|pkg
-range|:
-name|packages
-operator|.
-name|split
-argument_list|(
-literal|";"
-argument_list|)
-control|)
-block|{
-name|systemExports
-operator|.
-name|add
-argument_list|(
-name|pkg
-operator|.
-name|trim
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-comment|/*      * Download a Kernel distro and check the list of bundles provided by the Kernel      */
-comment|//    private void readKernelBundles() throws ArtifactResolutionException, ArtifactNotFoundException, MojoExecutionException,
-comment|//        ZipException, IOException, DependencyTreeBuilderException {
-comment|//        final Collection<Artifact> kernelArtifacts;
-comment|//        if (kernelVersion == null) {
-comment|//           getLogger().info("Step 1: Building list of provided bundle exports");
-comment|//           kernelArtifacts = new HashSet<Artifact>();
-comment|//           DependencyNode tree = dependencyTreeBuilder.buildDependencyTree(project, localRepo, factory, artifactMetadataSource, new ArtifactFilter() {
-comment|//
-comment|//            public boolean include(Artifact artifact) {
-comment|//                return true;
-comment|//            }
-comment|//
-comment|//           }, new DefaultArtifactCollector());
-comment|//           tree.accept(new DependencyNodeVisitor() {
-comment|//                public boolean endVisit(DependencyNode node) {
-comment|//                    // we want the next sibling too
-comment|//                    return true;
-comment|//                }
-comment|//                public boolean visit(DependencyNode node) {
-comment|//                    if (node.getState() != DependencyNode.OMITTED_FOR_CONFLICT) {
-comment|//                        Artifact artifact = node.getArtifact();
-comment|//                        if (Artifact.SCOPE_PROVIDED.equals(artifact.getScope())&& !artifact.getType().equals("pom")) {
-comment|//                            kernelArtifacts.add(artifact);
-comment|//                        }
-comment|//                    }
-comment|//                    // we want the children too
-comment|//                    return true;
-comment|//                }
-comment|//            });
-comment|//        } else {
-comment|//            getLogger().info("Step 1 : Building list of kernel exports");
-comment|//            getLogger().warn("Use of 'kernelVersion' is deprecated -- use a dependency with scope 'provided' instead");
-comment|//            Artifact kernel = factory.createArtifact("org.apache.karaf", "apache-karaf", kernelVersion, Artifact.SCOPE_PROVIDED, "pom");
-comment|//            resolver.resolve(kernel, remoteRepos, localRepo);
-comment|//            kernelArtifacts = getDependencies(kernel);
-comment|//        }
-comment|//        for (Artifact artifact : kernelArtifacts) {
-comment|//            registerKernelBundle(artifact);
-comment|//        }
-comment|//        getLogger().info("...done!");
-comment|//    }
-comment|/*      * Read the list of bundles we can use to satisfy links      */
-comment|//    private void readBundles() throws IOException, ArtifactResolutionException, ArtifactNotFoundException {
-comment|//        BufferedReader reader = null;
-comment|//        try {
-comment|//            if (bundles != null) {
-comment|//                getLogger().info("Step 2 : Building a list of exports for bundles in " + bundles.getAbsolutePath());
-comment|//                reader = new BufferedReader(new FileReader(bundles));
-comment|//                String line = reader.readLine();
-comment|//                while (line != null) {
-comment|//                    if (line.contains("/")&& !line.startsWith("#")) {
-comment|//                        String[] elements = line.split("/");
-comment|//                        Artifact artifact = factory.createArtifact(elements[0], elements[1], elements[2], Artifact.SCOPE_PROVIDED,
-comment|//                                                                   elements[3]);
-comment|//                        registerBundle(artifact);
-comment|//                    }
-comment|//                    line = reader.readLine();
-comment|//                }
-comment|//            } else {
-comment|//                getLogger().info("Step 2 : No Bundle file supplied for building list of exports");
-comment|//            }
-comment|//        } finally {
-comment|//            if (reader != null) {
-comment|//                reader.close();
-comment|//            }
-comment|//        }
-comment|//        getLogger().info("...done!");
-comment|//    }
-comment|/*      * Auto-discover bundles currently in the dependencies      */
-comment|//    private void discoverBundles() throws ArtifactResolutionException, ArtifactNotFoundException, ZipException, IOException {
-comment|//    	getLogger().info("Step 3 : Discovering bundles in Maven dependencies");
-comment|//		for (Artifact dependency : (Set<Artifact>) project.getArtifacts()) {
-comment|//			// we will generate a feature for this afterwards
-comment|//			if (project.getDependencyArtifacts().contains(dependency)) {
-comment|//				continue;
-comment|//			}
-comment|//			// this is a provided bundle, has been handled in step 1
-comment|//			if (dependency.getScope().equals(Artifact.SCOPE_PROVIDED)) {
-comment|//			    continue;
-comment|//			}
-comment|//			if (isDiscoverableBundle(dependency)) {
-comment|//				getLogger().info("  Discovered " + dependency);
-comment|//				registerBundle(dependency);
-comment|//			}
-comment|//		}
-comment|//		getLogger().info("...done!");
-comment|//	}
 comment|/*      * Write all project dependencies as feature      */
 specifier|private
 name|void
@@ -1036,6 +756,12 @@ throws|,
 name|IOException
 throws|,
 name|JAXBException
+throws|,
+name|SAXException
+throws|,
+name|ParserConfigurationException
+throws|,
+name|XMLStreamException
 block|{
 name|getLogger
 argument_list|()
@@ -1050,6 +776,7 @@ name|getAbsolutePath
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|//read in an existing feature.xml
 name|ObjectFactory
 name|objectFactory
 init|=
@@ -1057,22 +784,112 @@ operator|new
 name|ObjectFactory
 argument_list|()
 decl_stmt|;
-name|FeaturesRoot
+name|Features
 name|featuresRoot
+decl_stmt|;
+if|if
+condition|(
+name|inputFile
+operator|.
+name|exists
+argument_list|()
+condition|)
+block|{
+name|InputStream
+name|in
 init|=
+operator|new
+name|FileInputStream
+argument_list|(
+name|inputFile
+argument_list|)
+decl_stmt|;
+try|try
+block|{
+name|featuresRoot
+operator|=
+name|JaxbUtil
+operator|.
+name|unmarshal
+argument_list|(
+name|in
+argument_list|,
+literal|false
+argument_list|)
+expr_stmt|;
+block|}
+finally|finally
+block|{
+name|in
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|featuresRoot
+operator|=
 name|objectFactory
 operator|.
 name|createFeaturesRoot
 argument_list|()
-decl_stmt|;
+expr_stmt|;
+block|}
 name|Feature
 name|feature
 init|=
+literal|null
+decl_stmt|;
+for|for
+control|(
+name|Feature
+name|test
+range|:
+name|featuresRoot
+operator|.
+name|getFeature
+argument_list|()
+control|)
+block|{
+if|if
+condition|(
+name|test
+operator|.
+name|getName
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|project
+operator|.
+name|getArtifactId
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|feature
+operator|=
+name|test
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+name|feature
+operator|==
+literal|null
+condition|)
+block|{
+name|feature
+operator|=
 name|objectFactory
 operator|.
 name|createFeature
 argument_list|()
-decl_stmt|;
+expr_stmt|;
+block|}
 name|featuresRoot
 operator|.
 name|getFeature
@@ -1104,6 +921,13 @@ argument_list|()
 operator|.
 name|getBaseVersion
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|feature
+operator|.
+name|setResolver
+argument_list|(
+name|resolver
 argument_list|)
 expr_stmt|;
 for|for
@@ -1202,6 +1026,27 @@ argument_list|(
 name|bundleName
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+literal|"runtime"
+operator|.
+name|equals
+argument_list|(
+name|artifact
+operator|.
+name|getScope
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|bundle
+operator|.
+name|setDependency
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
 name|feature
 operator|.
 name|getBundle
@@ -1217,7 +1062,7 @@ name|JaxbUtil
 operator|.
 name|marshal
 argument_list|(
-name|FeaturesRoot
+name|Features
 operator|.
 name|class
 argument_list|,
@@ -1226,26 +1071,6 @@ argument_list|,
 name|out
 argument_list|)
 expr_stmt|;
-comment|//        out.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-comment|//        out.println("<features>");
-comment|//        out.println("<feature name='" + project.getArtifactId() + "' version='"
-comment|//                + project.getArtifact().getBaseVersion() + "'>");
-comment|//
-comment|//        for (Artifact artifact : localDependencies) {
-comment|//            if (artifact.getType().equals("jar")) {
-comment|//                out.println(String.format("<bundle>mvn:%s/%s/%s</bundle>", artifact.getGroupId(), artifact.getArtifactId(), artifact.getBaseVersion()));
-comment|//            } else {
-comment|//                out.println(String.format("<bundle>mvn:%s/%s/%s/%s</bundle>", artifact.getGroupId(), artifact.getArtifactId(), artifact.getBaseVersion(), artifact.getType()));
-comment|//            }
-comment|////            if (!artifact.getScope().equals(Artifact.SCOPE_PROVIDED)&& !artifact.getType().equals("pom")) {
-comment|////                getLogger().info(" Generating feature " + artifact.getArtifactId() + " from " + artifact);
-comment|////                Feature feature = getFeature(artifact);
-comment|////                feature.write(out);
-comment|//////                registerFeature(artifact, feature);
-comment|////            }
-comment|//        }
-comment|//        out.println("</feature>");
-comment|//        out.println("</features>");
 name|getLogger
 argument_list|()
 operator|.
@@ -1255,311 +1080,6 @@ literal|"...done!"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      * Get the feature for an artifact       */
-comment|//    private Feature getFeature(Artifact artifact) throws ArtifactResolutionException, ArtifactNotFoundException, ZipException, IOException {
-comment|//        Feature feature = new Feature(artifact);
-comment|////        addRequirements(artifact, feature);
-comment|//        return feature;
-comment|//    }
-comment|/*      * Only auto-discover an OSGi bundle      * - if it is not already known as a feature itself      * - if it is not another version of an already known bundle      */
-comment|//    private boolean isDiscoverableBundle(Artifact artifact) {
-comment|//        if (isBundle(artifact)&& !isFeature(artifact)&& !artifact.getScope().equals(Artifact.SCOPE_PROVIDED)) {
-comment|//            for (String known : knownBundles) {
-comment|//                String[] elements = known.split("/");
-comment|//                if (artifact.getGroupId().equals(elements[0])&&
-comment|//                    artifact.getArtifactId().equals(elements[1])) {
-comment|//                    getLogger().debug(String.format("  Avoid auto-discovery for %s because of existing bundle %s",
-comment|//                                                 toString(artifact), known));
-comment|//                    return false;
-comment|//                }
-comment|//            }
-comment|//            return true;
-comment|//        }
-comment|//        return false;
-comment|//    }
-comment|/*      * Check if the given artifact is a bundle      */
-comment|//    private boolean isBundle(Artifact artifact) {
-comment|//        if (knownBundles.contains(toString(artifact)) || artifact.getArtifactHandler().getPackaging().equals("bundle")) {
-comment|//            return true;
-comment|//        } else {
-comment|//            try {
-comment|//                Manifest manifest = getManifest(artifact);
-comment|//                if (ManifestUtils.getBsn(manifest) != null) {
-comment|//                    getLogger().debug(String.format("MANIFEST.MF for '%s' contains Bundle-Name '%s'",
-comment|//                                                 artifact, ManifestUtils.getBsn(manifest)));
-comment|//                    return true;
-comment|//                }
-comment|//            } catch (ZipException e) {
-comment|//                getLogger().debug("Unable to determine if " + artifact + " is a bundle; defaulting to false", e);
-comment|//            } catch (IOException e) {
-comment|//                getLogger().debug("Unable to determine if " + artifact + " is a bundle; defaulting to false", e);
-comment|//            } catch (Exception e) {
-comment|//                getLogger().debug("Unable to determine if " + artifact + " is a bundle; defaulting to false", e);
-comment|//            }
-comment|//        }
-comment|//        return false;
-comment|//     }
-comment|/*      * Add requirements for an artifact to a feature      */
-comment|//    private void addRequirements(Artifact artifact, Feature feature) throws ArtifactResolutionException, ArtifactNotFoundException, ZipException, IOException {
-comment|//        Manifest manifest = getManifest(artifact);
-comment|//        Collection<Clause> remaining = getRemainingImports(manifest);
-comment|//        Artifact previous = null;
-comment|//        for (Clause clause : remaining) {
-comment|//            Artifact add = null;
-comment|//            Map<VersionRange, Artifact> versions = bundleExports.get(clause.getName());
-comment|//            if (versions != null) {
-comment|//                for (VersionRange range : versions.keySet()) {
-comment|//                    add = versions.get(range);
-comment|//                    if (range.intersect(ManifestUtils.getVersionRange(clause)) != null) {
-comment|//                        add = versions.get(range);
-comment|//                    }
-comment|//                }
-comment|//            }
-comment|//            if (add == null) {
-comment|//                if (ManifestUtils.isOptional(clause)) {
-comment|//                    // debug logging for optional dependency...
-comment|//                    getLogger().debug(String.format("  Unable to find suitable bundle for optional dependency %s (%s)",
-comment|//                                                 clause.getName(), ManifestUtils.getVersionRange(clause)));
-comment|//                } else {
-comment|//                    // ...but a warning for a mandatory dependency
-comment|//                    getLogger().warn(
-comment|//                                  String.format("  Unable to find suitable bundle for dependency %s (%s) (required by %s)",
-comment|//                                                clause.getName(), ManifestUtils.getVersionRange(clause), artifact.getArtifactId()));
-comment|//                }
-comment|//            } else {
-comment|//                if (!add.equals(previous)&& feature.push(add)&& !isFeature(add)) {
-comment|//                    //and get requirements for the bundle we just added
-comment|//                    getLogger().debug("  Getting requirements for " + add);
-comment|//                    addRequirements(add, feature);
-comment|//                }
-comment|//            }
-comment|//            previous = add;
-comment|//        }
-comment|//    }
-comment|/*      * Check if a given bundle is itself being generated as a feature      */
-comment|//    private boolean isFeature(Artifact artifact) {
-comment|//        return features.containsKey(artifact);
-comment|//    }
-comment|/*      * Register a bundle, enlisting all packages it provides      */
-comment|//    private void registerBundle(Artifact artifact) throws ArtifactResolutionException, ArtifactNotFoundException, ZipException,
-comment|//        IOException {
-comment|//        getLogger().debug("Registering bundle " + artifact);
-comment|//        knownBundles.add(toString(artifact));
-comment|//        Manifest manifest = getManifest(artifact);
-comment|//        for (Clause clause : getManifestEntries(ManifestUtils.getExports(manifest))) {
-comment|//            Map<VersionRange, Artifact> versions = bundleExports.get(clause.getName());
-comment|//            if (versions == null) {
-comment|//                versions = new HashMap<VersionRange, Artifact>();
-comment|//            }
-comment|//            versions.put(ManifestUtils.getVersionRange(clause), artifact);
-comment|//            getLogger().debug(String.format(" %s exported by bundle %s", clause.getName(), artifact));
-comment|//            bundleExports.put(clause.getName(), versions);
-comment|//        }
-comment|//    }
-comment|/*      * Register a feature and also register the bundle for the feature      */
-comment|//    private void registerFeature(Artifact artifact, Feature feature) throws ArtifactResolutionException, ArtifactNotFoundException, ZipException,
-comment|//        IOException {
-comment|//        features.put(artifact, feature);
-comment|//        registerBundle(artifact);
-comment|//    }
-comment|/*      * Determine the list of imports to be resolved      */
-comment|//    private Collection<Clause> getRemainingImports(Manifest manifest) {
-comment|//        // take all imports
-comment|//        Collection<Clause> input = getManifestEntries(ManifestUtils.getImports(manifest));
-comment|//        Collection<Clause> output = new LinkedList<Clause>(input);
-comment|//        // remove imports satisfied by exports in the same bundle
-comment|//        for (Clause clause : input) {
-comment|//            for (Clause export : getManifestEntries(ManifestUtils.getExports(manifest))) {
-comment|//                if (clause.getName().equals(export.getName())) {
-comment|//                    output.remove(clause);
-comment|//                }
-comment|//            }
-comment|//        }
-comment|//        // remove imports for packages exported by the kernel
-comment|//        for (Clause clause : input) {
-comment|//            for (String export : kernelExports.keySet()) {
-comment|//                if (clause.getName().equals(export)) {
-comment|//                    output.remove(clause);
-comment|//                }
-comment|//            }
-comment|//        }
-comment|//        // remove imports for packages exported by the system bundle
-comment|//        for (Clause clause : input) {
-comment|//            if (systemExports.contains(clause.getName())) {
-comment|//                output.remove(clause);
-comment|//            }
-comment|//        }
-comment|//        return output;
-comment|//    }
-comment|//    private Collection<Clause> getManifestEntries(List imports) {
-comment|//        if (imports == null) {
-comment|//            return new LinkedList<Clause>();
-comment|//        } else {
-comment|//            return (Collection<Clause>)imports;
-comment|//        }
-comment|//    }
-comment|//    private Manifest getManifest(Artifact artifact) throws ArtifactResolutionException, ArtifactNotFoundException, ZipException,
-comment|//        IOException {
-comment|//        File localFile = new File(localRepo.pathOf(artifact));
-comment|//        ZipFile file;
-comment|//        if (localFile.exists()) {
-comment|//            //avoid going over to the repository if the file is already on the disk
-comment|//            file = new ZipFile(localFile);
-comment|//        } else {
-comment|//            resolver.resolve(artifact, remoteRepos, localRepo);
-comment|//            file = new ZipFile(artifact.getFile());
-comment|//        }
-comment|//        return new Manifest(file.getInputStream(file.getEntry("META-INF/MANIFEST.MF")));
-comment|//    }
-comment|//    private List<Artifact> getDependencies(Artifact artifact) {
-comment|//        List<Artifact> list = new ArrayList<Artifact>();
-comment|//        try {
-comment|//            ResolutionGroup pom = artifactMetadataSource.retrieve(artifact, localRepo, remoteRepos);
-comment|//            if (pom != null) {
-comment|//                list.addAll(pom.getArtifacts());
-comment|//            }
-comment|//        } catch (ArtifactMetadataRetrievalException e) {
-comment|//            getLogger().warn("Unable to retrieve metadata for " + artifact + ", not including dependencies for it");
-comment|//        } catch (InvalidArtifactRTException e) {
-comment|//            getLogger().warn("Unable to retrieve metadata for " + artifact + ", not including dependencies for it");
-comment|//        }
-comment|//        return list;
-comment|//    }
-specifier|public
-specifier|static
-name|String
-name|toString
-parameter_list|(
-name|Artifact
-name|artifact
-parameter_list|)
-block|{
-if|if
-condition|(
-name|artifact
-operator|.
-name|getType
-argument_list|()
-operator|.
-name|equals
-argument_list|(
-literal|"jar"
-argument_list|)
-condition|)
-block|{
-return|return
-name|String
-operator|.
-name|format
-argument_list|(
-literal|"%s/%s/%s"
-argument_list|,
-name|artifact
-operator|.
-name|getGroupId
-argument_list|()
-argument_list|,
-name|artifact
-operator|.
-name|getArtifactId
-argument_list|()
-argument_list|,
-name|artifact
-operator|.
-name|getVersion
-argument_list|()
-argument_list|)
-return|;
-block|}
-return|return
-name|String
-operator|.
-name|format
-argument_list|(
-literal|"%s/%s/%s/%s"
-argument_list|,
-name|artifact
-operator|.
-name|getGroupId
-argument_list|()
-argument_list|,
-name|artifact
-operator|.
-name|getArtifactId
-argument_list|()
-argument_list|,
-name|artifact
-operator|.
-name|getVersion
-argument_list|()
-argument_list|,
-name|artifact
-operator|.
-name|getType
-argument_list|()
-argument_list|)
-return|;
-block|}
-comment|//    private class Feature {
-comment|//
-comment|//        private Stack<Artifact> artifacts = new Stack<Artifact>();
-comment|//        private final Artifact artifact;
-comment|//
-comment|//        private Feature(Artifact artifact) {
-comment|//            super();
-comment|//            this.artifact = artifact;
-comment|//            artifacts.push(artifact);
-comment|//        }
-comment|//
-comment|//        public boolean push(Artifact item) {
-comment|//            if (artifacts.contains(item)) {
-comment|//                artifacts.remove(item);
-comment|//                artifacts.push(item);
-comment|//                return false;
-comment|//            }
-comment|//            if (!artifacts.contains(item)) {
-comment|//                artifacts.push(item);
-comment|//                return true;
-comment|//            }
-comment|//            return false;
-comment|//        }
-comment|//
-comment|//        public void write(PrintStream out) {
-comment|//            out.println("<feature name='" + artifact.getArtifactId() + "' version='"
-comment|//            		+ artifact.getBaseVersion() + "'>");
-comment|//
-comment|//            Stack<Artifact> resulting = new Stack<Artifact>();
-comment|//            resulting.addAll(artifacts);
-comment|//
-comment|//            // remove dependencies for included features
-comment|//            for (Artifact next : artifacts) {
-comment|//                if (isFeature(next)) {
-comment|//                    resulting.removeAll(features.get(next).getDependencies());
-comment|//                }
-comment|//            }
-comment|//
-comment|//            while (!resulting.isEmpty()) {
-comment|//            	Artifact next = resulting.pop();
-comment|//                if (isFeature(next)) {
-comment|//                    out.println("<feature version='"
-comment|//            		+ next.getBaseVersion() + "'>" + String.format("%s</feature>", next.getArtifactId()));
-comment|//                } else {
-comment|//                    if (next.getType().equals("jar")) {
-comment|//                        out.println(String.format("<bundle>mvn:%s/%s/%s</bundle>", next.getGroupId(), next.getArtifactId(), next.getBaseVersion()));
-comment|//                    } else {
-comment|//                        out.println(String.format("<bundle>mvn:%s/%s/%s/%s</bundle>", next.getGroupId(), next.getArtifactId(), next.getBaseVersion(), next.getType()));
-comment|//                    }
-comment|//                }
-comment|//            }
-comment|//            out.println("</feature>");
-comment|//        }
-comment|//
-comment|//        public List<Artifact> getDependencies() {
-comment|//            List<Artifact> dependencies = new LinkedList<Artifact>(artifacts);
-comment|//            dependencies.remove(artifact);
-comment|//            return dependencies;
-comment|//        }
-comment|//    }
 comment|//artifact search code adapted from geronimo car plugin
 comment|/**      * The artifact factory to use.      *      * @component      * @required      * @readonly      */
 specifier|protected
