@@ -175,6 +175,20 @@ name|apache
 operator|.
 name|maven
 operator|.
+name|model
+operator|.
+name|Resource
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
 name|plugin
 operator|.
 name|MojoExecutionException
@@ -693,6 +707,16 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
+comment|//include the feature.xml
+name|jarArchiver
+operator|.
+name|addFile
+argument_list|(
+name|featuresFile
+argument_list|,
+literal|"feature.xml"
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Artifact
@@ -853,50 +877,74 @@ name|resourcesDir
 argument_list|)
 expr_stmt|;
 block|}
+for|for
+control|(
+name|Resource
+name|resource
+range|:
+operator|(
+name|List
+argument_list|<
+name|Resource
+argument_list|>
+operator|)
+name|project
+operator|.
+name|getResources
+argument_list|()
+control|)
+block|{
+name|File
+name|resourceDir
+init|=
+operator|new
+name|File
+argument_list|(
+name|resource
+operator|.
+name|getDirectory
+argument_list|()
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|resourceDir
+operator|.
+name|exists
+argument_list|()
+condition|)
+block|{
+name|jarArchiver
+operator|.
+name|addDirectory
+argument_list|(
+name|resourceDir
+argument_list|,
+name|resource
+operator|.
+name|getTargetPath
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 comment|//
 comment|// HACK: Include legal files here for sanity
 comment|//
 comment|//
 comment|// NOTE: Would be nice to share this with the copy-legal-files mojo
 comment|//
-name|String
-index|[]
-name|includes
-init|=
-block|{
-literal|"LICENSE.txt"
-block|,
-literal|"LICENSE"
-block|,
-literal|"NOTICE.txt"
-block|,
-literal|"NOTICE"
-block|,
-literal|"DISCLAIMER.txt"
-block|,
-literal|"DISCLAIMER"
-block|}
-decl_stmt|;
-name|archiver
-operator|.
-name|getArchiver
-argument_list|()
-operator|.
-name|addDirectory
-argument_list|(
-name|baseDirectory
-argument_list|,
-literal|"META-INF/"
-argument_list|,
-name|includes
-argument_list|,
-operator|new
-name|String
-index|[
-literal|0
-index|]
-argument_list|)
-expr_stmt|;
+comment|//            String[] includes = {
+comment|//                    "LICENSE.txt",
+comment|//                    "LICENSE",
+comment|//
+comment|//                    "NOTICE.txt",
+comment|//                    "NOTICE",
+comment|//                    "DISCLAIMER.txt",
+comment|//                    "DISCLAIMER"
+comment|//            };
+comment|//
+comment|//            archiver.getArchiver().addDirectory(baseDirectory, "META-INF/", includes, new String[0]);
 comment|//For no plan car, do nothing
 comment|//            if (artifactDirectory.exists()) {
 comment|//
