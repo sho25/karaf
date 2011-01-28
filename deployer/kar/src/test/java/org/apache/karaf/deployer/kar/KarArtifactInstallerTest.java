@@ -199,6 +199,13 @@ argument_list|)
 expr_stmt|;
 name|karArtifactInstaller
 operator|.
+name|setBasePath
+argument_list|(
+literal|"./target"
+argument_list|)
+expr_stmt|;
+name|karArtifactInstaller
+operator|.
 name|setLocalRepoPath
 argument_list|(
 literal|"./target/local-repo"

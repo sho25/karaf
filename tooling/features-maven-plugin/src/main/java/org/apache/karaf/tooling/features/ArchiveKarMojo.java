@@ -43,16 +43,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|InputStream
 import|;
 end_import
@@ -175,6 +165,72 @@ name|apache
 operator|.
 name|maven
 operator|.
+name|artifact
+operator|.
+name|repository
+operator|.
+name|layout
+operator|.
+name|ArtifactRepositoryLayout
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|artifact
+operator|.
+name|repository
+operator|.
+name|layout
+operator|.
+name|DefaultRepositoryLayout
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|artifact
+operator|.
+name|versioning
+operator|.
+name|ArtifactVersion
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|model
+operator|.
+name|License
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
 name|model
 operator|.
 name|Resource
@@ -219,34 +275,6 @@ name|plexus
 operator|.
 name|archiver
 operator|.
-name|ArchiverException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|codehaus
-operator|.
-name|plexus
-operator|.
-name|archiver
-operator|.
-name|UnArchiver
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|codehaus
-operator|.
-name|plexus
-operator|.
-name|archiver
-operator|.
 name|jar
 operator|.
 name|JarArchiver
@@ -257,45 +285,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|codehaus
+name|osgi
 operator|.
-name|plexus
+name|framework
 operator|.
-name|archiver
-operator|.
-name|manager
-operator|.
-name|ArchiverManager
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|codehaus
-operator|.
-name|plexus
-operator|.
-name|archiver
-operator|.
-name|manager
-operator|.
-name|NoSuchArchiverException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|codehaus
-operator|.
-name|plexus
-operator|.
-name|util
-operator|.
-name|FileUtils
+name|Constants
 import|;
 end_import
 
@@ -323,13 +317,6 @@ comment|/**      * The Jar archiver.      *      * @component role="org.codehaus
 specifier|private
 name|JarArchiver
 name|jarArchiver
-init|=
-literal|null
-decl_stmt|;
-comment|/**      * The Jar archiver.      *      * @component role="org.codehaus.plexus.archiver.manager.ArchiverManager"      * @required      * @readonly      */
-specifier|private
-name|ArchiverManager
-name|archiverManager
 init|=
 literal|null
 decl_stmt|;
@@ -670,6 +657,13 @@ parameter_list|)
 throws|throws
 name|MojoExecutionException
 block|{
+name|ArtifactRepositoryLayout
+name|layout
+init|=
+operator|new
+name|DefaultRepositoryLayout
+argument_list|()
+decl_stmt|;
 name|File
 name|archiveFile
 init|=
@@ -682,14 +676,12 @@ argument_list|,
 literal|null
 argument_list|)
 decl_stmt|;
-name|GeronimoArchiver
+name|MavenArchiver
 name|archiver
 init|=
 operator|new
-name|GeronimoArchiver
-argument_list|(
-name|archiverManager
-argument_list|)
+name|MavenArchiver
+argument_list|()
 decl_stmt|;
 name|archiver
 operator|.
@@ -707,14 +699,63 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
+comment|//            archive.addManifestEntry(Constants.BUNDLE_NAME, project.getName());
+comment|//            archive.addManifestEntry(Constants.BUNDLE_VENDOR, project.getOrganization().getName());
+comment|//            ArtifactVersion version = project.getArtifact().getSelectedVersion();
+comment|//            String versionString = "" + version.getMajorVersion() + "." + version.getMinorVersion() + "." + version.getIncrementalVersion();
+comment|//            if (version.getQualifier() != null) {
+comment|//                versionString += "." + version.getQualifier();
+comment|//            }
+comment|//            archive.addManifestEntry(Constants.BUNDLE_VERSION, versionString);
+comment|//            archive.addManifestEntry(Constants.BUNDLE_MANIFESTVERSION, "2");
+comment|//            archive.addManifestEntry(Constants.BUNDLE_DESCRIPTION, project.getDescription());
+comment|//            // NB, no constant for this one
+comment|//            archive.addManifestEntry("Bundle-License", ((License) project.getLicenses().get(0)).getUrl());
+comment|//            archive.addManifestEntry(Constants.BUNDLE_DOCURL, project.getUrl());
+comment|//            //TODO this might need some help
+comment|//            archive.addManifestEntry(Constants.BUNDLE_SYMBOLICNAME, project.getArtifactId());
 comment|//include the feature.xml
+name|Artifact
+name|featureArtifact
+init|=
+name|factory
+operator|.
+name|createArtifactWithClassifier
+argument_list|(
+name|project
+operator|.
+name|getGroupId
+argument_list|()
+argument_list|,
+name|project
+operator|.
+name|getArtifactId
+argument_list|()
+argument_list|,
+name|project
+operator|.
+name|getVersion
+argument_list|()
+argument_list|,
+literal|"xml"
+argument_list|,
+literal|"feature"
+argument_list|)
+decl_stmt|;
 name|jarArchiver
 operator|.
 name|addFile
 argument_list|(
 name|featuresFile
 argument_list|,
-literal|"feature.xml"
+literal|"repository/"
+operator|+
+name|layout
+operator|.
+name|pathOf
+argument_list|(
+name|featureArtifact
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -744,84 +785,17 @@ operator|.
 name|getFile
 argument_list|()
 decl_stmt|;
-comment|//TODO isn't there a maven class that can do this better?
-name|String
-name|dir
-init|=
-name|artifact
-operator|.
-name|getGroupId
-argument_list|()
-operator|.
-name|replace
-argument_list|(
-literal|'.'
-argument_list|,
-literal|'/'
-argument_list|)
-operator|+
-literal|"/"
-operator|+
-name|artifact
-operator|.
-name|getArtifactId
-argument_list|()
-operator|+
-literal|"/"
-operator|+
-name|artifact
-operator|.
-name|getVersion
-argument_list|()
-operator|+
-literal|"/"
-decl_stmt|;
-name|String
-name|name
-init|=
-name|artifact
-operator|.
-name|getArtifactId
-argument_list|()
-operator|+
-literal|"-"
-operator|+
-name|artifact
-operator|.
-name|getVersion
-argument_list|()
-operator|+
-operator|(
-name|artifact
-operator|.
-name|getClassifier
-argument_list|()
-operator|!=
-literal|null
-condition|?
-literal|"-"
-operator|+
-name|artifact
-operator|.
-name|getClassifier
-argument_list|()
-else|:
-literal|""
-operator|)
-operator|+
-literal|"."
-operator|+
-name|artifact
-operator|.
-name|getType
-argument_list|()
-decl_stmt|;
 name|String
 name|targetFileName
 init|=
-name|dir
+literal|"repository/"
 operator|+
-name|name
+name|layout
+operator|.
+name|pathOf
+argument_list|(
+name|artifact
+argument_list|)
 decl_stmt|;
 name|jarArchiver
 operator|.
@@ -833,50 +807,16 @@ name|targetFileName
 argument_list|)
 expr_stmt|;
 block|}
-comment|// Include the generated artifact contents
-name|File
-name|artifactDirectory
-init|=
-name|this
-operator|.
-name|getArtifactInRepositoryDir
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|artifactDirectory
-operator|.
-name|exists
-argument_list|()
-condition|)
-block|{
-name|archiver
-operator|.
-name|addArchivedFileSet
-argument_list|(
-name|artifactDirectory
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|resourcesDir
-operator|.
-name|isDirectory
-argument_list|()
-condition|)
-block|{
-name|archiver
-operator|.
-name|getArchiver
-argument_list|()
-operator|.
-name|addDirectory
-argument_list|(
-name|resourcesDir
-argument_list|)
-expr_stmt|;
-block|}
+comment|//            // Include the generated artifact contents
+comment|//            File artifactDirectory = this.getArtifactInRepositoryDir();
+comment|//
+comment|//            if (artifactDirectory.exists()) {
+comment|//                archiver.addArchivedFileSet(artifactDirectory);
+comment|//            }
+comment|//            if (resourcesDir.isDirectory()) {
+comment|//                archiver.getArchiver().addDirectory(resourcesDir);
+comment|//            }
+comment|//
 for|for
 control|(
 name|Resource
@@ -1039,14 +979,8 @@ argument_list|,
 name|e
 argument_list|)
 throw|;
-block|}
-finally|finally
-block|{
-name|archiver
-operator|.
-name|cleanup
-argument_list|()
-expr_stmt|;
+comment|//        } finally {
+comment|//            archiver.cleanup();
 block|}
 block|}
 specifier|protected
@@ -1121,212 +1055,56 @@ literal|".kar"
 argument_list|)
 return|;
 block|}
-specifier|private
-specifier|static
-class|class
-name|GeronimoArchiver
-extends|extends
-name|MavenArchiver
-block|{
-specifier|private
-name|ArchiverManager
-name|archiverManager
-decl_stmt|;
-specifier|private
-name|List
-argument_list|<
-name|File
-argument_list|>
-name|tmpDirs
-init|=
-operator|new
-name|ArrayList
-argument_list|<
-name|File
-argument_list|>
-argument_list|()
-decl_stmt|;
-specifier|public
-name|GeronimoArchiver
-parameter_list|(
-name|ArchiverManager
-name|archiverManager
-parameter_list|)
-block|{
-name|this
-operator|.
-name|archiverManager
-operator|=
-name|archiverManager
-expr_stmt|;
-block|}
-specifier|public
-name|void
-name|addArchivedFileSet
-parameter_list|(
-name|File
-name|archiveFile
-parameter_list|)
-throws|throws
-name|ArchiverException
-block|{
-name|UnArchiver
-name|unArchiver
-decl_stmt|;
-try|try
-block|{
-name|unArchiver
-operator|=
-name|archiverManager
-operator|.
-name|getUnArchiver
-argument_list|(
-name|archiveFile
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|NoSuchArchiverException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|ArchiverException
-argument_list|(
-literal|"Error adding archived file-set. UnArchiver not found for: "
-operator|+
-name|archiveFile
-argument_list|,
-name|e
-argument_list|)
-throw|;
-block|}
-name|File
-name|tempDir
-init|=
-name|FileUtils
-operator|.
-name|createTempFile
-argument_list|(
-literal|"archived-file-set."
-argument_list|,
-literal|".tmp"
-argument_list|,
-literal|null
-argument_list|)
-decl_stmt|;
-name|tempDir
-operator|.
-name|mkdirs
-argument_list|()
-expr_stmt|;
-name|tmpDirs
-operator|.
-name|add
-argument_list|(
-name|tempDir
-argument_list|)
-expr_stmt|;
-name|unArchiver
-operator|.
-name|setSourceFile
-argument_list|(
-name|archiveFile
-argument_list|)
-expr_stmt|;
-name|unArchiver
-operator|.
-name|setDestDirectory
-argument_list|(
-name|tempDir
-argument_list|)
-expr_stmt|;
-try|try
-block|{
-name|unArchiver
-operator|.
-name|extract
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|ArchiverException
-argument_list|(
-literal|"Error adding archived file-set. Failed to extract: "
-operator|+
-name|archiveFile
-argument_list|,
-name|e
-argument_list|)
-throw|;
-block|}
-name|getArchiver
-argument_list|()
-operator|.
-name|addDirectory
-argument_list|(
-name|tempDir
-argument_list|,
-literal|null
-argument_list|,
-literal|null
-argument_list|,
-literal|null
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|void
-name|cleanup
-parameter_list|()
-block|{
-for|for
-control|(
-name|File
-name|dir
-range|:
-name|tmpDirs
-control|)
-block|{
-try|try
-block|{
-name|FileUtils
-operator|.
-name|deleteDirectory
-argument_list|(
-name|dir
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-name|e
-operator|.
-name|printStackTrace
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-name|tmpDirs
-operator|.
-name|clear
-argument_list|()
-expr_stmt|;
-block|}
-block|}
+comment|//    private static class GeronimoArchiver extends MavenArchiver {
+comment|//
+comment|//        private ArchiverManager archiverManager;
+comment|//        private List<File> tmpDirs = new ArrayList<File>();
+comment|//
+comment|//        public GeronimoArchiver(ArchiverManager archiverManager) {
+comment|//            this.archiverManager = archiverManager;
+comment|//        }
+comment|//
+comment|//        public void addArchivedFileSet(File archiveFile) throws ArchiverException {
+comment|//            UnArchiver unArchiver;
+comment|//            try {
+comment|//                unArchiver = archiverManager.getUnArchiver(archiveFile);
+comment|//            } catch (NoSuchArchiverException e) {
+comment|//                throw new ArchiverException(
+comment|//                        "Error adding archived file-set. UnArchiver not found for: " + archiveFile,
+comment|//                        e);
+comment|//            }
+comment|//
+comment|//            File tempDir = FileUtils.createTempFile("archived-file-set.", ".tmp", null);
+comment|//
+comment|//            tempDir.mkdirs();
+comment|//
+comment|//            tmpDirs.add(tempDir);
+comment|//
+comment|//            unArchiver.setSourceFile(archiveFile);
+comment|//            unArchiver.setDestDirectory(tempDir);
+comment|//
+comment|//            try {
+comment|//                unArchiver.extract();
+comment|//            } catch (IOException e) {
+comment|//                throw new ArchiverException("Error adding archived file-set. Failed to extract: "
+comment|//                        + archiveFile, e);
+comment|//            }
+comment|//
+comment|//            getArchiver().addDirectory(tempDir, null, null, null);
+comment|//        }
+comment|//
+comment|//        public void cleanup() {
+comment|//            for (File dir : tmpDirs) {
+comment|//                try {
+comment|//                    FileUtils.deleteDirectory(dir);
+comment|//                } catch (IOException e) {
+comment|//                    e.printStackTrace();
+comment|//                }
+comment|//            }
+comment|//            tmpDirs.clear();
+comment|//        }
+comment|//
+comment|//    }
 block|}
 end_class
 
