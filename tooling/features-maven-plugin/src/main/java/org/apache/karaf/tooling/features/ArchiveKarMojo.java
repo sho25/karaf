@@ -306,7 +306,7 @@ name|targetRepository
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * Location of resources directory for additional content to include in the car.      *      * @parameter expression="${project.build.directory}/resources"      */
+comment|/**      * Location of resources directory for additional content to include in the car.      *      * @parameter expression="${project.build.directory}/classes/resources"      */
 specifier|private
 name|File
 name|resourcesDir
@@ -315,6 +315,11 @@ comment|/**      * The features file to use as instructions      *      * @param
 specifier|private
 name|File
 name|featuresFile
+decl_stmt|;
+comment|/**      * The internal repository in the kar.      *      * @parameter default-value="${repositoryPath}"      */
+specifier|private
+name|String
+name|repositoryPath
 decl_stmt|;
 comment|//
 comment|// Mojo
@@ -506,103 +511,6 @@ argument_list|)
 throw|;
 block|}
 block|}
-specifier|private
-name|File
-name|getArtifactInRepositoryDir
-parameter_list|()
-block|{
-comment|//
-comment|// HACK: Generate the filename in the repo... really should delegate this to the repo impl
-comment|//
-name|String
-name|groupId
-init|=
-name|project
-operator|.
-name|getGroupId
-argument_list|()
-operator|.
-name|replace
-argument_list|(
-literal|'.'
-argument_list|,
-literal|'/'
-argument_list|)
-decl_stmt|;
-name|String
-name|artifactId
-init|=
-name|project
-operator|.
-name|getArtifactId
-argument_list|()
-decl_stmt|;
-name|String
-name|version
-init|=
-name|project
-operator|.
-name|getVersion
-argument_list|()
-decl_stmt|;
-name|String
-name|type
-init|=
-literal|"car"
-decl_stmt|;
-name|File
-name|dir
-init|=
-operator|new
-name|File
-argument_list|(
-name|targetRepository
-argument_list|,
-name|groupId
-argument_list|)
-decl_stmt|;
-name|dir
-operator|=
-operator|new
-name|File
-argument_list|(
-name|dir
-argument_list|,
-name|artifactId
-argument_list|)
-expr_stmt|;
-name|dir
-operator|=
-operator|new
-name|File
-argument_list|(
-name|dir
-argument_list|,
-name|version
-argument_list|)
-expr_stmt|;
-name|dir
-operator|=
-operator|new
-name|File
-argument_list|(
-name|dir
-argument_list|,
-name|artifactId
-operator|+
-literal|"-"
-operator|+
-name|version
-operator|+
-literal|"."
-operator|+
-name|type
-argument_list|)
-expr_stmt|;
-return|return
-name|dir
-return|;
-block|}
 comment|/**      * Generates the configuration archive.      * @param bundles      */
 specifier|private
 name|File
@@ -708,7 +616,7 @@ name|addFile
 argument_list|(
 name|featuresFile
 argument_list|,
-literal|"repository/"
+name|repositoryPath
 operator|+
 name|layout
 operator|.
@@ -745,10 +653,22 @@ operator|.
 name|getFile
 argument_list|()
 decl_stmt|;
+comment|//TODO this may not be reasonable, but... resolved snapshot artifacts have timestamped versions
+comment|//which do not work in startup.properties.
+name|artifact
+operator|.
+name|setVersion
+argument_list|(
+name|artifact
+operator|.
+name|getBaseVersion
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|String
 name|targetFileName
 init|=
-literal|"repository/"
+name|repositoryPath
 operator|+
 name|layout
 operator|.
@@ -773,61 +693,34 @@ comment|//
 comment|//            if (artifactDirectory.exists()) {
 comment|//                archiver.addArchivedFileSet(artifactDirectory);
 comment|//            }
-comment|//            if (resourcesDir.isDirectory()) {
-comment|//                archiver.getArchiver().addDirectory(resourcesDir);
-comment|//            }
-comment|//
-for|for
-control|(
-name|Resource
-name|resource
-range|:
-operator|(
-name|List
-argument_list|<
-name|Resource
-argument_list|>
-operator|)
-name|project
-operator|.
-name|getResources
-argument_list|()
-control|)
-block|{
-name|File
-name|resourceDir
-init|=
-operator|new
-name|File
-argument_list|(
-name|resource
-operator|.
-name|getDirectory
-argument_list|()
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
-name|resourceDir
+name|resourcesDir
 operator|.
-name|exists
+name|isDirectory
 argument_list|()
 condition|)
 block|{
-name|jarArchiver
+name|archiver
+operator|.
+name|getArchiver
+argument_list|()
 operator|.
 name|addDirectory
 argument_list|(
-name|resourceDir
+name|resourcesDir
 argument_list|,
-name|resource
-operator|.
-name|getTargetPath
-argument_list|()
+literal|"resources/"
 argument_list|)
 expr_stmt|;
 block|}
-block|}
+comment|//
+comment|//            for (Resource resource: (List<Resource>)project.getResources()) {
+comment|//                File resourceDir = new File(resource.getDirectory());
+comment|//                if (resourceDir.exists()) {
+comment|//                    jarArchiver.addDirectory(resourceDir, resource.getTargetPath());
+comment|//                }
+comment|//            }
 comment|//
 comment|// HACK: Include legal files here for sanity
 comment|//
