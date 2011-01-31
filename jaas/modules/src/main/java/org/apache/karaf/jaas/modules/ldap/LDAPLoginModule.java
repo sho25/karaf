@@ -25,34 +25,6 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|Log
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|LogFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
 name|karaf
 operator|.
 name|jaas
@@ -120,6 +92,26 @@ operator|.
 name|framework
 operator|.
 name|ServiceReference
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
 import|;
 end_import
 
@@ -223,16 +215,6 @@ name|java
 operator|.
 name|security
 operator|.
-name|GeneralSecurityException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|security
-operator|.
 name|Principal
 import|;
 end_import
@@ -279,15 +261,13 @@ extends|extends
 name|AbstractKarafLoginModule
 block|{
 specifier|private
-specifier|final
 specifier|static
-specifier|transient
-name|Log
-name|LOG
+name|Logger
+name|logger
 init|=
-name|LogFactory
+name|LoggerFactory
 operator|.
-name|getLog
+name|getLogger
 argument_list|(
 name|LDAPLoginModule
 operator|.
@@ -759,7 +739,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|LOG
+name|logger
 operator|.
 name|error
 argument_list|(
@@ -787,7 +767,7 @@ literal|"ldaps:"
 argument_list|)
 condition|)
 block|{
-name|LOG
+name|logger
 operator|.
 name|error
 argument_list|(
@@ -1119,7 +1099,7 @@ operator|new
 name|Hashtable
 argument_list|()
 decl_stmt|;
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1165,7 +1145,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1217,7 +1197,7 @@ name|env
 argument_list|)
 expr_stmt|;
 block|}
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1229,7 +1209,7 @@ name|userDN
 decl_stmt|;
 try|try
 block|{
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1245,7 +1225,7 @@ argument_list|(
 name|env
 argument_list|)
 decl_stmt|;
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1286,14 +1266,14 @@ name|ONELEVEL_SCOPE
 argument_list|)
 expr_stmt|;
 block|}
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
 literal|"Looking for the user in LDAP with "
 argument_list|)
 expr_stmt|;
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1313,7 +1293,7 @@ argument_list|,
 name|user
 argument_list|)
 expr_stmt|;
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1345,7 +1325,7 @@ name|hasMore
 argument_list|()
 condition|)
 block|{
-name|LOG
+name|logger
 operator|.
 name|warn
 argument_list|(
@@ -1360,7 +1340,7 @@ return|return
 literal|false
 return|;
 block|}
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1411,7 +1391,7 @@ block|}
 comment|// step 2: bind the user using the DN
 try|try
 block|{
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1429,7 +1409,7 @@ argument_list|,
 name|authentication
 argument_list|)
 expr_stmt|;
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1468,7 +1448,7 @@ argument_list|,
 name|password
 argument_list|)
 expr_stmt|;
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1484,7 +1464,7 @@ argument_list|(
 name|env
 argument_list|)
 decl_stmt|;
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1507,7 +1487,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|LOG
+name|logger
 operator|.
 name|warn
 argument_list|(
@@ -1538,7 +1518,7 @@ expr_stmt|;
 comment|// step 3: retrieving user roles
 try|try
 block|{
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1588,14 +1568,14 @@ name|ONELEVEL_SCOPE
 argument_list|)
 expr_stmt|;
 block|}
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
 literal|"Looking for the user roles in LDAP with "
 argument_list|)
 expr_stmt|;
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1615,7 +1595,7 @@ argument_list|,
 name|user
 argument_list|)
 expr_stmt|;
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1746,7 +1726,7 @@ literal|null
 decl_stmt|;
 try|try
 block|{
-name|LOG
+name|logger
 operator|.
 name|debug
 argument_list|(
