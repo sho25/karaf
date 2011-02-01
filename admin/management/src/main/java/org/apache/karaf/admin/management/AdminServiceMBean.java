@@ -190,6 +190,18 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+name|void
+name|renameInstance
+parameter_list|(
+name|String
+name|originalName
+parameter_list|,
+name|String
+name|newName
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 comment|// Attributes
 name|TabularData
 name|getInstances
