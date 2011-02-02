@@ -703,7 +703,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|removeRepositroy
+name|removeRepository
 parameter_list|(
 name|String
 name|uri

@@ -56,7 +56,7 @@ throws|throws
 name|Exception
 function_decl|;
 name|void
-name|removeRepositroy
+name|removeRepository
 parameter_list|(
 name|String
 name|url
