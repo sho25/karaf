@@ -89,7 +89,7 @@ literal|"printf"
 argument_list|,
 name|description
 operator|=
-literal|"Format and print arguments"
+literal|"Formats and prints arguments."
 argument_list|)
 specifier|public
 class|class

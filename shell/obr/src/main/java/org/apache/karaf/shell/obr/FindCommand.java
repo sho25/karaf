@@ -171,7 +171,7 @@ literal|"find"
 argument_list|,
 name|description
 operator|=
-literal|"Find OBR bundles for a given filter"
+literal|"Find OBR bundles for a given filter."
 argument_list|)
 specifier|public
 class|class

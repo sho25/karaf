@@ -135,7 +135,7 @@ literal|"update"
 argument_list|,
 name|description
 operator|=
-literal|"Save and propagate changes from the configuration being edited."
+literal|"Saves and propagates changes from the configuration being edited."
 argument_list|)
 specifier|public
 class|class

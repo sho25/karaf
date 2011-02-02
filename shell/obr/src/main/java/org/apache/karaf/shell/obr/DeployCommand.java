@@ -87,7 +87,7 @@ literal|"deploy"
 argument_list|,
 name|description
 operator|=
-literal|"Deploys a list of bundles using OBR service"
+literal|"Deploys a list of bundles using OBR service."
 argument_list|)
 specifier|public
 class|class

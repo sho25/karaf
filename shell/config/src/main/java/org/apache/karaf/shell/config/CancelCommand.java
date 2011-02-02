@@ -61,7 +61,7 @@ literal|"cancel"
 argument_list|,
 name|description
 operator|=
-literal|"Cancel the changes to the configuration being edited."
+literal|"Cancels the changes to the configuration being edited."
 argument_list|)
 specifier|public
 class|class

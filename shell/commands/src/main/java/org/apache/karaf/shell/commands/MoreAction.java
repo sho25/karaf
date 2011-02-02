@@ -159,7 +159,7 @@ literal|"more"
 argument_list|,
 name|description
 operator|=
-literal|"file pager"
+literal|"File pager."
 argument_list|)
 specifier|public
 class|class

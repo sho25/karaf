@@ -185,7 +185,7 @@ literal|"tail"
 argument_list|,
 name|description
 operator|=
-literal|"Displays the last lines of a file"
+literal|"Displays the last lines of a file."
 argument_list|)
 specifier|public
 class|class

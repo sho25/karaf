@@ -147,7 +147,7 @@ literal|"watch"
 argument_list|,
 name|description
 operator|=
-literal|"Watch and Update bundles"
+literal|"Watches and updates bundles."
 argument_list|,
 name|detailedDescription
 operator|=

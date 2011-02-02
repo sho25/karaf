@@ -179,7 +179,7 @@ literal|"cat"
 argument_list|,
 name|description
 operator|=
-literal|"Displays the content of a file or url"
+literal|"Displays the content of a file or URL."
 argument_list|)
 specifier|public
 class|class

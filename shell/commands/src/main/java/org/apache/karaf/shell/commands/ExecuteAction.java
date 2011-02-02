@@ -109,7 +109,7 @@ literal|"exec"
 argument_list|,
 name|description
 operator|=
-literal|"Executes system processes"
+literal|"Executes system processes."
 argument_list|)
 specifier|public
 class|class

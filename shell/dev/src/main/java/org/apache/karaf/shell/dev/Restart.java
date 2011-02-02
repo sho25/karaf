@@ -83,7 +83,7 @@ literal|"restart"
 argument_list|,
 name|description
 operator|=
-literal|"Restart Karaf"
+literal|"Restart Karaf."
 argument_list|)
 specifier|public
 class|class

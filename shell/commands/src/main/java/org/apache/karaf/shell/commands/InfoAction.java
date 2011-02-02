@@ -289,7 +289,7 @@ literal|"info"
 argument_list|,
 name|description
 operator|=
-literal|"Prints system informations"
+literal|"Prints system information."
 argument_list|)
 specifier|public
 class|class

@@ -113,7 +113,7 @@ literal|"list"
 argument_list|,
 name|description
 operator|=
-literal|"Lists OBR bundles"
+literal|"Lists OBR bundles."
 argument_list|)
 specifier|public
 class|class

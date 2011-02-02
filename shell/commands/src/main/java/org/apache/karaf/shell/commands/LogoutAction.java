@@ -79,7 +79,7 @@ literal|"logout"
 argument_list|,
 name|description
 operator|=
-literal|"Disconnect shell from current session"
+literal|"Disconnects shell from current session."
 argument_list|)
 specifier|public
 class|class

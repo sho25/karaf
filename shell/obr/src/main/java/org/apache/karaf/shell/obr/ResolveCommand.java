@@ -193,7 +193,7 @@ literal|"resolve"
 argument_list|,
 name|description
 operator|=
-literal|"Show the resolution output for a given set of requirements"
+literal|"Shows the resolution output for a given set of requirements."
 argument_list|)
 specifier|public
 class|class

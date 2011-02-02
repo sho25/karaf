@@ -67,7 +67,7 @@ literal|"clear"
 argument_list|,
 name|description
 operator|=
-literal|"Clears the console buffer"
+literal|"Clears the console buffer."
 argument_list|)
 specifier|public
 class|class

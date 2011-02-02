@@ -177,7 +177,7 @@ literal|"framework"
 argument_list|,
 name|description
 operator|=
-literal|"OSGi Framework options"
+literal|"OSGi Framework options."
 argument_list|)
 specifier|public
 class|class

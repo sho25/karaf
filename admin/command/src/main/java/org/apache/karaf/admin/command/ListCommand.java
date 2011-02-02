@@ -81,7 +81,7 @@ literal|"list"
 argument_list|,
 name|description
 operator|=
-literal|"List all existing container instances."
+literal|"Lists all existing container instances."
 argument_list|)
 specifier|public
 class|class

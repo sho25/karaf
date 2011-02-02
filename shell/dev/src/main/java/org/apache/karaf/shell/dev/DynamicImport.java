@@ -245,7 +245,7 @@ literal|"dynamic-import"
 argument_list|,
 name|description
 operator|=
-literal|"Enable/disable dynamic-import for a given bundle"
+literal|"Enables/disables dynamic-import for a given bundle."
 argument_list|)
 specifier|public
 class|class

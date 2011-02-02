@@ -113,7 +113,7 @@ literal|"edit"
 argument_list|,
 name|description
 operator|=
-literal|"Create or edit a configuration."
+literal|"Creates or edits a configuration."
 argument_list|)
 specifier|public
 class|class

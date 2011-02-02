@@ -183,7 +183,7 @@ literal|"tac"
 argument_list|,
 name|description
 operator|=
-literal|"Captures the STDIN and returns it as a string. Optionally writes the content to a file"
+literal|"Captures the STDIN and returns it as a string. Optionally writes the content to a file."
 argument_list|)
 specifier|public
 class|class

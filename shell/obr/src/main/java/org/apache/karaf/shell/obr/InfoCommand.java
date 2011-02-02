@@ -171,7 +171,7 @@ literal|"info"
 argument_list|,
 name|description
 operator|=
-literal|"Prints information about OBR bundles"
+literal|"Prints information about OBR bundles."
 argument_list|)
 specifier|public
 class|class

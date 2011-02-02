@@ -61,7 +61,7 @@ literal|"start"
 argument_list|,
 name|description
 operator|=
-literal|"Deploy and start a list of bundles using OBR."
+literal|"Deploys and starts a list of bundles using OBR."
 argument_list|)
 specifier|public
 class|class

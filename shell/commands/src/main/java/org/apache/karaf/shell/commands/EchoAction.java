@@ -105,7 +105,7 @@ literal|"echo"
 argument_list|,
 name|description
 operator|=
-literal|"Echoes or prints arguments to STDOUT"
+literal|"Echoes or prints arguments to STDOUT."
 argument_list|)
 specifier|public
 class|class

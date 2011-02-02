@@ -181,7 +181,7 @@ literal|"grep"
 argument_list|,
 name|description
 operator|=
-literal|"Prints lines matching the given pattern"
+literal|"Prints lines matching the given pattern."
 argument_list|,
 name|detailedDescription
 operator|=

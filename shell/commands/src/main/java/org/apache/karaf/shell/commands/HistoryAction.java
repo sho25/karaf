@@ -91,7 +91,7 @@ literal|"history"
 argument_list|,
 name|description
 operator|=
-literal|"Prints command history"
+literal|"Prints command history."
 argument_list|)
 specifier|public
 class|class

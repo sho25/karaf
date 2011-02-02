@@ -79,7 +79,7 @@ literal|"sleep"
 argument_list|,
 name|description
 operator|=
-literal|"Sleeps for a bit then wakes up"
+literal|"Sleeps for a bit then wakes up."
 argument_list|)
 specifier|public
 class|class

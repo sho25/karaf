@@ -299,7 +299,7 @@ literal|"show-tree"
 argument_list|,
 name|description
 operator|=
-literal|"Show the tree of bundles based on the wiring information"
+literal|"Shows the tree of bundles based on the wiring information."
 argument_list|)
 specifier|public
 class|class

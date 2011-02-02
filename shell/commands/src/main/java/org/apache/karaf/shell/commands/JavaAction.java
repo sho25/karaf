@@ -121,7 +121,7 @@ literal|"java"
 argument_list|,
 name|description
 operator|=
-literal|"Execute a Java standard application"
+literal|"Executes a Java standard application."
 argument_list|)
 specifier|public
 class|class

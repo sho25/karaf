@@ -155,7 +155,7 @@ literal|"source"
 argument_list|,
 name|description
 operator|=
-literal|"Download the sources for an OBR bundle."
+literal|"Downloads the sources for an OBR bundle."
 argument_list|)
 specifier|public
 class|class

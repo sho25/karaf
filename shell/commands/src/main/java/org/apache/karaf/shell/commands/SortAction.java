@@ -253,7 +253,7 @@ literal|"sort"
 argument_list|,
 name|description
 operator|=
-literal|"Write sorted concatenation of all files to standard output."
+literal|"Writes sorted concatenation of all files to standard output."
 argument_list|)
 specifier|public
 class|class

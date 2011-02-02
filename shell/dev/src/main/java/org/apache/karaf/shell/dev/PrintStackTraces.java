@@ -145,7 +145,7 @@ literal|"print-stack-traces"
 argument_list|,
 name|description
 operator|=
-literal|"Print the full stack trace in the console when the execution of a command throws an exception"
+literal|"Prints the full stack trace in the console when the execution of a command throws an exception."
 argument_list|)
 specifier|public
 class|class
