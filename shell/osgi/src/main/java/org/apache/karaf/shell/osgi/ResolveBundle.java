@@ -95,7 +95,7 @@ literal|"resolve"
 argument_list|,
 name|description
 operator|=
-literal|"Resolve bundle(s)"
+literal|"Resolve bundle(s)."
 argument_list|)
 specifier|public
 class|class

@@ -69,7 +69,7 @@ literal|"stop"
 argument_list|,
 name|description
 operator|=
-literal|"Stop bundle(s)"
+literal|"Stop bundle(s)."
 argument_list|)
 specifier|public
 class|class

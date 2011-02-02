@@ -91,7 +91,7 @@ literal|"start-level"
 argument_list|,
 name|description
 operator|=
-literal|"Get or set the system start level"
+literal|"Gets or sets the system start level."
 argument_list|)
 specifier|public
 class|class

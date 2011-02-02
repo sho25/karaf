@@ -79,7 +79,7 @@ literal|"shutdown"
 argument_list|,
 name|description
 operator|=
-literal|"Shuts the framework down"
+literal|"Shuts the framework down."
 argument_list|)
 specifier|public
 class|class

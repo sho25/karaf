@@ -101,7 +101,7 @@ literal|"bundle-level"
 argument_list|,
 name|description
 operator|=
-literal|"Get or set the start level of a given bundle"
+literal|"Gets or sets the start level of a given bundle."
 argument_list|)
 specifier|public
 class|class

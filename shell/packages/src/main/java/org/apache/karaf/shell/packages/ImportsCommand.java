@@ -181,7 +181,7 @@ literal|"imports"
 argument_list|,
 name|description
 operator|=
-literal|"Display imported packages"
+literal|"Displays imported packages."
 argument_list|)
 specifier|public
 class|class

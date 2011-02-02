@@ -69,7 +69,7 @@ literal|"start"
 argument_list|,
 name|description
 operator|=
-literal|"Start bundle(s)"
+literal|"Starts bundle(s)."
 argument_list|)
 specifier|public
 class|class

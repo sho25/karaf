@@ -153,7 +153,7 @@ literal|"list"
 argument_list|,
 name|description
 operator|=
-literal|"Lists all installed bundles"
+literal|"Lists all installed bundles."
 argument_list|)
 specifier|public
 class|class

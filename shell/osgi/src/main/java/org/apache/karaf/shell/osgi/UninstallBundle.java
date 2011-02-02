@@ -69,7 +69,7 @@ literal|"uninstall"
 argument_list|,
 name|description
 operator|=
-literal|"Uninstall bundle(s)"
+literal|"Uninstall bundle(s)."
 argument_list|)
 specifier|public
 class|class

@@ -161,7 +161,7 @@ literal|"exports"
 argument_list|,
 name|description
 operator|=
-literal|"Display exported packages"
+literal|"Displays exported packages."
 argument_list|)
 specifier|public
 class|class

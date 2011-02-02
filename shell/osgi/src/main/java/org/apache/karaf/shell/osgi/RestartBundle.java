@@ -69,7 +69,7 @@ literal|"restart"
 argument_list|,
 name|description
 operator|=
-literal|"Stop and restart bundle(s)"
+literal|"Stops and restarts bundle(s)."
 argument_list|)
 specifier|public
 class|class

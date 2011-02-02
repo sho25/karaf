@@ -149,7 +149,7 @@ literal|"list"
 argument_list|,
 name|description
 operator|=
-literal|"Lists details for war bundles"
+literal|"Lists details for war bundles."
 argument_list|)
 specifier|public
 class|class

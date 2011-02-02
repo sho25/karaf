@@ -127,7 +127,7 @@ literal|"refresh"
 argument_list|,
 name|description
 operator|=
-literal|"Refresh a bundle"
+literal|"Refresh a bundle."
 argument_list|)
 specifier|public
 class|class

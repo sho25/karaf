@@ -145,7 +145,7 @@ literal|"ls"
 argument_list|,
 name|description
 operator|=
-literal|"Lists OSGi services"
+literal|"Lists OSGi services."
 argument_list|)
 specifier|public
 class|class

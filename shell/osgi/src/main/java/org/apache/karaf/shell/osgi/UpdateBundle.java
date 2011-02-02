@@ -95,7 +95,7 @@ literal|"update"
 argument_list|,
 name|description
 operator|=
-literal|"Update bundle"
+literal|"Update bundle."
 argument_list|)
 specifier|public
 class|class

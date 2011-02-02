@@ -327,7 +327,7 @@ literal|"headers"
 argument_list|,
 name|description
 operator|=
-literal|"Displays OSGi headers of a given bundle"
+literal|"Displays OSGi headers of a given bundle."
 argument_list|)
 specifier|public
 class|class

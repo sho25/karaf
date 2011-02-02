@@ -149,7 +149,7 @@ literal|"install"
 argument_list|,
 name|description
 operator|=
-literal|"Installs one or more bundles"
+literal|"Installs one or more bundles."
 argument_list|)
 specifier|public
 class|class
