@@ -150,6 +150,8 @@ argument_list|(
 name|artifact
 argument_list|)
 decl_stmt|;
+try|try
+block|{
 comment|// only handle non OSGi jar
 name|Manifest
 name|manifest
@@ -209,6 +211,15 @@ block|}
 return|return
 literal|true
 return|;
+block|}
+finally|finally
+block|{
+name|jar
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
