@@ -5145,7 +5145,7 @@ name|FeatureEvent
 operator|.
 name|EventType
 operator|.
-name|FeatureInstalled
+name|FeatureUninstalled
 argument_list|,
 literal|false
 argument_list|)
