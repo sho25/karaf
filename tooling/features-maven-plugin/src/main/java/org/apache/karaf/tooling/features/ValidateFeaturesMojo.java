@@ -325,6 +325,22 @@ name|artifact
 operator|.
 name|resolver
 operator|.
+name|ArtifactCollector
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|artifact
+operator|.
+name|resolver
+operator|.
 name|ArtifactNotFoundException
 import|;
 end_import
@@ -511,6 +527,11 @@ comment|/**      * The dependency tree builder to use.      *      * @component 
 specifier|private
 name|DependencyTreeBuilder
 name|dependencyTreeBuilder
+decl_stmt|;
+comment|/**      * The ArtifactCollector provided by Maven at runtime      *      * @component      * @required      * @readonly      */
+specifier|private
+name|ArtifactCollector
+name|collector
 decl_stmt|;
 comment|/**      * The file to generate      *       * @parameter default-value="${project.build.directory}/classes/features.xml"      */
 specifier|private
@@ -1130,9 +1151,7 @@ return|;
 block|}
 block|}
 argument_list|,
-operator|new
-name|DefaultArtifactCollector
-argument_list|()
+name|collector
 argument_list|)
 decl_stmt|;
 name|tree
