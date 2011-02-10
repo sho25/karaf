@@ -2246,7 +2246,7 @@ argument_list|()
 condition|?
 literal|"%s "
 else|:
-literal|"[%s] "
+literal|"\\[%s\\] "
 argument_list|,
 name|argument
 operator|.
@@ -2294,6 +2294,13 @@ operator|.
 name|println
 argument_list|(
 literal|"h2. Arguments"
+argument_list|)
+expr_stmt|;
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"|| Name || Description ||"
 argument_list|)
 expr_stmt|;
 for|for
@@ -2456,6 +2463,13 @@ operator|.
 name|println
 argument_list|(
 literal|"h2. Options"
+argument_list|)
+expr_stmt|;
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"|| Name || Description ||"
 argument_list|)
 expr_stmt|;
 for|for
