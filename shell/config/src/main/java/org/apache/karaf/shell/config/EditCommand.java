@@ -160,6 +160,10 @@ argument_list|,
 name|description
 operator|=
 literal|"Creates or edits a configuration."
+argument_list|,
+name|detailedDescription
+operator|=
+literal|"classpath:edit.txt"
 argument_list|)
 specifier|public
 class|class
@@ -274,7 +278,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Force the edition of this config, even if another one was under edition"
+literal|"Configuration lookup using the filename instead of the pid"
 argument_list|,
 name|required
 operator|=
