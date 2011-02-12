@@ -81,26 +81,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|ops4j
-operator|.
-name|pax
-operator|.
-name|web
-operator|.
-name|service
-operator|.
-name|spi
-operator|.
-name|WebEvent
-operator|.
-name|WebTopic
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|osgi
 operator|.
 name|framework
@@ -827,11 +807,17 @@ name|FAILED
 case|:
 name|topic
 operator|=
-literal|"Unknown    "
+literal|"Failed     "
 expr_stmt|;
+break|break;
+case|case
+name|WebEvent
+operator|.
+name|WAITING
+case|:
 name|topic
 operator|=
-literal|"Failed     "
+literal|"Waiting    "
 expr_stmt|;
 break|break;
 default|default:
