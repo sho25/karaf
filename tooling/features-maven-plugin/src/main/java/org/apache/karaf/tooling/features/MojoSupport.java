@@ -2004,6 +2004,13 @@ literal|" "
 argument_list|,
 literal|""
 argument_list|)
+operator|.
+name|replace
+argument_list|(
+literal|"\t"
+argument_list|,
+literal|""
+argument_list|)
 expr_stmt|;
 specifier|final
 name|int
