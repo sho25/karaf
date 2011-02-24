@@ -173,7 +173,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"  SSH Port   RMI Port   State       Pid  JavaOpts"
+literal|"  SSH Port   RMI Ports          State       Pid  JavaOpts"
 argument_list|)
 expr_stmt|;
 block|}
@@ -189,7 +189,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"  SSH Port   RMI Port   State       Pid  Location"
+literal|"  SSH Port   RMI Ports          State       Pid  Location"
 argument_list|)
 expr_stmt|;
 block|}
@@ -201,7 +201,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"  SSH Port   RMI Port   State       Pid  Name"
+literal|"  SSH Port   RMI Ports          State       Pid  Name"
 argument_list|)
 expr_stmt|;
 block|}
@@ -281,7 +281,7 @@ literal|"] ["
 argument_list|)
 expr_stmt|;
 name|String
-name|r
+name|rmiRegistry
 init|=
 name|Integer
 operator|.
@@ -293,19 +293,58 @@ name|getRmiRegistryPort
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|String
+name|rmiServer
+init|=
+name|Integer
+operator|.
+name|toString
+argument_list|(
+name|instance
+operator|.
+name|getRmiServerPort
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|sb
+operator|.
+name|append
+argument_list|(
+name|rmiRegistry
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|"/"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|rmiServer
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|int
 name|i
 init|=
-name|r
+operator|(
+name|rmiRegistry
 operator|.
 name|length
 argument_list|()
+operator|+
+name|rmiServer
+operator|.
+name|length
+argument_list|()
+operator|+
+literal|1
+operator|)
 init|;
 name|i
 operator|<
-literal|8
+literal|15
 condition|;
 name|i
 operator|++
@@ -319,13 +358,6 @@ literal|' '
 argument_list|)
 expr_stmt|;
 block|}
-name|sb
-operator|.
-name|append
-argument_list|(
-name|r
-argument_list|)
-expr_stmt|;
 name|sb
 operator|.
 name|append

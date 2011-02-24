@@ -140,9 +140,15 @@ literal|9941
 expr_stmt|;
 name|cc
 operator|.
-name|rmiPort
+name|rmiRegistryPort
 operator|=
 literal|1122
+expr_stmt|;
+name|cc
+operator|.
+name|rmiServerPort
+operator|=
+literal|44444
 expr_stmt|;
 name|cc
 operator|.
@@ -210,6 +216,8 @@ argument_list|(
 literal|9941
 argument_list|,
 literal|1122
+argument_list|,
+literal|44444
 argument_list|,
 literal|"top"
 argument_list|,

@@ -101,6 +101,8 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
+literal|1
+argument_list|,
 literal|null
 argument_list|,
 literal|null
@@ -138,6 +140,16 @@ argument_list|,
 name|is
 operator|.
 name|getRmiRegistryPort
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
+name|is
+operator|.
+name|getRmiServerPort
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -191,6 +203,8 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
+literal|1
+argument_list|,
 literal|"top"
 argument_list|,
 literal|"foo"
@@ -217,6 +231,8 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 literal|null
 argument_list|,
 literal|null
@@ -235,7 +251,10 @@ name|int
 name|sshPort
 parameter_list|,
 name|int
-name|rmiPort
+name|rmiRegistryPort
+parameter_list|,
+name|int
+name|rmiServerPort
 parameter_list|,
 name|String
 name|location
@@ -264,7 +283,9 @@ name|InstanceSettings
 argument_list|(
 name|sshPort
 argument_list|,
-name|rmiPort
+name|rmiRegistryPort
+argument_list|,
+name|rmiServerPort
 argument_list|,
 name|location
 argument_list|,
@@ -283,7 +304,9 @@ name|InstanceSettings
 argument_list|(
 name|sshPort
 argument_list|,
-name|rmiPort
+name|rmiRegistryPort
+argument_list|,
+name|rmiServerPort
 argument_list|,
 name|location
 argument_list|,
@@ -326,6 +349,8 @@ init|=
 operator|new
 name|InstanceSettings
 argument_list|(
+literal|1
+argument_list|,
 literal|1
 argument_list|,
 literal|1

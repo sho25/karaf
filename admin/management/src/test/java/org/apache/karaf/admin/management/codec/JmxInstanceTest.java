@@ -332,6 +332,21 @@ name|expect
 argument_list|(
 name|i
 operator|.
+name|getRmiServerPort
+argument_list|()
+argument_list|)
+operator|.
+name|andReturn
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
+name|EasyMock
+operator|.
+name|expect
+argument_list|(
+name|i
+operator|.
 name|getState
 argument_list|()
 argument_list|)
@@ -523,7 +538,21 @@ name|cd
 operator|.
 name|get
 argument_list|(
-literal|"RMI Port"
+literal|"RMI Registry Port"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|Assert
+operator|.
+name|assertEquals
+argument_list|(
+literal|0
+argument_list|,
+name|cd
+operator|.
+name|get
+argument_list|(
+literal|"RMI Server Port"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -656,6 +685,21 @@ argument_list|(
 name|i
 operator|.
 name|getRmiRegistryPort
+argument_list|()
+argument_list|)
+operator|.
+name|andReturn
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
+name|EasyMock
+operator|.
+name|expect
+argument_list|(
+name|i
+operator|.
+name|getRmiServerPort
 argument_list|()
 argument_list|)
 operator|.
@@ -857,7 +901,21 @@ name|cd
 operator|.
 name|get
 argument_list|(
-literal|"RMI Port"
+literal|"RMI Registry Port"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|Assert
+operator|.
+name|assertEquals
+argument_list|(
+literal|0
+argument_list|,
+name|cd
+operator|.
+name|get
+argument_list|(
+literal|"RMI Server Port"
 argument_list|)
 argument_list|)
 expr_stmt|;
