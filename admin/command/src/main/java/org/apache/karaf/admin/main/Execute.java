@@ -246,6 +246,10 @@ block|,
 name|ChangeRmiRegistryPortCommand
 operator|.
 name|class
+block|,
+name|ChangeRmiServerPortCommand
+operator|.
+name|class
 block|}
 decl_stmt|;
 specifier|private
