@@ -113,7 +113,7 @@ literal|"list"
 argument_list|,
 name|description
 operator|=
-literal|"Lists OBR bundles."
+literal|"Lists OBR bundles, optionally providing the given packages."
 argument_list|)
 specifier|public
 class|class
@@ -130,11 +130,11 @@ literal|0
 argument_list|,
 name|name
 operator|=
-literal|"args"
+literal|"packages"
 argument_list|,
 name|description
 operator|=
-literal|"The arguments"
+literal|"A list of packages separated by whitespaces."
 argument_list|,
 name|required
 operator|=
@@ -148,7 +148,7 @@ name|List
 argument_list|<
 name|String
 argument_list|>
-name|args
+name|packages
 decl_stmt|;
 specifier|protected
 name|void
@@ -167,7 +167,7 @@ literal|null
 decl_stmt|;
 if|if
 condition|(
-name|args
+name|packages
 operator|!=
 literal|null
 condition|)
@@ -177,7 +177,7 @@ control|(
 name|String
 name|arg
 range|:
-name|args
+name|packages
 control|)
 block|{
 comment|// Add a space in between tokens.
