@@ -272,23 +272,9 @@ name|String
 name|text
 parameter_list|)
 block|{
+comment|//        return new Ansi(style).a(text).reset().toString();
 return|return
-operator|new
-name|Ansi
-argument_list|(
-name|style
-argument_list|)
-operator|.
-name|a
-argument_list|(
-name|text
-argument_list|)
-operator|.
-name|reset
-argument_list|()
-operator|.
-name|toString
-argument_list|()
+literal|""
 return|;
 block|}
 comment|/**      * Sets dirty flag and return ansi object.      */
@@ -312,29 +298,9 @@ name|String
 name|toString
 parameter_list|()
 block|{
+comment|//        return isClean() ? "[no style]" : "[ansi: " + new Ansi(style).a("x").reset() + "]";
 return|return
-name|isClean
-argument_list|()
-condition|?
-literal|"[no style]"
-else|:
-literal|"[ansi: "
-operator|+
-operator|new
-name|Ansi
-argument_list|(
-name|style
-argument_list|)
-operator|.
-name|a
-argument_list|(
-literal|"x"
-argument_list|)
-operator|.
-name|reset
-argument_list|()
-operator|+
-literal|"]"
+literal|""
 return|;
 block|}
 block|}
