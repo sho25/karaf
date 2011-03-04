@@ -1910,7 +1910,7 @@ argument_list|()
 operator|.
 name|groupId
 argument_list|(
-literal|"org.apache.karaf.features.assembly"
+literal|"org.apache.karaf.assemblies.features"
 argument_list|)
 operator|.
 name|artifactId
@@ -1954,7 +1954,7 @@ argument_list|()
 operator|.
 name|groupId
 argument_list|(
-literal|"org.apache.karaf.features.assembly"
+literal|"org.apache.karaf.assemblies.features"
 argument_list|)
 operator|.
 name|artifactId
