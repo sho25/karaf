@@ -14,6 +14,8 @@ operator|.
 name|features
 operator|.
 name|internal
+operator|.
+name|model
 package|;
 end_package
 
@@ -88,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *   * Additional configuration files which should be created during feature installation.  *               *   *<p>Java class for configFile complex type.  *   *<p>The following schema fragment specifies the expected content contained within this class.  *   *<pre>  *&lt;complexType name="configFile">  *&lt;simpleContent>  *&lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">  *&lt;attribute name="finalname" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;/extension>  *&lt;/simpleContent>  *&lt;/complexType>  *</pre>  *   *   */
+comment|/**  *   * Configuration entries which should be created during feature installation. This  * configuration may be used with OSGi Configuration Admin.  *               *   *<p>Java class for config complex type.  *   *<p>The following schema fragment specifies the expected content contained within this class.  *   *<pre>  *&lt;complexType name="config">  *&lt;simpleContent>  *&lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">  *&lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;/extension>  *&lt;/simpleContent>  *&lt;/complexType>  *</pre>  *   *   */
 end_comment
 
 begin_class
@@ -104,7 +106,7 @@ name|XmlType
 argument_list|(
 name|name
 operator|=
-literal|"configFile"
+literal|"config"
 argument_list|,
 name|propOrder
 operator|=
@@ -114,7 +116,7 @@ block|}
 argument_list|)
 specifier|public
 class|class
-name|ConfigFile
+name|Config
 block|{
 annotation|@
 name|XmlValue
@@ -131,7 +133,7 @@ literal|true
 argument_list|)
 specifier|protected
 name|String
-name|finalname
+name|name
 decl_stmt|;
 comment|/**      * Gets the value of the value property.      *       * @return      *     possible object is      *     {@link String }      *           */
 specifier|public
@@ -159,20 +161,20 @@ operator|=
 name|value
 expr_stmt|;
 block|}
-comment|/**      * Gets the value of the finalname property.      *       * @return      *     possible object is      *     {@link String }      *           */
+comment|/**      * Gets the value of the name property.      *       * @return      *     possible object is      *     {@link String }      *           */
 specifier|public
 name|String
-name|getFinalname
+name|getName
 parameter_list|()
 block|{
 return|return
-name|finalname
+name|name
 return|;
 block|}
-comment|/**      * Sets the value of the finalname property.      *       * @param value      *     allowed object is      *     {@link String }      *           */
+comment|/**      * Sets the value of the name property.      *       * @param value      *     allowed object is      *     {@link String }      *           */
 specifier|public
 name|void
-name|setFinalname
+name|setName
 parameter_list|(
 name|String
 name|value
@@ -180,7 +182,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|finalname
+name|name
 operator|=
 name|value
 expr_stmt|;

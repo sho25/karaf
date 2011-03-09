@@ -14,8 +14,20 @@ operator|.
 name|features
 operator|.
 name|internal
+operator|.
+name|model
 package|;
 end_package
+
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
+name|URI
+import|;
+end_import
 
 begin_import
 import|import
@@ -121,6 +133,20 @@ name|XmlType
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|Repository
+import|;
+end_import
+
 begin_comment
 comment|/**  *   * Root element of Feature definition. It contains optional attribute which allow  * name of repository. This name will be used in shell to display source repository  * of given feature.  *               *   *<p>Java class for featuresRoot complex type.  *   *<p>The following schema fragment specifies the expected content contained within this class.  *   *<pre>  *&lt;complexType name="features">  *&lt;complexContent>  *&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">  *&lt;sequence>  *&lt;element name="repository" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="feature" type="{http://karaf.apache.org/xmlns/features/v1.0.0}feature" maxOccurs="unbounded" minOccurs="0"/>  *&lt;/sequence>  *&lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;/restriction>  *&lt;/complexContent>  *&lt;/complexType>  *</pre>  *   *   */
 end_comment
@@ -185,6 +211,8 @@ name|XmlAttribute
 specifier|protected
 name|String
 name|name
+init|=
+literal|"<unnamed>"
 decl_stmt|;
 comment|/**      * Gets the value of the repository property.      *       *<p>      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the repository property.      *       *<p>      * For example, to add a new item, do as follows:      *<pre>      *    getRepository().add(newItem);      *</pre>      *       *       *<p>      * Objects of the following type(s) are allowed in the list      * {@link String }      *       *       */
 specifier|public

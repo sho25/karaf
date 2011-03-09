@@ -46,6 +46,8 @@ operator|.
 name|features
 operator|.
 name|internal
+operator|.
+name|model
 package|;
 end_package
 

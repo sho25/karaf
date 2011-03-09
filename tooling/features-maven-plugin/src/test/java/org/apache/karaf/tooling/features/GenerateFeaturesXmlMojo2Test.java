@@ -85,7 +85,27 @@ name|features
 operator|.
 name|internal
 operator|.
+name|model
+operator|.
 name|Features
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
+operator|.
+name|model
+operator|.
+name|JaxbUtil
 import|;
 end_import
 

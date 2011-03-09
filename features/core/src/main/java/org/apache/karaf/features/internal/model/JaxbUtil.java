@@ -11,9 +11,11 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|tooling
-operator|.
 name|features
+operator|.
+name|internal
+operator|.
+name|model
 package|;
 end_package
 
@@ -224,22 +226,6 @@ operator|.
 name|sax
 operator|.
 name|SAXSource
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|features
-operator|.
-name|internal
-operator|.
-name|Features
 import|;
 end_import
 
