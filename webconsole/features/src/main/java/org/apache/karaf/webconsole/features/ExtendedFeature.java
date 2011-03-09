@@ -75,6 +75,20 @@ name|karaf
 operator|.
 name|features
 operator|.
+name|Dependency
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
 name|Feature
 import|;
 end_import
@@ -136,7 +150,6 @@ argument_list|()
 return|;
 block|}
 block|}
-empty_stmt|;
 specifier|protected
 name|State
 name|state
@@ -248,7 +261,7 @@ block|}
 specifier|public
 name|List
 argument_list|<
-name|Feature
+name|Dependency
 argument_list|>
 name|getDependencies
 parameter_list|()

@@ -18,18 +18,6 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|java
-operator|.
-name|lang
-operator|.
-name|String
-operator|.
-name|format
-import|;
-end_import
-
-begin_import
 import|import
 name|java
 operator|.
@@ -468,6 +456,20 @@ operator|.
 name|features
 operator|.
 name|ConfigFileInfo
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|Dependency
 import|;
 end_import
 
@@ -1338,16 +1340,12 @@ expr_stmt|;
 name|RepositoryImpl
 name|repo
 init|=
-literal|null
-decl_stmt|;
-name|repo
-operator|=
 operator|new
 name|RepositoryImpl
 argument_list|(
 name|uri
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|repositories
 operator|.
 name|put
@@ -2750,7 +2748,7 @@ expr_stmt|;
 block|}
 for|for
 control|(
-name|Feature
+name|Dependency
 name|dependency
 range|:
 name|feature
@@ -4326,28 +4324,16 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|Clause
+name|anImport
+range|:
 name|imports
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|String
 name|resolution
 init|=
-name|imports
-index|[
-name|i
-index|]
+name|anImport
 operator|.
 name|getDirective
 argument_list|(
@@ -4372,10 +4358,7 @@ name|result
 operator|.
 name|add
 argument_list|(
-name|imports
-index|[
-name|i
-index|]
+name|anImport
 argument_list|)
 expr_stmt|;
 block|}
@@ -4976,8 +4959,6 @@ argument_list|)
 expr_stmt|;
 name|int
 name|bytesRead
-init|=
-literal|0
 decl_stmt|;
 name|byte
 index|[]
@@ -7788,7 +7769,7 @@ operator|.
 name|DOTALL
 argument_list|)
 decl_stmt|;
-comment|/**      * Clean up version parameters. Other builders use more fuzzy definitions of      * the version syntax. This method cleans up such a version to match an OSGi      * version.      *      * @param version      * @return      */
+comment|/**      * Clean up version parameters. Other builders use more fuzzy definitions of      * the version syntax. This method cleans up such a version to match an OSGi      * version.      *      * @param version possibly osgi-non-compliant version      * @return osgi compliant version      */
 specifier|static
 specifier|public
 name|String

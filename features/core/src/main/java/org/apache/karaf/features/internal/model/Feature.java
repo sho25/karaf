@@ -25,16 +25,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|ByteArrayInputStream
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|IOException
 import|;
 end_import
@@ -228,7 +218,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *   * Definition of the Feature.  *               *   *<p>Java class for feature complex type.  *   *<p>The following schema fragment specifies the expected content contained within this class.  *   *<pre>  *&lt;complexType name="feature">  *&lt;complexContent>  *&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">  *&lt;sequence>  *&lt;element name="details" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="config" type="{http://karaf.apache.org/xmlns/features/v1.0.0}config" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="configfile" type="{http://karaf.apache.org/xmlns/features/v1.0.0}configFile" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="feature" type="{http://karaf.apache.org/xmlns/features/v1.0.0}dependency" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="bundle" type="{http://karaf.apache.org/xmlns/features/v1.0.0}bundle" maxOccurs="unbounded" minOccurs="0"/>  *&lt;/sequence>  *&lt;attribute name="name" use="required" type="{http://karaf.apache.org/xmlns/features/v1.0.0}featureName" />  *&lt;attribute name="version" type="{http://www.w3.org/2001/XMLSchema}string" default="0.0.0" />  *&lt;attribute name="description" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;attribute name="resolver" type="{http://karaf.apache.org/xmlns/features/v1.0.0}resolver" />  *&lt;/restriction>  *&lt;/complexContent>  *&lt;/complexType>  *</pre>  *   *   */
+comment|/**  *   * Definition of the Feature.  *               *   *<p>Java class for feature complex type.  *   *<p>The following schema fragment specifies the expected content contained within this class.  *   *<pre>  *&lt;complexType name="feature">  *&lt;complexContent>  *&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">  *&lt;sequence>  *&lt;element name="details" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>  *&lt;element name="config" type="{http://karaf.apache.org/xmlns/features/v1.0.0}config" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="configfile" type="{http://karaf.apache.org/xmlns/features/v1.0.0}configFile" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="feature" type="{http://karaf.apache.org/xmlns/features/v1.0.0}dependency" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="bundle" type="{http://karaf.apache.org/xmlns/features/v1.0.0}bundle" maxOccurs="unbounded" minOccurs="0"/>  *&lt;/sequence>  *&lt;attribute name="name" use="required" type="{http://karaf.apache.org/xmlns/features/v1.0.0}featureName" />  *&lt;attribute name="version" type="{http://www.w3.org/2001/XMLSchema}string" default="0.0.0" />  *&lt;attribute name="description" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;attribute name="resolver" type="{http://karaf.apache.org/xmlns/features/v1.0.0}resolver" />  *&lt;/restriction>  *&lt;/complexContent>  *&lt;/complexType>  *</pre>  *   *   */
 end_comment
 
 begin_class
@@ -289,10 +279,7 @@ init|=
 literal|"0.0.0"
 decl_stmt|;
 specifier|protected
-name|List
-argument_list|<
 name|String
-argument_list|>
 name|details
 decl_stmt|;
 specifier|protected
@@ -484,38 +471,6 @@ name|str
 argument_list|)
 return|;
 block|}
-block|}
-comment|/**      * Gets the value of the details property.      *       *<p>      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the details property.      *       *<p>      * For example, to add a new item, do as follows:      *<pre>      *    getDetails().add(newItem);      *</pre>      *       *       *<p>      * Objects of the following type(s) are allowed in the list      * {@link String }      *       *       */
-specifier|public
-name|List
-argument_list|<
-name|String
-argument_list|>
-name|getDetailsList
-parameter_list|()
-block|{
-if|if
-condition|(
-name|details
-operator|==
-literal|null
-condition|)
-block|{
-name|details
-operator|=
-operator|new
-name|ArrayList
-argument_list|<
-name|String
-argument_list|>
-argument_list|()
-expr_stmt|;
-block|}
-return|return
-name|this
-operator|.
-name|details
-return|;
 block|}
 comment|/**      * Gets the value of the config property.      *       *<p>      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the config property.      *       *<p>      * For example, to add a new item, do as follows:      *<pre>      *    getConfig().add(newItem);      *</pre>      *       *       *<p>      * Objects of the following type(s) are allowed in the list      * {@link Config }      *       *       */
 specifier|public
@@ -736,15 +691,6 @@ return|return
 name|description
 return|;
 block|}
-specifier|public
-name|String
-name|getDetails
-parameter_list|()
-block|{
-return|return
-literal|null
-return|;
-block|}
 comment|/**      * Sets the value of the description property.      *       * @param value      *     allowed object is      *     {@link String }      *           */
 specifier|public
 name|void
@@ -759,6 +705,30 @@ operator|.
 name|description
 operator|=
 name|value
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getDetails
+parameter_list|()
+block|{
+return|return
+name|details
+return|;
+block|}
+specifier|public
+name|void
+name|setDetails
+parameter_list|(
+name|String
+name|details
+parameter_list|)
+block|{
+name|this
+operator|.
+name|details
+operator|=
+name|details
 expr_stmt|;
 block|}
 comment|/**      * Gets the value of the resolver property.      *       * @return      *     possible object is      *     {@link String }      *           */
@@ -782,7 +752,7 @@ name|karaf
 operator|.
 name|features
 operator|.
-name|Feature
+name|Dependency
 argument_list|>
 name|getDependencies
 parameter_list|()
@@ -799,7 +769,7 @@ name|karaf
 operator|.
 name|features
 operator|.
-name|Feature
+name|Dependency
 operator|>
 name|unmodifiableList
 argument_list|(

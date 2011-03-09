@@ -70,7 +70,7 @@ parameter_list|()
 function_decl|;
 name|List
 argument_list|<
-name|Feature
+name|Dependency
 argument_list|>
 name|getDependencies
 parameter_list|()
