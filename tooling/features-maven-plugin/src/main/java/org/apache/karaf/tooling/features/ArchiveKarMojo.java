@@ -276,7 +276,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * assembles a kar archive from a features.xml file  *  * @version $Revision: 1.1 $  * @goal archive-kar  * @phase package  * @execute phase="package"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Assemble a kar archive from a features.xml file  */
+comment|/**  * assembles a kar archive from a features.xml file  *  * @version $Revision: 1.1 $  * @goal archive-kar  * @phase package  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Assemble a kar archive from a features.xml file  */
 end_comment
 
 begin_class
