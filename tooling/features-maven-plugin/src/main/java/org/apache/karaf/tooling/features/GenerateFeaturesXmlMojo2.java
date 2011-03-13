@@ -251,6 +251,22 @@ name|apache
 operator|.
 name|karaf
 operator|.
+name|deployer
+operator|.
+name|kar
+operator|.
+name|KarArtifactInstaller
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
 name|features
 operator|.
 name|internal
@@ -765,16 +781,6 @@ name|AbstractLogEnabled
 implements|implements
 name|Mojo
 block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|FEATURE_CLASSIFIER
-init|=
-literal|"feature"
-decl_stmt|;
-comment|/**      * The dependency tree builder to use.      *      * @component      * @required      * @readonly      */
-comment|//    private DependencyTreeBuilder dependencyTreeBuilder;
 comment|/**      * The (optional) input feature.file to extend      *      * @parameter default-value="${project.build.directory}/src/main/feature/feature.xml"      */
 specifier|private
 name|File
@@ -810,6 +816,11 @@ name|boolean
 name|aggregateFeatures
 init|=
 literal|false
+decl_stmt|;
+comment|/**      * If present, the bundles added to the feature constructed from the dependencies will be marked with this startlevel.      *      * @parameter      */
+specifier|private
+name|Integer
+name|startLevel
 decl_stmt|;
 comment|//new
 comment|/**      * The maven project.      *      * @parameter expression="${project}"      * @required      * @readonly      */
@@ -1193,6 +1204,8 @@ if|if
 condition|(
 name|aggregateFeatures
 operator|&&
+name|KarArtifactInstaller
+operator|.
 name|FEATURE_CLASSIFIER
 operator|.
 name|equals
@@ -1244,7 +1257,7 @@ name|includedFeatures
 init|=
 name|readFeaturesFile
 argument_list|(
-name|inputFile
+name|featuresFile
 argument_list|)
 decl_stmt|;
 comment|//TODO check for duplicates?
@@ -1295,7 +1308,7 @@ argument_list|)
 expr_stmt|;
 name|feature
 operator|.
-name|getDependencies
+name|getFeature
 argument_list|()
 operator|.
 name|add
@@ -1416,6 +1429,21 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|startLevel
+operator|!=
+literal|null
+condition|)
+block|{
+name|bundle
+operator|.
+name|setStartLevel
+argument_list|(
+name|startLevel
+argument_list|)
+expr_stmt|;
+block|}
 name|feature
 operator|.
 name|getBundle
@@ -1443,7 +1471,7 @@ operator|||
 operator|!
 name|feature
 operator|.
-name|getDependencies
+name|getFeature
 argument_list|()
 operator|.
 name|isEmpty
@@ -2419,6 +2447,8 @@ argument_list|(
 literal|"kar"
 argument_list|)
 operator|||
+name|KarArtifactInstaller
+operator|.
 name|FEATURE_CLASSIFIER
 operator|.
 name|equals
@@ -3509,6 +3539,48 @@ name|JAXBException
 throws|,
 name|IOException
 block|{
+name|file
+operator|.
+name|getParentFile
+argument_list|()
+operator|.
+name|mkdirs
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|file
+operator|.
+name|getParentFile
+argument_list|()
+operator|.
+name|exists
+argument_list|()
+operator|||
+operator|!
+name|file
+operator|.
+name|getParentFile
+argument_list|()
+operator|.
+name|isDirectory
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|IOException
+argument_list|(
+literal|"Cannot create directory at "
+operator|+
+name|file
+operator|.
+name|getParent
+argument_list|()
+argument_list|)
+throw|;
+block|}
 name|FileOutputStream
 name|out
 init|=

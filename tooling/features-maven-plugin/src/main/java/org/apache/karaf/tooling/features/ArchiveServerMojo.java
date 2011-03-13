@@ -174,7 +174,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Package a server archive from an assembled server  *  * @version $Revision: 1.1 $  * @goal archive-server  * @phase package  * @execute phase="package"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Package a server archive from an assembled server  */
+comment|/**  * Package a server archive from an assembled server  *  * @version $Revision: 1.1 $  * @goal archive-server  * @phase package  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Package a server archive from an assembled server  */
 end_comment
 
 begin_class

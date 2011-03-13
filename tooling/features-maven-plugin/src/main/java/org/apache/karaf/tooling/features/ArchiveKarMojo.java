@@ -75,9 +75,11 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|features
+name|deployer
 operator|.
-name|BundleInfo
+name|kar
+operator|.
+name|KarArtifactInstaller
 import|;
 end_import
 
@@ -91,11 +93,7 @@ name|karaf
 operator|.
 name|features
 operator|.
-name|internal
-operator|.
-name|model
-operator|.
-name|Bundle
+name|BundleInfo
 import|;
 end_import
 
@@ -640,7 +638,9 @@ argument_list|()
 argument_list|,
 literal|"xml"
 argument_list|,
-literal|"feature"
+name|KarArtifactInstaller
+operator|.
+name|FEATURE_CLASSIFIER
 argument_list|)
 decl_stmt|;
 name|jarArchiver

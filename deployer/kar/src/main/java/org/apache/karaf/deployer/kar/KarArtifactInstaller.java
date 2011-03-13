@@ -238,6 +238,14 @@ name|KarArtifactInstaller
 implements|implements
 name|ArtifactInstaller
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|FEATURE_CLASSIFIER
+init|=
+literal|"features"
+decl_stmt|;
 specifier|private
 specifier|final
 name|Logger
@@ -1353,7 +1361,7 @@ decl_stmt|;
 name|String
 name|classifier
 init|=
-literal|"feature"
+name|FEATURE_CLASSIFIER
 decl_stmt|;
 name|String
 name|artifactType
