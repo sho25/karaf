@@ -93,6 +93,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|EnumSet
 import|;
 end_import
@@ -123,17 +133,23 @@ name|java
 operator|.
 name|util
 operator|.
-name|Properties
+name|Set
 import|;
 end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Set
+name|felix
+operator|.
+name|utils
+operator|.
+name|properties
+operator|.
+name|Properties
 import|;
 end_import
 
@@ -728,7 +744,7 @@ argument_list|)
 condition|?
 name|properties
 operator|.
-name|getProperty
+name|get
 argument_list|(
 name|FEATURES_REPOSITORIES
 argument_list|)
@@ -748,7 +764,7 @@ argument_list|()
 expr_stmt|;
 name|properties
 operator|.
-name|setProperty
+name|put
 argument_list|(
 name|FEATURES_REPOSITORIES
 argument_list|,
@@ -768,11 +784,9 @@ try|try
 block|{
 name|properties
 operator|.
-name|store
+name|save
 argument_list|(
 name|out
-argument_list|,
-literal|"Features Service config"
 argument_list|)
 expr_stmt|;
 block|}
@@ -796,11 +810,11 @@ argument_list|(
 literal|"Installing feature to system and startup.properties"
 argument_list|)
 expr_stmt|;
-name|OrderedProperties
+name|Properties
 name|startupProperties
 init|=
 operator|new
-name|OrderedProperties
+name|Properties
 argument_list|()
 decl_stmt|;
 if|if
@@ -841,6 +855,18 @@ block|}
 block|}
 else|else
 block|{
+name|startupProperties
+operator|.
+name|setHeader
+argument_list|(
+name|Collections
+operator|.
+name|singletonList
+argument_list|(
+literal|"#Bundles to be started on startup, with startlevel"
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1076,11 +1102,9 @@ try|try
 block|{
 name|startupProperties
 operator|.
-name|store
+name|save
 argument_list|(
 name|out
-argument_list|,
-literal|"startup bundles"
 argument_list|)
 expr_stmt|;
 block|}
