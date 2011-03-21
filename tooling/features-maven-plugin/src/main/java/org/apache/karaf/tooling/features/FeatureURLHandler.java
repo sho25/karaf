@@ -230,7 +230,7 @@ name|logger
 operator|.
 name|debug
 argument_list|(
-literal|"Blueprint xml URL is: ["
+literal|"Feature xml URL is: ["
 operator|+
 name|featureXmlURL
 operator|+
@@ -335,7 +335,7 @@ name|logger
 operator|.
 name|error
 argument_list|(
-literal|"Error opening blueprint xml url"
+literal|"Error opening feature xml url"
 argument_list|,
 name|e
 argument_list|)
@@ -347,7 +347,7 @@ operator|)
 operator|new
 name|IOException
 argument_list|(
-literal|"Error opening blueprint xml url"
+literal|"Error opening features xml url"
 argument_list|)
 operator|.
 name|initCause

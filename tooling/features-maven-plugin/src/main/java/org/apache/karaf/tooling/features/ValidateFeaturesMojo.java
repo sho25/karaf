@@ -812,11 +812,6 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|e
-operator|.
-name|printStackTrace
-argument_list|()
-expr_stmt|;
 throw|throw
 operator|new
 name|MojoExecutionException
@@ -2456,10 +2451,15 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|e
-operator|.
-name|printStackTrace
+name|getLog
 argument_list|()
+operator|.
+name|warn
+argument_list|(
+literal|"Error while opening artifact"
+argument_list|,
+name|e
+argument_list|)
 expr_stmt|;
 block|}
 try|try
@@ -2511,11 +2511,20 @@ return|;
 block|}
 finally|finally
 block|{
+if|if
+condition|(
+name|is
+operator|!=
+literal|null
+condition|)
+block|{
+comment|// just in case when we did not open bundle
 name|is
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 block|}
 else|else
