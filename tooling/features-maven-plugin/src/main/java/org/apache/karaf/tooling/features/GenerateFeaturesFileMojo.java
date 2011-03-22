@@ -2130,7 +2130,9 @@ operator|new
 name|ArtifactMetadataRetrievalException
 argument_list|(
 literal|"No wrapper bundle available for "
-operator|+
+argument_list|,
+literal|null
+argument_list|,
 name|artifact
 argument_list|)
 throw|;
@@ -2249,6 +2251,10 @@ operator|+
 name|artifact
 operator|+
 literal|" wrapper bundle"
+argument_list|,
+literal|null
+argument_list|,
+name|artifact
 argument_list|)
 throw|;
 block|}
