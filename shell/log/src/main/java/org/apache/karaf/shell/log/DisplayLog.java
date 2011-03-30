@@ -605,6 +605,13 @@ range|:
 name|le
 control|)
 block|{
+if|if
+condition|(
+name|event
+operator|!=
+literal|null
+condition|)
+block|{
 name|display
 argument_list|(
 name|cnv
@@ -614,6 +621,7 @@ argument_list|,
 name|out
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|out
 operator|.
