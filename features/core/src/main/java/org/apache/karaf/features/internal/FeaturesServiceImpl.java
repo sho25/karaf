@@ -6263,6 +6263,13 @@ range|:
 name|list
 control|)
 block|{
+name|f
+operator|=
+name|f
+operator|.
+name|trim
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|f
