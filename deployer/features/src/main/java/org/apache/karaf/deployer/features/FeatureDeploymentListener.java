@@ -550,6 +550,13 @@ name|equals
 argument_list|(
 name|uri
 argument_list|)
+operator|||
+literal|"http://karaf.apache.org/xmlns/features/v1.0.0"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|uri
+argument_list|)
 operator|)
 condition|)
 block|{
