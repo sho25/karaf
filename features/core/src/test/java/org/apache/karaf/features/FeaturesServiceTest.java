@@ -476,7 +476,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<bundle>"
+literal|"<bundle start='true'>"
 operator|+
 name|name
 operator|+

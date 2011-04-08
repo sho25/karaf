@@ -890,6 +890,11 @@ specifier|private
 name|File
 name|inputFile
 decl_stmt|;
+comment|/**      * The filtered input file      *      * @parameter default-value="${project.build.directory}/feature/filteredInputFeature.xml"      */
+specifier|private
+name|File
+name|filteredInputFile
+decl_stmt|;
 comment|/**      * The file to generate      *      * @parameter default-value="${project.build.directory}/feature/feature.xml"      */
 specifier|private
 name|File
@@ -1170,14 +1175,14 @@ name|filter
 argument_list|(
 name|inputFile
 argument_list|,
-name|outputFile
+name|filteredInputFile
 argument_list|)
 expr_stmt|;
 name|features
 operator|=
 name|readFeaturesFile
 argument_list|(
-name|outputFile
+name|filteredInputFile
 argument_list|)
 expr_stmt|;
 block|}

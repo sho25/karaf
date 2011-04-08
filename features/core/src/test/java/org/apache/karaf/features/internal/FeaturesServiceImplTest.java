@@ -1300,6 +1300,25 @@ operator|.
 name|start
 argument_list|()
 expr_stmt|;
+while|while
+condition|(
+operator|!
+name|impl
+operator|.
+name|bootFeaturesInstalled
+operator|.
+name|get
+argument_list|()
+condition|)
+block|{
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|10L
+argument_list|)
+expr_stmt|;
+block|}
 name|assertFalse
 argument_list|(
 literal|"Feature transaction 1.0.0 should not be installed"
@@ -1338,7 +1357,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertTrue
 argument_list|(
 literal|"Feature ssh should be installed"
 argument_list|,

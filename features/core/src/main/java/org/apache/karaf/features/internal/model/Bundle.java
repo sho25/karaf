@@ -169,21 +169,20 @@ operator|=
 literal|"start-level"
 argument_list|)
 specifier|protected
-name|int
+name|Integer
 name|startLevel
 decl_stmt|;
 annotation|@
 name|XmlAttribute
 specifier|protected
-name|boolean
+name|Boolean
 name|start
-init|=
-literal|true
 decl_stmt|;
+comment|// = true;
 annotation|@
 name|XmlAttribute
 specifier|protected
-name|boolean
+name|Boolean
 name|dependency
 decl_stmt|;
 specifier|public
@@ -238,6 +237,12 @@ parameter_list|()
 block|{
 return|return
 name|startLevel
+operator|==
+literal|null
+condition|?
+literal|0
+else|:
+name|startLevel
 return|;
 block|}
 comment|/**      * Sets the value of the startLevel property.      *       * @param value      *     allowed object is      *     {@link Integer }      *           */
@@ -264,6 +269,12 @@ parameter_list|()
 block|{
 return|return
 name|start
+operator|==
+literal|null
+condition|?
+literal|false
+else|:
+name|start
 return|;
 block|}
 comment|/**      * Sets the value of the start property.      *       * @param value      *     allowed object is      *     {@link Boolean }      *           */
@@ -289,6 +300,12 @@ name|isDependency
 parameter_list|()
 block|{
 return|return
+name|dependency
+operator|==
+literal|null
+condition|?
+literal|false
+else|:
 name|dependency
 return|;
 block|}
@@ -441,7 +458,8 @@ literal|31
 operator|*
 name|result
 operator|+
-name|startLevel
+name|getStartLevel
+argument_list|()
 expr_stmt|;
 name|result
 operator|=
@@ -450,7 +468,8 @@ operator|*
 name|result
 operator|+
 operator|(
-name|start
+name|isStart
+argument_list|()
 condition|?
 literal|1
 else|:
@@ -464,7 +483,8 @@ operator|*
 name|result
 operator|+
 operator|(
-name|dependency
+name|isDependency
+argument_list|()
 condition|?
 literal|1
 else|:
