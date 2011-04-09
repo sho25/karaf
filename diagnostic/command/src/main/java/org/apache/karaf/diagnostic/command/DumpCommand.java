@@ -240,6 +240,17 @@ name|DumpProvider
 argument_list|>
 argument_list|()
 decl_stmt|;
+comment|/**      * Output format of the filename if not defined otherwise      */
+specifier|private
+name|SimpleDateFormat
+name|dumpFormat
+init|=
+operator|new
+name|SimpleDateFormat
+argument_list|(
+literal|"yyyy-MM-dd_HHmmss"
+argument_list|)
+decl_stmt|;
 comment|/**      * Directory switch.      */
 annotation|@
 name|Option
@@ -332,10 +343,7 @@ condition|)
 block|{
 name|fileName
 operator|=
-name|SimpleDateFormat
-operator|.
-name|getDateTimeInstance
-argument_list|()
+name|dumpFormat
 operator|.
 name|format
 argument_list|(
