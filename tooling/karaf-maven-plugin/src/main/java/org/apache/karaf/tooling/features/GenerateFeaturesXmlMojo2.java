@@ -868,7 +868,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates the features XML file  * NB this requires a recent maven-install-plugin such as 2.3.1  *  * @version $Revision: 1.1 $  * @goal generate-features-xml2  * @phase compile  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Generates the features XML file  */
+comment|/**  * Generates the features XML file  * NB this requires a recent maven-install-plugin such as 2.3.1  *  * @version $Revision: 1.1 $  * @goal generate-features-xml  * @phase compile  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Generates the features XML file starting with an optional source feature.xml and adding  * project dependencies as bundles and feature/car dependencies  */
 end_comment
 
 begin_class
@@ -890,12 +890,12 @@ specifier|private
 name|File
 name|inputFile
 decl_stmt|;
-comment|/**      * The filtered input file      *      * @parameter default-value="${project.build.directory}/feature/filteredInputFeature.xml"      */
+comment|/**      * (internal) The filtered input file      *      * @parameter default-value="${project.build.directory}/feature/filteredInputFeature.xml"      */
 specifier|private
 name|File
 name|filteredInputFile
 decl_stmt|;
-comment|/**      * The file to generate      *      * @parameter default-value="${project.build.directory}/feature/feature.xml"      */
+comment|/**      * (internal) The file to generate      *      * @parameter default-value="${project.build.directory}/feature/feature.xml"      */
 specifier|private
 name|File
 name|outputFile
@@ -905,14 +905,14 @@ specifier|private
 name|String
 name|resolver
 decl_stmt|;
-comment|/**      * The artifact type for attaching the generated file to the project      *      * @parameter default-value="xml"      */
+comment|/**      * (internal) The artifact type for attaching the generated file to the project      *      * @parameter default-value="xml"      */
 specifier|private
 name|String
 name|attachmentArtifactType
 init|=
 literal|"xml"
 decl_stmt|;
-comment|/**      * The artifact classifier for attaching the generated file to the project      *      * @parameter default-value="features"      */
+comment|/**      * (internal) The artifact classifier for attaching the generated file to the project      *      * @parameter default-value="features"      */
 specifier|private
 name|String
 name|attachmentArtifactClassifier
@@ -932,7 +932,7 @@ name|Integer
 name|startLevel
 decl_stmt|;
 comment|//new
-comment|/**      * The maven project.      *      * @parameter expression="${project}"      * @required      * @readonly      */
+comment|/**      * (internal) The maven project.      *      * @parameter expression="${project}"      * @required      * @readonly      */
 specifier|protected
 name|MavenProject
 name|project
@@ -942,12 +942,12 @@ specifier|protected
 name|MavenProjectHelper
 name|projectHelper
 decl_stmt|;
-comment|/**      * The entry point to Aether, i.e. the component doing all the work.      *      * @component      */
+comment|/**      * The entry point to Aether, i.e. the component doing all the work.      *      * @component      * @required      * @readonly      */
 specifier|private
 name|RepositorySystem
 name|repoSystem
 decl_stmt|;
-comment|/**      * The current repository/network configuration of Maven.      *      * @parameter default-value="${repositorySystemSession}"      * @readonly      */
+comment|/**      * The current repository/network configuration of Maven.      *      * @parameter default-value="${repositorySystemSession}"      * @required      * @readonly      */
 specifier|private
 name|RepositorySystemSession
 name|repoSession
@@ -960,7 +960,7 @@ name|RemoteRepository
 argument_list|>
 name|projectRepos
 decl_stmt|;
-comment|/**      * The project's remote repositories to use for the resolution of plugins and their dependencies.      *      * @parameter default-value="${project.remotePluginRepositories}"      * @readonly      */
+comment|/**      * The project's remote repositories to use for the resolution of plugins and their dependencies.      *      * @parameter default-value="${project.remotePluginRepositories}"      * @required      * @readonly      */
 specifier|private
 name|List
 argument_list|<
@@ -2600,7 +2600,7 @@ specifier|private
 name|boolean
 name|checkDependencyChange
 decl_stmt|;
-comment|/**      * Whether to fail on changed dependencies      *      * @parameter      */
+comment|/**      * Whether to fail on changed dependencies (default, false) or warn (true)      *      * @parameter      */
 specifier|private
 name|boolean
 name|warnOnDependencyChange
@@ -2610,17 +2610,17 @@ specifier|private
 name|boolean
 name|logDependencyChanges
 decl_stmt|;
-comment|/**      * Whether to overwrite dependencies.xml if it has changed      *      * @parameter      */
+comment|/**      * Whether to overwrite src/main/history/dependencies.xml if it has changed      *      * @parameter      */
 specifier|private
 name|boolean
 name|overwriteChangedDependencies
 decl_stmt|;
-comment|/**      * Location of existing dependency file.      *      * @parameter expression="${basedir}/src/main/history/dependencies.xml"      * @required      */
+comment|/**      * (internal) Location of existing dependency file.      *      * @parameter expression="${basedir}/src/main/history/dependencies.xml"      * @required      */
 specifier|private
 name|File
 name|dependencyFile
 decl_stmt|;
-comment|/**      * Location of filtered dependency file.      *      * @parameter expression="${basedir}/target/history/dependencies.xml"      * @required      */
+comment|/**      * Location of filtered dependency file.      *      * @parameter expression="${basedir}/target/history/dependencies.xml"      * @required      * @readonly      */
 specifier|private
 name|File
 name|filteredDependencyFile
@@ -2631,24 +2631,24 @@ specifier|protected
 name|String
 name|encoding
 decl_stmt|;
-comment|/**      * @component role="org.apache.maven.shared.filtering.MavenResourcesFiltering" role-hint="default"      * @required      */
+comment|/**      * @component role="org.apache.maven.shared.filtering.MavenResourcesFiltering" role-hint="default"      * @required      * @readonly      */
 specifier|protected
 name|MavenResourcesFiltering
 name|mavenResourcesFiltering
 decl_stmt|;
-comment|/**      * @parameter expression="${session}"      * @readonly      * @required      */
+comment|/**      * @parameter expression="${session}"      * @required      * @readonly      */
 specifier|protected
 name|MavenSession
 name|session
 decl_stmt|;
-comment|/**      * Expression preceded with the String won't be interpolated      * \${foo} will be replaced with ${foo}      *      * @parameter expression="${maven.resources.escapeString}"      * @since 2.3      */
+comment|/**      * Expression preceded with the String won't be interpolated      * \${foo} will be replaced with ${foo}      *      * @parameter expression="${maven.resources.escapeString}"      */
 specifier|protected
 name|String
 name|escapeString
 init|=
 literal|"\\"
 decl_stmt|;
-comment|/**      * @plexus.requirement role-hint="default"      * @component      * @required      */
+comment|/**      * @plexus.requirement role-hint="default"      * @component      * @required      * @readonly      */
 specifier|protected
 name|MavenFileFilter
 name|mavenFileFilter
