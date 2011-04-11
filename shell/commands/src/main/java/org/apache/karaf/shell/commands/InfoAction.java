@@ -159,16 +159,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|LinkedList
 import|;
 end_import
@@ -411,6 +401,20 @@ operator|.
 name|println
 argument_list|(
 literal|"Karaf"
+argument_list|)
+expr_stmt|;
+name|printValue
+argument_list|(
+literal|"Karaf version"
+argument_list|,
+name|maxNameLen
+argument_list|,
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"karaf.version"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|printValue

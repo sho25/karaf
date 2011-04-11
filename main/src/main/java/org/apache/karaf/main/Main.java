@@ -490,6 +490,15 @@ name|PROP_KARAF_DATA
 init|=
 literal|"karaf.data"
 decl_stmt|;
+comment|/**      * The system property for hosting the current Karaf version.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|PROP_KARAF_VERSION
+init|=
+literal|"karaf.version"
+decl_stmt|;
 comment|/**      * The environment variable for specifying the Karaf data directory. The data directory      * holds the bundles data and cache for a Karaf instance.      */
 specifier|public
 specifier|static
@@ -885,9 +894,41 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
-comment|//System.out.println("Karaf Home: "+main.karafHome.getPath());
-comment|//System.out.println("Karaf Base: "+main.karafBase.getPath());
-comment|//System.out.println("Karaf Data: "+main.karafData.getPath());
+name|Package
+name|p
+init|=
+name|Package
+operator|.
+name|getPackage
+argument_list|(
+literal|"org.apache.karaf.main"
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|p
+operator|!=
+literal|null
+operator|&&
+name|p
+operator|.
+name|getImplementationVersion
+argument_list|()
+operator|!=
+literal|null
+condition|)
+name|System
+operator|.
+name|setProperty
+argument_list|(
+name|PROP_KARAF_VERSION
+argument_list|,
+name|p
+operator|.
+name|getImplementationVersion
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|System
 operator|.
 name|setProperty
