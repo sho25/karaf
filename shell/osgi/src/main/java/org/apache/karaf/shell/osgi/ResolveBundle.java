@@ -188,9 +188,8 @@ block|}
 if|if
 condition|(
 name|bundles
-operator|.
-name|isEmpty
-argument_list|()
+operator|==
+literal|null
 condition|)
 block|{
 name|pa
