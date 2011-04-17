@@ -673,7 +673,7 @@ index|[
 name|i
 index|]
 operator|.
-name|getName
+name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
