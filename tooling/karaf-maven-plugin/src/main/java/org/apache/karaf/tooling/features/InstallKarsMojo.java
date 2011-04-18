@@ -113,16 +113,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|net
-operator|.
-name|URISyntaxException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|ArrayList
@@ -558,15 +548,10 @@ name|defaultStartLevel
 init|=
 literal|30
 decl_stmt|;
-comment|/**      * if false, unpack to system and add bundles to startup.properties      * if true, unpack to local-repo and add feature to features config      * //     * @parameter      */
+comment|/**      * if false, unpack to system and add bundles to startup.properties      * if true, unpack to system and add feature to features config      *      */
 specifier|protected
 name|boolean
-name|unpackToLocalRepo
-decl_stmt|;
-comment|/**      * Directory that resources are copied to during the build.      *      * @parameter expression="${project.build.directory}/assembly/local-repo"      * @required      */
-specifier|protected
-name|File
-name|localRepoDirectory
+name|dontAddToStartup
 decl_stmt|;
 comment|/**      * Directory that resources are copied to during the build.      *      * @parameter expression="${project.build.directory}/assembly/system"      * @required      */
 specifier|protected
@@ -618,15 +603,7 @@ name|remoteRepos
 decl_stmt|;
 specifier|private
 name|URI
-name|localRepo
-decl_stmt|;
-specifier|private
-name|URI
 name|system
-decl_stmt|;
-specifier|private
-name|URI
-name|repoPath
 decl_stmt|;
 specifier|private
 name|CommentProperties
@@ -660,18 +637,6 @@ name|MojoExecutionException
 throws|,
 name|MojoFailureException
 block|{
-name|localRepoDirectory
-operator|.
-name|mkdirs
-argument_list|()
-expr_stmt|;
-name|localRepo
-operator|=
-name|localRepoDirectory
-operator|.
-name|toURI
-argument_list|()
-expr_stmt|;
 name|systemDirectory
 operator|.
 name|mkdirs
@@ -846,7 +811,7 @@ range|:
 name|dependencies
 control|)
 block|{
-name|unpackToLocalRepo
+name|dontAddToStartup
 operator|=
 literal|"runtime"
 operator|.
@@ -858,19 +823,11 @@ name|getScope
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|repoPath
-operator|=
-name|unpackToLocalRepo
-condition|?
-name|localRepo
-else|:
-name|system
-expr_stmt|;
 name|installer
 operator|.
 name|setLocalRepoPath
 argument_list|(
-name|repoPath
+name|system
 operator|.
 name|getPath
 argument_list|()
@@ -1037,7 +994,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|repoPath
+name|system
 operator|.
 name|resolve
 argument_list|(
@@ -1345,7 +1302,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|localRepo
+name|system
 operator|.
 name|resolve
 argument_list|(
@@ -1768,7 +1725,7 @@ name|Exception
 block|{
 if|if
 condition|(
-name|unpackToLocalRepo
+name|dontAddToStartup
 condition|)
 block|{
 name|getLog
@@ -1776,7 +1733,7 @@ argument_list|()
 operator|.
 name|info
 argument_list|(
-literal|"Adding feature repository to local-repo: "
+literal|"Adding feature repository to system: "
 operator|+
 name|uri
 argument_list|)
@@ -1832,6 +1789,17 @@ name|containsKey
 argument_list|(
 name|FEATURES_REPOSITORIES
 argument_list|)
+operator|&&
+operator|!
+name|properties
+operator|.
+name|get
+argument_list|(
+name|FEATURES_REPOSITORIES
+argument_list|)
+operator|.
+name|isEmpty
+argument_list|()
 condition|?
 name|properties
 operator|.
@@ -1940,6 +1908,17 @@ name|containsKey
 argument_list|(
 name|FEATURES_BOOT
 argument_list|)
+operator|&&
+operator|!
+name|properties
+operator|.
+name|get
+argument_list|(
+name|FEATURES_BOOT
+argument_list|)
+operator|.
+name|isEmpty
+argument_list|()
 condition|?
 name|properties
 operator|.
@@ -1982,7 +1961,7 @@ name|installedFeatures
 operator|.
 name|contains
 argument_list|(
-name|featuresCfgFile
+name|feature
 operator|.
 name|getName
 argument_list|()
@@ -2103,7 +2082,7 @@ block|{
 name|URI
 name|featuresPath
 init|=
-name|repoPath
+name|system
 operator|.
 name|resolve
 argument_list|(
