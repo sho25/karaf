@@ -32,13 +32,6 @@ name|int
 name|getStartLevel
 parameter_list|()
 function_decl|;
-name|void
-name|setStartLevel
-parameter_list|(
-name|Integer
-name|sl
-parameter_list|)
-function_decl|;
 name|boolean
 name|isStart
 parameter_list|()

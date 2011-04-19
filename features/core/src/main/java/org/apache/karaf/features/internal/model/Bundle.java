@@ -272,7 +272,7 @@ name|start
 operator|==
 literal|null
 condition|?
-literal|false
+literal|true
 else|:
 name|start
 return|;
