@@ -103,6 +103,10 @@ argument_list|>
 name|getConfigurationFiles
 parameter_list|()
 function_decl|;
+name|int
+name|getStartLevel
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

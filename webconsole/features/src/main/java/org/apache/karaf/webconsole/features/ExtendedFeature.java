@@ -384,6 +384,15 @@ operator|.
 name|state
 return|;
 block|}
+specifier|public
+name|int
+name|getStartLevel
+parameter_list|()
+block|{
+return|return
+literal|0
+return|;
+block|}
 block|}
 end_class
 
