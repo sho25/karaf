@@ -1292,22 +1292,7 @@ operator|.
 name|init
 argument_list|()
 expr_stmt|;
-comment|// If we have a clean state, install everything
-if|if
-condition|(
-name|framework
-operator|.
-name|getBundleContext
-argument_list|()
-operator|.
-name|getBundles
-argument_list|()
-operator|.
-name|length
-operator|==
-literal|1
-condition|)
-block|{
+comment|// Process properties
 name|loadStartupProperties
 argument_list|(
 name|configProps
@@ -1321,7 +1306,6 @@ name|getBundleContext
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 name|framework
 operator|.
 name|start
@@ -2494,6 +2478,22 @@ argument_list|(
 name|ibsl
 argument_list|)
 expr_stmt|;
+comment|// If we have a clean state, install everything
+if|if
+condition|(
+name|framework
+operator|.
+name|getBundleContext
+argument_list|()
+operator|.
+name|getBundles
+argument_list|()
+operator|.
+name|length
+operator|==
+literal|1
+condition|)
+block|{
 comment|// The auto-install property specifies a space-delimited list of
 comment|// bundle URLs to be automatically installed into each new profile;
 comment|// the start level to which the bundles are assigned is specified by
@@ -2532,6 +2532,7 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|private
 name|List
