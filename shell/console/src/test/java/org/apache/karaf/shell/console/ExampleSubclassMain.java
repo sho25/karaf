@@ -226,18 +226,6 @@ return|return
 literal|"example>"
 return|;
 block|}
-comment|/**              * If you don't overwrite then Karaf displays stack traces based on setting              * of the karaf.printStackTraces system property.              *              * @return              */
-annotation|@
-name|Override
-specifier|protected
-name|boolean
-name|isPrintStackTraces
-parameter_list|()
-block|{
-return|return
-literal|true
-return|;
-block|}
 comment|/**              * If you don't overwrite, then karaf automatically adds session properties              * found in the following resource files:              *<ul>              *<li>org/apache/karaf/shell/console/branding.properties</li>              *<li>org/apache/karaf/branding/branding.properties</li>              *<ul>              */
 annotation|@
 name|Override
