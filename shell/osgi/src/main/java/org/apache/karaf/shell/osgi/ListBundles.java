@@ -238,6 +238,10 @@ name|name
 operator|=
 literal|"-t"
 argument_list|,
+name|valueToShowInHelp
+operator|=
+literal|""
+argument_list|,
 name|description
 operator|=
 literal|"Specifies the bundle threshold; bundles with a start-level less than this value will not get printed out."
