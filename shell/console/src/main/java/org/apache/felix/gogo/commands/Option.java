@@ -90,6 +90,14 @@ specifier|public
 annotation_defn|@interface
 name|Option
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DEFAULT_STRING
+init|=
+literal|"DEFAULT"
+decl_stmt|;
 name|String
 name|name
 parameter_list|()
@@ -118,6 +126,12 @@ name|multiValued
 parameter_list|()
 default|default
 literal|false
+function_decl|;
+name|String
+name|valueToShowInHelp
+parameter_list|()
+default|default
+name|DEFAULT_STRING
 function_decl|;
 block|}
 end_annotation_defn
