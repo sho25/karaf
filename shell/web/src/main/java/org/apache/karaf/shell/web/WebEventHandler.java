@@ -77,10 +77,6 @@ begin_comment
 comment|/**  * Class implementing {@link WebListener} service to retrieve {@link WebEvent}  */
 end_comment
 
-begin_comment
-comment|//public class WebEventHandler implements WebListener {
-end_comment
-
 begin_class
 specifier|public
 class|class
