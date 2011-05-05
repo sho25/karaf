@@ -11,14 +11,12 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|shell
-operator|.
-name|web
+name|util
 package|;
 end_package
 
 begin_comment
-comment|/**  * Contains various methods for helping with layout no commands  *   * @author anierbeck  *  */
+comment|/**  * Contains various methods for helping with layout no commands  */
 end_comment
 
 begin_class
