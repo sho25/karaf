@@ -262,6 +262,30 @@ expr_stmt|;
 block|}
 block|}
 block|}
+if|if
+condition|(
+name|props
+operator|.
+name|getProperty
+argument_list|(
+literal|"log4j.appender.out.file"
+argument_list|)
+operator|==
+literal|null
+condition|)
+block|{
+comment|// manage if the log4j.appender.out.file property is not present in
+comment|// the etc/org.ops4j.pax.logging.cfg file
+name|props
+operator|.
+name|setProperty
+argument_list|(
+literal|"log4j.appender.out.file"
+argument_list|,
+literal|"${karaf.data}/log/karaf.log"
+argument_list|)
+expr_stmt|;
+block|}
 name|filename
 operator|=
 name|Main
