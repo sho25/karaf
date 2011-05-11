@@ -1259,6 +1259,22 @@ range|:
 name|s
 control|)
 block|{
+name|value
+operator|=
+name|value
+operator|.
+name|trim
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|value
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
 name|this
 operator|.
 name|uris
@@ -1272,6 +1288,7 @@ name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 specifier|public
@@ -4540,6 +4557,23 @@ operator|.
 name|BUNDLE_SYMBOLICNAME
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|sn
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|BundleException
+argument_list|(
+literal|"Jar is not a bundle, no Bundle-SymbolicName "
+operator|+
+name|bundleLocation
+argument_list|)
+throw|;
+block|}
 comment|// remove attributes from the symbolic name (like ;blueprint.graceperiod:=false suffix)
 name|int
 name|attributeIndexSep
