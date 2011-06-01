@@ -700,25 +700,6 @@ control|)
 block|{
 if|if
 condition|(
-operator|!
-name|uri
-operator|.
-name|equals
-argument_list|(
-name|karafCoreStandardFeatureUrl
-argument_list|)
-operator|&&
-operator|!
-name|uri
-operator|.
-name|equals
-argument_list|(
-name|karafCoreEnterpriseFeatureUrl
-argument_list|)
-condition|)
-block|{
-if|if
-condition|(
 name|includeMvnBasedDescriptors
 condition|)
 block|{
@@ -770,7 +751,6 @@ argument_list|,
 name|f
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 comment|// no features specified, handle all of them
