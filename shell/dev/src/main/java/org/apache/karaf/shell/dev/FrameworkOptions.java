@@ -470,6 +470,22 @@ operator|.
 name|save
 argument_list|()
 expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Changed OSGi framework to "
+operator|+
+name|framework
+operator|.
+name|toLowerCase
+argument_list|()
+operator|+
+literal|". Karaf needs to be restarted to make the change effective"
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 literal|null
