@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|tooling
 operator|.
-name|features
+name|instances
 package|;
 end_package
 
@@ -34,6 +34,22 @@ operator|.
 name|io
 operator|.
 name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|tooling
+operator|.
+name|utils
+operator|.
+name|MojoSupport
 import|;
 end_import
 
@@ -174,13 +190,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Package a server archive from an assembled server  *  * @version $Revision: 1.1 $  * @goal archive-server  * @phase package  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Package a server archive from an assembled server  */
+comment|/**  * Package a server archive from an assembled server  *  * @version $Revision: 1.1 $  * @goal instance-create-archive  * @phase package  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Package a server archive from an assembled server  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|ArchiveServerMojo
+name|CreateArchiveMojo
 extends|extends
 name|MojoSupport
 block|{

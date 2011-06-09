@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|tooling
 operator|.
-name|features
+name|utils
 package|;
 end_package
 
@@ -124,6 +124,38 @@ operator|.
 name|util
 operator|.
 name|Set
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|tooling
+operator|.
+name|features
+operator|.
+name|Node
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|tooling
+operator|.
+name|features
+operator|.
+name|ResolutionListenerImpl
 import|;
 end_import
 

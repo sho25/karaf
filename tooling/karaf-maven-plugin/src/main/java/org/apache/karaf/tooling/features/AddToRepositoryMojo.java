@@ -217,6 +217,22 @@ name|org
 operator|.
 name|apache
 operator|.
+name|karaf
+operator|.
+name|tooling
+operator|.
+name|utils
+operator|.
+name|MojoSupport
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|maven
 operator|.
 name|artifact
@@ -238,40 +254,6 @@ operator|.
 name|repository
 operator|.
 name|ArtifactRepository
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|maven
-operator|.
-name|artifact
-operator|.
-name|repository
-operator|.
-name|DefaultArtifactRepository
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|maven
-operator|.
-name|artifact
-operator|.
-name|repository
-operator|.
-name|layout
-operator|.
-name|DefaultRepositoryLayout
 import|;
 end_import
 
@@ -384,13 +366,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates the features XML file  *  * @version $Revision: 1.1 $  * @goal add-features-to-repo  * @phase compile  * @execute phase="compile"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Add the features to the repository  */
+comment|/**  * Generates the features XML file  *  * @version $Revision: 1.1 $  * @goal features-add-to-repository  * @phase compile  * @execute phase="compile"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Add the features to the repository  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|AddFeaturesToRepoMojo
+name|AddToRepositoryMojo
 extends|extends
 name|MojoSupport
 block|{

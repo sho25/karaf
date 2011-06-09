@@ -138,7 +138,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|GenerateFeaturesXmlMojo2Test
+name|GenerateDescriptorMojoTest
 block|{
 annotation|@
 name|Test

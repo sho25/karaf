@@ -275,6 +275,22 @@ name|org
 operator|.
 name|apache
 operator|.
+name|karaf
+operator|.
+name|tooling
+operator|.
+name|utils
+operator|.
+name|MojoSupport
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|maven
 operator|.
 name|artifact
@@ -538,7 +554,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Validates a features XML file  *   * @version $Revision: 1.1 $  * @goal validate  * @execute phase="process-resources"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Validates the features XML file  */
+comment|/**  * Validates a features XML file  *   * @version $Revision: 1.1 $  * @goal features-validate-descriptor  * @execute phase="process-resources"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Validates the features XML file  */
 end_comment
 
 begin_class
@@ -549,7 +565,7 @@ literal|"unchecked"
 argument_list|)
 specifier|public
 class|class
-name|ValidateFeaturesMojo
+name|ValidateDescriptorMojo
 extends|extends
 name|MojoSupport
 block|{

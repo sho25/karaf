@@ -157,6 +157,22 @@ name|org
 operator|.
 name|apache
 operator|.
+name|karaf
+operator|.
+name|tooling
+operator|.
+name|utils
+operator|.
+name|MojoSupport
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|maven
 operator|.
 name|archiver
@@ -274,13 +290,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * assembles a kar archive from a features.xml file  *  * @version $Revision: 1.1 $  * @goal archive-kar  * @phase package  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Assemble a kar archive from a features.xml file  */
+comment|/**  * assembles a kar archive from a features.xml file  *  * @version $Revision: 1.1 $  * @goal feature-create-kar  * @phase package  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Assemble a kar archive from a features.xml file  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|ArchiveKarMojo
+name|CreateKarMojo
 extends|extends
 name|MojoSupport
 block|{

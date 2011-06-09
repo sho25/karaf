@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|tooling
 operator|.
-name|cmdhelp
+name|commands
 package|;
 end_package
 
@@ -408,13 +408,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates docbook for Karaf commands  *  * @version $Revision: 1.1 $  * @goal cmdhelp  * @phase generate-resources  * @execute phase="generate-resources"  * @requiresDependencyResolution runtime  * @inheritByDefault false  * @description Generates help for Karaf commands  */
+comment|/**  * Generates docbook for Karaf commands  *  * @version $Revision: 1.1 $  * @goal commands-generate-docbook-help  * @phase generate-resources  * @execute phase="generate-resources"  * @requiresDependencyResolution runtime  * @inheritByDefault false  * @description Generates help for Karaf commands  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|CmdHelpMojo
+name|GenerateDocBookHelpMojo
 extends|extends
 name|AbstractMojo
 block|{
