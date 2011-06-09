@@ -290,7 +290,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * assembles a kar archive from a features.xml file  *  * @version $Revision: 1.1 $  * @goal feature-create-kar  * @phase package  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Assemble a kar archive from a features.xml file  */
+comment|/**  * assembles a kar archive from a features.xml file  *  * @version $Revision: 1.1 $  * @goal features-create-kar  * @phase package  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Assemble a kar archive from a features.xml file  */
 end_comment
 
 begin_class
@@ -330,7 +330,7 @@ name|finalName
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * Location of resources directory for additional content to include in the car.      * Note that it includes everything under classes so as to include maven-remote-resources goo      *      * @parameter expression="${project.build.directory}/classes"      */
+comment|/**      * Location of resources directory for additional content to include in the kar.      * Note that it includes everything under classes so as to include maven-remote-resources      *      * @parameter expression="${project.build.directory}/classes"      */
 specifier|private
 name|File
 name|resourcesDir
