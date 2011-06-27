@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *   * Additional configuration files which should be created during feature installation.  *               *   *<p>Java class for configFile complex type.  *   *<p>The following schema fragment specifies the expected content contained within this class.  *   *<pre>  *&lt;complexType name="configFile">  *&lt;simpleContent>  *&lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">  *&lt;attribute name="finalname" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;/extension>  *&lt;/simpleContent>  *&lt;/complexType>  *</pre>  *   *   */
+comment|/**  *   * Additional configuration files which should be created during feature installation.  *               *   *<p>Java class for configFile complex type.  *   *<p>The following schema fragment specifies the expected content contained within this class.  *   *<pre>  *&lt;complexType name="configFile">  *&lt;simpleContent>  *&lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">  *&lt;attribute name="finalname" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;attribute name="override" type="{http://www.w3.org/2001/XMLSchema}boolean" />  *&lt;/extension>  *&lt;/simpleContent>  *&lt;/complexType>  *</pre>  *   *   */
 end_comment
 
 begin_class
@@ -150,6 +150,12 @@ argument_list|)
 specifier|protected
 name|String
 name|finalname
+decl_stmt|;
+annotation|@
+name|XmlAttribute
+specifier|protected
+name|Boolean
+name|override
 decl_stmt|;
 comment|/**      * Gets the value of the value property.      *       * @return      *     possible object is      *     {@link String }      *           */
 specifier|public
@@ -199,6 +205,38 @@ block|{
 name|this
 operator|.
 name|finalname
+operator|=
+name|value
+expr_stmt|;
+block|}
+comment|/**      * Gets the value of the override property.      *       * @return      *     possible object is      *     {@link Boolean }      *           */
+specifier|public
+name|boolean
+name|isOverride
+parameter_list|()
+block|{
+return|return
+name|override
+operator|==
+literal|null
+condition|?
+literal|false
+else|:
+name|override
+return|;
+block|}
+comment|/**      * Sets the value of the override property.      *       * @param value      *     allowed object is      *     {@link Boolean }      *           */
+specifier|public
+name|void
+name|setOverride
+parameter_list|(
+name|Boolean
+name|value
+parameter_list|)
+block|{
+name|this
+operator|.
+name|override
 operator|=
 name|value
 expr_stmt|;

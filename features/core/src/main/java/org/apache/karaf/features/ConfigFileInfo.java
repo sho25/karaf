@@ -28,6 +28,10 @@ name|String
 name|getFinalname
 parameter_list|()
 function_decl|;
+name|boolean
+name|isOverride
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
