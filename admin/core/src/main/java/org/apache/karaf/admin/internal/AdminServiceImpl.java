@@ -1789,7 +1789,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"You can't rename the root instance"
+literal|"Root instance cannot be renamed"
 argument_list|)
 throw|;
 block|}
@@ -2151,7 +2151,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"You can't clone the root instance"
+literal|"Root instance cannot be cloned"
 argument_list|)
 throw|;
 block|}

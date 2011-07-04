@@ -132,7 +132,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Displays the java options used to launch the JVM"
+literal|"Displays the Java options used to launch the JVM"
 argument_list|,
 name|required
 operator|=

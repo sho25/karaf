@@ -63,7 +63,7 @@ literal|"change-opts"
 argument_list|,
 name|description
 operator|=
-literal|"Changes the java options of an existing container instance."
+literal|"Changes the Java options of an existing container instance."
 argument_list|)
 specifier|public
 class|class
@@ -113,7 +113,7 @@ literal|"javaOpts"
 argument_list|,
 name|description
 operator|=
-literal|"The new java options to set"
+literal|"The new Java options to set"
 argument_list|,
 name|required
 operator|=

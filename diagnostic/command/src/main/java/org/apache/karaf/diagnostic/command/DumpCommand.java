@@ -217,7 +217,7 @@ literal|"create-dump"
 argument_list|,
 name|description
 operator|=
-literal|"Creates zip archive wich diagnostic info."
+literal|"Creates zip archive with diagnostic info."
 argument_list|)
 specifier|public
 class|class
@@ -265,7 +265,7 @@ literal|"--directory"
 argument_list|,
 name|description
 operator|=
-literal|"Creates dump in directory instead ZIP"
+literal|"Creates dump in a directory in place of a ZIP archive"
 argument_list|)
 name|boolean
 name|directory

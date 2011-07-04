@@ -430,7 +430,7 @@ throw|throw
 operator|new
 name|IOException
 argument_list|(
-literal|"Unable to destroy proces, it may be already terminated"
+literal|"Unable to destroy process, it may already be terminated"
 argument_list|)
 throw|;
 block|}

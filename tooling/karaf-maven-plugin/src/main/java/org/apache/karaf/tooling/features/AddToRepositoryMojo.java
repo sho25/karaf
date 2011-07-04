@@ -366,7 +366,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates the features XML file  *  * @version $Revision: 1.1 $  * @goal features-add-to-repository  * @phase compile  * @execute phase="compile"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Add the features to the repository  */
+comment|/**  * Generates the features XML file  *  * @version $Revision$  * @goal features-add-to-repository  * @phase compile  * @execute phase="compile"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Add the features to the repository  */
 end_comment
 
 begin_class
@@ -413,7 +413,7 @@ specifier|private
 name|File
 name|repository
 decl_stmt|;
-comment|/**      * which is the target karaf version used to resolve karaf core features descriptors      *      * @parameter      */
+comment|/**      * the target karaf version used to resolve Karaf core features descriptors      *      * @parameter      */
 specifier|private
 name|String
 name|karafVersion

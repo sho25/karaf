@@ -562,7 +562,7 @@ index|[
 literal|8
 index|]
 operator|=
-literal|"The java options of the instance."
+literal|"The Java options of the instance."
 expr_stmt|;
 return|return
 operator|new

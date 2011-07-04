@@ -227,7 +227,7 @@ throw|throw
 operator|new
 name|MalformedURLException
 argument_list|(
-literal|"Path can not be null or empty. Syntax: "
+literal|"Path cannot be null or empty. Syntax: "
 operator|+
 name|SYNTAX
 argument_list|)

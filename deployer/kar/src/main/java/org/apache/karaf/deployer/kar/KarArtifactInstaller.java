@@ -865,7 +865,7 @@ literal|"Karaf archive '"
 operator|+
 name|file
 operator|+
-literal|"' has been removed; however, it's feature URLs have not been deregistered, and it's bundles are still available in '"
+literal|"' has been removed; however, its feature URLs have not been deregistered, and its bundles are still available in '"
 operator|+
 name|localRepoPath
 operator|+
