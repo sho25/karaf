@@ -19,24 +19,6 @@ end_package
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|shell
-operator|.
-name|console
-operator|.
-name|completer
-operator|.
-name|StringsCompleter
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|lang
