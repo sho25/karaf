@@ -12,8 +12,26 @@ operator|.
 name|karaf
 operator|.
 name|main
+operator|.
+name|util
 package|;
 end_package
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|main
+operator|.
+name|util
+operator|.
+name|StringMap
+import|;
+end_import
 
 begin_import
 import|import
@@ -26,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Test cased for {@link org.apache.karaf.main.StringMap}  */
+comment|/**  * Test cased for {@link org.apache.karaf.main.util.StringMap}  */
 end_comment
 
 begin_class
@@ -38,7 +56,7 @@ name|TestCase
 block|{
 specifier|public
 name|void
-name|testPut
+name|testCaseInsensitiveStringMap
 parameter_list|()
 throws|throws
 name|Exception
@@ -48,15 +66,8 @@ name|sm
 init|=
 operator|new
 name|StringMap
-argument_list|()
-decl_stmt|;
-name|Object
-name|key
-init|=
-operator|new
-name|String
 argument_list|(
-literal|"key"
+literal|false
 argument_list|)
 decl_stmt|;
 name|Object
@@ -72,7 +83,7 @@ name|sm
 operator|.
 name|put
 argument_list|(
-name|key
+literal|"key"
 argument_list|,
 name|value
 argument_list|)
@@ -84,7 +95,7 @@ name|sm
 operator|.
 name|get
 argument_list|(
-name|key
+literal|"Key"
 argument_list|)
 decl_stmt|;
 name|assertFalse
