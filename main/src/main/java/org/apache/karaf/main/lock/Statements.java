@@ -12,6 +12,8 @@ operator|.
 name|karaf
 operator|.
 name|main
+operator|.
+name|lock
 package|;
 end_package
 

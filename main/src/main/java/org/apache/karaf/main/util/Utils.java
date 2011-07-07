@@ -12,6 +12,8 @@ operator|.
 name|karaf
 operator|.
 name|main
+operator|.
+name|util
 package|;
 end_package
 
@@ -51,16 +53,6 @@ name|java
 operator|.
 name|net
 operator|.
-name|URL
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|net
-operator|.
 name|JarURLConnection
 import|;
 end_import
@@ -77,15 +69,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|net
 operator|.
-name|karaf
-operator|.
-name|main
-operator|.
-name|Main
+name|URL
 import|;
 end_import
 
@@ -98,7 +86,19 @@ specifier|public
 specifier|static
 name|File
 name|getKarafHome
-parameter_list|()
+parameter_list|(
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|mainClass
+parameter_list|,
+name|String
+name|karafHomeProperty
+parameter_list|,
+name|String
+name|karafHomeEnv
+parameter_list|)
 throws|throws
 name|IOException
 block|{
@@ -115,9 +115,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-name|Main
-operator|.
-name|PROP_KARAF_HOME
+name|karafHomeProperty
 argument_list|)
 decl_stmt|;
 if|if
@@ -135,9 +133,7 @@ name|path
 argument_list|,
 literal|"Invalid "
 operator|+
-name|Main
-operator|.
-name|PROP_KARAF_HOME
+name|karafHomeProperty
 operator|+
 literal|" system property"
 argument_list|,
@@ -160,9 +156,7 @@ name|System
 operator|.
 name|getenv
 argument_list|(
-name|Main
-operator|.
-name|ENV_KARAF_HOME
+name|karafHomeEnv
 argument_list|)
 expr_stmt|;
 if|if
@@ -180,9 +174,7 @@ name|path
 argument_list|,
 literal|"Invalid "
 operator|+
-name|Main
-operator|.
-name|ENV_KARAF_HOME
+name|karafHomeEnv
 operator|+
 literal|" environment variable"
 argument_list|,
@@ -205,18 +197,14 @@ comment|// guess the home from the location of the jar
 name|URL
 name|url
 init|=
-name|Main
-operator|.
-name|class
+name|mainClass
 operator|.
 name|getClassLoader
 argument_list|()
 operator|.
 name|getResource
 argument_list|(
-name|Main
-operator|.
-name|class
+name|mainClass
 operator|.
 name|getName
 argument_list|()
@@ -386,15 +374,11 @@ name|IOException
 argument_list|(
 literal|"The Karaf install directory could not be determined.  Please set the "
 operator|+
-name|Main
-operator|.
-name|PROP_KARAF_HOME
+name|karafHomeProperty
 operator|+
 literal|" system property or the "
 operator|+
-name|Main
-operator|.
-name|ENV_KARAF_HOME
+name|karafHomeEnv
 operator|+
 literal|" environment variable."
 argument_list|)

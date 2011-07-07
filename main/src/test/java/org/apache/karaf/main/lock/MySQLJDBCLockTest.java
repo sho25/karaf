@@ -12,6 +12,8 @@ operator|.
 name|karaf
 operator|.
 name|main
+operator|.
+name|lock
 package|;
 end_package
 
@@ -44,6 +46,22 @@ operator|.
 name|util
 operator|.
 name|Properties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|main
+operator|.
+name|lock
+operator|.
+name|MySQLJDBCLock
 import|;
 end_import
 

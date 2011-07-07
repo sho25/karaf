@@ -12,6 +12,8 @@ operator|.
 name|karaf
 operator|.
 name|main
+operator|.
+name|lock
 package|;
 end_package
 
@@ -94,6 +96,22 @@ operator|.
 name|logging
 operator|.
 name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|main
+operator|.
+name|util
+operator|.
+name|BootstrapLogManager
 import|;
 end_import
 
