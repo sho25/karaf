@@ -312,7 +312,6 @@ return|return
 literal|null
 return|;
 block|}
-specifier|protected
 specifier|abstract
 name|void
 name|doExecute
