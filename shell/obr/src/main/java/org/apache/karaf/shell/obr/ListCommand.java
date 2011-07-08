@@ -377,36 +377,36 @@ block|}
 name|String
 name|formatHeader
 init|=
-literal|"| %-"
+literal|"  %-"
 operator|+
 name|maxPName
 operator|+
-literal|"s | %-"
+literal|"s  %-"
 operator|+
 name|maxSName
 operator|+
-literal|"s | %-"
+literal|"s   %-"
 operator|+
 name|maxVersion
 operator|+
-literal|"s |"
+literal|"s"
 decl_stmt|;
 name|String
 name|formatLine
 init|=
-literal|"| %-"
+literal|"[%-"
 operator|+
 name|maxPName
 operator|+
-literal|"s | %-"
+literal|"s] [%-"
 operator|+
 name|maxSName
 operator|+
-literal|"s | %-"
+literal|"s] [%-"
 operator|+
 name|maxVersion
 operator|+
-literal|"s |"
+literal|"s]"
 decl_stmt|;
 name|System
 operator|.
