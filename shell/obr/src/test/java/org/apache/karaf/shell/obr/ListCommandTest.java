@@ -129,6 +129,13 @@ operator|new
 name|ListCommand
 argument_list|()
 decl_stmt|;
+name|command
+operator|.
+name|setRepoAdmin
+argument_list|(
+name|repoAdmin
+argument_list|)
+expr_stmt|;
 name|Resource
 index|[]
 name|resources
@@ -180,9 +187,9 @@ argument_list|()
 expr_stmt|;
 name|command
 operator|.
-name|doExecute
+name|execute
 argument_list|(
-name|repoAdmin
+literal|null
 argument_list|)
 expr_stmt|;
 name|control
