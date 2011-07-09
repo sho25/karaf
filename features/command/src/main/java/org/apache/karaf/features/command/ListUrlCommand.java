@@ -208,10 +208,9 @@ operator|=
 literal|" Loaded   URI "
 expr_stmt|;
 block|}
-name|session
+name|System
 operator|.
-name|getConsole
-argument_list|()
+name|out
 operator|.
 name|println
 argument_list|(
@@ -336,16 +335,15 @@ operator|+
 literal|"\n"
 expr_stmt|;
 block|}
-name|session
+name|System
 operator|.
-name|getConsole
-argument_list|()
+name|out
 operator|.
 name|println
 argument_list|(
 name|line
 operator|+
-literal|"   "
+literal|" "
 operator|+
 name|uri
 argument_list|)
@@ -356,10 +354,9 @@ condition|(
 name|verbose
 condition|)
 block|{
-name|session
+name|System
 operator|.
-name|getConsole
-argument_list|()
+name|out
 operator|.
 name|println
 argument_list|(
@@ -372,10 +369,9 @@ block|}
 block|}
 else|else
 block|{
-name|session
+name|System
 operator|.
-name|getConsole
-argument_list|()
+name|out
 operator|.
 name|println
 argument_list|(
