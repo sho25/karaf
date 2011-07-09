@@ -59,6 +59,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -915,6 +925,9 @@ name|is
 argument_list|)
 expr_stmt|;
 return|return
+operator|(
+name|String
+operator|)
 name|props
 operator|.
 name|get
@@ -1770,6 +1783,12 @@ control|(
 name|String
 name|name
 range|:
+operator|(
+name|Set
+argument_list|<
+name|String
+argument_list|>
+operator|)
 name|props
 operator|.
 name|keySet
@@ -1786,6 +1805,9 @@ name|InterpolationHelper
 operator|.
 name|substVars
 argument_list|(
+operator|(
+name|String
+operator|)
 name|props
 operator|.
 name|get
@@ -1822,6 +1844,9 @@ literal|null
 condition|)
 name|host
 operator|=
+operator|(
+name|String
+operator|)
 name|props
 operator|.
 name|get
@@ -1847,6 +1872,9 @@ literal|null
 condition|)
 name|shutdown
 operator|=
+operator|(
+name|String
+operator|)
 name|props
 operator|.
 name|get
@@ -2027,6 +2055,9 @@ name|Integer
 operator|.
 name|parseInt
 argument_list|(
+operator|(
+name|String
+operator|)
 name|props
 operator|.
 name|get
@@ -2039,6 +2070,9 @@ comment|// Try to get port from port file
 name|String
 name|portFile
 init|=
+operator|(
+name|String
+operator|)
 name|props
 operator|.
 name|get

@@ -532,7 +532,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Installs kar dependencies into a server-under-construction in target/assembly  *  * @version $Revision: 1.1 $  * @goal install-kars  * @phase process-resources  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Install kar dependencies  */
+comment|/**  * Installs kar dependencies into a server-under-construction in target/assembly  *  * @version $Revision$  * @goal install-kars  * @phase process-resources  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Install kar dependencies  */
 end_comment
 
 begin_class
@@ -1192,6 +1192,12 @@ control|(
 name|String
 name|key
 range|:
+operator|(
+name|Set
+argument_list|<
+name|String
+argument_list|>
+operator|)
 name|startupProperties
 operator|.
 name|keySet
@@ -1807,12 +1813,17 @@ name|FEATURES_REPOSITORIES
 argument_list|)
 operator|&&
 operator|!
+operator|(
+operator|(
+name|String
+operator|)
 name|properties
 operator|.
 name|get
 argument_list|(
 name|FEATURES_REPOSITORIES
 argument_list|)
+operator|)
 operator|.
 name|isEmpty
 argument_list|()
@@ -1926,12 +1937,17 @@ name|FEATURES_BOOT
 argument_list|)
 operator|&&
 operator|!
+operator|(
+operator|(
+name|String
+operator|)
 name|properties
 operator|.
 name|get
 argument_list|(
 name|FEATURES_BOOT
 argument_list|)
+operator|)
 operator|.
 name|isEmpty
 argument_list|()
@@ -2359,6 +2375,9 @@ name|Integer
 operator|.
 name|decode
 argument_list|(
+operator|(
+name|String
+operator|)
 name|startupProperties
 operator|.
 name|get

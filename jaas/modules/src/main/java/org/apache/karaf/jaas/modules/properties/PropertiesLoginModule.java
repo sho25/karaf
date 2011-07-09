@@ -535,6 +535,9 @@ try|try
 block|{
 name|userInfos
 operator|=
+operator|(
+name|String
+operator|)
 name|users
 operator|.
 name|get

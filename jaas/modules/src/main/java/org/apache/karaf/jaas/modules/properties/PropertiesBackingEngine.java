@@ -141,6 +141,16 @@ name|List
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author iocanel  */
 end_comment
@@ -273,6 +283,9 @@ block|}
 name|String
 name|userInfos
 init|=
+operator|(
+name|String
+operator|)
 name|users
 operator|.
 name|get
@@ -445,6 +458,12 @@ control|(
 name|String
 name|userNames
 range|:
+operator|(
+name|Set
+argument_list|<
+name|String
+argument_list|>
+operator|)
 name|users
 operator|.
 name|keySet
@@ -500,6 +519,9 @@ decl_stmt|;
 name|String
 name|userInfo
 init|=
+operator|(
+name|String
+operator|)
 name|users
 operator|.
 name|get
@@ -572,6 +594,9 @@ block|{
 name|String
 name|userInfos
 init|=
+operator|(
+name|String
+operator|)
 name|users
 operator|.
 name|get
@@ -658,6 +683,9 @@ decl_stmt|;
 name|String
 name|userInfos
 init|=
+operator|(
+name|String
+operator|)
 name|users
 operator|.
 name|get
