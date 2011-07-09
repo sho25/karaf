@@ -343,7 +343,7 @@ name|println
 argument_list|(
 name|line
 operator|+
-literal|" "
+literal|"   "
 operator|+
 name|uri
 argument_list|)
