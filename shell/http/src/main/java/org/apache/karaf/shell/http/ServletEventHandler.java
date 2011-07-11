@@ -83,18 +83,6 @@ name|ServletListener
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|framework
-operator|.
-name|Bundle
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -104,7 +92,7 @@ name|ServletListener
 block|{
 name|Map
 argument_list|<
-name|Bundle
+name|String
 argument_list|,
 name|ServletEvent
 argument_list|>
@@ -113,7 +101,7 @@ init|=
 operator|new
 name|HashMap
 argument_list|<
-name|Bundle
+name|String
 argument_list|,
 name|ServletEvent
 argument_list|>
@@ -133,7 +121,7 @@ name|put
 argument_list|(
 name|event
 operator|.
-name|getBundle
+name|getServletName
 argument_list|()
 argument_list|,
 name|event
