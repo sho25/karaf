@@ -134,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * As org.apache.karaf.deployer.features.FeatureURLHandler need run with OSGi container  * so create this class only used for features-maven-plugin  */
+comment|/**  * As org.apache.karaf.deployer.features.FeatureURLHandler needs to be run with  * the OSGi container this class was created for use by the karaf-maven-plugin  */
 end_comment
 
 begin_class
@@ -230,7 +230,7 @@ name|logger
 operator|.
 name|debug
 argument_list|(
-literal|"Feature xml URL is: ["
+literal|"Features xml URL is: ["
 operator|+
 name|featureXmlURL
 operator|+
@@ -335,7 +335,7 @@ name|logger
 operator|.
 name|error
 argument_list|(
-literal|"Error opening feature xml url"
+literal|"Error opening features xml url"
 argument_list|,
 name|e
 argument_list|)

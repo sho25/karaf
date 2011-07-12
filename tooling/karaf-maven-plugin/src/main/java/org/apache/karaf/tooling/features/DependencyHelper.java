@@ -430,7 +430,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @version $Rev:$ $Date:$  */
+comment|/**  * @version $Rev:ision$  */
 end_comment
 
 begin_class

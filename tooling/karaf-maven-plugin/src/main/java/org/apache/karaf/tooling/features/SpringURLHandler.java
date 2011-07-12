@@ -134,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * As org.apache.karaf.deployer.spring.SpringURLHandler need run with OSGi container  * so create this class only used for features-maven-plugin  */
+comment|/**  * As org.apache.karaf.deployer.spring.SpringURLHandler needs to be run with  * the OSGi container this class was created for use by the karaf-maven-plugin  */
 end_comment
 
 begin_class
@@ -209,7 +209,7 @@ throw|throw
 operator|new
 name|MalformedURLException
 argument_list|(
-literal|"Path can not be null or empty. Syntax: "
+literal|"Path cannot be null or empty. Syntax: "
 operator|+
 name|SYNTAX
 argument_list|)
@@ -335,7 +335,7 @@ name|logger
 operator|.
 name|error
 argument_list|(
-literal|"Error opening spring xml url"
+literal|"Error opening Spring xml url"
 argument_list|,
 name|e
 argument_list|)
@@ -347,7 +347,7 @@ operator|)
 operator|new
 name|IOException
 argument_list|(
-literal|"Error opening spring xml url"
+literal|"Error opening Spring xml url"
 argument_list|)
 operator|.
 name|initCause

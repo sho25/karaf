@@ -433,7 +433,7 @@ specifier|protected
 name|String
 name|format
 decl_stmt|;
-comment|/**      * The classloader to use to load the commands      *      * @parameter default-value="project"      */
+comment|/**      * The classloader to use for loading the commands      *      * @parameter default-value="project"      */
 specifier|protected
 name|String
 name|classLoader

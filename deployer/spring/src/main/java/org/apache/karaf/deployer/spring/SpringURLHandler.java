@@ -353,7 +353,7 @@ name|logger
 operator|.
 name|error
 argument_list|(
-literal|"Error opening spring xml url"
+literal|"Error opening Spring xml url"
 argument_list|,
 name|e
 argument_list|)
@@ -365,7 +365,7 @@ operator|)
 operator|new
 name|IOException
 argument_list|(
-literal|"Error opening spring xml url"
+literal|"Error opening Spring xml url"
 argument_list|)
 operator|.
 name|initCause

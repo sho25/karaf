@@ -448,7 +448,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @version $Revision: 1.1 $  */
+comment|/**  * @version $Revision$  */
 end_comment
 
 begin_class
@@ -464,7 +464,7 @@ specifier|protected
 name|MavenProjectHelper
 name|projectHelper
 decl_stmt|;
-comment|/**      * The maven project.      *      * @parameter expression="${project}"      * @required      * @readonly      */
+comment|/**      * The Maven project.      *      * @parameter expression="${project}"      * @required      * @readonly      */
 specifier|protected
 name|MavenProject
 name|project
@@ -1717,7 +1717,7 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * Required because maven3 returns null in {@link ArtifactRepository#getProtocol()} (see KARAF-244)      */
+comment|/**      * Required because Maven 3 returns null in {@link ArtifactRepository#getProtocol()} (see KARAF-244)      */
 specifier|private
 name|String
 name|extractProtocolFromLocalMavenRepo
@@ -1745,7 +1745,7 @@ name|MalformedURLException
 name|e
 parameter_list|)
 block|{
-comment|// Basically this should not happen; if though cancel the process
+comment|// Basically this should not happen; if it does though cancel the process
 throw|throw
 operator|new
 name|RuntimeException
@@ -1909,7 +1909,7 @@ throw|throw
 operator|new
 name|MojoExecutionException
 argument_list|(
-literal|"Bundle url is not a maven url: "
+literal|"Bundle url is not a Maven url: "
 operator|+
 name|bundle
 argument_list|)

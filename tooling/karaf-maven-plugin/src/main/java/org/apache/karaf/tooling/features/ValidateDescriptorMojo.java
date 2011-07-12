@@ -554,7 +554,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Validates a features XML file  *   * @version $Revision: 1.1 $  * @goal features-validate-descriptor  * @execute phase="process-resources"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Validates the features XML file  */
+comment|/**  * Validates a features XML file  *   * @version $Revision:$  * @goal features-validate-descriptor  * @execute phase="process-resources"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Validates the features XML file  */
 end_comment
 
 begin_class
@@ -616,17 +616,17 @@ specifier|private
 name|File
 name|file
 decl_stmt|;
-comment|/**      * karaf config.properties      *       * @parameter default-value="config.properties"      */
+comment|/**      * Karaf config.properties      *       * @parameter default-value="config.properties"      */
 specifier|private
 name|String
 name|karafConfig
 decl_stmt|;
-comment|/**      * which jre version we wanna parse to get jre exported package in config.properties      *       * @parameter default-value="jre-1.5"      */
+comment|/**      * which JRE version to parse from config.properties to get the JRE exported packages      *       * @parameter default-value="jre-1.5"      */
 specifier|private
 name|String
 name|jreVersion
 decl_stmt|;
-comment|/**      * which karaf version used for karaf core features resolution      *      * @parameter      */
+comment|/**      * which Karaf version used for Karaf core features resolution      *      * @parameter      */
 specifier|private
 name|String
 name|karafVersion
@@ -904,7 +904,7 @@ argument_list|()
 expr_stmt|;
 name|info
 argument_list|(
-literal|" - populating repositories with karaf core features descriptors"
+literal|" - populating repositories with Karaf core features descriptors"
 argument_list|)
 expr_stmt|;
 name|appendKarafCoreFeaturesDescriptors

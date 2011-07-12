@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Methods to convert between  * pax mvn format: mvn-uri := 'mvn:' [ repository-url '!' ] group-id '/' artifact-id [ '/' [version] [ '/' [type] [ '/' classifier ] ] ] ]  * aether coordinate format:<groupId>:<artifactId>[:<extension>[:<classifier>]]:<version>  * and repository paths  *  * N.B. we do not handle repository-url in mvn urls.  * N.B. version is required in mvn urls.  *  * @version $Rev:$ $Date:$  */
+comment|/**  * Methods to convert between  * pax mvn format: mvn-uri := 'mvn:' [ repository-url '!' ] group-id '/' artifact-id [ '/' [version] [ '/' [type] [ '/' classifier ] ] ] ]  * aether coordinate format:<groupId>:<artifactId>[:<extension>[:<classifier>]]:<version>  * and repository paths  *  * N.B. we do not handle repository-url in mvn urls.  * N.B. version is required in mvn urls.  *  * @version $Revision$  */
 end_comment
 
 begin_class
@@ -554,7 +554,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * similar to a Main class method      * Returns a path for an srtifact.      * Input: path (no ':') returns path      * Input: mvn:<groupId>/<artifactId>/<version>/<type>/<classifier> converts to default repo location path      * Input:<groupId>:<artifactId>:<type>:<classifier>:<version>:<type>:<classifier> converts to default repo location path      * type and classifier are optional.      *      *      * @param name input artifact info      * @return path as supplied or a default maven repo path      */
+comment|/**      * Similar to a Main class method      * Returns a path for an srtifact.      * Input: path (no ':') returns path      * Input: mvn:<groupId>/<artifactId>/<version>/<type>/<classifier> converts to default repo location path      * Input:<groupId>:<artifactId>:<type>:<classifier>:<version>:<type>:<classifier> converts to default repo location path      * type and classifier are optional.      *      *      * @param name input artifact info      * @return path as supplied or a default maven repo path      */
 specifier|static
 name|String
 name|pathFromMaven
