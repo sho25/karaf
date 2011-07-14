@@ -183,7 +183,7 @@ specifier|public
 class|class
 name|Info
 extends|extends
-name|BundlesCommandOptional
+name|BundlesCommand
 block|{
 specifier|protected
 name|void

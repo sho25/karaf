@@ -75,7 +75,7 @@ specifier|public
 class|class
 name|RestartBundle
 extends|extends
-name|BundlesCommand
+name|BundlesCommandWithConfirmation
 block|{
 specifier|protected
 name|void

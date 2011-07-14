@@ -301,7 +301,7 @@ specifier|public
 class|class
 name|Headers
 extends|extends
-name|BundlesCommandOptional
+name|BundlesCommand
 block|{
 specifier|protected
 specifier|final

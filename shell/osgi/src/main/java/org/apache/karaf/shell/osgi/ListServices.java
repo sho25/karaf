@@ -119,7 +119,7 @@ specifier|public
 class|class
 name|ListServices
 extends|extends
-name|BundlesCommandOptional
+name|BundlesCommand
 block|{
 annotation|@
 name|Option

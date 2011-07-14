@@ -101,7 +101,7 @@ specifier|public
 class|class
 name|RefreshBundle
 extends|extends
-name|BundlesCommandOptional
+name|BundlesCommandWithConfirmation
 block|{
 specifier|protected
 name|void

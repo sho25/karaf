@@ -101,7 +101,7 @@ specifier|public
 class|class
 name|ResolveBundle
 extends|extends
-name|BundlesCommandOptional
+name|BundlesCommand
 block|{
 specifier|protected
 name|void
