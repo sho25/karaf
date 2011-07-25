@@ -1460,26 +1460,6 @@ else|:
 literal|" day"
 operator|)
 decl_stmt|;
-name|String
-name|s
-init|=
-name|fmtI
-operator|.
-name|format
-argument_list|(
-name|days
-argument_list|)
-operator|+
-operator|(
-name|days
-operator|>
-literal|1
-condition|?
-literal|" days"
-else|:
-literal|" day"
-operator|)
-decl_stmt|;
 if|if
 condition|(
 name|hours
