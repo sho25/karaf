@@ -1259,17 +1259,6 @@ name|double
 name|uptime
 parameter_list|)
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Initial uptime: "
-operator|+
-name|uptime
-argument_list|)
-expr_stmt|;
 name|uptime
 operator|/=
 literal|1000
@@ -1295,17 +1284,6 @@ block|}
 name|uptime
 operator|/=
 literal|60
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Uptime in minutes: "
-operator|+
-name|uptime
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1349,17 +1327,6 @@ block|}
 name|uptime
 operator|/=
 literal|60
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Uptime in hours: "
-operator|+
-name|uptime
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1449,17 +1416,6 @@ name|uptime
 operator|/=
 literal|24
 expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Uptime in days: "
-operator|+
-name|uptime
-argument_list|)
-expr_stmt|;
 name|long
 name|days
 init|=
@@ -1484,43 +1440,26 @@ operator|*
 literal|24
 argument_list|)
 decl_stmt|;
-name|System
+name|String
+name|s
+init|=
+name|fmtI
 operator|.
-name|out
-operator|.
-name|println
+name|format
 argument_list|(
-literal|"Uptime - days: "
+name|days
+argument_list|)
 operator|+
 operator|(
-name|uptime
-operator|-
 name|days
+operator|>
+literal|1
+condition|?
+literal|" days"
+else|:
+literal|" day"
 operator|)
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Days: "
-operator|+
-name|days
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Hours: "
-operator|+
-name|hours
-argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|String
 name|s
 init|=
