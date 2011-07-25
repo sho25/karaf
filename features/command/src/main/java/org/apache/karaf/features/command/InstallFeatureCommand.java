@@ -141,7 +141,7 @@ literal|"feature"
 argument_list|,
 name|description
 operator|=
-literal|"The name and version of the features to uninstall. A feature id looks like name/version. The version is optional."
+literal|"The name and version of the features to install. A feature id looks like name/version. The version is optional."
 argument_list|,
 name|required
 operator|=
