@@ -121,10 +121,6 @@ name|Map
 import|;
 end_import
 
-begin_comment
-comment|/**  * @author iocanel  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -133,9 +129,11 @@ implements|implements
 name|BackingEngineFactory
 block|{
 specifier|private
+specifier|static
 specifier|final
+specifier|transient
 name|Logger
-name|logger
+name|LOGGER
 init|=
 name|LoggerFactory
 operator|.
@@ -446,7 +444,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|error
 argument_list|(

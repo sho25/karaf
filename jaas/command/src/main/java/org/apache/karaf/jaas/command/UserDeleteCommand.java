@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Deletes a user of the active realm/module.  *  * @author iocanel  */
+comment|/**  * Deletes a user of the active realm/module.  */
 end_comment
 
 begin_class

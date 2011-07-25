@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  *<p>  * Interface describing the password encryption service.  *</>  *   * @author jbonofre  */
+comment|/**  * Interface describing the password encryption service.  */
 end_comment
 
 begin_interface
@@ -26,7 +26,7 @@ specifier|public
 interface|interface
 name|Encryption
 block|{
-comment|/**      *<p>      * Encrypt a password.      *</p>      *       * @param plain the password in plain format.      * @return the encrypted password format.      */
+comment|/**      * Encrypt a password.      *       * @param plain the password in plain format.      * @return the encrypted password format.      */
 specifier|public
 name|String
 name|encryptPassword
@@ -35,7 +35,7 @@ name|String
 name|plain
 parameter_list|)
 function_decl|;
-comment|/**      *<p>      * Check password.      *</p>      *       * @param input password provided in plain format.      * @param password the encrypted format to compare with.      * @return true if the password match, false else.      */
+comment|/**      * Check password.      *       * @param input password provided in plain format.      * @param password the encrypted format to compare with.      * @return true if the password match, false else.      */
 specifier|public
 name|boolean
 name|checkPassword

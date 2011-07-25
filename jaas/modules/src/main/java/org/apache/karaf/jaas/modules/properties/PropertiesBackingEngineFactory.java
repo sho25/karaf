@@ -135,10 +135,6 @@ name|Map
 import|;
 end_import
 
-begin_comment
-comment|/**  * @author iocanel  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -147,9 +143,11 @@ implements|implements
 name|BackingEngineFactory
 block|{
 specifier|private
+specifier|static
 specifier|final
+specifier|transient
 name|Logger
-name|logger
+name|LOGGER
 init|=
 name|LoggerFactory
 operator|.
@@ -243,12 +241,12 @@ name|IOException
 name|ioe
 parameter_list|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
-literal|"Cannot open users file:"
-operator|+
+literal|"Cannot open users file: {}"
+argument_list|,
 name|usersFile
 argument_list|)
 expr_stmt|;

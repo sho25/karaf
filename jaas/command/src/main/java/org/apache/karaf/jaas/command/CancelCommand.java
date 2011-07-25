@@ -59,10 +59,6 @@ name|LinkedList
 import|;
 end_import
 
-begin_comment
-comment|/**  * @author iocanel  */
-end_comment
-
 begin_class
 annotation|@
 name|Command

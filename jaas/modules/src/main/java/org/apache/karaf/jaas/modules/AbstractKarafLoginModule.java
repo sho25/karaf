@@ -142,7 +142,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * Abstract JAAS login module extended by all Karaf Login Modules.  *</p>  *  * @author iocanel, jbonofre  */
+comment|/**  * Abstract JAAS login module extended by all Karaf Login Modules.  */
 end_comment
 
 begin_class

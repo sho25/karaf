@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates a new user in the active realm/module.  *  * @author iocanel  */
+comment|/**  * Creates a new user in the active realm/module.  */
 end_comment
 
 begin_class

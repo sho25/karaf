@@ -151,10 +151,6 @@ name|Set
 import|;
 end_import
 
-begin_comment
-comment|/**  * @author iocanel  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -163,9 +159,11 @@ implements|implements
 name|BackingEngine
 block|{
 specifier|private
+specifier|static
 specifier|final
+specifier|transient
 name|Logger
-name|logger
+name|LOGGER
 init|=
 name|LoggerFactory
 operator|.
@@ -403,7 +401,7 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|error
 argument_list|(
@@ -644,7 +642,7 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|error
 argument_list|(
@@ -821,7 +819,7 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|error
 argument_list|(

@@ -245,10 +245,6 @@ name|Map
 import|;
 end_import
 
-begin_comment
-comment|/**  * @author iocanel  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -257,9 +253,11 @@ extends|extends
 name|AbstractKarafLoginModule
 block|{
 specifier|private
+specifier|static
 specifier|final
+specifier|transient
 name|Logger
-name|logger
+name|LOGGER
 init|=
 name|LoggerFactory
 operator|.
@@ -435,7 +433,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|error
 argument_list|(
@@ -467,7 +465,7 @@ name|OSGI
 argument_list|)
 condition|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|error
 argument_list|(
@@ -991,7 +989,7 @@ name|SQLException
 name|ex
 parameter_list|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
@@ -1044,7 +1042,7 @@ condition|(
 name|debug
 condition|)
 block|{
-name|logger
+name|LOGGER
 operator|.
 name|debug
 argument_list|(

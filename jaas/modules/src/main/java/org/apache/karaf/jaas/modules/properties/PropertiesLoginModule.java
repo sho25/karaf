@@ -264,7 +264,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * JAAS Login module for user / password, based on two properties files.  *</p>  *  * @author gnodet, jbonofre  */
+comment|/**  * JAAS Login module for user / password, based on two properties files.  */
 end_comment
 
 begin_class
@@ -275,9 +275,11 @@ extends|extends
 name|AbstractKarafLoginModule
 block|{
 specifier|private
+specifier|static
 specifier|final
+specifier|transient
 name|Logger
-name|LOG
+name|LOGGER
 init|=
 name|LoggerFactory
 operator|.
@@ -347,16 +349,14 @@ condition|(
 name|debug
 condition|)
 block|{
-name|LOG
+name|LOGGER
 operator|.
 name|debug
 argument_list|(
-literal|"Initialized debug="
-operator|+
+literal|"Initialized debug={} usersFile={}"
+argument_list|,
 name|debug
-operator|+
-literal|" usersFile="
-operator|+
+argument_list|,
 name|usersFile
 argument_list|)
 expr_stmt|;
@@ -618,7 +618,7 @@ condition|(
 name|debug
 condition|)
 block|{
-name|LOG
+name|LOGGER
 operator|.
 name|debug
 argument_list|(
@@ -631,7 +631,7 @@ condition|(
 name|debug
 condition|)
 block|{
-name|LOG
+name|LOGGER
 operator|.
 name|debug
 argument_list|(
@@ -705,7 +705,7 @@ condition|(
 name|debug
 condition|)
 block|{
-name|LOG
+name|LOGGER
 operator|.
 name|debug
 argument_list|(
@@ -729,7 +729,7 @@ condition|(
 name|debug
 condition|)
 block|{
-name|LOG
+name|LOGGER
 operator|.
 name|debug
 argument_list|(
@@ -749,12 +749,12 @@ name|IOException
 name|ioe
 parameter_list|)
 block|{
-name|LOG
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to write user properties file "
-operator|+
+literal|"Unable to write user properties file {}"
+argument_list|,
 name|f
 argument_list|,
 name|ioe
@@ -852,12 +852,12 @@ condition|(
 name|debug
 condition|)
 block|{
-name|LOG
+name|LOGGER
 operator|.
 name|debug
 argument_list|(
-literal|"Successfully logged in "
-operator|+
+literal|"Successfully logged in {}"
+argument_list|,
 name|user
 argument_list|)
 expr_stmt|;
@@ -881,7 +881,7 @@ condition|(
 name|debug
 condition|)
 block|{
-name|LOG
+name|LOGGER
 operator|.
 name|debug
 argument_list|(
@@ -920,7 +920,7 @@ condition|(
 name|debug
 condition|)
 block|{
-name|LOG
+name|LOGGER
 operator|.
 name|debug
 argument_list|(

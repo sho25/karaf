@@ -102,11 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author iocanel  */
-end_comment
-
-begin_comment
-comment|/**  * Lists the commands the are in the command queue, for the active realm/module.  *  * @author iocanel  */
+comment|/**  * Lists the commands the are in the command queue, for the active realm/module.  */
 end_comment
 
 begin_class

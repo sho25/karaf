@@ -250,7 +250,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * Karaf JAAS login module which uses a LDAP backend.  *</p>  *  * @author jbonofre  * @author gnodet  */
+comment|/**  * Karaf JAAS login module which uses a LDAP backend.  */
 end_comment
 
 begin_class

@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Adds a role to a user of the active realm/module.  *  * @author iocanel  */
+comment|/**  * Adds a role to a user of the active realm/module.  */
 end_comment
 
 begin_class

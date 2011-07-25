@@ -27,10 +27,6 @@ name|List
 import|;
 end_import
 
-begin_comment
-comment|/**  * @author iocanel  */
-end_comment
-
 begin_interface
 specifier|public
 interface|interface
