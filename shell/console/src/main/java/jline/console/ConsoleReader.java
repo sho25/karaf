@@ -2707,7 +2707,7 @@ argument_list|)
 expr_stmt|;
 comment|//        flush();
 block|}
-comment|/**      * Flush the console output stream. This is important for printout out single characters (like a backspace or      * keyboard) that we want the console to handle immediately.      */
+comment|/**      * Flush the console output stream. This is important for printout out single characters      * (like the keyboard backspace key) that we want the console to handle immediately.      */
 specifier|public
 name|void
 name|flush
@@ -6892,7 +6892,7 @@ name|ActionListener
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Adding a triggered Action allows to give another curse of action if a character passed the pre-processing.      *<p/>      * Say you want to close the application if the user enter q.      * addTriggerAction('q', new ActionListener(){ System.exit(0); }); would do the trick.      */
+comment|/**      * Adding a triggered Action allows for another course of action if a character passed the pre-processing.      *<p/>      * Say you wish to close the application if the user enters q.      * addTriggerAction('q', new ActionListener(){ System.exit(0); }); would do the trick.      */
 specifier|public
 name|void
 name|addTriggeredAction
@@ -7158,7 +7158,7 @@ break|break;
 block|}
 block|}
 block|}
-comment|// NOTE: toString() is important here due to AnsiString being retarded
+comment|// NOTE: toString() is important here due to hiccups with AnsiString
 name|buff
 operator|.
 name|append
@@ -7383,7 +7383,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Erases the current line with the existing prompt, then redraws the line      * with the provided prompt and buffer      * @param prompt      *            the new prompt      * @param buffer      *            the buffer to be drawn      * @param cursorDest      *            where you want the cursor set when the line has been drawn.      *            -1 for end of line.      * */
+comment|/**      * Erases the current line with the existing prompt, then redraws the line      * with the provided prompt and buffer      * @param prompt      *            the new prompt      * @param buffer      *            the buffer to be drawn      * @param cursorDest      *            where you wish to have the cursor set when the line has been drawn.      *            -1 for end of line.      * */
 specifier|public
 name|void
 name|resetPromptLine

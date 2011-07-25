@@ -503,7 +503,7 @@ name|BUNDLE_LOCATIONS
 init|=
 literal|"bundle.locations"
 decl_stmt|;
-comment|/** 	 * Config property that indicates we want to convert bundles locations to 	 * maven style urls 	 */
+comment|/**      * Config property that indicates we want to convert bundle locations to      * Maven style URLs      */
 specifier|private
 specifier|static
 specifier|final

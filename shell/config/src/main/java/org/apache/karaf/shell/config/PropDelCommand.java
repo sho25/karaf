@@ -87,7 +87,7 @@ literal|"propdel"
 argument_list|,
 name|description
 operator|=
-literal|"Deletes a property from the edited configuration."
+literal|"Deletes a property from the configuration being edited."
 argument_list|)
 specifier|public
 class|class
@@ -150,7 +150,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"No configuration is being edited. Run the edit command first"
+literal|"No configuration is being edited--run the edit command first"
 argument_list|)
 expr_stmt|;
 block|}

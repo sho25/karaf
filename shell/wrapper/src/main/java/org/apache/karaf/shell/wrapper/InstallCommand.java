@@ -192,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Installs this Karaf instance as a service in your operating systems.  *  * @version $Rev: 603634 $ $Date: 2007-12-12 16:07:16 +0100 (Wed, 12 Dec 2007) $  */
+comment|/**  * Installs this Karaf instance as a service in your operating systems.  */
 end_comment
 
 begin_class
@@ -921,7 +921,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Setup complete.  You may want to tweak the JVM properties in the wrapper configuration file:"
+literal|"Setup complete.  You may wish to tweak the JVM properties in the wrapper configuration file:"
 argument_list|)
 expr_stmt|;
 name|System
@@ -2370,7 +2370,7 @@ argument_list|)
 operator|.
 name|a
 argument_list|(
-literal|". Move it out of the way if you want it re-created: "
+literal|". Move it out of the way if you wish to recreate it: "
 argument_list|)
 operator|.
 name|a
@@ -2592,7 +2592,7 @@ argument_list|)
 operator|.
 name|a
 argument_list|(
-literal|". Move it out of the way if you want it re-created: "
+literal|". Move it out of the way if you wish to recreate it: "
 argument_list|)
 operator|.
 name|a

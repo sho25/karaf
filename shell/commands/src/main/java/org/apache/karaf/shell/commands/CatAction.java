@@ -200,7 +200,7 @@ block|{}
 argument_list|,
 name|description
 operator|=
-literal|"The number the output lines, starting at 1."
+literal|"Number the output lines, starting at 1."
 argument_list|,
 name|required
 operator|=
@@ -227,7 +227,7 @@ literal|"paths or urls"
 argument_list|,
 name|description
 operator|=
-literal|"A list of file paths or urls to display separated by whitespaces (use - for STDIN)"
+literal|"A list of file paths or urls to display separated by whitespace (use - for STDIN)"
 argument_list|,
 name|required
 operator|=

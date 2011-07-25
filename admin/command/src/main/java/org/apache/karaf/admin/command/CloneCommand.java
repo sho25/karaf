@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * Clone an existing Karaf instance.  *</p>  */
+comment|/**  * Clone an existing Karaf instance.  */
 end_comment
 
 begin_class
@@ -214,7 +214,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Location of the clone container instance in the file system"
+literal|"Location of the cloned container instance in the file system"
 argument_list|,
 name|required
 operator|=
@@ -242,7 +242,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"JVM options to use when launching the clone instance"
+literal|"JVM options to use when launching the cloned instance"
 argument_list|,
 name|required
 operator|=
@@ -294,65 +294,12 @@ literal|"cloneName"
 argument_list|,
 name|description
 operator|=
-literal|"The name of the clone container instance"
-argument_list|,
-name|required
-operator|=
-literal|true
-argument_list|,
-name|multiValued
-operator|=
-literal|false
-argument_list|)
-name|String
-name|cloneName
-decl_stmt|;
-specifier|protected
-name|Object
-name|doExecute
-parameter_list|()
-throws|throws
-name|Exception
-block|{
-name|InstanceSettings
-name|settings
-init|=
-operator|new
-name|InstanceSettings
-argument_list|(
-name|sshPort
-argument_list|,
-name|rmiRegistryPort
-argument_list|,
-name|rmiServerPort
-argument_list|,
-name|location
-argument_list|,
-name|javaOpts
-argument_list|,
-literal|null
-argument_list|,
-literal|null
-argument_list|)
-decl_stmt|;
-name|getAdminService
-argument_list|()
-operator|.
-name|cloneInstance
-argument_list|(
-name|name
-argument_list|,
-name|cloneName
-argument_list|,
-name|settings
-argument_list|)
-expr_stmt|;
-return|return
-literal|null
-return|;
-block|}
-block|}
+literal|"The name of the cloned"
+name|container
+name|instance
+literal|"
 end_class
 
+unit|, required = true, multiValued = false)     String cloneName;      protected Object doExecute() throws Exception {         InstanceSettings settings = new InstanceSettings(sshPort, rmiRegistryPort, rmiServerPort, location, javaOpts, null, null);         getAdminService().cloneInstance(name, cloneName, settings);         return null;     }  }
 end_unit
 

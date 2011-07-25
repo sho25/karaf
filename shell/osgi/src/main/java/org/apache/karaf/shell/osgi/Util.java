@@ -992,7 +992,7 @@ literal|"You are about to access system bundle "
 operator|+
 name|bundleId
 operator|+
-literal|".  Do you want to continue (yes/no): "
+literal|".  Do you wish to continue (yes/no): "
 argument_list|)
 expr_stmt|;
 name|System

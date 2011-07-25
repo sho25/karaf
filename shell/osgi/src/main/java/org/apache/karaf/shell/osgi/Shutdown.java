@@ -463,7 +463,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"Do you really want to shutdown (yes/no): "
+literal|"Confirm: shutdown instance (yes/no): "
 argument_list|)
 expr_stmt|;
 name|System

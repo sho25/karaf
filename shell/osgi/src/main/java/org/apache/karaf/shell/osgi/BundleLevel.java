@@ -122,7 +122,7 @@ literal|"startLevel"
 argument_list|,
 name|description
 operator|=
-literal|"The bundles new start level"
+literal|"The bundle's new start level"
 argument_list|,
 name|required
 operator|=
@@ -272,7 +272,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"You are about to designate bundle as a system bundle.  Do you want to continue (yes/no): "
+literal|"You are about to designate bundle as a system bundle.  Do you wish to continue (yes/no): "
 argument_list|)
 expr_stmt|;
 name|System
