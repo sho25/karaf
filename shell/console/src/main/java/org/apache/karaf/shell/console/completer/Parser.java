@@ -348,7 +348,6 @@ argument_list|(
 literal|"Eof found after \\"
 argument_list|)
 throw|;
-comment|// derek
 block|}
 name|c
 operator|=

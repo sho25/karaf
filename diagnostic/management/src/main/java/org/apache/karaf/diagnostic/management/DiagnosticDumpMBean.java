@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Diagnostic MBean which allows to create dumps over JMX.  *   * @author ldywicki  */
+comment|/**  * Diagnostic MBean which allows to create dumps over JMX.  */
 end_comment
 
 begin_interface

@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class which packages dumps to given directory.  *   * @author ldywicki  */
+comment|/**  * Class which packages dumps to given directory.  */
 end_comment
 
 begin_class

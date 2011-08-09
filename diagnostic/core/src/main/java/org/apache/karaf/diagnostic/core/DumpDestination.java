@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Destination for created dumps.  *   * @author ldywicki  */
+comment|/**  * Destination for created dumps.  */
 end_comment
 
 begin_interface

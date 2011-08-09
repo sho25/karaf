@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Row information.  *   * @author ldywicki  */
+comment|/**  * Row information.  */
 end_comment
 
 begin_class

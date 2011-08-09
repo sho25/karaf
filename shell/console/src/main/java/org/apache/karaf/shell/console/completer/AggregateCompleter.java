@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Completer which contains multipule completers and aggregates them together.  *  * @version $Rev: 699733 $ $Date: 2008-09-27 22:55:23 +0200 (Sat, 27 Sep 2008) $  */
+comment|/**  * Completer which contains multipule completers and aggregates them together.  */
 end_comment
 
 begin_class

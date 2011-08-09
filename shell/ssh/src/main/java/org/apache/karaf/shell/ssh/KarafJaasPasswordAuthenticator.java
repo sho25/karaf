@@ -211,10 +211,6 @@ name|LoggerFactory
 import|;
 end_import
 
-begin_comment
-comment|/**  * TODO Add javadoc  *  * @author<a href="mailto:dev@mina.apache.org">Apache MINA SSHD Project</a>  */
-end_comment
-
 begin_class
 specifier|public
 class|class

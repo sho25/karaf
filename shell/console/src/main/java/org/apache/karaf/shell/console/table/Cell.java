@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Cell information.  *   * @author ldywicki  */
+comment|/**  * Cell information.  */
 end_comment
 
 begin_class

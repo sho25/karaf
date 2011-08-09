@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base class for dump providers which writes text to destination.  *   * @author ldywicki  */
+comment|/**  * Base class for dump providers which writes text to destination.  */
 end_comment
 
 begin_class

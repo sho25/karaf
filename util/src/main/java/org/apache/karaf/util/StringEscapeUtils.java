@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * Util class to manipulate String, especially around escape/unescape.  *</p>  *  * @author gnodet, jbonofre  */
+comment|/**  * Util class to manipulate String, especially around escape/unescape.  */
 end_comment
 
 begin_class

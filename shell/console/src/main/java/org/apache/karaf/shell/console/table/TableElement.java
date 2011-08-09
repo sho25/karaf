@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Table element.  *   * @author ldywicki  */
+comment|/**  * Table element.  */
 end_comment
 
 begin_class

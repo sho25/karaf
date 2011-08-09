@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Dump provider which add file named features.txt with informations  * about installed features and repositories.   *   * @author ldywicki  */
+comment|/**  * Dump provider which add file named features.txt with informations  * about installed features and repositories.  */
 end_comment
 
 begin_class

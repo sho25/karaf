@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Interface which represents instance of tool which can provide dump  * information.  *   * @author ldywicki  */
+comment|/**  * Interface which represents instance of tool which can provide dump  * information.  */
 end_comment
 
 begin_interface

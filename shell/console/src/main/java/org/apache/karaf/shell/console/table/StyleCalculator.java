@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Dynamic style calculator.  *   * @author ldywicki  */
+comment|/**  * Dynamic style calculator.  */
 end_comment
 
 begin_interface

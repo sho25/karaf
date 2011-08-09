@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Enumeration type which contains all possible horizontal alignments.  *   * @author ldywicki  */
+comment|/**  * Enumeration type which contains all possible horizontal alignments.  */
 end_comment
 
 begin_enum

@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provider which dumps thread info to file named threads.txt.  *   * @author ldywicki  */
+comment|/**  * Provider which dumps thread info to file named threads.txt.  */
 end_comment
 
 begin_class

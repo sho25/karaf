@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Completer for a set of strings.  *  * @version $Rev: 722797 $ $Date: 2008-12-03 08:18:16 +0100 (Wed, 03 Dec 2008) $  */
+comment|/**  * Completer for a set of strings.  */
 end_comment
 
 begin_class

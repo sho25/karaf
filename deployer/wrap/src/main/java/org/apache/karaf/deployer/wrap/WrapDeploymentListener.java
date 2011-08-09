@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * A deployment listener that listens for non OSGi jar deployements.  *</p>  *  * @author jbonofre  */
+comment|/**  * A deployment listener that listens for non OSGi jar deployements.  */
 end_comment
 
 begin_class

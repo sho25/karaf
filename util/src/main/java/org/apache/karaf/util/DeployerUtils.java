@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Contain various methods that are useful for deploying artifacts  *  * @author gnodet  */
+comment|/**  * Contain various methods that are useful for deploying artifacts.  */
 end_comment
 
 begin_class

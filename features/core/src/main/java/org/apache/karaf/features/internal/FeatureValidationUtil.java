@@ -176,7 +176,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class which fires XML Schema validation.  *   * @author ldywicki  */
+comment|/**  * Utility class which fires XML Schema validation.  */
 end_comment
 
 begin_class

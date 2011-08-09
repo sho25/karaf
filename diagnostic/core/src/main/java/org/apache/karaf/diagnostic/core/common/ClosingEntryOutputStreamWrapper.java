@@ -52,7 +52,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Output stream which closes entry instead closing whole stream.  *   * @author ldywicki  */
+comment|/**  * Output stream which closes entry instead closing whole stream.  */
 end_comment
 
 begin_class

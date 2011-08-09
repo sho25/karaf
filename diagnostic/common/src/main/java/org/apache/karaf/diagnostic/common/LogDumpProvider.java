@@ -100,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Dump provider which copies log files from data/log directory to  * destination.  *   * @author ldywicki  */
+comment|/**  * Dump provider which copies log files from data/log directory to  * destination.  */
 end_comment
 
 begin_class

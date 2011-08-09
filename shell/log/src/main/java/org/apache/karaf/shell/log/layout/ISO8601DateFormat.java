@@ -78,7 +78,7 @@ comment|// Contributors: Arndt Schoenewald<arndt@ibm23093i821.mc.schoenewald.de>
 end_comment
 
 begin_comment
-comment|/**    Formats a {@link Date} in the format "yyyy-MM-dd HH:mm:ss,SSS" for example    "1999-11-27 15:49:37,459".<p>Refer to the<a    href=http://www.cl.cam.ac.uk/~mgk25/iso-time.html>summary of the    International Standard Date and Time Notation</a> for more    information on this format.     @author Ceki G&uuml;lc&uuml;    @author Andrew Vajoczki     @since 0.7.5 */
+comment|/**    Formats a {@link Date} in the format "yyyy-MM-dd HH:mm:ss,SSS" for example    "1999-11-27 15:49:37,459".<p>Refer to the<a    href=http://www.cl.cam.ac.uk/~mgk25/iso-time.html>summary of the    International Standard Date and Time Notation</a> for more    information on this format.     @since 0.7.5 */
 end_comment
 
 begin_class

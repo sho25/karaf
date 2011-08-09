@@ -200,7 +200,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Command to create dump from shell.  *   * @author ldywicki  */
+comment|/**  * Command to create dump from shell.  */
 end_comment
 
 begin_class

@@ -62,7 +62,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class which covers {@link org.fusesource.jansi.Ansi} class with standard fluent-api.  *   * @author ldywicki  */
+comment|/**  * Class which covers {@link org.fusesource.jansi.Ansi} class with standard fluent-api.  */
 end_comment
 
 begin_class

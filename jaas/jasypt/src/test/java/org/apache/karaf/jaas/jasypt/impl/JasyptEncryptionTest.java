@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * Test<code>JasyptEncryption</code>.  *</p>  *   * @author jbonofre  */
+comment|/**  * Test<code>JasyptEncryption</code>.  */
 end_comment
 
 begin_class

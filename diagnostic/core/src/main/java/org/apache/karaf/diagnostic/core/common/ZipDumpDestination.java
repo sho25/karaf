@@ -100,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class which packages dumps to ZIP archive.  *   * @author ldywicki  */
+comment|/**  * Class which packages dumps to ZIP archive.  */
 end_comment
 
 begin_class

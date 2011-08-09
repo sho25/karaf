@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author splatch  *         Bundle tracker which check manifest headers for informations.  */
+comment|/**  * Bundle tracker which check manifest headers for information.  */
 end_comment
 
 begin_class

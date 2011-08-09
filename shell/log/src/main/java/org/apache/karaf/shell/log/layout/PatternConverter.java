@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**<p>PatternConverter is an abtract class that provides the    formatting functionality that derived classes need.<p>Conversion specifiers in a conversion patterns are parsed to    individual PatternConverters. Each of which is responsible for    converting a logging event in a converter specific manner.     @author<a href="mailto:cakalijp@Maritz.com">James P. Cakalic</a>    @author Ceki G&uuml;lc&uuml;     @since 0.8.2  */
+comment|/**<p>PatternConverter is an abtract class that provides the    formatting functionality that derived classes need.<p>Conversion specifiers in a conversion patterns are parsed to    individual PatternConverters. Each of which is responsible for    converting a logging event in a converter specific manner.     @since 0.8.2  */
 end_comment
 
 begin_class

@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * This class is mostly here so that folks can see an example of how you can extend the Karaf Main shell.  Also  * lets Karaf developers see how changes the Main class can affect the interface comparability  * with sub classes.  *</p>  *  * @author<a href="http://hiramchirino.com">Hiram Chirino</a>  */
+comment|/**  * This class is mostly here so that folks can see an example of how you can extend the Karaf Main shell.  Also  * lets Karaf developers see how changes the Main class can affect the interface comparability  * with sub classes.  */
 end_comment
 
 begin_class

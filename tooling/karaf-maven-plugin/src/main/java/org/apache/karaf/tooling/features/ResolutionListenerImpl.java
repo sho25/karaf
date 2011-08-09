@@ -129,10 +129,6 @@ name|Log
 import|;
 end_import
 
-begin_comment
-comment|/**  * @author Edwin Punzalan  * @version $Revision: 1.1 $  */
-end_comment
-
 begin_class
 specifier|public
 class|class

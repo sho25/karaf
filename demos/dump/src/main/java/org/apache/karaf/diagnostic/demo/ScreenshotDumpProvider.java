@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This demo provider creates images in dump destination which  * contains screenshots from all attached displays.  *   * @author ldywicki  */
+comment|/**  * This demo provider creates images in dump destination which  * contains screenshots from all attached displays.  */
 end_comment
 
 begin_class

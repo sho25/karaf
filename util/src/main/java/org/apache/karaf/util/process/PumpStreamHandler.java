@@ -48,19 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|// Based on Apache Ant 1.6.5
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|/**  * Copies standard output and error of children streams to standard output and error of the parent.  *  * @version $Rev: 705608 $ $Date: 2008-10-17 15:28:45 +0200 (Fri, 17 Oct 2008) $  */
+comment|/**  * Copies standard output and error of children streams to standard output and error of the parent.  */
 end_comment
 
 begin_class

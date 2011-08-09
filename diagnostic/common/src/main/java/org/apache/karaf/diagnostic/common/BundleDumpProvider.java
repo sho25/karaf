@@ -100,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Dump provider which produces file named bundles.txt with list of  * installed bundles and it's state.  *   * @author ldywicki  */
+comment|/**  * Dump provider which produces file named bundles.txt with list of  * installed bundles and it's state.  */
 end_comment
 
 begin_class

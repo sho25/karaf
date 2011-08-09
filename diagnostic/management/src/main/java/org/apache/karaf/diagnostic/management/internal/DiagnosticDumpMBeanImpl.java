@@ -144,7 +144,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of diagnostic mbean.  *   * @author ldywicki  */
+comment|/**  * Implementation of diagnostic MBean.  */
 end_comment
 
 begin_class

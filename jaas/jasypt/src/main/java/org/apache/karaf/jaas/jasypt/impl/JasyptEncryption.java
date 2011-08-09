@@ -134,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * Jasypt implementation of the Encryption service.  *</p>  *   * @author jbonofre  */
+comment|/**  * Jasypt implementation of the Encryption service.  */
 end_comment
 
 begin_class

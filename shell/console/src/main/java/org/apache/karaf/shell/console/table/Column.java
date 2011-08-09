@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Column definition.  *   * @author ldywicki  */
+comment|/**  * Column definition.  */
 end_comment
 
 begin_class

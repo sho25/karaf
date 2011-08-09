@@ -48,19 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|// Based on Apache Ant 1.6.5
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|/**  * Copies all data from an input stream to an output stream.  *  * @version $Rev: 705608 $ $Date: 2008-10-17 15:28:45 +0200 (Fri, 17 Oct 2008) $  */
+comment|/**  * Copies all data from an input stream to an output stream.  */
 end_comment
 
 begin_class

@@ -50,7 +50,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * Rename an existing Karaf container instance.  *</p>  *  * @author jbonofre  */
+comment|/**  * Rename an existing Karaf container instance.  */
 end_comment
 
 begin_class

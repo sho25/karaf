@@ -84,7 +84,7 @@ comment|/**  * Copied from log4j  */
 end_comment
 
 begin_comment
-comment|/**    Formats a {@link Date} in the format "HH:mm:ss,SSS" for example,    "15:49:37,459".     @author Ceki G&uuml;lc&uuml;    @author Andrew Vajoczki     @since 0.7.5 */
+comment|/**    Formats a {@link Date} in the format "HH:mm:ss,SSS" for example,    "15:49:37,459".     @since 0.7.5 */
 end_comment
 
 begin_class
