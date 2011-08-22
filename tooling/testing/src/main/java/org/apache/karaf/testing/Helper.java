@@ -1915,7 +1915,7 @@ argument_list|)
 operator|.
 name|artifactId
 argument_list|(
-literal|"standard"
+literal|"org.apache.karaf.feature.standard"
 argument_list|)
 operator|.
 name|type
@@ -1959,7 +1959,7 @@ argument_list|)
 operator|.
 name|artifactId
 argument_list|(
-literal|"enterprise"
+literal|"org.apache.karaf.feature.enterprise"
 argument_list|)
 operator|.
 name|type
