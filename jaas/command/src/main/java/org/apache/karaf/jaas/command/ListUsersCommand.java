@@ -127,7 +127,7 @@ literal|"jaas"
 argument_list|,
 name|name
 operator|=
-literal|"userlist"
+literal|"users"
 argument_list|,
 name|description
 operator|=
