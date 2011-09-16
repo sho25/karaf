@@ -106,7 +106,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Force a clean restart by deleteting the working directory"
+literal|"Force a clean restart by deleting the working directory"
 argument_list|)
 specifier|private
 name|boolean
