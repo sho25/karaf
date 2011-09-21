@@ -2028,6 +2028,15 @@ name|Throwable
 name|ex
 parameter_list|)
 block|{
+if|if
+condition|(
+name|main
+operator|.
+name|lifecycleManager
+operator|!=
+literal|null
+condition|)
+block|{
 name|main
 operator|.
 name|lifecycleManager
@@ -2035,6 +2044,7 @@ operator|.
 name|destroyKaraf
 argument_list|()
 expr_stmt|;
+block|}
 name|exitCode
 operator|=
 operator|-
