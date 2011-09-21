@@ -83,7 +83,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Remove the configuration property identified by the given key.      *      * @param pid the configuration PID.      * @param key the property key.      * @throws Exception      */
+comment|/**      * Remove the configuration property identified by the given key.      *      * @param pid the configuration PID.      * @param key the property key.      * @param bypassStorage doesn't flush the change on the storage config file.      * @throws Exception      */
 name|void
 name|propdel
 parameter_list|(
@@ -92,11 +92,14 @@ name|pid
 parameter_list|,
 name|String
 name|key
+parameter_list|,
+name|boolean
+name|bypassStorage
 parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Append (or add) a value for the given configuration key.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the value to append to the current property value.      * @throws Exception      */
+comment|/**      * Append (or add) a value for the given configuration key.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the value to append to the current property value.      * @param bypassStorage doesn't flush the change on the storage config file.      * @throws Exception      */
 name|void
 name|propappend
 parameter_list|(
@@ -108,11 +111,14 @@ name|key
 parameter_list|,
 name|String
 name|value
+parameter_list|,
+name|boolean
+name|bypassStorage
 parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Set a configuration property.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the property value.      * @throws Exception      */
+comment|/**      * Set a configuration property.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the property value.      * @param bypassStorage doesn't flush the change on the storage config file.      * @throws Exception      */
 name|void
 name|propset
 parameter_list|(
@@ -124,6 +130,9 @@ name|key
 parameter_list|,
 name|String
 name|value
+parameter_list|,
+name|boolean
+name|bypassStorage
 parameter_list|)
 throws|throws
 name|Exception
