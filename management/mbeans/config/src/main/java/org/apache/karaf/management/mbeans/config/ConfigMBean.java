@@ -19,6 +19,26 @@ name|config
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
 begin_comment
 comment|/**  * MBean to manipulate the Config layer.  */
 end_comment
@@ -28,11 +48,83 @@ specifier|public
 interface|interface
 name|ConfigMBean
 block|{
-comment|/**      * Return the list of all configuration PIDs.      *      * @return the list of all configuration PIDs.      * @throws Exception      */
+comment|/**      * Get the list of all configuration PIDs.      *      * @return the list of all configuration PIDs.      * @throws Exception      */
+name|List
+argument_list|<
 name|String
-index|[]
+argument_list|>
 name|list
 parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * Delete a configuration identified by the given PID.      *      * @param pid the configuration PID to delete.      * @throws Exception      */
+name|void
+name|delete
+parameter_list|(
+name|String
+name|pid
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * Get the list of properties for a configuration PID.      *      * @param pid the configuration PID.      * @return the list of properties.      * @throws Exception      */
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|proplist
+parameter_list|(
+name|String
+name|pid
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * Remove the configuration property identified by the given key.      *      * @param pid the configuration PID.      * @param key the property key.      * @throws Exception      */
+name|void
+name|propdel
+parameter_list|(
+name|String
+name|pid
+parameter_list|,
+name|String
+name|key
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * Append (or add) a value for the given configuration key.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the value to append to the current property value.      * @throws Exception      */
+name|void
+name|propappend
+parameter_list|(
+name|String
+name|pid
+parameter_list|,
+name|String
+name|key
+parameter_list|,
+name|String
+name|value
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * Set a configuration property.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the property value.      * @throws Exception      */
+name|void
+name|propset
+parameter_list|(
+name|String
+name|pid
+parameter_list|,
+name|String
+name|key
+parameter_list|,
+name|String
+name|value
+parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
