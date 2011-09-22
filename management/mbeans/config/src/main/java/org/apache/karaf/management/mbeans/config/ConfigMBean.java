@@ -58,6 +58,16 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Create a new configuration for the given PID.      *      * @param pid the configuration PID.      * @throws Exception      */
+name|void
+name|create
+parameter_list|(
+name|String
+name|pid
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 comment|/**      * Delete a configuration identified by the given PID.      *      * @param pid the configuration PID to delete.      * @throws Exception      */
 name|void
 name|delete
