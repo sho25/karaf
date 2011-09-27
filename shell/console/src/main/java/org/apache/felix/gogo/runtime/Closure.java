@@ -2182,7 +2182,7 @@ name|target
 operator|=
 name|Reflective
 operator|.
-name|method
+name|invoke
 argument_list|(
 name|session
 argument_list|,
@@ -2235,7 +2235,7 @@ block|}
 return|return
 name|Reflective
 operator|.
-name|method
+name|invoke
 argument_list|(
 name|session
 argument_list|,
@@ -2325,7 +2325,7 @@ block|{
 return|return
 name|Reflective
 operator|.
-name|method
+name|invoke
 argument_list|(
 name|session
 argument_list|,
