@@ -428,6 +428,30 @@ argument_list|(
 name|username
 argument_list|)
 expr_stmt|;
+try|try
+block|{
+name|users
+operator|.
+name|save
+argument_list|()
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|ex
+parameter_list|)
+block|{
+name|LOGGER
+operator|.
+name|error
+argument_list|(
+literal|"Cannot remove users file,"
+argument_list|,
+name|ex
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/**      * List Users      *      * @return      */
 specifier|public
