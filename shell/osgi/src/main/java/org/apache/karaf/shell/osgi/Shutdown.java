@@ -457,13 +457,30 @@ operator|new
 name|StringBuffer
 argument_list|()
 decl_stmt|;
+name|String
+name|karafName
+init|=
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"karaf.name"
+argument_list|)
+decl_stmt|;
 name|System
 operator|.
 name|err
 operator|.
 name|println
 argument_list|(
-literal|"Confirm: shutdown instance (yes/no): "
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"Confirm: shutdown instance %s (yes/no): "
+argument_list|,
+name|karafName
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|System
@@ -512,6 +529,13 @@ name|char
 operator|)
 name|c
 argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|err
+operator|.
+name|flush
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
