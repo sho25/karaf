@@ -915,6 +915,11 @@ argument_list|(
 name|storageFile
 argument_list|)
 decl_stmt|;
+name|p
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
 for|for
 control|(
 name|Enumeration
