@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|osgi
+name|system
 package|;
 end_package
 
@@ -123,7 +123,7 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"osgi"
+literal|"system"
 argument_list|,
 name|name
 operator|=
@@ -131,7 +131,7 @@ literal|"shutdown"
 argument_list|,
 name|description
 operator|=
-literal|"Shuts the framework down."
+literal|"Shuts Karaf down."
 argument_list|)
 specifier|public
 class|class
