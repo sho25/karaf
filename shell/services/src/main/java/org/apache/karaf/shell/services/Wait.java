@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|dev
+name|services
 package|;
 end_package
 
@@ -165,11 +165,11 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"dev"
+literal|"service"
 argument_list|,
 name|name
 operator|=
-literal|"wait-for-service"
+literal|"wait"
 argument_list|,
 name|description
 operator|=
@@ -177,7 +177,7 @@ literal|"Wait for a given OSGi service."
 argument_list|)
 specifier|public
 class|class
-name|WaitForService
+name|Wait
 extends|extends
 name|OsgiCommandSupport
 block|{

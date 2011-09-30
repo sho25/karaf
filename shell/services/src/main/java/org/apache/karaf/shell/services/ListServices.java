@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|osgi
+name|services
 package|;
 end_package
 
@@ -79,6 +79,36 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|osgi
+operator|.
+name|BundlesCommand
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|util
+operator|.
+name|ShellUtil
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|osgi
 operator|.
 name|framework
@@ -105,11 +135,11 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"osgi"
+literal|"services"
 argument_list|,
 name|name
 operator|=
-literal|"ls"
+literal|"list"
 argument_list|,
 name|description
 operator|=
@@ -407,7 +437,7 @@ expr_stmt|;
 name|String
 name|title
 init|=
-name|Util
+name|ShellUtil
 operator|.
 name|getBundleName
 argument_list|(
@@ -452,7 +482,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-name|Util
+name|ShellUtil
 operator|.
 name|getUnderlineString
 argument_list|(
@@ -551,7 +581,7 @@ index|]
 operator|+
 literal|" = "
 operator|+
-name|Util
+name|ShellUtil
 operator|.
 name|getValueString
 argument_list|(
@@ -727,7 +757,7 @@ expr_stmt|;
 name|String
 name|title
 init|=
-name|Util
+name|ShellUtil
 operator|.
 name|getBundleName
 argument_list|(
@@ -765,7 +795,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-name|Util
+name|ShellUtil
 operator|.
 name|getUnderlineString
 argument_list|(
@@ -780,7 +810,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-name|Util
+name|ShellUtil
 operator|.
 name|getValueString
 argument_list|(
