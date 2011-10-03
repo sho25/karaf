@@ -81,6 +81,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|net
+operator|.
+name|URL
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Enumeration
@@ -349,20 +359,12 @@ literal|"Unable to create directory for Karaf Archive timestamps. Results may va
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|logger
-operator|.
-name|isInfoEnabled
-argument_list|()
-condition|)
-block|{
 name|logger
 operator|.
 name|info
 argument_list|(
-literal|"Karaf archives will be extracted to "
-operator|+
+literal|"Karaf archives will be extracted to {}"
+argument_list|,
 name|localRepoPath
 argument_list|)
 expr_stmt|;
@@ -370,12 +372,11 @@ name|logger
 operator|.
 name|info
 argument_list|(
-literal|"Timestamps for Karaf archives will be extracted to "
-operator|+
+literal|"Timestamps for Karaf archives will be extracted to {}"
+argument_list|,
 name|timestampPath
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|public
 name|void
@@ -415,28 +416,19 @@ name|logger
 operator|.
 name|info
 argument_list|(
-literal|"Ignoring '"
-operator|+
+literal|"Ignoring '{}'; timestamp indicates it's already been deployed."
+argument_list|,
 name|file
-operator|+
-literal|"'; timestamp indicates it's already been deployed."
 argument_list|)
 expr_stmt|;
 return|return;
 block|}
-if|if
-condition|(
-name|logger
-operator|.
-name|isInfoEnabled
-argument_list|()
-condition|)
 name|logger
 operator|.
 name|info
 argument_list|(
-literal|"Installing "
-operator|+
+literal|"Installing {}"
+argument_list|,
 name|file
 argument_list|)
 expr_stmt|;
@@ -535,7 +527,10 @@ condition|)
 block|{
 name|addToFeaturesRepositories
 argument_list|(
-name|repoEntryName
+name|extract
+operator|.
+name|toURI
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -643,19 +638,12 @@ operator|+
 name|repoEntryName
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|logger
-operator|.
-name|isDebugEnabled
-argument_list|()
-condition|)
 name|logger
 operator|.
 name|debug
 argument_list|(
-literal|"Creating directory '"
-operator|+
+literal|"Creating directory {}"
+argument_list|,
 name|extract
 operator|.
 name|getName
@@ -749,23 +737,14 @@ operator|+=
 name|count
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|logger
-operator|.
-name|isDebugEnabled
-argument_list|()
-condition|)
 name|logger
 operator|.
 name|debug
 argument_list|(
-literal|"Extracted "
-operator|+
+literal|"Extracted {} bytes to {}"
+argument_list|,
 name|totalBytes
-operator|+
-literal|" bytes to "
-operator|+
+argument_list|,
 name|extract
 argument_list|)
 expr_stmt|;
@@ -861,15 +840,11 @@ name|logger
 operator|.
 name|warn
 argument_list|(
-literal|"Karaf archive '"
-operator|+
+literal|"Karaf archive '{}' has been removed; however, its feature URLs have not been deregistered, and its bundles are still available in '{}'."
+argument_list|,
 name|file
-operator|+
-literal|"' has been removed; however, its feature URLs have not been deregistered, and its bundles are still available in '"
-operator|+
+argument_list|,
 name|localRepoPath
-operator|+
-literal|"'."
 argument_list|)
 expr_stmt|;
 block|}
@@ -887,11 +862,9 @@ name|logger
 operator|.
 name|warn
 argument_list|(
-literal|"Karaf archive "
-operator|+
+literal|"Karaf archive {}' has been updated; redeploying."
+argument_list|,
 name|file
-operator|+
-literal|" has been updated; redeploying."
 argument_list|)
 expr_stmt|;
 name|install
@@ -926,22 +899,13 @@ name|exists
 argument_list|()
 condition|)
 block|{
-if|if
-condition|(
-name|logger
-operator|.
-name|isDebugEnabled
-argument_list|()
-condition|)
 name|logger
 operator|.
 name|debug
 argument_list|(
-literal|"Deleting old timestamp file '"
-operator|+
+literal|"Deleting old timestamp file '{}'"
+argument_list|,
 name|timestamp
-operator|+
-literal|""
 argument_list|)
 expr_stmt|;
 if|if
@@ -970,11 +934,9 @@ name|logger
 operator|.
 name|debug
 argument_list|(
-literal|"Creating timestamp file '"
-operator|+
+literal|"Creating timestamp file '{}'"
+argument_list|,
 name|timestamp
-operator|+
-literal|"'"
 argument_list|)
 expr_stmt|;
 name|timestamp
@@ -1174,25 +1136,16 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-if|if
-condition|(
-name|logger
-operator|.
-name|isDebugEnabled
-argument_list|()
-condition|)
 name|logger
 operator|.
 name|debug
 argument_list|(
-literal|"File "
-operator|+
+literal|"File '{}' is not a features file."
+argument_list|,
 name|artifact
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" is not a features file."
 argument_list|,
 name|e
 argument_list|)
@@ -1278,43 +1231,29 @@ specifier|private
 name|void
 name|addToFeaturesRepositories
 parameter_list|(
-name|String
-name|path
-parameter_list|)
-block|{
 name|URI
-name|mvnUri
-init|=
-name|pathToMvnUri
-argument_list|(
-name|path
-argument_list|)
-decl_stmt|;
+name|uri
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+comment|//URI mvnUri = pathToMvnUri(path);
 try|try
 block|{
 name|featuresService
 operator|.
 name|addRepository
 argument_list|(
-name|mvnUri
+name|uri
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|logger
-operator|.
-name|isInfoEnabled
-argument_list|()
-condition|)
 name|logger
 operator|.
 name|info
 argument_list|(
-literal|"Added feature repository '"
-operator|+
-name|mvnUri
-operator|+
-literal|"'."
+literal|"Added feature repository '{}'."
+argument_list|,
+name|uri
 argument_list|)
 expr_stmt|;
 block|}
@@ -1328,11 +1267,9 @@ name|logger
 operator|.
 name|error
 argument_list|(
-literal|"Unable to add repository '"
-operator|+
-name|mvnUri
-operator|+
-literal|"'"
+literal|"Unable to add repository '{}'"
+argument_list|,
+name|uri
 argument_list|,
 name|e
 argument_list|)
@@ -1616,14 +1553,12 @@ name|logger
 operator|.
 name|warn
 argument_list|(
-literal|"Problem extracting zip file '"
-operator|+
+literal|"Problem extracting zip file '{}'; ignoring."
+argument_list|,
 name|file
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"'; ignoring."
 argument_list|,
 name|e
 argument_list|)
