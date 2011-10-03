@@ -85,7 +85,7 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|osgi
+name|bundles
 operator|.
 name|BundlesCommand
 import|;

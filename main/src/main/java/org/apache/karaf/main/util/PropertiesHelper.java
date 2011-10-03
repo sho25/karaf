@@ -943,7 +943,7 @@ name|key
 operator|.
 name|startsWith
 argument_list|(
-literal|"org.osgi.framework."
+literal|"org.bundles.framework."
 argument_list|)
 condition|)
 block|{

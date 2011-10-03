@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Transform a feature descriptor into an osgi bundle  */
+comment|/**  * Transform a feature descriptor into an bundles bundle  */
 end_comment
 
 begin_class

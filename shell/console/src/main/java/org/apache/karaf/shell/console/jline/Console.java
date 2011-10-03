@@ -640,7 +640,7 @@ name|put
 argument_list|(
 literal|"SCOPE"
 argument_list|,
-literal|"shell:osgi:*"
+literal|"shell:bundles:*"
 argument_list|)
 expr_stmt|;
 name|this

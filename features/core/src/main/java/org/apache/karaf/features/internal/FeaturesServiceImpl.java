@@ -6297,7 +6297,7 @@ argument_list|()
 operator|.
 name|loadClass
 argument_list|(
-literal|"org.osgi.service.event.EventAdmin"
+literal|"org.bundles.service.event.EventAdmin"
 argument_list|)
 expr_stmt|;
 name|listener
@@ -7991,7 +7991,7 @@ operator|.
 name|DOTALL
 argument_list|)
 decl_stmt|;
-comment|/**      * Clean up version parameters. Other builders use more fuzzy definitions of      * the version syntax. This method cleans up such a version to match an OSGi      * version.      *      * @param version possibly osgi-non-compliant version      * @return osgi compliant version      */
+comment|/**      * Clean up version parameters. Other builders use more fuzzy definitions of      * the version syntax. This method cleans up such a version to match an OSGi      * version.      *      * @param version possibly bundles-non-compliant version      * @return osgi compliant version      */
 specifier|static
 specifier|public
 name|String

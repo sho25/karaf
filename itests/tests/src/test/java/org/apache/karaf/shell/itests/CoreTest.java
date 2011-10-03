@@ -345,7 +345,7 @@ name|cs
 operator|.
 name|execute
 argument_list|(
-literal|"osgi:list --help"
+literal|"bundles:list --help"
 argument_list|)
 expr_stmt|;
 name|cs
@@ -524,7 +524,7 @@ comment|//    public void testCommandGroup() throws Exception {
 comment|//        Thread.sleep(5000);
 comment|//
 comment|//        Shell shell = getOsgiService(Shell.class);
-comment|//        shell.execute("osgi");
+comment|//        shell.execute("bundles");
 comment|//        shell.execute("help");
 comment|//        shell.execute("..");
 comment|//    }

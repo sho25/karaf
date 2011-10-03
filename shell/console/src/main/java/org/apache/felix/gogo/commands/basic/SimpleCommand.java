@@ -276,7 +276,7 @@ name|props
 operator|.
 name|put
 argument_list|(
-literal|"osgi.command.scope"
+literal|"bundles.command.scope"
 argument_list|,
 name|cmd
 operator|.
@@ -288,7 +288,7 @@ name|props
 operator|.
 name|put
 argument_list|(
-literal|"osgi.command.function"
+literal|"bundles.command.function"
 argument_list|,
 name|cmd
 operator|.

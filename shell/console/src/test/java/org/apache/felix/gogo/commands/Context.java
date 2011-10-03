@@ -114,7 +114,7 @@ argument_list|)
 expr_stmt|;
 name|addCommand
 argument_list|(
-literal|"osgi"
+literal|"bundles"
 argument_list|,
 name|this
 argument_list|,
@@ -123,7 +123,7 @@ argument_list|)
 expr_stmt|;
 name|addCommand
 argument_list|(
-literal|"osgi"
+literal|"bundles"
 argument_list|,
 name|this
 argument_list|,
@@ -132,7 +132,7 @@ argument_list|)
 expr_stmt|;
 name|addCommand
 argument_list|(
-literal|"osgi"
+literal|"bundles"
 argument_list|,
 name|this
 argument_list|,

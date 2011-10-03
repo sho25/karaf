@@ -1266,7 +1266,7 @@ name|getArtifactId
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//TODO convert to osgi version?
+comment|//TODO convert to bundles version?
 name|dependency
 operator|.
 name|setVersion

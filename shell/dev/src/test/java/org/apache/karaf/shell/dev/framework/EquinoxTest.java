@@ -346,7 +346,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-literal|"osgi.debug property should have been removed from the file"
+literal|"bundles.debug property should have been removed from the file"
 argument_list|,
 name|properties
 operator|.

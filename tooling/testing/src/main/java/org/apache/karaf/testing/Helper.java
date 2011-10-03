@@ -1054,7 +1054,7 @@ name|sysProps
 operator|.
 name|setProperty
 argument_list|(
-literal|"org.osgi.framework.startlevel.beginning"
+literal|"org.bundles.framework.startlevel.beginning"
 argument_list|,
 literal|"100"
 argument_list|)
@@ -1063,7 +1063,7 @@ return|return
 name|sysProps
 return|;
 block|}
-comment|/**      * Return an array of pax-exam options to correctly configure the osgi      * framework for karaf.      *      * @param sysOptions test-specific system property options      * @return default pax-exam options for karaf osgi framework      */
+comment|/**      * Return an array of pax-exam options to correctly configure the bundles      * framework for karaf.      *      * @param sysOptions test-specific system property options      * @return default pax-exam options for karaf bundles framework      */
 specifier|public
 specifier|static
 name|Option
@@ -1090,7 +1090,7 @@ name|sysOptions
 argument_list|)
 return|;
 block|}
-comment|/**      * Return an array of pax-exam options to configure the osgi      * framework for karaf, given the system properties and the      * location of the osgi framework properties file.      *      * @param sysProps karaf system properties      * @param configProperties the URL to load the osgi framework properties from      * @param sysOptions test-specific system property options      * @return pax-exam options for karaf osgi framework      */
+comment|/**      * Return an array of pax-exam options to configure the bundles      * framework for karaf, given the system properties and the      * location of the bundles framework properties file.      *      * @param sysProps karaf system properties      * @param configProperties the URL to load the bundles framework properties from      * @param sysOptions test-specific system property options      * @return pax-exam options for karaf bundles framework      */
 specifier|public
 specifier|static
 name|Option
@@ -1280,7 +1280,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-literal|"org.osgi.framework.system.packages"
+literal|"org.bundles.framework.system.packages"
 operator|.
 name|equals
 argument_list|(
@@ -1297,7 +1297,7 @@ name|configProps
 operator|.
 name|getProperty
 argument_list|(
-literal|"org.osgi.framework.system.packages.extra"
+literal|"org.bundles.framework.system.packages.extra"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -1351,7 +1351,7 @@ block|}
 elseif|else
 if|if
 condition|(
-literal|"org.osgi.framework.bootdelegation"
+literal|"org.bundles.framework.bootdelegation"
 operator|.
 name|equals
 argument_list|(
@@ -1428,7 +1428,7 @@ name|configProps
 operator|.
 name|getProperty
 argument_list|(
-literal|"org.osgi.framework.startlevel.beginning"
+literal|"org.bundles.framework.startlevel.beginning"
 argument_list|)
 operator|!=
 literal|null
@@ -1448,7 +1448,7 @@ name|configProps
 operator|.
 name|getProperty
 argument_list|(
-literal|"org.osgi.framework.startlevel.beginning"
+literal|"org.bundles.framework.startlevel.beginning"
 argument_list|)
 argument_list|)
 argument_list|)

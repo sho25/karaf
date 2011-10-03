@@ -125,7 +125,7 @@ name|out
 operator|.
 name|printf
 argument_list|(
-literal|"- set osgi.debug=etc/equinox-debug.properties in etc/config.properties%n"
+literal|"- set bundles.debug=etc/equinox-debug.properties in etc/config.properties%n"
 argument_list|)
 expr_stmt|;
 name|File
@@ -219,7 +219,7 @@ name|out
 operator|.
 name|printf
 argument_list|(
-literal|"- removed osgi.debug from etc/config.properties%n%n"
+literal|"- removed bundles.debug from etc/config.properties%n%n"
 argument_list|)
 expr_stmt|;
 name|System

@@ -252,7 +252,7 @@ decl_stmt|;
 name|String
 name|mvnUrl
 init|=
-literal|"mvn:org.osgi/org.osgi.compendium/4.2.0"
+literal|"mvn:org.bundles/org.bundles.compendium/4.2.0"
 decl_stmt|;
 name|System
 operator|.

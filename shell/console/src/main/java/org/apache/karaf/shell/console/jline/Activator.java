@@ -334,7 +334,7 @@ name|processor
 operator|.
 name|addCommand
 argument_list|(
-literal|"osgi"
+literal|"bundles"
 argument_list|,
 name|processor
 argument_list|,
@@ -345,7 +345,7 @@ name|processor
 operator|.
 name|addCommand
 argument_list|(
-literal|"osgi"
+literal|"bundles"
 argument_list|,
 name|processor
 argument_list|,
@@ -356,7 +356,7 @@ name|processor
 operator|.
 name|addCommand
 argument_list|(
-literal|"osgi"
+literal|"bundles"
 argument_list|,
 name|processor
 argument_list|,

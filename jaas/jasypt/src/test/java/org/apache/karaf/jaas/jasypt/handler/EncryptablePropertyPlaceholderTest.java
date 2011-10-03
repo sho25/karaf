@@ -541,9 +541,9 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-literal|"org.osgi.framework.storage"
+literal|"org.bundles.framework.storage"
 argument_list|,
-literal|"target/osgi/"
+literal|"target/bundles/"
 operator|+
 name|System
 operator|.

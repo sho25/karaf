@@ -81,13 +81,13 @@ specifier|final
 name|String
 name|OSGI
 init|=
-literal|"osgi:"
+literal|"bundles:"
 decl_stmt|;
 specifier|private
 name|JDBCUtils
 parameter_list|()
 block|{      }
-comment|/**      * Looks up a datasource from the url. The datasource can be passed either as jndi name or osgi ldap filter.      *      * @param url      * @return      * @throws Exception      */
+comment|/**      * Looks up a datasource from the url. The datasource can be passed either as jndi name or bundles ldap filter.      *      * @param url      * @return      * @throws Exception      */
 specifier|public
 specifier|static
 name|Object

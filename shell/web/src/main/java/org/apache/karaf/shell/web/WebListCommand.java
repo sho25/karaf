@@ -159,7 +159,7 @@ specifier|private
 name|WebEventHandler
 name|eventHandler
 decl_stmt|;
-comment|/* (non-Javadoc) 	 * @see org.apache.karaf.shell.war.WarCommandSupport#doExecute(org.osgi.service.packageadmin.PackageAdmin) 	 */
+comment|/* (non-Javadoc) 	 * @see org.apache.karaf.shell.war.WarCommandSupport#doExecute(org.bundles.service.packageadmin.PackageAdmin) 	 */
 annotation|@
 name|Override
 specifier|protected
