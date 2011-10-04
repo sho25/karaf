@@ -409,9 +409,9 @@ name|Helper
 operator|.
 name|loadKarafStandardFeatures
 argument_list|(
-literal|"org.apache.karaf.feature.standard.obr"
+literal|"org.apache.karaf.features.standard.obr"
 argument_list|,
-literal|"org.apache.karaf.feature.standard.wrapper"
+literal|"org.apache.karaf.features.standard.wrapper"
 argument_list|)
 argument_list|,
 name|workingDirectory
