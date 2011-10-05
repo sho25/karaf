@@ -33,6 +33,18 @@ begin_import
 import|import static
 name|org
 operator|.
+name|easymock
+operator|.
+name|EasyMock
+operator|.
+name|expect
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
 name|Assert
@@ -84,6 +96,20 @@ operator|.
 name|features
 operator|.
 name|FeaturesService
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|Repository
 import|;
 end_import
 
@@ -536,6 +562,23 @@ throws|throws
 name|Exception
 block|{
 comment|// Setup expectations on the features service
+name|expect
+argument_list|(
+name|featuresService
+operator|.
+name|listRepositories
+argument_list|()
+argument_list|)
+operator|.
+name|andReturn
+argument_list|(
+operator|new
+name|Repository
+index|[
+literal|0
+index|]
+argument_list|)
+expr_stmt|;
 name|featuresService
 operator|.
 name|addRepository
@@ -692,6 +735,23 @@ block|{
 comment|// Setup expectations on the features service: the addRepository
 comment|// should only be added once, as the update command should be ignored!
 comment|//
+name|expect
+argument_list|(
+name|featuresService
+operator|.
+name|listRepositories
+argument_list|()
+argument_list|)
+operator|.
+name|andReturn
+argument_list|(
+operator|new
+name|Repository
+index|[
+literal|0
+index|]
+argument_list|)
+expr_stmt|;
 name|featuresService
 operator|.
 name|addRepository
@@ -769,6 +829,23 @@ throws|throws
 name|Exception
 block|{
 comment|// Setup expectations on the features service
+name|expect
+argument_list|(
+name|featuresService
+operator|.
+name|listRepositories
+argument_list|()
+argument_list|)
+operator|.
+name|andReturn
+argument_list|(
+operator|new
+name|Repository
+index|[
+literal|0
+index|]
+argument_list|)
+expr_stmt|;
 name|featuresService
 operator|.
 name|addRepository
