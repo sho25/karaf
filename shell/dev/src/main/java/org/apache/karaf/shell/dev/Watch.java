@@ -172,13 +172,20 @@ literal|"urls"
 argument_list|,
 name|description
 operator|=
-literal|"The bundle URLs"
+literal|"The bundle IDs or URLs"
 argument_list|,
 name|required
 operator|=
 literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|true
 argument_list|)
+name|List
+argument_list|<
 name|String
+argument_list|>
 name|urls
 decl_stmt|;
 annotation|@
@@ -386,13 +393,6 @@ condition|(
 name|urls
 operator|!=
 literal|null
-operator|&&
-name|urls
-operator|.
-name|length
-argument_list|()
-operator|>
-literal|0
 condition|)
 block|{
 if|if
@@ -400,41 +400,41 @@ condition|(
 name|remove
 condition|)
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Removing watched urls"
-argument_list|)
-expr_stmt|;
+for|for
+control|(
+name|String
+name|url
+range|:
+name|urls
+control|)
+block|{
 name|watcher
 operator|.
 name|remove
 argument_list|(
-name|urls
+name|url
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 else|else
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Adding watched urls"
-argument_list|)
-expr_stmt|;
+for|for
+control|(
+name|String
+name|url
+range|:
+name|urls
+control|)
+block|{
 name|watcher
 operator|.
 name|add
 argument_list|(
-name|urls
+name|url
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 if|if
@@ -627,7 +627,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Watched urls:"
+literal|"Watched URLs/IDs: "
 argument_list|)
 expr_stmt|;
 for|for
@@ -660,7 +660,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"No watched urls"
+literal|"No watched URLs/IDs"
 argument_list|)
 expr_stmt|;
 block|}
