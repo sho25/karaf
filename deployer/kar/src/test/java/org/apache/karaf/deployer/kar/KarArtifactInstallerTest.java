@@ -649,6 +649,23 @@ throws|throws
 name|Exception
 block|{
 comment|// Setup expectations on the features service
+name|expect
+argument_list|(
+name|featuresService
+operator|.
+name|listRepositories
+argument_list|()
+argument_list|)
+operator|.
+name|andReturn
+argument_list|(
+operator|new
+name|Repository
+index|[
+literal|0
+index|]
+argument_list|)
+expr_stmt|;
 name|featuresService
 operator|.
 name|addRepository
