@@ -2002,7 +2002,7 @@ condition|)
 block|{
 name|LOGGER
 operator|.
-name|info
+name|warn
 argument_list|(
 literal|"Error when installing feature {}: {}"
 argument_list|,
