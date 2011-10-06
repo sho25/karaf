@@ -745,7 +745,7 @@ parameter_list|)
 block|{
 name|logger
 operator|.
-name|error
+name|warn
 argument_list|(
 literal|"Unable to install Kar feature {}"
 argument_list|,
@@ -775,7 +775,7 @@ parameter_list|)
 block|{
 name|logger
 operator|.
-name|error
+name|warn
 argument_list|(
 literal|"Can't get features for KAR {}"
 argument_list|,
@@ -1484,7 +1484,7 @@ parameter_list|)
 block|{
 name|logger
 operator|.
-name|error
+name|warn
 argument_list|(
 literal|"Unable to add repository '{}'"
 argument_list|,
