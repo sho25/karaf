@@ -1093,6 +1093,13 @@ argument_list|(
 name|translateFromMaven
 argument_list|(
 name|uri
+operator|.
+name|replaceAll
+argument_list|(
+literal|" "
+argument_list|,
+literal|"%20"
+argument_list|)
 argument_list|)
 argument_list|)
 argument_list|)
