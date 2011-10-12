@@ -49,7 +49,7 @@ function_decl|;
 name|int
 name|getStartLevel
 parameter_list|(
-name|long
+name|String
 name|bundleId
 parameter_list|)
 throws|throws
@@ -58,7 +58,7 @@ function_decl|;
 name|void
 name|setStartLevel
 parameter_list|(
-name|long
+name|String
 name|bundleId
 parameter_list|,
 name|int
@@ -76,7 +76,7 @@ function_decl|;
 name|void
 name|refresh
 parameter_list|(
-name|long
+name|String
 name|bundleId
 parameter_list|)
 throws|throws
@@ -85,7 +85,7 @@ function_decl|;
 name|void
 name|update
 parameter_list|(
-name|long
+name|String
 name|bundleId
 parameter_list|)
 throws|throws
@@ -94,7 +94,7 @@ function_decl|;
 name|void
 name|update
 parameter_list|(
-name|long
+name|String
 name|bundleId
 parameter_list|,
 name|String
@@ -112,7 +112,7 @@ function_decl|;
 name|void
 name|resolve
 parameter_list|(
-name|long
+name|String
 name|bundleId
 parameter_list|)
 throws|throws
@@ -121,7 +121,7 @@ function_decl|;
 name|void
 name|restart
 parameter_list|(
-name|long
+name|String
 name|bundleId
 parameter_list|)
 throws|throws
@@ -151,7 +151,7 @@ function_decl|;
 name|void
 name|start
 parameter_list|(
-name|long
+name|String
 name|bundleId
 parameter_list|)
 throws|throws
@@ -160,7 +160,7 @@ function_decl|;
 name|void
 name|stop
 parameter_list|(
-name|long
+name|String
 name|bundleId
 parameter_list|)
 throws|throws
@@ -169,7 +169,7 @@ function_decl|;
 name|void
 name|uninstall
 parameter_list|(
-name|long
+name|String
 name|bundleId
 parameter_list|)
 throws|throws
