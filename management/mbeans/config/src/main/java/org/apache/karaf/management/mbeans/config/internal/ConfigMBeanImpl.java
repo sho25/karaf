@@ -449,6 +449,7 @@ name|dictionary
 operator|==
 literal|null
 condition|)
+block|{
 name|dictionary
 operator|=
 operator|new
@@ -459,6 +460,7 @@ operator|.
 name|Properties
 argument_list|()
 expr_stmt|;
+block|}
 name|Map
 argument_list|<
 name|String
@@ -587,6 +589,7 @@ name|dictionary
 operator|==
 literal|null
 condition|)
+block|{
 name|dictionary
 operator|=
 operator|new
@@ -597,6 +600,7 @@ operator|.
 name|Properties
 argument_list|()
 expr_stmt|;
+block|}
 name|dictionary
 operator|.
 name|remove
@@ -673,6 +677,7 @@ name|dictionary
 operator|==
 literal|null
 condition|)
+block|{
 name|dictionary
 operator|=
 operator|new
@@ -683,6 +688,7 @@ operator|.
 name|Properties
 argument_list|()
 expr_stmt|;
+block|}
 name|Object
 name|currentValue
 init|=
@@ -809,6 +815,7 @@ name|dictionary
 operator|==
 literal|null
 condition|)
+block|{
 name|dictionary
 operator|=
 operator|new
@@ -819,6 +826,7 @@ operator|.
 name|Properties
 argument_list|()
 expr_stmt|;
+block|}
 name|dictionary
 operator|.
 name|put
