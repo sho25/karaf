@@ -687,7 +687,7 @@ range|:
 name|descriptors
 control|)
 block|{
-name|retrieveDescriptorsRecursivly
+name|retrieveDescriptorsRecursively
 argument_list|(
 name|uri
 argument_list|,
@@ -942,7 +942,7 @@ block|{
 for|for
 control|(
 name|CopyFileBasedDescriptor
-name|fileBasedDescritpor
+name|fileBasedDescriptor
 range|:
 name|copyFileBasedDescriptors
 control|)
@@ -952,7 +952,7 @@ argument_list|(
 operator|new
 name|FileInputStream
 argument_list|(
-name|fileBasedDescritpor
+name|fileBasedDescriptor
 operator|.
 name|getSourceFile
 argument_list|()
@@ -960,12 +960,12 @@ argument_list|)
 argument_list|,
 name|repository
 argument_list|,
-name|fileBasedDescritpor
+name|fileBasedDescriptor
 operator|.
 name|getTargetFileName
 argument_list|()
 argument_list|,
-name|fileBasedDescritpor
+name|fileBasedDescriptor
 operator|.
 name|getTargetDirectory
 argument_list|()
@@ -1019,7 +1019,7 @@ block|}
 block|}
 specifier|private
 name|void
-name|retrieveDescriptorsRecursivly
+name|retrieveDescriptorsRecursively
 parameter_list|(
 name|String
 name|uri
@@ -1144,7 +1144,7 @@ name|getDefinedRepositories
 argument_list|()
 control|)
 block|{
-name|retrieveDescriptorsRecursivly
+name|retrieveDescriptorsRecursively
 argument_list|(
 name|r
 argument_list|,
