@@ -44,6 +44,13 @@ specifier|public
 interface|interface
 name|Feature
 block|{
+specifier|public
+specifier|static
+name|String
+name|DEFAULT_INSTALL_MODE
+init|=
+literal|"auto"
+decl_stmt|;
 name|String
 name|getId
 parameter_list|()
@@ -66,6 +73,10 @@ parameter_list|()
 function_decl|;
 name|String
 name|getResolver
+parameter_list|()
+function_decl|;
+name|String
+name|getInstall
 parameter_list|()
 function_decl|;
 name|List
