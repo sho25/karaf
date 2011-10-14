@@ -981,7 +981,7 @@ argument_list|()
 operator|.
 name|info
 argument_list|(
-literal|"Step 4 : Generating "
+literal|"Generating feature descriptor file "
 operator|+
 name|outputFile
 operator|.
