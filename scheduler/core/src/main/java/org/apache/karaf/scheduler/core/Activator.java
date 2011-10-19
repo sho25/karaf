@@ -55,7 +55,7 @@ name|TaskScheduler
 argument_list|()
 decl_stmt|;
 specifier|private
-name|RunableServiceListener
+name|RunnableServiceListener
 name|listener
 decl_stmt|;
 specifier|private
@@ -81,7 +81,7 @@ block|{
 name|listener
 operator|=
 operator|new
-name|RunableServiceListener
+name|RunnableServiceListener
 argument_list|(
 name|context
 argument_list|,

@@ -68,7 +68,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|RunableServiceListener
+name|RunnableServiceListener
 implements|implements
 name|ServiceListener
 block|{
@@ -84,7 +84,7 @@ name|scheduler
 decl_stmt|;
 comment|/**      * Constructor      *      * @param bundleContext      * @param scheduler      */
 specifier|public
-name|RunableServiceListener
+name|RunnableServiceListener
 parameter_list|(
 name|BundleContext
 name|bundleContext
