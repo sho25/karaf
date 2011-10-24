@@ -778,6 +778,24 @@ name|next
 argument_list|()
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|this
+operator|.
+name|detailedLoginExcepion
+condition|)
+block|{
+throw|throw
+operator|new
+name|LoginException
+argument_list|(
+literal|"login failed"
+argument_list|)
+throw|;
+block|}
+else|else
+block|{
 throw|throw
 operator|new
 name|LoginException
@@ -789,6 +807,7 @@ operator|+
 literal|" does not exist"
 argument_list|)
 throw|;
+block|}
 block|}
 else|else
 block|{
@@ -813,6 +832,24 @@ name|storedPassword
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|this
+operator|.
+name|detailedLoginExcepion
+condition|)
+block|{
+throw|throw
+operator|new
+name|LoginException
+argument_list|(
+literal|"login failed"
+argument_list|)
+throw|;
+block|}
+else|else
+block|{
 throw|throw
 operator|new
 name|LoginException
@@ -824,6 +861,7 @@ operator|+
 literal|" does not match"
 argument_list|)
 throw|;
+block|}
 block|}
 name|principals
 operator|.

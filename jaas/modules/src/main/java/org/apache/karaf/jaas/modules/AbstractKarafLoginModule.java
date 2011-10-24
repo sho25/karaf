@@ -200,6 +200,10 @@ specifier|protected
 name|String
 name|roleDiscriminator
 decl_stmt|;
+specifier|protected
+name|boolean
+name|detailedLoginExcepion
+decl_stmt|;
 comment|/**      * the bundle context is required to use the encryption service      */
 specifier|protected
 name|BundleContext
@@ -352,6 +356,25 @@ operator|.
 name|get
 argument_list|(
 literal|"debug"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|detailedLoginExcepion
+operator|=
+name|Boolean
+operator|.
+name|parseBoolean
+argument_list|(
+operator|(
+name|String
+operator|)
+name|options
+operator|.
+name|get
+argument_list|(
+literal|"detailed.login.exception"
 argument_list|)
 argument_list|)
 expr_stmt|;
