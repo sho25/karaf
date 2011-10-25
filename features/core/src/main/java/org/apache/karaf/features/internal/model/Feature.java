@@ -344,8 +344,6 @@ name|XmlAttribute
 specifier|protected
 name|String
 name|install
-init|=
-name|DEFAULT_INSTALL_MODE
 decl_stmt|;
 annotation|@
 name|XmlAttribute
