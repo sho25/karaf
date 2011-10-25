@@ -251,6 +251,8 @@ argument_list|(
 name|ref
 argument_list|)
 decl_stmt|;
+try|try
+block|{
 name|Configuration
 name|configuration
 init|=
@@ -374,7 +376,28 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Rewrites data from input stream to output stream. This code is very common      * but we would avoid additional dependencies in diagnostic stuff.      *       * @param inputStream Source stream.      * @param outputStream Destination stream.      * @throws IOException When IO operation fails.      */
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+throw|throw
+name|e
+throw|;
+block|}
+finally|finally
+block|{
+name|bundleContext
+operator|.
+name|ungetService
+argument_list|(
+name|ref
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+comment|/**      * Rewrites data from input stream to output stream. This code is very common      * but we would avoid additional dependencies in diagnostic stuff.      *      * @param inputStream  Source stream.      * @param outputStream Destination stream.      * @throws IOException When IO operation fails.      */
 specifier|private
 name|void
 name|copy
