@@ -1078,6 +1078,18 @@ operator|=
 literal|"-server -Xmx512M -Dcom.sun.management.jmxremote"
 expr_stmt|;
 block|}
+name|String
+name|karafOpts
+init|=
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"karaf.opts"
+argument_list|,
+literal|""
+argument_list|)
+decl_stmt|;
 name|File
 name|libDir
 init|=
@@ -1207,6 +1219,10 @@ operator|+
 literal|" "
 operator|+
 name|javaOpts
+operator|+
+literal|" "
+operator|+
+name|karafOpts
 operator|+
 literal|" -Djava.util.logging.config.file=\""
 operator|+
