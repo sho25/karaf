@@ -60,7 +60,7 @@ name|TreeMap
 argument_list|<
 name|String
 argument_list|,
-name|Object
+name|String
 argument_list|>
 block|{
 comment|/** 	 *  	 */
@@ -135,7 +135,7 @@ name|String
 argument_list|,
 name|?
 extends|extends
-name|Object
+name|String
 argument_list|>
 operator|)
 name|map
@@ -143,13 +143,13 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|Object
+name|String
 name|put
 parameter_list|(
 name|String
 name|key
 parameter_list|,
-name|Object
+name|String
 name|value
 parameter_list|)
 block|{

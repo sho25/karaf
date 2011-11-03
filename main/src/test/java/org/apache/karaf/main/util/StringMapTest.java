@@ -70,7 +70,7 @@ argument_list|(
 literal|false
 argument_list|)
 decl_stmt|;
-name|Object
+name|String
 name|value
 init|=
 operator|new

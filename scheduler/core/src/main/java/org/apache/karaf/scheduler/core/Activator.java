@@ -35,6 +35,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Dictionary
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Properties
 import|;
 end_import
@@ -103,6 +113,9 @@ argument_list|()
 argument_list|,
 name|scheduler
 argument_list|,
+operator|(
+name|Dictionary
+operator|)
 operator|new
 name|Properties
 argument_list|()
