@@ -1214,8 +1214,6 @@ name|classifier
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
 if|if
 condition|(
 name|present
@@ -1246,7 +1244,6 @@ argument_list|(
 literal|".jar"
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 return|return
 name|b
