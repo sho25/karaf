@@ -71,7 +71,7 @@ literal|"obr"
 argument_list|,
 name|name
 operator|=
-literal|"listUrl"
+literal|"list-url"
 argument_list|,
 name|description
 operator|=

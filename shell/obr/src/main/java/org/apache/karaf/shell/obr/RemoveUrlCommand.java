@@ -83,7 +83,7 @@ literal|"obr"
 argument_list|,
 name|name
 operator|=
-literal|"removeUrl"
+literal|"remove-url"
 argument_list|,
 name|description
 operator|=

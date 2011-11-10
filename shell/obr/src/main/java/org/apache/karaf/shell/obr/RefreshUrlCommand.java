@@ -97,7 +97,7 @@ literal|"obr"
 argument_list|,
 name|name
 operator|=
-literal|"refreshUrl"
+literal|"refresh-url"
 argument_list|,
 name|description
 operator|=
