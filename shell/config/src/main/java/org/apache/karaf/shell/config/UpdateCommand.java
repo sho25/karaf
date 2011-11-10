@@ -498,7 +498,7 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|String
+name|Object
 name|key
 range|:
 name|p
@@ -552,6 +552,9 @@ operator|.
 name|add
 argument_list|(
 name|key
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
