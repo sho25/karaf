@@ -89,11 +89,11 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"features"
+literal|"feature"
 argument_list|,
 name|name
 operator|=
-literal|"removeUrl"
+literal|"remove-url"
 argument_list|,
 name|description
 operator|=

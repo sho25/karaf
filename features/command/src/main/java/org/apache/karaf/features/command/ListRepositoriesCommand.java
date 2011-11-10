@@ -83,11 +83,11 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"features"
+literal|"feature"
 argument_list|,
 name|name
 operator|=
-literal|"listRepositories"
+literal|"list-repository"
 argument_list|,
 name|description
 operator|=

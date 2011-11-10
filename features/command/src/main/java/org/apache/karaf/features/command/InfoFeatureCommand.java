@@ -165,7 +165,7 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"features"
+literal|"feature"
 argument_list|,
 name|name
 operator|=
