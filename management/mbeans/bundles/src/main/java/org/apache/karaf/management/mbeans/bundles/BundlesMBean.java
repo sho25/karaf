@@ -41,7 +41,7 @@ interface|interface
 name|BundlesMBean
 block|{
 name|TabularData
-name|list
+name|getBundles
 parameter_list|()
 throws|throws
 name|Exception

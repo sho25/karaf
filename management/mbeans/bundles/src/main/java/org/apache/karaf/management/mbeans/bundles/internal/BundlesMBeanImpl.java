@@ -198,7 +198,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|TabularData
-name|list
+name|getBundles
 parameter_list|()
 throws|throws
 name|Exception
