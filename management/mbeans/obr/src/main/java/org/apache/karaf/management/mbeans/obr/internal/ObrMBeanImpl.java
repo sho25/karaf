@@ -201,7 +201,7 @@ name|List
 argument_list|<
 name|String
 argument_list|>
-name|listUrls
+name|getUrls
 parameter_list|()
 throws|throws
 name|Exception
@@ -319,7 +319,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|TabularData
-name|list
+name|getBundles
 parameter_list|()
 throws|throws
 name|Exception
@@ -494,7 +494,7 @@ return|;
 block|}
 specifier|public
 name|void
-name|deploy
+name|deployBundle
 parameter_list|(
 name|String
 name|bundle
@@ -502,7 +502,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|deploy
+name|deployBundle
 argument_list|(
 name|bundle
 argument_list|,
@@ -512,7 +512,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|deploy
+name|deployBundle
 parameter_list|(
 name|String
 name|bundle

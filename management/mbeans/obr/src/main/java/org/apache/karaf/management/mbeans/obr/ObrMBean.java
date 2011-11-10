@@ -54,7 +54,7 @@ name|List
 argument_list|<
 name|String
 argument_list|>
-name|listUrls
+name|getUrls
 parameter_list|()
 throws|throws
 name|Exception
@@ -87,13 +87,13 @@ throws|throws
 name|Exception
 function_decl|;
 name|TabularData
-name|list
+name|getBundles
 parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
 name|void
-name|deploy
+name|deployBundle
 parameter_list|(
 name|String
 name|bundle
@@ -102,7 +102,7 @@ throws|throws
 name|Exception
 function_decl|;
 name|void
-name|deploy
+name|deployBundle
 parameter_list|(
 name|String
 name|bundle
