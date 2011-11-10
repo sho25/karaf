@@ -345,7 +345,7 @@ name|cs
 operator|.
 name|execute
 argument_list|(
-literal|"bundles:list --help"
+literal|"bundle:list --help"
 argument_list|)
 expr_stmt|;
 name|cs

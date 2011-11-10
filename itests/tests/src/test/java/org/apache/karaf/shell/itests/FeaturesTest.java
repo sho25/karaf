@@ -360,7 +360,7 @@ name|cs
 operator|.
 name|execute
 argument_list|(
-literal|"obr:listUrl"
+literal|"obr:list-url"
 argument_list|)
 expr_stmt|;
 name|cs
