@@ -135,7 +135,7 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"services"
+literal|"service"
 argument_list|,
 name|name
 operator|=

@@ -301,7 +301,7 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"bundles"
+literal|"bundle"
 argument_list|,
 name|name
 operator|=

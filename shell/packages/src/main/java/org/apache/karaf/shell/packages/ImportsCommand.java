@@ -173,7 +173,7 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"packages"
+literal|"package"
 argument_list|,
 name|name
 operator|=
