@@ -160,13 +160,13 @@ expr_stmt|;
 block|}
 specifier|public
 name|TabularData
-name|list
+name|getService
 parameter_list|()
 throws|throws
 name|Exception
 block|{
 return|return
-name|list
+name|getService
 argument_list|(
 operator|-
 literal|1
@@ -177,7 +177,7 @@ return|;
 block|}
 specifier|public
 name|TabularData
-name|list
+name|getService
 parameter_list|(
 name|boolean
 name|inUse
@@ -186,7 +186,7 @@ throws|throws
 name|Exception
 block|{
 return|return
-name|list
+name|getService
 argument_list|(
 operator|-
 literal|1
@@ -197,7 +197,7 @@ return|;
 block|}
 specifier|public
 name|TabularData
-name|list
+name|getService
 parameter_list|(
 name|long
 name|bundleId
@@ -206,7 +206,7 @@ throws|throws
 name|Exception
 block|{
 return|return
-name|list
+name|getService
 argument_list|(
 name|bundleId
 argument_list|,
@@ -216,7 +216,7 @@ return|;
 block|}
 specifier|public
 name|TabularData
-name|list
+name|getService
 parameter_list|(
 name|long
 name|bundleId
