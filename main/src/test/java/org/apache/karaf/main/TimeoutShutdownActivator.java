@@ -62,7 +62,17 @@ name|context
 parameter_list|)
 throws|throws
 name|Exception
-block|{     }
+block|{
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+literal|"Starting timeout activator"
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|void
 name|stop
@@ -73,11 +83,29 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+literal|"Timeout activator asked to stopped"
+argument_list|)
+expr_stmt|;
 name|Thread
 operator|.
 name|sleep
 argument_list|(
 name|TIMEOUT
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+literal|"Stopping timeout activator"
 argument_list|)
 expr_stmt|;
 block|}
