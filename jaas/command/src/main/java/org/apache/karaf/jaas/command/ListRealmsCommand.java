@@ -111,7 +111,7 @@ literal|"jaas"
 argument_list|,
 name|name
 operator|=
-literal|"realms"
+literal|"list-realm"
 argument_list|,
 name|description
 operator|=

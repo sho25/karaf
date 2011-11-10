@@ -79,7 +79,7 @@ literal|"jaas"
 argument_list|,
 name|name
 operator|=
-literal|"roleadd"
+literal|"add-role"
 argument_list|,
 name|description
 operator|=

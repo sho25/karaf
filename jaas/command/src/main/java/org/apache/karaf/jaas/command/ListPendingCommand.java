@@ -115,7 +115,7 @@ literal|"jaas"
 argument_list|,
 name|name
 operator|=
-literal|"pending"
+literal|"list-pending"
 argument_list|,
 name|description
 operator|=
