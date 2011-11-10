@@ -221,6 +221,11 @@ condition|(
 name|bundles
 operator|==
 literal|null
+operator|||
+name|bundles
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
 block|{
 name|Bundle
