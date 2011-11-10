@@ -234,7 +234,7 @@ name|List
 argument_list|<
 name|String
 argument_list|>
-name|list
+name|getConfig
 parameter_list|()
 throws|throws
 name|Exception
@@ -398,7 +398,7 @@ name|String
 argument_list|,
 name|String
 argument_list|>
-name|proplist
+name|listProperty
 parameter_list|(
 name|String
 name|pid
@@ -535,7 +535,7 @@ return|;
 block|}
 specifier|public
 name|void
-name|propdel
+name|deleteProperty
 parameter_list|(
 name|String
 name|pid
@@ -620,7 +620,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|propappend
+name|appendProperty
 parameter_list|(
 name|String
 name|pid
@@ -758,7 +758,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|propset
+name|setProperty
 parameter_list|(
 name|String
 name|pid

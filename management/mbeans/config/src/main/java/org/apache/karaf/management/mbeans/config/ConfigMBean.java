@@ -53,7 +53,7 @@ name|List
 argument_list|<
 name|String
 argument_list|>
-name|list
+name|getConfig
 parameter_list|()
 throws|throws
 name|Exception
@@ -85,7 +85,7 @@ name|String
 argument_list|,
 name|String
 argument_list|>
-name|proplist
+name|listProperty
 parameter_list|(
 name|String
 name|pid
@@ -95,7 +95,7 @@ name|Exception
 function_decl|;
 comment|/**      * Remove the configuration property identified by the given key.      *      * @param pid the configuration PID.      * @param key the property key.      * @throws Exception      */
 name|void
-name|propdel
+name|deleteProperty
 parameter_list|(
 name|String
 name|pid
@@ -108,7 +108,7 @@ name|Exception
 function_decl|;
 comment|/**      * Append (or add) a value for the given configuration key.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the value to append to the current property value.      * @throws Exception      */
 name|void
-name|propappend
+name|appendProperty
 parameter_list|(
 name|String
 name|pid
@@ -124,7 +124,7 @@ name|Exception
 function_decl|;
 comment|/**      * Set a configuration property.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the property value.      * @throws Exception      */
 name|void
-name|propset
+name|setProperty
 parameter_list|(
 name|String
 name|pid
