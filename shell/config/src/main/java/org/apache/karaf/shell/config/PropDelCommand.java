@@ -83,7 +83,7 @@ literal|"config"
 argument_list|,
 name|name
 operator|=
-literal|"propdel"
+literal|"delete-property"
 argument_list|,
 name|description
 operator|=

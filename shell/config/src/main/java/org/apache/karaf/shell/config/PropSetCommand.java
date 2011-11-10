@@ -83,7 +83,7 @@ literal|"config"
 argument_list|,
 name|name
 operator|=
-literal|"propset"
+literal|"set-property"
 argument_list|,
 name|description
 operator|=

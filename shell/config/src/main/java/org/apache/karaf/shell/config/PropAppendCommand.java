@@ -87,7 +87,7 @@ literal|"config"
 argument_list|,
 name|name
 operator|=
-literal|"propappend"
+literal|"append-property"
 argument_list|,
 name|description
 operator|=

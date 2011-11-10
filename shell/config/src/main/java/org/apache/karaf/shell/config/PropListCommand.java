@@ -77,7 +77,7 @@ literal|"config"
 argument_list|,
 name|name
 operator|=
-literal|"proplist"
+literal|"list-property"
 argument_list|,
 name|description
 operator|=
