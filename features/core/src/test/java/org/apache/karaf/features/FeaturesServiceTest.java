@@ -462,7 +462,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -484,7 +484,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -1033,7 +1033,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -1055,7 +1055,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -1657,7 +1657,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -1679,7 +1679,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -1876,7 +1876,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -1898,7 +1898,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -2561,7 +2561,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -2583,7 +2583,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -3077,7 +3077,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -3099,7 +3099,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -3274,7 +3274,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -3296,7 +3296,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -3470,7 +3470,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -3492,7 +3492,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -3666,7 +3666,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -3688,7 +3688,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -4094,7 +4094,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -4116,7 +4116,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -4578,7 +4578,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -4600,7 +4600,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -5035,7 +5035,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -5057,7 +5057,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -5491,7 +5491,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -5513,7 +5513,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -5953,7 +5953,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -5975,7 +5975,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -6420,7 +6420,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -6442,7 +6442,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -7063,7 +7063,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -7085,7 +7085,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -7250,7 +7250,7 @@ name|File
 operator|.
 name|createTempFile
 argument_list|(
-literal|"smx"
+literal|"karaf"
 argument_list|,
 literal|".feature"
 argument_list|)
@@ -7272,7 +7272,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
+literal|"<features name=\"test\" xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\">"
 argument_list|)
 expr_stmt|;
 name|pw

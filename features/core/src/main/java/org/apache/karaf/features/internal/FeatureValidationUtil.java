@@ -317,16 +317,13 @@ operator|==
 literal|null
 condition|)
 block|{
-name|log
-operator|.
-name|warn
+throw|throw
+operator|new
+name|IllegalArgumentException
 argument_list|(
-literal|"Old style feature file without namespace found (URI: {}). This format is deprecated and support for it will soon be removed"
-argument_list|,
-name|uri
+literal|"Features repository without namespace is not allowed"
 argument_list|)
-expr_stmt|;
-return|return;
+throw|;
 block|}
 name|SchemaFactory
 name|factory
