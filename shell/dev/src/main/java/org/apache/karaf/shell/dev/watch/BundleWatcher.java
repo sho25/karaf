@@ -1270,7 +1270,7 @@ name|url
 operator|.
 name|contains
 argument_list|(
-literal|"-SNAPSHOT"
+literal|"SNAPSHOT"
 argument_list|)
 return|;
 block|}
