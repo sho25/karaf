@@ -1069,6 +1069,25 @@ parameter_list|)
 block|{
 try|try
 block|{
+if|if
+condition|(
+name|t
+operator|instanceof
+name|CommandNotFoundException
+condition|)
+block|{
+name|LOGGER
+operator|.
+name|debug
+argument_list|(
+literal|"Unknown command entered"
+argument_list|,
+name|t
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|LOGGER
 operator|.
 name|info
@@ -1078,6 +1097,7 @@ argument_list|,
 name|t
 argument_list|)
 expr_stmt|;
+block|}
 name|session
 operator|.
 name|put
