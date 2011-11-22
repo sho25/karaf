@@ -203,10 +203,6 @@ name|JaxbUtil
 operator|.
 name|marshal
 argument_list|(
-name|Features
-operator|.
-name|class
-argument_list|,
 name|featuresRoot
 argument_list|,
 name|baos

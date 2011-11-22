@@ -1376,10 +1376,6 @@ name|JaxbUtil
 operator|.
 name|marshal
 argument_list|(
-name|Features
-operator|.
-name|class
-argument_list|,
 name|features
 argument_list|,
 name|out
@@ -2644,10 +2640,6 @@ name|JaxbUtil
 operator|.
 name|marshal
 argument_list|(
-name|Features
-operator|.
-name|class
-argument_list|,
 name|added
 argument_list|,
 name|out
@@ -2693,10 +2685,6 @@ name|JaxbUtil
 operator|.
 name|marshal
 argument_list|(
-name|Features
-operator|.
-name|class
-argument_list|,
 name|removed
 argument_list|,
 name|out
@@ -2891,10 +2879,6 @@ name|JaxbUtil
 operator|.
 name|marshal
 argument_list|(
-name|Features
-operator|.
-name|class
-argument_list|,
 name|features
 argument_list|,
 name|out
