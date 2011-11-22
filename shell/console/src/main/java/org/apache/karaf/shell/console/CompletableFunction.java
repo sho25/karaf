@@ -57,6 +57,13 @@ argument_list|>
 name|getCompleters
 parameter_list|()
 function_decl|;
+name|List
+argument_list|<
+name|Completer
+argument_list|>
+name|getOptionalCompleters
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
