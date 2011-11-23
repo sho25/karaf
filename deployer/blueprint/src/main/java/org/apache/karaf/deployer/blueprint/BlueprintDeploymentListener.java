@@ -239,7 +239,7 @@ argument_list|(
 name|name
 argument_list|)
 operator|&&
-literal|"http://www.bundles.org/xmlns/blueprint/v1.0.0"
+literal|"http://www.osgi.org/xmlns/blueprint/v1.0.0"
 operator|.
 name|equals
 argument_list|(
