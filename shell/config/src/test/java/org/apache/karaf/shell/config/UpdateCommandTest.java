@@ -248,6 +248,9 @@ name|andReturn
 argument_list|(
 name|reference
 argument_list|)
+operator|.
+name|anyTimes
+argument_list|()
 expr_stmt|;
 name|admin
 operator|=
