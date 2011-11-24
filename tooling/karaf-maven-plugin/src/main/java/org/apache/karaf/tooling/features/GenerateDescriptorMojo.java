@@ -604,7 +604,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates the features XML file  * NB this requires a recent maven-install-plugin such as 2.3.1  *  * @version $Revision: 1.1 $  * @goal features-generate-descriptor  * @phase compile  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Generates the features XML file starting with an optional source feature.xml and adding  * project dependencies as bundles and feature/car dependencies  */
+comment|/**  * Generates the features XML file  * NB this requires a recent maven-install-plugin such as 2.3.1  *  * @version $Revision$  * @goal features-generate-descriptor  * @phase compile  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Generates the features XML file starting with an optional source feature.xml and adding  * project dependencies as bundles and feature/car dependencies  */
 end_comment
 
 begin_class
@@ -688,6 +688,11 @@ specifier|private
 name|RepositorySystemSession
 name|repoSession
 decl_stmt|;
+comment|/**      * Flag indicating whether transitive dependencies should be included      * (<code>true</code>) or not (<code>false</code>).      *      * @parameter default-value="true"      */
+specifier|private
+name|boolean
+name|includeTransitiveDependency
+decl_stmt|;
 comment|/**      * The project's remote repositories to use for the resolution of project dependencies.      *      * @parameter default-value="${project.remoteProjectRepositories}"      * @readonly      */
 specifier|private
 name|List
@@ -756,7 +761,7 @@ name|getDependencies
 argument_list|(
 name|project
 argument_list|,
-literal|true
+name|includeTransitiveDependency
 argument_list|)
 expr_stmt|;
 name|this
