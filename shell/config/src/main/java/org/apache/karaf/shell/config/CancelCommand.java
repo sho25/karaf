@@ -21,13 +21,15 @@ begin_import
 import|import
 name|org
 operator|.
-name|osgi
+name|apache
 operator|.
-name|service
+name|karaf
 operator|.
-name|cm
+name|shell
 operator|.
-name|ConfigurationAdmin
+name|commands
+operator|.
+name|Command
 import|;
 end_import
 
@@ -35,15 +37,13 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|osgi
 operator|.
-name|felix
+name|service
 operator|.
-name|gogo
+name|cm
 operator|.
-name|commands
-operator|.
-name|Command
+name|ConfigurationAdmin
 import|;
 end_import
 

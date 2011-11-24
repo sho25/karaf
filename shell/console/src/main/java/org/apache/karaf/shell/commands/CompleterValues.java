@@ -9,13 +9,25 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
-name|gogo
+name|shell
 operator|.
 name|commands
 package|;
 end_package
+
+begin_import
+import|import
+name|java
+operator|.
+name|lang
+operator|.
+name|annotation
+operator|.
+name|ElementType
+import|;
+end_import
 
 begin_import
 import|import
@@ -53,20 +65,8 @@ name|Target
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|lang
-operator|.
-name|annotation
-operator|.
-name|ElementType
-import|;
-end_import
-
 begin_comment
-comment|/**  * Used to denote a class represents a command which is executable within a shell/scope or as a  * command line process.  */
+comment|/**  * Represents a method which can return a List or Array of values used for a  * {@link org.apache.karaf.shell.console.Completer}  * which is associated with the index of an  * {@link Argument}  */
 end_comment
 
 begin_annotation_defn
@@ -83,36 +83,22 @@ argument_list|(
 block|{
 name|ElementType
 operator|.
-name|TYPE
+name|METHOD
+block|,
+name|ElementType
+operator|.
+name|FIELD
 block|}
 argument_list|)
 specifier|public
 annotation_defn|@interface
-name|Command
+name|CompleterValues
 block|{
-comment|/**      * Returns the scope or sub shell of the command      */
-name|String
-name|scope
-parameter_list|()
-function_decl|;
-comment|/**      * REturns the name of the command if used inside a shell      */
-name|String
-name|name
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the description of the command which is used to generate command line help      */
-name|String
-name|description
+name|int
+name|index
 parameter_list|()
 default|default
-literal|""
-function_decl|;
-comment|/**      * Returns a detailed description of the command      */
-name|String
-name|detailedDescription
-parameter_list|()
-default|default
-literal|""
+literal|0
 function_decl|;
 block|}
 end_annotation_defn

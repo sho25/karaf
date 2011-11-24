@@ -111,9 +111,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
-name|gogo
+name|shell
 operator|.
 name|commands
 operator|.
@@ -127,9 +127,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
-name|gogo
+name|shell
 operator|.
 name|commands
 operator|.

@@ -31,11 +31,15 @@ begin_import
 import|import
 name|org
 operator|.
-name|osgi
+name|apache
 operator|.
-name|framework
+name|karaf
 operator|.
-name|Bundle
+name|shell
+operator|.
+name|commands
+operator|.
+name|Command
 import|;
 end_import
 
@@ -43,15 +47,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|osgi
 operator|.
-name|felix
+name|framework
 operator|.
-name|gogo
-operator|.
-name|commands
-operator|.
-name|Command
+name|Bundle
 import|;
 end_import
 

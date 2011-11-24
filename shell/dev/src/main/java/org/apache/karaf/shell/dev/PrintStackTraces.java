@@ -23,13 +23,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
-name|gogo
+name|shell
 operator|.
 name|commands
 operator|.
-name|Command
+name|Argument
 import|;
 end_import
 
@@ -39,13 +39,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
-name|gogo
+name|shell
 operator|.
 name|commands
 operator|.
-name|Argument
+name|Command
 import|;
 end_import
 
@@ -80,18 +80,6 @@ operator|.
 name|jline
 operator|.
 name|Console
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|framework
-operator|.
-name|Bundle
 import|;
 end_import
 

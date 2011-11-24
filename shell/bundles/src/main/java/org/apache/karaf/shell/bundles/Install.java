@@ -53,9 +53,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
-name|gogo
+name|shell
 operator|.
 name|commands
 operator|.
@@ -73,9 +73,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|console
+name|commands
 operator|.
-name|OsgiCommandSupport
+name|Command
 import|;
 end_import
 
@@ -85,9 +85,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
-name|gogo
+name|shell
 operator|.
 name|commands
 operator|.
@@ -101,13 +101,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
-name|gogo
+name|shell
 operator|.
-name|commands
+name|console
 operator|.
-name|Command
+name|OsgiCommandSupport
 import|;
 end_import
 

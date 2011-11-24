@@ -9,9 +9,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
-name|gogo
+name|shell
 operator|.
 name|commands
 operator|.
@@ -360,24 +360,6 @@ operator|.
 name|reflect
 operator|.
 name|InvocationTargetException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|felix
-operator|.
-name|gogo
-operator|.
-name|commands
-operator|.
-name|converter
-operator|.
-name|ReifiedType
 import|;
 end_import
 
