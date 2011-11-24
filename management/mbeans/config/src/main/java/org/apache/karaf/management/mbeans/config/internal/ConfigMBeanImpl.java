@@ -234,7 +234,7 @@ name|List
 argument_list|<
 name|String
 argument_list|>
-name|getConfig
+name|getConfigs
 parameter_list|()
 throws|throws
 name|Exception
@@ -398,7 +398,7 @@ name|String
 argument_list|,
 name|String
 argument_list|>
-name|listProperty
+name|listProperties
 parameter_list|(
 name|String
 name|pid

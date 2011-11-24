@@ -140,7 +140,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|TabularData
-name|list
+name|getWebBundles
 parameter_list|()
 throws|throws
 name|Exception

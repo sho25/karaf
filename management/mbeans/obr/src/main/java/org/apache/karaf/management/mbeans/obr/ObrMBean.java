@@ -59,6 +59,12 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+name|TabularData
+name|getBundles
+parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
 name|void
 name|addUrl
 parameter_list|(
@@ -83,12 +89,6 @@ parameter_list|(
 name|String
 name|url
 parameter_list|)
-throws|throws
-name|Exception
-function_decl|;
-name|TabularData
-name|getBundles
-parameter_list|()
 throws|throws
 name|Exception
 function_decl|;

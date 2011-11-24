@@ -41,13 +41,13 @@ interface|interface
 name|ServicesMBean
 block|{
 name|TabularData
-name|getService
+name|getServices
 parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
 name|TabularData
-name|getService
+name|getServices
 parameter_list|(
 name|boolean
 name|inUse
@@ -56,7 +56,7 @@ throws|throws
 name|Exception
 function_decl|;
 name|TabularData
-name|getService
+name|getServices
 parameter_list|(
 name|long
 name|bundleId
@@ -65,7 +65,7 @@ throws|throws
 name|Exception
 function_decl|;
 name|TabularData
-name|getService
+name|getServices
 parameter_list|(
 name|long
 name|bundleId

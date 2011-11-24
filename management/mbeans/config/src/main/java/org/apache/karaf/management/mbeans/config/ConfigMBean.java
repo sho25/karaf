@@ -21,6 +21,18 @@ end_package
 
 begin_import
 import|import
+name|javax
+operator|.
+name|management
+operator|.
+name|openmbean
+operator|.
+name|TabularData
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -53,7 +65,7 @@ name|List
 argument_list|<
 name|String
 argument_list|>
-name|getConfig
+name|getConfigs
 parameter_list|()
 throws|throws
 name|Exception
@@ -85,7 +97,7 @@ name|String
 argument_list|,
 name|String
 argument_list|>
-name|listProperty
+name|listProperties
 parameter_list|(
 name|String
 name|pid

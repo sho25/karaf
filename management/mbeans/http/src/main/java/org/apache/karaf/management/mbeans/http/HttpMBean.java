@@ -42,7 +42,7 @@ name|HttpMBean
 block|{
 comment|/**      * List details for servlets.      *      * @return a tabular view of the servlets information.      * @throws Exception      */
 name|TabularData
-name|list
+name|getServlets
 parameter_list|()
 throws|throws
 name|Exception

@@ -41,7 +41,7 @@ interface|interface
 name|WebMBean
 block|{
 name|TabularData
-name|list
+name|getWebBundles
 parameter_list|()
 throws|throws
 name|Exception
