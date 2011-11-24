@@ -599,17 +599,17 @@ literal|"--foo"
 argument_list|,
 literal|"--help"
 argument_list|,
-literal|"--string"
-argument_list|,
 literal|"--integer"
+argument_list|,
+literal|"--string"
 argument_list|,
 literal|"-c"
 argument_list|,
 literal|"-f"
 argument_list|,
-literal|"-s"
-argument_list|,
 literal|"-i"
+argument_list|,
+literal|"-s"
 argument_list|)
 argument_list|,
 name|complete
@@ -807,7 +807,7 @@ name|complete
 argument_list|(
 name|comp
 argument_list|,
-literal|"action -string "
+literal|"action --string "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1081,7 +1081,7 @@ literal|"-i"
 argument_list|,
 name|aliases
 operator|=
-literal|"--int"
+literal|"--integer"
 argument_list|)
 name|String
 name|integer
