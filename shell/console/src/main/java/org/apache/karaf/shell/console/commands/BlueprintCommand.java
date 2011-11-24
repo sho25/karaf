@@ -43,6 +43,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -264,8 +274,10 @@ argument_list|>
 name|completers
 decl_stmt|;
 specifier|protected
-name|List
+name|Map
 argument_list|<
+name|String
+argument_list|,
 name|Completer
 argument_list|>
 name|optionalCompleters
@@ -346,8 +358,10 @@ name|completers
 expr_stmt|;
 block|}
 specifier|public
-name|List
+name|Map
 argument_list|<
+name|String
+argument_list|,
 name|Completer
 argument_list|>
 name|getOptionalCompleters
@@ -361,8 +375,10 @@ specifier|public
 name|void
 name|setOptionalCompleters
 parameter_list|(
-name|List
+name|Map
 argument_list|<
+name|String
+argument_list|,
 name|Completer
 argument_list|>
 name|optionalCompleters

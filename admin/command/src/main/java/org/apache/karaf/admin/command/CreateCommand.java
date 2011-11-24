@@ -325,12 +325,6 @@ argument_list|,
 name|multiValued
 operator|=
 literal|true
-argument_list|,
-name|completer
-operator|=
-name|AllFeatureCompleter
-operator|.
-name|class
 argument_list|)
 name|List
 argument_list|<
@@ -362,12 +356,6 @@ argument_list|,
 name|multiValued
 operator|=
 literal|true
-argument_list|,
-name|completer
-operator|=
-name|FeatureRepositoryCompleter
-operator|.
-name|class
 argument_list|)
 name|List
 argument_list|<

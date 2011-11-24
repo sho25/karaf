@@ -29,6 +29,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -57,8 +67,10 @@ argument_list|>
 name|getCompleters
 parameter_list|()
 function_decl|;
-name|List
+name|Map
 argument_list|<
+name|String
+argument_list|,
 name|Completer
 argument_list|>
 name|getOptionalCompleters
