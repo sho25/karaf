@@ -23,16 +23,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|InputStream
 import|;
 end_import
@@ -317,13 +307,16 @@ operator|==
 literal|null
 condition|)
 block|{
-throw|throw
-operator|new
-name|IllegalArgumentException
+name|log
+operator|.
+name|warn
 argument_list|(
-literal|"Features repository without namespace is not allowed"
+literal|"Old style feature file without namespace found (URI: {}). This format is deprecated and support for it will soon be removed"
+argument_list|,
+name|uri
 argument_list|)
-throw|;
+expr_stmt|;
+return|return;
 block|}
 name|SchemaFactory
 name|factory
