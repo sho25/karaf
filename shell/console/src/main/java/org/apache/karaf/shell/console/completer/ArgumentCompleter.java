@@ -1797,6 +1797,17 @@ operator|.
 name|name
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|optionalCompleters
+operator|!=
+literal|null
+operator|&&
+name|name
+operator|!=
+literal|null
+condition|)
+block|{
 name|optionValueCompleter
 operator|=
 name|optionalCompleters
@@ -1867,6 +1878,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
