@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|shell
 package|;
 end_package
 
@@ -104,6 +104,38 @@ operator|.
 name|util
 operator|.
 name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|commands
+operator|.
+name|Argument
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|commands
+operator|.
+name|Command
 import|;
 end_import
 

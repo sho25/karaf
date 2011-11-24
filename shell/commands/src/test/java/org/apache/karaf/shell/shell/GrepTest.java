@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|shell
 package|;
 end_package
 
