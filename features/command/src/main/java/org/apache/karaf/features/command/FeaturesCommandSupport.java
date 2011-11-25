@@ -224,20 +224,6 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Could not refresh Feature Repository:\n"
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
 comment|//get chance to restore previous, fix for KARAF-4
 name|admin
 operator|.
@@ -250,6 +236,17 @@ name|url
 argument_list|)
 argument_list|)
 expr_stmt|;
+throw|throw
+operator|new
+name|Exception
+argument_list|(
+literal|"Unable to refresh features repository "
+operator|+
+name|url
+argument_list|,
+name|e
+argument_list|)
+throw|;
 block|}
 block|}
 specifier|protected
