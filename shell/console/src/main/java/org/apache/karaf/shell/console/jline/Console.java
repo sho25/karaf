@@ -630,7 +630,7 @@ name|put
 argument_list|(
 literal|"SCOPE"
 argument_list|,
-literal|"shell:bundles:*"
+literal|"shell:bundle:*"
 argument_list|)
 expr_stmt|;
 name|this
