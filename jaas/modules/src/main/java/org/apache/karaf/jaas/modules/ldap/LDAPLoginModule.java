@@ -1372,6 +1372,11 @@ operator|.
 name|getName
 argument_list|()
 expr_stmt|;
+name|namingEnumeration
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
