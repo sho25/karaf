@@ -97,6 +97,22 @@ name|Repository
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|console
+operator|.
+name|MultiException
+import|;
+end_import
+
 begin_class
 annotation|@
 name|Command

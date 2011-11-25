@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|features
+name|shell
 operator|.
-name|command
+name|console
 package|;
 end_package
 
