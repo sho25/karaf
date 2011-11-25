@@ -1248,8 +1248,20 @@ argument_list|(
 name|artifact
 argument_list|)
 decl_stmt|;
+name|Manifest
+name|manifest
+init|=
+name|getManifest
+argument_list|(
+name|bundleFile
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
+name|manifest
+operator|==
+literal|null
+operator|||
 operator|!
 name|ManifestUtils
 operator|.
@@ -1430,10 +1442,6 @@ name|File
 name|file
 parameter_list|)
 throws|throws
-name|ArtifactResolutionException
-throws|,
-name|ArtifactNotFoundException
-throws|,
 name|IOException
 block|{
 name|InputStream
@@ -1508,13 +1516,19 @@ operator|==
 literal|null
 condition|)
 block|{
-throw|throw
-operator|new
-name|IOException
+name|getLogger
+argument_list|()
+operator|.
+name|warn
 argument_list|(
-literal|"Manifest not present in the first entry of the zip"
+literal|"Manifest not present in the first entry of the zip - "
+operator|+
+name|file
+operator|.
+name|getName
+argument_list|()
 argument_list|)
-throw|;
+expr_stmt|;
 block|}
 return|return
 name|m
