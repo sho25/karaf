@@ -19,25 +19,9 @@ end_package
 
 begin_import
 import|import static
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|testing
-operator|.
-name|Helper
-operator|.
-name|felixProvisionalApis
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
 name|junit
+operator|.
+name|framework
 operator|.
 name|Assert
 operator|.
@@ -47,9 +31,9 @@ end_import
 
 begin_import
 import|import static
-name|org
-operator|.
 name|junit
+operator|.
+name|framework
 operator|.
 name|Assert
 operator|.
@@ -61,15 +45,19 @@ begin_import
 import|import static
 name|org
 operator|.
-name|ops4j
+name|apache
 operator|.
-name|pax
+name|karaf
+operator|.
+name|tooling
 operator|.
 name|exam
 operator|.
-name|CoreOptions
+name|options
 operator|.
-name|equinox
+name|KarafDistributionOption
+operator|.
+name|karafDistributionConfiguration
 import|;
 end_import
 
@@ -85,59 +73,17 @@ name|exam
 operator|.
 name|CoreOptions
 operator|.
-name|felix
+name|maven
 import|;
 end_import
 
 begin_import
-import|import static
-name|org
+import|import
+name|javax
 operator|.
-name|ops4j
+name|inject
 operator|.
-name|pax
-operator|.
-name|exam
-operator|.
-name|CoreOptions
-operator|.
-name|waitForFrameworkStartup
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|ops4j
-operator|.
-name|pax
-operator|.
-name|exam
-operator|.
-name|OptionUtils
-operator|.
-name|combine
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|ops4j
-operator|.
-name|pax
-operator|.
-name|exam
-operator|.
-name|container
-operator|.
-name|def
-operator|.
-name|PaxRunnerOptions
-operator|.
-name|workingDirectory
+name|Inject
 import|;
 end_import
 
@@ -170,34 +116,6 @@ operator|.
 name|command
 operator|.
 name|CommandSession
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|testing
-operator|.
-name|AbstractIntegrationTest
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|testing
-operator|.
-name|Helper
 import|;
 end_import
 
@@ -247,6 +165,20 @@ name|pax
 operator|.
 name|exam
 operator|.
+name|TestProbeBuilder
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|exam
+operator|.
 name|junit
 operator|.
 name|Configuration
@@ -273,11 +205,27 @@ begin_import
 import|import
 name|org
 operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|exam
+operator|.
+name|junit
+operator|.
+name|ProbeBuilder
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|osgi
 operator|.
 name|framework
 operator|.
-name|Bundle
+name|Constants
 import|;
 end_import
 
@@ -292,9 +240,80 @@ argument_list|)
 specifier|public
 class|class
 name|CoreTest
-extends|extends
-name|AbstractIntegrationTest
 block|{
+annotation|@
+name|Inject
+specifier|private
+name|CommandProcessor
+name|cp
+decl_stmt|;
+annotation|@
+name|ProbeBuilder
+specifier|public
+name|TestProbeBuilder
+name|probeConfiguration
+parameter_list|(
+name|TestProbeBuilder
+name|probe
+parameter_list|)
+block|{
+name|probe
+operator|.
+name|setHeader
+argument_list|(
+name|Constants
+operator|.
+name|DYNAMICIMPORT_PACKAGE
+argument_list|,
+literal|"*,org.apache.felix.service.*;status=provisional"
+argument_list|)
+expr_stmt|;
+return|return
+name|probe
+return|;
+block|}
+annotation|@
+name|Configuration
+specifier|public
+name|Option
+index|[]
+name|config
+parameter_list|()
+block|{
+return|return
+operator|new
+name|Option
+index|[]
+block|{
+name|karafDistributionConfiguration
+argument_list|()
+operator|.
+name|frameworkUrl
+argument_list|(
+name|maven
+argument_list|()
+operator|.
+name|groupId
+argument_list|(
+literal|"org.apache.karaf.assemblies"
+argument_list|)
+operator|.
+name|artifactId
+argument_list|(
+literal|"apache-karaf"
+argument_list|)
+operator|.
+name|type
+argument_list|(
+literal|"zip"
+argument_list|)
+operator|.
+name|versionAsInProject
+argument_list|()
+argument_list|)
+block|}
+return|;
+block|}
 annotation|@
 name|Test
 specifier|public
@@ -311,16 +330,6 @@ argument_list|(
 literal|10000
 argument_list|)
 expr_stmt|;
-name|CommandProcessor
-name|cp
-init|=
-name|getOsgiService
-argument_list|(
-name|CommandProcessor
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
 name|CommandSession
 name|cs
 init|=
@@ -363,6 +372,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|assertTrue
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|Thread
 operator|.
 name|sleep
@@ -370,16 +384,6 @@ argument_list|(
 literal|12000
 argument_list|)
 expr_stmt|;
-name|CommandProcessor
-name|cp
-init|=
-name|getOsgiService
-argument_list|(
-name|CommandProcessor
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
 name|CommandSession
 name|cs
 init|=
@@ -406,7 +410,7 @@ name|cs
 operator|.
 name|execute
 argument_list|(
-literal|"log:display"
+literal|"obr:list-url"
 argument_list|)
 expr_stmt|;
 name|fail
@@ -437,18 +441,12 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
-name|Bundle
-name|b
-init|=
-name|getInstalledBundle
-argument_list|(
-literal|"org.apache.karaf.shell.log"
-argument_list|)
-decl_stmt|;
-name|b
+name|cs
 operator|.
-name|start
-argument_list|()
+name|execute
+argument_list|(
+literal|"feature:install obr"
+argument_list|)
 expr_stmt|;
 name|Thread
 operator|.
@@ -461,13 +459,15 @@ name|cs
 operator|.
 name|execute
 argument_list|(
-literal|"log:display"
+literal|"obr:list-url"
 argument_list|)
 expr_stmt|;
-name|b
+name|cs
 operator|.
-name|stop
-argument_list|()
+name|execute
+argument_list|(
+literal|"feature:uninstall obr"
+argument_list|)
 expr_stmt|;
 name|Thread
 operator|.
@@ -482,7 +482,7 @@ name|cs
 operator|.
 name|execute
 argument_list|(
-literal|"log:display"
+literal|"obr:list-url"
 argument_list|)
 expr_stmt|;
 name|fail
@@ -518,106 +518,6 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
-block|}
-comment|//    @Test
-comment|//    public void testCommandGroup() throws Exception {
-comment|//        Thread.sleep(5000);
-comment|//
-comment|//        Shell shell = getOsgiService(Shell.class);
-comment|//        shell.execute("bundles");
-comment|//        shell.execute("help");
-comment|//        shell.execute("..");
-comment|//    }
-comment|//
-comment|//    @Test
-comment|//    public void testCommandGroupAfterInstall() throws Exception {
-comment|//        Bundle b = getInstalledBundle("org.apache.karaf.shell.log");
-comment|//        b.start();
-comment|//
-comment|//        Thread.sleep(5000);
-comment|//
-comment|//        Shell shell = getOsgiService(Shell.class);
-comment|//        shell.execute("log");
-comment|//        shell.execute("help");
-comment|//        shell.execute("..");
-comment|//    }
-comment|//
-annotation|@
-name|Configuration
-specifier|public
-specifier|static
-name|Option
-index|[]
-name|configuration
-parameter_list|()
-throws|throws
-name|Exception
-block|{
-name|Option
-index|[]
-name|options
-init|=
-name|combine
-argument_list|(
-comment|// Default karaf environment
-name|Helper
-operator|.
-name|getDefaultOptions
-argument_list|(
-comment|// this is how you set the default log level when using pax logging (logProfile)
-name|Helper
-operator|.
-name|setLogLevel
-argument_list|(
-literal|"TRACE"
-argument_list|)
-argument_list|)
-argument_list|,
-name|workingDirectory
-argument_list|(
-literal|"target/paxrunner/core/"
-argument_list|)
-argument_list|,
-name|waitForFrameworkStartup
-argument_list|()
-argument_list|,
-comment|// Test on both equinox and felix
-comment|// TODO: pax-exam does not support the latest felix version :-(
-comment|// TODO: so we use the higher supported which should be the same
-comment|// TODO: as the one specified in itests/dependencies/pom.xml
-name|equinox
-argument_list|()
-argument_list|,
-name|felix
-argument_list|()
-operator|.
-name|version
-argument_list|(
-literal|"3.0.2"
-argument_list|)
-argument_list|,
-name|felixProvisionalApis
-argument_list|()
-argument_list|)
-decl_stmt|;
-comment|// Stop the shell log bundle
-name|Helper
-operator|.
-name|findMaven
-argument_list|(
-name|options
-argument_list|,
-literal|"org.apache.karaf.shell"
-argument_list|,
-literal|"org.apache.karaf.shell.log"
-argument_list|)
-operator|.
-name|noStart
-argument_list|()
-expr_stmt|;
-return|return
-name|options
-return|;
 block|}
 block|}
 end_class
