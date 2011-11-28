@@ -116,6 +116,25 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+if|if
+condition|(
+name|bundles
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+literal|"No bundles specified."
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 name|List
 argument_list|<
 name|Exception
