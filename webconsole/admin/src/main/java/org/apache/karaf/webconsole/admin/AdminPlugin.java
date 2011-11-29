@@ -413,7 +413,7 @@ name|req
 operator|.
 name|getAttribute
 argument_list|(
-literal|"org.apache.felix.webconsole.internal.servlet.OsgiManager.appRoot"
+literal|"org.apache.felix.webconsole.wrapper.servlet.OsgiManager.appRoot"
 argument_list|)
 decl_stmt|;
 specifier|final

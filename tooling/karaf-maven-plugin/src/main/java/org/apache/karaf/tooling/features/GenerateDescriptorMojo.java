@@ -626,12 +626,12 @@ specifier|private
 name|File
 name|inputFile
 decl_stmt|;
-comment|/**      * (internal) The filtered input file      *      * @parameter default-value="${project.build.directory}/feature/filteredInputFeature.xml"      */
+comment|/**      * (wrapper) The filtered input file      *      * @parameter default-value="${project.build.directory}/feature/filteredInputFeature.xml"      */
 specifier|private
 name|File
 name|filteredInputFile
 decl_stmt|;
-comment|/**      * (internal) The file to generate      *      * @parameter default-value="${project.build.directory}/feature/feature.xml"      */
+comment|/**      * (wrapper) The file to generate      *      * @parameter default-value="${project.build.directory}/feature/feature.xml"      */
 specifier|private
 name|File
 name|outputFile
@@ -641,14 +641,14 @@ specifier|private
 name|String
 name|resolver
 decl_stmt|;
-comment|/**      * (internal) The artifact type for attaching the generated file to the project      *      * @parameter default-value="xml"      */
+comment|/**      * (wrapper) The artifact type for attaching the generated file to the project      *      * @parameter default-value="xml"      */
 specifier|private
 name|String
 name|attachmentArtifactType
 init|=
 literal|"xml"
 decl_stmt|;
-comment|/**      * (internal) The artifact classifier for attaching the generated file to the project      *      * @parameter default-value="features"      */
+comment|/**      * (wrapper) The artifact classifier for attaching the generated file to the project      *      * @parameter default-value="features"      */
 specifier|private
 name|String
 name|attachmentArtifactClassifier
@@ -668,7 +668,7 @@ name|Integer
 name|startLevel
 decl_stmt|;
 comment|//new
-comment|/**      * (internal) The maven project.      *      * @parameter expression="${project}"      * @required      * @readonly      */
+comment|/**      * (wrapper) The maven project.      *      * @parameter expression="${project}"      * @required      * @readonly      */
 specifier|protected
 name|MavenProject
 name|project
@@ -1792,7 +1792,7 @@ specifier|private
 name|boolean
 name|overwriteChangedDependencies
 decl_stmt|;
-comment|/**      * (internal) Location of existing dependency file.      *      * @parameter expression="${basedir}/src/main/history/dependencies.xml"      * @required      */
+comment|/**      * (wrapper) Location of existing dependency file.      *      * @parameter expression="${basedir}/src/main/history/dependencies.xml"      * @required      */
 specifier|private
 name|File
 name|dependencyFile

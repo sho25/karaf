@@ -340,7 +340,7 @@ specifier|private
 name|File
 name|featuresFile
 decl_stmt|;
-comment|/**      * The internal repository in the kar.      *      * @parameter default-value="${repositoryPath}"      */
+comment|/**      * The wrapper repository in the kar.      *      * @parameter default-value="${repositoryPath}"      */
 specifier|private
 name|String
 name|repositoryPath

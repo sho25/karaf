@@ -113,7 +113,7 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Creates a new node. Only meant for internal use,      * new nodes should be added using the {@link #addChild(Object)} method      *      * @param value the node value      */
+comment|/**      * Creates a new node. Only meant for wrapper use,      * new nodes should be added using the {@link #addChild(Object)} method      *      * @param value the node value      */
 specifier|protected
 name|Node
 parameter_list|(
@@ -131,7 +131,7 @@ operator|=
 name|value
 expr_stmt|;
 block|}
-comment|/**      * Creates a new node. Only meant for internal use,      * new nodes should be added using the {@link #addChild(Object)} method      *      * @param value the node value      */
+comment|/**      * Creates a new node. Only meant for wrapper use,      * new nodes should be added using the {@link #addChild(Object)} method      *      * @param value the node value      */
 specifier|protected
 name|Node
 parameter_list|(

@@ -216,7 +216,7 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/**      * Configures which distribution options to use. Relevant are the frameworkURL, the frameworkName and the Karaf      * version since all of those params are relevant to decide which internal configurations to use.      */
+comment|/**      * Configures which distribution options to use. Relevant are the frameworkURL, the frameworkName and the Karaf      * version since all of those params are relevant to decide which wrapper configurations to use.      */
 specifier|public
 specifier|static
 name|KarafDistributionBaseConfigurationOption
@@ -244,7 +244,7 @@ name|karafVersion
 argument_list|)
 return|;
 block|}
-comment|/**      * Configures which distribution options to use. Relevant are the frameworkURL, the frameworkName and the Karaf      * version since all of those params are relevant to decide which internal configurations to use.      */
+comment|/**      * Configures which distribution options to use. Relevant are the frameworkURL, the frameworkName and the Karaf      * version since all of those params are relevant to decide which wrapper configurations to use.      */
 specifier|public
 specifier|static
 name|KarafDistributionBaseConfigurationOption

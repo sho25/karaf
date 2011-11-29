@@ -54,7 +54,7 @@ name|KarafSshFile
 extends|extends
 name|NativeSshFile
 block|{
-comment|/**      * Constructor, internal do not use directly.      */
+comment|/**      * Constructor, wrapper do not use directly.      */
 specifier|public
 name|KarafSshFile
 parameter_list|(
