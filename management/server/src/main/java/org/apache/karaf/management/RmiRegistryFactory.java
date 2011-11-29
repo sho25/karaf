@@ -17,6 +17,18 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
+name|BundleContext
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|rmi
@@ -61,10 +73,6 @@ name|UnicastRemoteObject
 import|;
 end_import
 
-begin_comment
-comment|/**  *   * @author gnodet  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -95,6 +103,10 @@ decl_stmt|;
 specifier|private
 name|boolean
 name|locallyCreated
+decl_stmt|;
+specifier|private
+name|BundleContext
+name|bundleContext
 decl_stmt|;
 comment|/**      * @return the create      */
 specifier|public
@@ -187,6 +199,21 @@ return|;
 block|}
 specifier|public
 name|void
+name|setBundleContext
+parameter_list|(
+name|BundleContext
+name|bundleContext
+parameter_list|)
+block|{
+name|this
+operator|.
+name|bundleContext
+operator|=
+name|bundleContext
+expr_stmt|;
+block|}
+specifier|public
+name|void
 name|init
 parameter_list|()
 throws|throws
@@ -255,6 +282,31 @@ expr_stmt|;
 name|locallyCreated
 operator|=
 literal|true
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|registry
+operator|!=
+literal|null
+condition|)
+block|{
+comment|// register the registry as an OSGi service
+name|bundleContext
+operator|.
+name|registerService
+argument_list|(
+name|Registry
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|registry
+argument_list|,
+literal|null
+argument_list|)
 expr_stmt|;
 block|}
 block|}
