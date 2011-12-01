@@ -1204,6 +1204,28 @@ operator|.
 name|DEFAULT
 argument_list|)
 operator|.
+name|newline
+argument_list|()
+operator|.
+name|a
+argument_list|(
+literal|"Try '"
+operator|+
+name|command
+operator|.
+name|scope
+argument_list|()
+operator|+
+literal|":"
+operator|+
+name|command
+operator|.
+name|name
+argument_list|()
+operator|+
+literal|" --help' for more information."
+argument_list|)
+operator|.
 name|toString
 argument_list|()
 argument_list|,
