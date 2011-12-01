@@ -24,19 +24,39 @@ specifier|public
 interface|interface
 name|SystemService
 block|{
-comment|/**      * Shutdown the Karaf container.      */
+comment|/**      * Halt the Karaf container.      */
 name|void
-name|shutdown
+name|halt
 parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Shutdown the Karaf container.      *      * @param time shutdown delay. The time argument can have different formats.      *  First, it can be an abolute time in the format hh:mm, in which hh is the hour (1 or 2 digits) and mm      *  is the minute of the hour (in two digits). Second, it can be in the format +m, in which m is the number of minutes      *  to wait. The word now is an alias for +0.      */
+comment|/**      * Halt the Karaf container.      *      * @param time shutdown delay. The time argument can have different formats.      *  First, it can be an absolute time in the format hh:mm, in which hh is the hour (1 or 2 digits) and mm      *  is the minute of the hour (in two digits). Second, it can be in the format +m, in which m is the number of minutes      *  to wait. The word now is an alias for +0.      */
 name|void
-name|shutdown
+name|halt
 parameter_list|(
 name|String
 name|time
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * Reboot the Karaf container.      *      * @throws Exception      */
+name|void
+name|reboot
+parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * Reboot the Karaf container.      *      * @param time reboot delay. The time argument can have different formats.      *  First, it can be an absolute time in the format hh:mm, in which hh is the hour (1 or 2 digits) and mm      *  is the minute of the hour (in two digits). Second, it can be in the format +m, in which m is the number of minutes      *  to wait. The word now is an alias for +0.      *  @param clean Force a clean restart by deleting the working directory.      */
+name|void
+name|reboot
+parameter_list|(
+name|String
+name|time
+parameter_list|,
+name|boolean
+name|clean
 parameter_list|)
 throws|throws
 name|Exception
