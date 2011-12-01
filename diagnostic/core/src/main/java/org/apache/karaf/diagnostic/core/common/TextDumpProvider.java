@@ -105,6 +105,8 @@ name|name
 expr_stmt|;
 block|}
 comment|/**      * {@inheritDoc}      */
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -126,20 +128,36 @@ argument_list|(
 name|name
 argument_list|)
 decl_stmt|;
-name|writeDump
-argument_list|(
+name|OutputStreamWriter
+name|outputStreamWriter
+init|=
 operator|new
 name|OutputStreamWriter
 argument_list|(
 name|outputStream
 argument_list|)
+decl_stmt|;
+try|try
+block|{
+name|writeDump
+argument_list|(
+name|outputStreamWriter
 argument_list|)
+expr_stmt|;
+block|}
+finally|finally
+block|{
+name|outputStreamWriter
+operator|.
+name|close
+argument_list|()
 expr_stmt|;
 name|outputStream
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 comment|/**      * This method should create output.      *       * @param outputStreamWriter Stream which points to file specified in constructor.      * @throws Exception If any problem occur.      */
 specifier|protected
