@@ -1854,7 +1854,12 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Karaf did not start correctly"
+literal|"Karaf did not start correctly: state "
+operator|+
+name|karaf
+operator|.
+name|getState
+argument_list|()
 argument_list|)
 throw|;
 block|}

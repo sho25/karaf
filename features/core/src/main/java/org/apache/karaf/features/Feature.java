@@ -118,6 +118,10 @@ name|int
 name|getStartLevel
 parameter_list|()
 function_decl|;
+name|String
+name|getRegion
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
