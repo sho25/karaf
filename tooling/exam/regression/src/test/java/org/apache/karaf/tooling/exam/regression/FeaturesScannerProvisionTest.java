@@ -304,7 +304,7 @@ argument_list|(
 literal|"2.2.4"
 argument_list|)
 argument_list|,
-literal|"kar"
+literal|"deployers"
 argument_list|,
 literal|"wrapper"
 argument_list|)
@@ -333,7 +333,7 @@ name|featuresService
 operator|.
 name|getFeature
 argument_list|(
-literal|"kar"
+literal|"deployers"
 argument_list|)
 argument_list|)
 argument_list|)
