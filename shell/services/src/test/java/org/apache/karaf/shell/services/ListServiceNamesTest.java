@@ -30,10 +30,10 @@ end_import
 begin_class
 specifier|public
 class|class
-name|ListServicesTest
+name|ListServiceNamesTest
 block|{
 specifier|public
-name|ListServicesTest
+name|ListServiceNamesTest
 parameter_list|()
 block|{              }
 annotation|@
@@ -63,6 +63,12 @@ operator|.
 name|createBundleContext
 argument_list|()
 argument_list|)
+expr_stmt|;
+name|listServices
+operator|.
+name|onlyNames
+operator|=
+literal|true
 expr_stmt|;
 name|listServices
 operator|.
