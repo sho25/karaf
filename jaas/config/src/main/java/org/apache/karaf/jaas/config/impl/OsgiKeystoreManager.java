@@ -855,6 +855,11 @@ decl_stmt|;
 if|if
 condition|(
 name|keyInstance
+operator|==
+literal|null
+operator|||
+operator|(
+name|keyInstance
 operator|!=
 literal|null
 operator|&&
@@ -862,6 +867,7 @@ name|keyInstance
 operator|.
 name|isKeystoreLocked
 argument_list|()
+operator|)
 condition|)
 block|{
 name|sleep
@@ -883,6 +889,11 @@ block|}
 if|if
 condition|(
 name|keyInstance
+operator|==
+literal|null
+operator|||
+operator|(
+name|keyInstance
 operator|!=
 literal|null
 operator|&&
@@ -892,6 +903,7 @@ name|isKeyLocked
 argument_list|(
 name|keyAlias
 argument_list|)
+operator|)
 condition|)
 block|{
 name|sleep
@@ -927,6 +939,11 @@ decl_stmt|;
 if|if
 condition|(
 name|trustInstance
+operator|==
+literal|null
+operator|||
+operator|(
+name|trustInstance
 operator|!=
 literal|null
 operator|&&
@@ -934,6 +951,7 @@ name|trustInstance
 operator|.
 name|isKeystoreLocked
 argument_list|()
+operator|)
 condition|)
 block|{
 name|sleep

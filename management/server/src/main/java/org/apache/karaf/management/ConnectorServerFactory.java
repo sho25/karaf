@@ -793,14 +793,6 @@ operator|.
 name|secured
 condition|)
 block|{
-name|Thread
-operator|.
-name|sleep
-argument_list|(
-literal|5000
-argument_list|)
-expr_stmt|;
-comment|//give jass.keystores bundle time to init
 name|this
 operator|.
 name|setupSsl
