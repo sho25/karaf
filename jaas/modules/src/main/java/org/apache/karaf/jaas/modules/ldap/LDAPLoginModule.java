@@ -1637,6 +1637,13 @@ name|ONELEVEL_SCOPE
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|roleNameAttribute
+operator|!=
+literal|null
+condition|)
+block|{
 name|controls
 operator|.
 name|setReturningAttributes
@@ -1649,6 +1656,7 @@ name|roleNameAttribute
 block|}
 argument_list|)
 expr_stmt|;
+block|}
 name|logger
 operator|.
 name|debug
