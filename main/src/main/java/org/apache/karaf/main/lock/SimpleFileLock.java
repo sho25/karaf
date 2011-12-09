@@ -143,6 +143,10 @@ name|RandomAccessFile
 name|lockFile
 decl_stmt|;
 specifier|private
+name|File
+name|lockPath
+decl_stmt|;
+specifier|private
 name|FileLock
 name|lock
 decl_stmt|;
@@ -240,11 +244,8 @@ name|PROPERTY_LOCK_DIR
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|lockFile
+name|lockPath
 operator|=
-operator|new
-name|RandomAccessFile
-argument_list|(
 operator|new
 name|File
 argument_list|(
@@ -252,6 +253,13 @@ name|base
 argument_list|,
 literal|"lock"
 argument_list|)
+expr_stmt|;
+name|lockFile
+operator|=
+operator|new
+name|RandomAccessFile
+argument_list|(
+name|lockPath
 argument_list|,
 literal|"rw"
 argument_list|)
@@ -285,7 +293,12 @@ name|LOG
 operator|.
 name|info
 argument_list|(
-literal|"locking"
+literal|"Trying to lock "
+operator|+
+name|lockPath
+operator|.
+name|getPath
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -306,6 +319,31 @@ name|tryLock
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|lock
+operator|!=
+literal|null
+condition|)
+block|{
+name|LOG
+operator|.
+name|info
+argument_list|(
+literal|"Lock acquired"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|LOG
+operator|.
+name|info
+argument_list|(
+literal|"Lock failed"
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|lock
 operator|!=
@@ -319,13 +357,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|LOG
-operator|.
-name|info
-argument_list|(
-literal|"releasing"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|lock
@@ -338,6 +369,18 @@ name|isValid
 argument_list|()
 condition|)
 block|{
+name|LOG
+operator|.
+name|info
+argument_list|(
+literal|"Releasing lock "
+operator|+
+name|lockPath
+operator|.
+name|getPath
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|lock
 operator|.
 name|release
