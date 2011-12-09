@@ -286,7 +286,7 @@ block|{
 name|Artifact
 name|artifact
 init|=
-name|bundleToArtifact
+name|resourceToArtifact
 argument_list|(
 literal|"mvn:org.foo/bar/1.0/kar"
 argument_list|,
@@ -366,7 +366,7 @@ block|{
 name|Artifact
 name|artifact
 init|=
-name|bundleToArtifact
+name|resourceToArtifact
 argument_list|(
 literal|"mvn:org.foo/bar/1.0/kar/type"
 argument_list|,
@@ -449,7 +449,7 @@ block|{
 name|Artifact
 name|artifact
 init|=
-name|bundleToArtifact
+name|resourceToArtifact
 argument_list|(
 literal|"mvn:http://baz.com!org.foo/bar/1.0/kar"
 argument_list|,

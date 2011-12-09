@@ -510,7 +510,7 @@ decl_stmt|;
 name|Artifact
 name|enterpriseFeatureDescriptor
 init|=
-name|bundleToArtifact
+name|resourceToArtifact
 argument_list|(
 name|karafCoreEnterpriseFeatureUrl
 argument_list|,
@@ -586,7 +586,7 @@ decl_stmt|;
 name|Artifact
 name|standardFeatureDescriptor
 init|=
-name|bundleToArtifact
+name|resourceToArtifact
 argument_list|(
 name|karafCoreStandardFeatureUrl
 argument_list|,
@@ -861,7 +861,7 @@ block|{
 name|Artifact
 name|artifact
 init|=
-name|bundleToArtifact
+name|resourceToArtifact
 argument_list|(
 name|bundle
 argument_list|,
@@ -1045,7 +1045,7 @@ comment|// let's ensure a mvn: based url is sitting in the local repo before we 
 name|Artifact
 name|descriptor
 init|=
-name|bundleToArtifact
+name|resourceToArtifact
 argument_list|(
 name|uri
 argument_list|,

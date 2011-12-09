@@ -1833,12 +1833,13 @@ return|return
 literal|null
 return|;
 block|}
+comment|/**      * Convert a feature resourceLocation (bundle or configuration file) into an artifact.      *      * @param resourceLocation the feature resource location (bundle or configuration file).      * @param skipNonMavenProtocols flag to skip protocol different than mvn:      * @return the artifact corresponding to the resource.      * @throws MojoExecutionException      */
 specifier|protected
 name|Artifact
-name|bundleToArtifact
+name|resourceToArtifact
 parameter_list|(
 name|String
-name|bundle
+name|resourceLocation
 parameter_list|,
 name|boolean
 name|skipNonMavenProtocols
@@ -1846,9 +1847,9 @@ parameter_list|)
 throws|throws
 name|MojoExecutionException
 block|{
-name|bundle
+name|resourceLocation
 operator|=
-name|bundle
+name|resourceLocation
 operator|.
 name|replace
 argument_list|(
@@ -1882,7 +1883,7 @@ specifier|final
 name|int
 name|index
 init|=
-name|bundle
+name|resourceLocation
 operator|.
 name|indexOf
 argument_list|(
@@ -1909,17 +1910,17 @@ throw|throw
 operator|new
 name|MojoExecutionException
 argument_list|(
-literal|"Bundle url is not a Maven url: "
+literal|"Resource URL is not a Maven URL: "
 operator|+
-name|bundle
+name|resourceLocation
 argument_list|)
 throw|;
 block|}
 else|else
 block|{
-name|bundle
+name|resourceLocation
 operator|=
-name|bundle
+name|resourceLocation
 operator|.
 name|substring
 argument_list|(
@@ -1937,7 +1938,7 @@ specifier|final
 name|int
 name|index1
 init|=
-name|bundle
+name|resourceLocation
 operator|.
 name|indexOf
 argument_list|(
@@ -1948,7 +1949,7 @@ specifier|final
 name|int
 name|index2
 init|=
-name|bundle
+name|resourceLocation
 operator|.
 name|indexOf
 argument_list|(
@@ -2015,9 +2016,9 @@ operator|>=
 literal|0
 condition|)
 block|{
-name|bundle
+name|resourceLocation
 operator|=
-name|bundle
+name|resourceLocation
 operator|.
 name|substring
 argument_list|(
@@ -2031,7 +2032,7 @@ specifier|final
 name|int
 name|index3
 init|=
-name|bundle
+name|resourceLocation
 operator|.
 name|indexOf
 argument_list|(
@@ -2045,9 +2046,9 @@ operator|>
 literal|0
 condition|)
 block|{
-name|bundle
+name|resourceLocation
 operator|=
-name|bundle
+name|resourceLocation
 operator|.
 name|substring
 argument_list|(
@@ -2057,7 +2058,7 @@ name|index3
 argument_list|)
 expr_stmt|;
 block|}
-comment|//check if the bundle descriptor contains also remote repository information.
+comment|//check if the resourceLocation descriptor contains also remote repository information.
 name|ArtifactRepository
 name|repo
 init|=
@@ -2065,7 +2066,7 @@ literal|null
 decl_stmt|;
 if|if
 condition|(
-name|bundle
+name|resourceLocation
 operator|.
 name|startsWith
 argument_list|(
@@ -2077,7 +2078,7 @@ specifier|final
 name|int
 name|repoDelimIntex
 init|=
-name|bundle
+name|resourceLocation
 operator|.
 name|indexOf
 argument_list|(
@@ -2087,7 +2088,7 @@ decl_stmt|;
 name|String
 name|repoUrl
 init|=
-name|bundle
+name|resourceLocation
 operator|.
 name|substring
 argument_list|(
@@ -2110,9 +2111,9 @@ name|DefaultRepositoryLayout
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|bundle
+name|resourceLocation
 operator|=
-name|bundle
+name|resourceLocation
 operator|.
 name|substring
 argument_list|(
@@ -2126,7 +2127,7 @@ name|String
 index|[]
 name|parts
 init|=
-name|bundle
+name|resourceLocation
 operator|.
 name|split
 argument_list|(
@@ -2312,7 +2313,7 @@ name|MojoExecutionException
 argument_list|(
 literal|"Cannot find version for: "
 operator|+
-name|bundle
+name|resourceLocation
 argument_list|)
 throw|;
 block|}
