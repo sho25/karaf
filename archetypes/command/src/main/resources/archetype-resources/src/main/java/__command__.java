@@ -217,9 +217,25 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
-name|gogo
+name|shell
+operator|.
+name|console
+operator|.
+name|OsgiCommandSupport
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
 operator|.
 name|commands
 operator|.
@@ -237,15 +253,27 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|console
+name|commands
 operator|.
-name|OsgiCommandSupport
+name|Option
 import|;
 end_import
 
-begin_comment
-comment|/**  * Displays the last log entries  */
-end_comment
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|commands
+operator|.
+name|Argument
+import|;
+end_import
 
 begin_class
 annotation|@
@@ -274,7 +302,57 @@ end_class
 begin_expr_stmt
 unit|extends
 name|OsgiCommandSupport
+block|{      @
+name|Option
+argument_list|(
+name|name
+operator|=
+literal|"-o"
+argument_list|,
+name|aliases
+operator|=
 block|{
+literal|"--option"
+block|}
+argument_list|,
+name|description
+operator|=
+literal|"An option to the command"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
+argument_list|)
+specifier|private
+name|String
+name|option
+block|;      @
+name|Argument
+argument_list|(
+name|name
+operator|=
+literal|"argument"
+argument_list|,
+name|description
+operator|=
+literal|"Argument to the command"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
+argument_list|)
+specifier|private
+name|String
+name|argument
+block|;
 specifier|protected
 name|Object
 name|doExecute
@@ -289,6 +367,28 @@ operator|.
 name|println
 argument_list|(
 literal|"Executing command ${cmd}"
+argument_list|)
+block|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Option: "
+operator|+
+name|option
+argument_list|)
+block|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Argument: "
+operator|+
+name|argument
 argument_list|)
 block|;
 return|return
