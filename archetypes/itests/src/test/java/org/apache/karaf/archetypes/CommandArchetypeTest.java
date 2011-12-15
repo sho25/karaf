@@ -75,7 +75,7 @@ argument_list|)
 expr_stmt|;
 name|testKarafArchetype
 argument_list|(
-literal|"archetypes-command"
+literal|"karaf-command-archetype"
 argument_list|,
 name|commandArchetypeParameters
 argument_list|)
