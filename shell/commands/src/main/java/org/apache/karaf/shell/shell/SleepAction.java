@@ -100,7 +100,7 @@ literal|"duration"
 argument_list|,
 name|description
 operator|=
-literal|"The amount of millis to sleep"
+literal|"The amount of seconds to sleep"
 argument_list|,
 name|required
 operator|=
@@ -128,7 +128,7 @@ name|log
 operator|.
 name|info
 argument_list|(
-literal|"Sleeping for {}"
+literal|"Sleeping for {} second(s)"
 argument_list|,
 name|time
 argument_list|)
@@ -140,6 +140,8 @@ operator|.
 name|sleep
 argument_list|(
 name|time
+operator|*
+literal|1000
 argument_list|)
 expr_stmt|;
 block|}
