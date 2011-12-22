@@ -5180,15 +5180,6 @@ literal|null
 decl_stmt|;
 try|try
 block|{
-name|URL
-name|fileLocationURL
-init|=
-operator|new
-name|URL
-argument_list|(
-name|fileLocation
-argument_list|)
-decl_stmt|;
 name|is
 operator|=
 operator|new
