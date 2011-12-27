@@ -948,7 +948,7 @@ name|Package
 operator|.
 name|getPackage
 argument_list|(
-literal|"org.apache.karaf.tooling"
+literal|"org.apache.karaf.tooling.features"
 argument_list|)
 decl_stmt|;
 name|karafVersion
