@@ -190,6 +190,13 @@ condition|(
 name|bundles
 operator|==
 literal|null
+operator|||
+name|bundles
+operator|.
+name|size
+argument_list|()
+operator|==
+literal|0
 condition|)
 block|{
 name|pa
