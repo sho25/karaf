@@ -51,20 +51,6 @@ name|ScriptUtils
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|jpm
-operator|.
-name|ProcessBuilder
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -125,7 +111,11 @@ name|command
 operator|.
 name|append
 argument_list|(
+literal|"\""
+operator|+
 name|javaPath
+operator|+
+literal|"\""
 argument_list|)
 expr_stmt|;
 name|command
