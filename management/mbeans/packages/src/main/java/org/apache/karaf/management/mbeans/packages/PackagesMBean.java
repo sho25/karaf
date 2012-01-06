@@ -21,18 +21,6 @@ end_package
 
 begin_import
 import|import
-name|javax
-operator|.
-name|management
-operator|.
-name|openmbean
-operator|.
-name|TabularData
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|util
@@ -46,6 +34,8 @@ comment|/**  * Packages MBean  */
 end_comment
 
 begin_interface
+annotation|@
+name|Deprecated
 specifier|public
 interface|interface
 name|PackagesMBean

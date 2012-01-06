@@ -28,14 +28,12 @@ import|;
 end_import
 
 begin_import
-import|import static
+import|import
 name|java
 operator|.
-name|lang
+name|net
 operator|.
-name|String
-operator|.
-name|format
+name|URL
 import|;
 end_import
 
@@ -43,9 +41,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|net
+name|util
 operator|.
-name|URL
+name|Collections
 import|;
 end_import
 
@@ -113,6 +111,20 @@ begin_import
 import|import
 name|org
 operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
+name|wiring
+operator|.
+name|FrameworkWiring
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|slf4j
 operator|.
 name|Logger
@@ -126,6 +138,18 @@ operator|.
 name|slf4j
 operator|.
 name|LoggerFactory
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+operator|.
+name|format
 import|;
 end_import
 
@@ -318,17 +342,28 @@ name|openStream
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|getPackageAdmin
-argument_list|()
+name|bundleContext
 operator|.
-name|refreshPackages
+name|getBundle
 argument_list|(
-operator|new
-name|Bundle
-index|[]
-block|{
+literal|0
+argument_list|)
+operator|.
+name|adapt
+argument_list|(
+name|FrameworkWiring
+operator|.
+name|class
+argument_list|)
+operator|.
+name|refreshBundles
+argument_list|(
+name|Collections
+operator|.
+name|singleton
+argument_list|(
 name|bundle
-block|}
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
