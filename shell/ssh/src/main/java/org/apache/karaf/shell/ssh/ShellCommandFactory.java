@@ -416,6 +416,15 @@ name|err
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|session
+operator|.
+name|put
+argument_list|(
+literal|"SCOPE"
+argument_list|,
+literal|"shell:osgi:*"
+argument_list|)
+expr_stmt|;
 name|Subject
 name|subject
 init|=
