@@ -771,6 +771,20 @@ name|org
 operator|.
 name|osgi
 operator|.
+name|service
+operator|.
+name|url
+operator|.
+name|URLStreamHandlerService
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
 name|util
 operator|.
 name|tracker
@@ -1117,6 +1131,15 @@ operator|=
 name|refreshTimeout
 expr_stmt|;
 block|}
+comment|//dependency, not used directly
+specifier|public
+name|void
+name|setMvnUrlHandler
+parameter_list|(
+name|URLStreamHandlerService
+name|mvnUrlHandler
+parameter_list|)
+block|{     }
 specifier|public
 name|void
 name|registerListener
