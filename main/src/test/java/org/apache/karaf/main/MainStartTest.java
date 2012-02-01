@@ -79,8 +79,6 @@ name|ops4j
 operator|.
 name|pax
 operator|.
-name|swissbox
-operator|.
 name|tinybundles
 operator|.
 name|core
@@ -134,8 +132,6 @@ operator|.
 name|ops4j
 operator|.
 name|pax
-operator|.
-name|swissbox
 operator|.
 name|tinybundles
 operator|.
@@ -588,7 +584,7 @@ literal|"foo"
 argument_list|,
 name|TinyBundles
 operator|.
-name|newBundle
+name|bundle
 argument_list|()
 operator|.
 name|set

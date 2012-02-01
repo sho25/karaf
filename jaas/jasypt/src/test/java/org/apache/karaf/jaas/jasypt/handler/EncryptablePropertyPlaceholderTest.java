@@ -327,8 +327,6 @@ name|ops4j
 operator|.
 name|pax
 operator|.
-name|swissbox
-operator|.
 name|tinybundles
 operator|.
 name|core
@@ -443,15 +441,13 @@ name|ops4j
 operator|.
 name|pax
 operator|.
-name|swissbox
-operator|.
 name|tinybundles
 operator|.
 name|core
 operator|.
 name|TinyBundles
 operator|.
-name|newBundle
+name|bundle
 import|;
 end_import
 
@@ -583,7 +579,7 @@ name|getBundleDescriptor
 argument_list|(
 literal|"target/jasypt.jar"
 argument_list|,
-name|newBundle
+name|bundle
 argument_list|()
 operator|.
 name|add
@@ -637,7 +633,7 @@ name|getBundleDescriptor
 argument_list|(
 literal|"target/test.jar"
 argument_list|,
-name|newBundle
+name|bundle
 argument_list|()
 operator|.
 name|add
