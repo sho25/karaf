@@ -444,7 +444,7 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
-comment|/**      * Construcotr      */
+comment|/**      * Constructor      */
 specifier|public
 name|BundleWatcher
 parameter_list|()
@@ -490,14 +490,6 @@ name|void
 name|run
 parameter_list|()
 block|{
-if|if
-condition|(
-name|logger
-operator|.
-name|isDebugEnabled
-argument_list|()
-condition|)
-block|{
 name|logger
 operator|.
 name|debug
@@ -505,7 +497,6 @@ argument_list|(
 literal|"Bundle watcher thread started"
 argument_list|)
 expr_stmt|;
-block|}
 name|int
 name|oldCounter
 init|=
@@ -1354,6 +1345,15 @@ name|void
 name|start
 parameter_list|()
 block|{
+comment|// register the bundle listener
+name|bundleContext
+operator|.
+name|addBundleListener
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
+comment|// start the watch thread
 if|if
 condition|(
 name|running
@@ -1404,6 +1404,14 @@ operator|.
 name|set
 argument_list|(
 literal|false
+argument_list|)
+expr_stmt|;
+comment|// unregister the bundle listener
+name|bundleContext
+operator|.
+name|removeBundleListener
+argument_list|(
+name|this
 argument_list|)
 expr_stmt|;
 block|}
