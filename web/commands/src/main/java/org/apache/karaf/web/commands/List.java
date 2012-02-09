@@ -160,7 +160,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"%d4 %s6 %s6 %s6 %d4 %s30 %s30"
+literal|"%d4 %s6 %s6 %s6 %s4 %s30 %s30"
 argument_list|,
 literal|"ID"
 argument_list|,
