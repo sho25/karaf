@@ -23,16 +23,6 @@ name|org
 operator|.
 name|junit
 operator|.
-name|Assert
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
 name|Test
 import|;
 end_import
@@ -65,7 +55,7 @@ name|tooling
 operator|.
 name|features
 operator|.
-name|MvnUrlUtil
+name|MavenUtil
 operator|.
 name|aetherToMvn
 import|;
@@ -83,7 +73,7 @@ name|tooling
 operator|.
 name|features
 operator|.
-name|MvnUrlUtil
+name|MavenUtil
 operator|.
 name|artifactToMvn
 import|;
@@ -101,7 +91,7 @@ name|tooling
 operator|.
 name|features
 operator|.
-name|MvnUrlUtil
+name|MavenUtil
 operator|.
 name|mvnToAether
 import|;
@@ -119,7 +109,7 @@ name|tooling
 operator|.
 name|features
 operator|.
-name|MvnUrlUtil
+name|MavenUtil
 operator|.
 name|pathFromAether
 import|;
@@ -137,7 +127,7 @@ name|tooling
 operator|.
 name|features
 operator|.
-name|MvnUrlUtil
+name|MavenUtil
 operator|.
 name|pathFromMaven
 import|;
@@ -162,7 +152,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|MvnUrlUtilTest
+name|MavenUtilTest
 block|{
 annotation|@
 name|Test

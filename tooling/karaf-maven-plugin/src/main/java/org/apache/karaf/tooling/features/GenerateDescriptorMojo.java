@@ -1301,7 +1301,7 @@ block|{
 name|String
 name|bundleName
 init|=
-name|MvnUrlUtil
+name|MavenUtil
 operator|.
 name|artifactToMvn
 argument_list|(
