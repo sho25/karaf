@@ -152,7 +152,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//TODO use the clean flag
 name|this
 operator|.
 name|getKarService
@@ -161,6 +160,8 @@ operator|.
 name|uninstall
 argument_list|(
 name|name
+argument_list|,
+name|clean
 argument_list|)
 expr_stmt|;
 return|return
