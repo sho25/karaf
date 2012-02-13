@@ -382,7 +382,7 @@ specifier|static
 name|String
 name|KARAF_CORE_STANDARD_FEATURE_URL
 init|=
-literal|"mvn:org.apache.karaf.assemblies.features/standard/%s/xml/features"
+literal|"mvn:org.apache.karaf.features/standard/%s/xml/features"
 decl_stmt|;
 specifier|private
 specifier|final
@@ -390,7 +390,7 @@ specifier|static
 name|String
 name|KARAF_CORE_ENTERPRISE_FEATURE_URL
 init|=
-literal|"mvn:org.apache.karaf.assemblies.features/enterprise/%s/xml/features"
+literal|"mvn:org.apache.karaf.features/enterprise/%s/xml/features"
 decl_stmt|;
 comment|/**      * @parameter      */
 specifier|private

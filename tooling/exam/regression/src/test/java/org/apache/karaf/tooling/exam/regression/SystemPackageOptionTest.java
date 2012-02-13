@@ -247,7 +247,7 @@ argument_list|()
 operator|.
 name|groupId
 argument_list|(
-literal|"org.apache.karaf.assemblies"
+literal|"org.apache.karaf"
 argument_list|)
 operator|.
 name|artifactId
