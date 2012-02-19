@@ -105,6 +105,27 @@ block|{
 name|this
 argument_list|(
 literal|""
+argument_list|,
+name|Constants
+operator|.
+name|DEFAULT_START_LEVEL
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|ExamFeaturesFile
+parameter_list|(
+name|String
+name|featuresXml
+parameter_list|)
+block|{
+name|this
+argument_list|(
+name|featuresXml
+argument_list|,
+name|Constants
+operator|.
+name|DEFAULT_START_LEVEL
 argument_list|)
 expr_stmt|;
 block|}
@@ -113,6 +134,9 @@ name|ExamFeaturesFile
 parameter_list|(
 name|String
 name|extension
+parameter_list|,
+name|int
+name|startLevel
 parameter_list|)
 block|{
 name|featuresXml
@@ -137,7 +161,11 @@ argument_list|()
 operator|+
 literal|"\">\n"
 operator|+
-literal|"<bundle>mvn:org.ops4j.pax.exam/pax-exam-extender-service/"
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.pax.exam/pax-exam-extender-service/"
 operator|+
 name|Info
 operator|.
@@ -146,7 +174,11 @@ argument_list|()
 operator|+
 literal|"</bundle>\n"
 operator|+
-literal|"<bundle>mvn:org.ops4j.pax.exam/pax-exam-container-rbc/"
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.pax.exam/pax-exam-container-rbc/"
 operator|+
 name|Info
 operator|.
@@ -155,14 +187,22 @@ argument_list|()
 operator|+
 literal|"</bundle>\n"
 operator|+
-literal|"<bundle>wrap:mvn:junit/junit/"
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>wrap:mvn:junit/junit/"
 operator|+
 name|getJunitVersion
 argument_list|()
 operator|+
 literal|"</bundle>\n"
 operator|+
-literal|"<bundle>mvn:org.ops4j.pax.exam/pax-exam-invoker-junit/"
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.pax.exam/pax-exam-invoker-junit/"
 operator|+
 name|Info
 operator|.
@@ -171,21 +211,33 @@ argument_list|()
 operator|+
 literal|"</bundle>\n"
 operator|+
-literal|"<bundle>mvn:org.apache.karaf.tooling.exam/org.apache.karaf.tooling.exam.options/"
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.apache.karaf.tooling.exam/org.apache.karaf.tooling.exam.options/"
 operator|+
 name|getOptionsVersion
 argument_list|()
 operator|+
 literal|"</bundle>\n"
 operator|+
-literal|"<bundle>mvn:org.apache.geronimo.specs/geronimo-atinject_1.0_spec/"
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.apache.geronimo.specs/geronimo-atinject_1.0_spec/"
 operator|+
 name|getInjectionVersion
 argument_list|()
 operator|+
 literal|"</bundle>\n"
 operator|+
-literal|"<bundle>mvn:org.ops4j.pax.exam/pax-exam-inject/"
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.pax.exam/pax-exam-inject/"
 operator|+
 name|Info
 operator|.

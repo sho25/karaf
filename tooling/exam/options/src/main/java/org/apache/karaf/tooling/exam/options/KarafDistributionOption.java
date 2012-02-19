@@ -199,6 +199,24 @@ name|DoNotModifyLogOption
 argument_list|()
 return|;
 block|}
+comment|/**      * This option allows to configure the start level of the bundles in the exam features descriptor.      */
+specifier|public
+specifier|static
+name|Option
+name|useOwnExamBundlesStartLevel
+parameter_list|(
+name|int
+name|startLevel
+parameter_list|)
+block|{
+return|return
+operator|new
+name|ExamBundlesStartLevel
+argument_list|(
+name|startLevel
+argument_list|)
+return|;
+block|}
 comment|/**      * Returns an option object which can be used to configure the -Dkaraf.startLocalConsole and      * -Dkaraf.startRemoteShell options. By default both are true.      */
 specifier|public
 specifier|static
