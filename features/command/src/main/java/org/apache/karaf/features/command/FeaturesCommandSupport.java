@@ -84,7 +84,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// Get repository admin service.
+comment|// Get repository instance service.
 name|ServiceReference
 name|ref
 init|=

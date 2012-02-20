@@ -255,7 +255,7 @@ argument_list|)
 operator|.
 name|filesToMakeExecutable
 argument_list|(
-literal|"bin\\admin.bat"
+literal|"bin\\instance.bat"
 argument_list|)
 block|,
 operator|new
@@ -294,7 +294,7 @@ argument_list|)
 operator|.
 name|filesToMakeExecutable
 argument_list|(
-literal|"bin/admin"
+literal|"bin/instance"
 argument_list|)
 block|}
 return|;

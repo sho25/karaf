@@ -124,7 +124,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *  * TODO: use event admin to receive WAIT topics notifications from blueprint extender  *  */
+comment|/**  *  * TODO: use event instance to receive WAIT topics notifications from blueprint extender  *  */
 end_comment
 
 begin_class

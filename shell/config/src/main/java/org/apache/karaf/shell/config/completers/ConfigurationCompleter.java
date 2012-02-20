@@ -140,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * {@link jline.Completor} for Configuration Admin configurations.  *  * Displays a list of existing config admin configurations for completion.  *  */
+comment|/**  * {@link jline.Completor} for Configuration Admin configurations.  *  * Displays a list of existing config instance configurations for completion.  *  */
 end_comment
 
 begin_class

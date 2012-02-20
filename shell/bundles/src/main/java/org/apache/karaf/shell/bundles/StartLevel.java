@@ -133,7 +133,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// Get package admin service.
+comment|// Get package instance service.
 name|BundleStartLevel
 name|bsl
 init|=

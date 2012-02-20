@@ -126,7 +126,7 @@ decl_stmt|;
 name|String
 name|rawName
 init|=
-literal|"org.apache.karaf:type=admin,name=${karaf.name}"
+literal|"org.apache.karaf:type=instance,name=${karaf.name}"
 decl_stmt|;
 name|AdminServiceMBean
 name|mbean
@@ -146,7 +146,7 @@ init|=
 operator|new
 name|ObjectName
 argument_list|(
-literal|"org.apache.karaf:type=admin,name=foobar"
+literal|"org.apache.karaf:type=instance,name=foobar"
 argument_list|)
 decl_stmt|;
 name|expect
