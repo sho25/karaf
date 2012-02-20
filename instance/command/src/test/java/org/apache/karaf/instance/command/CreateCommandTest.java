@@ -192,6 +192,12 @@ name|instance
 operator|=
 literal|"myInstance"
 expr_stmt|;
+name|cc
+operator|.
+name|verbose
+operator|=
+literal|true
+expr_stmt|;
 name|EasyMock
 operator|.
 name|verify
@@ -251,6 +257,8 @@ argument_list|(
 literal|"myInstance"
 argument_list|,
 name|expectedIS
+argument_list|,
+literal|true
 argument_list|)
 argument_list|)
 operator|.

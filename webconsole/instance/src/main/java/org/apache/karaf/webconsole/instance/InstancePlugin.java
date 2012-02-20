@@ -1970,6 +1970,8 @@ argument_list|(
 name|name
 argument_list|,
 name|settings
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 return|return

@@ -306,6 +306,8 @@ argument_list|(
 name|name
 argument_list|,
 name|settings
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 if|if
@@ -508,6 +510,8 @@ argument_list|(
 name|originalName
 argument_list|,
 name|newName
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}

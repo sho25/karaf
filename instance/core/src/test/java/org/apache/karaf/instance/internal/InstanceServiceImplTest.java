@@ -418,6 +418,8 @@ name|getName
 argument_list|()
 argument_list|,
 name|settings
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 name|assertFileExists
@@ -601,6 +603,8 @@ name|getName
 argument_list|()
 argument_list|,
 name|settings
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 name|service
@@ -614,6 +618,8 @@ name|getName
 argument_list|()
 operator|+
 literal|"b"
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|assertNotNull

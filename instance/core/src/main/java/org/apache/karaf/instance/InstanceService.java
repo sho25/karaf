@@ -28,6 +28,9 @@ name|name
 parameter_list|,
 name|InstanceSettings
 name|settings
+parameter_list|,
+name|boolean
+name|printOutput
 parameter_list|)
 throws|throws
 name|Exception
@@ -40,6 +43,9 @@ name|name
 parameter_list|,
 name|String
 name|newName
+parameter_list|,
+name|boolean
+name|printOutput
 parameter_list|)
 throws|throws
 name|Exception
@@ -55,6 +61,9 @@ name|cloneName
 parameter_list|,
 name|InstanceSettings
 name|settings
+parameter_list|,
+name|boolean
+name|printOutput
 parameter_list|)
 throws|throws
 name|Exception
