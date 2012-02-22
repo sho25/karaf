@@ -2092,6 +2092,12 @@ comment|/**          *  Special case: when completing in the middle of a line, a
 if|if
 condition|(
 operator|(
+name|buffer
+operator|!=
+literal|null
+operator|)
+operator|&&
+operator|(
 name|cursor
 operator|!=
 name|buffer
