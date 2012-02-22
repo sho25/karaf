@@ -205,6 +205,13 @@ parameter_list|)
 throws|throws
 name|ConfigurationException
 block|{
+if|if
+condition|(
+name|properties
+operator|!=
+literal|null
+condition|)
+block|{
 name|nameToArtifactMap
 operator|.
 name|clear
@@ -273,6 +280,7 @@ name|key
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
