@@ -25,6 +25,26 @@ begin_import
 import|import static
 name|org
 operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|tooling
+operator|.
+name|exam
+operator|.
+name|options
+operator|.
+name|KarafDistributionOption
+operator|.
+name|editConfigurationFileExtend
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
 name|ops4j
 operator|.
 name|pax
@@ -1266,6 +1286,15 @@ argument_list|)
 operator|.
 name|value
 argument_list|(
+literal|"true"
+argument_list|)
+argument_list|,
+name|editConfigurationFileExtend
+argument_list|(
+literal|"etc/system.properties"
+argument_list|,
+literal|"jline.shutdownhook"
+argument_list|,
 literal|"true"
 argument_list|)
 argument_list|)
