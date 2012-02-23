@@ -851,6 +851,11 @@ name|getUrl
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|int
+name|currentBundle
+init|=
+literal|0
+decl_stmt|;
 for|for
 control|(
 name|String
@@ -869,6 +874,29 @@ argument_list|,
 name|skipNonMavenProtocols
 argument_list|)
 decl_stmt|;
+comment|// Maven ArtifactResolver leaves file handles around so need to clean up
+comment|// or we will run out of file descriptors
+if|if
+condition|(
+name|currentBundle
+operator|++
+operator|%
+literal|100
+operator|==
+literal|0
+condition|)
+block|{
+name|System
+operator|.
+name|gc
+argument_list|()
+expr_stmt|;
+name|System
+operator|.
+name|runFinalization
+argument_list|()
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|artifact
