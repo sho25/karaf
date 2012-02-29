@@ -19,21 +19,15 @@ name|service
 package|;
 end_package
 
-begin_comment
-comment|/**  *   *   */
-end_comment
-
 begin_interface
 specifier|public
 interface|interface
 name|ExampleService
 block|{
-comment|/** 	 *  	 */
 name|void
 name|printGreetings
 parameter_list|()
 function_decl|;
-comment|/** 	 * @param salutation 	 *            the salutation to set 	 */
 name|void
 name|setSalutation
 parameter_list|(
@@ -41,7 +35,6 @@ name|String
 name|salutation
 parameter_list|)
 function_decl|;
-comment|/** 	 * @param name 	 *            the name to set 	 */
 name|void
 name|setName
 parameter_list|(

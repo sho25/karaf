@@ -203,10 +203,6 @@ name|Deactivate
 import|;
 end_import
 
-begin_comment
-comment|/**  *  */
-end_comment
-
 begin_class
 annotation|@
 name|aQute
@@ -460,7 +456,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      *       * @see org.apache.karaf.scr.management.ScrServiceMBean#listComponents()      */
 specifier|public
 name|String
 index|[]
@@ -528,7 +523,6 @@ return|return
 name|componentNames
 return|;
 block|}
-comment|/**      *       * @see org.apache.karaf.scr.management.ScrServiceMBean#componentState(java.lang.String)      */
 specifier|public
 name|boolean
 name|isComponentActive
@@ -588,7 +582,6 @@ return|return
 name|state
 return|;
 block|}
-comment|/**      *       * @see org.apache.karaf.scr.management.ScrServiceMBean#activateComponent(java.lang.String)      */
 specifier|public
 name|void
 name|activateComponent
@@ -641,7 +634,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      *       * @see org.apache.karaf.scr.management.ScrServiceMBean#deactiveateComponent(java.lang.String)      */
 specifier|public
 name|void
 name|deactiveateComponent

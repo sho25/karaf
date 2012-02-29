@@ -192,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Karaf Shell Command used to activate a Declarative Service Component.  */
+comment|/**  * Shell Command used to activate a Declarative Service Component.  */
 end_comment
 
 begin_class

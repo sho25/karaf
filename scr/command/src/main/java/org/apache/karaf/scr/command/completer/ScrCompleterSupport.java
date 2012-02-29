@@ -91,10 +91,6 @@ name|StringsCompleter
 import|;
 end_import
 
-begin_comment
-comment|/**  *  */
-end_comment
-
 begin_class
 specifier|public
 specifier|abstract
@@ -107,7 +103,7 @@ specifier|private
 name|ScrService
 name|scrService
 decl_stmt|;
-comment|/**      * Overrides the super method noted below. See super documentation for      * details.      *       * @see org.apache.karaf.shell.console.Completer#complete(java.lang.String,      *      int, java.util.List)      */
+comment|/**      * Overrides the super method noted below. See super documentation for      * details.      *      * @see org.apache.karaf.shell.console.Completer#complete(java.lang.String,      *      int, java.util.List)      */
 specifier|public
 name|int
 name|complete
@@ -201,7 +197,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Get the scrService Object associated with this instance of      * ScrCompleterSupport.      *       * @return the scrService      */
+comment|/**      * Get the scrService Object associated with this instance of      * ScrCompleterSupport.      *      * @return the scrService      */
 specifier|public
 name|ScrService
 name|getScrService
@@ -211,7 +207,7 @@ return|return
 name|scrService
 return|;
 block|}
-comment|/**      * Sets the scrService Object for this ScrCompleterSupport instance.      *       * @param scrService      *            the scrService to set      */
+comment|/**      * Sets the scrService Object for this ScrCompleterSupport instance.      *      * @param scrService the scrService to set      */
 specifier|public
 name|void
 name|setScrService

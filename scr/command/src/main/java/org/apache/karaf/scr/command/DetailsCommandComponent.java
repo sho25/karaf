@@ -192,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Karaf Shell Command that prints the current state details of a given   * Declarative Service Component.  */
+comment|/**  * Shell Command that prints the current state details of a given  * Declarative Service Component.  */
 end_comment
 
 begin_class

@@ -211,10 +211,6 @@ name|LoggerFactory
 import|;
 end_import
 
-begin_comment
-comment|/**  *  */
-end_comment
-
 begin_class
 specifier|public
 specifier|abstract
@@ -361,7 +357,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.karaf.shell.console.CompletableFunction#getCompleters()      */
 specifier|public
 name|List
 argument_list|<

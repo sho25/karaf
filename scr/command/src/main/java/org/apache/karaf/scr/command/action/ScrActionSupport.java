@@ -277,7 +277,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"%1$#"
+literal|"%1$-"
 operator|+
 name|max
 operator|+
