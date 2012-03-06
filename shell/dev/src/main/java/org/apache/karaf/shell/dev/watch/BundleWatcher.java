@@ -241,8 +241,6 @@ name|url
 operator|.
 name|mvn
 operator|.
-name|internal
-operator|.
 name|Parser
 import|;
 end_import
