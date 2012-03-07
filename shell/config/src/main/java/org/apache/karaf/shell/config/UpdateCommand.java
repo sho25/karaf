@@ -59,20 +59,6 @@ name|Option
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|cm
-operator|.
-name|ConfigurationAdmin
-import|;
-end_import
-
 begin_class
 annotation|@
 name|Command
@@ -124,13 +110,15 @@ specifier|protected
 name|boolean
 name|bypassStorage
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|protected
-name|void
+name|Object
 name|doExecute
-parameter_list|(
-name|ConfigurationAdmin
-name|admin
-parameter_list|)
+parameter_list|()
 throws|throws
 name|Exception
 block|{
@@ -156,7 +144,9 @@ argument_list|(
 literal|"No configuration is being edited--run the edit command first"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+literal|null
+return|;
 block|}
 name|String
 name|pid
@@ -173,10 +163,12 @@ argument_list|(
 name|PROPERTY_CONFIG_PID
 argument_list|)
 decl_stmt|;
+name|this
+operator|.
+name|configRepository
+operator|.
 name|update
 argument_list|(
-name|admin
-argument_list|,
 name|pid
 argument_list|,
 name|props
@@ -206,6 +198,9 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
 block|}
 block|}
 end_class

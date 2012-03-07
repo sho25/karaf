@@ -59,20 +59,6 @@ name|Command
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|cm
-operator|.
-name|ConfigurationAdmin
-import|;
-end_import
-
 begin_comment
 comment|/**  * Appends a value to the current property value.  */
 end_comment
@@ -151,6 +137,15 @@ argument_list|)
 name|String
 name|value
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+block|{
+literal|"unchecked"
+block|,
+literal|"rawtypes"
+block|}
+argument_list|)
 annotation|@
 name|Override
 specifier|public

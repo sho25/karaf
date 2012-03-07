@@ -18,6 +18,42 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|easymock
+operator|.
+name|EasyMock
+operator|.
+name|createMock
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|easymock
+operator|.
+name|EasyMock
+operator|.
+name|expect
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|easymock
+operator|.
+name|EasyMock
+operator|.
+name|replay
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -81,31 +117,7 @@ name|osgi
 operator|.
 name|framework
 operator|.
-name|Bundle
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|framework
-operator|.
 name|BundleContext
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|framework
-operator|.
-name|ServiceReference
 import|;
 end_import
 
@@ -134,42 +146,6 @@ operator|.
 name|cm
 operator|.
 name|ConfigurationAdmin
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|easymock
-operator|.
-name|EasyMock
-operator|.
-name|createMock
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|easymock
-operator|.
-name|EasyMock
-operator|.
-name|expect
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|easymock
-operator|.
-name|EasyMock
-operator|.
-name|replay
 import|;
 end_import
 
@@ -252,9 +228,15 @@ argument_list|)
 expr_stmt|;
 name|command
 operator|.
-name|setConfigurationAdmin
+name|setConfigRepository
 argument_list|(
+operator|new
+name|ConfigRepository
+argument_list|(
+literal|null
+argument_list|,
 name|admin
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|expect
@@ -402,7 +384,7 @@ block|}
 annotation|@
 name|SuppressWarnings
 argument_list|(
-literal|"unchecked"
+literal|"rawtypes"
 argument_list|)
 specifier|public
 name|void

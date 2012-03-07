@@ -21,13 +21,11 @@ end_package
 
 begin_import
 import|import
-name|javax
+name|java
 operator|.
-name|management
+name|io
 operator|.
-name|openmbean
-operator|.
-name|TabularData
+name|IOException
 import|;
 end_import
 
@@ -79,6 +77,23 @@ name|pid
 parameter_list|)
 throws|throws
 name|Exception
+function_decl|;
+name|void
+name|update
+parameter_list|(
+name|String
+name|pid
+parameter_list|,
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|properties
+parameter_list|)
+throws|throws
+name|IOException
 function_decl|;
 comment|/**      * Delete a configuration identified by the given PID.      *      * @param pid the configuration PID to delete.      * @throws Exception      */
 name|void

@@ -33,20 +33,6 @@ name|Command
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|cm
-operator|.
-name|ConfigurationAdmin
-import|;
-end_import
-
 begin_class
 annotation|@
 name|Command
@@ -70,12 +56,9 @@ extends|extends
 name|ConfigCommandSupport
 block|{
 specifier|protected
-name|void
+name|Object
 name|doExecute
-parameter_list|(
-name|ConfigurationAdmin
-name|admin
-parameter_list|)
+parameter_list|()
 throws|throws
 name|Exception
 block|{
@@ -97,6 +80,9 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
 block|}
 block|}
 end_class

@@ -259,6 +259,11 @@ specifier|private
 name|ConfigurationAdmin
 name|configAdmin
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|public
 name|int
 name|complete
@@ -528,6 +533,11 @@ name|pid
 return|;
 block|}
 comment|/**      * Returns the property names for the given pid.      * @param pid      * @return      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|private
 name|Set
 argument_list|<

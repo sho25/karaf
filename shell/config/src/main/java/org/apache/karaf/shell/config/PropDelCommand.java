@@ -59,20 +59,6 @@ name|Command
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|cm
-operator|.
-name|ConfigurationAdmin
-import|;
-end_import
-
 begin_class
 annotation|@
 name|Command
@@ -121,6 +107,11 @@ argument_list|)
 name|String
 name|prop
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 annotation|@
 name|Override
 specifier|public

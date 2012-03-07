@@ -79,20 +79,6 @@ name|Configuration
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|cm
-operator|.
-name|ConfigurationAdmin
-import|;
-end_import
-
 begin_class
 annotation|@
 name|Command
@@ -224,12 +210,9 @@ name|boolean
 name|useFile
 decl_stmt|;
 specifier|protected
-name|void
+name|Object
 name|doExecute
-parameter_list|(
-name|ConfigurationAdmin
-name|admin
-parameter_list|)
+parameter_list|()
 throws|throws
 name|Exception
 block|{
@@ -274,7 +257,9 @@ argument_list|(
 literal|"This config is being edited.  Cancel / update first, or use the --force option"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+literal|null
+return|;
 block|}
 comment|// User selected to use file instead.
 if|if
@@ -287,10 +272,10 @@ name|configuration
 init|=
 name|this
 operator|.
+name|configRepository
+operator|.
 name|findConfigurationByFileName
 argument_list|(
-name|admin
-argument_list|,
 name|pid
 argument_list|)
 decl_stmt|;
@@ -312,7 +297,9 @@ operator|+
 name|pid
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+literal|null
+return|;
 block|}
 name|configuration
 operator|.
@@ -325,7 +312,12 @@ block|{
 name|Configuration
 name|configuration
 init|=
-name|admin
+name|this
+operator|.
+name|configRepository
+operator|.
+name|getConfigAdmin
+argument_list|()
 operator|.
 name|getConfiguration
 argument_list|(
@@ -344,6 +336,10 @@ operator|!
 name|noDeleteCfgFile
 condition|)
 block|{
+name|this
+operator|.
+name|configRepository
+operator|.
 name|deleteStorage
 argument_list|(
 name|pid
@@ -390,6 +386,9 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+literal|null
+return|;
 block|}
 block|}
 end_class
