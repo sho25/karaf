@@ -649,6 +649,27 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"[Watch] Updating watched bundle: "
+operator|+
+name|bundle
+operator|.
+name|getSymbolicName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|bundle
+operator|.
+name|getVersion
+argument_list|()
+operator|+
+literal|")"
+argument_list|)
+expr_stmt|;
 name|System
 operator|.
 name|out
