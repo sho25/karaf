@@ -294,10 +294,6 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Unable to add features repository "
-operator|+
-name|url
-argument_list|,
 name|e
 argument_list|)
 throw|;
@@ -333,7 +329,7 @@ name|MultiException
 operator|.
 name|throwIf
 argument_list|(
-literal|"Unable to add repositories"
+literal|"Unable to add repositories (please verify the features repository URL and your network connection)"
 argument_list|,
 name|exceptions
 argument_list|)
