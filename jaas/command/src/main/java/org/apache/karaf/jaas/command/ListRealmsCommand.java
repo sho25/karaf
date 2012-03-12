@@ -129,7 +129,7 @@ specifier|final
 name|String
 name|REALM_LIST_FORMAT
 init|=
-literal|"%-20s %-80s"
+literal|"%5s %-20s %-80s"
 decl_stmt|;
 annotation|@
 name|Override
@@ -189,12 +189,19 @@ name|format
 argument_list|(
 name|REALM_LIST_FORMAT
 argument_list|,
+literal|"Index"
+argument_list|,
 literal|"Realm"
 argument_list|,
 literal|"Module Class"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|int
+name|index
+init|=
+literal|1
+decl_stmt|;
 for|for
 control|(
 name|JaasRealm
@@ -282,6 +289,9 @@ operator|.
 name|format
 argument_list|(
 name|REALM_LIST_FORMAT
+argument_list|,
+name|index
+operator|++
 argument_list|,
 name|realmName
 argument_list|,
