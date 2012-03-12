@@ -353,7 +353,7 @@ return|return
 operator|new
 name|String
 index|[]
-block|{ }
+block|{}
 return|;
 block|}
 specifier|public
@@ -1105,6 +1105,13 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|command
+operator|!=
+literal|null
+condition|)
+block|{
 throw|throw
 operator|new
 name|CommandException
@@ -1235,6 +1242,19 @@ name|param
 argument_list|)
 throw|;
 block|}
+else|else
+block|{
+throw|throw
+operator|new
+name|CommandException
+argument_list|(
+literal|"Undefined option: "
+operator|+
+name|param
+argument_list|)
+throw|;
+block|}
+block|}
 name|Field
 name|field
 init|=
@@ -1321,6 +1341,13 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|command
+operator|!=
+literal|null
+condition|)
+block|{
 throw|throw
 operator|new
 name|CommandException
@@ -1429,6 +1456,19 @@ name|param
 argument_list|)
 throw|;
 block|}
+else|else
+block|{
+throw|throw
+operator|new
+name|CommandException
+argument_list|(
+literal|"Missing value for option: "
+operator|+
+name|param
+argument_list|)
+throw|;
+block|}
+block|}
 if|if
 condition|(
 name|option
@@ -1534,6 +1574,13 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|command
+operator|!=
+literal|null
+condition|)
+block|{
 throw|throw
 operator|new
 name|CommandException
@@ -1616,6 +1663,17 @@ argument_list|,
 literal|"Too many arguments specified"
 argument_list|)
 throw|;
+block|}
+else|else
+block|{
+throw|throw
+operator|new
+name|CommandException
+argument_list|(
+literal|"Too many arguments specified"
+argument_list|)
+throw|;
+block|}
 block|}
 name|Argument
 name|argument
@@ -1759,6 +1817,13 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|command
+operator|!=
+literal|null
+condition|)
+block|{
 throw|throw
 operator|new
 name|CommandException
@@ -1880,6 +1945,24 @@ literal|" is required"
 argument_list|)
 throw|;
 block|}
+else|else
+block|{
+throw|throw
+operator|new
+name|CommandException
+argument_list|(
+literal|"Option "
+operator|+
+name|option
+operator|.
+name|name
+argument_list|()
+operator|+
+literal|" is required"
+argument_list|)
+throw|;
+block|}
+block|}
 block|}
 for|for
 control|(
@@ -1924,6 +2007,13 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|command
+operator|!=
+literal|null
+condition|)
+block|{
 throw|throw
 operator|new
 name|CommandException
@@ -2045,6 +2135,24 @@ literal|" is required"
 argument_list|)
 throw|;
 block|}
+else|else
+block|{
+throw|throw
+operator|new
+name|CommandException
+argument_list|(
+literal|"Argument "
+operator|+
+name|argument
+operator|.
+name|name
+argument_list|()
+operator|+
+literal|" is required"
+argument_list|)
+throw|;
+block|}
+block|}
 block|}
 comment|// Convert and inject values
 for|for
@@ -2124,6 +2232,13 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|command
+operator|!=
+literal|null
+condition|)
+block|{
 throw|throw
 operator|new
 name|CommandException
@@ -2300,6 +2415,48 @@ name|e
 argument_list|)
 throw|;
 block|}
+else|else
+block|{
+throw|throw
+operator|new
+name|CommandException
+argument_list|(
+literal|"Unable to convert option "
+operator|+
+name|entry
+operator|.
+name|getKey
+argument_list|()
+operator|.
+name|name
+argument_list|()
+operator|+
+literal|" with value '"
+operator|+
+name|entry
+operator|.
+name|getValue
+argument_list|()
+operator|+
+literal|"' to type "
+operator|+
+operator|new
+name|GenericType
+argument_list|(
+name|field
+operator|.
+name|getGenericType
+argument_list|()
+argument_list|)
+operator|.
+name|toString
+argument_list|()
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
+block|}
 name|field
 operator|.
 name|setAccessible
@@ -2394,6 +2551,13 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|command
+operator|!=
+literal|null
+condition|)
+block|{
 throw|throw
 operator|new
 name|CommandException
@@ -2570,6 +2734,48 @@ name|e
 argument_list|)
 throw|;
 block|}
+else|else
+block|{
+throw|throw
+operator|new
+name|CommandException
+argument_list|(
+literal|"Unable to convert argument "
+operator|+
+name|entry
+operator|.
+name|getKey
+argument_list|()
+operator|.
+name|name
+argument_list|()
+operator|+
+literal|" with value '"
+operator|+
+name|entry
+operator|.
+name|getValue
+argument_list|()
+operator|+
+literal|"' to type "
+operator|+
+operator|new
+name|GenericType
+argument_list|(
+name|field
+operator|.
+name|getGenericType
+argument_list|()
+argument_list|)
+operator|.
+name|toString
+argument_list|()
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
+block|}
 name|field
 operator|.
 name|setAccessible
@@ -2636,6 +2842,13 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|command
+operator|!=
+literal|null
+condition|)
+block|{
 name|Terminal
 name|term
 init|=
@@ -3717,6 +3930,7 @@ argument_list|,
 name|out
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 specifier|private
