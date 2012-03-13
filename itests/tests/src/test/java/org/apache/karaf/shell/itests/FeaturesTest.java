@@ -479,7 +479,7 @@ name|cs
 operator|.
 name|execute
 argument_list|(
-literal|"obr:list-url"
+literal|"obr:url-list"
 argument_list|)
 expr_stmt|;
 name|cs
