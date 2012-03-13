@@ -65,10 +65,6 @@ name|BackingEngine
 import|;
 end_import
 
-begin_comment
-comment|/**  * Deletes a role from a user of the active realm/module.  */
-end_comment
-
 begin_class
 annotation|@
 name|Command
@@ -79,7 +75,7 @@ literal|"jaas"
 argument_list|,
 name|name
 operator|=
-literal|"delete-role"
+literal|"role-delete"
 argument_list|,
 name|description
 operator|=

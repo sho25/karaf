@@ -99,10 +99,6 @@ name|Queue
 import|;
 end_import
 
-begin_comment
-comment|/**  * Executes all the pending commands of the active realm/module.  */
-end_comment
-
 begin_class
 annotation|@
 name|Command

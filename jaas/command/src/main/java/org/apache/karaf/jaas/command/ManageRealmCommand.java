@@ -125,11 +125,11 @@ literal|"jaas"
 argument_list|,
 name|name
 operator|=
-literal|"manage-realm"
+literal|"realm-manage"
 argument_list|,
 name|description
 operator|=
-literal|"Manage user and roles of a Jaas Realm."
+literal|"Manage user and roles of a JAAS Realm."
 argument_list|)
 specifier|public
 class|class

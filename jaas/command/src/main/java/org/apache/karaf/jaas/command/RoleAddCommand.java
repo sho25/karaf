@@ -65,10 +65,6 @@ name|BackingEngine
 import|;
 end_import
 
-begin_comment
-comment|/**  * Adds a role to a user of the active realm/module.  */
-end_comment
-
 begin_class
 annotation|@
 name|Command
@@ -79,7 +75,7 @@ literal|"jaas"
 argument_list|,
 name|name
 operator|=
-literal|"add-role"
+literal|"role-add"
 argument_list|,
 name|description
 operator|=
