@@ -83,7 +83,7 @@ literal|"obr"
 argument_list|,
 name|name
 operator|=
-literal|"add-url"
+literal|"url-add"
 argument_list|,
 name|description
 operator|=
