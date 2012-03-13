@@ -93,7 +93,7 @@ literal|"feature"
 argument_list|,
 name|name
 operator|=
-literal|"remove-url"
+literal|"url-remove"
 argument_list|,
 name|description
 operator|=

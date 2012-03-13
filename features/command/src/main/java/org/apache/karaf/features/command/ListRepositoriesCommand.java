@@ -87,7 +87,7 @@ literal|"feature"
 argument_list|,
 name|name
 operator|=
-literal|"list-repository"
+literal|"repository-list"
 argument_list|,
 name|description
 operator|=

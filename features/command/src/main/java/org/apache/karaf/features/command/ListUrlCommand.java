@@ -87,10 +87,6 @@ name|Repository
 import|;
 end_import
 
-begin_comment
-comment|/**  * Command which lists feature URLs.  *   */
-end_comment
-
 begin_class
 annotation|@
 name|Command
@@ -101,7 +97,7 @@ literal|"feature"
 argument_list|,
 name|name
 operator|=
-literal|"list-url"
+literal|"url-list"
 argument_list|,
 name|description
 operator|=

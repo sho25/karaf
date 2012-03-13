@@ -97,7 +97,7 @@ literal|"feature"
 argument_list|,
 name|name
 operator|=
-literal|"remove-repository"
+literal|"repository-remove"
 argument_list|,
 name|description
 operator|=

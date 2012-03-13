@@ -123,7 +123,7 @@ literal|"feature"
 argument_list|,
 name|name
 operator|=
-literal|"refresh-url"
+literal|"url-refresh"
 argument_list|,
 name|description
 operator|=

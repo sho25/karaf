@@ -131,7 +131,7 @@ literal|"feature"
 argument_list|,
 name|name
 operator|=
-literal|"list-version"
+literal|"version-list"
 argument_list|,
 name|description
 operator|=

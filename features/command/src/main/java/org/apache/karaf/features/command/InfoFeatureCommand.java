@@ -155,10 +155,6 @@ name|FeaturesService
 import|;
 end_import
 
-begin_comment
-comment|/**  * Utility command to display info about features.  */
-end_comment
-
 begin_class
 annotation|@
 name|Command
@@ -1047,7 +1043,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Called originally with featureName and featureVersion that have already been resolved successfully.      *      *      * @param admin      * @param featureName      * @param featureVersion      * @param prefix      * @return      * @throws Exception      */
+comment|/**      * Called originally with featureName and featureVersion that have already been resolved successfully.      *      * @param admin      * @param featureName      * @param featureVersion      * @param prefix      * @return      * @throws Exception      */
 specifier|private
 name|int
 name|displayFeatureTree
