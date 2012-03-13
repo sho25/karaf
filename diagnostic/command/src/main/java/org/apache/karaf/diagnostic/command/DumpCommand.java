@@ -213,7 +213,7 @@ literal|"dev"
 argument_list|,
 name|name
 operator|=
-literal|"create-dump"
+literal|"dump-create"
 argument_list|,
 name|description
 operator|=
