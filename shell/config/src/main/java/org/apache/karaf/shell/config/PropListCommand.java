@@ -63,7 +63,7 @@ literal|"config"
 argument_list|,
 name|name
 operator|=
-literal|"list-property"
+literal|"property-list"
 argument_list|,
 name|description
 operator|=
