@@ -129,10 +129,6 @@ name|BlueprintContainer
 import|;
 end_import
 
-begin_comment
-comment|/**  * Start a SSH server.  *  * @version $Rev: 720411 $ $Date: 2008-11-25 05:32:43 +0100 (Tue, 25 Nov 2008) $  */
-end_comment
-
 begin_class
 annotation|@
 name|Command

@@ -281,10 +281,6 @@ name|LoggerFactory
 import|;
 end_import
 
-begin_comment
-comment|/**  * Connect to a SSH server.  *  * @version $Rev: 721244 $ $Date: 2008-11-27 18:19:56 +0100 (Thu, 27 Nov 2008) $  */
-end_comment
-
 begin_class
 annotation|@
 name|Command
