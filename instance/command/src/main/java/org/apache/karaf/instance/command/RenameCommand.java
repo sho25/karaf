@@ -65,10 +65,6 @@ name|Option
 import|;
 end_import
 
-begin_comment
-comment|/**  * Rename an existing Karaf container instance.  */
-end_comment
-
 begin_class
 annotation|@
 name|Command

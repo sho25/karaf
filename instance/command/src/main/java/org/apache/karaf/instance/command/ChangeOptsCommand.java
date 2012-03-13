@@ -59,7 +59,7 @@ literal|"instance"
 argument_list|,
 name|name
 operator|=
-literal|"change-opts"
+literal|"opts-change"
 argument_list|,
 name|description
 operator|=

@@ -63,10 +63,6 @@ name|Instance
 import|;
 end_import
 
-begin_comment
-comment|/**  * List available instances  */
-end_comment
-
 begin_class
 annotation|@
 name|Command

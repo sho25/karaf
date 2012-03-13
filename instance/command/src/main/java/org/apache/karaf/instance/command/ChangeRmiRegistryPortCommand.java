@@ -59,7 +59,7 @@ literal|"instance"
 argument_list|,
 name|name
 operator|=
-literal|"change-rmi-registry-port"
+literal|"rmi-registry-port-change"
 argument_list|,
 name|description
 operator|=

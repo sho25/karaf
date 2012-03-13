@@ -59,7 +59,7 @@ literal|"instance"
 argument_list|,
 name|name
 operator|=
-literal|"change-ssh-port"
+literal|"ssh-port-change"
 argument_list|,
 name|description
 operator|=
