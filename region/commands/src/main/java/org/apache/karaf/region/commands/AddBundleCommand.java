@@ -109,11 +109,11 @@ literal|"region"
 argument_list|,
 name|name
 operator|=
-literal|"addBundle"
+literal|"bundle-add"
 argument_list|,
 name|description
 operator|=
-literal|"Adds a list of known bundles by id to a specified Region."
+literal|"Adds a list of known bundles by id to a specified region."
 argument_list|)
 specifier|public
 class|class

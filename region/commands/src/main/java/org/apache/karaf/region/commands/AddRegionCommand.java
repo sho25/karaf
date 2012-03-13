@@ -83,11 +83,11 @@ literal|"region"
 argument_list|,
 name|name
 operator|=
-literal|"addRegion"
+literal|"region-add"
 argument_list|,
 name|description
 operator|=
-literal|"Adds a list of regions to the RegionDigraph service."
+literal|"Adds a list of regions to the region digraph service."
 argument_list|)
 specifier|public
 class|class
@@ -108,7 +108,7 @@ literal|"name"
 argument_list|,
 name|description
 operator|=
-literal|"Regions to add to the RegionDigraph service separated by whitespaces"
+literal|"Regions to add to the region digraph service separated by whitespaces."
 argument_list|,
 name|required
 operator|=

@@ -211,11 +211,11 @@ literal|"region"
 argument_list|,
 name|name
 operator|=
-literal|"addFilter"
+literal|"filter-add"
 argument_list|,
 name|description
 operator|=
-literal|"Adds a Filter between two regions"
+literal|"Adds a filter between two regions."
 argument_list|)
 specifier|public
 class|class
@@ -232,11 +232,11 @@ literal|0
 argument_list|,
 name|name
 operator|=
-literal|"fromregion"
+literal|"from"
 argument_list|,
 name|description
 operator|=
-literal|"Region 1"
+literal|"The from region."
 argument_list|,
 name|required
 operator|=
@@ -258,11 +258,11 @@ literal|1
 argument_list|,
 name|name
 operator|=
-literal|"toregion"
+literal|"to"
 argument_list|,
 name|description
 operator|=
-literal|"Region 2"
+literal|"The to region."
 argument_list|,
 name|required
 operator|=
@@ -284,11 +284,11 @@ literal|2
 argument_list|,
 name|name
 operator|=
-literal|"filteritems"
+literal|"items"
 argument_list|,
 name|description
 operator|=
-literal|"bundles by id and packages with version to allow"
+literal|"The bundles by id and packages with version to allow."
 argument_list|,
 name|required
 operator|=

@@ -188,7 +188,7 @@ literal|false
 argument_list|,
 name|description
 operator|=
-literal|"Show all info"
+literal|"Show all info."
 argument_list|)
 name|boolean
 name|verbose
@@ -210,7 +210,7 @@ literal|false
 argument_list|,
 name|description
 operator|=
-literal|"Show bundles in each region"
+literal|"Show bundles in each region."
 argument_list|)
 name|boolean
 name|bundles
@@ -232,7 +232,7 @@ literal|false
 argument_list|,
 name|description
 operator|=
-literal|"Show filters"
+literal|"Show filters."
 argument_list|)
 name|boolean
 name|filters
@@ -254,7 +254,7 @@ literal|false
 argument_list|,
 name|description
 operator|=
-literal|"Show namespaces in each filter"
+literal|"Show namespaces in each filter."
 argument_list|)
 name|boolean
 name|namespaces
@@ -272,7 +272,7 @@ literal|"regions"
 argument_list|,
 name|description
 operator|=
-literal|"Regions to provide detailed info for"
+literal|"Regions to provide detailed info for."
 argument_list|,
 name|required
 operator|=
