@@ -91,7 +91,7 @@ literal|"log"
 argument_list|,
 name|name
 operator|=
-literal|"display-exception"
+literal|"exception-display"
 argument_list|,
 name|description
 operator|=
