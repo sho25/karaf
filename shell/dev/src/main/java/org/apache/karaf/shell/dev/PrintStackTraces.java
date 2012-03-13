@@ -129,7 +129,7 @@ literal|"dev"
 argument_list|,
 name|name
 operator|=
-literal|"print-stack-traces"
+literal|"stack-traces-print"
 argument_list|,
 name|description
 operator|=

@@ -351,7 +351,7 @@ literal|"dev"
 argument_list|,
 name|name
 operator|=
-literal|"show-tree"
+literal|"tree-show"
 argument_list|,
 name|description
 operator|=
