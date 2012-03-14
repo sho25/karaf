@@ -59,10 +59,6 @@ name|Command
 import|;
 end_import
 
-begin_comment
-comment|/**  * Appends a value to the current property value.  */
-end_comment
-
 begin_class
 annotation|@
 name|Command
@@ -73,7 +69,7 @@ literal|"config"
 argument_list|,
 name|name
 operator|=
-literal|"append-property"
+literal|"property-append"
 argument_list|,
 name|description
 operator|=
