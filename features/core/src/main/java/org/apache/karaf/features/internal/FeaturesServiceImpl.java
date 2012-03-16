@@ -2257,7 +2257,7 @@ expr_stmt|;
 block|}
 name|LOGGER
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Bundles to refresh: {}"
 argument_list|,
@@ -2326,7 +2326,7 @@ condition|)
 block|{
 name|LOGGER
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Refreshing bundles: {}"
 argument_list|,
@@ -2903,7 +2903,7 @@ name|Exception
 block|{
 name|LOGGER
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Installing feature "
 operator|+
@@ -4953,7 +4953,7 @@ condition|)
 block|{
 name|LOGGER
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Found installed bundle: "
 operator|+
@@ -5029,7 +5029,7 @@ expr_stmt|;
 block|}
 name|LOGGER
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Installing bundle "
 operator|+
@@ -5172,7 +5172,7 @@ name|IOException
 block|{
 name|LOGGER
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Checking configuration file "
 operator|+
@@ -5274,7 +5274,7 @@ condition|)
 block|{
 name|LOGGER
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"configFile already exist, don't override it"
 argument_list|)
