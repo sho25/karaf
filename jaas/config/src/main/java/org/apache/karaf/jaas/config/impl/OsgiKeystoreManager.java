@@ -398,6 +398,9 @@ parameter_list|)
 throws|throws
 name|GeneralSecurityException
 block|{
+if|if
+condition|(
+operator|!
 name|this
 operator|.
 name|checkForKeystoresAvailability
@@ -410,7 +413,16 @@ name|trustStore
 argument_list|,
 name|timeout
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
+throw|throw
+operator|new
+name|GeneralSecurityException
+argument_list|(
+literal|"Unable to lookup configured keystore and/or truststore"
+argument_list|)
+throw|;
+block|}
 name|KeystoreInstance
 name|keyInstance
 init|=
@@ -811,7 +823,7 @@ block|{          }
 block|}
 comment|/**      * Purely check for the availability of provided key stores and key      *      * @param keyStore      * @param keyAlias      * @param trustStore      * @param timeout      */
 specifier|private
-name|void
+name|boolean
 name|checkForKeystoresAvailability
 parameter_list|(
 name|String
@@ -827,6 +839,11 @@ name|long
 name|timeout
 parameter_list|)
 block|{
+name|boolean
+name|found
+init|=
+literal|false
+decl_stmt|;
 for|for
 control|(
 name|int
@@ -970,7 +987,15 @@ argument_list|)
 expr_stmt|;
 continue|continue;
 block|}
+name|found
+operator|=
+literal|true
+expr_stmt|;
+break|break;
 block|}
+return|return
+name|found
+return|;
 block|}
 block|}
 end_class
