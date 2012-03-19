@@ -39,6 +39,13 @@ name|getName
 parameter_list|()
 function_decl|;
 name|String
+name|getDiag
+parameter_list|(
+name|Bundle
+name|bundle
+parameter_list|)
+function_decl|;
+name|BundleState
 name|getState
 parameter_list|(
 name|Bundle

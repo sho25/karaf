@@ -173,6 +173,13 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+name|String
+name|getDiag
+parameter_list|(
+name|long
+name|bundleId
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

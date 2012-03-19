@@ -241,6 +241,8 @@ name|apache
 operator|.
 name|karaf
 operator|.
+name|shell
+operator|.
 name|util
 operator|.
 name|ShellUtil

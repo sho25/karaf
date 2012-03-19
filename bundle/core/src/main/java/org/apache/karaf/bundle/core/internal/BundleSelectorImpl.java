@@ -93,20 +93,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|util
-operator|.
-name|ShellUtil
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|osgi
 operator|.
 name|framework
@@ -183,12 +169,7 @@ name|ids
 parameter_list|,
 name|boolean
 name|defaultAllBundles
-parameter_list|,
-name|boolean
-name|mayAccessSystemBundle
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|List
 argument_list|<
@@ -229,8 +210,6 @@ argument_list|(
 name|id
 argument_list|,
 name|bundles
-argument_list|,
-name|mayAccessSystemBundle
 argument_list|)
 expr_stmt|;
 block|}
@@ -266,12 +245,7 @@ argument_list|<
 name|Bundle
 argument_list|>
 name|bundles
-parameter_list|,
-name|boolean
-name|mayAccessSystemBundle
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 comment|// id is a number
 name|Pattern
@@ -312,21 +286,6 @@ argument_list|(
 name|id
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|mayAccessSystemBundle
-operator|||
-operator|!
-name|ShellUtil
-operator|.
-name|isASystemBundle
-argument_list|(
-name|bundleContext
-argument_list|,
-name|bundle
-argument_list|)
-condition|)
-block|{
 name|addBundle
 argument_list|(
 name|bundle
@@ -336,7 +295,6 @@ argument_list|,
 name|bundles
 argument_list|)
 expr_stmt|;
-block|}
 return|return;
 block|}
 comment|// id as a number range
@@ -557,8 +515,6 @@ name|Bundle
 argument_list|>
 name|bundles
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(

@@ -58,12 +58,7 @@ name|ids
 parameter_list|,
 name|boolean
 name|defaultAllBundles
-parameter_list|,
-name|boolean
-name|mayAccessSystemBundle
 parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
 block|}
 end_interface
