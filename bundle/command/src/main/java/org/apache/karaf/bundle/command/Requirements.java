@@ -249,14 +249,6 @@ specifier|private
 specifier|static
 specifier|final
 name|String
-name|UNUSED_MESSAGE
-init|=
-literal|"[UNUSED]"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
 name|UNRESOLVED_MESSAGE
 init|=
 literal|"[UNRESOLVED]"

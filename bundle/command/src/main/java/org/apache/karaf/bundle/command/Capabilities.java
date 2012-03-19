@@ -239,14 +239,6 @@ name|UNUSED_MESSAGE
 init|=
 literal|"[UNUSED]"
 decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|UNRESOLVED_MESSAGE
-init|=
-literal|"[UNRESOLVED]"
-decl_stmt|;
 annotation|@
 name|Option
 argument_list|(
@@ -882,6 +874,9 @@ decl_stmt|;
 try|try
 block|{
 name|ServiceReference
+argument_list|<
+name|?
+argument_list|>
 index|[]
 name|refs
 init|=
@@ -915,6 +910,9 @@ comment|// Print properties for each service.
 for|for
 control|(
 name|ServiceReference
+argument_list|<
+name|?
+argument_list|>
 name|ref
 range|:
 name|refs
