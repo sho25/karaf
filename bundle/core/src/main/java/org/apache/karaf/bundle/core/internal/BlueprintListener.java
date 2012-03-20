@@ -239,7 +239,9 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Blueprint"
+name|BundleStateService
+operator|.
+name|NAME_BLUEPRINT
 return|;
 block|}
 specifier|public
@@ -691,7 +693,7 @@ case|:
 return|return
 name|BundleState
 operator|.
-name|Stopped
+name|Resolved
 return|;
 case|case
 name|BlueprintEvent

@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|osgi
@@ -29,59 +39,57 @@ name|Bundle
 import|;
 end_import
 
-begin_comment
-comment|/**  * SPI to track an extended bundle state for injection frameworks like blueprint that  * also reports on  dependencies and status on the injection container level  */
-end_comment
-
 begin_interface
 specifier|public
 interface|interface
-name|BundleStateService
+name|BundleInfo
 block|{
-specifier|public
-specifier|final
-specifier|static
+name|long
+name|getBundleId
+parameter_list|()
+function_decl|;
 name|String
-name|NAME_BLUEPRINT
-init|=
-literal|"Blueprint"
-decl_stmt|;
-specifier|public
-specifier|final
-specifier|static
-name|String
-name|NAME_SPRING_DM
-init|=
-literal|"Spring DM"
-decl_stmt|;
-specifier|public
-specifier|final
-specifier|static
-name|String
-name|NAME_DS
-init|=
-literal|"Declarative Services"
-decl_stmt|;
-comment|/**      * Name of the framework the implementation supports.      * Should return one of the NAME_ constants above if it matches      *        * @return name of the framework      */
+name|getSymbolicName
+parameter_list|()
+function_decl|;
 name|String
 name|getName
 parameter_list|()
 function_decl|;
-comment|/**      * Give a textual report about the details of a bundle status      * like missing namespace handlers or service dependencies.      * Should also give the details if there are config errors      *       * @param bundle      * @return diagnostic details      */
 name|String
-name|getDiag
-parameter_list|(
-name|Bundle
-name|bundle
-parameter_list|)
+name|getUpdateLocation
+parameter_list|()
 function_decl|;
-comment|/**      * Report the bundle state from the framework point of view.       * If the framework is not active it should return Unknown.      *       * @param bundle      * @return status      */
+name|String
+name|getVersion
+parameter_list|()
+function_decl|;
+comment|/**      * Combined bundle state from OSGi and all BundleStateServices      * @return      */
 name|BundleState
 name|getState
-parameter_list|(
+parameter_list|()
+function_decl|;
+name|int
+name|getStartLevel
+parameter_list|()
+function_decl|;
+name|boolean
+name|isFragment
+parameter_list|()
+function_decl|;
+name|List
+argument_list|<
 name|Bundle
-name|bundle
-parameter_list|)
+argument_list|>
+name|getFragments
+parameter_list|()
+function_decl|;
+name|List
+argument_list|<
+name|Bundle
+argument_list|>
+name|getFragmentHosts
+parameter_list|()
 function_decl|;
 block|}
 end_interface

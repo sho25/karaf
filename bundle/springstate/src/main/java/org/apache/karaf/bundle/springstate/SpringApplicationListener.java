@@ -282,7 +282,9 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Spring"
+name|BundleStateService
+operator|.
+name|NAME_SPRING_DM
 return|;
 block|}
 specifier|public

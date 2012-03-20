@@ -17,6 +17,10 @@ name|core
 package|;
 end_package
 
+begin_comment
+comment|/**  * Bundle status including framework status.  *   * The combined status will be the worst status from all frameworks this bundle uses.  *   * e.g. On OSGi level the BundleState is Active, on Blueprint level it is Waiting  * then the status should be Waiting.  */
+end_comment
+
 begin_enum
 specifier|public
 enum|enum
@@ -37,8 +41,6 @@ block|,
 name|Active
 block|,
 name|Stopping
-block|,
-name|Stopped
 block|,
 name|Failure
 block|, }

@@ -77,22 +77,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|bundle
-operator|.
-name|core
-operator|.
-name|BundleSelector
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|osgi
 operator|.
 name|framework
@@ -129,8 +113,6 @@ begin_class
 specifier|public
 class|class
 name|BundleSelectorImpl
-implements|implements
-name|BundleSelector
 block|{
 specifier|private
 specifier|final
@@ -151,9 +133,6 @@ operator|=
 name|bundleContext
 expr_stmt|;
 block|}
-comment|/* (non-Javadoc)      * @see org.apache.karaf.bundle.core.internal.BundleSelector#selectBundles(java.util.List)      */
-annotation|@
-name|Override
 specifier|public
 name|List
 argument_list|<
