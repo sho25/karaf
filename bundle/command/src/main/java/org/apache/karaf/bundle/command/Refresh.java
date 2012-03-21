@@ -91,6 +91,17 @@ name|Refresh
 extends|extends
 name|BundlesCommandWithConfirmation
 block|{
+specifier|public
+name|Refresh
+parameter_list|()
+block|{
+name|this
+operator|.
+name|defaultAllBundles
+operator|=
+literal|false
+expr_stmt|;
+block|}
 specifier|protected
 name|void
 name|doExecute
