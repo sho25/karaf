@@ -366,7 +366,7 @@ name|message
 operator|.
 name|append
 argument_list|(
-literal|"Exception: "
+literal|"Exception: \n"
 argument_list|)
 expr_stmt|;
 name|addMessages
@@ -394,7 +394,7 @@ name|message
 operator|.
 name|append
 argument_list|(
-literal|"Missing dependencies: "
+literal|"Missing dependencies: \n"
 argument_list|)
 expr_stmt|;
 for|for

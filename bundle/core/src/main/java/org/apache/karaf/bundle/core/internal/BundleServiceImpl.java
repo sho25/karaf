@@ -376,6 +376,13 @@ operator|.
 name|getName
 argument_list|()
 operator|+
+literal|"\n"
+argument_list|)
+expr_stmt|;
+name|message
+operator|.
+name|append
+argument_list|(
 name|part
 argument_list|)
 expr_stmt|;
