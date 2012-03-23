@@ -15,7 +15,7 @@ name|shell
 operator|.
 name|console
 operator|.
-name|table2
+name|table
 package|;
 end_package
 

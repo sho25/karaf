@@ -31,7 +31,7 @@ name|shell
 operator|.
 name|console
 operator|.
-name|table2
+name|table
 operator|.
 name|Col
 import|;
@@ -49,7 +49,7 @@ name|shell
 operator|.
 name|console
 operator|.
-name|table2
+name|table
 operator|.
 name|Row
 import|;
@@ -67,7 +67,7 @@ name|shell
 operator|.
 name|console
 operator|.
-name|table2
+name|table
 operator|.
 name|ShellTable
 import|;
