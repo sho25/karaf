@@ -113,20 +113,6 @@ name|StreamHandler
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|main
-operator|.
-name|Main
-import|;
-end_import
-
 begin_comment
 comment|/**  * Convenience class for configuring java.util.logging to append to  * the configured log4j log.  This could be used for bootstrap logging  * prior to start of the framework.  *   */
 end_comment
@@ -292,7 +278,7 @@ block|}
 block|}
 name|filename
 operator|=
-name|Main
+name|SubstHelper
 operator|.
 name|substVars
 argument_list|(
