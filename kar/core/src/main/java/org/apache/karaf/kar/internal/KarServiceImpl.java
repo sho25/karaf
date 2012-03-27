@@ -1579,6 +1579,13 @@ try|try
 block|{
 name|featuresService
 operator|.
+name|removeRepository
+argument_list|(
+name|uri
+argument_list|)
+expr_stmt|;
+name|featuresService
+operator|.
 name|addRepository
 argument_list|(
 name|uri
