@@ -393,10 +393,10 @@ name|bin
 argument_list|,
 name|name
 operator|+
-literal|"-wrapper.exec"
+literal|"-wrapper.exe"
 argument_list|)
 argument_list|,
-literal|"windows/karaf-wrapper.exec"
+literal|"windows/karaf-wrapper.exe"
 argument_list|,
 literal|false
 argument_list|)
