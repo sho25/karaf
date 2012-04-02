@@ -29,10 +29,6 @@ name|TabularData
 import|;
 end_import
 
-begin_comment
-comment|/**  * Package MBean.  */
-end_comment
-
 begin_interface
 specifier|public
 interface|interface
