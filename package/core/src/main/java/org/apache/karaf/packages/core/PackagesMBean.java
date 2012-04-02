@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|packages
 operator|.
-name|management
+name|core
 package|;
 end_package
 
@@ -29,22 +29,22 @@ name|TabularData
 import|;
 end_import
 
+begin_comment
+comment|/**  * Package MBean.  */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface
-name|PackageMBean
+name|PackagesMBean
 block|{
 name|TabularData
 name|getExports
 parameter_list|()
-throws|throws
-name|Exception
 function_decl|;
 name|TabularData
 name|getImports
 parameter_list|()
-throws|throws
-name|Exception
 function_decl|;
 block|}
 end_interface
