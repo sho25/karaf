@@ -159,7 +159,9 @@ name|karaf
 operator|.
 name|jaas
 operator|.
-name|modules
+name|boot
+operator|.
+name|principal
 operator|.
 name|UserPrincipal
 import|;

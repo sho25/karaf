@@ -571,7 +571,7 @@ block|{
 name|String
 name|clazz
 init|=
-literal|"org.apache.karaf.jaas.modules.RolePrincipal"
+literal|"org.apache.karaf.jaas.boot.principal.RolePrincipal"
 decl_stmt|;
 name|String
 name|name
