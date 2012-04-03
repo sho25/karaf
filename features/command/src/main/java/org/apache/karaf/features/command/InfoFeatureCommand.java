@@ -169,7 +169,7 @@ literal|"info"
 argument_list|,
 name|description
 operator|=
-literal|"Shows information about selected information."
+literal|"Shows information about selected feature."
 argument_list|)
 specifier|public
 class|class
