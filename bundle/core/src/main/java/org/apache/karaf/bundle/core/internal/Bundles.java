@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|bundle
 operator|.
-name|management
+name|core
 operator|.
 name|internal
 package|;
@@ -217,7 +217,7 @@ name|karaf
 operator|.
 name|bundle
 operator|.
-name|management
+name|core
 operator|.
 name|BundlesMBean
 import|;
@@ -302,7 +302,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|BundlesMBeanImpl
+name|Bundles
 extends|extends
 name|StandardMBean
 implements|implements
@@ -316,7 +316,7 @@ name|LoggerFactory
 operator|.
 name|getLogger
 argument_list|(
-name|BundlesMBeanImpl
+name|Bundles
 operator|.
 name|class
 argument_list|)
@@ -331,7 +331,7 @@ name|BundleService
 name|bundleService
 decl_stmt|;
 specifier|public
-name|BundlesMBeanImpl
+name|Bundles
 parameter_list|(
 name|BundleContext
 name|bundleContext
