@@ -592,9 +592,6 @@ argument_list|,
 literal|null
 argument_list|)
 decl_stmt|;
-name|Instance
-name|instance
-init|=
 name|service
 operator|.
 name|createInstance
@@ -606,7 +603,7 @@ name|settings
 argument_list|,
 literal|true
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|service
 operator|.
 name|renameInstance
