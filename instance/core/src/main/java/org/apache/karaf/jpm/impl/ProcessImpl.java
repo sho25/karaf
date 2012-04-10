@@ -128,6 +128,16 @@ name|ProcessImpl
 implements|implements
 name|Process
 block|{
+comment|/**      *       */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|8140632422386086507L
+decl_stmt|;
 specifier|private
 name|int
 name|pid
@@ -303,14 +313,11 @@ argument_list|()
 operator|>
 literal|0
 decl_stmt|;
-name|int
-name|ret
-init|=
 name|process
 operator|.
 name|waitFor
 argument_list|()
-decl_stmt|;
+expr_stmt|;
 return|return
 name|running
 return|;

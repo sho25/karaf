@@ -35,16 +35,6 @@ name|IOException
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|lang
-operator|.
-name|*
-import|;
-end_import
-
 begin_comment
 comment|/**  * Interface used to create new processes.  */
 end_comment
