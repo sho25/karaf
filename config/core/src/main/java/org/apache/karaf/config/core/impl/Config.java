@@ -13,9 +13,9 @@ name|karaf
 operator|.
 name|config
 operator|.
-name|management
+name|core
 operator|.
-name|internal
+name|impl
 package|;
 end_package
 
@@ -131,7 +131,7 @@ name|config
 operator|.
 name|core
 operator|.
-name|ConfigRepository
+name|ConfigMBean
 import|;
 end_import
 
@@ -145,9 +145,9 @@ name|karaf
 operator|.
 name|config
 operator|.
-name|management
+name|core
 operator|.
-name|ConfigMBean
+name|ConfigRepository
 import|;
 end_import
 
@@ -172,7 +172,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|ConfigMBeanImpl
+name|Config
 extends|extends
 name|StandardMBean
 implements|implements
@@ -183,7 +183,7 @@ name|ConfigRepository
 name|configRepo
 decl_stmt|;
 specifier|public
-name|ConfigMBeanImpl
+name|Config
 parameter_list|()
 throws|throws
 name|NotCompliantMBeanException

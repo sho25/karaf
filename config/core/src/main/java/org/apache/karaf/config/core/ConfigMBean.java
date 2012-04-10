@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|config
 operator|.
-name|management
+name|core
 package|;
 end_package
 
