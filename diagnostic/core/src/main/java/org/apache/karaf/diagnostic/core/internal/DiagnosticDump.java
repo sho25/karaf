@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|diagnostic
 operator|.
-name|management
+name|core
 operator|.
 name|internal
 package|;
@@ -56,6 +56,22 @@ operator|.
 name|management
 operator|.
 name|StandardMBean
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|diagnostic
+operator|.
+name|core
+operator|.
+name|DiagnosticDumpMBean
 import|;
 end_import
 
@@ -127,22 +143,6 @@ name|ZipDumpDestination
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|diagnostic
-operator|.
-name|management
-operator|.
-name|DiagnosticDumpMBean
-import|;
-end_import
-
 begin_comment
 comment|/**  * Implementation of diagnostic MBean.  */
 end_comment
@@ -150,7 +150,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|DiagnosticDumpMBeanImpl
+name|DiagnosticDump
 extends|extends
 name|StandardMBean
 implements|implements
@@ -166,7 +166,7 @@ name|providers
 decl_stmt|;
 comment|/**      * Creates new diagnostic mbean.      *       * @throws NotCompliantMBeanException      */
 specifier|public
-name|DiagnosticDumpMBeanImpl
+name|DiagnosticDump
 parameter_list|()
 throws|throws
 name|NotCompliantMBeanException

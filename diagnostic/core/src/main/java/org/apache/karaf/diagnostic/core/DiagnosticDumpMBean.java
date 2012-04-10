@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|diagnostic
 operator|.
-name|management
+name|core
 package|;
 end_package
 

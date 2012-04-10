@@ -13,7 +13,9 @@ name|karaf
 operator|.
 name|diagnostic
 operator|.
-name|common
+name|core
+operator|.
+name|internal
 package|;
 end_package
 
