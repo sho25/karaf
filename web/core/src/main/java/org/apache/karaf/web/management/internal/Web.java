@@ -112,7 +112,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|WebMBeanImpl
+name|Web
 extends|extends
 name|StandardMBean
 implements|implements
@@ -123,7 +123,7 @@ name|WebContainerService
 name|webContainerService
 decl_stmt|;
 specifier|public
-name|WebMBeanImpl
+name|Web
 parameter_list|()
 throws|throws
 name|NotCompliantMBeanException
@@ -208,7 +208,19 @@ index|[]
 block|{
 name|SimpleType
 operator|.
+name|LONG
+block|,
+name|SimpleType
+operator|.
 name|STRING
+block|,
+name|SimpleType
+operator|.
+name|STRING
+block|,
+name|SimpleType
+operator|.
+name|INTEGER
 block|,
 name|SimpleType
 operator|.
