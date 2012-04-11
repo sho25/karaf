@@ -76,7 +76,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|SystemMBeanImpl
+name|System
 extends|extends
 name|StandardMBean
 implements|implements
@@ -87,7 +87,7 @@ name|SystemService
 name|systemService
 decl_stmt|;
 specifier|public
-name|SystemMBeanImpl
+name|System
 parameter_list|()
 throws|throws
 name|NotCompliantMBeanException
