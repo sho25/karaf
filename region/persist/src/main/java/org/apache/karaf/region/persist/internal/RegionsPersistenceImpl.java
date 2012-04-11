@@ -177,24 +177,6 @@ name|persist
 operator|.
 name|internal
 operator|.
-name|util
-operator|.
-name|ManifestHeaderProcessor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|region
-operator|.
-name|persist
-operator|.
 name|model
 operator|.
 name|FilterAttributeType
@@ -212,6 +194,8 @@ operator|.
 name|region
 operator|.
 name|persist
+operator|.
+name|internal
 operator|.
 name|model
 operator|.
@@ -231,6 +215,8 @@ name|region
 operator|.
 name|persist
 operator|.
+name|internal
+operator|.
 name|model
 operator|.
 name|FilterNamespaceType
@@ -248,6 +234,8 @@ operator|.
 name|region
 operator|.
 name|persist
+operator|.
+name|internal
 operator|.
 name|model
 operator|.
@@ -267,6 +255,8 @@ name|region
 operator|.
 name|persist
 operator|.
+name|internal
+operator|.
 name|model
 operator|.
 name|FilterType
@@ -284,6 +274,8 @@ operator|.
 name|region
 operator|.
 name|persist
+operator|.
+name|internal
 operator|.
 name|model
 operator|.
@@ -303,6 +295,8 @@ name|region
 operator|.
 name|persist
 operator|.
+name|internal
+operator|.
 name|model
 operator|.
 name|RegionType
@@ -321,9 +315,31 @@ name|region
 operator|.
 name|persist
 operator|.
+name|internal
+operator|.
 name|model
 operator|.
 name|RegionsType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|region
+operator|.
+name|persist
+operator|.
+name|internal
+operator|.
+name|util
+operator|.
+name|ManifestHeaderProcessor
 import|;
 end_import
 
@@ -466,7 +482,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @version $Rev:$ $Date:$  */
+comment|/**  * @version $Rev$ $Date$  */
 end_comment
 
 begin_class

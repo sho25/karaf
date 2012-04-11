@@ -35,6 +35,8 @@ name|region
 operator|.
 name|persist
 operator|.
+name|internal
+operator|.
 name|model
 package|;
 end_package
@@ -96,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>Java class for regionBundleType complex type.  *   *<p>The following schema fragment specifies the expected content contained within this class.  *   *<pre>  *&lt;complexType name="regionBundleType">  *&lt;complexContent>  *&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">  *&lt;sequence>  *&lt;/sequence>  *&lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}long" />  *&lt;attribute name="location" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;/restriction>  *&lt;/complexContent>  *&lt;/complexType>  *</pre>  *   *   */
+comment|/**  *<p>Java class for filterAttributeType complex type.  *   *<p>The following schema fragment specifies the expected content contained within this class.  *   *<pre>  *&lt;complexType name="filterAttributeType">  *&lt;complexContent>  *&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">  *&lt;sequence>  *&lt;/sequence>  *&lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;attribute name="value" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;/restriction>  *&lt;/complexContent>  *&lt;/complexType>  *</pre>  *   *   */
 end_comment
 
 begin_class
@@ -112,64 +114,74 @@ name|XmlType
 argument_list|(
 name|name
 operator|=
-literal|"regionBundleType"
+literal|"filterAttributeType"
 argument_list|)
 specifier|public
 class|class
-name|RegionBundleType
+name|FilterAttributeType
 block|{
 annotation|@
 name|XmlAttribute
+argument_list|(
+name|required
+operator|=
+literal|true
+argument_list|)
 specifier|protected
-name|Long
-name|id
+name|String
+name|name
 decl_stmt|;
 annotation|@
 name|XmlAttribute
+argument_list|(
+name|required
+operator|=
+literal|true
+argument_list|)
 specifier|protected
 name|String
-name|location
+name|value
 decl_stmt|;
-comment|/**      * Gets the value of the id property.      *       * @return      *     possible object is      *     {@link Long }      *           */
+comment|/**      * Gets the value of the name property.      *       * @return      *     possible object is      *     {@link String }      *           */
 specifier|public
-name|Long
-name|getId
+name|String
+name|getName
 parameter_list|()
 block|{
 return|return
-name|id
+name|name
 return|;
 block|}
-comment|/**      * Sets the value of the id property.      *       * @param value      *     allowed object is      *     {@link Long }      *           */
+comment|/**      * Sets the value of the name property.      *       * @param value      *     allowed object is      *     {@link String }      *           */
 specifier|public
 name|void
-name|setId
+name|setName
 parameter_list|(
-name|Long
+name|String
 name|value
 parameter_list|)
 block|{
 name|this
 operator|.
-name|id
+name|name
 operator|=
 name|value
 expr_stmt|;
 block|}
-comment|/**      * Gets the value of the location property.      *       * @return      *     possible object is      *     {@link String }      *           */
+comment|/**      * Gets the value of the value property.      *       * @return      *     possible object is      *     {@link String }      *           */
 specifier|public
 name|String
-name|getLocation
+name|getValue
 parameter_list|()
 block|{
 return|return
-name|location
+name|value
 return|;
 block|}
-comment|/**      * Sets the value of the location property.      *       * @param value      *     allowed object is      *     {@link String }      *           */
+comment|/**      * Sets the value of the value property.      *       * @param value      *     allowed object is      *     {@link String }      *           */
 specifier|public
 name|void
-name|setLocation
+name|setValue
 parameter_list|(
 name|String
 name|value
@@ -177,7 +189,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|location
+name|value
 operator|=
 name|value
 expr_stmt|;

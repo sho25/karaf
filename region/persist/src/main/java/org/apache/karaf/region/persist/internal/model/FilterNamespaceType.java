@@ -35,6 +35,8 @@ name|region
 operator|.
 name|persist
 operator|.
+name|internal
+operator|.
 name|model
 package|;
 end_package
@@ -116,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *   *                 Regions element  *               *   *<p>Java class for regionType complex type.  *   *<p>The following schema fragment specifies the expected content contained within this class.  *   *<pre>  *&lt;complexType name="regionType">  *&lt;complexContent>  *&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">  *&lt;sequence>  *&lt;element name="bundle" type="{http://karaf.apache.org/xmlns/region/v1.0.0}regionBundleType" maxOccurs="unbounded" minOccurs="0"/>  *&lt;/sequence>  *&lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;/restriction>  *&lt;/complexContent>  *&lt;/complexType>  *</pre>  *   *   */
+comment|/**  *<p>Java class for filterNamespaceType complex type.  *   *<p>The following schema fragment specifies the expected content contained within this class.  *   *<pre>  *&lt;complexType name="filterNamespaceType">  *&lt;complexContent>  *&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">  *&lt;sequence>  *&lt;element name="attribute" type="{http://karaf.apache.org/xmlns/region/v1.0.0}filterAttributeType" maxOccurs="unbounded" minOccurs="0"/>  *&lt;/sequence>  *&lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;/restriction>  *&lt;/complexContent>  *&lt;/complexType>  *</pre>  *   *   */
 end_comment
 
 begin_class
@@ -132,24 +134,24 @@ name|XmlType
 argument_list|(
 name|name
 operator|=
-literal|"regionType"
+literal|"filterNamespaceType"
 argument_list|,
 name|propOrder
 operator|=
 block|{
-literal|"bundle"
+literal|"attribute"
 block|}
 argument_list|)
 specifier|public
 class|class
-name|RegionType
+name|FilterNamespaceType
 block|{
 specifier|protected
 name|List
 argument_list|<
-name|RegionBundleType
+name|FilterAttributeType
 argument_list|>
-name|bundle
+name|attribute
 decl_stmt|;
 annotation|@
 name|XmlAttribute
@@ -162,28 +164,28 @@ specifier|protected
 name|String
 name|name
 decl_stmt|;
-comment|/**      * Gets the value of the bundle property.      *       *<p>      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the bundle property.      *       *<p>      * For example, to add a new item, do as follows:      *<pre>      *    getBundle().add(newItem);      *</pre>      *       *       *<p>      * Objects of the following type(s) are allowed in the list      * {@link RegionBundleType }      *       *       */
+comment|/**      * Gets the value of the attribute property.      *       *<p>      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the attribute property.      *       *<p>      * For example, to add a new item, do as follows:      *<pre>      *    getAttribute().add(newItem);      *</pre>      *       *       *<p>      * Objects of the following type(s) are allowed in the list      * {@link FilterAttributeType }      *       *       */
 specifier|public
 name|List
 argument_list|<
-name|RegionBundleType
+name|FilterAttributeType
 argument_list|>
-name|getBundle
+name|getAttribute
 parameter_list|()
 block|{
 if|if
 condition|(
-name|bundle
+name|attribute
 operator|==
 literal|null
 condition|)
 block|{
-name|bundle
+name|attribute
 operator|=
 operator|new
 name|ArrayList
 argument_list|<
-name|RegionBundleType
+name|FilterAttributeType
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -191,7 +193,7 @@ block|}
 return|return
 name|this
 operator|.
-name|bundle
+name|attribute
 return|;
 block|}
 comment|/**      * Gets the value of the name property.      *       * @return      *     possible object is      *     {@link String }      *           */

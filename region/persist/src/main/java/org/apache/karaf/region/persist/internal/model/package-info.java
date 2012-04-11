@@ -67,6 +67,8 @@ name|region
 operator|.
 name|persist
 operator|.
+name|internal
+operator|.
 name|model
 package|;
 end_package
