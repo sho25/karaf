@@ -49,7 +49,7 @@ begin_class
 specifier|public
 class|class
 name|ProcessBuilderFactoryImpl
-extends|extends
+implements|implements
 name|ProcessBuilderFactory
 block|{
 specifier|public

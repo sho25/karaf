@@ -15,52 +15,21 @@ name|jpm
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|jpm
-operator|.
-name|impl
-operator|.
-name|ProcessBuilderFactoryImpl
-import|;
-end_import
-
 begin_comment
 comment|/**  * Factory for process builders.  */
 end_comment
 
-begin_class
+begin_interface
 specifier|public
-specifier|abstract
-class|class
+interface|interface
 name|ProcessBuilderFactory
 block|{
-specifier|public
-specifier|static
-name|ProcessBuilderFactory
-name|newInstance
-parameter_list|()
-block|{
-return|return
-operator|new
-name|ProcessBuilderFactoryImpl
-argument_list|()
-return|;
-block|}
-specifier|public
-specifier|abstract
 name|ProcessBuilder
 name|newBuilder
 parameter_list|()
 function_decl|;
 block|}
-end_class
+end_interface
 
 end_unit
 
