@@ -12,8 +12,6 @@ operator|.
 name|karaf
 operator|.
 name|kar
-operator|.
-name|management
 package|;
 end_package
 
@@ -30,7 +28,7 @@ end_import
 begin_interface
 specifier|public
 interface|interface
-name|KarServiceMBean
+name|KarsMBean
 block|{
 comment|/**      * List the installed KAR files.      *      * @return the list of KAR files.      * @throws Exception in case of listing failure.      */
 name|List
