@@ -119,7 +119,7 @@ literal|"realm-list"
 argument_list|,
 name|description
 operator|=
-literal|"Lists the modification on the active realm/module."
+literal|"Lists the existing JAAS realms."
 argument_list|)
 specifier|public
 class|class
