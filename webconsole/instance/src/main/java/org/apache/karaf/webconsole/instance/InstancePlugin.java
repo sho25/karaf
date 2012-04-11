@@ -141,11 +141,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|karaf
+name|felix
 operator|.
-name|instance
+name|webconsole
 operator|.
-name|InstanceService
+name|AbstractWebConsolePlugin
 import|;
 end_import
 
@@ -158,6 +158,8 @@ operator|.
 name|karaf
 operator|.
 name|instance
+operator|.
+name|core
 operator|.
 name|Instance
 import|;
@@ -173,7 +175,9 @@ name|karaf
 operator|.
 name|instance
 operator|.
-name|InstanceSettings
+name|core
+operator|.
+name|InstanceService
 import|;
 end_import
 
@@ -183,11 +187,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
-name|webconsole
+name|instance
 operator|.
-name|AbstractWebConsolePlugin
+name|core
+operator|.
+name|InstanceSettings
 import|;
 end_import
 
