@@ -20,7 +20,7 @@ end_package
 begin_interface
 specifier|public
 interface|interface
-name|ScrServiceMBean
+name|ScrsMBean
 block|{
 name|String
 index|[]
