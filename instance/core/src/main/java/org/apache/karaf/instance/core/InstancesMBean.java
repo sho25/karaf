@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|instance
 operator|.
-name|management
+name|core
 package|;
 end_package
 
@@ -32,7 +32,7 @@ end_import
 begin_interface
 specifier|public
 interface|interface
-name|InstanceServiceMBean
+name|InstancesMBean
 block|{
 name|String
 name|INSTANCE_PID

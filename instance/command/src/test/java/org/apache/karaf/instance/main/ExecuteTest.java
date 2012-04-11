@@ -129,20 +129,6 @@ name|karaf
 operator|.
 name|instance
 operator|.
-name|InstanceService
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|instance
-operator|.
 name|command
 operator|.
 name|InstanceCommandSupport
@@ -158,6 +144,24 @@ operator|.
 name|karaf
 operator|.
 name|instance
+operator|.
+name|core
+operator|.
+name|InstanceService
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|instance
+operator|.
+name|core
 operator|.
 name|internal
 operator|.
@@ -876,7 +880,7 @@ parameter_list|()
 throws|throws
 name|Throwable
 block|{
-comment|// The Instance Service should be initialized at this point.
+comment|// The Instances Service should be initialized at this point.
 comment|// One way to find this out is by reading out the port number
 name|InstanceServiceImpl
 name|instanceService

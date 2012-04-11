@@ -59,6 +59,8 @@ name|karaf
 operator|.
 name|instance
 operator|.
+name|core
+operator|.
 name|Instance
 import|;
 end_import

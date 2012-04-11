@@ -12,6 +12,8 @@ operator|.
 name|karaf
 operator|.
 name|instance
+operator|.
+name|core
 package|;
 end_package
 

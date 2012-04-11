@@ -13,6 +13,8 @@ name|karaf
 operator|.
 name|instance
 operator|.
+name|core
+operator|.
 name|internal
 package|;
 end_package
@@ -117,6 +119,8 @@ name|karaf
 operator|.
 name|instance
 operator|.
+name|core
+operator|.
 name|Instance
 import|;
 end_import
@@ -131,7 +135,27 @@ name|karaf
 operator|.
 name|instance
 operator|.
+name|core
+operator|.
 name|InstanceSettings
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|instance
+operator|.
+name|core
+operator|.
+name|internal
+operator|.
+name|InstanceServiceImpl
 import|;
 end_import
 

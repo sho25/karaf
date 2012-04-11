@@ -75,6 +75,8 @@ name|karaf
 operator|.
 name|instance
 operator|.
+name|core
+operator|.
 name|InstanceSettings
 import|;
 end_import

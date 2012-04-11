@@ -13,6 +13,8 @@ name|karaf
 operator|.
 name|instance
 operator|.
+name|core
+operator|.
 name|internal
 package|;
 end_package
@@ -172,6 +174,8 @@ operator|.
 name|karaf
 operator|.
 name|instance
+operator|.
+name|core
 operator|.
 name|Instance
 import|;
@@ -441,7 +445,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instance already started"
+literal|"Instances already started"
 argument_list|)
 throw|;
 block|}
@@ -634,7 +638,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instance not stopped"
+literal|"Instances not stopped"
 argument_list|)
 throw|;
 block|}
@@ -732,7 +736,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instance not stopped"
+literal|"Instances not stopped"
 argument_list|)
 throw|;
 block|}
@@ -830,7 +834,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instance not stopped"
+literal|"Instances not stopped"
 argument_list|)
 throw|;
 block|}
@@ -1042,7 +1046,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instance already started"
+literal|"Instances already started"
 argument_list|)
 throw|;
 block|}
@@ -1504,7 +1508,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instance not started"
+literal|"Instances not started"
 argument_list|)
 throw|;
 block|}
@@ -1554,7 +1558,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instance not stopped"
+literal|"Instances not stopped"
 argument_list|)
 throw|;
 block|}

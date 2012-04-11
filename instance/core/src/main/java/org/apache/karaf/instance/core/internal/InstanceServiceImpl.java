@@ -13,6 +13,8 @@ name|karaf
 operator|.
 name|instance
 operator|.
+name|core
+operator|.
 name|internal
 package|;
 end_package
@@ -147,7 +149,9 @@ name|karaf
 operator|.
 name|instance
 operator|.
-name|InstanceSettings
+name|core
+operator|.
+name|Instance
 import|;
 end_import
 
@@ -160,6 +164,8 @@ operator|.
 name|karaf
 operator|.
 name|instance
+operator|.
+name|core
 operator|.
 name|InstanceService
 import|;
@@ -175,7 +181,9 @@ name|karaf
 operator|.
 name|instance
 operator|.
-name|Instance
+name|core
+operator|.
+name|InstanceSettings
 import|;
 end_import
 
@@ -845,7 +853,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Instance '"
+literal|"Instances '"
 operator|+
 name|name
 operator|+
@@ -1814,7 +1822,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Instance "
+literal|"Instances "
 operator|+
 name|newName
 operator|+
@@ -1843,7 +1851,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Instance "
+literal|"Instances "
 operator|+
 name|oldName
 operator|+
@@ -1881,7 +1889,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instance not stopped"
+literal|"Instances not stopped"
 argument_list|)
 throw|;
 block|}
@@ -2196,7 +2204,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Instance "
+literal|"Instances "
 operator|+
 name|cloneName
 operator|+
@@ -2225,7 +2233,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Instance "
+literal|"Instances "
 operator|+
 name|name
 operator|+
@@ -2263,7 +2271,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instance not stopped"
+literal|"Instances not stopped"
 argument_list|)
 throw|;
 block|}
@@ -2952,7 +2960,7 @@ argument_list|,
 name|STORAGE_FILE
 argument_list|)
 argument_list|,
-literal|"Instance Service storage"
+literal|"Instances Service storage"
 argument_list|)
 expr_stmt|;
 block|}

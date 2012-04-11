@@ -12,6 +12,8 @@ operator|.
 name|karaf
 operator|.
 name|instance
+operator|.
+name|core
 package|;
 end_package
 
@@ -52,6 +54,22 @@ operator|.
 name|framework
 operator|.
 name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|instance
+operator|.
+name|core
+operator|.
+name|InstanceSettings
 import|;
 end_import
 

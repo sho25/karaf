@@ -169,6 +169,8 @@ name|karaf
 operator|.
 name|instance
 operator|.
+name|core
+operator|.
 name|internal
 operator|.
 name|InstanceServiceImpl
