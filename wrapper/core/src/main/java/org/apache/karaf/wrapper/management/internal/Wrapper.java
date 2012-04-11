@@ -86,7 +86,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|WrapperMBeanImpl
+name|Wrapper
 extends|extends
 name|StandardMBean
 implements|implements
@@ -97,7 +97,7 @@ name|WrapperService
 name|wrapperService
 decl_stmt|;
 specifier|public
-name|WrapperMBeanImpl
+name|Wrapper
 parameter_list|()
 throws|throws
 name|NotCompliantMBeanException
