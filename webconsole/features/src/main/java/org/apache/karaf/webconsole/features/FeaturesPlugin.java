@@ -201,6 +201,20 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|webconsole
+operator|.
+name|WebConsoleConstants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|json
 operator|.
 name|JSONException
@@ -320,6 +334,20 @@ decl_stmt|;
 comment|//
 comment|// Blueprint lifecycle callback methods
 comment|//
+annotation|@
+name|Override
+specifier|protected
+name|boolean
+name|isHtmlRequest
+parameter_list|(
+name|HttpServletRequest
+name|request
+parameter_list|)
+block|{
+return|return
+literal|false
+return|;
+block|}
 specifier|public
 name|void
 name|start
@@ -632,6 +660,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|renderContent
@@ -665,7 +695,9 @@ name|request
 operator|.
 name|getAttribute
 argument_list|(
-literal|"org.apache.felix.webconsole.wrapper.servlet.OsgiManager.appRoot"
+name|WebConsoleConstants
+operator|.
+name|ATTR_APP_ROOT
 argument_list|)
 decl_stmt|;
 specifier|final
@@ -732,7 +764,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|"<div id='plugin_content'/>"
+literal|"<div id='plugin_content'>"
 argument_list|)
 expr_stmt|;
 name|pw
