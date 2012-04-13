@@ -68,27 +68,6 @@ specifier|public
 interface|interface
 name|ConfigRepository
 block|{
-comment|/**      * Saves config to storage or ConfigurationAdmin.      * @param pid      * @param props      * @param bypassStorage      * @throws IOException      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"rawtypes"
-argument_list|)
-name|void
-name|update
-parameter_list|(
-name|String
-name|pid
-parameter_list|,
-name|Dictionary
-name|props
-parameter_list|,
-name|boolean
-name|bypassStorage
-parameter_list|)
-throws|throws
-name|IOException
-function_decl|;
 comment|/**      * Saves config to storage or ConfigurationAdmin.      * @param pid      * @param props      * @throws IOException      */
 annotation|@
 name|SuppressWarnings

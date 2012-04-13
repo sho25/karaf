@@ -647,8 +647,6 @@ argument_list|(
 name|pid
 argument_list|,
 name|dictionary
-argument_list|,
-literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -749,8 +747,6 @@ argument_list|(
 name|pid
 argument_list|,
 name|dictionary
-argument_list|,
-literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -803,8 +799,6 @@ argument_list|(
 name|pid
 argument_list|,
 name|dictionary
-argument_list|,
-literal|false
 argument_list|)
 expr_stmt|;
 block|}
