@@ -689,7 +689,7 @@ condition|)
 block|{
 name|LOGGER
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Parsing authorized keys file {}..."
 argument_list|,
@@ -742,7 +742,7 @@ argument_list|)
 expr_stmt|;
 name|LOGGER
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Successfully parsed {} keys from file {}"
 argument_list|,
@@ -780,7 +780,7 @@ condition|)
 block|{
 name|LOGGER
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Authorized keys file {} disappeared, will recheck every minute"
 argument_list|,
@@ -804,7 +804,7 @@ condition|)
 block|{
 name|LOGGER
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Authorized keys file {} does not exist, will recheck every minute"
 argument_list|,
