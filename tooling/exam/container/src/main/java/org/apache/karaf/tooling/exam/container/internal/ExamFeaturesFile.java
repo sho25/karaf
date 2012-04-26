@@ -161,6 +161,10 @@ argument_list|()
 operator|+
 literal|"\">\n"
 operator|+
+name|extension
+operator|+
+literal|"\n"
+operator|+
 literal|"<bundle start-level='"
 operator|+
 name|startLevel
@@ -245,10 +249,6 @@ name|getPaxExamVersion
 argument_list|()
 operator|+
 literal|"</bundle>\n"
-operator|+
-name|extension
-operator|+
-literal|"\n"
 operator|+
 literal|"</feature>\n"
 operator|+
