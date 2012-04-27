@@ -175,7 +175,7 @@ name|org
 operator|.
 name|easymock
 operator|.
-name|IAnswer
+name|EasyMock
 import|;
 end_import
 
@@ -185,9 +185,7 @@ name|org
 operator|.
 name|easymock
 operator|.
-name|classextension
-operator|.
-name|EasyMock
+name|IAnswer
 import|;
 end_import
 
