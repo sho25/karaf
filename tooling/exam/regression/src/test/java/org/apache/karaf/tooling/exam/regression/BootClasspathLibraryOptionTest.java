@@ -321,7 +321,7 @@ block|}
 block|}
 name|assertEquals
 argument_list|(
-literal|3
+literal|5
 argument_list|,
 name|foundJarFiles
 argument_list|)
