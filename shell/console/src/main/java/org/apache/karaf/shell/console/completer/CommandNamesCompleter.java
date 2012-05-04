@@ -131,7 +131,7 @@ name|shell
 operator|.
 name|console
 operator|.
-name|Completer
+name|CommandSessionHolder
 import|;
 end_import
 
@@ -147,9 +147,7 @@ name|shell
 operator|.
 name|console
 operator|.
-name|jline
-operator|.
-name|CommandSessionHolder
+name|Completer
 import|;
 end_import
 
@@ -337,6 +335,11 @@ return|return
 name|res
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|protected
 name|void
 name|checkData

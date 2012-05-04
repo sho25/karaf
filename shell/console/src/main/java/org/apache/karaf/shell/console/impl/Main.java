@@ -14,6 +14,8 @@ operator|.
 name|shell
 operator|.
 name|console
+operator|.
+name|impl
 package|;
 end_package
 
@@ -343,9 +345,7 @@ name|shell
 operator|.
 name|console
 operator|.
-name|jline
-operator|.
-name|Console
+name|NameScoping
 import|;
 end_import
 
@@ -360,6 +360,28 @@ operator|.
 name|shell
 operator|.
 name|console
+operator|.
+name|impl
+operator|.
+name|jline
+operator|.
+name|ConsoleImpl
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|console
+operator|.
+name|impl
 operator|.
 name|jline
 operator|.
@@ -1211,7 +1233,7 @@ operator|.
 name|getTerminal
 argument_list|()
 decl_stmt|;
-name|Console
+name|ConsoleImpl
 name|console
 init|=
 name|createConsole
@@ -1373,9 +1395,9 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Allow sub classes of main to change the Console implementation used.      *       * @param commandProcessor      * @param in      * @param out      * @param err      * @param terminal      * @return      * @throws Exception      */
+comment|/**      * Allow sub classes of main to change the ConsoleImpl implementation used.      *       * @param commandProcessor      * @param in      * @param out      * @param err      * @param terminal      * @return      * @throws Exception      */
 specifier|protected
-name|Console
+name|ConsoleImpl
 name|createConsole
 parameter_list|(
 name|CommandProcessorImpl
@@ -1398,7 +1420,7 @@ name|Exception
 block|{
 return|return
 operator|new
-name|Console
+name|ConsoleImpl
 argument_list|(
 name|commandProcessor
 argument_list|,

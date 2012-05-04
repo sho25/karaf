@@ -55,6 +55,8 @@ name|shell
 operator|.
 name|console
 operator|.
+name|impl
+operator|.
 name|jline
 operator|.
 name|TerminalFactory

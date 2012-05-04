@@ -15,6 +15,8 @@ name|shell
 operator|.
 name|console
 operator|.
+name|impl
+operator|.
 name|jline
 package|;
 end_package

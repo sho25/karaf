@@ -85,11 +85,6 @@ implements|implements
 name|Completer
 block|{
 specifier|private
-specifier|final
-name|CommandSession
-name|session
-decl_stmt|;
-specifier|private
 name|FileNameCompleter
 name|completor
 init|=
@@ -103,14 +98,16 @@ parameter_list|(
 name|CommandSession
 name|session
 parameter_list|)
+block|{     }
+annotation|@
+name|SuppressWarnings
+argument_list|(
 block|{
-name|this
-operator|.
-name|session
-operator|=
-name|session
-expr_stmt|;
+literal|"rawtypes"
+block|,
+literal|"unchecked"
 block|}
+argument_list|)
 specifier|public
 name|int
 name|complete

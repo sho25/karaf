@@ -135,6 +135,9 @@ specifier|protected
 name|List
 argument_list|<
 name|ServiceReference
+argument_list|<
+name|?
+argument_list|>
 argument_list|>
 name|usedReferences
 decl_stmt|;
@@ -411,6 +414,9 @@ operator|new
 name|ArrayList
 argument_list|<
 name|ServiceReference
+argument_list|<
+name|?
+argument_list|>
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -442,6 +448,9 @@ block|{
 for|for
 control|(
 name|ServiceReference
+argument_list|<
+name|?
+argument_list|>
 name|ref
 range|:
 name|usedReferences

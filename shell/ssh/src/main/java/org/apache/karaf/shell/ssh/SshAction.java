@@ -139,9 +139,7 @@ name|shell
 operator|.
 name|console
 operator|.
-name|jline
-operator|.
-name|Console
+name|SessionProperties
 import|;
 end_import
 
@@ -652,7 +650,7 @@ name|session
 operator|.
 name|get
 argument_list|(
-name|Console
+name|SessionProperties
 operator|.
 name|IGNORE_INTERRUPTS
 argument_list|)
@@ -663,7 +661,7 @@ name|session
 operator|.
 name|put
 argument_list|(
-name|Console
+name|SessionProperties
 operator|.
 name|IGNORE_INTERRUPTS
 argument_list|,
@@ -921,7 +919,7 @@ name|session
 operator|.
 name|put
 argument_list|(
-name|Console
+name|SessionProperties
 operator|.
 name|IGNORE_INTERRUPTS
 argument_list|,

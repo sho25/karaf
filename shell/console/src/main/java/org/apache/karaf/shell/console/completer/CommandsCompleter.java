@@ -81,9 +81,7 @@ name|shell
 operator|.
 name|commands
 operator|.
-name|basic
-operator|.
-name|AbstractCommand
+name|CommandWithAction
 import|;
 end_import
 
@@ -179,7 +177,7 @@ name|shell
 operator|.
 name|console
 operator|.
-name|Completer
+name|CommandSessionHolder
 import|;
 end_import
 
@@ -195,14 +193,12 @@ name|shell
 operator|.
 name|console
 operator|.
-name|jline
-operator|.
-name|CommandSessionHolder
+name|Completer
 import|;
 end_import
 
 begin_comment
-comment|/**  * Like the {@link org.apache.karaf.shell.console.completer.CommandsCompleter} but does not use OSGi but is  * instead used from the non-OSGi {@link org.apache.karaf.shell.console.Main}  */
+comment|/**  * Like the {@link org.apache.karaf.shell.console.completer.CommandsCompleter} but does not use OSGi but is  * instead used from the non-OSGi {@link org.apache.karaf.shell.console.impl.Main}  */
 end_comment
 
 begin_class
@@ -337,6 +333,11 @@ return|return
 name|res
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|protected
 specifier|synchronized
 name|void
@@ -450,7 +451,7 @@ if|if
 condition|(
 name|function
 operator|instanceof
-name|AbstractCommand
+name|CommandWithAction
 condition|)
 block|{
 name|completers
@@ -463,7 +464,7 @@ argument_list|(
 name|session
 argument_list|,
 operator|(
-name|AbstractCommand
+name|CommandWithAction
 operator|)
 name|function
 argument_list|,
@@ -483,6 +484,11 @@ block|}
 block|}
 block|}
 comment|/**      * Get the aliases defined in the console session.      *      * @return the aliases set      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|private
 name|Set
 argument_list|<
@@ -498,6 +504,7 @@ argument_list|>
 name|vars
 init|=
 operator|(
+operator|(
 name|Set
 argument_list|<
 name|String
@@ -509,6 +516,7 @@ name|get
 argument_list|(
 literal|null
 argument_list|)
+operator|)
 decl_stmt|;
 name|Set
 argument_list|<

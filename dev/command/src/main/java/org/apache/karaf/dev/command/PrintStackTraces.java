@@ -77,9 +77,7 @@ name|shell
 operator|.
 name|console
 operator|.
-name|jline
-operator|.
-name|Console
+name|SessionProperties
 import|;
 end_import
 
@@ -144,7 +142,7 @@ name|session
 operator|.
 name|put
 argument_list|(
-name|Console
+name|SessionProperties
 operator|.
 name|PRINT_STACK_TRACES
 argument_list|,

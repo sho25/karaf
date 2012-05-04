@@ -10,8 +10,6 @@ operator|.
 name|shell
 operator|.
 name|console
-operator|.
-name|jline
 package|;
 end_package
 
