@@ -13,7 +13,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|shell
+name|commands
+operator|.
+name|impl
 package|;
 end_package
 
@@ -23,27 +25,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|BufferedReader
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|FileReader
 import|;
 end_import
 
@@ -63,6 +45,26 @@ name|java
 operator|.
 name|io
 operator|.
+name|FileReader
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|InputStreamReader
 import|;
 end_import
@@ -73,7 +75,7 @@ name|java
 operator|.
 name|net
 operator|.
-name|URL
+name|MalformedURLException
 import|;
 end_import
 
@@ -83,7 +85,7 @@ name|java
 operator|.
 name|net
 operator|.
-name|MalformedURLException
+name|URL
 import|;
 end_import
 
@@ -161,10 +163,6 @@ name|AbstractAction
 import|;
 end_import
 
-begin_comment
-comment|/**  * Concatenate and print files and/or URLs.  *  * @version $Rev: 593392 $ $Date: 2007-11-09 03:14:15 +0100 (Fri, 09 Nov 2007) $  */
-end_comment
-
 begin_class
 annotation|@
 name|Command
@@ -175,18 +173,26 @@ literal|"shell"
 argument_list|,
 name|name
 operator|=
-literal|"cat"
+literal|"head"
 argument_list|,
 name|description
 operator|=
-literal|"Displays the content of a file or URL."
+literal|"Displays the first lines of a file."
 argument_list|)
 specifier|public
 class|class
-name|CatAction
+name|HeadAction
 extends|extends
 name|AbstractAction
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|int
+name|DEFAULT_NUMBER_OF_LINES
+init|=
+literal|10
+decl_stmt|;
 annotation|@
 name|Option
 argument_list|(
@@ -200,7 +206,7 @@ block|{}
 argument_list|,
 name|description
 operator|=
-literal|"Number the output lines, starting at 1."
+literal|"The number of lines to display, starting at 1."
 argument_list|,
 name|required
 operator|=
@@ -211,8 +217,8 @@ operator|=
 literal|false
 argument_list|)
 specifier|private
-name|boolean
-name|displayLineNumbers
+name|int
+name|numberOfLines
 decl_stmt|;
 annotation|@
 name|Argument
@@ -227,11 +233,11 @@ literal|"paths or urls"
 argument_list|,
 name|description
 operator|=
-literal|"A list of file paths or urls to display separated by whitespace (use - for STDIN)"
+literal|"A list of file paths or urls to display separated by whitespaces."
 argument_list|,
 name|required
 operator|=
-literal|true
+literal|false
 argument_list|,
 name|multiValued
 operator|=
@@ -251,40 +257,38 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//
-comment|// Support "-" if length is one, and read from io.in
-comment|// This will help test command pipelines.
-comment|//
+comment|//If no paths provided assume standar input
 if|if
 condition|(
+name|paths
+operator|==
+literal|null
+operator|||
 name|paths
 operator|.
 name|size
 argument_list|()
 operator|==
-literal|1
-operator|&&
-literal|"-"
-operator|.
-name|equals
-argument_list|(
-name|paths
-operator|.
-name|get
-argument_list|(
 literal|0
-argument_list|)
-argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|log
+operator|.
+name|isDebugEnabled
+argument_list|()
 condition|)
 block|{
 name|log
 operator|.
-name|info
+name|debug
 argument_list|(
-literal|"Printing STDIN"
+literal|"Heading STDIN"
 argument_list|)
 expr_stmt|;
-name|cat
+block|}
+name|head
 argument_list|(
 operator|new
 name|BufferedReader
@@ -325,15 +329,24 @@ argument_list|(
 name|filename
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
 name|log
 operator|.
-name|info
+name|isDebugEnabled
+argument_list|()
+condition|)
+block|{
+name|log
+operator|.
+name|debug
 argument_list|(
-literal|"Printing URL: "
+literal|"Heading URL: "
 operator|+
 name|url
 argument_list|)
 expr_stmt|;
+block|}
 name|reader
 operator|=
 operator|new
@@ -366,15 +379,24 @@ argument_list|(
 name|filename
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
 name|log
 operator|.
-name|info
+name|isDebugEnabled
+argument_list|()
+condition|)
+block|{
+name|log
+operator|.
+name|debug
 argument_list|(
-literal|"Printing file: "
+literal|"Heading file: "
 operator|+
 name|file
 argument_list|)
 expr_stmt|;
+block|}
 name|reader
 operator|=
 operator|new
@@ -390,7 +412,7 @@ expr_stmt|;
 block|}
 try|try
 block|{
-name|cat
+name|head
 argument_list|(
 name|reader
 argument_list|)
@@ -423,7 +445,7 @@ return|;
 block|}
 specifier|private
 name|void
-name|cat
+name|head
 parameter_list|(
 specifier|final
 name|BufferedReader
@@ -440,6 +462,18 @@ name|lineno
 init|=
 literal|1
 decl_stmt|;
+if|if
+condition|(
+name|numberOfLines
+operator|<
+literal|1
+condition|)
+block|{
+name|numberOfLines
+operator|=
+name|DEFAULT_NUMBER_OF_LINES
+expr_stmt|;
+block|}
 while|while
 condition|(
 operator|(
@@ -452,31 +486,12 @@ argument_list|()
 operator|)
 operator|!=
 literal|null
-condition|)
-block|{
-if|if
-condition|(
-name|displayLineNumbers
-condition|)
-block|{
-name|System
-operator|.
-name|out
-operator|.
-name|print
-argument_list|(
-name|String
-operator|.
-name|format
-argument_list|(
-literal|"%6d  "
-argument_list|,
+operator|&&
 name|lineno
-operator|++
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
+operator|<=
+name|numberOfLines
+condition|)
+block|{
 name|System
 operator|.
 name|out
@@ -485,6 +500,9 @@ name|println
 argument_list|(
 name|line
 argument_list|)
+expr_stmt|;
+name|lineno
+operator|++
 expr_stmt|;
 block|}
 block|}

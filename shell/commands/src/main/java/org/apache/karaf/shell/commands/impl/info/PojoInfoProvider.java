@@ -9,7 +9,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|shell
+name|commands
+operator|.
+name|impl
 operator|.
 name|info
 package|;
@@ -22,6 +24,22 @@ operator|.
 name|util
 operator|.
 name|Properties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|commands
+operator|.
+name|InfoProvider
 import|;
 end_import
 

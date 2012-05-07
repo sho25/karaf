@@ -13,7 +13,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|shell
+name|commands
+operator|.
+name|impl
 package|;
 end_package
 

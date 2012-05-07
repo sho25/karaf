@@ -13,7 +13,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|shell
+name|commands
+operator|.
+name|impl
 package|;
 end_package
 
@@ -213,11 +215,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|shell
+name|commands
 operator|.
-name|info
-operator|.
-name|InfoProvider
+name|Command
 import|;
 end_import
 
@@ -233,7 +233,7 @@ name|shell
 operator|.
 name|commands
 operator|.
-name|Command
+name|InfoProvider
 import|;
 end_import
 

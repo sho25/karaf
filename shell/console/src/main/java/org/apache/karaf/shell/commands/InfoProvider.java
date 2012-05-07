@@ -13,9 +13,7 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|shell
-operator|.
-name|info
+name|commands
 package|;
 end_package
 
@@ -28,6 +26,10 @@ operator|.
 name|Properties
 import|;
 end_import
+
+begin_comment
+comment|/**  * A bundle can publish a service with this interface to offer some informations for the shell:info command  */
+end_comment
 
 begin_interface
 specifier|public

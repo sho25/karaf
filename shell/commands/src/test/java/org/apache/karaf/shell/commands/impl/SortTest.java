@@ -13,7 +13,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|shell
+name|commands
+operator|.
+name|impl
 package|;
 end_package
 
@@ -44,6 +46,24 @@ operator|.
 name|util
 operator|.
 name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|commands
+operator|.
+name|impl
+operator|.
+name|SortAction
 import|;
 end_import
 
