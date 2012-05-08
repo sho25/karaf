@@ -18,12 +18,84 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+operator|.
+name|format
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
 name|io
 operator|.
-name|*
+name|BufferedOutputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|FileInputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|FileOutputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|InputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|OutputStream
 import|;
 end_import
 
@@ -55,7 +127,77 @@ name|java
 operator|.
 name|util
 operator|.
-name|*
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|EnumSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
 import|;
 end_import
 
@@ -173,7 +315,7 @@ name|internal
 operator|.
 name|model
 operator|.
-name|Features
+name|Feature
 import|;
 end_import
 
@@ -191,7 +333,7 @@ name|internal
 operator|.
 name|model
 operator|.
-name|Feature
+name|Features
 import|;
 end_import
 
@@ -274,46 +416,6 @@ operator|.
 name|layout
 operator|.
 name|DefaultRepositoryLayout
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|maven
-operator|.
-name|artifact
-operator|.
-name|repository
-operator|.
-name|metadata
-operator|.
-name|*
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|maven
-operator|.
-name|artifact
-operator|.
-name|repository
-operator|.
-name|metadata
-operator|.
-name|io
-operator|.
-name|xpp3
-operator|.
-name|MetadataXpp3Writer
 import|;
 end_import
 
@@ -508,7 +610,7 @@ name|String
 argument_list|>
 name|installedFeatures
 decl_stmt|;
-comment|//Aether support
+comment|// Aether support
 comment|/**      * The entry point to Aether, i.e. the component doing all the work.      *      * @component      */
 specifier|private
 name|RepositorySystem
@@ -554,6 +656,8 @@ name|Feature
 argument_list|>
 argument_list|()
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|execute
@@ -1191,18 +1295,12 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|//install bundles listed in startup properties that weren't in kars into the system dir
+comment|// install bundles listed in startup properties that weren't in kars into the system dir
 for|for
 control|(
 name|String
 name|key
 range|:
-operator|(
-name|Set
-argument_list|<
-name|String
-argument_list|>
-operator|)
 name|startupProperties
 operator|.
 name|keySet
@@ -1253,7 +1351,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|//install bundles listed in install features not in system into local-repo
+comment|// install bundles listed in install features not in system into local-repo
 for|for
 control|(
 name|Feature
@@ -1883,6 +1981,8 @@ name|FEATURES_BOOT
 init|=
 literal|"featuresBoot"
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|validateRepository
@@ -1893,6 +1993,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{         }
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addRepository
@@ -2375,6 +2477,8 @@ return|return
 name|features
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|removeRepository
@@ -2383,6 +2487,8 @@ name|URI
 name|url
 parameter_list|)
 block|{         }
+annotation|@
+name|Override
 specifier|public
 name|void
 name|restoreRepository
@@ -2393,6 +2499,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{         }
+annotation|@
+name|Override
 specifier|public
 name|Repository
 index|[]
@@ -2407,6 +2515,8 @@ literal|0
 index|]
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|installFeature
@@ -2417,6 +2527,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{         }
+annotation|@
+name|Override
 specifier|public
 name|void
 name|installFeature
@@ -2430,6 +2542,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{         }
+annotation|@
+name|Override
 specifier|public
 name|void
 name|installFeature
@@ -2449,6 +2563,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{         }
+annotation|@
+name|Override
 specifier|public
 name|void
 name|installFeature
@@ -2563,9 +2679,6 @@ name|Integer
 operator|.
 name|decode
 argument_list|(
-operator|(
-name|String
-operator|)
 name|startupProperties
 operator|.
 name|get
@@ -2635,6 +2748,8 @@ block|}
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|installFeatures
@@ -2662,6 +2777,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{         }
+annotation|@
+name|Override
 specifier|public
 name|void
 name|uninstallFeature
@@ -2672,6 +2789,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{         }
+annotation|@
+name|Override
 specifier|public
 name|void
 name|uninstallFeature
@@ -2685,6 +2804,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{         }
+annotation|@
+name|Override
 specifier|public
 name|Feature
 index|[]
@@ -2701,6 +2822,8 @@ literal|0
 index|]
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Feature
 index|[]
@@ -2715,6 +2838,8 @@ literal|0
 index|]
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isInstalled
@@ -2735,6 +2860,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|org
 operator|.
@@ -2760,6 +2887,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|org
 operator|.
@@ -2813,8 +2942,6 @@ specifier|public
 name|CommentProperties
 parameter_list|()
 block|{
-name|this
-operator|.
 name|layout
 operator|=
 operator|(
@@ -3122,8 +3249,6 @@ name|line
 argument_list|)
 expr_stmt|;
 block|}
-name|this
-operator|.
 name|layout
 operator|.
 name|put
@@ -3184,8 +3309,6 @@ argument_list|(
 name|commentLines
 argument_list|)
 expr_stmt|;
-name|this
-operator|.
 name|layout
 operator|.
 name|put
