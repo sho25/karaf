@@ -117,8 +117,6 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|console
-operator|.
 name|table
 operator|.
 name|Col
@@ -134,8 +132,6 @@ operator|.
 name|karaf
 operator|.
 name|shell
-operator|.
-name|console
 operator|.
 name|table
 operator|.

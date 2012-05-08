@@ -13,8 +13,6 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|console
-operator|.
 name|table
 package|;
 end_package
@@ -28,8 +26,6 @@ operator|.
 name|karaf
 operator|.
 name|shell
-operator|.
-name|console
 operator|.
 name|table
 operator|.
