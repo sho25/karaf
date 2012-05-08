@@ -1662,6 +1662,8 @@ parameter_list|,
 name|File
 name|target
 parameter_list|)
+throws|throws
+name|MojoFailureException
 block|{
 name|File
 name|source
@@ -1834,6 +1836,8 @@ parameter_list|(
 name|String
 name|id
 parameter_list|)
+throws|throws
+name|MojoFailureException
 block|{
 name|id
 operator|=
@@ -1918,9 +1922,20 @@ argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
-return|return
-literal|null
-return|;
+throw|throw
+operator|new
+name|MojoFailureException
+argument_list|(
+name|format
+argument_list|(
+literal|"Couldn't resolve artifact %s"
+argument_list|,
+name|id
+argument_list|)
+argument_list|,
+name|e
+argument_list|)
+throw|;
 block|}
 name|getLog
 argument_list|()
