@@ -178,6 +178,7 @@ if|if
 condition|(
 name|force
 operator|||
+operator|!
 name|ShellUtil
 operator|.
 name|isASystemBundle
