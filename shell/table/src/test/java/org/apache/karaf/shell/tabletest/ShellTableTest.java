@@ -281,15 +281,15 @@ expr_stmt|;
 name|String
 name|expected
 init|=
-literal|"   id | Name                 |                Centered                \r\n"
+literal|"   id | Name                 |                Centered                \n"
 operator|+
-literal|"----------------------------------------------------------------------\r\n"
+literal|"----------------------------------------------------------------------\n"
 operator|+
-literal|"    1 | Test                 |               Description              \r\n"
+literal|"    1 | Test                 |               Description              \n"
 operator|+
-literal|"   20 | My name              |               Description              \r\n"
+literal|"   20 | My name              |               Description              \n"
 operator|+
-literal|"12345 | A very long text tha | A very long text that should not be cut\r\n"
+literal|"12345 | A very long text tha | A very long text that should not be cut\n"
 decl_stmt|;
 name|Assert
 operator|.
@@ -297,13 +297,10 @@ name|assertEquals
 argument_list|(
 name|expected
 argument_list|,
+name|getString
+argument_list|(
 name|writer
-operator|.
-name|getBuffer
-argument_list|()
-operator|.
-name|toString
-argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -395,11 +392,11 @@ expr_stmt|;
 name|String
 name|expected
 init|=
-literal|"1      | 2\r\n"
+literal|"1      | 2\n"
 operator|+
-literal|"----------\r\n"
+literal|"----------\n"
 operator|+
-literal|"1      | 2\r\n"
+literal|"1      | 2\n"
 decl_stmt|;
 name|Assert
 operator|.
@@ -407,13 +404,10 @@ name|assertEquals
 argument_list|(
 name|expected
 argument_list|,
+name|getString
+argument_list|(
 name|writer
-operator|.
-name|getBuffer
-argument_list|()
-operator|.
-name|toString
-argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -514,13 +508,13 @@ name|String
 name|expected
 init|=
 comment|//
-literal|"1     |  2\r\n"
+literal|"1     |  2\n"
 comment|//
 operator|+
-literal|"----------\r\n"
+literal|"----------\n"
 comment|//
 operator|+
-literal|"quite |  a\r\n"
+literal|"quite |  a\n"
 decl_stmt|;
 name|Assert
 operator|.
@@ -528,13 +522,10 @@ name|assertEquals
 argument_list|(
 name|expected
 argument_list|,
+name|getString
+argument_list|(
 name|writer
-operator|.
-name|getBuffer
-argument_list|()
-operator|.
-name|toString
-argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -635,13 +626,13 @@ name|String
 name|expected
 init|=
 comment|//
-literal|"1     | \r\n"
+literal|"1     | \n"
 operator|+
 comment|//
-literal|"--------\r\n"
+literal|"--------\n"
 operator|+
 comment|//
-literal|"quite | \r\n"
+literal|"quite | \n"
 decl_stmt|;
 name|Assert
 operator|.
@@ -649,6 +640,22 @@ name|assertEquals
 argument_list|(
 name|expected
 argument_list|,
+name|getString
+argument_list|(
+name|writer
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+specifier|private
+name|String
+name|getString
+parameter_list|(
+name|StringWriter
+name|writer
+parameter_list|)
+block|{
+return|return
 name|writer
 operator|.
 name|getBuffer
@@ -656,8 +663,14 @@ argument_list|()
 operator|.
 name|toString
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|"\r\n"
+argument_list|,
+literal|"\n"
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 block|}
 end_class
