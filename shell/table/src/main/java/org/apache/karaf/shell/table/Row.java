@@ -200,6 +200,9 @@ argument_list|<
 name|Col
 argument_list|>
 name|cols
+parameter_list|,
+name|String
+name|separator
 parameter_list|)
 block|{
 name|StringBuilder
@@ -235,7 +238,6 @@ literal|"Number of columns and number of content elements do not match"
 argument_list|)
 throw|;
 block|}
-comment|//st.append("| ");
 for|for
 control|(
 name|Col
@@ -277,7 +279,7 @@ name|st
 operator|.
 name|append
 argument_list|(
-literal|" | "
+name|separator
 argument_list|)
 expr_stmt|;
 block|}
@@ -285,7 +287,6 @@ name|c
 operator|++
 expr_stmt|;
 block|}
-comment|//st.append(" |");
 return|return
 name|st
 operator|.
