@@ -118,7 +118,7 @@ literal|"query"
 argument_list|,
 name|description
 operator|=
-literal|"Specify a LDAP query"
+literal|"Query in LDAP syntax. Example: \"(service.pid=org.apache.karaf.log)\""
 argument_list|,
 name|required
 operator|=
