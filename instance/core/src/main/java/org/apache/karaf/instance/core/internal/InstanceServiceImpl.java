@@ -3063,6 +3063,13 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|String
+name|sourcePath
+init|=
+literal|"org/apache/karaf/instance/resources/"
+operator|+
+name|resource
+decl_stmt|;
 name|InputStream
 name|is
 init|=
@@ -3074,9 +3081,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"org/apache/karaf/instance/resources/"
-operator|+
-name|resource
+name|sourcePath
 argument_list|)
 decl_stmt|;
 if|if
@@ -3092,7 +3097,9 @@ name|IOException
 argument_list|(
 literal|"Unable to find resource "
 operator|+
-name|resource
+name|sourcePath
+operator|+
+literal|" on classpath"
 argument_list|)
 throw|;
 block|}
