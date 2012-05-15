@@ -277,7 +277,7 @@ argument_list|)
 decl_stmt|;
 name|as
 operator|.
-name|handleFeatures
+name|addFeaturesFromSettings
 argument_list|(
 name|f
 argument_list|,
