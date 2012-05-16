@@ -265,15 +265,13 @@ name|BundleService
 name|bundleService
 decl_stmt|;
 specifier|public
-name|ListBundles
+name|void
+name|setBundleService
 parameter_list|(
 name|BundleService
 name|bundleService
 parameter_list|)
 block|{
-name|super
-argument_list|()
-expr_stmt|;
 name|this
 operator|.
 name|bundleService
