@@ -61,7 +61,7 @@ name|shell
 operator|.
 name|console
 operator|.
-name|OsgiCommandSupport
+name|AbstractAction
 import|;
 end_import
 
@@ -105,7 +105,7 @@ specifier|public
 class|class
 name|PrintStackTraces
 extends|extends
-name|OsgiCommandSupport
+name|AbstractAction
 block|{
 annotation|@
 name|Argument

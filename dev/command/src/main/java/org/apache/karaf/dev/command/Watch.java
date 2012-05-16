@@ -103,7 +103,7 @@ name|shell
 operator|.
 name|console
 operator|.
-name|OsgiCommandSupport
+name|AbstractAction
 import|;
 end_import
 
@@ -155,7 +155,7 @@ specifier|public
 class|class
 name|Watch
 extends|extends
-name|OsgiCommandSupport
+name|AbstractAction
 block|{
 annotation|@
 name|Argument
@@ -307,20 +307,21 @@ name|list
 decl_stmt|;
 specifier|private
 name|BundleWatcher
-name|watcher
+name|bundleWatcher
 decl_stmt|;
 specifier|public
-name|Watch
+name|void
+name|setBundleWatcher
 parameter_list|(
 name|BundleWatcher
-name|watcher
+name|bundleWatcher
 parameter_list|)
 block|{
 name|this
 operator|.
-name|watcher
+name|bundleWatcher
 operator|=
-name|watcher
+name|bundleWatcher
 expr_stmt|;
 block|}
 annotation|@
@@ -372,7 +373,7 @@ operator|+
 literal|" ms"
 argument_list|)
 expr_stmt|;
-name|watcher
+name|bundleWatcher
 operator|.
 name|setInterval
 argument_list|(
@@ -394,7 +395,7 @@ argument_list|(
 literal|"Stopping watch"
 argument_list|)
 expr_stmt|;
-name|watcher
+name|bundleWatcher
 operator|.
 name|stop
 argument_list|()
@@ -420,7 +421,7 @@ range|:
 name|urls
 control|)
 block|{
-name|watcher
+name|bundleWatcher
 operator|.
 name|remove
 argument_list|(
@@ -439,7 +440,7 @@ range|:
 name|urls
 control|)
 block|{
-name|watcher
+name|bundleWatcher
 operator|.
 name|add
 argument_list|(
@@ -463,7 +464,7 @@ argument_list|(
 literal|"Starting watch"
 argument_list|)
 expr_stmt|;
-name|watcher
+name|bundleWatcher
 operator|.
 name|start
 argument_list|()
@@ -505,7 +506,7 @@ control|(
 name|String
 name|url
 range|:
-name|watcher
+name|bundleWatcher
 operator|.
 name|getWatchURLs
 argument_list|()
@@ -517,7 +518,7 @@ name|Bundle
 argument_list|>
 name|bundleList
 init|=
-name|watcher
+name|bundleWatcher
 operator|.
 name|getBundlesByURL
 argument_list|(
@@ -614,7 +615,7 @@ name|String
 argument_list|>
 name|urls
 init|=
-name|watcher
+name|bundleWatcher
 operator|.
 name|getWatchURLs
 argument_list|()
@@ -647,7 +648,7 @@ control|(
 name|String
 name|url
 range|:
-name|watcher
+name|bundleWatcher
 operator|.
 name|getWatchURLs
 argument_list|()

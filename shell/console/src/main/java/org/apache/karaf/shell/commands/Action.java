@@ -34,7 +34,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An action allows to easily execute commands in karaf.  * It can be assumed that each action is only accessed by a single thread at a time.  *   * An Action is always part of an AbstractCommand. The AbstractCommand makes sure  * the single threaded assumption above is true. Before the call to the execute method  * the action is checked for annotated fields (@Argument, @Option). These fields  * are populated from the command arguments before the action is called.    */
+comment|/**  * An action allows to easily execute commands in karaf.  * It can be assumed that each action is only accessed by a single thread at a time.  *   * An Action is always part of an AbstractCommand. The AbstractCommand makes sure  * the single threaded assumption above is true. Before the call to the execute method  * the action is checked for annotated fields (@Argument, @Option). These fields  * are populated from the command arguments before the action is called.  *   * Any class implementing Action must have a no argument constructor. This  * is necessary so the help generator can instantiate the class and get the   * default values.   */
 end_comment
 
 begin_interface

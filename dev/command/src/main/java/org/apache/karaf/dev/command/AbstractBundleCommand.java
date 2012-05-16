@@ -37,15 +37,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|osgi
 operator|.
-name|karaf
+name|framework
 operator|.
-name|shell
-operator|.
-name|console
-operator|.
-name|OsgiCommandSupport
+name|Bundle
 import|;
 end_import
 
@@ -57,7 +53,7 @@ name|osgi
 operator|.
 name|framework
 operator|.
-name|Bundle
+name|BundleContext
 import|;
 end_import
 
@@ -71,7 +67,7 @@ specifier|abstract
 class|class
 name|AbstractBundleCommand
 extends|extends
-name|OsgiCommandSupport
+name|DevCommandSupport
 block|{
 annotation|@
 name|Argument
@@ -95,6 +91,25 @@ argument_list|)
 name|Long
 name|id
 decl_stmt|;
+specifier|protected
+name|BundleContext
+name|bundleContext
+decl_stmt|;
+specifier|public
+name|void
+name|setBundleContext
+parameter_list|(
+name|BundleContext
+name|bundleContext
+parameter_list|)
+block|{
+name|this
+operator|.
+name|bundleContext
+operator|=
+name|bundleContext
+expr_stmt|;
+block|}
 annotation|@
 name|Override
 specifier|protected
@@ -107,8 +122,7 @@ block|{
 name|Bundle
 name|bundle
 init|=
-name|getBundleContext
-argument_list|()
+name|bundleContext
 operator|.
 name|getBundle
 argument_list|(
