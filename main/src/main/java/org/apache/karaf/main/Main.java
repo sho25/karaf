@@ -605,6 +605,23 @@ name|Throwable
 name|ex
 parameter_list|)
 block|{
+comment|// Also log to sytem.err in case logging is not yet initialized
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+literal|"Could not launch framework: "
+operator|+
+name|ex
+argument_list|)
+expr_stmt|;
+name|ex
+operator|.
+name|printStackTrace
+argument_list|()
+expr_stmt|;
 name|main
 operator|.
 name|LOG
@@ -929,22 +946,6 @@ operator|.
 name|start
 argument_list|()
 expr_stmt|;
-comment|// If we have a clean state, install everything
-if|if
-condition|(
-name|framework
-operator|.
-name|getBundleContext
-argument_list|()
-operator|.
-name|getBundles
-argument_list|()
-operator|.
-name|length
-operator|==
-literal|1
-condition|)
-block|{
 name|FrameworkStartLevel
 name|sl
 init|=
@@ -966,6 +967,22 @@ operator|.
 name|defaultBundleStartlevel
 argument_list|)
 expr_stmt|;
+comment|// If we have a clean state, install everything
+if|if
+condition|(
+name|framework
+operator|.
+name|getBundleContext
+argument_list|()
+operator|.
+name|getBundles
+argument_list|()
+operator|.
+name|length
+operator|==
+literal|1
+condition|)
+block|{
 name|LOG
 operator|.
 name|info
