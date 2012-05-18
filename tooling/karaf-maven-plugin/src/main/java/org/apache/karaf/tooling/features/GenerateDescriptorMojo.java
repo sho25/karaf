@@ -621,17 +621,17 @@ name|AbstractLogEnabled
 implements|implements
 name|Mojo
 block|{
-comment|/**      * The (optional) input feature.file to extend      *      * @parameter default-value="${project.basedir}/src/main/feature/feature.xml"      */
+comment|/**      * An (optional) input feature file to extend.  This is highly recommended as it is the only way to add<code>&lt;feature/&gt;</code>      * elements to the individual features that are generated.  Note that this file is filtered using standard Maven      * resource interpolation, allowing attributes of the input file to be set with information such as ${project.version}      * from the current build.      *<p/>      * When dependencies are processed, if they are duplicated in this file, the dependency here provides the baseline      * information and is supplemented by additional information from the dependency.      *      * @parameter default-value="${project.basedir}/src/main/feature/feature.xml"      */
 specifier|private
 name|File
 name|inputFile
 decl_stmt|;
-comment|/**      * (wrapper) The filtered input file      *      * @parameter default-value="${project.build.directory}/feature/filteredInputFeature.xml"      */
+comment|/**      * (wrapper) The filtered input file. This file holds the result of Maven resource interpolation and is generally      * not necessary to change, although it may be helpful for debugging.      *      * @parameter default-value="${project.build.directory}/feature/filteredInputFeature.xml"      */
 specifier|private
 name|File
 name|filteredInputFile
 decl_stmt|;
-comment|/**      * (wrapper) The file to generate      *      * @parameter default-value="${project.build.directory}/feature/feature.xml"      */
+comment|/**      * (wrapper) The file to generate.  This file is attached as a project output artifact.      *      * @parameter default-value="${project.build.directory}/feature/feature.xml"      */
 specifier|private
 name|File
 name|outputFile
@@ -655,19 +655,31 @@ name|attachmentArtifactClassifier
 init|=
 literal|"features"
 decl_stmt|;
-comment|/**      * If false, feature dependencies are added to the assembled feature as dependencies.      * If true, feature dependencies xml descriptors are read and their contents added to the features descriptor under assembly.      *      * @parameter default-value="${aggregateFeatures}"      */
+comment|/**      * Specifies whether features dependencies of this project will be included inline of the the      * final output (<code>true</code>) or simply referenced as output artifact dependencies (<code>false</code>).      * If<code>true</code>, feature dependencies xml descriptors are read and their contents added to the features descriptor under assembly.      * If<code>false</code>, feature dependencies are added to the assembled feature as dependencies.      * Setting this value to<code>true</code> is especially helpful in multiproject builds where subprojects build their own features      * using<code>aggregateFeatures = false</code>, then combined with<code>aggregateFeatures = true</code> in an      * aggregation project with explicit dependencies to the child projects.      *      * @parameter default-value="false"      */
 specifier|private
 name|boolean
 name|aggregateFeatures
 init|=
 literal|false
 decl_stmt|;
-comment|/**      * If present, the bundles added to the feature constructed from the dependencies will be marked with this startlevel.      *      * @parameter      */
+comment|/**      * If present, the bundles added to the feature constructed from the dependencies will be marked with this default      * startlevel.  If this parameter is not present, no startlevel attribute will be created. Finer resolution for specific      * dependencies can be obtained by specifying the dependency in the file referenced by the<code>inputFile</code> parameter.      *      * @parameter      */
 specifier|private
 name|Integer
 name|startLevel
 decl_stmt|;
-comment|//new
+comment|/**      * Flag indicating whether transitive dependencies should be included (<code>true</code>) or not (<code>false</code>).      *<p/>      * N.B. Note the default value of this is true, but is suboptimal in cases where specific<code>&lt;feature/&gt;</code> dependencies are      * provided by the<code>inputFile</code> parameter.      *      * @parameter default-value="true"      */
+specifier|private
+name|boolean
+name|includeTransitiveDependency
+decl_stmt|;
+comment|/**      * The standard behavior is to add dependencies as<code>&lt;bundle&gt;</code> elements to a<code>&lt;feature&gt;</code>      * with the same name as the artifactId of the project.  This flag disables that behavior.      *      * @parameter default-value="true"      */
+specifier|private
+name|boolean
+name|addBundlesToPrimaryFeature
+decl_stmt|;
+comment|// *************************************************
+comment|// READ-ONLY MAVEN PLUGIN PARAMETERS
+comment|// *************************************************
 comment|/**      * (wrapper) The maven project.      *      * @parameter expression="${project}"      * @required      * @readonly      */
 specifier|protected
 name|MavenProject
@@ -688,11 +700,6 @@ specifier|private
 name|RepositorySystemSession
 name|repoSession
 decl_stmt|;
-comment|/**      * Flag indicating whether transitive dependencies should be included      * (<code>true</code>) or not (<code>false</code>).      *      * @parameter default-value="true"      */
-specifier|private
-name|boolean
-name|includeTransitiveDependency
-decl_stmt|;
 comment|/**      * The project's remote repositories to use for the resolution of project dependencies.      *      * @parameter default-value="${project.remoteProjectRepositories}"      * @readonly      */
 specifier|private
 name|List
@@ -708,6 +715,21 @@ argument_list|<
 name|RemoteRepository
 argument_list|>
 name|pluginRepos
+decl_stmt|;
+comment|/**      * @component role="org.apache.maven.shared.filtering.MavenResourcesFiltering" role-hint="default"      * @required      * @readonly      */
+specifier|protected
+name|MavenResourcesFiltering
+name|mavenResourcesFiltering
+decl_stmt|;
+comment|/**      * @parameter expression="${session}"      * @required      * @readonly      */
+specifier|protected
+name|MavenSession
+name|session
+decl_stmt|;
+comment|/**      * @plexus.requirement role-hint="default"      * @component      * @required      * @readonly      */
+specifier|protected
+name|MavenFileFilter
+name|mavenFileFilter
 decl_stmt|;
 comment|//dependencies we are interested in
 specifier|protected
@@ -1253,50 +1275,12 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
-name|Dependency
-name|dependency
-init|=
-name|objectFactory
-operator|.
-name|createDependency
-argument_list|()
-decl_stmt|;
-name|dependency
-operator|.
-name|setName
-argument_list|(
-name|artifact
-operator|.
-name|getArtifactId
-argument_list|()
-argument_list|)
-expr_stmt|;
-comment|//TODO convert to bundles version?
-name|dependency
-operator|.
-name|setVersion
-argument_list|(
-name|artifact
-operator|.
-name|getVersion
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|feature
-operator|.
-name|getFeature
-argument_list|()
-operator|.
-name|add
-argument_list|(
-name|dependency
-argument_list|)
-expr_stmt|;
 block|}
-block|}
-else|else
+elseif|else
+if|if
+condition|(
+name|addBundlesToPrimaryFeature
+condition|)
 block|{
 name|String
 name|bundleName
@@ -1890,35 +1874,35 @@ return|;
 block|}
 comment|//------------------------------------------------------------------------//
 comment|// dependency change detection
-comment|/**      * Whether to look for changed dependencies at all      *      * @parameter      */
+comment|/**      * Master switch to look for and log changed dependencies.  If this is set to<code>true</code> and the file referenced by      *<code>dependencyCache</code> does not exist, it will be unconditionally generated.  If the file does exist, it is      * used to detect changes from previous builds and generate logs of those changes.  In that case,      *<code>failOnDependencyChange = true</code> will cause the build to fail.      *      * @parameter default-value="false"      */
 specifier|private
 name|boolean
 name|checkDependencyChange
 decl_stmt|;
-comment|/**      * Whether to fail on changed dependencies (default, false) or warn (true)      *      * @parameter      */
+comment|/**      * (wrapper) Location of dependency cache.  This file is generated to contain known dependencies and is generally      * located in SCM so that it may be used across separate developer builds. This is parameter is ignored unless      *<code>checkDependencyChange</code> is set to<code>true</code>.      *      * @parameter default-value="${basedir}/src/main/history/dependencies.xml"      */
+specifier|private
+name|File
+name|dependencyCache
+decl_stmt|;
+comment|/**      * Location of filtered dependency file.      *      * @parameter default-value="${basedir}/target/history/dependencies.xml"      * @readonly      */
+specifier|private
+name|File
+name|filteredDependencyCache
+decl_stmt|;
+comment|/**      * Whether to fail on changed dependencies (default,<code>true</code>) or warn (<code>false</code>). This is parameter is ignored unless      *<code>checkDependencyChange</code> is set to<code>true</code> and<code>dependencyCache</code> exists to compare      * against.      *      * @parameter default-value="true"      */
 specifier|private
 name|boolean
-name|warnOnDependencyChange
+name|failOnDependencyChange
 decl_stmt|;
-comment|/**      * Whether to show changed dependencies in log      *      * @parameter      */
+comment|/**      * Copies the contents of dependency change logs that are generated to stdout. This is parameter is ignored unless      *<code>checkDependencyChange</code> is set to<code>true</code> and<code>dependencyCache</code> exists to compare      * against.      *      * @parameter default-value="false"      */
 specifier|private
 name|boolean
 name|logDependencyChanges
 decl_stmt|;
-comment|/**      * Whether to overwrite src/main/history/dependencies.xml if it has changed      *      * @parameter      */
+comment|/**      * Whether to overwrite the file referenced by<code>dependencyCache</code> if it has changed.  This is parameter is      * ignored unless<code>checkDependencyChange</code> is set to<code>true</code>,<code>failOnDependencyChange</code>      * is set to<code>false</code> and<code>dependencyCache</code> exists to compare against.      *      * @parameter default-value="false"      */
 specifier|private
 name|boolean
 name|overwriteChangedDependencies
-decl_stmt|;
-comment|/**      * (wrapper) Location of existing dependency file.      *      * @parameter expression="${basedir}/src/main/history/dependencies.xml"      * @required      */
-specifier|private
-name|File
-name|dependencyFile
-decl_stmt|;
-comment|/**      * Location of filtered dependency file.      *      * @parameter expression="${basedir}/target/history/dependencies.xml"      * @required      * @readonly      */
-specifier|private
-name|File
-name|filteredDependencyFile
 decl_stmt|;
 comment|//filtering support
 comment|/**      * The character encoding scheme to be applied when filtering resources.      *      * @parameter expression="${encoding}" default-value="${project.build.sourceEncoding}"      */
@@ -1926,27 +1910,12 @@ specifier|protected
 name|String
 name|encoding
 decl_stmt|;
-comment|/**      * @component role="org.apache.maven.shared.filtering.MavenResourcesFiltering" role-hint="default"      * @required      * @readonly      */
-specifier|protected
-name|MavenResourcesFiltering
-name|mavenResourcesFiltering
-decl_stmt|;
-comment|/**      * @parameter expression="${session}"      * @required      * @readonly      */
-specifier|protected
-name|MavenSession
-name|session
-decl_stmt|;
 comment|/**      * Expression preceded with the String won't be interpolated      * \${foo} will be replaced with ${foo}      *      * @parameter expression="${maven.resources.escapeString}"      */
 specifier|protected
 name|String
 name|escapeString
 init|=
 literal|"\\"
-decl_stmt|;
-comment|/**      * @plexus.requirement role-hint="default"      * @component      * @required      * @readonly      */
-specifier|protected
-name|MavenFileFilter
-name|mavenFileFilter
 decl_stmt|;
 comment|/**      * System properties.      *      * @parameter      */
 specifier|protected
@@ -2212,7 +2181,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|dependencyFile
+name|dependencyCache
 operator|.
 name|exists
 argument_list|()
@@ -2221,9 +2190,9 @@ block|{
 comment|//filter dependencies file
 name|filter
 argument_list|(
-name|dependencyFile
+name|dependencyCache
 argument_list|,
-name|filteredDependencyFile
+name|filteredDependencyCache
 argument_list|)
 expr_stmt|;
 comment|//read dependency types, convert to dependencies, compare.
@@ -2232,7 +2201,7 @@ name|oldfeatures
 init|=
 name|readFeaturesFile
 argument_list|(
-name|filteredDependencyFile
+name|filteredDependencyCache
 argument_list|)
 decl_stmt|;
 name|Feature
@@ -2587,7 +2556,7 @@ name|writeDependencies
 argument_list|(
 name|features
 argument_list|,
-name|dependencyFile
+name|dependencyCache
 argument_list|)
 expr_stmt|;
 block|}
@@ -2611,7 +2580,7 @@ name|writeDependencies
 argument_list|(
 name|features
 argument_list|,
-name|dependencyFile
+name|dependencyCache
 argument_list|)
 expr_stmt|;
 block|}
@@ -2657,7 +2626,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|filteredDependencyFile
+name|filteredDependencyCache
 operator|.
 name|getParentFile
 argument_list|()
@@ -2690,7 +2659,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|filteredDependencyFile
+name|filteredDependencyCache
 operator|.
 name|getParentFile
 argument_list|()
@@ -2835,7 +2804,7 @@ name|write
 argument_list|(
 literal|"Delete "
 operator|+
-name|dependencyFile
+name|dependencyCache
 operator|.
 name|getAbsolutePath
 argument_list|()
@@ -2845,8 +2814,21 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|warnOnDependencyChange
+name|failOnDependencyChange
 condition|)
+block|{
+throw|throw
+operator|new
+name|MojoFailureException
+argument_list|(
+name|out
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+throw|;
+block|}
+else|else
 block|{
 name|getLog
 argument_list|()
@@ -2859,19 +2841,6 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-throw|throw
-operator|new
-name|MojoFailureException
-argument_list|(
-name|out
-operator|.
-name|toString
-argument_list|()
-argument_list|)
-throw|;
 block|}
 block|}
 specifier|private
@@ -3148,7 +3117,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|filteredDependencyFile
+name|filteredDependencyCache
 operator|.
 name|getParentFile
 argument_list|()
