@@ -1231,6 +1231,8 @@ block|}
 name|String
 name|command
 init|=
+literal|"\""
+operator|+
 operator|new
 name|File
 argument_list|(
@@ -1254,7 +1256,7 @@ operator|.
 name|getCanonicalPath
 argument_list|()
 operator|+
-literal|" "
+literal|"\" "
 operator|+
 name|javaOpts
 operator|+
