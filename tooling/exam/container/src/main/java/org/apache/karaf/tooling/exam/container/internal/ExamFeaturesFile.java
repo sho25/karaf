@@ -143,7 +143,7 @@ name|featuresXml
 operator|=
 literal|"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
 operator|+
-literal|"<features xmlns=\"http://karaf.apache.org/xmlns/features/v1.0.0\" name=\"pax-exam-features-"
+literal|"<features name=\"pax-exam-features-"
 operator|+
 name|Info
 operator|.
@@ -164,6 +164,162 @@ operator|+
 name|extension
 operator|+
 literal|"\n"
+operator|+
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.base/ops4j-base-lang/"
+operator|+
+name|Info
+operator|.
+name|getOps4jBaseVersion
+argument_list|()
+operator|+
+literal|"</bundle>\n"
+operator|+
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.base/ops4j-base-monitors/"
+operator|+
+name|Info
+operator|.
+name|getOps4jBaseVersion
+argument_list|()
+operator|+
+literal|"</bundle>\n"
+operator|+
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.base/ops4j-base-net/"
+operator|+
+name|Info
+operator|.
+name|getOps4jBaseVersion
+argument_list|()
+operator|+
+literal|"</bundle>\n"
+operator|+
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.base/ops4j-base-store/"
+operator|+
+name|Info
+operator|.
+name|getOps4jBaseVersion
+argument_list|()
+operator|+
+literal|"</bundle>\n"
+operator|+
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.base/ops4j-base-io/"
+operator|+
+name|Info
+operator|.
+name|getOps4jBaseVersion
+argument_list|()
+operator|+
+literal|"</bundle>\n"
+operator|+
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.base/ops4j-base-spi/"
+operator|+
+name|Info
+operator|.
+name|getOps4jBaseVersion
+argument_list|()
+operator|+
+literal|"</bundle>\n"
+operator|+
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.base/ops4j-base-util-property/"
+operator|+
+name|Info
+operator|.
+name|getOps4jBaseVersion
+argument_list|()
+operator|+
+literal|"</bundle>\n"
+operator|+
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.pax.swissbox/pax-swissbox-core/"
+operator|+
+name|Info
+operator|.
+name|getPaxSwissboxVersion
+argument_list|()
+operator|+
+literal|"</bundle>\n"
+operator|+
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.pax.swissbox/pax-swissbox-extender/"
+operator|+
+name|Info
+operator|.
+name|getPaxSwissboxVersion
+argument_list|()
+operator|+
+literal|"</bundle>\n"
+operator|+
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.pax.swissbox/pax-swissbox-lifecycle/"
+operator|+
+name|Info
+operator|.
+name|getPaxSwissboxVersion
+argument_list|()
+operator|+
+literal|"</bundle>\n"
+operator|+
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.pax.swissbox/pax-swissbox-framework/"
+operator|+
+name|Info
+operator|.
+name|getPaxSwissboxVersion
+argument_list|()
+operator|+
+literal|"</bundle>\n"
+operator|+
+literal|"<bundle start-level='"
+operator|+
+name|startLevel
+operator|+
+literal|"'>mvn:org.ops4j.pax.exam/pax-exam/"
+operator|+
+name|Info
+operator|.
+name|getPaxExamVersion
+argument_list|()
+operator|+
+literal|"</bundle>\n"
 operator|+
 literal|"<bundle start-level='"
 operator|+
