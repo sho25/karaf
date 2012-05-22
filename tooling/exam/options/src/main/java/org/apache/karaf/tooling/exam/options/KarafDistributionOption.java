@@ -186,6 +186,24 @@ name|KeepRuntimeFolderOption
 argument_list|()
 return|;
 block|}
+comment|/**      * Provides an option to configure the internals of the PaxExamKaraf subsystem runner.      */
+specifier|public
+specifier|static
+name|Option
+name|useOwnKarafExamSystemConfiguration
+parameter_list|(
+name|String
+name|invoker
+parameter_list|)
+block|{
+return|return
+operator|new
+name|KarafExamSystemConfigurationOption
+argument_list|(
+name|invoker
+argument_list|)
+return|;
+block|}
 comment|/**      * The karaf pax-logging configuration is typically not a file manipulated very often. Therefore we take the freedom      * of adding a console logger and changing the log level directly. IF you like to configure the file manually (or      * had so in your distribution) add this option to avoid any automatic modifications to this file!      */
 specifier|public
 specifier|static
