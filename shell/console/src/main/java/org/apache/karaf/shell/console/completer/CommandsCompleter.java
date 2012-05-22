@@ -453,7 +453,21 @@ operator|.
 name|clear
 argument_list|()
 expr_stmt|;
-comment|// get command aliases
+if|if
+condition|(
+name|subshell
+operator|==
+literal|null
+operator|||
+name|subshell
+operator|.
+name|length
+argument_list|()
+operator|==
+literal|0
+condition|)
+block|{
+comment|// Add aliases if we are not in a subshell
 name|Set
 argument_list|<
 name|String
@@ -476,6 +490,7 @@ name|aliases
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 comment|// add argument completers for each command
 for|for
 control|(
