@@ -112,7 +112,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Remote user name (Default: karaf)"
+literal|"Remote user name"
 argument_list|,
 name|required
 operator|=
@@ -125,39 +125,6 @@ argument_list|)
 specifier|private
 name|String
 name|username
-init|=
-literal|"karaf"
-decl_stmt|;
-annotation|@
-name|Option
-argument_list|(
-name|name
-operator|=
-literal|"-p"
-argument_list|,
-name|aliases
-operator|=
-block|{
-literal|"--password"
-block|}
-argument_list|,
-name|description
-operator|=
-literal|"Remote user password (Default: karaf)"
-argument_list|,
-name|required
-operator|=
-literal|false
-argument_list|,
-name|multiValued
-operator|=
-literal|false
-argument_list|)
-specifier|private
-name|String
-name|password
-init|=
-literal|"karaf"
 decl_stmt|;
 annotation|@
 name|Argument
@@ -308,6 +275,13 @@ operator|.
 name|getSshPort
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|username
+operator|!=
+literal|null
+condition|)
+block|{
 name|session
 operator|.
 name|execute
@@ -315,10 +289,6 @@ argument_list|(
 literal|"ssh -l "
 operator|+
 name|username
-operator|+
-literal|" -P "
-operator|+
-name|password
 operator|+
 literal|" -p "
 operator|+
@@ -329,6 +299,23 @@ operator|+
 name|cmdStr
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|session
+operator|.
+name|execute
+argument_list|(
+literal|"ssh -p "
+operator|+
+name|port
+operator|+
+literal|" localhost "
+operator|+
+name|cmdStr
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 literal|null
 return|;

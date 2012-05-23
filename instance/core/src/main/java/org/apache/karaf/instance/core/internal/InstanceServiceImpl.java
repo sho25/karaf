@@ -1157,12 +1157,21 @@ argument_list|,
 name|printOutput
 argument_list|)
 expr_stmt|;
-comment|// copyResourceToDir(karafBase, "etc/startup.properties", true);
+comment|// copyResourceToDir(karafBase, "etc/startup.properties", printOutput);
 name|copyResourceToDir
 argument_list|(
 name|karafBase
 argument_list|,
 literal|"etc/users.properties"
+argument_list|,
+name|printOutput
+argument_list|)
+expr_stmt|;
+name|copyResourceToDir
+argument_list|(
+name|karafBase
+argument_list|,
+literal|"etc/keys.properties"
 argument_list|,
 name|printOutput
 argument_list|)

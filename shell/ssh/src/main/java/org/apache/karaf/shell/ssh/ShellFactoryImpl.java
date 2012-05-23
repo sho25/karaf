@@ -472,7 +472,7 @@ name|session
 operator|.
 name|getAttribute
 argument_list|(
-name|KarafJaasPasswordAuthenticator
+name|KarafJaasAuthenticator
 operator|.
 name|SUBJECT_ATTRIBUTE_KEY
 argument_list|)
