@@ -815,6 +815,13 @@ name|feature
 operator|.
 name|getInstall
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|feature
+operator|.
+name|getInstall
+argument_list|()
 operator|.
 name|equals
 argument_list|(
