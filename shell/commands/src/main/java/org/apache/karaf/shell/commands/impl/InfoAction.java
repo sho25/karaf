@@ -1404,7 +1404,7 @@ literal|1
 condition|?
 literal|" minutes"
 else|:
-literal|"minute"
+literal|" minute"
 operator|)
 expr_stmt|;
 block|}
@@ -1485,7 +1485,7 @@ literal|1
 condition|?
 literal|" hours"
 else|:
-literal|"hour"
+literal|" hour"
 operator|)
 expr_stmt|;
 block|}
