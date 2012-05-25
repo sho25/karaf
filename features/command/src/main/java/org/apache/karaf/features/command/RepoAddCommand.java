@@ -95,11 +95,11 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"feature:repo"
+literal|"feature"
 argument_list|,
 name|name
 operator|=
-literal|"add"
+literal|"repo-add"
 argument_list|,
 name|description
 operator|=

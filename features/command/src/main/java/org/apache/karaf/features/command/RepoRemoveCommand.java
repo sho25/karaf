@@ -93,11 +93,11 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"feature:repo"
+literal|"feature"
 argument_list|,
 name|name
 operator|=
-literal|"remove"
+literal|"repo-remove"
 argument_list|,
 name|description
 operator|=
