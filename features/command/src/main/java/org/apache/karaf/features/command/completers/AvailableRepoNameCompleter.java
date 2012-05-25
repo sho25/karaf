@@ -85,10 +85,14 @@ name|StringsCompleter
 import|;
 end_import
 
+begin_comment
+comment|/**  * Shows the list of feature repos that can be installed with their short name  */
+end_comment
+
 begin_class
 specifier|public
 class|class
-name|FeatureRepoNameCompleter
+name|AvailableRepoNameCompleter
 implements|implements
 name|Completer
 block|{
@@ -122,6 +126,11 @@ specifier|final
 name|int
 name|cursor
 parameter_list|,
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|final
 name|List
 name|candidates
