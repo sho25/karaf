@@ -670,9 +670,7 @@ operator|.
 name|out
 operator|.
 name|println
-argument_list|(
-literal|"\n"
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 block|}
