@@ -78,6 +78,19 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Get the name of the current Karaf instance      * @return instance name      */
+name|String
+name|getName
+parameter_list|()
+function_decl|;
+comment|/**      * Set the name of the Karaf instance       * @param name new instance name      */
+name|void
+name|setName
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
