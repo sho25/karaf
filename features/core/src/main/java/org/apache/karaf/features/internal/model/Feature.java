@@ -704,6 +704,20 @@ operator|=
 name|value
 expr_stmt|;
 block|}
+comment|/**      * Since version has a default value ("0.0.0"), returns      * whether or not the version has been set.      */
+specifier|public
+name|boolean
+name|hasVersion
+parameter_list|()
+block|{
+return|return
+name|this
+operator|.
+name|version
+operator|!=
+literal|null
+return|;
+block|}
 comment|/**      * Gets the value of the description property.      *       * @return      *     possible object is      *     {@link String }      *           */
 specifier|public
 name|String

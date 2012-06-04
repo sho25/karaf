@@ -71,6 +71,10 @@ name|String
 name|getVersion
 parameter_list|()
 function_decl|;
+name|boolean
+name|hasVersion
+parameter_list|()
+function_decl|;
 name|String
 name|getResolver
 parameter_list|()

@@ -1080,12 +1080,11 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|!
 name|feature
 operator|.
-name|getVersion
+name|hasVersion
 argument_list|()
-operator|==
-literal|null
 condition|)
 block|{
 name|feature
