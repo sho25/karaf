@@ -59,6 +59,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Dictionary
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Properties
 import|;
 end_import
@@ -282,7 +292,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Properties
+name|Dictionary
 name|props
 init|=
 operator|new

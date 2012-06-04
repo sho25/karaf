@@ -355,7 +355,7 @@ name|admin
 argument_list|)
 expr_stmt|;
 comment|// the ConfigAdmin service returns a Dictionary for an existing PID
-name|Properties
+name|Dictionary
 name|props
 init|=
 operator|new
