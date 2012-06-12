@@ -408,7 +408,7 @@ name|String
 argument_list|>
 name|features
 decl_stmt|;
-comment|/**      * @parameter      */
+comment|/**      * @parameter expression="${project.build.directory}/features-repo"      */
 specifier|private
 name|File
 name|repository
