@@ -129,7 +129,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Cleanup the system repository from the KAR content"
+literal|"Uninstall features and cleanup the system repository from the KAR content"
 argument_list|,
 name|required
 operator|=

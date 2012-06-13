@@ -228,20 +228,8 @@ name|file
 operator|.
 name|getName
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|LOGGER
-operator|.
-name|warn
-argument_list|(
-literal|"KAR {} has been removed; however, its feature URLs have not been deregistered, "
-operator|+
-literal|"and its bundles are still available in the system repository."
 argument_list|,
-name|file
-operator|.
-name|getName
-argument_list|()
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -272,6 +260,8 @@ name|file
 operator|.
 name|getName
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|karService
