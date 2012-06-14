@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * Enhancement of the standard<code>Properties</code>  * managing the maintain of comments, etc.  *</p>  *  * @author gnodet, jbonofre  */
+comment|/**  * Enhancement of the standard<code>Properties</code>  * managing the maintain of comments, etc.  */
 end_comment
 
 begin_class

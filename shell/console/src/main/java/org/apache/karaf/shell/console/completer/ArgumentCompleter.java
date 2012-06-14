@@ -2472,7 +2472,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      *  The result of a delimited buffer.      *      *  @author<a href="mailto:mwp1@cornell.edu">Marc Prud'hommeaux</a>      */
+comment|/**      *  The result of a delimited buffer.      */
 specifier|public
 specifier|static
 class|class
