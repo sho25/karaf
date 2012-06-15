@@ -2345,6 +2345,21 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|addRepository
+parameter_list|(
+name|URI
+name|uri
+parameter_list|,
+name|boolean
+name|install
+parameter_list|)
+throws|throws
+name|Exception
+block|{         }
 specifier|private
 name|String
 name|retrieveProperty
@@ -2498,7 +2513,20 @@ name|void
 name|removeRepository
 parameter_list|(
 name|URI
-name|url
+name|uri
+parameter_list|)
+block|{         }
+annotation|@
+name|Override
+specifier|public
+name|void
+name|removeRepository
+parameter_list|(
+name|URI
+name|uri
+parameter_list|,
+name|boolean
+name|install
 parameter_list|)
 block|{         }
 annotation|@
@@ -2508,7 +2536,7 @@ name|void
 name|restoreRepository
 parameter_list|(
 name|URI
-name|url
+name|uri
 parameter_list|)
 throws|throws
 name|Exception
