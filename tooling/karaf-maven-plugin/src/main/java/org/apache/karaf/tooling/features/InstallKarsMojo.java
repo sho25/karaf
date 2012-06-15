@@ -2956,6 +2956,21 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|Repository
+name|getRepository
+parameter_list|(
+name|String
+name|repoName
+parameter_list|)
+block|{
+comment|// TODO Auto-generated method stub
+return|return
+literal|null
+return|;
+block|}
 block|}
 comment|// when FELIX-2887 is ready we can use plain Properties again
 specifier|private

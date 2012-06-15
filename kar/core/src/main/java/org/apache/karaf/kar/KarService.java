@@ -19,6 +19,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|PrintStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|net
 operator|.
 name|URI
@@ -32,6 +42,16 @@ operator|.
 name|util
 operator|.
 name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
 import|;
 end_import
 
@@ -86,6 +106,23 @@ name|list
 parameter_list|()
 throws|throws
 name|Exception
+function_decl|;
+comment|/**      * Create a kar from the given feature and repo names.      * Each named feature including all transitive deps will be added.      * For each named repo all features in the repo and their transitive deps will be added.      *       * @param repoName      * @param features       * @param console      */
+name|void
+name|create
+parameter_list|(
+name|String
+name|repoName
+parameter_list|,
+name|Set
+argument_list|<
+name|String
+argument_list|>
+name|features
+parameter_list|,
+name|PrintStream
+name|console
+parameter_list|)
 function_decl|;
 block|}
 end_interface

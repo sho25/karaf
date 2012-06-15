@@ -133,6 +133,13 @@ index|[]
 name|listRepositories
 parameter_list|()
 function_decl|;
+name|Repository
+name|getRepository
+parameter_list|(
+name|String
+name|repoName
+parameter_list|)
+function_decl|;
 name|void
 name|installFeature
 parameter_list|(
