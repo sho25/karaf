@@ -342,7 +342,7 @@ name|Filter
 argument_list|(
 name|value
 operator|=
-literal|"osgi.blueprint.container.symbolicname=org.apache.karaf.wrapper.commands"
+literal|"osgi.blueprint.container.symbolicname=org.apache.karaf.wrapper.command"
 argument_list|,
 name|timeout
 operator|=
