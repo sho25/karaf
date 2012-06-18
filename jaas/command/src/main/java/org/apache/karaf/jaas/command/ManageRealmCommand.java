@@ -29,6 +29,22 @@ name|shell
 operator|.
 name|commands
 operator|.
+name|Argument
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|commands
+operator|.
 name|Command
 import|;
 end_import
@@ -129,7 +145,7 @@ literal|"realm-manage"
 argument_list|,
 name|description
 operator|=
-literal|"Manage user and roles of a JAAS Realm."
+literal|"Manage user and roles of a JAAS Realm"
 argument_list|)
 specifier|public
 class|class
@@ -138,19 +154,23 @@ extends|extends
 name|JaasCommandSupport
 block|{
 annotation|@
-name|Option
+name|Argument
 argument_list|(
+name|index
+operator|=
+literal|0
+argument_list|,
 name|name
 operator|=
-literal|"--realm"
+literal|"realm"
 argument_list|,
 name|description
 operator|=
-literal|"Jaas Realm"
+literal|"JAAS Realm"
 argument_list|,
 name|required
 operator|=
-literal|false
+literal|true
 argument_list|,
 name|multiValued
 operator|=
@@ -160,41 +180,19 @@ name|String
 name|realmName
 decl_stmt|;
 annotation|@
-name|Option
+name|Argument
 argument_list|(
-name|name
-operator|=
-literal|"--index"
-argument_list|,
-name|description
-operator|=
-literal|"Realm Index"
-argument_list|,
-name|required
-operator|=
-literal|false
-argument_list|,
-name|multiValued
-operator|=
-literal|false
-argument_list|)
-name|int
 name|index
-decl_stmt|;
-annotation|@
-name|Option
-argument_list|(
+operator|=
+literal|1
+argument_list|,
 name|name
 operator|=
-literal|"--module"
-argument_list|,
-name|aliases
-operator|=
-block|{}
+literal|"module"
 argument_list|,
 name|description
 operator|=
-literal|"Realm Module"
+literal|"JAAS Realm Module Class Name"
 argument_list|,
 name|required
 operator|=
@@ -212,11 +210,13 @@ name|Option
 argument_list|(
 name|name
 operator|=
-literal|"--force"
+literal|"-f"
 argument_list|,
 name|aliases
 operator|=
-block|{}
+block|{
+literal|"--force"
+block|}
 argument_list|,
 name|description
 operator|=
@@ -242,30 +242,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-if|if
-condition|(
-name|realmName
-operator|==
-literal|null
-operator|&&
-name|index
-operator|<=
-literal|0
-condition|)
-block|{
-name|System
-operator|.
-name|err
-operator|.
-name|println
-argument_list|(
-literal|"A valid realm or the realm index need to be specified"
-argument_list|)
-expr_stmt|;
-return|return
-literal|null
-return|;
-block|}
 name|JaasRealm
 name|oldRealm
 init|=
@@ -323,7 +299,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"Another realm is being edited.  Cancel / update first, or use the --force option"
+literal|"Another realm is being edited.  Cancel/update first, or use the --force option."
 argument_list|)
 expr_stmt|;
 block|}
@@ -355,7 +331,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"Another module is being edited.  Cancel / update first, or use the --force option"
+literal|"Another module is being edited.  Cancel/update first, or use the --force option."
 argument_list|)
 expr_stmt|;
 block|}
@@ -364,11 +340,9 @@ block|{
 name|JaasRealm
 name|realm
 init|=
-name|findRealmByNameOrIndex
+name|findRealm
 argument_list|(
 name|realmName
-argument_list|,
-name|index
 argument_list|)
 decl_stmt|;
 if|if
@@ -381,7 +355,7 @@ block|{
 name|AppConfigurationEntry
 name|entry
 init|=
-name|findEntryByRealmAndName
+name|findLoginModule
 argument_list|(
 name|realm
 argument_list|,
@@ -483,7 +457,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"Could not find module: %s in realm:%s"
+literal|"Could not find module %s in realm %s"
 argument_list|,
 name|moduleName
 argument_list|,
@@ -505,7 +479,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"Could not find realm:%s"
+literal|"Could not find realm %s"
 argument_list|,
 name|realmName
 argument_list|)
