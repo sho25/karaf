@@ -145,7 +145,7 @@ literal|"realm-manage"
 argument_list|,
 name|description
 operator|=
-literal|"Manage user and roles of a JAAS Realm"
+literal|"Manage users and roles of a JAAS Realm"
 argument_list|)
 specifier|public
 class|class
@@ -192,7 +192,7 @@ literal|"module"
 argument_list|,
 name|description
 operator|=
-literal|"JAAS Realm Module Class Name"
+literal|"JAAS Login Module Class Name"
 argument_list|,
 name|required
 operator|=
@@ -299,7 +299,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"Another realm is being edited.  Cancel/update first, or use the --force option."
+literal|"Another JAAS Realm is edited. Cancel/update first, or use the --force option."
 argument_list|)
 expr_stmt|;
 block|}
@@ -331,7 +331,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"Another module is being edited.  Cancel/update first, or use the --force option."
+literal|"Another JASS Login Module is edited. Cancel/update first, or use the --force option."
 argument_list|)
 expr_stmt|;
 block|}
@@ -457,7 +457,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"Could not find module %s in realm %s"
+literal|"Could not find JAAS Login Module %s in Realm %s"
 argument_list|,
 name|moduleName
 argument_list|,
@@ -479,7 +479,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"Could not find realm %s"
+literal|"Could not find JAAS Realm %s"
 argument_list|,
 name|realmName
 argument_list|)

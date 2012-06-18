@@ -79,7 +79,7 @@ literal|"user-delete"
 argument_list|,
 name|description
 operator|=
-literal|"Delete a user."
+literal|"Delete a usergit s"
 argument_list|)
 specifier|public
 class|class

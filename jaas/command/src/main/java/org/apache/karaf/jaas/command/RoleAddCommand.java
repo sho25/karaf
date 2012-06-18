@@ -79,7 +79,7 @@ literal|"role-add"
 argument_list|,
 name|description
 operator|=
-literal|"Add a role to a user."
+literal|"Add a role to a user"
 argument_list|)
 specifier|public
 class|class

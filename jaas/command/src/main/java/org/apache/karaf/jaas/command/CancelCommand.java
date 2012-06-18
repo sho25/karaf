@@ -73,7 +73,7 @@ literal|"cancel"
 argument_list|,
 name|description
 operator|=
-literal|"Cancel the modification of a JAAS realm."
+literal|"Cancel the modification of a JAAS realm"
 argument_list|)
 specifier|public
 class|class

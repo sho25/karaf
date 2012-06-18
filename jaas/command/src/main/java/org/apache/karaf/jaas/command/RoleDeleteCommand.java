@@ -79,7 +79,7 @@ literal|"role-delete"
 argument_list|,
 name|description
 operator|=
-literal|"Delete a role from a user."
+literal|"Delete a role from a user"
 argument_list|)
 specifier|public
 class|class

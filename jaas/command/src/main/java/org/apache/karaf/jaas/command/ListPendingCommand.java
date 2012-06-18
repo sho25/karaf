@@ -119,7 +119,7 @@ literal|"pending-list"
 argument_list|,
 name|description
 operator|=
-literal|"Lists the modification on the active realm/module."
+literal|"List the pending modification on the active JAAS Realm/Login Module"
 argument_list|)
 specifier|public
 class|class
@@ -220,7 +220,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"Jaas Realm:%s Jaas Module:%s"
+literal|"JAAS Realm %s/JAAS Login Module %s"
 argument_list|,
 name|realm
 operator|.
@@ -271,7 +271,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"No JAAS command in queue."
+literal|"No JAAS modification command in queue"
 argument_list|)
 expr_stmt|;
 block|}
@@ -284,7 +284,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"No JAAS Realm / Module has been selected."
+literal|"No JAAS Realm/Login Module selected"
 argument_list|)
 expr_stmt|;
 block|}

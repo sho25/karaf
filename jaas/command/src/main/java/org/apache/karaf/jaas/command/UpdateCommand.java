@@ -113,7 +113,7 @@ literal|"update"
 argument_list|,
 name|description
 operator|=
-literal|"Update JAAS realm."
+literal|"Apply pending modification on the edited JAAS Realm"
 argument_list|)
 specifier|public
 class|class
@@ -173,7 +173,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"No JAAS Realm / Module has been selected."
+literal|"No JAAS Realm/Login Module selected"
 argument_list|)
 expr_stmt|;
 return|return
@@ -203,22 +203,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-name|String
-operator|.
-name|format
-argument_list|(
-literal|"Failed to resolve backing engine for realm:%s and moudle:%s"
-argument_list|,
-name|realm
-operator|.
-name|getName
-argument_list|()
-argument_list|,
-name|entry
-operator|.
-name|getLoginModuleName
-argument_list|()
-argument_list|)
+literal|"Can't update the JAAS realm (no backing engine service registered)"
 argument_list|)
 expr_stmt|;
 return|return
@@ -285,7 +270,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"No JAAS command in queue."
+literal|"No JAAS pending modification"
 argument_list|)
 expr_stmt|;
 return|return

@@ -79,7 +79,7 @@ literal|"user-add"
 argument_list|,
 name|description
 operator|=
-literal|"Add a user."
+literal|"Add a user"
 argument_list|)
 specifier|public
 class|class
