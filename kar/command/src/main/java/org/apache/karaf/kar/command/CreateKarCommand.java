@@ -23,7 +23,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Set
+name|List
 import|;
 end_import
 
@@ -129,10 +129,10 @@ literal|false
 argument_list|,
 name|multiValued
 operator|=
-literal|false
+literal|true
 argument_list|)
 specifier|private
-name|Set
+name|List
 argument_list|<
 name|String
 argument_list|>
