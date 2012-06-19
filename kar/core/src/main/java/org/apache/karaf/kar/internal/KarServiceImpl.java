@@ -929,7 +929,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-literal|"true"
+literal|"false"
 operator|.
 name|equals
 argument_list|(
@@ -2613,7 +2613,7 @@ literal|"Manifest-Version: 1.0\n"
 operator|+
 name|MANIFEST_ATTR_KARAF_FEATURE_START
 operator|+
-literal|": true\n"
+literal|": false\n"
 decl_stmt|;
 name|InputStream
 name|manifestIs
