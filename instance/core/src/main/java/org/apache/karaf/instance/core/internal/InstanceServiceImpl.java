@@ -908,7 +908,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Instances '"
+literal|"Instance '"
 operator|+
 name|name
 operator|+
@@ -1800,7 +1800,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Instances "
+literal|"Instance "
 operator|+
 name|newName
 operator|+
@@ -1829,7 +1829,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Instances "
+literal|"Instance "
 operator|+
 name|oldName
 operator|+
@@ -1867,7 +1867,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instances not stopped"
+literal|"Instance not stopped"
 argument_list|)
 throw|;
 block|}
@@ -2109,7 +2109,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Instances "
+literal|"Instance "
 operator|+
 name|cloneName
 operator|+
@@ -2138,7 +2138,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Instances "
+literal|"Instance "
 operator|+
 name|name
 operator|+
@@ -2176,7 +2176,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instances not stopped"
+literal|"Instance not stopped"
 argument_list|)
 throw|;
 block|}

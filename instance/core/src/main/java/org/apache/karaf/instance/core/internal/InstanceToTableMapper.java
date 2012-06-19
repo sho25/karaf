@@ -280,7 +280,7 @@ block|{
 name|String
 name|desc
 init|=
-literal|"This type describes Karaf instances"
+literal|"This type describes Karaf instance"
 decl_stmt|;
 name|OpenType
 argument_list|<

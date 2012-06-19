@@ -558,7 +558,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Instances '"
+literal|"Instance '"
 operator|+
 name|name
 operator|+

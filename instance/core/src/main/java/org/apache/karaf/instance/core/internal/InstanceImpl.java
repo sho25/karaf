@@ -474,7 +474,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instances already started"
+literal|"Instance already started"
 argument_list|)
 throw|;
 block|}
@@ -664,7 +664,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instances not stopped"
+literal|"Instance not stopped"
 argument_list|)
 throw|;
 block|}
@@ -762,7 +762,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instances not stopped"
+literal|"Instance not stopped"
 argument_list|)
 throw|;
 block|}
@@ -860,7 +860,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instances not stopped"
+literal|"Instance not stopped"
 argument_list|)
 throw|;
 block|}
@@ -1072,7 +1072,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instances already started"
+literal|"Instance already started"
 argument_list|)
 throw|;
 block|}
@@ -1520,7 +1520,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instances not started"
+literal|"Instance not started"
 argument_list|)
 throw|;
 block|}
@@ -1570,7 +1570,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Instances not stopped"
+literal|"Instance not stopped"
 argument_list|)
 throw|;
 block|}
