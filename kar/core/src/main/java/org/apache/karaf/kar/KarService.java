@@ -21,6 +21,16 @@ name|java
 operator|.
 name|io
 operator|.
+name|File
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|PrintStream
 import|;
 end_import
@@ -54,35 +64,38 @@ specifier|public
 interface|interface
 name|KarService
 block|{
-comment|/**      * Install KAR from a given URL.      *      * @param url the KAR URL.      * @throws Exception in case of installation failure.      */
+comment|/**      * Install KAR from a given URI      *       * Resources will be copied to the karaf base dir      * Repository contents will be copied to a subdir in the       * karaf data directory      *      * @param karUri Uri of the kar to be installed      * @throws Exception in case of installation failure.      */
 name|void
 name|install
 parameter_list|(
 name|URI
-name|url
+name|karUri
 parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Uninstall the given KAR.      * NB: the system folder is not cleaned.      *      * @param name the name of the KAR.      * @throws Exception in case of uninstall failure.      */
+comment|/**      * Install a kar with manually given repository and       * resource directories.      *       * @param karUri Uri of the kar to be installed      * @param repoDir destination for the repository contents of the kar      * @param resourceDir destination for the resource contents of the kar      * @throws Exception      */
 name|void
-name|uninstall
+name|install
 parameter_list|(
-name|String
-name|name
-parameter_list|)
-throws|throws
-name|Exception
-function_decl|;
-comment|/**      * Uninstall the given KAR and, eventually, cleanup the repository from the KAR content.      *      * @param name the name of the KAR.      * @param clean true to cleanup the repository folder, false else.      * @throws Exception in case of uninstall failure.      */
-name|void
-name|uninstall
-parameter_list|(
-name|String
-name|name
+name|URI
+name|karUri
 parameter_list|,
-name|boolean
-name|clean
+name|File
+name|repoDir
+parameter_list|,
+name|File
+name|resourceDir
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * Uninstall the given KAR      *      * @param name the name of the KAR      * @throws Exception in case of failure      */
+name|void
+name|uninstall
+parameter_list|(
+name|String
+name|name
 parameter_list|)
 throws|throws
 name|Exception

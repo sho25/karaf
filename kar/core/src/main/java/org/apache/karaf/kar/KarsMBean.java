@@ -60,19 +60,6 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Uninstall a KAR file and clean the system repository with the KAR content.      *      * @param name the KAR name.      * @param clean true to cleanup the system repository, false else.      * @throws Exception in case of uninstall failure.      */
-name|void
-name|uninstall
-parameter_list|(
-name|String
-name|name
-parameter_list|,
-name|boolean
-name|clean
-parameter_list|)
-throws|throws
-name|Exception
-function_decl|;
 block|}
 end_interface
 

@@ -102,6 +102,11 @@ parameter_list|,
 name|int
 name|cursor
 parameter_list|,
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 name|List
 name|candidates
 parameter_list|)
