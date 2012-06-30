@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -73,22 +83,6 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|shell
-operator|.
-name|console
-operator|.
-name|OsgiCommandSupport
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
 name|wrapper
 operator|.
 name|WrapperService
@@ -120,16 +114,6 @@ operator|.
 name|jansi
 operator|.
 name|Ansi
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|File
 import|;
 end_import
 

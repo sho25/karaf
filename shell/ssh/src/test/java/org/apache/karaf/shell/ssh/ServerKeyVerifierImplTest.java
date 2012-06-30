@@ -259,6 +259,8 @@ operator|new
 name|ServerKeyVerifierImpl
 argument_list|(
 name|knowHostsManager
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 name|boolean
@@ -352,6 +354,8 @@ operator|new
 name|ServerKeyVerifierImpl
 argument_list|(
 name|knowHostsManager
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 name|boolean
@@ -451,6 +455,8 @@ operator|new
 name|ServerKeyVerifierImpl
 argument_list|(
 name|knowHostsManager
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 name|boolean
