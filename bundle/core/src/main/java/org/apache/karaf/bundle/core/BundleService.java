@@ -81,6 +81,16 @@ name|boolean
 name|defaultAllBundles
 parameter_list|)
 function_decl|;
+name|List
+argument_list|<
+name|Bundle
+argument_list|>
+name|getBundlesByURL
+parameter_list|(
+name|String
+name|urlFilter
+parameter_list|)
+function_decl|;
 name|String
 name|getDiag
 parameter_list|(
