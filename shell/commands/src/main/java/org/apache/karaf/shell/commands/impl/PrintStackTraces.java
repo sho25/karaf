@@ -11,9 +11,11 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|dev
+name|shell
 operator|.
-name|command
+name|commands
+operator|.
+name|impl
 package|;
 end_package
 
@@ -91,7 +93,7 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"dev"
+literal|"shell"
 argument_list|,
 name|name
 operator|=
@@ -138,6 +140,17 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Printing of stacktraces set to "
+operator|+
+name|print
+argument_list|)
+expr_stmt|;
 name|session
 operator|.
 name|put
