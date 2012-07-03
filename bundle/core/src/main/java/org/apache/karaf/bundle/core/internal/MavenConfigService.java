@@ -7,7 +7,7 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|dev
+name|bundle
 operator|.
 name|core
 operator|.
@@ -109,7 +109,7 @@ name|pax
 operator|.
 name|url
 operator|.
-name|wrap
+name|mvn
 operator|.
 name|ServiceConstants
 import|;

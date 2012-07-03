@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|dev
+name|bundle
 operator|.
 name|command
 package|;
@@ -35,7 +35,7 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|dev
+name|bundle
 operator|.
 name|core
 operator|.
@@ -137,7 +137,7 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"dev"
+literal|"bundle"
 argument_list|,
 name|name
 operator|=

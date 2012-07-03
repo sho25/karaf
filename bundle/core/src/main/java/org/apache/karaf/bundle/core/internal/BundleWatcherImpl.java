@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|dev
+name|bundle
 operator|.
 name|core
 operator|.
@@ -183,7 +183,7 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|dev
+name|bundle
 operator|.
 name|core
 operator|.
