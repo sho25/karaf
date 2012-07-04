@@ -20,7 +20,7 @@ end_package
 begin_interface
 specifier|public
 interface|interface
-name|ScrsMBean
+name|ScrServiceMBean
 block|{
 name|String
 index|[]
@@ -31,6 +31,15 @@ name|Exception
 function_decl|;
 name|boolean
 name|isComponentActive
+parameter_list|(
+name|String
+name|componentName
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+name|int
+name|componentState
 parameter_list|(
 name|String
 name|componentName
