@@ -11,9 +11,7 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|dev
-operator|.
-name|core
+name|system
 package|;
 end_package
 

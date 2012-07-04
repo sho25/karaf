@@ -11,27 +11,11 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|dev
+name|system
 operator|.
-name|command
+name|commands
 package|;
 end_package
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|dev
-operator|.
-name|core
-operator|.
-name|FrameworkType
-import|;
-end_import
 
 begin_import
 import|import
@@ -81,6 +65,20 @@ name|Option
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|system
+operator|.
+name|FrameworkType
+import|;
+end_import
+
 begin_comment
 comment|/**  * Command for enabling/disabling debug logging on the OSGi framework  */
 end_comment
@@ -91,7 +89,7 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"dev"
+literal|"system"
 argument_list|,
 name|name
 operator|=
@@ -105,7 +103,7 @@ specifier|public
 class|class
 name|FrameworkOptions
 extends|extends
-name|DevCommandSupport
+name|AbstractSystemAction
 block|{
 annotation|@
 name|Option
@@ -210,7 +208,7 @@ name|printf
 argument_list|(
 literal|"Current OSGi framework is %s%n"
 argument_list|,
-name|devService
+name|systemService
 operator|.
 name|getFramework
 argument_list|()
@@ -240,7 +238,7 @@ argument_list|(
 name|framework
 argument_list|)
 decl_stmt|;
-name|devService
+name|systemService
 operator|.
 name|setFramework
 argument_list|(
@@ -275,7 +273,7 @@ block|{
 name|FrameworkType
 name|frameworkType
 init|=
-name|devService
+name|systemService
 operator|.
 name|getFramework
 argument_list|()
@@ -294,7 +292,7 @@ name|name
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|devService
+name|systemService
 operator|.
 name|setFrameworkDebug
 argument_list|(
@@ -310,7 +308,7 @@ block|{
 name|FrameworkType
 name|frameworkType
 init|=
-name|devService
+name|systemService
 operator|.
 name|getFramework
 argument_list|()
@@ -329,7 +327,7 @@ name|name
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|devService
+name|systemService
 operator|.
 name|setFrameworkDebug
 argument_list|(

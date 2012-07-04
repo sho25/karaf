@@ -91,6 +91,41 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
+comment|/**      * Get the current OSGi framework in use.      *      * @return the name of the OSGi framework in use.      * @throws Exception      */
+name|FrameworkType
+name|getFramework
+parameter_list|()
+function_decl|;
+comment|/**      * change OSGi framework      *      * @param framework to use.      */
+name|void
+name|setFramework
+parameter_list|(
+name|FrameworkType
+name|framework
+parameter_list|)
+function_decl|;
+comment|/**      * Enable or diable debgging      * @param debug enable if true      */
+name|void
+name|setFrameworkDebug
+parameter_list|(
+name|boolean
+name|debug
+parameter_list|)
+function_decl|;
+comment|/**      * Set a system property and persist to etc/system.properties      * @param key      */
+name|String
+name|setSystemProperty
+parameter_list|(
+name|String
+name|key
+parameter_list|,
+name|String
+name|value
+parameter_list|,
+name|boolean
+name|persist
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

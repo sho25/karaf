@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|dev
+name|system
 operator|.
-name|command
+name|commands
 package|;
 end_package
 
@@ -75,11 +75,11 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"dev"
+literal|"systen"
 argument_list|,
 name|name
 operator|=
-literal|"system-property"
+literal|"property"
 argument_list|,
 name|description
 operator|=
@@ -89,7 +89,7 @@ specifier|public
 class|class
 name|SystemProperty
 extends|extends
-name|DevCommandSupport
+name|AbstractSystemAction
 block|{
 annotation|@
 name|Option
@@ -168,7 +168,7 @@ literal|null
 condition|)
 block|{
 return|return
-name|devService
+name|systemService
 operator|.
 name|setSystemProperty
 argument_list|(

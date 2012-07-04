@@ -74,6 +74,27 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Get the current OSGi framework in use.      *      * @return the name of the OSGi framework in use.      * @throws Exception      */
+name|String
+name|getFramework
+parameter_list|()
+function_decl|;
+comment|/**      * change OSGi framework      *      * @param framework to use.      */
+name|void
+name|setFramework
+parameter_list|(
+name|String
+name|framework
+parameter_list|)
+function_decl|;
+comment|/**      * Enable or diable debgging      * @param debug enable if true      */
+name|void
+name|setFrameworkDebug
+parameter_list|(
+name|boolean
+name|debug
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
