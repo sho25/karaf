@@ -83,15 +83,6 @@ implements|implements
 name|Completer
 block|{
 specifier|private
-specifier|final
-name|StringsCompleter
-name|delegate
-init|=
-operator|new
-name|StringsCompleter
-argument_list|()
-decl_stmt|;
-specifier|private
 name|List
 argument_list|<
 name|JaasRealm

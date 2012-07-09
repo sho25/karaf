@@ -234,6 +234,11 @@ name|boolean
 name|force
 decl_stmt|;
 annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+annotation|@
 name|Override
 specifier|protected
 name|Object

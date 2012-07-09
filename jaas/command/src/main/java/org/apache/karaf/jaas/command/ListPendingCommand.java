@@ -162,6 +162,11 @@ argument_list|(
 name|JAAS_ENTRY
 argument_list|)
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|Queue
 argument_list|<
 name|JaasCommandSupport
