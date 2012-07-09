@@ -807,6 +807,23 @@ operator|.
 name|closeEntry
 argument_list|()
 expr_stmt|;
+comment|// check .xml file extension
+if|if
+condition|(
+operator|!
+name|name
+operator|.
+name|endsWith
+argument_list|(
+literal|".xml"
+argument_list|)
+condition|)
+block|{
+name|name
+operator|+=
+literal|".xml"
+expr_stmt|;
+block|}
 name|e
 operator|=
 operator|new
