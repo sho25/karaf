@@ -75,7 +75,7 @@ name|Command
 argument_list|(
 name|scope
 operator|=
-literal|"systen"
+literal|"system"
 argument_list|,
 name|name
 operator|=
