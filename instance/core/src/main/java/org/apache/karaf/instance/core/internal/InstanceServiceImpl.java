@@ -2207,7 +2207,7 @@ operator|.
 name|getLocation
 argument_list|()
 else|:
-name|name
+name|cloneName
 decl_stmt|;
 name|File
 name|cloneLocation
@@ -2418,7 +2418,7 @@ name|filterResource
 argument_list|(
 name|cloneLocation
 argument_list|,
-literal|"etc/customer.properties"
+literal|"etc/custom.properties"
 argument_list|,
 name|props
 argument_list|)
@@ -2549,7 +2549,7 @@ name|InstanceImpl
 argument_list|(
 name|this
 argument_list|,
-name|name
+name|cloneName
 argument_list|,
 name|cloneLocation
 operator|.
@@ -2566,9 +2566,9 @@ name|instances
 operator|.
 name|put
 argument_list|(
-name|name
+name|cloneName
 argument_list|,
-name|instance
+name|cloneInstance
 argument_list|)
 expr_stmt|;
 name|saveState
