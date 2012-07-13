@@ -567,8 +567,6 @@ parameter_list|,
 name|Runnable
 name|closeCallback
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|this
 operator|.
@@ -672,6 +670,8 @@ name|closeCallback
 operator|=
 name|closeCallback
 expr_stmt|;
+try|try
+block|{
 name|reader
 operator|=
 operator|new
@@ -690,6 +690,23 @@ operator|.
 name|terminal
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"Error opening console reader"
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
 specifier|final
 name|File
 name|file

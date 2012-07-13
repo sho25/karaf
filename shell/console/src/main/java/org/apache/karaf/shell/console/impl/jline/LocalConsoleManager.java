@@ -434,10 +434,8 @@ name|console
 operator|=
 name|consoleFactory
 operator|.
-name|createLocalAndStart
+name|createLocal
 argument_list|(
-name|subject
-argument_list|,
 name|this
 operator|.
 name|commandProcessor
@@ -461,6 +459,15 @@ operator|.
 name|SSH_AUTHSOCKET_ENV_NAME
 argument_list|,
 name|agentId
+argument_list|)
+expr_stmt|;
+name|consoleFactory
+operator|.
+name|startConsoleAs
+argument_list|(
+name|console
+argument_list|,
+name|subject
 argument_list|)
 expr_stmt|;
 block|}

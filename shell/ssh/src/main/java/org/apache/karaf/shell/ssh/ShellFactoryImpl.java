@@ -512,10 +512,8 @@ name|console
 init|=
 name|consoleFactory
 operator|.
-name|createAndStart
+name|create
 argument_list|(
-name|subject
-argument_list|,
 name|commandProcessor
 argument_list|,
 name|in
@@ -581,6 +579,15 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|consoleFactory
+operator|.
+name|startConsoleAs
+argument_list|(
+name|console
+argument_list|,
+name|subject
+argument_list|)
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
