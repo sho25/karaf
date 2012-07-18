@@ -64,7 +64,7 @@ init|=
 operator|new
 name|CustomPropertiesPointer
 argument_list|(
-literal|"1099"
+literal|"rmiRegistryPort"
 argument_list|)
 decl_stmt|;
 comment|/**      * Port of the registry for the exported RMI service      */
@@ -76,7 +76,7 @@ init|=
 operator|new
 name|CustomPropertiesPointer
 argument_list|(
-literal|"44444"
+literal|"rmiServerPort"
 argument_list|)
 decl_stmt|;
 specifier|static
