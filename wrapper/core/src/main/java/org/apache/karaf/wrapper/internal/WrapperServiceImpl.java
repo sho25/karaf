@@ -782,7 +782,7 @@ name|copyFilteredResourceTo
 argument_list|(
 name|serviceFile
 argument_list|,
-literal|"linux/karaf-service"
+literal|"unix/karaf-service"
 argument_list|,
 name|props
 argument_list|)
@@ -888,7 +888,7 @@ name|copyFilteredResourceTo
 argument_list|(
 name|serviceFile
 argument_list|,
-literal|"linux/karaf-service"
+literal|"unix/karaf-service"
 argument_list|,
 name|props
 argument_list|)
