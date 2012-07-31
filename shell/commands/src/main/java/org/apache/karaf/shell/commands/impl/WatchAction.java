@@ -191,7 +191,7 @@ literal|"shell"
 argument_list|,
 name|name
 operator|=
-literal|"command-watch"
+literal|"watch"
 argument_list|,
 name|description
 operator|=
