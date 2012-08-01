@@ -46,7 +46,10 @@ parameter_list|()
 function_decl|;
 name|void
 name|close
-parameter_list|()
+parameter_list|(
+name|boolean
+name|closedByUser
+parameter_list|)
 function_decl|;
 block|}
 end_interface

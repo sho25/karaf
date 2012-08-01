@@ -679,6 +679,9 @@ name|unregister
 argument_list|()
 expr_stmt|;
 block|}
+comment|// The bundle is stopped
+comment|// so close the console and remove the callback so that the
+comment|// osgi framework isn't stopped
 if|if
 condition|(
 name|console
@@ -689,7 +692,9 @@ block|{
 name|console
 operator|.
 name|close
-argument_list|()
+argument_list|(
+literal|false
+argument_list|)
 expr_stmt|;
 block|}
 block|}
