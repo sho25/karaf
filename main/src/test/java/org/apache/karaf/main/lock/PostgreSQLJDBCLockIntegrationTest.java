@@ -99,7 +99,7 @@ literal|"org.postgresql.Driver"
 expr_stmt|;
 name|url
 operator|=
-literal|"jdbc:derby://127.0.0.1:5432/test"
+literal|"jdbc:postgresql://127.0.0.1:5432/test"
 expr_stmt|;
 name|super
 operator|.
@@ -145,7 +145,7 @@ argument_list|()
 decl_stmt|;
 name|url
 operator|=
-literal|"jdbc:derby://127.0.0.1:5432/"
+literal|"jdbc:postgresql://127.0.0.1:5432/"
 operator|+
 name|database
 expr_stmt|;
