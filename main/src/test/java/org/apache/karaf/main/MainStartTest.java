@@ -297,7 +297,7 @@ argument_list|()
 operator|.
 name|getBundle
 argument_list|(
-literal|"mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.api/0.3.1"
+literal|"mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.api/1.0.0"
 argument_list|)
 decl_stmt|;
 name|Assert
