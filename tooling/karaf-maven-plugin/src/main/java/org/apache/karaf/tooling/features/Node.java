@@ -51,10 +51,6 @@ name|Artifact
 import|;
 end_import
 
-begin_comment
-comment|/**  * @version $Revision: 1.1 $ */
-end_comment
-
 begin_class
 specifier|public
 class|class

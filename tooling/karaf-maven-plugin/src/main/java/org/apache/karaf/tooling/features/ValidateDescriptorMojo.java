@@ -458,7 +458,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Validates a features XML file  *  * @version $Revision:$  * @goal features-validate-descriptor  * @execute phase="process-resources"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Validates the features XML file  */
+comment|/**  * Validates a features XML file  *  * @goal features-validate-descriptor  * @execute phase="process-resources"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Validates the features XML file  */
 end_comment
 
 begin_class

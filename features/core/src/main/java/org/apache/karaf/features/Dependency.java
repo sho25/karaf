@@ -15,10 +15,6 @@ name|features
 package|;
 end_package
 
-begin_comment
-comment|/**  * @version $Rev:$ $Date:$  */
-end_comment
-
 begin_interface
 specifier|public
 interface|interface

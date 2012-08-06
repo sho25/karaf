@@ -35,10 +35,6 @@ name|URI
 import|;
 end_import
 
-begin_comment
-comment|/**  * @version $Rev:$ $Date:$  */
-end_comment
-
 begin_interface
 specifier|public
 interface|interface
