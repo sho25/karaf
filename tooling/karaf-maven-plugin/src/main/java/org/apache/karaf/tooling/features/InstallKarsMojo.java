@@ -2554,6 +2554,24 @@ parameter_list|(
 name|String
 name|name
 parameter_list|,
+name|EnumSet
+argument_list|<
+name|Option
+argument_list|>
+name|options
+parameter_list|)
+throws|throws
+name|Exception
+block|{         }
+annotation|@
+name|Override
+specifier|public
+name|void
+name|installFeature
+parameter_list|(
+name|String
+name|name
+parameter_list|,
 name|String
 name|version
 parameter_list|)
