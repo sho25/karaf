@@ -40,6 +40,22 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Create a kar file for a list of feature repos      *      * @param repoName the name of features repository      * @param features the features to include in the kar      * @throws Exception in case of creation failure      */
+name|void
+name|create
+parameter_list|(
+name|String
+name|repoName
+parameter_list|,
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|features
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 comment|/**      * Install a KAR file from the given URL.      *      * @param url the JAR URL.      * @throws Exception in case of installation failure.      */
 name|void
 name|install

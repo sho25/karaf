@@ -1417,8 +1417,6 @@ name|getURI
 argument_list|()
 argument_list|,
 name|locationMap
-argument_list|,
-name|console
 argument_list|)
 expr_stmt|;
 name|Map
@@ -1485,6 +1483,12 @@ range|:
 name|featuresToCopy
 control|)
 block|{
+if|if
+condition|(
+name|console
+operator|!=
+literal|null
+condition|)
 name|console
 operator|.
 name|println
@@ -1504,11 +1508,15 @@ argument_list|,
 name|feature
 argument_list|,
 name|locationMap
-argument_list|,
-name|console
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|console
+operator|!=
+literal|null
+condition|)
 name|console
 operator|.
 name|println
@@ -1859,9 +1867,6 @@ argument_list|,
 name|Integer
 argument_list|>
 name|locationMap
-parameter_list|,
-name|PrintStream
-name|console
 parameter_list|)
 throws|throws
 name|URISyntaxException
@@ -1896,8 +1901,6 @@ argument_list|,
 name|location
 argument_list|,
 name|locationMap
-argument_list|,
-name|console
 argument_list|)
 expr_stmt|;
 block|}
@@ -1931,8 +1934,6 @@ argument_list|,
 name|location
 argument_list|,
 name|locationMap
-argument_list|,
-name|console
 argument_list|)
 expr_stmt|;
 block|}
@@ -1954,9 +1955,6 @@ argument_list|,
 name|Integer
 argument_list|>
 name|locationMap
-parameter_list|,
-name|PrintStream
-name|console
 parameter_list|)
 block|{
 if|if
