@@ -348,6 +348,14 @@ name|SECURITY_PROVIDERS
 init|=
 literal|"org.apache.karaf.security.providers"
 decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|KARAF_STARTUP_MESSAGE
+init|=
+literal|"karaf.startup.message"
+decl_stmt|;
 comment|/**      * If a lock should be used before starting the runtime      */
 specifier|private
 specifier|static
@@ -444,6 +452,9 @@ name|optionals
 decl_stmt|;
 name|File
 name|etcFolder
+decl_stmt|;
+name|String
+name|startupMessage
 decl_stmt|;
 specifier|public
 name|ConfigProperties
@@ -1040,6 +1051,19 @@ argument_list|(
 name|KARAF_SHUTDOWN_COMMAND
 argument_list|,
 name|DEFAULT_SHUTDOWN_COMMAND
+argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|startupMessage
+operator|=
+name|props
+operator|.
+name|getProperty
+argument_list|(
+name|KARAF_STARTUP_MESSAGE
+argument_list|,
+literal|"Apache Karaf starting up. Press Enter to open the shell now..."
 argument_list|)
 expr_stmt|;
 block|}

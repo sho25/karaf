@@ -784,6 +784,17 @@ operator|new
 name|ConfigProperties
 argument_list|()
 expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+name|config
+operator|.
+name|startupMessage
+argument_list|)
+expr_stmt|;
 name|BootstrapLogManager
 operator|.
 name|setProperties
@@ -1051,6 +1062,16 @@ argument_list|(
 name|config
 operator|.
 name|lockStartLevel
+argument_list|)
+expr_stmt|;
+comment|// Progress bar
+operator|new
+name|StartupListener
+argument_list|(
+name|framework
+operator|.
+name|getBundleContext
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|lockManager
