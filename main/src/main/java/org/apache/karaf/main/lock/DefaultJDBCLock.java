@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents an exclusive lock on a database,  * used to avoid multiple Karaf instances attempting  * to become master.  *   * @version $Revision: $  */
+comment|/**  * Represents an exclusive lock on a database,  * used to avoid multiple Karaf instances attempting  * to become master.  */
 end_comment
 
 begin_class

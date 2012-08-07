@@ -94,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Based on http://svn.apache.org/repos/asf/geronimo/trunk/modules/management/  *              src/java/org/apache/geronimo/management/geronimo/KeystoreInstance.java  *  * @version $Rev: $ $Date: $  */
+comment|/**  * Based on http://svn.apache.org/repos/asf/geronimo/trunk/modules/management/  *              src/java/org/apache/geronimo/management/geronimo/KeystoreInstance.java  */
 end_comment
 
 begin_interface

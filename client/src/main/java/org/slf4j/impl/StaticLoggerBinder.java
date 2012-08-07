@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * The binding of {@link LoggerFactory} class with an actual instance of  * {@link ILoggerFactory} is performed using information returned by this class.  *   *   * @author Ceki G&uuml;lc&uuml;  */
+comment|/**  * The binding of {@link LoggerFactory} class with an actual instance of  * {@link ILoggerFactory} is performed using information returned by this class.  */
 end_comment
 
 begin_class

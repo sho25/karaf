@@ -274,7 +274,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * SSHD {@link org.apache.sshd.server.Command} factory which provides access to  * Shell.  *   * @version $Rev: 731517 $ $Date: 2009-01-05 11:25:19 +0100 (Mon, 05 Jan 2009) $  */
+comment|/**  * SSHD {@link org.apache.sshd.server.Command} factory which provides access to  * Shell.  */
 end_comment
 
 begin_class

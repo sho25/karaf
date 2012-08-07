@@ -429,10 +429,6 @@ name|FEATURE_CLASSIFIER
 import|;
 end_import
 
-begin_comment
-comment|/**  * @version $Rev:ision$  */
-end_comment
-
 begin_class
 specifier|public
 class|class

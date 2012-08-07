@@ -194,7 +194,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Concatenate and print files and/or URLs.  *   * @version $Rev: 593392 $ $Date: 2007-11-09 03:14:15 +0100 (Fri, 09 Nov 2007) $  */
+comment|/**  * Concatenate and print files and/or URLs.  */
 end_comment
 
 begin_class

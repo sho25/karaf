@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An implementation of {@link ILoggerFactory} which always returns  * {@link SimpleLogger} instances.  *   * @author Ceki G&uuml;lc&uuml;  */
+comment|/**  * An implementation of {@link ILoggerFactory} which always returns  * {@link SimpleLogger} instances.  */
 end_comment
 
 begin_class

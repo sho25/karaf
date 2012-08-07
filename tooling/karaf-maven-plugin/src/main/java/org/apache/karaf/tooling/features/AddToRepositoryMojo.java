@@ -366,7 +366,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates the features XML file  *  * @version $Revision$  * @goal features-add-to-repository  * @phase compile  * @execute phase="compile"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Add the features to the repository  */
+comment|/**  * Generates the features XML file  *  * @goal features-add-to-repository  * @phase compile  * @execute phase="compile"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Add the features to the repository  */
 end_comment
 
 begin_class

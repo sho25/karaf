@@ -544,7 +544,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Installs kar dependencies into a server-under-construction in target/assembly  *  * @version $Revision$  * @goal install-kars  * @phase process-resources  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Install kar dependencies  */
+comment|/**  * Installs kar dependencies into a server-under-construction in target/assembly  *  * @goal install-kars  * @phase process-resources  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Install kar dependencies  */
 end_comment
 
 begin_class

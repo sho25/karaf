@@ -238,7 +238,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Sort lines of text  *  * @version $Rev: 722776 $ $Date: 2008-12-03 05:59:59 +0100 (Wed, 03 Dec 2008) $  */
+comment|/**  * Sort lines of text  */
 end_comment
 
 begin_class

@@ -604,7 +604,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates the features XML file  * NB this requires a recent maven-install-plugin such as 2.3.1  *  * @version $Revision$  * @goal features-generate-descriptor  * @phase compile  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Generates the features XML file starting with an optional source feature.xml and adding  * project dependencies as bundles and feature/car dependencies  */
+comment|/**  * Generates the features XML file  * NB this requires a recent maven-install-plugin such as 2.3.1  *  * @goal features-generate-descriptor  * @phase compile  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Generates the features XML file starting with an optional source feature.xml and adding  * project dependencies as bundles and feature/car dependencies  */
 end_comment
 
 begin_class

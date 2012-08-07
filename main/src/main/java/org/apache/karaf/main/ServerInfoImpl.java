@@ -49,10 +49,6 @@ name|ServerInfo
 import|;
 end_import
 
-begin_comment
-comment|/**  * @version $Rev: 1209819 $ $Date: 2011-12-03 02:35:52 +0100 (Sa, 03 Dez 2011) $  */
-end_comment
-
 begin_class
 specifier|public
 class|class

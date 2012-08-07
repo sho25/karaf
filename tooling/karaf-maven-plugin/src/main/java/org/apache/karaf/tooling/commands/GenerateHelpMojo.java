@@ -402,7 +402,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates help documentation for Karaf commands  *  * @version $Revision$  * @goal commands-generate-help  * @phase generate-resources  * @execute phase="generate-resources"  * @requiresDependencyResolution runtime  * @inheritByDefault false  * @description Generates help for Karaf commands  */
+comment|/**  * Generates help documentation for Karaf commands  *  * @goal commands-generate-help  * @phase generate-resources  * @execute phase="generate-resources"  * @requiresDependencyResolution runtime  * @inheritByDefault false  * @description Generates help for Karaf commands  */
 end_comment
 
 begin_class
