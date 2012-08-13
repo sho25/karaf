@@ -784,6 +784,13 @@ operator|new
 name|ConfigProperties
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|config
+operator|.
+name|delayConsoleStart
+condition|)
+block|{
 name|System
 operator|.
 name|out
@@ -795,6 +802,7 @@ operator|.
 name|startupMessage
 argument_list|)
 expr_stmt|;
+block|}
 name|BootstrapLogManager
 operator|.
 name|setProperties
@@ -1065,15 +1073,25 @@ name|lockStartLevel
 argument_list|)
 expr_stmt|;
 comment|// Progress bar
+if|if
+condition|(
+name|config
+operator|.
+name|delayConsoleStart
+condition|)
+block|{
 operator|new
 name|StartupListener
 argument_list|(
+name|LOG
+argument_list|,
 name|framework
 operator|.
 name|getBundleContext
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 name|lockManager
 operator|.
 name|startLockMonitor
