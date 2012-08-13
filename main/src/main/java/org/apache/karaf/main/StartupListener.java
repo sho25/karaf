@@ -475,7 +475,7 @@ name|stats
 operator|.
 name|numActive
 operator|+
-literal|" active , "
+literal|" active, "
 operator|+
 name|stats
 operator|.
