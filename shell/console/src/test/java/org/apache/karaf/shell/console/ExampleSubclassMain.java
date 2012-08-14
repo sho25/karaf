@@ -99,6 +99,16 @@ name|PrintStream
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Properties
+import|;
+end_import
+
 begin_comment
 comment|/**  * This class is mostly here so that folks can see an example of how you can extend the Karaf Main shell.  Also  * lets Karaf developers see how changes the Main class can affect the interface comparability  * with sub classes.  */
 end_comment
@@ -201,7 +211,10 @@ name|Override
 specifier|protected
 name|void
 name|welcome
-parameter_list|()
+parameter_list|(
+name|Properties
+name|brandingProps
+parameter_list|)
 block|{
 name|session
 operator|.
@@ -252,7 +265,10 @@ name|Override
 specifier|protected
 name|void
 name|setSessionProperties
-parameter_list|()
+parameter_list|(
+name|Properties
+name|brandingProps
+parameter_list|)
 block|{
 comment|// we won't add any session properties.
 block|}
