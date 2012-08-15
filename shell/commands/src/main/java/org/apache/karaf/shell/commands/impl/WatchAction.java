@@ -496,6 +496,15 @@ argument_list|,
 name|printStream
 argument_list|)
 expr_stmt|;
+name|session
+operator|.
+name|put
+argument_list|(
+literal|"SCOPE"
+argument_list|,
+literal|"shell:bundle:*"
+argument_list|)
+expr_stmt|;
 name|String
 name|output
 init|=
