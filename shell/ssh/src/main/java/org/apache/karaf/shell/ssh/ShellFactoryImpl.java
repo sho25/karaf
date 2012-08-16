@@ -586,6 +586,8 @@ argument_list|(
 name|console
 argument_list|,
 name|subject
+argument_list|,
+literal|"ssh"
 argument_list|)
 expr_stmt|;
 block|}

@@ -122,6 +122,9 @@ name|console
 parameter_list|,
 name|Subject
 name|subject
+parameter_list|,
+name|String
+name|threadName
 parameter_list|)
 function_decl|;
 block|}
