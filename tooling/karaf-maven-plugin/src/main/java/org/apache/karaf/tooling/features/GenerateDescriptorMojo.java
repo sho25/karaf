@@ -667,6 +667,11 @@ specifier|private
 name|Integer
 name|startLevel
 decl_stmt|;
+comment|/**      * Installation mode. If present, generate "feature.install" attribute:      *      *<a href="http://karaf.apache.org/xmlns/features/v1.1.0">Installation mode</a>      *      * Can be either manual or auto. Specifies whether the feature should be automatically installed when      * dropped inside the deploy folder. Note: this attribute doesn't affect feature descriptors that are installed      * from the feature:install command or as part of the etc/org.apache.karaf.features.cfg file.      *      * @parameter      */
+specifier|private
+name|String
+name|installMode
+decl_stmt|;
 comment|/**      * Flag indicating whether transitive dependencies should be included (<code>true</code>) or not (<code>false</code>).      *<p/>      * N.B. Note the default value of this is true, but is suboptimal in cases where specific<code>&lt;feature/&gt;</code> dependencies are      * provided by the<code>inputFile</code> parameter.      *      * @parameter default-value="true"      */
 specifier|private
 name|boolean
@@ -1134,6 +1139,21 @@ operator|.
 name|setResolver
 argument_list|(
 name|resolver
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|installMode
+operator|!=
+literal|null
+condition|)
+block|{
+name|feature
+operator|.
+name|setInstall
+argument_list|(
+name|installMode
 argument_list|)
 expr_stmt|;
 block|}

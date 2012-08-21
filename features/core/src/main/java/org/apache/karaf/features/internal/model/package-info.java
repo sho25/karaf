@@ -17,7 +17,9 @@ name|XmlSchema
 argument_list|(
 name|namespace
 operator|=
-literal|"http://karaf.apache.org/xmlns/features/v1.0.0"
+name|FeaturesNamespaces
+operator|.
+name|URI_CURRENT
 argument_list|,
 name|elementFormDefault
 operator|=
@@ -50,6 +52,22 @@ operator|.
 name|model
 package|;
 end_package
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
+operator|.
+name|FeaturesNamespaces
+import|;
+end_import
 
 end_unit
 
