@@ -63,8 +63,6 @@ name|karaf
 operator|.
 name|features
 operator|.
-name|internal
-operator|.
 name|FeaturesNamespaces
 import|;
 end_import

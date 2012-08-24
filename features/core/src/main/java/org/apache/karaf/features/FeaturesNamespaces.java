@@ -12,8 +12,6 @@ operator|.
 name|karaf
 operator|.
 name|features
-operator|.
-name|internal
 package|;
 end_package
 
