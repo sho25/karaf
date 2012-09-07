@@ -95,6 +95,18 @@ name|junit
 operator|.
 name|Assert
 operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
 name|assertTrue
 import|;
 end_import
@@ -146,9 +158,8 @@ argument_list|(
 name|allCapabilitiesOutput
 argument_list|)
 expr_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
-operator|!
 name|allCapabilitiesOutput
 operator|.
 name|isEmpty
@@ -209,9 +220,8 @@ argument_list|(
 name|allClassesOutput
 argument_list|)
 expr_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
-operator|!
 name|allClassesOutput
 operator|.
 name|isEmpty
@@ -272,9 +282,8 @@ argument_list|(
 name|allDiagOutput
 argument_list|)
 expr_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
-operator|!
 name|allDiagOutput
 operator|.
 name|isEmpty
@@ -308,9 +317,8 @@ argument_list|(
 name|findClassOutput
 argument_list|)
 expr_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
-operator|!
 name|findClassOutput
 operator|.
 name|isEmpty
@@ -430,9 +438,8 @@ argument_list|(
 name|bundleListOutput
 argument_list|)
 expr_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
-operator|!
 name|bundleListOutput
 operator|.
 name|isEmpty
@@ -466,9 +473,8 @@ argument_list|(
 name|bundleTreeOutput
 argument_list|)
 expr_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
-operator|!
 name|bundleTreeOutput
 operator|.
 name|isEmpty

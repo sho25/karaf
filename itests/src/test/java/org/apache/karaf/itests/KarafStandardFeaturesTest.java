@@ -105,7 +105,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertTrue
+name|assertFalse
 import|;
 end_import
 
@@ -148,11 +148,10 @@ argument_list|(
 literal|"feature:list -i | grep standard"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"standard feature is not installed"
 argument_list|,
-operator|!
 name|standardFeatureStatus
 operator|.
 name|isEmpty
@@ -168,11 +167,10 @@ argument_list|(
 literal|"feature:list -i | grep config"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"config feature is not installed"
 argument_list|,
-operator|!
 name|configFeatureStatus
 operator|.
 name|isEmpty
@@ -188,11 +186,10 @@ argument_list|(
 literal|"feature:list -i | grep region"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"region feature is not installed"
 argument_list|,
-operator|!
 name|regionFeatureStatus
 operator|.
 name|isEmpty
@@ -208,11 +205,10 @@ argument_list|(
 literal|"feature:list -i | grep package"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"package feature is not installed"
 argument_list|,
-operator|!
 name|packageFeatureStatus
 operator|.
 name|isEmpty
@@ -228,11 +224,10 @@ argument_list|(
 literal|"feature:list -i | grep kar"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"kar feature is not installed"
 argument_list|,
-operator|!
 name|karFeatureStatus
 operator|.
 name|isEmpty
@@ -248,11 +243,10 @@ argument_list|(
 literal|"feature:list -i | grep ssh"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"ssh feature is not installed"
 argument_list|,
-operator|!
 name|sshFeatureStatus
 operator|.
 name|isEmpty
@@ -268,11 +262,10 @@ argument_list|(
 literal|"feature:list -i | grep management"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"management feature is not installed"
 argument_list|,
-operator|!
 name|managementFeatureStatus
 operator|.
 name|isEmpty
@@ -302,11 +295,10 @@ argument_list|(
 literal|"feature:list -i | grep wrapper"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"wrapper feature is not installed"
 argument_list|,
-operator|!
 name|wrapperFeatureStatus
 operator|.
 name|isEmpty
@@ -336,11 +328,10 @@ argument_list|(
 literal|"feature:list -i | grep obr"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"obr feature is not installed"
 argument_list|,
-operator|!
 name|obrFeatureStatus
 operator|.
 name|isEmpty
@@ -370,11 +361,10 @@ argument_list|(
 literal|"feature:list -i | grep jetty"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"jetty feature is not installed"
 argument_list|,
-operator|!
 name|jettyFeatureStatus
 operator|.
 name|isEmpty
@@ -404,11 +394,10 @@ argument_list|(
 literal|"feature:list -i | grep http"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"http feature is not installed"
 argument_list|,
-operator|!
 name|httpFeatureStatus
 operator|.
 name|isEmpty
@@ -438,11 +427,10 @@ argument_list|(
 literal|"feature:list -i | grep http-whiteboard"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"http-whiteboard feature is not installed"
 argument_list|,
-operator|!
 name|httpWhiteboardFeatureStatus
 operator|.
 name|isEmpty
@@ -472,11 +460,10 @@ argument_list|(
 literal|"feature:list -i | grep war"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"war feature is not installed"
 argument_list|,
-operator|!
 name|warFeatureStatus
 operator|.
 name|isEmpty
@@ -506,11 +493,10 @@ argument_list|(
 literal|"feature:list -i | grep webconsole"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"webconsole feature is not installed"
 argument_list|,
-operator|!
 name|webConsoleFeatureStatus
 operator|.
 name|isEmpty
@@ -540,11 +526,10 @@ argument_list|(
 literal|"feature:list -i | grep scheduler"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"scheduler feature is not installed"
 argument_list|,
-operator|!
 name|schedulerFeatureStatus
 operator|.
 name|isEmpty
@@ -574,11 +559,10 @@ argument_list|(
 literal|"feature:list -i | grep eventadmin"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"eventadmin feature is not installed"
 argument_list|,
-operator|!
 name|eventAdminFeatureStatus
 operator|.
 name|isEmpty
@@ -608,11 +592,10 @@ argument_list|(
 literal|"feature:list -i | grep jasypt-encryption"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"jasypt-encryption feature is not installed"
 argument_list|,
-operator|!
 name|jasyptEncryptionFeatureStatus
 operator|.
 name|isEmpty
@@ -642,11 +625,10 @@ argument_list|(
 literal|"feature:list -i | grep scr"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"scr feature is not installed"
 argument_list|,
-operator|!
 name|scrFeatureStatus
 operator|.
 name|isEmpty

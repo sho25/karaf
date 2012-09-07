@@ -105,7 +105,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertTrue
+name|assertFalse
 import|;
 end_import
 
@@ -152,11 +152,10 @@ argument_list|(
 literal|"feature:list -i | grep spring"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring feature is not installed"
 argument_list|,
-operator|!
 name|springFeatureStatus
 operator|.
 name|isEmpty
@@ -186,11 +185,10 @@ argument_list|(
 literal|"feature:list -i | grep spring-aspects"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring-aspects feature is not installed"
 argument_list|,
-operator|!
 name|springAspectsFeatureStatus
 operator|.
 name|isEmpty
@@ -220,11 +218,10 @@ argument_list|(
 literal|"feature:list -i | grep spring-dm"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring-dm feature is not installed"
 argument_list|,
-operator|!
 name|springDmFeatureStatus
 operator|.
 name|isEmpty
@@ -254,11 +251,10 @@ argument_list|(
 literal|"feature:list -i | grep spring-dm-web"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring-dm-web feature is not installed"
 argument_list|,
-operator|!
 name|springDmWebFeatureStatus
 operator|.
 name|isEmpty
@@ -288,11 +284,10 @@ argument_list|(
 literal|"feature:list -i | grep spring-instrument"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring-instrument feature is not installed"
 argument_list|,
-operator|!
 name|springInstrumentFeatureStatus
 operator|.
 name|isEmpty
@@ -322,11 +317,10 @@ argument_list|(
 literal|"feature:list -i | grep spring-jdbc"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring-jdbc feature is not installed"
 argument_list|,
-operator|!
 name|springJdbcFeatureStatus
 operator|.
 name|isEmpty
@@ -356,11 +350,10 @@ argument_list|(
 literal|"feature:list -i | grep spring-jms"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring-jms feature is not installed"
 argument_list|,
-operator|!
 name|springJmsFeatureStatus
 operator|.
 name|isEmpty
@@ -393,11 +386,10 @@ argument_list|(
 literal|"feature:list -i | grep spring-struts"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring-struts feature is not installed"
 argument_list|,
-operator|!
 name|springStrutsFeatureStatus
 operator|.
 name|isEmpty
@@ -427,11 +419,10 @@ argument_list|(
 literal|"feature:list -i | grep spring-test"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring-test feature is not installed"
 argument_list|,
-operator|!
 name|springTestFeatureStatus
 operator|.
 name|isEmpty
@@ -461,11 +452,10 @@ argument_list|(
 literal|"feature:list -i | grep spring-orm"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring-orm feature is not installed"
 argument_list|,
-operator|!
 name|springOrmFeatureStatus
 operator|.
 name|isEmpty
@@ -495,11 +485,10 @@ argument_list|(
 literal|"feature:list -i | grep spring-oxm"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring-oxm feature is not installed"
 argument_list|,
-operator|!
 name|springOxmFeatureStatus
 operator|.
 name|isEmpty
@@ -529,11 +518,10 @@ argument_list|(
 literal|"feature:list -i | grep spring-tx"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring-tx feature is not installed"
 argument_list|,
-operator|!
 name|springTxFeatureStatus
 operator|.
 name|isEmpty
@@ -563,11 +551,10 @@ argument_list|(
 literal|"feature:list -i | grep spring-web"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring-web feature is not installed"
 argument_list|,
-operator|!
 name|springWebFeatureStatus
 operator|.
 name|isEmpty
@@ -600,11 +587,10 @@ argument_list|(
 literal|"feature:list -i | grep spring-web-portlet"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"spring-web-portlet feature is not installed"
 argument_list|,
-operator|!
 name|springWebPortletFeatureStatus
 operator|.
 name|isEmpty
@@ -634,11 +620,10 @@ argument_list|(
 literal|"feature:list -i | grep gemini-blueprint"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"gemini-blueprint feature is not installed"
 argument_list|,
-operator|!
 name|geminiBlueprintFeatureStatus
 operator|.
 name|isEmpty
