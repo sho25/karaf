@@ -116,7 +116,7 @@ name|class
 argument_list|)
 specifier|public
 class|class
-name|KarafEnterpriseFeaturesTest
+name|EnterpriseFeaturesTest
 extends|extends
 name|KarafTestSupport
 block|{
