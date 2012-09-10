@@ -137,7 +137,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertTrue
+name|assertEquals
 import|;
 end_import
 
@@ -245,14 +245,14 @@ argument_list|,
 literal|"Kars"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertEquals
 argument_list|(
+literal|0
+argument_list|,
 name|kars
 operator|.
 name|size
 argument_list|()
-operator|==
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
