@@ -116,7 +116,7 @@ name|class
 argument_list|)
 specifier|public
 class|class
-name|KarafJaasCommandsTest
+name|JaasTest
 extends|extends
 name|KarafTestSupport
 block|{
@@ -124,7 +124,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|realmList
+name|realmListCommand
 parameter_list|()
 throws|throws
 name|Exception
