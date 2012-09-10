@@ -116,7 +116,7 @@ name|class
 argument_list|)
 specifier|public
 class|class
-name|KarafRegionCommandsTest
+name|RegionTest
 extends|extends
 name|KarafTestSupport
 block|{
@@ -124,7 +124,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|info
+name|infoCommand
 parameter_list|()
 throws|throws
 name|Exception
@@ -171,7 +171,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|addRegion
+name|addRegionCommand
 parameter_list|()
 throws|throws
 name|Exception
