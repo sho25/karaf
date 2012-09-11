@@ -41,18 +41,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|concurrent
-operator|.
-name|CopyOnWriteArrayList
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|security
@@ -95,6 +83,22 @@ name|JaasRealm
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|util
+operator|.
+name|collections
+operator|.
+name|CopyOnWriteArrayIdentityList
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -111,7 +115,7 @@ argument_list|>
 name|realms
 init|=
 operator|new
-name|CopyOnWriteArrayList
+name|CopyOnWriteArrayIdentityList
 argument_list|<
 name|JaasRealm
 argument_list|>
