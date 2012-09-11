@@ -110,6 +110,11 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Get the version of the current Karaf instance.      *      * @return the current Karaf instance version.      */
+name|String
+name|getVersion
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

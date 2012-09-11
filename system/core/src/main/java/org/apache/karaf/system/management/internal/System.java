@@ -367,6 +367,22 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|getVersion
+parameter_list|()
+block|{
+return|return
+name|this
+operator|.
+name|systemService
+operator|.
+name|getVersion
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
