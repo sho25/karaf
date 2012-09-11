@@ -363,9 +363,6 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
-annotation|@
-name|Ignore
-comment|// TODO fix the spring-struts feature
 specifier|public
 name|void
 name|installSpringStrutsFeature
