@@ -992,7 +992,9 @@ init|=
 name|Branding
 operator|.
 name|loadBrandingProperties
-argument_list|()
+argument_list|(
+name|terminal
+argument_list|)
 decl_stmt|;
 name|welcome
 argument_list|(
@@ -1605,7 +1607,9 @@ init|=
 name|Branding
 operator|.
 name|loadBrandingProperties
-argument_list|()
+argument_list|(
+name|terminal
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
