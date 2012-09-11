@@ -95,6 +95,21 @@ name|boolean
 name|debug
 parameter_list|)
 function_decl|;
+comment|/**      * Get the current Karaf instance name.      *      * @return the current Karaf instance name.      */
+name|String
+name|getName
+parameter_list|()
+function_decl|;
+comment|/**      * Change Karaf instance name.      *      * @param name the new Karaf instance name.      */
+name|void
+name|setName
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 block|}
 end_interface
 

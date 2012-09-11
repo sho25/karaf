@@ -143,11 +143,11 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Karaf instance name changed to "
+literal|"Instance name changed to "
 operator|+
 name|name
 operator|+
-literal|". Restart of karaf needed for this to take effect."
+literal|". Restart needed for this to take effect."
 argument_list|)
 expr_stmt|;
 block|}
