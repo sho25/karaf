@@ -9105,7 +9105,7 @@ block|}
 block|}
 catch|catch
 parameter_list|(
-name|InvalidSyntaxException
+name|Exception
 name|ex
 parameter_list|)
 block|{
@@ -9113,7 +9113,7 @@ name|LOGGER
 operator|.
 name|error
 argument_list|(
-literal|"Error creating filter for service tracker."
+literal|"Error creating service tracker."
 argument_list|,
 name|ex
 argument_list|)
