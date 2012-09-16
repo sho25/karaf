@@ -610,7 +610,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Provides an empty inputsource for the entity resolver.      * Converts all elements with empty namespace to the features namespace to make old feature files       * compatible to the new format      */
+comment|/**      * Provides an empty inputsource for the entity resolver.      * Converts all elements to the features namespace to make old feature files      * compatible to the new format      */
 specifier|public
 specifier|static
 class|class

@@ -118,6 +118,15 @@ argument_list|>
 name|getConfigurationFiles
 parameter_list|()
 function_decl|;
+name|List
+argument_list|<
+name|?
+extends|extends
+name|Conditional
+argument_list|>
+name|getConditional
+parameter_list|()
+function_decl|;
 name|int
 name|getStartLevel
 parameter_list|()

@@ -17,9 +17,7 @@ name|XmlSchema
 argument_list|(
 name|namespace
 operator|=
-name|FeaturesNamespaces
-operator|.
-name|URI_CURRENT
+literal|"http://karaf.apache.org/xmlns/features/v1.2.0"
 argument_list|,
 name|elementFormDefault
 operator|=
