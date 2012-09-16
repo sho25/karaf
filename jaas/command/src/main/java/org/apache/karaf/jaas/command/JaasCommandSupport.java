@@ -420,6 +420,11 @@ decl_stmt|;
 if|if
 condition|(
 name|moduleName
+operator|!=
+literal|null
+operator|&&
+operator|(
+name|moduleName
 operator|.
 name|equals
 argument_list|(
@@ -435,6 +440,7 @@ name|equals
 argument_list|(
 name|moduleClass
 argument_list|)
+operator|)
 condition|)
 block|{
 return|return
