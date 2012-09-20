@@ -23,6 +23,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|SortedMap
 import|;
 end_import
@@ -32,6 +42,28 @@ specifier|public
 interface|interface
 name|PackageService
 block|{
+comment|/** 	 * Gets the simplified package exports of a bundle. This does not show the  	 * package versions. 	 *  	 * @param bundleId 	 * @return 	 */
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|getExports
+parameter_list|(
+name|long
+name|bundleId
+parameter_list|)
+function_decl|;
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|getImports
+parameter_list|(
+name|long
+name|bundleId
+parameter_list|)
+function_decl|;
+comment|/** 	 * Gets a map of all exported packages with their version and the bundles that exprot them 	 * The key is in the form packagename:version. 	 *  	 * @return  	 */
 name|SortedMap
 argument_list|<
 name|String
@@ -41,6 +73,7 @@ argument_list|>
 name|getExports
 parameter_list|()
 function_decl|;
+comment|/**      * Gets a map of all package imports.       * The key is the import filter.      *        * @return      */
 name|SortedMap
 argument_list|<
 name|String
