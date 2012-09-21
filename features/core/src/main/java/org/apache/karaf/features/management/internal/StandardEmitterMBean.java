@@ -43,6 +43,11 @@ specifier|final
 name|NotificationBroadcasterSupport
 name|emitter
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|public
 name|StandardEmitterMBean
 parameter_list|(

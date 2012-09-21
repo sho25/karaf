@@ -161,6 +161,11 @@ block|{
 specifier|private
 specifier|final
 name|ServiceTracker
+argument_list|<
+name|EventAdmin
+argument_list|,
+name|EventAdmin
+argument_list|>
 name|tracker
 decl_stmt|;
 specifier|public
@@ -174,6 +179,11 @@ name|tracker
 operator|=
 operator|new
 name|ServiceTracker
+argument_list|<
+name|EventAdmin
+argument_list|,
+name|EventAdmin
+argument_list|>
 argument_list|(
 name|context
 argument_list|,
@@ -204,9 +214,6 @@ block|{
 name|EventAdmin
 name|eventAdmin
 init|=
-operator|(
-name|EventAdmin
-operator|)
 name|tracker
 operator|.
 name|getService
@@ -381,9 +388,6 @@ block|{
 name|EventAdmin
 name|eventAdmin
 init|=
-operator|(
-name|EventAdmin
-operator|)
 name|tracker
 operator|.
 name|getService

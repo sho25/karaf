@@ -51,19 +51,5 @@ name|model
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|features
-operator|.
-name|FeaturesNamespaces
-import|;
-end_import
-
 end_unit
 

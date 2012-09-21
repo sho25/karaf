@@ -585,6 +585,11 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|protected
 name|void
 name|interpolation
