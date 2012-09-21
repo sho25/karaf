@@ -264,7 +264,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"ID"
+literal|"Bundle-ID"
 block|,
 literal|"Servlet"
 block|,
@@ -281,7 +281,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"ID of the servlet"
+literal|"ID of the bundle that registered the servlet"
 block|,
 literal|"Class name of the servlet"
 block|,
@@ -340,7 +340,11 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"ID"
+literal|"Bundle-ID"
+block|,
+literal|"Servlet Name"
+block|,
+literal|"State"
 block|}
 argument_list|)
 decl_stmt|;
@@ -384,7 +388,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"ID"
+literal|"Bundle-ID"
 block|,
 literal|"Servlet"
 block|,
