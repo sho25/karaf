@@ -186,6 +186,13 @@ name|table
 operator|.
 name|column
 argument_list|(
+literal|"Index"
+argument_list|)
+expr_stmt|;
+name|table
+operator|.
+name|column
+argument_list|(
 literal|"Realm Name"
 argument_list|)
 expr_stmt|;
@@ -210,6 +217,11 @@ operator|>
 literal|0
 condition|)
 block|{
+name|int
+name|index
+init|=
+literal|1
+decl_stmt|;
 for|for
 control|(
 name|JaasRealm
@@ -293,6 +305,9 @@ argument_list|()
 operator|.
 name|addContent
 argument_list|(
+name|index
+operator|++
+argument_list|,
 name|realmName
 argument_list|,
 name|moduleClass
