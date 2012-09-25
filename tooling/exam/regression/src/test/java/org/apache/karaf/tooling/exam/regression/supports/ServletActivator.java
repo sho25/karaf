@@ -220,14 +220,6 @@ argument_list|,
 name|HttpService
 argument_list|>
 block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|ALIAS
-init|=
-literal|"/test/services"
-decl_stmt|;
 specifier|public
 name|HttpServiceTracker
 parameter_list|(
@@ -312,6 +304,8 @@ name|httpService
 operator|.
 name|registerServlet
 argument_list|(
+name|EchoServlet
+operator|.
 name|ALIAS
 argument_list|,
 operator|new
@@ -389,6 +383,8 @@ name|httpService
 operator|.
 name|unregister
 argument_list|(
+name|EchoServlet
+operator|.
 name|ALIAS
 argument_list|)
 expr_stmt|;

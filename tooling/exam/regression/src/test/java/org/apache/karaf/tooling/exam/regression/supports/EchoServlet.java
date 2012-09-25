@@ -112,6 +112,14 @@ name|serialVersionUID
 init|=
 literal|1068664967007496710L
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|ALIAS
+init|=
+literal|"/test/services"
+decl_stmt|;
 comment|// now we just send a echo response back
 annotation|@
 name|Override
