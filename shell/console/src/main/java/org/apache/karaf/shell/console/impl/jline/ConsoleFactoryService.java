@@ -47,16 +47,6 @@ name|java
 operator|.
 name|security
 operator|.
-name|Principal
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|security
-operator|.
 name|PrivilegedAction
 import|;
 end_import
@@ -88,16 +78,6 @@ operator|.
 name|util
 operator|.
 name|Properties
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Set
 import|;
 end_import
 
