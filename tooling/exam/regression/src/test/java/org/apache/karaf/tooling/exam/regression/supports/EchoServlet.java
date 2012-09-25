@@ -100,7 +100,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|MyServlet
+name|EchoServlet
 extends|extends
 name|HttpServlet
 block|{

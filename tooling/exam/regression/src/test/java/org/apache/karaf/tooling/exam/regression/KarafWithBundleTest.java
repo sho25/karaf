@@ -231,7 +231,7 @@ name|regression
 operator|.
 name|supports
 operator|.
-name|MyServlet
+name|EchoServlet
 import|;
 end_import
 
@@ -397,6 +397,23 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+comment|// Give Servicetracker some time to install the servlet
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|1000
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Trying to get url"
+argument_list|)
+expr_stmt|;
 name|URL
 name|url
 init|=
@@ -576,7 +593,7 @@ operator|.
 name|versionAsInProject
 argument_list|()
 argument_list|,
-literal|"war"
+literal|"http"
 argument_list|)
 operator|.
 name|start
@@ -602,7 +619,7 @@ argument_list|()
 operator|.
 name|add
 argument_list|(
-name|MyServlet
+name|EchoServlet
 operator|.
 name|class
 argument_list|)
