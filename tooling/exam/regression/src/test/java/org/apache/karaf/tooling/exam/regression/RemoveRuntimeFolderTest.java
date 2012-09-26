@@ -43,26 +43,6 @@ begin_import
 import|import static
 name|org
 operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|tooling
-operator|.
-name|exam
-operator|.
-name|options
-operator|.
-name|KarafDistributionOption
-operator|.
-name|keepRuntimeFolder
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
 name|ops4j
 operator|.
 name|pax
@@ -214,9 +194,10 @@ name|class
 argument_list|)
 specifier|public
 class|class
-name|KeepFolderTest
+name|RemoveRuntimeFolderTest
 block|{
 specifier|private
+specifier|static
 name|File
 name|runtimeFolder
 decl_stmt|;
@@ -259,6 +240,7 @@ operator|.
 name|versionAsInProject
 argument_list|()
 argument_list|)
+comment|// unpackDirectory seems to be necessary to make sure the working directory is set like we use below
 operator|.
 name|unpackDirectory
 argument_list|(
@@ -268,9 +250,6 @@ argument_list|(
 literal|"target/paxexam/unpack/"
 argument_list|)
 argument_list|)
-block|,
-name|keepRuntimeFolder
-argument_list|()
 block|}
 return|;
 block|}
@@ -322,7 +301,7 @@ operator|.
 name|getAbsolutePath
 argument_list|()
 operator|+
-literal|" still exists after this test"
+literal|" is deleted after this test"
 argument_list|)
 expr_stmt|;
 block|}
