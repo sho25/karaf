@@ -476,7 +476,7 @@ argument_list|()
 operator|.
 name|type
 argument_list|(
-literal|"zip"
+literal|"tar.gz"
 argument_list|)
 argument_list|)
 operator|.

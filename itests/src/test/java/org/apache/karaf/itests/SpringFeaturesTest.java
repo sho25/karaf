@@ -130,6 +130,29 @@ name|SpringFeaturesTest
 extends|extends
 name|KarafTestSupport
 block|{
+specifier|private
+name|void
+name|installAndAssertFeature
+parameter_list|(
+name|String
+name|feature
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+name|featureService
+operator|.
+name|installFeature
+argument_list|(
+name|feature
+argument_list|)
+expr_stmt|;
+name|assertFeatureInstalled
+argument_list|(
+name|feature
+argument_list|)
+expr_stmt|;
+block|}
 annotation|@
 name|Test
 specifier|public
@@ -139,27 +162,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring"
-argument_list|)
-expr_stmt|;
-name|String
-name|springFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring feature is not installed"
-argument_list|,
-name|springFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring"
 argument_list|)
 expr_stmt|;
 block|}
@@ -172,27 +177,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring-aspects"
-argument_list|)
-expr_stmt|;
-name|String
-name|springAspectsFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring-aspects"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring-aspects feature is not installed"
-argument_list|,
-name|springAspectsFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring-aspects"
 argument_list|)
 expr_stmt|;
 block|}
@@ -205,27 +192,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring-dm"
-argument_list|)
-expr_stmt|;
-name|String
-name|springDmFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring-dm"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring-dm feature is not installed"
-argument_list|,
-name|springDmFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring-dm"
 argument_list|)
 expr_stmt|;
 block|}
@@ -238,27 +207,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring-dm-web"
-argument_list|)
-expr_stmt|;
-name|String
-name|springDmWebFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring-dm-web"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring-dm-web feature is not installed"
-argument_list|,
-name|springDmWebFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring-dm-web"
 argument_list|)
 expr_stmt|;
 block|}
@@ -271,27 +222,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring-instrument"
-argument_list|)
-expr_stmt|;
-name|String
-name|springInstrumentFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring-instrument"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring-instrument feature is not installed"
-argument_list|,
-name|springInstrumentFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring-instrument"
 argument_list|)
 expr_stmt|;
 block|}
@@ -304,27 +237,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring-jdbc"
-argument_list|)
-expr_stmt|;
-name|String
-name|springJdbcFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring-jdbc"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring-jdbc feature is not installed"
-argument_list|,
-name|springJdbcFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring-jdbc"
 argument_list|)
 expr_stmt|;
 block|}
@@ -337,27 +252,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring-jms"
-argument_list|)
-expr_stmt|;
-name|String
-name|springJmsFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring-jms"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring-jms feature is not installed"
-argument_list|,
-name|springJmsFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring-jms"
 argument_list|)
 expr_stmt|;
 block|}
@@ -370,27 +267,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring-struts"
-argument_list|)
-expr_stmt|;
-name|String
-name|springStrutsFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring-struts"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring-struts feature is not installed"
-argument_list|,
-name|springStrutsFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring-struts"
 argument_list|)
 expr_stmt|;
 block|}
@@ -403,27 +282,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring-test"
-argument_list|)
-expr_stmt|;
-name|String
-name|springTestFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring-test"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring-test feature is not installed"
-argument_list|,
-name|springTestFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring-test"
 argument_list|)
 expr_stmt|;
 block|}
@@ -436,27 +297,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring-orm"
-argument_list|)
-expr_stmt|;
-name|String
-name|springOrmFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring-orm"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring-orm feature is not installed"
-argument_list|,
-name|springOrmFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring-orm"
 argument_list|)
 expr_stmt|;
 block|}
@@ -469,27 +312,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring-oxm"
-argument_list|)
-expr_stmt|;
-name|String
-name|springOxmFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring-oxm"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring-oxm feature is not installed"
-argument_list|,
-name|springOxmFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring-oxm"
 argument_list|)
 expr_stmt|;
 block|}
@@ -502,27 +327,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring-tx"
-argument_list|)
-expr_stmt|;
-name|String
-name|springTxFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring-tx"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring-tx feature is not installed"
-argument_list|,
-name|springTxFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring-tx"
 argument_list|)
 expr_stmt|;
 block|}
@@ -535,27 +342,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring-web"
-argument_list|)
-expr_stmt|;
-name|String
-name|springWebFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring-web"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring-web feature is not installed"
-argument_list|,
-name|springWebFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring-web"
 argument_list|)
 expr_stmt|;
 block|}
@@ -568,27 +357,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install spring-web-portlet"
-argument_list|)
-expr_stmt|;
-name|String
-name|springWebPortletFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep spring-web-portlet"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"spring-web-portlet feature is not installed"
-argument_list|,
-name|springWebPortletFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"spring-web-portlet"
 argument_list|)
 expr_stmt|;
 block|}
@@ -601,27 +372,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install gemini-blueprint"
-argument_list|)
-expr_stmt|;
-name|String
-name|geminiBlueprintFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep gemini-blueprint"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"gemini-blueprint feature is not installed"
-argument_list|,
-name|geminiBlueprintFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"gemini-blueprint"
 argument_list|)
 expr_stmt|;
 block|}

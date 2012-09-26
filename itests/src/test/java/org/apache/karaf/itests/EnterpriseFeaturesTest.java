@@ -120,6 +120,29 @@ name|EnterpriseFeaturesTest
 extends|extends
 name|KarafTestSupport
 block|{
+specifier|private
+name|void
+name|installAndAssertFeature
+parameter_list|(
+name|String
+name|feature
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+name|featureService
+operator|.
+name|installFeature
+argument_list|(
+name|feature
+argument_list|)
+expr_stmt|;
+name|assertFeatureInstalled
+argument_list|(
+name|feature
+argument_list|)
+expr_stmt|;
+block|}
 annotation|@
 name|Test
 specifier|public
@@ -129,27 +152,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install transaction"
-argument_list|)
-expr_stmt|;
-name|String
-name|transactionFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep transaction"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"transaction feature is not installed"
-argument_list|,
-name|transactionFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"transaction"
 argument_list|)
 expr_stmt|;
 block|}
@@ -162,27 +167,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install jpa"
-argument_list|)
-expr_stmt|;
-name|String
-name|jpaFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep jpa"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"jpa feature is not installed"
-argument_list|,
-name|jpaFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"jpa"
 argument_list|)
 expr_stmt|;
 block|}
@@ -195,27 +182,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install jndi"
-argument_list|)
-expr_stmt|;
-name|String
-name|jndiFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep jndi"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"jndi feature is not installed"
-argument_list|,
-name|jndiFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"jndi"
 argument_list|)
 expr_stmt|;
 block|}
@@ -228,27 +197,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|executeCommand
+name|installAndAssertFeature
 argument_list|(
-literal|"feature:install application-without-isolation"
-argument_list|)
-expr_stmt|;
-name|String
-name|applicationWithoutIsolationFeatureStatus
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep application-without-isolation"
-argument_list|)
-decl_stmt|;
-name|assertFalse
-argument_list|(
-literal|"application-without-isolation feature is not installed"
-argument_list|,
-name|applicationWithoutIsolationFeatureStatus
-operator|.
-name|isEmpty
-argument_list|()
+literal|"application-without-isolation"
 argument_list|)
 expr_stmt|;
 block|}
