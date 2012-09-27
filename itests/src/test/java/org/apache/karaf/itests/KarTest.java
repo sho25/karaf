@@ -224,6 +224,11 @@ argument_list|(
 literal|"org.apache.karaf:type=kar,name=root"
 argument_list|)
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|List
 argument_list|<
 name|String

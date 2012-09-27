@@ -280,6 +280,11 @@ argument_list|(
 literal|"org.apache.karaf:type=obr,name=root"
 argument_list|)
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|List
 argument_list|<
 name|String
