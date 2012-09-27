@@ -204,6 +204,7 @@ import|;
 end_import
 
 begin_class
+specifier|public
 class|class
 name|FeatureConfigInstaller
 block|{
@@ -235,6 +236,7 @@ specifier|final
 name|ConfigurationAdmin
 name|configAdmin
 decl_stmt|;
+specifier|public
 name|FeatureConfigInstaller
 parameter_list|(
 name|ConfigurationAdmin
