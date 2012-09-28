@@ -220,7 +220,7 @@ operator|=
 name|alternativeRangeTo
 expr_stmt|;
 block|}
-comment|/**      * This will make sure a registry exists and is valid m_port. If its not available or does not work for some reason,      * it will select another port. This should really not happen usually. But it can.      *       * @return this for fluent API. Or IllegalStateException if a port has not been detected successfully.      */
+comment|/**      * This will make sure a registry exists and is valid m_port. If its not available or does not work for some reason,      * it will select another port. This should really not happen usually. But it can.      *      * @return this for fluent API. Or IllegalStateException if a port has not been detected successfully.      */
 specifier|public
 specifier|synchronized
 name|RMIRegistry
@@ -361,7 +361,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * This contains basically two paths: 1. check if the given port already is valid rmi registry. Use that one if      * possible 2. make a new one at that port otherwise. Must also be validated.      *       * @param port to select.      *       * @return input port if successful or UNSELECTED      */
+comment|/**      * This contains basically two paths: 1. check if the given port already is valid rmi registry. Use that one if      * possible 2. make a new one at that port otherwise. Must also be validated.      *      * @param port to select.      * @return input port if successful or UNSELECTED      */
 specifier|private
 name|Integer
 name|select

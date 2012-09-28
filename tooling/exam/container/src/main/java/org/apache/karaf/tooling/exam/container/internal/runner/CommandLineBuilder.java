@@ -48,7 +48,7 @@ literal|0
 index|]
 expr_stmt|;
 block|}
-comment|/**      * Appends an array of strings to command line.      *      * @param segments array to append      *      * @return CommandLineBuilder for fluent api      */
+comment|/**      * Appends an array of strings to command line.      *      * @param segments array to append      * @return CommandLineBuilder for fluent api      */
 specifier|public
 name|CommandLineBuilder
 name|append
@@ -134,7 +134,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Appends a string to command line.      *      * @param segment string to append      *      * @return CommandLineBuilder for fluent api      */
+comment|/**      * Appends a string to command line.      *      * @param segment string to append      * @return CommandLineBuilder for fluent api      */
 specifier|public
 name|CommandLineBuilder
 name|append

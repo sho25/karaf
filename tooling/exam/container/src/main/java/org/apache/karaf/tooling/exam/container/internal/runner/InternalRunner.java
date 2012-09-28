@@ -397,7 +397,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Create helper thread to safely shutdown the external framework process      *      * @param process framework process      *      * @return stream handler      */
+comment|/**      * Create helper thread to safely shutdown the external framework process      *      * @param process framework process      * @return stream handler      */
 specifier|private
 name|Thread
 name|createShutdownHook
