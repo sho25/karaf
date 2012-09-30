@@ -1960,6 +1960,12 @@ operator|.
 name|refreshBundles
 argument_list|(
 name|state
+operator|.
+name|bundles
+argument_list|,
+name|state
+operator|.
+name|installed
 argument_list|,
 name|options
 argument_list|)
