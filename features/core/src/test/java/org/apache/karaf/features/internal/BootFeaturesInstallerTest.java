@@ -150,6 +150,8 @@ name|BootFeaturesInstaller
 argument_list|(
 literal|null
 argument_list|,
+literal|null
+argument_list|,
 literal|""
 argument_list|)
 decl_stmt|;
@@ -366,6 +368,8 @@ init|=
 operator|new
 name|BootFeaturesInstaller
 argument_list|(
+literal|null
+argument_list|,
 name|impl
 argument_list|,
 literal|"config,standard,region"
@@ -511,6 +515,8 @@ init|=
 operator|new
 name|BootFeaturesInstaller
 argument_list|(
+literal|null
+argument_list|,
 name|impl
 argument_list|,
 literal|"transaction;version=1.2,ssh;version=1.0.0"
@@ -687,6 +693,8 @@ init|=
 operator|new
 name|BootFeaturesInstaller
 argument_list|(
+literal|null
+argument_list|,
 name|impl
 argument_list|,
 literal|"(transaction), ssh"
