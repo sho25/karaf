@@ -235,6 +235,20 @@ name|apache
 operator|.
 name|karaf
 operator|.
+name|features
+operator|.
+name|BootFinished
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
 name|tooling
 operator|.
 name|exam
@@ -485,6 +499,12 @@ decl_stmt|;
 specifier|private
 name|ServletListener
 name|webListener
+decl_stmt|;
+comment|/**      * To make sure the tests run only when the boot features are fully installed      */
+annotation|@
+name|Inject
+name|BootFinished
+name|bootFinished
 decl_stmt|;
 annotation|@
 name|Before
