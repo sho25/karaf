@@ -564,6 +564,9 @@ parameter_list|,
 name|Terminal
 name|term
 parameter_list|,
+name|String
+name|encoding
+parameter_list|,
 name|Runnable
 name|closeCallback
 parameter_list|)
@@ -677,6 +680,8 @@ operator|=
 operator|new
 name|ConsoleReader
 argument_list|(
+literal|null
+argument_list|,
 name|this
 operator|.
 name|consoleInput
@@ -688,6 +693,8 @@ argument_list|,
 name|this
 operator|.
 name|terminal
+argument_list|,
+name|encoding
 argument_list|)
 expr_stmt|;
 block|}

@@ -97,6 +97,9 @@ specifier|final
 name|Terminal
 name|term
 parameter_list|,
+name|String
+name|encoding
+parameter_list|,
 name|Runnable
 name|closeCallback
 parameter_list|)
@@ -109,6 +112,9 @@ name|processor
 parameter_list|,
 name|Terminal
 name|terminal
+parameter_list|,
+name|String
+name|encoding
 parameter_list|,
 name|Runnable
 name|closeCallback

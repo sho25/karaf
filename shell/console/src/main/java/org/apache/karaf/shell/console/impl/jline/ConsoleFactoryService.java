@@ -219,6 +219,9 @@ specifier|final
 name|Terminal
 name|terminal
 parameter_list|,
+name|String
+name|encoding
+parameter_list|,
 name|Runnable
 name|closeCallback
 parameter_list|)
@@ -259,6 +262,8 @@ argument_list|)
 argument_list|,
 name|terminal
 argument_list|,
+name|encoding
+argument_list|,
 name|closeCallback
 argument_list|)
 return|;
@@ -285,6 +290,9 @@ specifier|final
 name|Terminal
 name|terminal
 parameter_list|,
+name|String
+name|encoding
+parameter_list|,
 name|Runnable
 name|closeCallback
 parameter_list|)
@@ -304,6 +312,8 @@ argument_list|,
 name|err
 argument_list|,
 name|terminal
+argument_list|,
+name|encoding
 argument_list|,
 name|closeCallback
 argument_list|)
