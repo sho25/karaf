@@ -16,6 +16,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
 import|import
 name|org
 operator|.
@@ -87,18 +99,6 @@ name|AllConfinedStagedReactorFactory
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
-import|;
-end_import
-
 begin_class
 annotation|@
 name|RunWith
@@ -129,6 +129,13 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|1000
+argument_list|)
+expr_stmt|;
 name|String
 name|infoOutput
 init|=
@@ -148,6 +155,8 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
+literal|"Region org.eclipse.equinox.region.kernel should be present"
+argument_list|,
 name|infoOutput
 operator|.
 name|contains
@@ -158,6 +167,8 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
+literal|"Region org.apache.karaf.region.application should be present"
+argument_list|,
 name|infoOutput
 operator|.
 name|contains
@@ -176,6 +187,13 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|2000
+argument_list|)
+expr_stmt|;
 name|System
 operator|.
 name|out
@@ -207,6 +225,8 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
+literal|"Region itest should be present"
+argument_list|,
 name|infoOutput
 operator|.
 name|contains
