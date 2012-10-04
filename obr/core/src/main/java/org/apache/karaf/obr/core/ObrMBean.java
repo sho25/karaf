@@ -107,6 +107,9 @@ name|bundle
 parameter_list|,
 name|boolean
 name|start
+parameter_list|,
+name|boolean
+name|deployOptional
 parameter_list|)
 throws|throws
 name|Exception

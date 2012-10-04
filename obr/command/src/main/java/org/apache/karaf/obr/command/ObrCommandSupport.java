@@ -768,6 +768,9 @@ name|bundles
 parameter_list|,
 name|boolean
 name|start
+parameter_list|,
+name|boolean
+name|deployOptional
 parameter_list|)
 throws|throws
 name|Exception
@@ -879,7 +882,15 @@ condition|(
 name|resolver
 operator|.
 name|resolve
-argument_list|()
+argument_list|(
+name|deployOptional
+condition|?
+literal|0
+else|:
+name|Resolver
+operator|.
+name|NO_OPTIONAL_RESOURCES
+argument_list|)
 condition|)
 block|{
 name|System
@@ -1054,6 +1065,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|deployOptional
+condition|)
+block|{
 name|resources
 operator|=
 name|resolver
@@ -1142,6 +1158,7 @@ operator|+
 literal|")"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 try|try
