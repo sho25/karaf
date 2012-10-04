@@ -374,7 +374,9 @@ literal|"etc/org.ops4j.pax.web.cfg"
 argument_list|,
 literal|"org.osgi.service.http.port"
 argument_list|,
-literal|"9080"
+name|KarafTestSupport
+operator|.
+name|HTTP_PORT
 argument_list|)
 block|}
 return|;
