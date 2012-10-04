@@ -754,7 +754,7 @@ literal|"etc/org.ops4j.pax.web.cfg"
 argument_list|,
 literal|"org.osgi.service.http.port"
 argument_list|,
-literal|"9080"
+literal|"9081"
 argument_list|)
 block|,
 name|editConfigurationFilePut
