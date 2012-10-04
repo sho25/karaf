@@ -242,7 +242,7 @@ name|displayOutput
 init|=
 name|executeCommand
 argument_list|(
-literal|"log:display"
+literal|"log:display -n 200"
 argument_list|)
 decl_stmt|;
 name|System
