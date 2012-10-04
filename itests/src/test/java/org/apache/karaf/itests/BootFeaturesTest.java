@@ -125,8 +125,6 @@ literal|"package"
 argument_list|,
 literal|"kar"
 argument_list|,
-literal|"ssh"
-argument_list|,
 literal|"management"
 argument_list|)
 expr_stmt|;
