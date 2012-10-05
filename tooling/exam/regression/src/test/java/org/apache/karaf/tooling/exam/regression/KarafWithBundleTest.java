@@ -660,7 +660,13 @@ init|=
 operator|new
 name|URL
 argument_list|(
-literal|"http://localhost:9080/test/services"
+literal|"http://localhost:"
+operator|+
+name|RegressionTestSupport
+operator|.
+name|HTTP_PORT
+operator|+
+literal|"/test/services"
 argument_list|)
 decl_stmt|;
 name|URLConnection
@@ -848,7 +854,9 @@ literal|"etc/org.ops4j.pax.web.cfg"
 argument_list|,
 literal|"org.osgi.service.http.port"
 argument_list|,
-literal|"9080"
+name|RegressionTestSupport
+operator|.
+name|HTTP_PORT
 argument_list|)
 block|,
 comment|// create bundle to install
