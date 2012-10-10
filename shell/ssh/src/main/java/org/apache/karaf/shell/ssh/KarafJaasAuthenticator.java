@@ -651,7 +651,7 @@ parameter_list|)
 block|{
 name|LOGGER
 operator|.
-name|debug
+name|warn
 argument_list|(
 literal|"User authentication failed with "
 operator|+
@@ -946,7 +946,7 @@ parameter_list|)
 block|{
 name|LOGGER
 operator|.
-name|debug
+name|warn
 argument_list|(
 literal|"User authentication failed with "
 operator|+
