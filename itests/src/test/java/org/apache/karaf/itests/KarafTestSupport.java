@@ -650,6 +650,7 @@ name|bundleContext
 decl_stmt|;
 annotation|@
 name|Inject
+specifier|protected
 name|FeaturesService
 name|featureService
 decl_stmt|;

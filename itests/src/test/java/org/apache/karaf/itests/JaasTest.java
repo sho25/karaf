@@ -16,6 +16,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
 import|import
 name|org
 operator|.
@@ -83,19 +95,7 @@ name|spi
 operator|.
 name|reactors
 operator|.
-name|AllConfinedStagedReactorFactory
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
+name|EagerSingleStagedReactorFactory
 import|;
 end_import
 
@@ -110,7 +110,7 @@ argument_list|)
 annotation|@
 name|ExamReactorStrategy
 argument_list|(
-name|AllConfinedStagedReactorFactory
+name|EagerSingleStagedReactorFactory
 operator|.
 name|class
 argument_list|)

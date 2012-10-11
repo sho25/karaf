@@ -83,7 +83,7 @@ name|spi
 operator|.
 name|reactors
 operator|.
-name|AllConfinedStagedReactorFactory
+name|EagerSingleStagedReactorFactory
 import|;
 end_import
 
@@ -142,7 +142,7 @@ argument_list|)
 annotation|@
 name|ExamReactorStrategy
 argument_list|(
-name|AllConfinedStagedReactorFactory
+name|EagerSingleStagedReactorFactory
 operator|.
 name|class
 argument_list|)

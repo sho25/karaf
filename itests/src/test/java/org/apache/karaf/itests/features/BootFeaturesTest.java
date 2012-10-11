@@ -8,8 +8,24 @@ operator|.
 name|karaf
 operator|.
 name|itests
+operator|.
+name|features
 package|;
 end_package
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|itests
+operator|.
+name|KarafTestSupport
+import|;
+end_import
 
 begin_import
 import|import
