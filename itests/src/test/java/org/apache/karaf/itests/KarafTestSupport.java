@@ -99,6 +99,18 @@ begin_import
 import|import static
 name|org
 operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
 name|ops4j
 operator|.
 name|pax
@@ -1727,6 +1739,68 @@ operator|.
 name|containsAll
 argument_list|(
 name|expectedFeaturesSet
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|assertContains
+parameter_list|(
+name|String
+name|expectedPart
+parameter_list|,
+name|String
+name|actual
+parameter_list|)
+block|{
+name|assertTrue
+argument_list|(
+literal|"Should contain '"
+operator|+
+name|expectedPart
+operator|+
+literal|"' but was : "
+operator|+
+name|actual
+argument_list|,
+name|actual
+operator|.
+name|contains
+argument_list|(
+name|expectedPart
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|assertContainsNot
+parameter_list|(
+name|String
+name|expectedPart
+parameter_list|,
+name|String
+name|actual
+parameter_list|)
+block|{
+name|Assert
+operator|.
+name|assertFalse
+argument_list|(
+literal|"Should not contain '"
+operator|+
+name|expectedPart
+operator|+
+literal|"' but was : "
+operator|+
+name|actual
+argument_list|,
+name|actual
+operator|.
+name|contains
+argument_list|(
+name|expectedPart
 argument_list|)
 argument_list|)
 expr_stmt|;
