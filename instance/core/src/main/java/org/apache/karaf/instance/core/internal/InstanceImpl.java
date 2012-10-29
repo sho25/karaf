@@ -2329,6 +2329,19 @@ expr_stmt|;
 block|}
 block|}
 block|}
+specifier|public
+name|boolean
+name|isAttached
+parameter_list|()
+block|{
+return|return
+operator|(
+name|process
+operator|!=
+literal|null
+operator|)
+return|;
+block|}
 block|}
 end_class
 
