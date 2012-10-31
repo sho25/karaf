@@ -262,6 +262,15 @@ name|release
 argument_list|()
 expr_stmt|;
 block|}
+specifier|public
+name|Lock
+name|getLock
+parameter_list|()
+block|{
+return|return
+name|lock
+return|;
+block|}
 block|}
 end_class
 
