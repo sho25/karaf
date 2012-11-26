@@ -326,7 +326,7 @@ specifier|final
 name|String
 name|DELETE_USER_STATEMENT
 init|=
-literal|"delete.roles"
+literal|"delete.user"
 decl_stmt|;
 specifier|private
 name|String
