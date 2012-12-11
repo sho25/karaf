@@ -539,6 +539,23 @@ operator|)
 operator|/
 name|total
 decl_stmt|;
+comment|// progress bar can only have 73 characters so that 80 char wide terminal will display properly
+name|int
+name|scaledPercent
+init|=
+call|(
+name|int
+call|)
+argument_list|(
+literal|73.0
+operator|*
+operator|(
+name|percent
+operator|/
+literal|100.0
+operator|)
+argument_list|)
+decl_stmt|;
 comment|// Make sure we do not go backwards with percentage
 if|if
 condition|(
@@ -581,7 +598,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|100
+literal|73
 condition|;
 name|i
 operator|++
@@ -591,7 +608,7 @@ if|if
 condition|(
 name|i
 operator|<
-name|percent
+name|scaledPercent
 condition|)
 block|{
 name|sb
@@ -607,7 +624,7 @@ if|if
 condition|(
 name|i
 operator|==
-name|percent
+name|scaledPercent
 condition|)
 block|{
 name|sb
