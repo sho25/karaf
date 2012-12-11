@@ -228,6 +228,37 @@ name|background
 init|=
 literal|true
 decl_stmt|;
+annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
+literal|"-i"
+argument_list|,
+name|aliases
+operator|=
+block|{
+literal|"--idle-timeout"
+block|}
+argument_list|,
+name|description
+operator|=
+literal|"The session idle timeout (Default: 1800000ms)"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
+argument_list|)
+specifier|private
+name|long
+name|idleTimeout
+init|=
+literal|1800000
+decl_stmt|;
 specifier|private
 name|BlueprintContainer
 name|container
@@ -301,6 +332,7 @@ argument_list|,
 name|server
 argument_list|)
 expr_stmt|;
+comment|// port number
 name|server
 operator|.
 name|setPort
@@ -308,6 +340,29 @@ argument_list|(
 name|port
 argument_list|)
 expr_stmt|;
+comment|// idle timeout
+name|server
+operator|.
+name|getProperties
+argument_list|()
+operator|.
+name|put
+argument_list|(
+name|SshServer
+operator|.
+name|IDLE_TIMEOUT
+argument_list|,
+operator|new
+name|Long
+argument_list|(
+name|idleTimeout
+argument_list|)
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|// starting the SSHd server
 name|server
 operator|.
 name|start
@@ -322,6 +377,12 @@ argument_list|(
 literal|"SSH server listening on port "
 operator|+
 name|port
+operator|+
+literal|" (idle timeout "
+operator|+
+name|idleTimeout
+operator|+
+literal|"ms)"
 argument_list|)
 expr_stmt|;
 if|if
