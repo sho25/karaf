@@ -539,7 +539,7 @@ operator|)
 operator|/
 name|total
 decl_stmt|;
-comment|// progress bar can only have 73 characters so that 80 char wide terminal will display properly
+comment|// progress bar can only have 72 characters so that 80 char wide terminal will display properly
 name|int
 name|scaledPercent
 init|=
@@ -547,7 +547,7 @@ call|(
 name|int
 call|)
 argument_list|(
-literal|73.0
+literal|72.0
 operator|*
 operator|(
 name|percent
@@ -598,7 +598,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|73
+literal|72
 condition|;
 name|i
 operator|++
