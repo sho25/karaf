@@ -394,6 +394,10 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|name
+operator|!=
+literal|null
+operator|&&
 name|root
 operator|&&
 operator|!
