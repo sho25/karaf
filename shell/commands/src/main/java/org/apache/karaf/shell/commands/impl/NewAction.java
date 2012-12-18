@@ -240,7 +240,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Instanciate a new object  */
+comment|/**  * Instantiate a new object  */
 end_comment
 
 begin_class
@@ -532,7 +532,7 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Error when instanciating object of class "
+literal|"Error when instantiating object of class "
 operator|+
 name|clazz
 operator|.
@@ -573,7 +573,7 @@ literal|" for arguments "
 operator|+
 name|args
 operator|+
-literal|" when instanciating object."
+literal|" when instantiating object."
 argument_list|)
 throw|;
 block|}
@@ -594,7 +594,7 @@ literal|" for arguments "
 operator|+
 name|args
 operator|+
-literal|" when instanciating object: "
+literal|" when instantiating object: "
 operator|+
 name|matches
 operator|.
