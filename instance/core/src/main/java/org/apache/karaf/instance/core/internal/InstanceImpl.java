@@ -2334,6 +2334,9 @@ name|boolean
 name|isAttached
 parameter_list|()
 block|{
+name|checkProcess
+argument_list|()
+expr_stmt|;
 return|return
 operator|(
 name|process
