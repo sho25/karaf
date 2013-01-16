@@ -24,6 +24,20 @@ specifier|public
 interface|interface
 name|SystemService
 block|{
+comment|/**      * Types defining what to remove on a restart of Karaf      */
+specifier|public
+enum|enum
+name|Swipe
+block|{
+comment|/** Delete nothing; simple restart */
+name|NONE
+block|,
+comment|/** Delete only the cache; everything else remains */
+name|CACHE
+block|,
+comment|/** Forces a clean restart by removing the working directory; this option is compatible to the former clean method. */
+name|ALL
+block|}
 comment|/**      * Halt the Karaf container.      */
 name|void
 name|halt
@@ -55,7 +69,7 @@ parameter_list|(
 name|String
 name|time
 parameter_list|,
-name|boolean
+name|Swipe
 name|clean
 parameter_list|)
 throws|throws
