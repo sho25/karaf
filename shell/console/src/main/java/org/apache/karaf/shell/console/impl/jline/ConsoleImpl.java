@@ -1230,6 +1230,27 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|// jline doesn't add blank lines to the history so we don't
+comment|// need to replace the command in jline's console history with
+comment|// an indented one
+if|if
+condition|(
+name|command
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
+operator|&&
+operator|!
+literal|" "
+operator|.
+name|equals
+argument_list|(
+name|command
+argument_list|)
+condition|)
+block|{
 name|reader
 operator|.
 name|getHistory
@@ -1240,6 +1261,7 @@ argument_list|(
 name|command
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 try|try
 block|{
