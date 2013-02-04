@@ -229,6 +229,20 @@ specifier|private
 name|File
 name|targetFile
 decl_stmt|;
+comment|/**      * pack a assembly as a tar.gz archive      *      * @parameter      */
+specifier|private
+name|boolean
+name|archiveTarGz
+init|=
+literal|true
+decl_stmt|;
+comment|/**      * pack a assembly as a zip archive      *      * @parameter      */
+specifier|private
+name|boolean
+name|archiveZip
+init|=
+literal|true
+decl_stmt|;
 specifier|public
 name|void
 name|execute
@@ -274,16 +288,28 @@ expr_stmt|;
 try|try
 block|{
 comment|//now pack up the server.
+if|if
+condition|(
+name|archiveTarGz
+condition|)
+block|{
 name|archive
 argument_list|(
 literal|"tar.gz"
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|archiveZip
+condition|)
+block|{
 name|archive
 argument_list|(
 literal|"zip"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
