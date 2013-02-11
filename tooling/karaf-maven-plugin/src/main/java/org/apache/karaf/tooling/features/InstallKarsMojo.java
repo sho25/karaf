@@ -628,7 +628,7 @@ name|String
 argument_list|>
 name|startupFeatures
 decl_stmt|;
-comment|/**      * List of features from runtime-scope features xml and kars to be installed into local-repo and listed in features service boot features.      *      * @parameter      */
+comment|/**      * List of features from runtime-scope features xml and kars to be installed into system repo and listed in features service boot features.      *      * @parameter      */
 specifier|private
 name|List
 argument_list|<
@@ -636,7 +636,7 @@ name|String
 argument_list|>
 name|bootFeatures
 decl_stmt|;
-comment|/**      * List of features from runtime-scope features xml and kars to be installed into local-repo and not mentioned elsewhere.      *      * @parameter      */
+comment|/**      * List of features from runtime-scope features xml and kars to be installed into system repo and not mentioned elsewhere.      *      * @parameter      */
 specifier|private
 name|List
 argument_list|<
@@ -1409,7 +1409,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// install bundles listed in install features not in system into local-repo
+comment|// install bundles listed in install features not in system
 for|for
 control|(
 name|Feature
