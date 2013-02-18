@@ -106,7 +106,7 @@ decl_stmt|;
 name|QName
 name|FEATURES_CURRENT
 init|=
-name|FEATURES_1_1_0
+name|FEATURES_1_2_0
 decl_stmt|;
 block|}
 end_interface
