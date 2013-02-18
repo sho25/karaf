@@ -268,6 +268,25 @@ block|}
 catch|catch
 parameter_list|(
 name|IOException
+name|ioe
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"Karaf can't startup, make sure the log file can be accessed and written by the user starting Karaf : "
+operator|+
+name|ioe
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+throw|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
 name|e
 parameter_list|)
 block|{
