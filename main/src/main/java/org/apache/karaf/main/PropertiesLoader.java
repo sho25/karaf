@@ -169,7 +169,16 @@ name|OPTIONALS_PROPERTY
 init|=
 literal|"${optionals}"
 decl_stmt|;
-comment|// optionals includes
+comment|// optionals include
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|OVERRIDE_PREFIX
+init|=
+literal|"karaf.override."
+decl_stmt|;
+comment|// prefix that marks that system property should override defaults.
 comment|/**      *<p>      * Loads the configuration properties in the configuration property file      * associated with the framework installation; these properties      * are accessible to the framework and to bundles and are intended      * for configuration purposes. By default, the configuration property      * file is located in the<tt>conf/</tt> directory of the Felix      * installation directory and is called "<tt>config.properties</tt>".      * The installation directory of Felix is assumed to be the parent      * directory of the<tt>felix.jar</tt> file as found on the system class      * path property. The precise file from which to load configuration      * properties can be set by initializing the "<tt>felix.config.properties</tt>"      * system property to an arbitrary URL.      *</p>      *      * @return A<tt>Properties</tt> instance or<tt>null</tt> if there was an error.      * @throws Exception if something wrong occurs      */
 specifier|static
 name|Properties
@@ -296,7 +305,7 @@ return|return
 name|configProps
 return|;
 block|}
-comment|/**      *<p>      * Loads the properties in the system property file associated with the      * framework installation into<tt>System.setProperty()</tt>. These properties      * are not directly used by the framework in anyway. By default, the system      * property file is located in the<tt>conf/</tt> directory of the Felix      * installation directory and is called "<tt>system.properties</tt>". The      * installation directory of Felix is assumed to be the parent directory of      * the<tt>felix.jar</tt> file as found on the system class path property.      * The precise file from which to load system properties can be set by      * initializing the "<tt>felix.system.properties</tt>" system property to an      * arbitrary URL.      *</p>      *      * @param karafBase the karaf base folder      * @throws IOException       */
+comment|/**      *<p>      * Loads the properties in the system property file associated with the      * framework installation into<tt>System.setProperty()</tt>. These properties      * are not directly used by the framework in anyway. By default, the system      * property file is located in the<tt>conf/</tt> directory of the Felix      * installation directory and is called "<tt>system.properties</tt>". The      * installation directory of Felix is assumed to be the parent directory of      * the<tt>felix.jar</tt> file as found on the system class path property.      * The precise file from which to load system properties can be set by      * initializing the "<tt>felix.system.properties</tt>" system property to an      * arbitrary URL.      *</p>      *      * @param karafBase the karaf base folder      * @throws IOException      */
 specifier|static
 name|void
 name|loadSystemProperties
@@ -377,6 +386,62 @@ operator|.
 name|nextElement
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|name
+operator|.
+name|startsWith
+argument_list|(
+name|OVERRIDE_PREFIX
+argument_list|)
+condition|)
+block|{
+name|String
+name|overrideName
+init|=
+name|name
+operator|.
+name|substring
+argument_list|(
+name|OVERRIDE_PREFIX
+operator|.
+name|length
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|String
+name|value
+init|=
+name|props
+operator|.
+name|getProperty
+argument_list|(
+name|name
+argument_list|)
+decl_stmt|;
+name|System
+operator|.
+name|setProperty
+argument_list|(
+name|overrideName
+argument_list|,
+name|SubstHelper
+operator|.
+name|substVars
+argument_list|(
+name|value
+argument_list|,
+name|name
+argument_list|,
+literal|null
+argument_list|,
+name|props
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|String
 name|value
 init|=
@@ -414,6 +479,7 @@ name|props
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 specifier|static
