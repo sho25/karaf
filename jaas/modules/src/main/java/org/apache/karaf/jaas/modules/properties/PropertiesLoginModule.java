@@ -345,8 +345,6 @@ name|get
 argument_list|(
 name|USER_FILE
 argument_list|)
-operator|+
-literal|""
 expr_stmt|;
 if|if
 condition|(
@@ -373,6 +371,21 @@ parameter_list|()
 throws|throws
 name|LoginException
 block|{
+if|if
+condition|(
+name|usersFile
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|LoginException
+argument_list|(
+literal|"The property users may not be null"
+argument_list|)
+throw|;
+block|}
 name|File
 name|f
 init|=
@@ -382,6 +395,25 @@ argument_list|(
 name|usersFile
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|f
+operator|.
+name|exists
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|LoginException
+argument_list|(
+literal|"Users file not found at "
+operator|+
+name|f
+argument_list|)
+throw|;
+block|}
 name|Properties
 name|users
 decl_stmt|;
