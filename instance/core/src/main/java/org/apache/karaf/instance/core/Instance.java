@@ -46,6 +46,8 @@ name|String
 name|getName
 parameter_list|()
 function_decl|;
+annotation|@
+name|Deprecated
 name|void
 name|setName
 parameter_list|(
@@ -61,6 +63,8 @@ name|String
 name|getLocation
 parameter_list|()
 function_decl|;
+annotation|@
+name|Deprecated
 name|void
 name|setLocation
 parameter_list|(
@@ -151,6 +155,8 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+annotation|@
+name|Deprecated
 name|boolean
 name|isAttached
 parameter_list|()

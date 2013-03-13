@@ -739,11 +739,6 @@ argument_list|(
 name|storageFile
 argument_list|)
 expr_stmt|;
-name|instanceService
-operator|.
-name|init
-argument_list|()
-expr_stmt|;
 name|command
 operator|.
 name|setInstanceService
