@@ -286,7 +286,7 @@ name|session
 operator|.
 name|execute
 argument_list|(
-literal|"ssh -l "
+literal|"ssh:ssh -l "
 operator|+
 name|username
 operator|+
@@ -306,7 +306,7 @@ name|session
 operator|.
 name|execute
 argument_list|(
-literal|"ssh -p "
+literal|"ssh:ssh -p "
 operator|+
 name|port
 operator|+
