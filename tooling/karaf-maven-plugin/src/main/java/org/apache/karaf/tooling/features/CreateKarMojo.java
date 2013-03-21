@@ -428,6 +428,11 @@ name|finalName
 init|=
 literal|null
 decl_stmt|;
+comment|/**      * Classifier to add to the artifact generated. If given, the artifact will be attached.      * If it's not given, it will merely be written to the output directory according to the finalName.      *      * @parameter      */
+specifier|protected
+name|String
+name|classifier
+decl_stmt|;
 comment|/**      * Location of resources directory for additional content to include in the kar.      * Note that it includes everything under classes so as to include maven-remote-resources      *      * @parameter expression="${project.build.directory}/classes"      */
 specifier|private
 name|File
@@ -475,12 +480,45 @@ argument_list|(
 name|resources
 argument_list|)
 decl_stmt|;
-comment|// Attach the generated archive for install/deploy
+comment|// if no classifier is specified and packaging is not kar, display a warning
+comment|// and attach artifact
+if|if
+condition|(
+name|classifier
+operator|==
+literal|null
+operator|&&
+operator|!
+name|this
+operator|.
+name|getProject
+argument_list|()
+operator|.
+name|getPackaging
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+literal|"kar"
+argument_list|)
+condition|)
+block|{
+name|this
+operator|.
+name|getLog
+argument_list|()
+operator|.
+name|warn
+argument_list|(
+literal|"Your project should use the \"kar\" packaging or configure a \"classifier\" for kar attachment"
+argument_list|)
+expr_stmt|;
 name|projectHelper
 operator|.
 name|attachArtifact
 argument_list|(
-name|project
+name|getProject
+argument_list|()
 argument_list|,
 literal|"kar"
 argument_list|,
@@ -489,6 +527,45 @@ argument_list|,
 name|archive
 argument_list|)
 expr_stmt|;
+return|return;
+block|}
+comment|// Attach the generated archive for install/deploy
+if|if
+condition|(
+name|classifier
+operator|!=
+literal|null
+condition|)
+block|{
+name|projectHelper
+operator|.
+name|attachArtifact
+argument_list|(
+name|getProject
+argument_list|()
+argument_list|,
+literal|"kar"
+argument_list|,
+name|classifier
+argument_list|,
+name|archive
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|getProject
+argument_list|()
+operator|.
+name|getArtifact
+argument_list|()
+operator|.
+name|setFile
+argument_list|(
+name|archive
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/**      * Read bundles and configuration files in the features file.      *      * @return      * @throws MojoExecutionException      */
 specifier|private
@@ -685,7 +762,7 @@ name|outputDirectory
 argument_list|,
 name|finalName
 argument_list|,
-literal|null
+name|classifier
 argument_list|)
 decl_stmt|;
 name|MavenArchiver
