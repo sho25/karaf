@@ -909,6 +909,18 @@ argument_list|(
 name|SSL_TRUSTSTORE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|options
+operator|.
+name|get
+argument_list|(
+name|SSL_TIMEOUT
+argument_list|)
+operator|!=
+literal|null
+condition|)
+block|{
 name|sslTimeout
 operator|=
 operator|(
@@ -921,6 +933,7 @@ argument_list|(
 name|SSL_TIMEOUT
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|boolean
