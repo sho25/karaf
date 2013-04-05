@@ -1199,11 +1199,29 @@ name|t
 argument_list|)
 expr_stmt|;
 block|}
+elseif|else
+if|if
+condition|(
+name|t
+operator|instanceof
+name|CommandException
+condition|)
+block|{
+name|LOGGER
+operator|.
+name|debug
+argument_list|(
+literal|"Command exception (Undefined option, ...)"
+argument_list|,
+name|t
+argument_list|)
+expr_stmt|;
+block|}
 else|else
 block|{
 name|LOGGER
 operator|.
-name|info
+name|error
 argument_list|(
 literal|"Exception caught while executing command"
 argument_list|,
