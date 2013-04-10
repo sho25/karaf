@@ -325,6 +325,16 @@ specifier|private
 name|ScrService
 name|scrService
 decl_stmt|;
+specifier|public
+name|ScrActionSupport
+parameter_list|()
+block|{
+name|setSubShell
+argument_list|(
+literal|"scr"
+argument_list|)
+expr_stmt|;
+block|}
 annotation|@
 name|Override
 specifier|public
