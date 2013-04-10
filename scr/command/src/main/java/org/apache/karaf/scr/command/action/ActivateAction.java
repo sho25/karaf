@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Activates the given component by supplying its component name.  *  */
+comment|/**  * Activates the given component by supplying its component name.  */
 end_comment
 
 begin_class

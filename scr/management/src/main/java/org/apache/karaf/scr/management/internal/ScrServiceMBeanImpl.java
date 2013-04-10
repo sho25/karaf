@@ -238,6 +238,12 @@ argument_list|,
 name|immediate
 operator|=
 literal|true
+argument_list|,
+name|properties
+operator|=
+block|{
+literal|"hidden.component=true"
+block|}
 argument_list|)
 specifier|public
 class|class
@@ -497,6 +503,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+comment|/*      * @see org.apache.karaf.management.mbeans.scr.ScrServiceMBean#listComponents()      *      * @return      * @throws Exception      */
 specifier|public
 name|String
 index|[]
@@ -564,6 +571,7 @@ return|return
 name|componentNames
 return|;
 block|}
+comment|/*      * @see org.apache.karaf.management.mbeans.scr.ScrServiceMBean#isComponentActive(java.lang.String)      *      * @param componentName      * @return      * @throws Exception      */
 specifier|public
 name|boolean
 name|isComponentActive
@@ -591,6 +599,7 @@ else|:
 literal|false
 return|;
 block|}
+comment|/*      * @see org.apache.karaf.management.mbeans.scr.ScrServiceMBean#componentState(java.lang.String)      *      * @param componentName      * @return      * @throws Exception      */
 specifier|public
 name|int
 name|componentState
@@ -643,6 +652,7 @@ return|return
 name|state
 return|;
 block|}
+comment|/*      * @see org.apache.karaf.management.mbeans.scr.ScrServiceMBean#activateComponent(java.lang.String)      *      * @param componentName      * @throws Exception      */
 specifier|public
 name|void
 name|activateComponent
@@ -684,9 +694,10 @@ name|componentName
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*      * @see org.apache.karaf.management.mbeans.scr.ScrServiceMBean#deactiveateComponent(java.lang.String)      *      * @param componentName      * @throws Exception      */
 specifier|public
 name|void
-name|deactiveateComponent
+name|deactivateComponent
 parameter_list|(
 name|String
 name|componentName

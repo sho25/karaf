@@ -241,6 +241,12 @@ operator|+
 name|ScrCommandConstants
 operator|.
 name|ACTIVATE_FUNCTION
+block|,
+name|ScrCommandConstants
+operator|.
+name|HIDDEN_COMPONENT_KEY
+operator|+
+literal|"=true"
 block|}
 argument_list|)
 specifier|public

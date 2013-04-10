@@ -42,6 +42,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|HIDDEN_COMPONENT_KEY
+init|=
+literal|"hidden.component"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|SCR_COMMAND
 init|=
 literal|"scr"

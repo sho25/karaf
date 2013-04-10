@@ -17,11 +17,16 @@ name|management
 package|;
 end_package
 
+begin_comment
+comment|/**  * The management interface for SCR Components.  */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface
 name|ScrServiceMBean
 block|{
+comment|/**      * Presents a {@String} array of components currently registered with the SCR.      *      * @return String[]      * @throws Exception      */
 name|String
 index|[]
 name|listComponents
@@ -29,6 +34,7 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Verifies if the named component is currently in an ACTIVE state.      *      * @param componentName the components name      * @return true if ACTIVE, otherwise false      * @throws Exception      */
 name|boolean
 name|isComponentActive
 parameter_list|(
@@ -38,6 +44,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Returns the named components state      *      * @param componentName the components name      * @return      * @throws Exception      */
 name|int
 name|componentState
 parameter_list|(
@@ -47,6 +54,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Activates a component that is currently in a DISABLED state.      *      * @param componentName the components name      * @throws Exception      */
 name|void
 name|activateComponent
 parameter_list|(
@@ -56,8 +64,9 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Disables a component that is not in an ACTIVE state.      *      * @param componentName the components name      * @throws Exception      */
 name|void
-name|deactiveateComponent
+name|deactivateComponent
 parameter_list|(
 name|String
 name|componentName

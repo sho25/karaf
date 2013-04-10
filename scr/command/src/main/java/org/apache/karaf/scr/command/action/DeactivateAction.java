@@ -96,7 +96,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Deactivates the given component by supplying its component name.  *  */
+comment|/**  * Deactivates the given component by supplying its component name.  */
 end_comment
 
 begin_class
