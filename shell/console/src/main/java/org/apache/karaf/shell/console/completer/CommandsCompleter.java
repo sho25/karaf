@@ -627,17 +627,6 @@ name|command
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|completers
-operator|.
-name|add
-argument_list|(
-operator|new
-name|CommandNamesCompleter
-argument_list|(
-name|session
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
