@@ -254,7 +254,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Felix Web Console plugin for interacting with the {@link InstanceService}  */
+comment|/**  * WebConsole plugin for{@link InstanceService}.  */
 end_comment
 
 begin_class
@@ -330,7 +330,6 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Blueprint lifecycle callback methods      */
 specifier|public
 name|void
 name|start
@@ -873,7 +872,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/*      * Parse the String value, returning<code>null</code> if the String is empty       */
 specifier|private
 name|String
 name|parseString
@@ -985,7 +983,6 @@ return|return
 name|list
 return|;
 block|}
-comment|/*      * Parse the port number for the String given, returning 0 if the String does not represent an integer       */
 specifier|private
 name|int
 name|parsePortNumber
@@ -1038,6 +1035,22 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|path
+operator|==
+literal|null
+operator|||
+name|path
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 name|URL
 name|url
 init|=
@@ -1280,7 +1293,6 @@ range|:
 name|instances
 control|)
 block|{
-comment|//                if (!i.isRoot()) {
 name|instanceInfo
 argument_list|(
 name|jw
@@ -1288,7 +1300,6 @@ argument_list|,
 name|i
 argument_list|)
 expr_stmt|;
-comment|//                }
 block|}
 name|jw
 operator|.
@@ -2266,7 +2277,6 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * @param instanceService the instanceService to set      */
 specifier|public
 name|void
 name|setInstanceService
@@ -2282,7 +2292,6 @@ operator|=
 name|instanceService
 expr_stmt|;
 block|}
-comment|/**      * @param bundleContext the bundleContext to set      */
 specifier|public
 name|void
 name|setBundleContext
