@@ -264,7 +264,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * The<code>FeaturesPlugin</code>  */
+comment|/**  * WebConsole plugin to use {@link FeaturesService}.  */
 end_comment
 
 begin_class
@@ -274,15 +274,6 @@ name|FeaturesPlugin
 extends|extends
 name|AbstractWebConsolePlugin
 block|{
-comment|/** Pseudo class version ID to keep the IDE quite. */
-specifier|private
-specifier|static
-specifier|final
-name|long
-name|serialVersionUID
-init|=
-literal|1L
-decl_stmt|;
 specifier|private
 specifier|final
 name|Logger
@@ -331,9 +322,6 @@ specifier|private
 name|BundleContext
 name|bundleContext
 decl_stmt|;
-comment|//
-comment|// Blueprint lifecycle callback methods
-comment|//
 annotation|@
 name|Override
 specifier|protected
@@ -406,9 +394,8 @@ name|deactivate
 argument_list|()
 expr_stmt|;
 block|}
-comment|//
-comment|// AbstractWebConsolePlugin interface
-comment|//
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getLabel
@@ -418,6 +405,8 @@ return|return
 name|NAME
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getTitle
@@ -427,6 +416,8 @@ return|return
 name|LABEL
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|doPost
@@ -635,15 +626,13 @@ name|InterruptedException
 name|e
 parameter_list|)
 block|{
-comment|// we ignore this
+comment|// ignore
 block|}
 name|this
 operator|.
 name|renderJSON
 argument_list|(
 name|resp
-argument_list|,
-literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -675,7 +664,6 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-comment|// get request info from request attribute
 specifier|final
 name|PrintWriter
 name|pw
@@ -815,9 +803,6 @@ literal|"</script>"
 argument_list|)
 expr_stmt|;
 block|}
-comment|//
-comment|// Additional methods
-comment|//
 specifier|protected
 name|URL
 name|getResource
@@ -840,6 +825,22 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|path
+operator|==
+literal|null
+operator|||
+name|path
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 name|URL
 name|url
 init|=
@@ -996,7 +997,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"Shell Features service is unavailable."
+literal|"Features service is not available"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1028,7 +1029,11 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"failed to install feature: "
+literal|"Can't install feature {}/{}"
+argument_list|,
+name|feature
+argument_list|,
+name|version
 argument_list|,
 name|e
 argument_list|)
@@ -1067,7 +1072,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"Shell Features service is unavailable."
+literal|"Features service is not available"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1099,7 +1104,11 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"failed to install feature: "
+literal|"Can't uninstall feature {}/{}"
+argument_list|,
+name|feature
+argument_list|,
+name|version
 argument_list|,
 name|e
 argument_list|)
@@ -1135,7 +1144,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"Shell Features service is unavailable."
+literal|"Features service is not available"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1169,7 +1178,9 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"failed to install feature: "
+literal|"Can't remove features repository {}"
+argument_list|,
+name|url
 argument_list|,
 name|e
 argument_list|)
@@ -1205,7 +1216,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"Shell Features service is unavailable."
+literal|"Features service is not available"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1250,7 +1261,9 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"failed to install feature: "
+literal|"Can't refresh features repository {}"
+argument_list|,
+name|url
 argument_list|,
 name|e
 argument_list|)
@@ -1286,7 +1299,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"Shell Features service is unavailable."
+literal|"Features service is not available"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1320,7 +1333,9 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"failed to install feature: "
+literal|"Can't add features repository {}"
+argument_list|,
+name|url
 argument_list|,
 name|e
 argument_list|)
@@ -1337,10 +1352,6 @@ parameter_list|(
 specifier|final
 name|HttpServletResponse
 name|response
-parameter_list|,
-specifier|final
-name|String
-name|feature
 parameter_list|)
 throws|throws
 name|IOException
@@ -1685,7 +1696,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"Shell Features service is unavailable."
+literal|"Features service is not available"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1777,7 +1788,7 @@ name|log
 operator|.
 name|error
 argument_list|(
-literal|"Shell Features service is unavailable."
+literal|"Features service is not available"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1892,6 +1903,8 @@ argument_list|<
 name|ExtendedFeature
 argument_list|>
 block|{
+annotation|@
+name|Override
 specifier|public
 name|int
 name|compare
@@ -2392,9 +2405,6 @@ name|endObject
 argument_list|()
 expr_stmt|;
 block|}
-comment|//
-comment|// Dependency Injection setters
-comment|//
 specifier|public
 name|void
 name|setFeaturesService

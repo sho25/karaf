@@ -107,10 +107,6 @@ name|Feature
 import|;
 end_import
 
-begin_comment
-comment|/**  *   */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -179,9 +175,6 @@ specifier|final
 name|Feature
 name|feature
 decl_stmt|;
-comment|//
-comment|// Constructors
-comment|//
 specifier|public
 name|ExtendedFeature
 parameter_list|(
@@ -214,9 +207,8 @@ operator|=
 name|feature
 expr_stmt|;
 block|}
-comment|//
-comment|// Feature interface
-comment|//
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -234,6 +226,8 @@ name|getBundles
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Map
 argument_list|<
@@ -258,6 +252,8 @@ name|getConfigurations
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -296,6 +292,8 @@ name|getConditional
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -313,6 +311,8 @@ name|getDependencies
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getId
@@ -327,6 +327,8 @@ name|getId
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -341,6 +343,8 @@ name|getName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getVersion
@@ -355,6 +359,8 @@ name|getVersion
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getResolver
@@ -369,6 +375,8 @@ name|getResolver
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getDescription
@@ -383,6 +391,8 @@ name|getDescription
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getDetails
@@ -397,9 +407,6 @@ name|getDetails
 argument_list|()
 return|;
 block|}
-comment|//
-comment|// Additional methods
-comment|//
 specifier|public
 name|String
 name|getRepository
@@ -411,6 +418,8 @@ operator|.
 name|repository
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getInstall
@@ -434,6 +443,8 @@ operator|.
 name|state
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getStartLevel
@@ -443,6 +454,8 @@ return|return
 literal|0
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|hasVersion
