@@ -130,7 +130,6 @@ name|event
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @return the servletEvents 	 */
 specifier|public
 name|Collection
 argument_list|<

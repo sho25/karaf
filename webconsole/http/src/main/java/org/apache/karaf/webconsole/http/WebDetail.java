@@ -38,7 +38,6 @@ specifier|private
 name|String
 name|webState
 decl_stmt|;
-comment|/** 	 * @return the bundleId 	 */
 specifier|public
 name|long
 name|getBundleId
@@ -48,7 +47,6 @@ return|return
 name|bundleId
 return|;
 block|}
-comment|/** 	 * @param bundleId the bundleId to set 	 */
 specifier|public
 name|void
 name|setBundleId
@@ -64,7 +62,6 @@ operator|=
 name|bundleId
 expr_stmt|;
 block|}
-comment|/** 	 * @return the contextPath 	 */
 specifier|public
 name|String
 name|getContextPath
@@ -74,7 +71,6 @@ return|return
 name|contextPath
 return|;
 block|}
-comment|/** 	 * @param contextPath the contextPath to set 	 */
 specifier|public
 name|void
 name|setContextPath
@@ -90,7 +86,6 @@ operator|=
 name|contextPath
 expr_stmt|;
 block|}
-comment|/** 	 * @return the state 	 */
 specifier|public
 name|String
 name|getState
@@ -100,7 +95,6 @@ return|return
 name|state
 return|;
 block|}
-comment|/** 	 * @param state the state to set 	 */
 specifier|public
 name|void
 name|setState
@@ -116,7 +110,6 @@ operator|=
 name|state
 expr_stmt|;
 block|}
-comment|/** 	 * @return the webState 	 */
 specifier|public
 name|String
 name|getWebState
@@ -126,7 +119,6 @@ return|return
 name|webState
 return|;
 block|}
-comment|/** 	 * @param webState the webState to set 	 */
 specifier|public
 name|void
 name|setWebState

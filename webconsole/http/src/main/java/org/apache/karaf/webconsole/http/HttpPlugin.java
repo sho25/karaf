@@ -282,7 +282,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * The<code>FeaturesPlugin</code>  */
+comment|/**  * WebConsole plugin to use with HTTP service.  */
 end_comment
 
 begin_class
@@ -292,15 +292,6 @@ name|HttpPlugin
 extends|extends
 name|AbstractWebConsolePlugin
 block|{
-comment|/** Pseudo class version ID to keep the IDE quite. */
-specifier|private
-specifier|static
-specifier|final
-name|long
-name|serialVersionUID
-init|=
-literal|1L
-decl_stmt|;
 specifier|private
 specifier|final
 name|Logger
@@ -353,9 +344,6 @@ specifier|private
 name|BundleContext
 name|bundleContext
 decl_stmt|;
-comment|//
-comment|// Blueprint lifecycle callback methods
-comment|//
 annotation|@
 name|Override
 specifier|protected
@@ -428,9 +416,8 @@ name|deactivate
 argument_list|()
 expr_stmt|;
 block|}
-comment|//
-comment|// AbstractWebConsolePlugin interface
-comment|//
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getLabel
@@ -440,6 +427,8 @@ return|return
 name|NAME
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getTitle
@@ -449,6 +438,8 @@ return|return
 name|LABEL
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|renderContent
@@ -624,6 +615,22 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|path
+operator|==
+literal|null
+operator|||
+name|path
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 name|URL
 name|url
 init|=
@@ -1829,9 +1836,6 @@ literal|"Failed"
 return|;
 block|}
 block|}
-comment|//
-comment|// Dependency Injection setters
-comment|//
 specifier|public
 name|void
 name|setServletEventHandler

@@ -99,7 +99,6 @@ name|WebEvent
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/* (non-Javadoc) 	 * @see org.ops4j.pax.web.service.spi.WebListener#webEvent(org.ops4j.pax.web.service.spi.WebEvent) 	 */
 annotation|@
 name|Override
 specifier|public
