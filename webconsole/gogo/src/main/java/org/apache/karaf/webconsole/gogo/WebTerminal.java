@@ -74,14 +74,18 @@ name|init
 parameter_list|()
 throws|throws
 name|Exception
-block|{     }
+block|{
+comment|// nothing to do
+block|}
 specifier|public
 name|void
 name|restore
 parameter_list|()
 throws|throws
 name|Exception
-block|{     }
+block|{
+comment|// nothing to do
+block|}
 specifier|public
 name|int
 name|getWidth
