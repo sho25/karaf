@@ -1660,6 +1660,13 @@ name|subsystem
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|copyBootClasspathLibraries
+argument_list|(
+name|karafHome
+argument_list|,
+name|subsystem
+argument_list|)
+expr_stmt|;
 name|String
 index|[]
 name|classPath
@@ -1715,13 +1722,6 @@ name|subsystem
 argument_list|)
 expr_stmt|;
 name|updateUserSetProperties
-argument_list|(
-name|karafHome
-argument_list|,
-name|subsystem
-argument_list|)
-expr_stmt|;
-name|copyBootClasspathLibraries
 argument_list|(
 name|karafHome
 argument_list|,
