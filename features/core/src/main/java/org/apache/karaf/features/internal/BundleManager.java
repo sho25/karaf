@@ -43,6 +43,16 @@ name|java
 operator|.
 name|io
 operator|.
+name|FilterInputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|IOException
 import|;
 end_import
@@ -54,6 +64,16 @@ operator|.
 name|io
 operator|.
 name|InputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|InterruptedIOException
 import|;
 end_import
 
@@ -748,7 +768,8 @@ name|bundleLocation
 argument_list|)
 throw|;
 block|}
-comment|// remove attributes from the symbolic name (like ;blueprint.graceperiod:=false suffix)
+comment|// remove attributes from the symbolic name (like
+comment|// ;blueprint.graceperiod:=false suffix)
 name|int
 name|attributeIndexSep
 init|=
@@ -870,9 +891,6 @@ expr_stmt|;
 name|is
 operator|=
 operator|new
-name|BufferedInputStream
-argument_list|(
-operator|new
 name|URL
 argument_list|(
 name|bundleLocation
@@ -880,9 +898,73 @@ argument_list|)
 operator|.
 name|openStream
 argument_list|()
+expr_stmt|;
+comment|// is = new BufferedInputStream(new
+comment|// URL(bundleLocation).openStream());
+block|}
+name|is
+operator|=
+operator|new
+name|BufferedInputStream
+argument_list|(
+operator|new
+name|FilterInputStream
+argument_list|(
+name|is
+argument_list|)
+block|{
+annotation|@
+name|Override
+specifier|public
+name|int
+name|read
+parameter_list|(
+name|byte
+name|b
+index|[]
+parameter_list|,
+name|int
+name|off
+parameter_list|,
+name|int
+name|len
+parameter_list|)
+throws|throws
+name|IOException
+block|{
+if|if
+condition|(
+name|Thread
+operator|.
+name|currentThread
+argument_list|()
+operator|.
+name|isInterrupted
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|InterruptedIOException
+argument_list|()
+throw|;
+block|}
+return|return
+name|super
+operator|.
+name|read
+argument_list|(
+name|b
+argument_list|,
+name|off
+argument_list|,
+name|len
+argument_list|)
+return|;
+block|}
+block|}
 argument_list|)
 expr_stmt|;
-block|}
 name|LOGGER
 operator|.
 name|debug
@@ -1208,7 +1290,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * Will wait for the {@link URLStreamHandlerService} service for the specified protocol to be registered.      * @param protocol      */
+comment|/** 	 * Will wait for the {@link URLStreamHandlerService} service for the 	 * specified protocol to be registered. 	 *  	 * @param protocol 	 */
 specifier|private
 name|void
 name|waitForUrlHandler
@@ -1677,7 +1759,8 @@ return|return
 name|bundles
 return|;
 block|}
-comment|// Second pass: for each bundle, check if there is any unresolved optional package that could be resolved
+comment|// Second pass: for each bundle, check if there is any unresolved
+comment|// optional package that could be resolved
 name|Map
 argument_list|<
 name|Bundle
@@ -1797,8 +1880,9 @@ return|return
 name|bundles
 return|;
 block|}
-comment|// Third pass: compute a list of packages that are exported by our bundles and see if
-comment|//             some exported packages can be wired to the optional imports
+comment|// Third pass: compute a list of packages that are exported by our
+comment|// bundles and see if
+comment|// some exported packages can be wired to the optional imports
 name|List
 argument_list|<
 name|Clause
@@ -2116,7 +2200,7 @@ return|return
 name|bundles
 return|;
 block|}
-comment|/*      * Get the list of optional imports from an OSGi Import-Package string      */
+comment|/* 	 * Get the list of optional imports from an OSGi Import-Package string 	 */
 specifier|protected
 name|List
 argument_list|<
@@ -2465,7 +2549,8 @@ name|Throwable
 name|t
 parameter_list|)
 block|{
-comment|// Ignore, if the EventAdmin package is not available, just don't use it
+comment|// Ignore, if the EventAdmin package is not available, just don't
+comment|// use it
 name|LOGGER
 operator|.
 name|debug

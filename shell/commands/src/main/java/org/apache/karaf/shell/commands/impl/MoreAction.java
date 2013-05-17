@@ -261,6 +261,9 @@ argument_list|(
 name|line
 argument_list|)
 expr_stmt|;
+name|checkInterrupted
+argument_list|()
+expr_stmt|;
 block|}
 return|return
 literal|null
@@ -365,6 +368,9 @@ name|println
 argument_list|(
 name|line
 argument_list|)
+expr_stmt|;
+name|checkInterrupted
+argument_list|()
 expr_stmt|;
 block|}
 do|while
@@ -520,6 +526,23 @@ operator|!=
 literal|'q'
 condition|)
 do|;
+return|return
+literal|null
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|InterruptedException
+name|ie
+parameter_list|)
+block|{
+name|log
+operator|.
+name|debug
+argument_list|(
+literal|"Interupted by user"
+argument_list|)
+expr_stmt|;
 return|return
 literal|null
 return|;
