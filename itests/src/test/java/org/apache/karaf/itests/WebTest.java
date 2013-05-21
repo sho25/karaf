@@ -195,16 +195,29 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|System
+name|featureService
 operator|.
-name|out
-operator|.
-name|println
+name|installFeature
 argument_list|(
-name|executeCommand
-argument_list|(
-literal|"feature:install war"
+literal|"war"
 argument_list|)
+expr_stmt|;
+name|assertFeatureInstalled
+argument_list|(
+literal|"war"
+argument_list|)
+expr_stmt|;
+name|assertBundleInstalled
+argument_list|(
+literal|"org.apache.karaf.web.command"
+argument_list|)
+expr_stmt|;
+comment|//just sleep for a while so blueprint is able to pick up the new commands.
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|2000
 argument_list|)
 expr_stmt|;
 block|}
