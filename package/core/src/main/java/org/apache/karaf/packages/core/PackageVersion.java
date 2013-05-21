@@ -23,7 +23,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|ArrayList
+name|HashSet
 import|;
 end_import
 
@@ -33,7 +33,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|List
+name|Set
 import|;
 end_import
 
@@ -75,14 +75,14 @@ name|Version
 name|version
 decl_stmt|;
 specifier|private
-name|List
+name|Set
 argument_list|<
 name|Bundle
 argument_list|>
 name|bundles
 init|=
 operator|new
-name|ArrayList
+name|HashSet
 argument_list|<
 name|Bundle
 argument_list|>
@@ -148,7 +148,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|List
+name|Set
 argument_list|<
 name|Bundle
 argument_list|>

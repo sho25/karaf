@@ -512,6 +512,17 @@ argument_list|,
 name|data
 argument_list|)
 decl_stmt|;
+name|log
+operator|.
+name|debug
+argument_list|(
+literal|"Adding CompositeDataSupport {} for key: {}"
+argument_list|,
+name|comp
+argument_list|,
+name|key
+argument_list|)
+expr_stmt|;
 name|table
 operator|.
 name|put
