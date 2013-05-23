@@ -450,7 +450,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"abc,def,ssh,test"
+literal|"abc,def,ssh,framework,test"
 argument_list|,
 name|p2
 operator|.
