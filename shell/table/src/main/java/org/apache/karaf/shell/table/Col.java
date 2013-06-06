@@ -153,6 +153,15 @@ return|return
 name|this
 return|;
 block|}
+specifier|public
+name|int
+name|getSize
+parameter_list|()
+block|{
+return|return
+name|size
+return|;
+block|}
 specifier|protected
 name|void
 name|updateSize
