@@ -338,6 +338,35 @@ name|Option
 argument_list|(
 name|name
 operator|=
+literal|"-P"
+argument_list|,
+name|aliases
+operator|=
+block|{
+literal|"--password"
+block|}
+argument_list|,
+name|description
+operator|=
+literal|"The password for remote login"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
+argument_list|)
+specifier|private
+name|String
+name|password
+decl_stmt|;
+annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
 literal|"-p"
 argument_list|,
 name|aliases
@@ -823,6 +852,13 @@ operator|!
 name|authed
 condition|)
 block|{
+if|if
+condition|(
+name|password
+operator|==
+literal|null
+condition|)
+block|{
 name|log
 operator|.
 name|debug
@@ -830,14 +866,24 @@ argument_list|(
 literal|"Prompting user for password"
 argument_list|)
 expr_stmt|;
-name|String
 name|password
-init|=
+operator|=
 name|readLine
 argument_list|(
 literal|"Password: "
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+block|}
+else|else
+block|{
+name|log
+operator|.
+name|debug
+argument_list|(
+literal|"Password provided using command line option"
+argument_list|)
+expr_stmt|;
+block|}
 name|sshSession
 operator|.
 name|authPassword
