@@ -505,6 +505,11 @@ name|KARAF_CORE_ENTERPRISE_FEATURE_URL
 init|=
 literal|"mvn:org.apache.karaf.features/enterprise/%s/xml/features"
 decl_stmt|;
+specifier|private
+specifier|static
+name|boolean
+name|isCustomStreamURLHandlerSet
+decl_stmt|;
 comment|/**      * The dependency tree builder to use.      *      * @component      * @required      * @readonly      */
 specifier|private
 name|DependencyTreeBuilder
@@ -781,6 +786,14 @@ argument_list|(
 literal|"== Preparing for validation =="
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|isCustomStreamURLHandlerSet
+condition|)
+block|{
+comment|//URL.setURLStreamHandlerFactory can be called at most once in a given Java Virtual
+comment|//Machine, so set a flag to avoid calling this method multiple times
 name|URL
 operator|.
 name|setURLStreamHandlerFactory
@@ -790,6 +803,11 @@ name|CustomBundleURLStreamHandlerFactory
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|isCustomStreamURLHandlerSet
+operator|=
+literal|true
+expr_stmt|;
+block|}
 name|info
 argument_list|(
 literal|" - getting list of system bundle exports"
