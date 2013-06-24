@@ -157,7 +157,7 @@ name|set
 argument_list|(
 literal|"USER"
 argument_list|,
-literal|"gnodet"
+literal|"test"
 argument_list|)
 expr_stmt|;
 name|c
@@ -320,7 +320,9 @@ parameter_list|(
 name|CommandException
 name|e
 parameter_list|)
-block|{         }
+block|{
+comment|// ignore
+block|}
 comment|// Test required argument
 name|assertEquals
 argument_list|(
