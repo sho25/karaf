@@ -436,6 +436,8 @@ name|i
 init|=
 literal|1
 decl_stmt|;
+name|realms_loop
+label|:
 for|for
 control|(
 name|JaasRealm
@@ -495,7 +497,9 @@ index|[
 name|j
 index|]
 expr_stmt|;
-break|break;
+break|break
+name|realms_loop
+break|;
 block|}
 name|i
 operator|++
