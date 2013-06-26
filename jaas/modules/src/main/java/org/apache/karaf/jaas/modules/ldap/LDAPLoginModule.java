@@ -1727,6 +1727,17 @@ argument_list|,
 name|user
 argument_list|)
 expr_stmt|;
+name|roleFilter
+operator|=
+name|roleFilter
+operator|.
+name|replaceAll
+argument_list|(
+literal|"%dn"
+argument_list|,
+name|userDN
+argument_list|)
+expr_stmt|;
 name|logger
 operator|.
 name|debug
