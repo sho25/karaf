@@ -153,6 +153,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|""
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 name|Assert
@@ -373,6 +375,8 @@ argument_list|,
 name|impl
 argument_list|,
 literal|"config,standard,region"
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 name|bootFeatures
@@ -520,6 +524,8 @@ argument_list|,
 name|impl
 argument_list|,
 literal|"transaction;version=1.2,ssh;version=1.0.0"
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 name|bootFeatures
@@ -698,6 +704,8 @@ argument_list|,
 name|impl
 argument_list|,
 literal|"(transaction), ssh"
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 name|bootFeatures
