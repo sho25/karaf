@@ -428,6 +428,11 @@ name|finalName
 init|=
 literal|null
 decl_stmt|;
+comment|/**      * Ignore the dependency flag on the bundles in the features XML      *      * @parameter default-value="false"      */
+specifier|private
+name|boolean
+name|ignoreDependencyFlag
+decl_stmt|;
 comment|/**      * Classifier to add to the artifact generated. If given, the artifact will be attached.      * If it's not given, it will merely be written to the output directory according to the finalName.      *      * @parameter      */
 specifier|protected
 name|String
@@ -640,11 +645,18 @@ control|)
 block|{
 if|if
 condition|(
+name|ignoreDependencyFlag
+operator|||
+operator|(
+operator|!
+name|ignoreDependencyFlag
+operator|&&
 operator|!
 name|bundle
 operator|.
 name|isDependency
 argument_list|()
+operator|)
 condition|)
 block|{
 name|resources
