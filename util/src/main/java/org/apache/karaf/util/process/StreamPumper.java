@@ -450,6 +450,17 @@ name|notifyAll
 argument_list|()
 expr_stmt|;
 block|}
+specifier|public
+name|InputStream
+name|getInputStream
+parameter_list|()
+block|{
+return|return
+name|this
+operator|.
+name|in
+return|;
+block|}
 block|}
 end_class
 
