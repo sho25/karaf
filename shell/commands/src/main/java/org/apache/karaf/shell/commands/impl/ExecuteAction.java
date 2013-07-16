@@ -230,47 +230,6 @@ argument_list|(
 literal|"Waiting for process to exit..."
 argument_list|)
 expr_stmt|;
-do|do
-block|{
-comment|//give some time to let StreamPumper to pump the stream from
-comment|//external process
-name|Thread
-operator|.
-name|sleep
-argument_list|(
-literal|1000
-argument_list|)
-expr_stmt|;
-block|}
-do|while
-condition|(
-name|handler
-operator|.
-name|getOutputPump
-argument_list|()
-operator|.
-name|getInputStream
-argument_list|()
-operator|.
-name|available
-argument_list|()
-operator|>
-literal|0
-operator|||
-name|handler
-operator|.
-name|getErrorPump
-argument_list|()
-operator|.
-name|getInputStream
-argument_list|()
-operator|.
-name|available
-argument_list|()
-operator|>
-literal|0
-condition|)
-do|;
 name|int
 name|status
 init|=
