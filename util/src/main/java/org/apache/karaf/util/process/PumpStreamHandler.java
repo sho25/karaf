@@ -528,6 +528,23 @@ parameter_list|)
 block|{
 comment|// ignore
 block|}
+try|try
+block|{
+name|outputPump
+operator|.
+name|getIn
+argument_list|()
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{ }
 block|}
 if|if
 condition|(
@@ -557,6 +574,23 @@ parameter_list|)
 block|{
 comment|// ignore
 block|}
+try|try
+block|{
+name|errorPump
+operator|.
+name|getIn
+argument_list|()
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{ }
 block|}
 if|if
 condition|(
@@ -570,6 +604,23 @@ operator|.
 name|stop
 argument_list|()
 expr_stmt|;
+try|try
+block|{
+name|inputPump
+operator|.
+name|getOut
+argument_list|()
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{ }
 block|}
 try|try
 block|{
@@ -789,6 +840,13 @@ argument_list|,
 name|closeWhenExhausted
 argument_list|)
 decl_stmt|;
+name|pumper
+operator|.
+name|setNonBlocking
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|pumper
 operator|.
 name|setAutoflush
