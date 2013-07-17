@@ -1,4 +1,8 @@
 begin_unit|revision:0.9.5;language:Java;cregit-version:0.0.1
+begin_comment
+comment|/*  * Licensed to the Apache Software Foundation (ASF) under one or more  * contributor license agreements.  See the NOTICE file distributed with  * this work for additional information regarding copyright ownership.  * The ASF licenses this file to You under the Apache License, Version 2.0  * (the "License"); you may not use this file except in compliance with  * the License.  You may obtain a copy of the License at  *  *      http://www.apache.org/licenses/LICENSE-2.0  *  * Unless required by applicable law or agreed to in writing, software  * distributed under the License is distributed on an "AS IS" BASIS,  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  * See the License for the specific language governing permissions and  * limitations under the License.  */
+end_comment
+
 begin_package
 package|package
 name|org
@@ -311,7 +315,7 @@ name|sourceUrl
 init|=
 name|url
 decl_stmt|;
-comment|//If no url format found, assume file url.
+comment|// if no url format found, assume file url
 if|if
 condition|(
 operator|!
@@ -354,7 +358,7 @@ argument_list|(
 name|sourceUrl
 argument_list|)
 decl_stmt|;
-comment|//If its not a file url.
+comment|// if its not a file url
 if|if
 condition|(
 operator|!
@@ -446,7 +450,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|//Copy the resource to a tmp location.
+comment|// copy the resource to a tmp location
 name|FileOutputStream
 name|fos
 init|=
@@ -611,7 +615,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|//Call the editor
+comment|// call the editor
 name|ConsoleEditor
 name|editor
 init|=
@@ -635,6 +639,9 @@ operator|.
 name|open
 argument_list|(
 name|file
+operator|.
+name|getAbsolutePath
+argument_list|()
 argument_list|,
 name|url
 argument_list|)
@@ -651,7 +658,7 @@ operator|.
 name|start
 argument_list|()
 expr_stmt|;
-comment|//If resource is not local, copy the resource back.
+comment|// if resource is not local, copy the resource back
 if|if
 condition|(
 operator|!
@@ -722,7 +729,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**          * Gets the {@link jline.Terminal} from the current session.          *          * @return          * @throws Exception          */
+comment|/**      * Gets the {@link jline.Terminal} from the current session.      *      * @return      * @throws Exception      */
 specifier|private
 name|Terminal
 name|getTerminal
