@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|tooling
 operator|.
-name|features
+name|url
 package|;
 end_package
 

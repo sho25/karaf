@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|tooling
 operator|.
-name|features
+name|url
 package|;
 end_package
 
@@ -107,9 +107,9 @@ name|karaf
 operator|.
 name|deployer
 operator|.
-name|spring
+name|blueprint
 operator|.
-name|SpringTransformer
+name|BlueprintTransformer
 import|;
 end_import
 
@@ -134,13 +134,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * As org.apache.karaf.deployer.spring.SpringURLHandler needs to be run with  * the OSGi container this class was created for use by the karaf-maven-plugin  */
+comment|/**  * As org.apache.karaf.deployer.blueprint.BlueprintURLHandler need run with OSGi container  * so create this class only used for features-maven-plugin  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|SpringURLHandler
+name|BlueprintURLHandler
 extends|extends
 name|URLStreamHandler
 block|{
@@ -153,7 +153,7 @@ name|LoggerFactory
 operator|.
 name|getLogger
 argument_list|(
-name|SpringURLHandler
+name|BlueprintURLHandler
 operator|.
 name|class
 argument_list|)
@@ -163,11 +163,11 @@ specifier|static
 name|String
 name|SYNTAX
 init|=
-literal|"spring: spring-xml-uri"
+literal|"blueprint: bp-xml-uri"
 decl_stmt|;
 specifier|private
 name|URL
-name|springXmlURL
+name|blueprintXmlURL
 decl_stmt|;
 comment|/**      * Open the connection for the given URL.      *      * @param url the url from which to open a connection.      * @return a connection on the specified URL.      * @throws IOException if an error occurs or if the URL is malformed.      */
 annotation|@
@@ -215,7 +215,7 @@ name|SYNTAX
 argument_list|)
 throw|;
 block|}
-name|springXmlURL
+name|blueprintXmlURL
 operator|=
 operator|new
 name|URL
@@ -230,9 +230,9 @@ name|logger
 operator|.
 name|debug
 argument_list|(
-literal|"Spring xml URL is: ["
+literal|"Blueprint xml URL is: ["
 operator|+
-name|springXmlURL
+name|blueprintXmlURL
 operator|+
 literal|"]"
 argument_list|)
@@ -247,11 +247,11 @@ return|;
 block|}
 specifier|public
 name|URL
-name|getSpringXmlURL
+name|getBlueprintXmlURL
 parameter_list|()
 block|{
 return|return
-name|springXmlURL
+name|blueprintXmlURL
 return|;
 block|}
 specifier|public
@@ -300,11 +300,11 @@ operator|new
 name|ByteArrayOutputStream
 argument_list|()
 decl_stmt|;
-name|SpringTransformer
+name|BlueprintTransformer
 operator|.
 name|transform
 argument_list|(
-name|springXmlURL
+name|blueprintXmlURL
 argument_list|,
 name|os
 argument_list|)
@@ -335,7 +335,7 @@ name|logger
 operator|.
 name|error
 argument_list|(
-literal|"Error opening Spring xml url"
+literal|"Error opening blueprint xml url"
 argument_list|,
 name|e
 argument_list|)
@@ -347,7 +347,7 @@ operator|)
 operator|new
 name|IOException
 argument_list|(
-literal|"Error opening Spring xml url"
+literal|"Error opening blueprint xml url"
 argument_list|)
 operator|.
 name|initCause
