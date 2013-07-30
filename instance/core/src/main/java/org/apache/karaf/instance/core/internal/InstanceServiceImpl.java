@@ -4338,15 +4338,6 @@ name|filterResource
 argument_list|(
 name|cloneLocation
 argument_list|,
-literal|"etc/org.ops4j.pax.logging.cfg"
-argument_list|,
-name|props
-argument_list|)
-expr_stmt|;
-name|filterResource
-argument_list|(
-name|cloneLocation
-argument_list|,
 literal|"etc/system.properties"
 argument_list|,
 name|props
