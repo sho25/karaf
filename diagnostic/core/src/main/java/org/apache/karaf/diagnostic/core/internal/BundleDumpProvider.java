@@ -254,7 +254,7 @@ name|writer
 operator|.
 name|write
 argument_list|(
-literal|"Id\tSymbolic name\tState\n"
+literal|"Id\tSymbolic name\tVersion\tState\n"
 argument_list|)
 expr_stmt|;
 for|for
@@ -280,6 +280,13 @@ operator|+
 name|bundle
 operator|.
 name|getSymbolicName
+argument_list|()
+operator|+
+literal|'\t'
+operator|+
+name|bundle
+operator|.
+name|getVersion
 argument_list|()
 operator|+
 literal|"\t"
