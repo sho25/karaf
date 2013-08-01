@@ -1389,6 +1389,7 @@ throws|throws
 name|IOException
 function_decl|;
 block|}
+specifier|synchronized
 parameter_list|<
 name|T
 parameter_list|>
