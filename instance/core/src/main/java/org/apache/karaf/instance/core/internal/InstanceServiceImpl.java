@@ -3204,6 +3204,25 @@ argument_list|()
 operator|+
 literal|"\""
 operator|+
+literal|" -Dkaraf.data=\""
+operator|+
+operator|new
+name|File
+argument_list|(
+operator|new
+name|File
+argument_list|(
+name|location
+argument_list|)
+operator|.
+name|getCanonicalPath
+argument_list|()
+argument_list|,
+literal|"data"
+argument_list|)
+operator|+
+literal|"\""
+operator|+
 literal|" -Dkaraf.startLocalConsole=false"
 operator|+
 literal|" -Dkaraf.startRemoteShell=true"
