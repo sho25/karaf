@@ -2870,11 +2870,6 @@ return|;
 block|}
 finally|finally
 block|{
-name|silentClose
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 name|System
 operator|.
 name|setErr
