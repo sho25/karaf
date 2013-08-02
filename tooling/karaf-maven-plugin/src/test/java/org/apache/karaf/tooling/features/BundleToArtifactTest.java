@@ -166,6 +166,11 @@ name|BundleToArtifactTest
 extends|extends
 name|MojoSupport
 block|{
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|public
 name|BundleToArtifactTest
 parameter_list|()

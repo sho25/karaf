@@ -455,15 +455,6 @@ name|RemoteRepository
 argument_list|>
 name|projectRepos
 decl_stmt|;
-comment|/**       * The project's remote repositories to use for the resolution of plugins and their dependencies.       *       * @parameter default-value="${project.remotePluginRepositories}"       * @required       * @readonly       */
-specifier|private
-specifier|final
-name|List
-argument_list|<
-name|RemoteRepository
-argument_list|>
-name|pluginRepos
-decl_stmt|;
 comment|//dependencies we are interested in
 specifier|protected
 name|Map
@@ -486,12 +477,6 @@ name|List
 argument_list|<
 name|RemoteRepository
 argument_list|>
-name|pluginRepos
-parameter_list|,
-name|List
-argument_list|<
-name|RemoteRepository
-argument_list|>
 name|projectRepos
 parameter_list|,
 name|RepositorySystemSession
@@ -501,12 +486,6 @@ name|RepositorySystem
 name|repoSystem
 parameter_list|)
 block|{
-name|this
-operator|.
-name|pluginRepos
-operator|=
-name|pluginRepos
-expr_stmt|;
 name|this
 operator|.
 name|projectRepos

@@ -608,11 +608,6 @@ comment|/**  * Generates the features XML file  * NB this requires a recent mave
 end_comment
 
 begin_class
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 class|class
 name|GenerateDescriptorMojo
@@ -713,14 +708,6 @@ name|RemoteRepository
 argument_list|>
 name|projectRepos
 decl_stmt|;
-comment|/**      * The project's remote repositories to use for the resolution of plugins and their dependencies.      *      * @parameter default-value="${project.remotePluginRepositories}"      * @required      * @readonly      */
-specifier|private
-name|List
-argument_list|<
-name|RemoteRepository
-argument_list|>
-name|pluginRepos
-decl_stmt|;
 comment|/**      * @component role="org.apache.maven.shared.filtering.MavenResourcesFiltering" role-hint="default"      * @required      * @readonly      */
 specifier|protected
 name|MavenResourcesFiltering
@@ -773,8 +760,6 @@ init|=
 operator|new
 name|DependencyHelper
 argument_list|(
-name|pluginRepos
-argument_list|,
 name|projectRepos
 argument_list|,
 name|repoSession
@@ -1654,6 +1639,11 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|jar
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
 return|return
 name|m
 return|;
@@ -1948,15 +1938,6 @@ argument_list|,
 name|String
 argument_list|>
 name|systemProperties
-decl_stmt|;
-specifier|private
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
-name|previousSystemProperties
 decl_stmt|;
 specifier|private
 name|void
@@ -3070,6 +3051,11 @@ operator|.
 name|mkdirs
 argument_list|()
 expr_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 name|List
 name|filters
 init|=

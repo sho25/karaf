@@ -745,6 +745,11 @@ throw|;
 block|}
 block|}
 comment|/**      * Generates the configuration archive.      *      * @param bundles      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|private
 name|File
 name|createArchive

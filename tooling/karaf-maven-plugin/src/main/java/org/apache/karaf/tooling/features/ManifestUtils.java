@@ -472,6 +472,11 @@ return|return
 name|bsn
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|public
 specifier|static
 name|VersionRange
