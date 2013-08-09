@@ -89,14 +89,14 @@ decl_stmt|;
 specifier|private
 name|List
 argument_list|<
-name|String
+name|BundleRef
 argument_list|>
 name|bundles
 init|=
 operator|new
 name|ArrayList
 argument_list|<
-name|String
+name|BundleRef
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -204,7 +204,7 @@ block|}
 specifier|public
 name|List
 argument_list|<
-name|String
+name|BundleRef
 argument_list|>
 name|getBundles
 parameter_list|()
@@ -264,7 +264,7 @@ specifier|public
 name|void
 name|addBundle
 parameter_list|(
-name|String
+name|BundleRef
 name|bundle
 parameter_list|)
 block|{
