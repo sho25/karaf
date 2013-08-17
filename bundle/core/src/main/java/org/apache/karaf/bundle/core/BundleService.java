@@ -101,6 +101,16 @@ name|String
 name|urlFilter
 parameter_list|)
 function_decl|;
+name|Bundle
+name|getBundle
+parameter_list|(
+name|String
+name|id
+parameter_list|,
+name|boolean
+name|defaultAllBundles
+parameter_list|)
+function_decl|;
 name|String
 name|getDiag
 parameter_list|(

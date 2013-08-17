@@ -73,6 +73,16 @@ argument_list|)
 name|boolean
 name|force
 decl_stmt|;
+specifier|public
+name|BundleCommandWithConfirmation
+parameter_list|()
+block|{
+name|super
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
 specifier|protected
 name|Object
 name|doExecute

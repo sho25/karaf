@@ -91,6 +91,16 @@ name|BundleService
 name|bundleService
 decl_stmt|;
 specifier|public
+name|DynamicImport
+parameter_list|()
+block|{
+name|super
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
 name|void
 name|setBundleService
 parameter_list|(
