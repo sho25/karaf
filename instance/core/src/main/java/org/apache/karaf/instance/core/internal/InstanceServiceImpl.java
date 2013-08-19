@@ -3227,12 +3227,14 @@ literal|" -Dkaraf.startLocalConsole=false"
 operator|+
 literal|" -Dkaraf.startRemoteShell=true"
 operator|+
-literal|" -classpath "
+literal|" -classpath \""
 operator|+
 name|classpath
 operator|.
 name|toString
 argument_list|()
+operator|+
+literal|"\""
 operator|+
 literal|" org.apache.karaf.main.Main"
 decl_stmt|;
