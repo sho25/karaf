@@ -359,6 +359,13 @@ argument_list|(
 name|REFERENCE_TABLE
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|references
+operator|!=
+literal|null
+condition|)
+block|{
 for|for
 control|(
 name|Reference
@@ -381,6 +388,7 @@ name|asCompositeData
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|table
