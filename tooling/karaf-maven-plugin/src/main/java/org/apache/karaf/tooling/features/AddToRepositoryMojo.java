@@ -372,6 +372,13 @@ specifier|private
 name|File
 name|metaDataFile
 decl_stmt|;
+comment|/**      * The start level exported when no explicit start level is set for a bundle      * @parameter       */
+specifier|private
+name|int
+name|defaultStartLevel
+init|=
+literal|80
+decl_stmt|;
 comment|/**      * Internal counter for garbage collection      */
 specifier|private
 name|int
@@ -856,12 +863,9 @@ name|uri
 argument_list|)
 expr_stmt|;
 block|}
-name|Repository
-name|repo
+name|URI
+name|repoURI
 init|=
-operator|new
-name|Repository
-argument_list|(
 name|URI
 operator|.
 name|create
@@ -878,6 +882,16 @@ literal|"%20"
 argument_list|)
 argument_list|)
 argument_list|)
+decl_stmt|;
+name|Repository
+name|repo
+init|=
+operator|new
+name|Repository
+argument_list|(
+name|repoURI
+argument_list|,
+name|defaultStartLevel
 argument_list|)
 decl_stmt|;
 for|for
