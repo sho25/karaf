@@ -489,9 +489,14 @@ literal|"The table of all properties"
 argument_list|,
 name|PROPERTY
 argument_list|,
+operator|new
+name|String
+index|[]
+block|{
 name|ScrServiceMBean
 operator|.
-name|PROPERTY
+name|PROPERTY_KEY
+block|}
 argument_list|)
 return|;
 block|}

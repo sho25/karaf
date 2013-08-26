@@ -592,9 +592,14 @@ literal|"The table of all references"
 argument_list|,
 name|REFERENCE
 argument_list|,
+operator|new
+name|String
+index|[]
+block|{
 name|ScrServiceMBean
 operator|.
-name|REFERENCE
+name|REFERENCE_NAME
+block|}
 argument_list|)
 return|;
 block|}
