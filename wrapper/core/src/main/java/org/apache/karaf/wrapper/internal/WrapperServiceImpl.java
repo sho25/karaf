@@ -279,9 +279,9 @@ literal|"${java.home}"
 argument_list|,
 name|System
 operator|.
-name|getProperty
+name|getenv
 argument_list|(
-literal|"java.home"
+literal|"JAVA_HOME"
 argument_list|)
 argument_list|)
 expr_stmt|;
