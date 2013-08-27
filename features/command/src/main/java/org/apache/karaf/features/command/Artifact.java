@@ -69,6 +69,27 @@ argument_list|(
 literal|":"
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|coordsAr
+operator|.
+name|length
+operator|!=
+literal|5
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"Maven URL "
+operator|+
+name|coords
+operator|+
+literal|" is malformed or not complete"
+argument_list|)
+throw|;
+block|}
 name|this
 operator|.
 name|groupId
