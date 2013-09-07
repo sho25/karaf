@@ -409,6 +409,18 @@ operator|.
 name|getCommand
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|command2
+operator|==
+literal|null
+condition|)
+block|{
+comment|// to avoid NPE with subshell
+return|return
+literal|true
+return|;
+block|}
 name|String
 name|commandErrorSt
 init|=
