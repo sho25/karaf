@@ -21,9 +21,37 @@ begin_import
 import|import
 name|java
 operator|.
+name|security
+operator|.
+name|Principal
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|jaas
+operator|.
+name|boot
+operator|.
+name|principal
+operator|.
+name|GroupPrincipal
 import|;
 end_import
 
@@ -95,15 +123,48 @@ argument_list|>
 name|listUsers
 parameter_list|()
 function_decl|;
-comment|/**      * List Roles for {@param user}.      *      * @param user      * @return      */
+comment|/**      * List groups that an user is in.      *      * @param user      * @return      */
+name|List
+argument_list|<
+name|GroupPrincipal
+argument_list|>
+name|listGroups
+parameter_list|(
+name|UserPrincipal
+name|user
+parameter_list|)
+function_decl|;
+comment|/**      * Add an user to a group.      *      * @param username      * @param group      */
+name|void
+name|addGroup
+parameter_list|(
+name|String
+name|username
+parameter_list|,
+name|String
+name|group
+parameter_list|)
+function_decl|;
+comment|/**      * Remove an user from a group.      *      * @param username      * @param group      */
+name|void
+name|deleteGroup
+parameter_list|(
+name|String
+name|username
+parameter_list|,
+name|String
+name|group
+parameter_list|)
+function_decl|;
+comment|/**      * List Roles for {@param principal}. This could either be a      * {@link UserPrincipal} or a {@link GroupPrincipal}.      *      * @param principal      * @return      */
 name|List
 argument_list|<
 name|RolePrincipal
 argument_list|>
 name|listRoles
 parameter_list|(
-name|UserPrincipal
-name|user
+name|Principal
+name|principal
 parameter_list|)
 function_decl|;
 comment|/**      * Add a role to the user      *      * @param username      * @param role      */
@@ -123,6 +184,28 @@ name|deleteRole
 parameter_list|(
 name|String
 name|username
+parameter_list|,
+name|String
+name|role
+parameter_list|)
+function_decl|;
+comment|/**      * Add a role in a group.      *      * @param group      * @param role      */
+name|void
+name|addGroupRole
+parameter_list|(
+name|String
+name|group
+parameter_list|,
+name|String
+name|role
+parameter_list|)
+function_decl|;
+comment|/**      * Remove a role from a group.      *      * @param group      * @param role      */
+name|void
+name|deleteGroupRole
+parameter_list|(
+name|String
+name|group
 parameter_list|,
 name|String
 name|role
