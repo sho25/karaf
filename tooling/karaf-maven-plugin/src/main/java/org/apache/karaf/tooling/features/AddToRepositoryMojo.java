@@ -274,6 +274,8 @@ name|File
 name|destRepository
 parameter_list|)
 block|{
+try|try
+block|{
 name|getLog
 argument_list|()
 operator|.
@@ -308,6 +310,26 @@ argument_list|,
 name|destFile
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|getLog
+argument_list|()
+operator|.
+name|warn
+argument_list|(
+literal|"Error copying artifact "
+operator|+
+name|artifact
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/**      * Get relative path for artifact      * TODO consider DefaultRepositoryLayout      * @param artifact      * @return relative path of the given artifact in a default repo layout      */
 specifier|private

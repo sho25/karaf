@@ -395,6 +395,16 @@ operator|.
 name|readManifest
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|bundle
+operator|.
+name|getBundleSymbolicName
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
 name|String
 index|[]
 name|results
@@ -443,6 +453,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|writer
 operator|.
 name|add
