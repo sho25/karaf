@@ -430,6 +430,16 @@ return|return
 name|lock
 operator|!=
 literal|null
+operator|&&
+name|lock
+operator|.
+name|isValid
+argument_list|()
+operator|&&
+name|lockPath
+operator|.
+name|exists
+argument_list|()
 return|;
 block|}
 specifier|private
