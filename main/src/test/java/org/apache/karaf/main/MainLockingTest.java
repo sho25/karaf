@@ -411,9 +411,6 @@ name|MockLock
 operator|)
 name|main
 operator|.
-name|getLockManager
-argument_list|()
-operator|.
 name|getLock
 argument_list|()
 decl_stmt|;
