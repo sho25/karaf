@@ -811,12 +811,8 @@ name|karafCache
 init|=
 name|Utils
 operator|.
-name|getKarafDirectory
+name|validateDirectoryExists
 argument_list|(
-name|PROP_KARAF_DATA
-argument_list|,
-name|ENV_KARAF_DATA
-argument_list|,
 operator|new
 name|File
 argument_list|(
@@ -824,6 +820,11 @@ name|karafData
 argument_list|,
 literal|"cache"
 argument_list|)
+operator|.
+name|getPath
+argument_list|()
+argument_list|,
+literal|"Invalid cache directory"
 argument_list|,
 literal|true
 argument_list|,
