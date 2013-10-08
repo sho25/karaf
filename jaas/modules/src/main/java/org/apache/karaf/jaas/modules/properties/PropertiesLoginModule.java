@@ -542,6 +542,32 @@ argument_list|)
 throw|;
 block|}
 comment|// user callback get value
+if|if
+condition|(
+operator|(
+operator|(
+name|NameCallback
+operator|)
+name|callbacks
+index|[
+literal|0
+index|]
+operator|)
+operator|.
+name|getName
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|LoginException
+argument_list|(
+literal|"Username can not be null"
+argument_list|)
+throw|;
+block|}
 name|user
 operator|=
 operator|(
@@ -579,6 +605,32 @@ argument_list|)
 throw|;
 block|}
 comment|// password callback get value
+if|if
+condition|(
+operator|(
+operator|(
+name|PasswordCallback
+operator|)
+name|callbacks
+index|[
+literal|1
+index|]
+operator|)
+operator|.
+name|getPassword
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|LoginException
+argument_list|(
+literal|"Password can not be null"
+argument_list|)
+throw|;
+block|}
 name|String
 name|password
 init|=
