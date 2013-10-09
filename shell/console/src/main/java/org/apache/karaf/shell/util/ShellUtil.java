@@ -704,7 +704,7 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * Check if a bundle is a system bundle (start level< 50)      *       * @param bundleContext      * @param bundle      * @return true if the bundle has start level minor than 50      */
+comment|/**      * Check if a bundle is a system bundle (start level< 50)      *      * @param bundleContext      * @param bundle      * @return true if the bundle has start level minor than 50      */
 specifier|public
 specifier|static
 name|boolean
@@ -782,7 +782,7 @@ operator|<=
 name|sbsl
 return|;
 block|}
-comment|/**      * Ask the user to confirm the access to a system bundle      *       * @param bundleId      * @param session      * @return true if the user confirm      * @throws IOException      */
+comment|/**      * Ask the user to confirm the access to a system bundle      *      * @param bundleId      * @param session      * @return true if the user confirm      * @throws IOException      */
 specifier|public
 specifier|static
 name|boolean

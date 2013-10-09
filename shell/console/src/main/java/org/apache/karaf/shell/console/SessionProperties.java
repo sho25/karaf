@@ -46,6 +46,14 @@ name|IGNORE_INTERRUPTS
 init|=
 literal|"karaf.ignoreInterrupts"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|COMPLETION_MODE
+init|=
+literal|"karaf.completionMode"
+decl_stmt|;
 block|}
 end_class
 
