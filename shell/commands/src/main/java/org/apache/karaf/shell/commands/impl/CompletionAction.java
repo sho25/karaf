@@ -101,7 +101,7 @@ literal|"completion"
 argument_list|,
 name|description
 operator|=
-literal|"Change the completion mode on the current console session."
+literal|"Display or change the completion mode on the current console session."
 argument_list|)
 specifier|public
 class|class
@@ -122,11 +122,11 @@ literal|"mode"
 argument_list|,
 name|description
 operator|=
-literal|""
+literal|"The completion mode to set. The valid completion modes are: global, first, subshell."
 argument_list|,
 name|required
 operator|=
-literal|true
+literal|false
 argument_list|,
 name|multiValued
 operator|=
@@ -142,6 +142,33 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+if|if
+condition|(
+name|mode
+operator|==
+literal|null
+condition|)
+block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+name|session
+operator|.
+name|get
+argument_list|(
+name|SessionProperties
+operator|.
+name|COMPLETION_MODE
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 if|if
 condition|(
 operator|!
@@ -182,6 +209,13 @@ return|return
 literal|null
 return|;
 block|}
+name|mode
+operator|=
+name|mode
+operator|.
+name|toUpperCase
+argument_list|()
+expr_stmt|;
 name|session
 operator|.
 name|put
