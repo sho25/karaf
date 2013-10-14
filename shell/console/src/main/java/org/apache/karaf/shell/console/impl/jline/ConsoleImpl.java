@@ -1065,6 +1065,14 @@ comment|// TODO: interrupt current thread
 block|}
 catch|catch
 parameter_list|(
+name|InterruptedException
+name|e
+parameter_list|)
+block|{
+comment|//interrupt current thread
+block|}
+catch|catch
+parameter_list|(
 name|CloseShellException
 name|e
 parameter_list|)
