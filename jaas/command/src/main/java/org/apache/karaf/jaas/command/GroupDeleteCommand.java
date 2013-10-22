@@ -79,7 +79,7 @@ literal|"group-delete"
 argument_list|,
 name|description
 operator|=
-literal|"Remove an user from a group"
+literal|"Remove a user from a group"
 argument_list|)
 specifier|public
 class|class

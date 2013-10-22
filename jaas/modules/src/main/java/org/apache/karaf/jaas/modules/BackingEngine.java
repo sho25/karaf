@@ -123,7 +123,7 @@ argument_list|>
 name|listUsers
 parameter_list|()
 function_decl|;
-comment|/**      * List groups that an user is in.      *      * @param user      * @return      */
+comment|/**      * List groups that a user is in.      *      * @param user      * @return      */
 name|List
 argument_list|<
 name|GroupPrincipal
@@ -134,7 +134,7 @@ name|UserPrincipal
 name|user
 parameter_list|)
 function_decl|;
-comment|/**      * Add an user to a group.      *      * @param username      * @param group      */
+comment|/**      * Add a user to a group.      *      * @param username      * @param group      */
 name|void
 name|addGroup
 parameter_list|(
@@ -145,7 +145,7 @@ name|String
 name|group
 parameter_list|)
 function_decl|;
-comment|/**      * Remove an user from a group.      *      * @param username      * @param group      */
+comment|/**      * Remove a user from a group.      *      * @param username      * @param group      */
 name|void
 name|deleteGroup
 parameter_list|(

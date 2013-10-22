@@ -79,7 +79,7 @@ literal|"group-add"
 argument_list|,
 name|description
 operator|=
-literal|"Make an user part of a group"
+literal|"Make a user part of a group"
 argument_list|)
 specifier|public
 class|class

@@ -205,6 +205,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 block|{
 comment|/**              * If you don't overwrite, then karaf will use the welcome message found in the              * following resource files:              *<ul>              *<li>org/apache/karaf/shell/console/branding.properties</li>              *<li>org/apache/karaf/branding/branding.properties</li>              *<ul>              */

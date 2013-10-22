@@ -277,6 +277,7 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
+comment|// obtain a JMX attribute
 name|kmbs
 operator|.
 name|getAttribute
@@ -388,6 +389,7 @@ expr_stmt|;
 block|}
 try|try
 block|{
+comment|// obtain a number of JMX attributes
 name|kmbs
 operator|.
 name|getAttributes
@@ -420,6 +422,7 @@ comment|// good
 block|}
 try|try
 block|{
+comment|// set a JMX attribute
 name|kmbs
 operator|.
 name|getAttributes
@@ -452,6 +455,7 @@ comment|// good
 block|}
 try|try
 block|{
+comment|// set a number of JMX attributes
 name|kmbs
 operator|.
 name|setAttributes
@@ -479,6 +483,7 @@ comment|// good
 block|}
 try|try
 block|{
+comment|// mimic a JMX method invocation
 name|kmbs
 operator|.
 name|setAttributes
