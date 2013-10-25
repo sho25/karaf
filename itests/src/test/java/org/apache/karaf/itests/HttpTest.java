@@ -182,29 +182,12 @@ specifier|public
 name|void
 name|installHttpFeature
 parameter_list|()
+throws|throws
+name|Exception
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
+name|installAndAssertFeature
 argument_list|(
-name|executeCommand
-argument_list|(
-literal|"feature:install http"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-name|executeCommand
-argument_list|(
-literal|"feature:install webconsole"
-argument_list|)
+literal|"webconsole"
 argument_list|)
 expr_stmt|;
 block|}

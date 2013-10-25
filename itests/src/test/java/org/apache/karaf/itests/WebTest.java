@@ -197,14 +197,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|featureService
-operator|.
-name|installFeature
-argument_list|(
-literal|"war"
-argument_list|)
-expr_stmt|;
-name|assertFeatureInstalled
+name|installAndAssertFeature
 argument_list|(
 literal|"war"
 argument_list|)

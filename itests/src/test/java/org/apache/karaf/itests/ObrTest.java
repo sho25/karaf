@@ -195,16 +195,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
+name|installAndAssertFeature
 argument_list|(
-name|executeCommand
-argument_list|(
-literal|"feature:install obr"
-argument_list|)
+literal|"obr"
 argument_list|)
 expr_stmt|;
 block|}

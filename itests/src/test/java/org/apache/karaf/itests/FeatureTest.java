@@ -187,14 +187,19 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|assertContains
+name|assertFeaturesInstalled
 argument_list|(
 literal|"standard"
 argument_list|,
-name|executeCommand
-argument_list|(
-literal|"feature:list -i"
-argument_list|)
+literal|"config"
+argument_list|,
+literal|"region"
+argument_list|,
+literal|"package"
+argument_list|,
+literal|"kar"
+argument_list|,
+literal|"management"
 argument_list|)
 expr_stmt|;
 block|}
