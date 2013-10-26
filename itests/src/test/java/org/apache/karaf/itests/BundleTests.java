@@ -331,7 +331,7 @@ name|jmxWhiteboardBundleCapabilitiesOutput
 init|=
 name|executeCommand
 argument_list|(
-literal|"bundle:capabilities 74"
+literal|"bundle:capabilities org.apache.aries.jmx.whiteboard"
 argument_list|)
 decl_stmt|;
 name|System
@@ -371,15 +371,6 @@ argument_list|(
 literal|"bundle:classes"
 argument_list|)
 decl_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-name|allClassesOutput
-argument_list|)
-expr_stmt|;
 name|assertFalse
 argument_list|(
 name|allClassesOutput
@@ -393,7 +384,7 @@ name|jmxWhiteboardBundleClassesOutput
 init|=
 name|executeCommand
 argument_list|(
-literal|"bundle:classes 74"
+literal|"bundle:classes org.apache.aries.jmx.whiteboard"
 argument_list|)
 decl_stmt|;
 name|System
@@ -416,6 +407,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * TODO We need some more thorough tests for diag      */
 annotation|@
 name|Test
 specifier|public
@@ -433,16 +425,7 @@ argument_list|(
 literal|"bundle:diag"
 argument_list|)
 decl_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-name|allDiagOutput
-argument_list|)
-expr_stmt|;
-name|assertFalse
+name|assertTrue
 argument_list|(
 name|allDiagOutput
 operator|.
@@ -500,7 +483,7 @@ name|headersOutput
 init|=
 name|executeCommand
 argument_list|(
-literal|"bundle:headers 74"
+literal|"bundle:headers org.apache.aries.jmx.whiteboard"
 argument_list|)
 decl_stmt|;
 name|System
@@ -537,7 +520,7 @@ name|infoOutput
 init|=
 name|executeCommand
 argument_list|(
-literal|"bundle:info 69"
+literal|"bundle:info org.apache.karaf.management.server"
 argument_list|)
 decl_stmt|;
 name|System
@@ -564,46 +547,29 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|installCommand
+name|installUninstallCommand
 parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
 name|executeCommand
 argument_list|(
 literal|"bundle:install mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-lang/2.4_6"
 argument_list|)
+expr_stmt|;
+name|assertBundleInstalled
+argument_list|(
+literal|"org.apache.servicemix.bundles.commons-lang"
 argument_list|)
 expr_stmt|;
-name|String
-name|bundleListOutput
-init|=
 name|executeCommand
 argument_list|(
-literal|"bundle:list -l | grep -i commons-lang"
-argument_list|)
-decl_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-name|bundleListOutput
+literal|"bundle:uninstall org.apache.servicemix.bundles.commons-lang"
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertBundleNotInstalled
 argument_list|(
-name|bundleListOutput
-operator|.
-name|isEmpty
-argument_list|()
+literal|"org.apache.servicemix.bundles.commons-lang"
 argument_list|)
 expr_stmt|;
 block|}
@@ -621,7 +587,7 @@ name|bundleTreeOutput
 init|=
 name|executeCommand
 argument_list|(
-literal|"bundle:tree-show 69"
+literal|"bundle:tree-show org.apache.karaf.management.server"
 argument_list|)
 decl_stmt|;
 name|System
