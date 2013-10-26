@@ -101,7 +101,7 @@ name|spi
 operator|.
 name|reactors
 operator|.
-name|PerMethod
+name|PerClass
 import|;
 end_import
 
@@ -116,7 +116,7 @@ argument_list|)
 annotation|@
 name|ExamReactorStrategy
 argument_list|(
-name|PerMethod
+name|PerClass
 operator|.
 name|class
 argument_list|)
@@ -135,7 +135,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"transaction"
 argument_list|)
@@ -150,7 +150,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"jpa"
 argument_list|)
@@ -165,7 +165,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"jndi"
 argument_list|)
@@ -180,7 +180,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"application-without-isolation"
 argument_list|)

@@ -111,7 +111,7 @@ name|spi
 operator|.
 name|reactors
 operator|.
-name|PerMethod
+name|PerClass
 import|;
 end_import
 
@@ -126,7 +126,7 @@ argument_list|)
 annotation|@
 name|ExamReactorStrategy
 argument_list|(
-name|PerMethod
+name|PerClass
 operator|.
 name|class
 argument_list|)
@@ -145,7 +145,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring"
 argument_list|)
@@ -160,7 +160,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-aspects"
 argument_list|)
@@ -175,7 +175,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-dm"
 argument_list|)
@@ -190,7 +190,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-dm-web"
 argument_list|)
@@ -205,7 +205,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-instrument"
 argument_list|)
@@ -220,7 +220,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-jdbc"
 argument_list|)
@@ -235,7 +235,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-jms"
 argument_list|)
@@ -250,7 +250,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-struts"
 argument_list|)
@@ -265,7 +265,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-test"
 argument_list|)
@@ -280,7 +280,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-orm"
 argument_list|)
@@ -295,7 +295,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-oxm"
 argument_list|)
@@ -310,7 +310,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-tx"
 argument_list|)
@@ -325,7 +325,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-web"
 argument_list|)
@@ -342,7 +342,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-web-portlet"
 argument_list|)
@@ -359,7 +359,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"gemini-blueprint"
 argument_list|)

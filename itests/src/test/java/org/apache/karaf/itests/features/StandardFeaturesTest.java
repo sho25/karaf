@@ -101,7 +101,7 @@ name|spi
 operator|.
 name|reactors
 operator|.
-name|PerMethod
+name|PerClass
 import|;
 end_import
 
@@ -116,7 +116,7 @@ argument_list|)
 annotation|@
 name|ExamReactorStrategy
 argument_list|(
-name|PerMethod
+name|PerClass
 operator|.
 name|class
 argument_list|)
@@ -135,7 +135,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"aries-annotation"
 argument_list|)
@@ -150,7 +150,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"wrapper"
 argument_list|)
@@ -165,7 +165,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"obr"
 argument_list|)
@@ -180,7 +180,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"config"
 argument_list|)
@@ -195,7 +195,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"region"
 argument_list|)
@@ -210,7 +210,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"package"
 argument_list|)
@@ -225,7 +225,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"http"
 argument_list|)
@@ -240,7 +240,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"http-whiteboard"
 argument_list|)
@@ -255,7 +255,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"war"
 argument_list|)
@@ -270,7 +270,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"kar"
 argument_list|)
@@ -285,7 +285,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"webconsole"
 argument_list|)
@@ -300,7 +300,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"ssh"
 argument_list|)
@@ -315,7 +315,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"management"
 argument_list|)
@@ -330,7 +330,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"scheduler"
 argument_list|)
@@ -345,7 +345,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"eventadmin"
 argument_list|)
@@ -360,7 +360,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"jasypt-encryption"
 argument_list|)
@@ -375,7 +375,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAndAssertFeature
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"scr"
 argument_list|)
