@@ -1464,7 +1464,7 @@ literal|")(osgi.command.function="
 operator|+
 name|function
 operator|+
-literal|")(org.apache.karaf.service.guard.roles=*))"
+literal|"))"
 argument_list|,
 name|SERVICE_TIMEOUT
 argument_list|)
@@ -1474,11 +1474,11 @@ else|else
 block|{
 name|waitForService
 argument_list|(
-literal|"(&(osgi.command.function="
+literal|"(osgi.command.function="
 operator|+
 name|command
 operator|+
-literal|")(org.apache.karaf.service.guard.roles=*))"
+literal|")"
 argument_list|,
 name|SERVICE_TIMEOUT
 argument_list|)
