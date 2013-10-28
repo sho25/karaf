@@ -1124,6 +1124,36 @@ operator|.
 name|getPassword
 argument_list|()
 decl_stmt|;
+comment|// If either a username or password is specified don't allow authentication = "none".
+comment|// This is to prevent someone from logging into Karaf as any user without providing a
+comment|// valid password (because if authentication = none, the password could be any
+comment|// value - it is ignored).
+if|if
+condition|(
+literal|"none"
+operator|.
+name|equals
+argument_list|(
+name|authentication
+argument_list|)
+operator|&&
+operator|(
+name|user
+operator|!=
+literal|null
+operator|||
+name|tmpPassword
+operator|!=
+literal|null
+operator|)
+condition|)
+block|{
+comment|// default to simple so that the provided user/password will get checked
+name|authentication
+operator|=
+literal|"simple"
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|tmpPassword
