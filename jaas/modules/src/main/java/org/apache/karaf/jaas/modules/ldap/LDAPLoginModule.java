@@ -1148,6 +1148,13 @@ literal|null
 operator|)
 condition|)
 block|{
+name|logger
+operator|.
+name|debug
+argument_list|(
+literal|"Changing from authentication = none to simple since user or password was specified."
+argument_list|)
+expr_stmt|;
 comment|// default to simple so that the provided user/password will get checked
 name|authentication
 operator|=
