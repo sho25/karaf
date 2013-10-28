@@ -336,6 +336,13 @@ range|:
 name|le
 control|)
 block|{
+if|if
+condition|(
+name|event
+operator|!=
+literal|null
+condition|)
+block|{
 name|printEvent
 argument_list|(
 name|out
@@ -343,6 +350,7 @@ argument_list|,
 name|event
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|// Tail
 specifier|final
