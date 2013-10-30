@@ -566,7 +566,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"At this time it is not known how to get this service to start when the machine is rebooted."
+literal|"to add bin/org.apache.karaf.KARAF as user service move this file into ~/Library/LaunchAgents/"
 argument_list|)
 expr_stmt|;
 name|System
@@ -575,59 +575,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"If you know how to install the following service script so that it gets started"
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"when OS X starts, please email dev@felix.apache.org and let us know how so"
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"we can update this message."
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|" "
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"  To start the service:"
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"    $ "
-operator|+
-name|serviceFile
-operator|.
-name|getPath
-argument_list|()
-operator|+
-literal|" start"
+literal|"> mv bin/org.apache.karaf.KARAF.plist ~/Library/LaunchAgents/"
 argument_list|)
 expr_stmt|;
 name|System
@@ -645,7 +593,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"  To stop the service:"
+literal|"to add org.apache.karaf.KARAF as system service move this into /Library/LaunchDaemons"
 argument_list|)
 expr_stmt|;
 name|System
@@ -654,14 +602,133 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"    $ "
-operator|+
-name|serviceFile
+literal|"> sudo mv bin/org.apache.karaf.KARAF.plist /Library/LaunchDaemons/"
+argument_list|)
+expr_stmt|;
+name|System
 operator|.
-name|getPath
-argument_list|()
-operator|+
-literal|" stop"
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"change owner and rights"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"> sudo chown root:wheel /Library/LaunchDaemons/org.apache.karaf.KARAF.plist"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"> sudo chmod u=rw,g=r,o=r /Library/LaunchDaemons/org.apache.karaf.KARAF.plist"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"test your service"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"> launchctl load ~/Library/LaunchAgents/org.apache.karaf.KARAF.plist"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"> launchctl start org.apache.karaf.KARAF"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"> launchctl stop org.apache.karaf.KARAF"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"after restart your session or system"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"you can use launchctl command to start and stop your service"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"for removing the service call"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"> launchctl remove org.apache.karaf.KARAF"
 argument_list|)
 expr_stmt|;
 name|System
