@@ -127,7 +127,7 @@ literal|"jdbc:oracle:thin:@172.16.16.133:1521:XE"
 expr_stmt|;
 name|momentDatatype
 operator|=
-literal|"NuMBER(20)"
+literal|"NUMBER(20)"
 expr_stmt|;
 name|super
 operator|.
