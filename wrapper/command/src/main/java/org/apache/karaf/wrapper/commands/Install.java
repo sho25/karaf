@@ -202,6 +202,8 @@ argument_list|)
 specifier|private
 name|String
 name|displayName
+init|=
+literal|"karaf"
 decl_stmt|;
 annotation|@
 name|Option

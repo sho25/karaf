@@ -164,7 +164,7 @@ name|install
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|""
+literal|"karaf"
 argument_list|,
 literal|""
 argument_list|,
