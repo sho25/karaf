@@ -922,14 +922,14 @@ name|ps
 operator|.
 name|println
 argument_list|(
-literal|"#Dump of the System and OSGi properties with the command dev:dump-properties"
+literal|"#Dump of the System and OSGi properties"
 argument_list|)
 expr_stmt|;
 name|ps
 operator|.
 name|println
 argument_list|(
-literal|"#Dump execute at "
+literal|"#Dump executed at "
 operator|+
 operator|new
 name|SimpleDateFormat

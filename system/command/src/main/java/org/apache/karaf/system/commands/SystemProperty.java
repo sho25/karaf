@@ -190,7 +190,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Dump all system properties in a file"
+literal|"Dump all system properties in a file (in data folder)"
 argument_list|)
 name|boolean
 name|dumpToFile
@@ -660,14 +660,14 @@ name|ps
 operator|.
 name|println
 argument_list|(
-literal|"#Dump of the System and OSGi properties with the command dev:dump-properties"
+literal|"#Dump of the System and OSGi properties with the command system:property"
 argument_list|)
 expr_stmt|;
 name|ps
 operator|.
 name|println
 argument_list|(
-literal|"#Dump execute at "
+literal|"#Dump executed at "
 operator|+
 operator|new
 name|SimpleDateFormat
@@ -701,15 +701,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Dumping OSGi and System properties"
-argument_list|)
-expr_stmt|;
 name|printOrderedProperties
 argument_list|(
 name|props
