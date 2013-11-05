@@ -465,11 +465,6 @@ init|=
 name|getConfiguration
 argument_list|()
 decl_stmt|;
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"rawtypes"
-argument_list|)
 name|Dictionary
 name|props
 init|=
@@ -527,11 +522,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|level
+name|Level
 operator|.
-name|equals
+name|isDefault
 argument_list|(
-literal|"DEFAULT"
+name|level
 argument_list|)
 condition|)
 block|{
