@@ -17,6 +17,16 @@ name|management
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
 begin_comment
 comment|/**  * Describe the system MBean.  */
 end_comment
@@ -26,12 +36,14 @@ specifier|public
 interface|interface
 name|SystemMBean
 block|{
+comment|/**      * Stop the Karaf instance      *      * @throws Exception      */
 name|void
 name|halt
 parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Stop the Karaf instance at a given time.      *      * @param time the time when to stop the Karaf instance.      * @throws Exception      */
 name|void
 name|halt
 parameter_list|(
@@ -41,12 +53,14 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Reboot the Karaf instance.      *      * @throws Exception      */
 name|void
 name|reboot
 parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Reboot the Karaf instance at a given time.      *      * @param time the time when to reboot the Karaf instance.      * @throws Exception      */
 name|void
 name|reboot
 parameter_list|(
@@ -56,6 +70,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Reboot the Karaf instance at a given time and clean the cache.      *      * @param time the time when to reboot the Karaf instance.      * @throws Exception      */
 name|void
 name|rebootCleanCache
 parameter_list|(
@@ -65,6 +80,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Reboot the Karaf instance at a given time and clean all working files.      *      * @param time the time when to reboot the Karaf instance.      * @throws Exception      */
 name|void
 name|rebootCleanAll
 parameter_list|(
@@ -74,6 +90,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Set the system bundle start level.      *      * @param startLevel the new system bundle start level.      * @throws Exception      */
 name|void
 name|setStartLevel
 parameter_list|(
@@ -83,6 +100,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Get the current system bundle start level.      *      * @return the current system bundle start level.      * @throws Exception      */
 name|int
 name|getStartLevel
 parameter_list|()
@@ -129,6 +147,46 @@ comment|/**      * Get the version of the current Karaf instance.      *      * 
 name|String
 name|getVersion
 parameter_list|()
+function_decl|;
+comment|/**      * Get all system properties.      *      * @param unset if true, display the OSGi properties even if they are not defined (with "undef" value).      * @param dumpToFile if true, dump the properties into a file in the data folder.      * @return the list of system properties.      */
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|getProperties
+parameter_list|(
+name|boolean
+name|unset
+parameter_list|,
+name|boolean
+name|dumpToFile
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * Get the value of a given system property.      *      * @param key the system property key.      * @return the system property value.      */
+name|String
+name|getProperty
+parameter_list|(
+name|String
+name|key
+parameter_list|)
+function_decl|;
+comment|/**      * Set the value of a system property.      *      * @param key the system property key.      * @param value the new system property value.      * @param persistent if true, persist the new value to the etc/system.properties file.      */
+name|void
+name|setProperty
+parameter_list|(
+name|String
+name|key
+parameter_list|,
+name|String
+name|value
+parameter_list|,
+name|boolean
+name|persistent
+parameter_list|)
 function_decl|;
 block|}
 end_interface
