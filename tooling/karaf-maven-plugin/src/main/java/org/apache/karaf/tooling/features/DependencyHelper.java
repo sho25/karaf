@@ -1210,9 +1210,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|carDependencies
+name|localDependencies
 operator|.
-name|contains
+name|containsKey
 argument_list|(
 name|dependencyNode
 operator|.
