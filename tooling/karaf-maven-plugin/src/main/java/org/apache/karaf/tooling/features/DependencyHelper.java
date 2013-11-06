@@ -1289,6 +1289,8 @@ block|}
 block|}
 if|if
 condition|(
+name|useTransitiveDependencies
+operator|&&
 name|accept
 operator|.
 name|isContinue
