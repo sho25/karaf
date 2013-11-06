@@ -119,7 +119,7 @@ name|config
 operator|.
 name|portFile
 operator|+
-literal|" port file doesn't exist. The container is not running."
+literal|" shutdown port file doesn't exist. The container is not running."
 argument_list|)
 expr_stmt|;
 name|System
