@@ -153,6 +153,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Dictionary
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Properties
 import|;
 end_import
@@ -316,6 +326,9 @@ name|factory
 operator|.
 name|newInstance
 argument_list|(
+operator|(
+name|Dictionary
+operator|)
 name|props
 argument_list|)
 expr_stmt|;
