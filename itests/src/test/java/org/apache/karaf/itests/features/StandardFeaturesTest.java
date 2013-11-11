@@ -230,6 +230,14 @@ argument_list|(
 literal|"http"
 argument_list|)
 expr_stmt|;
+comment|// TODO: Check why uninstalling http does not uninstall pax-http
+name|featureService
+operator|.
+name|uninstallFeature
+argument_list|(
+literal|"pax-http"
+argument_list|)
+expr_stmt|;
 block|}
 annotation|@
 name|Test
@@ -243,6 +251,14 @@ block|{
 name|installAssertAndUninstallFeature
 argument_list|(
 literal|"http-whiteboard"
+argument_list|)
+expr_stmt|;
+comment|// TODO: Check why uninstalling http does not uninstall pax-http-whiteboard
+name|featureService
+operator|.
+name|uninstallFeature
+argument_list|(
+literal|"pax-http-whiteboard"
 argument_list|)
 expr_stmt|;
 block|}
