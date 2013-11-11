@@ -178,7 +178,15 @@ operator|.
 name|isInterrupted
 argument_list|()
 condition|)
-empty_stmt|;
+block|{
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|500
+argument_list|)
+expr_stmt|;
+block|}
 name|printThread
 operator|.
 name|abort
