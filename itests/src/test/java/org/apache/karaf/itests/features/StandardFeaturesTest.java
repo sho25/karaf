@@ -261,6 +261,13 @@ argument_list|(
 literal|"pax-http-whiteboard"
 argument_list|)
 expr_stmt|;
+name|featureService
+operator|.
+name|uninstallFeature
+argument_list|(
+literal|"pax-http"
+argument_list|)
+expr_stmt|;
 block|}
 annotation|@
 name|Test
