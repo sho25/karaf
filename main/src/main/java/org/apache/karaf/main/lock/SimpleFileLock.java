@@ -281,6 +281,8 @@ name|ioe
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|ioe
 argument_list|)
 throw|;
 block|}
@@ -294,7 +296,12 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"Could not create file lock"
+literal|"Could not create file lock: "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
 argument_list|,
 name|e
 argument_list|)
