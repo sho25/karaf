@@ -2361,6 +2361,8 @@ argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;
+try|try
+block|{
 for|for
 control|(
 name|String
@@ -2382,11 +2384,15 @@ name|curFeature
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+finally|finally
+block|{
 name|uninstallNewFeatures
 argument_list|(
 name|featuresBefore
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/**      * The feature service does not uninstall feature dependencies when uninstalling a single feature.      * So we need to make sure we uninstall all features that were newly installed.      *       * @param featuresBefore      * @throws Exception      */
 specifier|private

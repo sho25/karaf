@@ -145,9 +145,9 @@ argument_list|)
 expr_stmt|;
 name|installAssertAndUninstallFeature
 argument_list|(
-literal|"aries-annotation"
-argument_list|,
 literal|"pax-http"
+argument_list|,
+literal|"aries-annotation"
 argument_list|)
 expr_stmt|;
 block|}
