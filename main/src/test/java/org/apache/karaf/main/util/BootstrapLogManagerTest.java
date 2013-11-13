@@ -51,6 +51,30 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|logging
+operator|.
+name|Level
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|logging
+operator|.
+name|LogRecord
+import|;
+end_import
+
+begin_import
+import|import
 name|junit
 operator|.
 name|framework
@@ -179,6 +203,25 @@ argument_list|(
 name|handler
 argument_list|)
 expr_stmt|;
+try|try
+block|{
+comment|// introduce a delay just to give the time to the handler to actually create the log file
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|200
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+comment|// ignore
+block|}
 name|assertExists
 argument_list|(
 literal|"target/log/karaf.log"
