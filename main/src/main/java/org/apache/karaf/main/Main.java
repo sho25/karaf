@@ -823,6 +823,18 @@ name|startupMessage
 argument_list|)
 expr_stmt|;
 block|}
+name|String
+name|log4jConfigPath
+init|=
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"karaf.base"
+argument_list|)
+operator|+
+literal|"/etc/org.ops4j.pax.logging.cfg"
+decl_stmt|;
 name|BootstrapLogManager
 operator|.
 name|setProperties
@@ -830,6 +842,8 @@ argument_list|(
 name|config
 operator|.
 name|props
+argument_list|,
+name|log4jConfigPath
 argument_list|)
 expr_stmt|;
 name|lock
