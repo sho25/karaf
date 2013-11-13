@@ -131,13 +131,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Thread
-operator|.
-name|sleep
-argument_list|(
-literal|1000
-argument_list|)
-expr_stmt|;
 name|String
 name|infoOutput
 init|=
@@ -189,13 +182,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Thread
-operator|.
-name|sleep
-argument_list|(
-literal|2000
-argument_list|)
-expr_stmt|;
 name|System
 operator|.
 name|out

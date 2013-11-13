@@ -701,7 +701,7 @@ specifier|final
 name|Long
 name|COMMAND_TIMEOUT
 init|=
-literal|10000L
+literal|30000L
 decl_stmt|;
 specifier|static
 specifier|final
