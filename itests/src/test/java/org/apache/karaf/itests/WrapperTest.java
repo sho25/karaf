@@ -173,16 +173,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|System
+name|featureService
 operator|.
-name|out
-operator|.
-name|println
+name|installFeature
 argument_list|(
-name|executeCommand
-argument_list|(
-literal|"feature:install wrapper"
-argument_list|)
+literal|"wrapper"
 argument_list|)
 expr_stmt|;
 block|}
