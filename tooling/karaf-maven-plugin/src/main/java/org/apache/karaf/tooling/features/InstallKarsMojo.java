@@ -3073,6 +3073,20 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|refreshRepository
+parameter_list|(
+name|URI
+name|uri
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+comment|// TODO Auto-generated method stub
+block|}
 block|}
 comment|// when FELIX-2887 is ready we can use plain Properties again
 specifier|private

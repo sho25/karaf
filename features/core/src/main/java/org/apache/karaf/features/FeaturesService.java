@@ -288,6 +288,15 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+name|void
+name|refreshRepository
+parameter_list|(
+name|URI
+name|uri
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 block|}
 end_interface
 

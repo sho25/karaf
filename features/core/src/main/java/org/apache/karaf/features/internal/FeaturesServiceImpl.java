@@ -1122,7 +1122,9 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Refresh a features repository.      *      * @param uri the features repository URI.      * @throws Exception in case of refresh failure.      */
-specifier|protected
+annotation|@
+name|Override
+specifier|public
 name|void
 name|refreshRepository
 parameter_list|(
