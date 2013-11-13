@@ -173,9 +173,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|featureService
-operator|.
-name|installFeature
+name|installAndAssertFeature
 argument_list|(
 literal|"wrapper"
 argument_list|)
