@@ -213,6 +213,13 @@ name|r
 operator|.
 name|getName
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|r
+operator|.
+name|getName
+argument_list|()
 operator|.
 name|equals
 argument_list|(
