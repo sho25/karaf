@@ -261,6 +261,10 @@ name|StartCommand
 operator|.
 name|class
 block|,
+name|StatusCommand
+operator|.
+name|class
+block|,
 name|StopCommand
 operator|.
 name|class
