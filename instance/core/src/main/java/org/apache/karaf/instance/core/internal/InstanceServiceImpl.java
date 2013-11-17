@@ -3194,6 +3194,25 @@ argument_list|)
 operator|+
 literal|"\""
 operator|+
+literal|" -Dkaraf.etc=\""
+operator|+
+operator|new
+name|File
+argument_list|(
+operator|new
+name|File
+argument_list|(
+name|location
+argument_list|)
+operator|.
+name|getCanonicalPath
+argument_list|()
+argument_list|,
+literal|"etc"
+argument_list|)
+operator|+
+literal|"\""
+operator|+
 literal|" -Dkaraf.startLocalConsole=false"
 operator|+
 literal|" -Dkaraf.startRemoteShell=true"
@@ -4643,6 +4662,30 @@ name|loc
 argument_list|)
 argument_list|,
 literal|"data"
+argument_list|)
+operator|.
+name|getCanonicalPath
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|props
+operator|.
+name|put
+argument_list|(
+literal|"karaf.etc"
+argument_list|,
+operator|new
+name|File
+argument_list|(
+operator|new
+name|File
+argument_list|(
+name|instance
+operator|.
+name|loc
+argument_list|)
+argument_list|,
+literal|"etc"
 argument_list|)
 operator|.
 name|getCanonicalPath

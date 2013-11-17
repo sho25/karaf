@@ -877,13 +877,13 @@ block|{
 try|try
 block|{
 name|String
-name|karafBase
+name|karafEtc
 init|=
 name|bundleContext
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.base"
+literal|"karaf.etc"
 argument_list|)
 decl_stmt|;
 name|File
@@ -892,9 +892,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|karafBase
-argument_list|,
-literal|"etc"
+name|karafEtc
 argument_list|)
 decl_stmt|;
 name|File
@@ -1045,10 +1043,10 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.base"
+literal|"karaf.etc"
 argument_list|)
 argument_list|,
-literal|"etc/config.properties"
+literal|"config.properties"
 argument_list|)
 argument_list|)
 return|;
@@ -1106,7 +1104,7 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"Error settting framework: "
+literal|"Error setting framework: "
 operator|+
 name|e
 operator|.
@@ -1228,13 +1226,13 @@ block|{
 try|try
 block|{
 name|String
-name|base
+name|etc
 init|=
 name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.base"
+literal|"karaf.etc"
 argument_list|)
 decl_stmt|;
 name|Properties
@@ -1246,9 +1244,9 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|base
+name|etc
 argument_list|,
-literal|"etc/system.properties"
+literal|"system.properties"
 argument_list|)
 argument_list|)
 decl_stmt|;

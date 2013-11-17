@@ -168,6 +168,24 @@ name|ENV_KARAF_DATA
 init|=
 literal|"KARAF_DATA"
 decl_stmt|;
+comment|/**      * The system property for specifying the Karaf etc directory. The etc directory      * holds the configuration for a Karaf instance.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|PROP_KARAF_ETC
+init|=
+literal|"karaf.etc"
+decl_stmt|;
+comment|/**      * The environment variable for specifying the Karaf etc directory. The etc directory      * holds the configuration for a Karaf instance.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|ENV_KARAF_ETC
+init|=
+literal|"KARAF_ETC"
+decl_stmt|;
 comment|/**      * The system property for specifying the Karaf data directory. The data directory      * holds the bundles data and cache for a Karaf instance.      */
 specifier|public
 specifier|static
@@ -383,6 +401,9 @@ name|File
 name|karafData
 decl_stmt|;
 name|File
+name|karafEtc
+decl_stmt|;
+name|File
 name|karafInstances
 decl_stmt|;
 name|Properties
@@ -453,15 +474,6 @@ name|String
 name|shutdownCommand
 decl_stmt|;
 name|String
-name|includes
-decl_stmt|;
-name|String
-name|optionals
-decl_stmt|;
-name|File
-name|etcFolder
-decl_stmt|;
-name|String
 name|startupMessage
 decl_stmt|;
 name|boolean
@@ -527,6 +539,31 @@ argument_list|(
 name|karafBase
 argument_list|,
 literal|"data"
+argument_list|)
+argument_list|,
+literal|true
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|karafEtc
+operator|=
+name|Utils
+operator|.
+name|getKarafDirectory
+argument_list|(
+name|PROP_KARAF_ETC
+argument_list|,
+name|ENV_KARAF_ETC
+argument_list|,
+operator|new
+name|File
+argument_list|(
+name|karafBase
+argument_list|,
+literal|"etc"
 argument_list|)
 argument_list|,
 literal|true
@@ -642,22 +679,10 @@ name|getPath
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|this
-operator|.
-name|etcFolder
-operator|=
-operator|new
-name|File
-argument_list|(
-name|karafBase
-argument_list|,
-literal|"etc"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
-name|etcFolder
+name|karafEtc
 operator|.
 name|exists
 argument_list|()
@@ -667,9 +692,9 @@ throw|throw
 operator|new
 name|FileNotFoundException
 argument_list|(
-literal|"etc folder not found: "
+literal|"Karaf etc folder not found: "
 operator|+
-name|etcFolder
+name|karafEtc
 operator|.
 name|getAbsolutePath
 argument_list|()
@@ -683,7 +708,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|etcFolder
+name|karafEtc
 argument_list|,
 name|SYSTEM_PROPERTIES_FILE_NAME
 argument_list|)
@@ -846,7 +871,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|etcFolder
+name|karafEtc
 argument_list|,
 name|CONFIG_PROPERTIES_FILE_NAME
 argument_list|)
@@ -1222,7 +1247,7 @@ expr_stmt|;
 block|}
 specifier|private
 name|String
-name|getProperyOrFail
+name|getPropertyOrFail
 parameter_list|(
 name|String
 name|propertyName
@@ -1275,7 +1300,7 @@ block|{
 name|String
 name|framework
 init|=
-name|getProperyOrFail
+name|getPropertyOrFail
 argument_list|(
 name|KARAF_FRAMEWORK
 argument_list|)
@@ -1283,7 +1308,7 @@ decl_stmt|;
 name|String
 name|frameworkBundleUri
 init|=
-name|getProperyOrFail
+name|getPropertyOrFail
 argument_list|(
 name|KARAF_FRAMEWORK
 operator|+

@@ -1309,10 +1309,10 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.base"
+literal|"karaf.etc"
 argument_list|)
 argument_list|,
-literal|"/etc/org.apache.karaf.shell.cfg"
+literal|"/org.apache.karaf.shell.cfg"
 argument_list|)
 decl_stmt|;
 name|Properties
@@ -1385,13 +1385,13 @@ name|LOGGER
 operator|.
 name|warn
 argument_list|(
-literal|"Can't read {}/etc/org.apache.karaf.shell.cfg file. The completion is set to default."
+literal|"Can't read {}/org.apache.karaf.shell.cfg file. The completion is set to default."
 argument_list|,
 name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.base"
+literal|"karaf.etc"
 argument_list|)
 argument_list|)
 expr_stmt|;

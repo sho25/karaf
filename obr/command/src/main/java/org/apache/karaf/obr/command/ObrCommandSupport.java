@@ -1605,7 +1605,7 @@ argument_list|)
 expr_stmt|;
 block|}
 name|File
-name|base
+name|etc
 init|=
 operator|new
 name|File
@@ -1614,7 +1614,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.base"
+literal|"karaf.etc"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -1624,9 +1624,9 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|base
+name|etc
 argument_list|,
-literal|"etc/config.properties"
+literal|"config.properties"
 argument_list|)
 decl_stmt|;
 name|File
@@ -1635,9 +1635,9 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|base
+name|etc
 argument_list|,
-literal|"etc/config.properties.tmp"
+literal|"config.properties.tmp"
 argument_list|)
 decl_stmt|;
 name|BufferedWriter

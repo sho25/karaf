@@ -198,7 +198,7 @@ name|bundleContext
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.base"
+literal|"karaf.etc"
 argument_list|)
 argument_list|)
 operator|.
@@ -211,6 +211,8 @@ argument_list|()
 operator|.
 name|getParent
 argument_list|()
+operator|+
+literal|"/etc"
 argument_list|)
 expr_stmt|;
 name|EasyMock

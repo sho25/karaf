@@ -830,10 +830,10 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.base"
+literal|"karaf.etc"
 argument_list|)
 operator|+
-literal|"/etc/org.ops4j.pax.logging.cfg"
+literal|"/org.ops4j.pax.logging.cfg"
 decl_stmt|;
 name|BootstrapLogManager
 operator|.
@@ -1020,7 +1020,7 @@ name|File
 argument_list|(
 name|config
 operator|.
-name|etcFolder
+name|karafEtc
 argument_list|,
 name|STARTUP_PROPERTIES_FILE_NAME
 argument_list|)

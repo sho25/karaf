@@ -695,7 +695,7 @@ literal|1
 condition|)
 block|{
 name|File
-name|base
+name|etc
 init|=
 operator|new
 name|File
@@ -704,7 +704,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.base"
+literal|"karaf.etc"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -714,13 +714,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-operator|new
-name|File
-argument_list|(
-name|base
-argument_list|,
-literal|"etc"
-argument_list|)
+name|etc
 argument_list|,
 literal|"regions-config.xml"
 argument_list|)

@@ -141,10 +141,10 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.home"
+literal|"karaf.etc"
 argument_list|)
 argument_list|,
-literal|"etc/org.apache.karaf.shell.cfg"
+literal|"org.apache.karaf.shell.cfg"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -526,10 +526,10 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.home"
+literal|"karaf.etc"
 argument_list|)
 operator|+
-literal|"/etc/users.properties"
+literal|"/users.properties"
 argument_list|)
 argument_list|)
 decl_stmt|;
