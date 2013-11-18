@@ -481,6 +481,52 @@ specifier|private
 name|SshClientFactory
 name|sshClientFactory
 decl_stmt|;
+specifier|private
+specifier|final
+specifier|static
+name|String
+name|keyChangedMessage
+init|=
+literal|" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ \n"
+operator|+
+literal|" @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!      @ \n"
+operator|+
+literal|" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ \n"
+operator|+
+literal|"IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\n"
+operator|+
+literal|"Someone could be eavesdropping on you right now (man-in-the-middle attack)!\n"
+operator|+
+literal|"It is also possible that the RSA host key has just been changed.\n"
+operator|+
+literal|"Please contact your system administrator.\n"
+operator|+
+literal|"Add correct host key in "
+operator|+
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"user.home"
+argument_list|)
+operator|+
+literal|"/.sshkaraf/known_hosts to get rid of this message.\n"
+operator|+
+literal|"Offending key in "
+operator|+
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"user.home"
+argument_list|)
+operator|+
+literal|"/.sshkaraf/known_hosts\n"
+operator|+
+literal|"RSA host key has changed and you have requested strict checking.\n"
+operator|+
+literal|"Host key verification failed."
+decl_stmt|;
 specifier|public
 name|void
 name|setSshClientFactory
@@ -765,15 +811,6 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Connected"
-argument_list|)
-expr_stmt|;
 name|boolean
 name|authed
 init|=
@@ -786,6 +823,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+try|try
+block|{
 name|sshSession
 operator|.
 name|authAgent
@@ -793,6 +832,26 @@ argument_list|(
 name|username
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IllegalStateException
+name|ise
+parameter_list|)
+block|{
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+name|keyChangedMessage
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 name|int
 name|ret
 init|=
@@ -884,6 +943,8 @@ literal|"Password provided using command line option"
 argument_list|)
 expr_stmt|;
 block|}
+try|try
+block|{
 name|sshSession
 operator|.
 name|authPassword
@@ -893,6 +954,26 @@ argument_list|,
 name|password
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IllegalStateException
+name|ise
+parameter_list|)
+block|{
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+name|keyChangedMessage
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 name|int
 name|ret
 init|=
@@ -956,6 +1037,15 @@ return|return
 literal|null
 return|;
 block|}
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Connected"
+argument_list|)
+expr_stmt|;
 name|StringBuilder
 name|sb
 init|=
