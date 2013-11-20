@@ -39,7 +39,9 @@ name|apache
 operator|.
 name|sshd
 operator|.
-name|server
+name|common
+operator|.
+name|file
 operator|.
 name|FileSystemFactory
 import|;
@@ -53,7 +55,9 @@ name|apache
 operator|.
 name|sshd
 operator|.
-name|server
+name|common
+operator|.
+name|file
 operator|.
 name|FileSystemView
 import|;
@@ -81,7 +85,12 @@ block|{
 return|return
 operator|new
 name|KarafFileSystemView
+argument_list|(
+name|session
+operator|.
+name|getUsername
 argument_list|()
+argument_list|)
 return|;
 block|}
 block|}
