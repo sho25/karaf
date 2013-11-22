@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|javax
+operator|.
+name|management
+operator|.
+name|MBeanException
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -64,7 +74,7 @@ argument_list|>
 name|getConfigs
 parameter_list|()
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Create a new configuration for the given PID.      *      * @param pid the configuration PID.      * @throws Exception      */
 name|void
@@ -74,7 +84,7 @@ name|String
 name|pid
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|update
@@ -91,7 +101,7 @@ argument_list|>
 name|properties
 parameter_list|)
 throws|throws
-name|IOException
+name|MBeanException
 function_decl|;
 comment|/**      * Delete a configuration identified by the given PID.      *      * @param pid the configuration PID to delete.      * @throws Exception      */
 name|void
@@ -101,7 +111,7 @@ name|String
 name|pid
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Get the list of properties for a configuration PID.      *      * @param pid the configuration PID.      * @return the list of properties.      * @throws Exception      */
 name|Map
@@ -116,7 +126,7 @@ name|String
 name|pid
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Remove the configuration property identified by the given key.      *      * @param pid the configuration PID.      * @param key the property key.      * @throws Exception      */
 name|void
@@ -129,7 +139,7 @@ name|String
 name|key
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Append (or add) a value for the given configuration key.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the value to append to the current property value.      * @throws Exception      */
 name|void
@@ -145,7 +155,7 @@ name|String
 name|value
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Set a configuration property.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the property value.      * @throws Exception      */
 name|void
@@ -161,7 +171,7 @@ name|String
 name|value
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 block|}
 end_interface
