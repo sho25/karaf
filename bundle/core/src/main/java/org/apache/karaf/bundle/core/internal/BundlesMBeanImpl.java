@@ -306,13 +306,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Bundles MBean implementation.  */
+comment|/**  * BundlesMBean implementation.  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|Bundles
+name|BundlesMBeanImpl
 extends|extends
 name|StandardMBean
 implements|implements
@@ -326,7 +326,7 @@ name|LoggerFactory
 operator|.
 name|getLogger
 argument_list|(
-name|Bundles
+name|BundlesMBeanImpl
 operator|.
 name|class
 argument_list|)
@@ -341,7 +341,7 @@ name|BundleService
 name|bundleService
 decl_stmt|;
 specifier|public
-name|Bundles
+name|BundlesMBeanImpl
 parameter_list|(
 name|BundleContext
 name|bundleContext
@@ -492,9 +492,9 @@ init|=
 operator|new
 name|TabularType
 argument_list|(
-literal|"Bundles"
+literal|"BundlesMBeanImpl"
 argument_list|,
-literal|"Tables of all Bundles"
+literal|"Tables of all BundlesMBeanImpl"
 argument_list|,
 name|bundleType
 argument_list|,
