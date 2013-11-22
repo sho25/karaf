@@ -23,6 +23,16 @@ name|javax
 operator|.
 name|management
 operator|.
+name|MBeanException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|management
+operator|.
 name|openmbean
 operator|.
 name|TabularData
@@ -132,7 +142,7 @@ name|String
 name|featureURLs
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|changeSshPort
@@ -144,7 +154,7 @@ name|int
 name|port
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|changeRmiRegistryPort
@@ -156,7 +166,7 @@ name|int
 name|port
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|changeRmiServerPort
@@ -168,7 +178,7 @@ name|int
 name|port
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|changeJavaOpts
@@ -180,7 +190,7 @@ name|String
 name|javaopts
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|destroyInstance
@@ -189,7 +199,7 @@ name|String
 name|name
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|startInstance
@@ -198,7 +208,7 @@ name|String
 name|name
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|startInstance
@@ -210,7 +220,7 @@ name|String
 name|opts
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|startInstance
@@ -228,7 +238,7 @@ name|boolean
 name|debug
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|stopInstance
@@ -237,7 +247,7 @@ name|String
 name|name
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|renameInstance
@@ -249,7 +259,7 @@ name|String
 name|newName
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|renameInstance
@@ -264,7 +274,7 @@ name|boolean
 name|verbose
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|cloneInstance
@@ -291,14 +301,14 @@ name|String
 name|javaOpts
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|// Attributes
 name|TabularData
 name|getInstances
 parameter_list|()
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 block|}
 end_interface

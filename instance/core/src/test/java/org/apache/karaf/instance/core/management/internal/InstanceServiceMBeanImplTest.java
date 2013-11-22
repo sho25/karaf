@@ -153,7 +153,7 @@ name|core
 operator|.
 name|internal
 operator|.
-name|Instances
+name|InstancesMBeanImpl
 import|;
 end_import
 
@@ -321,11 +321,11 @@ argument_list|(
 name|instanceService
 argument_list|)
 expr_stmt|;
-name|Instances
+name|InstancesMBeanImpl
 name|ab
 init|=
 operator|new
-name|Instances
+name|InstancesMBeanImpl
 argument_list|(
 name|instanceService
 argument_list|)
@@ -442,7 +442,7 @@ name|InstancesMBean
 name|ab
 init|=
 operator|new
-name|Instances
+name|InstancesMBeanImpl
 argument_list|(
 name|instanceService
 argument_list|)
@@ -711,11 +711,11 @@ argument_list|(
 name|instanceService
 argument_list|)
 expr_stmt|;
-name|Instances
+name|InstancesMBeanImpl
 name|instanceServiceMBean
 init|=
 operator|new
-name|Instances
+name|InstancesMBeanImpl
 argument_list|(
 name|instanceService
 argument_list|)
@@ -969,7 +969,7 @@ name|InstancesMBean
 name|instanceServiceMBean
 init|=
 operator|new
-name|Instances
+name|InstancesMBeanImpl
 argument_list|(
 name|instanceService
 argument_list|)
@@ -1076,7 +1076,7 @@ name|InstancesMBean
 name|instanceServiceMBean
 init|=
 operator|new
-name|Instances
+name|InstancesMBeanImpl
 argument_list|(
 name|instanceService
 argument_list|)
@@ -1181,7 +1181,7 @@ name|InstancesMBean
 name|instanceServiceMBean
 init|=
 operator|new
-name|Instances
+name|InstancesMBeanImpl
 argument_list|(
 name|instanceService
 argument_list|)
@@ -1284,7 +1284,7 @@ name|InstancesMBean
 name|instanceServiceMBean
 init|=
 operator|new
-name|Instances
+name|InstancesMBeanImpl
 argument_list|(
 name|instanceService
 argument_list|)
@@ -1389,7 +1389,7 @@ name|InstancesMBean
 name|instanceServiceMBean
 init|=
 operator|new
-name|Instances
+name|InstancesMBeanImpl
 argument_list|(
 name|instanceService
 argument_list|)
@@ -1496,7 +1496,7 @@ name|InstancesMBean
 name|instanceServiceMBean
 init|=
 operator|new
-name|Instances
+name|InstancesMBeanImpl
 argument_list|(
 name|instanceService
 argument_list|)
@@ -1603,7 +1603,7 @@ name|InstancesMBean
 name|instanceServiceMBean
 init|=
 operator|new
-name|Instances
+name|InstancesMBeanImpl
 argument_list|(
 name|instanceService
 argument_list|)
@@ -1710,7 +1710,7 @@ name|InstancesMBean
 name|instanceServiceMBean
 init|=
 operator|new
-name|Instances
+name|InstancesMBeanImpl
 argument_list|(
 name|instanceService
 argument_list|)
