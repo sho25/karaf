@@ -182,7 +182,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|Config
+name|ConfigMBeanImpl
 extends|extends
 name|StandardMBean
 implements|implements
@@ -193,7 +193,7 @@ name|ConfigRepository
 name|configRepo
 decl_stmt|;
 specifier|public
-name|Config
+name|ConfigMBeanImpl
 parameter_list|()
 throws|throws
 name|NotCompliantMBeanException
