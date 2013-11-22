@@ -160,7 +160,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|DiagnosticDump
+name|DiagnosticDumpMBeanImpl
 extends|extends
 name|StandardMBean
 implements|implements
@@ -176,7 +176,7 @@ name|providers
 decl_stmt|;
 comment|/**      * Creates new diagnostic mbean.      *      * @throws NotCompliantMBeanException      */
 specifier|public
-name|DiagnosticDump
+name|DiagnosticDumpMBeanImpl
 parameter_list|()
 throws|throws
 name|NotCompliantMBeanException
