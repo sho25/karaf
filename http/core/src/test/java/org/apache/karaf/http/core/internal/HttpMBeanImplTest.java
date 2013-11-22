@@ -76,7 +76,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|HttpTest
+name|HttpMBeanImplTest
 block|{
 annotation|@
 name|Test
@@ -87,11 +87,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Http
+name|HttpMBeanImpl
 name|httpMBean
 init|=
 operator|new
-name|Http
+name|HttpMBeanImpl
 argument_list|(
 operator|new
 name|ServletServiceImpl

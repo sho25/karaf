@@ -23,6 +23,16 @@ name|javax
 operator|.
 name|management
 operator|.
+name|MBeanException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|management
+operator|.
 name|openmbean
 operator|.
 name|TabularData
@@ -42,6 +52,8 @@ comment|/**      * List details for servlets.      *      * @return a tabular vi
 name|TabularData
 name|getServlets
 parameter_list|()
+throws|throws
+name|MBeanException
 function_decl|;
 block|}
 end_interface
