@@ -340,7 +340,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|FeaturesService
+name|FeaturesServiceMBeanImpl
 extends|extends
 name|StandardEmitterMBean
 implements|implements
@@ -383,7 +383,7 @@ name|FeaturesService
 name|featuresService
 decl_stmt|;
 specifier|public
-name|FeaturesService
+name|FeaturesServiceMBeanImpl
 parameter_list|()
 throws|throws
 name|NotCompliantMBeanException
