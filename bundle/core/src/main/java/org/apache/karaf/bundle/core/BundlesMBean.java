@@ -23,6 +23,16 @@ name|javax
 operator|.
 name|management
 operator|.
+name|MBeanException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|management
+operator|.
 name|openmbean
 operator|.
 name|TabularData
@@ -42,7 +52,7 @@ name|TabularData
 name|getBundles
 parameter_list|()
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|int
 name|getStartLevel
@@ -51,7 +61,7 @@ name|String
 name|bundleId
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|setStartLevel
@@ -63,13 +73,13 @@ name|int
 name|bundleStartLevel
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|refresh
 parameter_list|()
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|refresh
@@ -78,7 +88,7 @@ name|String
 name|bundleId
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|update
@@ -87,7 +97,7 @@ name|String
 name|bundleId
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|update
@@ -99,13 +109,13 @@ name|String
 name|location
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|resolve
 parameter_list|()
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|resolve
@@ -114,7 +124,7 @@ name|String
 name|bundleId
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|restart
@@ -123,7 +133,7 @@ name|String
 name|bundleId
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|long
 name|install
@@ -132,7 +142,7 @@ name|String
 name|url
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|long
 name|install
@@ -144,7 +154,7 @@ name|boolean
 name|start
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|start
@@ -153,7 +163,7 @@ name|String
 name|bundleId
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|stop
@@ -162,7 +172,7 @@ name|String
 name|bundleId
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|uninstall
@@ -171,7 +181,7 @@ name|String
 name|bundleId
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|String
 name|getDiag
