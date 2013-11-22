@@ -45,6 +45,16 @@ name|javax
 operator|.
 name|management
 operator|.
+name|MBeanException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|management
+operator|.
 name|NotCompliantMBeanException
 import|;
 end_import
@@ -164,7 +174,7 @@ name|DumpProvider
 argument_list|>
 name|providers
 decl_stmt|;
-comment|/**      * Creates new diagnostic mbean.      *       * @throws NotCompliantMBeanException      */
+comment|/**      * Creates new diagnostic mbean.      *      * @throws NotCompliantMBeanException      */
 specifier|public
 name|DiagnosticDump
 parameter_list|()
@@ -179,7 +189,7 @@ name|class
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates dump witch given name      *       * @param name Name of the dump.      */
+comment|/**      * Creates dump witch given name      *      * @param name Name of the dump.      */
 specifier|public
 name|void
 name|createDump
@@ -188,7 +198,7 @@ name|String
 name|name
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 block|{
 name|createDump
 argument_list|(
@@ -210,7 +220,9 @@ name|String
 name|name
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
+block|{
+try|try
 block|{
 name|File
 name|target
@@ -271,7 +283,27 @@ name|save
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Sets dump providers.      *       * @param providers Dump providers.       */
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|MBeanException
+argument_list|(
+literal|null
+argument_list|,
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+throw|;
+block|}
+block|}
+comment|/**      * Sets dump providers.      *      * @param providers Dump providers.      */
 specifier|public
 name|void
 name|setProviders

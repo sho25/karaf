@@ -17,6 +17,16 @@ name|core
 package|;
 end_package
 
+begin_import
+import|import
+name|javax
+operator|.
+name|management
+operator|.
+name|MBeanException
+import|;
+end_import
+
 begin_comment
 comment|/**  * Diagnostic MBean which allows to create dumps over JMX.  */
 end_comment
@@ -34,7 +44,7 @@ name|String
 name|name
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Create dump with directory switch and name.      *       * @param directory Should dump be created in directory.      * @param name Name of the dump.      * @throws Exception In case of any problems.      */
 name|void
@@ -47,7 +57,7 @@ name|String
 name|name
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 block|}
 end_interface
