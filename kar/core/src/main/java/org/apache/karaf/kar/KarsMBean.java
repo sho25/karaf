@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|javax
+operator|.
+name|management
+operator|.
+name|MBeanException
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -38,7 +48,7 @@ argument_list|>
 name|getKars
 parameter_list|()
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Create a kar file for a list of feature repos      *      * @param repoName the name of features repository      * @param features the features to include in the kar      * @throws Exception in case of creation failure      */
 name|void
@@ -53,8 +63,6 @@ name|String
 argument_list|>
 name|features
 parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
 comment|/**      * Install a KAR file from the given URL.      *      * @param url the JAR URL.      * @throws Exception in case of installation failure.      */
 name|void
@@ -64,7 +72,7 @@ name|String
 name|url
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Uninstall a KAR file.      *       * @param name the name of the KAR file.      * @throws Exception in case of uninstall failure.      */
 name|void
@@ -74,7 +82,7 @@ name|String
 name|name
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 block|}
 end_interface
