@@ -1453,6 +1453,216 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testJMXSecurityCannotLogInAsGroupDirectly
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|String
+name|suffix
+init|=
+literal|"_"
+operator|+
+name|counter
+operator|.
+name|incrementAndGet
+argument_list|()
+decl_stmt|;
+name|String
+name|managerUser
+init|=
+literal|"managerUser"
+operator|+
+name|System
+operator|.
+name|currentTimeMillis
+argument_list|()
+operator|+
+name|suffix
+decl_stmt|;
+name|String
+name|managerGroup
+init|=
+literal|"managerGroup"
+operator|+
+name|System
+operator|.
+name|currentTimeMillis
+argument_list|()
+operator|+
+name|suffix
+decl_stmt|;
+name|String
+name|viewerUser
+init|=
+literal|"viewerUser"
+operator|+
+name|System
+operator|.
+name|currentTimeMillis
+argument_list|()
+operator|+
+name|suffix
+decl_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+name|executeCommand
+argument_list|(
+literal|"jaas:realm-manage --realm karaf"
+operator|+
+literal|";jaas:user-add "
+operator|+
+name|managerUser
+operator|+
+literal|" "
+operator|+
+name|managerUser
+operator|+
+literal|";jaas:group-add "
+operator|+
+name|managerUser
+operator|+
+literal|" "
+operator|+
+name|managerGroup
+operator|+
+literal|";jaas:group-role-add "
+operator|+
+name|managerGroup
+operator|+
+literal|" viewer"
+operator|+
+literal|";jaas:group-role-add "
+operator|+
+name|managerGroup
+operator|+
+literal|" manager"
+operator|+
+literal|";jaas:user-add "
+operator|+
+name|viewerUser
+operator|+
+literal|" "
+operator|+
+name|viewerUser
+operator|+
+literal|";jaas:role-add "
+operator|+
+name|viewerUser
+operator|+
+literal|" viewer"
+operator|+
+literal|";jaas:update"
+operator|+
+literal|";jaas:realm-manage --realm karaf"
+operator|+
+literal|";jaas:user-list"
+argument_list|)
+argument_list|)
+expr_stmt|;
+try|try
+block|{
+name|getJMXConnector
+argument_list|(
+literal|"admingroup"
+argument_list|,
+literal|"group"
+argument_list|)
+expr_stmt|;
+name|fail
+argument_list|(
+literal|"Login with a group name should have failed"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|SecurityException
+name|se
+parameter_list|)
+block|{
+comment|// good
+block|}
+try|try
+block|{
+name|getJMXConnector
+argument_list|(
+literal|"_g_:admingroup"
+argument_list|,
+literal|"group"
+argument_list|)
+expr_stmt|;
+name|fail
+argument_list|(
+literal|"Login with a group name should have failed"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|SecurityException
+name|se
+parameter_list|)
+block|{
+comment|// good
+block|}
+try|try
+block|{
+name|getJMXConnector
+argument_list|(
+name|managerGroup
+argument_list|,
+literal|"group"
+argument_list|)
+expr_stmt|;
+name|fail
+argument_list|(
+literal|"Login with a group name should have failed"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|SecurityException
+name|se
+parameter_list|)
+block|{
+comment|// good
+block|}
+try|try
+block|{
+name|getJMXConnector
+argument_list|(
+literal|"_g_:"
+operator|+
+name|managerGroup
+argument_list|,
+literal|"group"
+argument_list|)
+expr_stmt|;
+name|fail
+argument_list|(
+literal|"Login with a group name should have failed"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|SecurityException
+name|se
+parameter_list|)
+block|{
+comment|// good
+block|}
+block|}
 specifier|private
 name|void
 name|testJMXSecurityMBean
