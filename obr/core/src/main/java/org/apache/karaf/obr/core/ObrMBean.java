@@ -23,6 +23,16 @@ name|javax
 operator|.
 name|management
 operator|.
+name|MBeanException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|management
+operator|.
 name|openmbean
 operator|.
 name|TabularData
@@ -54,14 +64,12 @@ name|String
 argument_list|>
 name|getUrls
 parameter_list|()
-throws|throws
-name|Exception
 function_decl|;
 name|TabularData
 name|getBundles
 parameter_list|()
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|addUrl
@@ -70,7 +78,7 @@ name|String
 name|url
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|removeUrl
@@ -78,8 +86,6 @@ parameter_list|(
 name|String
 name|url
 parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
 name|void
 name|refreshUrl
@@ -88,7 +94,7 @@ name|String
 name|url
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|deployBundle
@@ -97,7 +103,7 @@ name|String
 name|bundle
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|void
 name|deployBundle
@@ -112,7 +118,7 @@ name|boolean
 name|deployOptional
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 block|}
 end_interface
