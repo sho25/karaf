@@ -743,6 +743,10 @@ block|{
 if|if
 condition|(
 name|session
+operator|!=
+literal|null
+operator|&&
+name|session
 operator|.
 name|get
 argument_list|(
