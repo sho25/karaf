@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|javax
+operator|.
+name|management
+operator|.
+name|MBeanException
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -41,7 +51,7 @@ name|void
 name|halt
 parameter_list|()
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Stop the Karaf instance at a given time.      *      * @param time the time when to stop the Karaf instance.      * @throws Exception      */
 name|void
@@ -51,14 +61,14 @@ name|String
 name|time
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Reboot the Karaf instance.      *      * @throws Exception      */
 name|void
 name|reboot
 parameter_list|()
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Reboot the Karaf instance at a given time.      *      * @param time the time when to reboot the Karaf instance.      * @throws Exception      */
 name|void
@@ -68,7 +78,7 @@ name|String
 name|time
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Reboot the Karaf instance at a given time and clean the cache.      *      * @param time the time when to reboot the Karaf instance.      * @throws Exception      */
 name|void
@@ -78,7 +88,7 @@ name|String
 name|time
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Reboot the Karaf instance at a given time and clean all working files.      *      * @param time the time when to reboot the Karaf instance.      * @throws Exception      */
 name|void
@@ -88,7 +98,7 @@ name|String
 name|time
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Set the system bundle start level.      *      * @param startLevel the new system bundle start level.      * @throws Exception      */
 name|void
@@ -98,14 +108,14 @@ name|int
 name|startLevel
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Get the current system bundle start level.      *      * @return the current system bundle start level.      * @throws Exception      */
 name|int
 name|getStartLevel
 parameter_list|()
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Get the current OSGi framework in use.      *      * @return the name of the OSGi framework in use.      * @throws Exception      */
 name|String
@@ -140,8 +150,6 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
 comment|/**      * Get the version of the current Karaf instance.      *      * @return the current Karaf instance version.      */
 name|String
@@ -164,7 +172,7 @@ name|boolean
 name|dumpToFile
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Get the value of a given system property.      *      * @param key the system property key.      * @return the system property value.      */
 name|String
