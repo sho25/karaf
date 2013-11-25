@@ -72,13 +72,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of the Log MBean.  */
+comment|/**  * Implementation of the LogMBean.  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|Log
+name|LogMBeanImpl
 extends|extends
 name|StandardMBean
 implements|implements
@@ -90,7 +90,7 @@ name|LogService
 name|logService
 decl_stmt|;
 specifier|public
-name|Log
+name|LogMBeanImpl
 parameter_list|(
 name|LogService
 name|logService
