@@ -23,6 +23,16 @@ name|javax
 operator|.
 name|management
 operator|.
+name|MBeanException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|management
+operator|.
 name|openmbean
 operator|.
 name|TabularData
@@ -42,7 +52,7 @@ name|TabularData
 name|getServices
 parameter_list|()
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|TabularData
 name|getServices
@@ -51,7 +61,7 @@ name|boolean
 name|inUse
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|TabularData
 name|getServices
@@ -60,7 +70,7 @@ name|long
 name|bundleId
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 name|TabularData
 name|getServices
@@ -72,7 +82,7 @@ name|boolean
 name|inUse
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 block|}
 end_interface
