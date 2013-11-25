@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|javax
+operator|.
+name|management
+operator|.
+name|MBeanException
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -36,14 +46,14 @@ specifier|public
 interface|interface
 name|WrapperMBean
 block|{
-comment|/**      * Install the service wrapper.      *      * @throws Exception in case of installation failure.      */
+comment|/**      * Install the service wrapper.      *      * @throws MBeanException in case of installation failure.      */
 name|void
 name|install
 parameter_list|()
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
-comment|/**      * Install the service wrapper.      *      * @param name the service name.      * @param displayName the service display name.      * @param description the service description.      * @param startType the start type.      * @return the wrapper configuration (index 0) and service files (index 1).      * @throws Exception in case of installation failure.      */
+comment|/**      * Install the service wrapper.      *      * @param name the service name.      * @param displayName the service display name.      * @param description the service description.      * @param startType the start type.      * @return the wrapper configuration (index 0) and service files (index 1).      * @throws MBeanException in case of installation failure.      */
 name|File
 index|[]
 name|install
@@ -61,7 +71,7 @@ name|String
 name|startType
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 block|}
 end_interface
