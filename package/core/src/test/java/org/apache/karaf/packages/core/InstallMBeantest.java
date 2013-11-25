@@ -63,7 +63,7 @@ name|core
 operator|.
 name|internal
 operator|.
-name|Packages
+name|PackagesMBeanImpl
 import|;
 end_import
 
@@ -103,11 +103,11 @@ operator|.
 name|getPlatformMBeanServer
 argument_list|()
 decl_stmt|;
-name|Packages
+name|PackagesMBeanImpl
 name|pack
 init|=
 operator|new
-name|Packages
+name|PackagesMBeanImpl
 argument_list|(
 literal|null
 argument_list|)

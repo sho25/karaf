@@ -264,30 +264,31 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Bundles MBean implementation.  */
+comment|/**  * Implementation of the Packages MBean.  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|Packages
+name|PackagesMBeanImpl
 extends|extends
 name|StandardMBean
 implements|implements
 name|PackagesMBean
 block|{
 specifier|private
+specifier|final
+specifier|static
 name|Logger
-name|log
+name|LOGGER
 init|=
 name|LoggerFactory
 operator|.
 name|getLogger
 argument_list|(
-name|this
+name|PackagesMBeanImpl
 operator|.
-name|getClass
-argument_list|()
+name|class
 argument_list|)
 decl_stmt|;
 specifier|private
@@ -296,7 +297,7 @@ name|PackageService
 name|packageService
 decl_stmt|;
 specifier|public
-name|Packages
+name|PackagesMBeanImpl
 parameter_list|(
 name|PackageService
 name|packageService
@@ -512,7 +513,7 @@ argument_list|,
 name|data
 argument_list|)
 decl_stmt|;
-name|log
+name|LOGGER
 operator|.
 name|debug
 argument_list|(
@@ -543,7 +544,7 @@ name|e
 parameter_list|)
 block|{
 comment|// To avoid the exception gets swallowed by jmx
-name|log
+name|LOGGER
 operator|.
 name|error
 argument_list|(
@@ -565,7 +566,7 @@ name|OpenDataException
 name|e
 parameter_list|)
 block|{
-name|log
+name|LOGGER
 operator|.
 name|error
 argument_list|(
@@ -807,7 +808,7 @@ name|e
 parameter_list|)
 block|{
 comment|// To avoid the exception gets swallowed by jmx
-name|log
+name|LOGGER
 operator|.
 name|error
 argument_list|(
@@ -829,7 +830,7 @@ name|OpenDataException
 name|e
 parameter_list|)
 block|{
-name|log
+name|LOGGER
 operator|.
 name|error
 argument_list|(

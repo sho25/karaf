@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Package MBean.  */
+comment|/**  * Packages MBean.  */
 end_comment
 
 begin_interface
