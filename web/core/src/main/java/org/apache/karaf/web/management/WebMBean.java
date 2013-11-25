@@ -23,6 +23,16 @@ name|javax
 operator|.
 name|management
 operator|.
+name|MBeanException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|management
+operator|.
 name|openmbean
 operator|.
 name|TabularData
@@ -40,7 +50,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Describe the web MBean.  */
+comment|/**  * Describe the Web MBean.  */
 end_comment
 
 begin_interface
@@ -53,7 +63,7 @@ name|TabularData
 name|getWebBundles
 parameter_list|()
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Start web context of the given web bundles (identified by ID).      *       * @param bundleIds the list of bundle IDs.      *                  TODO use a BundleSelector service      * @throws Exception in case of start failure.      */
 name|void
@@ -66,7 +76,7 @@ argument_list|>
 name|bundleIds
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 comment|/**      * Stop web contact of the given web bundles (identified by ID).      *      * @param bundleIds the list of bundle IDs.      *                  TODO use a BundleSelector service      * @throws Exception in case of stop failure      */
 name|void
@@ -79,7 +89,7 @@ argument_list|>
 name|bundleIds
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
 block|}
 end_interface
