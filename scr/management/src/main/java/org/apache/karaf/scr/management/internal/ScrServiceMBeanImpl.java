@@ -73,37 +73,7 @@ name|javax
 operator|.
 name|management
 operator|.
-name|MBeanServer
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|management
-operator|.
-name|NotCompliantMBeanException
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|management
-operator|.
-name|ObjectName
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|management
-operator|.
-name|StandardMBean
+name|*
 import|;
 end_import
 
@@ -347,7 +317,7 @@ operator|new
 name|ReentrantReadWriteLock
 argument_list|()
 decl_stmt|;
-comment|/**      * Creates new Declarative Services mbean.      *       * @throws NotCompliantMBeanException      */
+comment|/**      * Creates new Declarative Services MBean.      *      * @throws NotCompliantMBeanException      */
 specifier|public
 name|ScrServiceMBeanImpl
 parameter_list|()
@@ -362,7 +332,7 @@ name|class
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Service component activation call back.  Called when all dependencies are satisfied.      *        * @throws Exception      */
+comment|/**      * Service component activation call back.  Called when all dependencies are satisfied.      *      * @throws Exception      */
 annotation|@
 name|Activate
 specifier|public
@@ -472,7 +442,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Service component deactivation call back.  Called after the component is in an active       * state when any dependencies become unsatisfied.      *        * @throws Exception      */
+comment|/**      * Service component deactivation call back.  Called after the component is in an active      * state when any dependencies become unsatisfied.      *      * @throws Exception      */
 annotation|@
 name|Deactivate
 specifier|public
@@ -539,8 +509,6 @@ specifier|public
 name|TabularData
 name|getComponents
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 try|try
 block|{
@@ -579,14 +547,11 @@ literal|null
 return|;
 block|}
 block|}
-comment|/*          * @see org.apache.karaf.management.mbeans.scr.ScrServiceMBean#listComponents()          *          * @return          * @throws Exception          */
 specifier|public
 name|String
 index|[]
 name|listComponents
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Component
 index|[]
@@ -647,7 +612,6 @@ return|return
 name|componentNames
 return|;
 block|}
-comment|/*      * @see org.apache.karaf.management.mbeans.scr.ScrServiceMBean#isComponentActive(java.lang.String)      *      * @param componentName      * @return      * @throws Exception      */
 specifier|public
 name|boolean
 name|isComponentActive
@@ -656,7 +620,9 @@ name|String
 name|componentName
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
+block|{
+try|try
 block|{
 return|return
 operator|(
@@ -675,7 +641,26 @@ else|:
 literal|false
 return|;
 block|}
-comment|/*      * @see org.apache.karaf.management.mbeans.scr.ScrServiceMBean#componentState(java.lang.String)      *      * @param componentName      * @return      * @throws Exception      */
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|MBeanException
+argument_list|(
+literal|null
+argument_list|,
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+throw|;
+block|}
+block|}
 specifier|public
 name|int
 name|componentState
@@ -683,8 +668,6 @@ parameter_list|(
 name|String
 name|componentName
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|int
 name|state
@@ -728,7 +711,6 @@ return|return
 name|state
 return|;
 block|}
-comment|/*      * @see org.apache.karaf.management.mbeans.scr.ScrServiceMBean#activateComponent(java.lang.String)      *      * @param componentName      * @throws Exception      */
 specifier|public
 name|void
 name|activateComponent
@@ -736,8 +718,6 @@ parameter_list|(
 name|String
 name|componentName
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 specifier|final
 name|Component
@@ -770,7 +750,6 @@ name|componentName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      * @see org.apache.karaf.management.mbeans.scr.ScrServiceMBean#deactiveateComponent(java.lang.String)      *      * @param componentName      * @throws Exception      */
 specifier|public
 name|void
 name|deactivateComponent
@@ -778,8 +757,6 @@ parameter_list|(
 name|String
 name|componentName
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 specifier|final
 name|Component
@@ -893,7 +870,6 @@ else|:
 name|components
 return|;
 block|}
-comment|/** 	 * @param mBeanServer the mBeanServer to set 	 */
 annotation|@
 name|Reference
 specifier|public
@@ -926,7 +902,6 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/** 	 * @param scrService the scrService to set 	 */
 annotation|@
 name|Reference
 specifier|public

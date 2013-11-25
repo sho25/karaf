@@ -23,6 +23,16 @@ name|javax
 operator|.
 name|management
 operator|.
+name|MBeanException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|management
+operator|.
 name|openmbean
 operator|.
 name|TabularData
@@ -178,20 +188,16 @@ block|,
 name|REFERENCE_BOUND_SERVICES
 block|}
 decl_stmt|;
-comment|/**      * Displays a {@link TabularData} with all the component details.      * @return      * @throws Exception      */
+comment|/**      * Displays a {@link TabularData} with all the component details.      *      * @return      */
 name|TabularData
 name|getComponents
 parameter_list|()
-throws|throws
-name|Exception
 function_decl|;
-comment|/**      * Presents a {@String} array of components currently registered with the SCR.      *      * @return String[]      * @throws Exception      */
+comment|/**      * Presents a {@String} array of components currently registered with the SCR.      *      * @return String[]      */
 name|String
 index|[]
 name|listComponents
 parameter_list|()
-throws|throws
-name|Exception
 function_decl|;
 comment|/**      * Verifies if the named component is currently in an ACTIVE state.      *      * @param componentName the components name      * @return true if ACTIVE, otherwise false      * @throws Exception      */
 name|boolean
@@ -201,37 +207,31 @@ name|String
 name|componentName
 parameter_list|)
 throws|throws
-name|Exception
+name|MBeanException
 function_decl|;
-comment|/**      * Returns the named components state      *      * @param componentName the components name      * @return      * @throws Exception      */
+comment|/**      * Returns the named components state      *      * @param componentName the components name      * @return      */
 name|int
 name|componentState
 parameter_list|(
 name|String
 name|componentName
 parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
-comment|/**      * Activates a component that is currently in a DISABLED state.      *      * @param componentName the components name      * @throws Exception      */
+comment|/**      * Activates a component that is currently in a DISABLED state.      *      * @param componentName the components name      */
 name|void
 name|activateComponent
 parameter_list|(
 name|String
 name|componentName
 parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
-comment|/**      * Disables a component that is not in an ACTIVE state.      *      * @param componentName the components name      * @throws Exception      */
+comment|/**      * Disables a component that is not in an ACTIVE state.      *      * @param componentName the components name      */
 name|void
 name|deactivateComponent
 parameter_list|(
 name|String
 name|componentName
 parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
 block|}
 end_interface
