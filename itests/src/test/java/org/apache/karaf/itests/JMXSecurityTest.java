@@ -381,6 +381,24 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|jaas
+operator|.
+name|boot
+operator|.
+name|principal
+operator|.
+name|RolePrincipal
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|junit
 operator|.
 name|Test
@@ -737,6 +755,12 @@ operator|+
 literal|";jaas:realm-manage --realm karaf"
 operator|+
 literal|";jaas:user-list"
+argument_list|,
+operator|new
+name|RolePrincipal
+argument_list|(
+literal|"admin"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1024,6 +1048,12 @@ operator|+
 literal|";jaas:realm-manage --realm karaf"
 operator|+
 literal|";jaas:user-list"
+argument_list|,
+operator|new
+name|RolePrincipal
+argument_list|(
+literal|"admin"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1565,6 +1595,12 @@ operator|+
 literal|";jaas:realm-manage --realm karaf"
 operator|+
 literal|";jaas:user-list"
+argument_list|,
+operator|new
+name|RolePrincipal
+argument_list|(
+literal|"admin"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
