@@ -51,6 +51,24 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|jaas
+operator|.
+name|boot
+operator|.
+name|principal
+operator|.
+name|RolePrincipal
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|junit
 operator|.
 name|Test
@@ -160,6 +178,12 @@ argument_list|(
 name|executeCommand
 argument_list|(
 literal|"system:shutdown -f"
+argument_list|,
+operator|new
+name|RolePrincipal
+argument_list|(
+literal|"admin"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
