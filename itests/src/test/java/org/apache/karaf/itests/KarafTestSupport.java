@@ -124,6 +124,26 @@ import|;
 end_import
 
 begin_import
+import|import static
+name|org
+operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|exam
+operator|.
+name|karaf
+operator|.
+name|options
+operator|.
+name|KarafDistributionOption
+operator|.
+name|configureSecurity
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -903,6 +923,13 @@ argument_list|(
 literal|"target/exam"
 argument_list|)
 argument_list|)
+block|,
+comment|// enable JMX RBAC security, thanks to the KarafMBeanServerBuilder
+name|configureSecurity
+argument_list|()
+operator|.
+name|enableKarafMBeanServerBuilder
+argument_list|()
 block|,
 name|keepRuntimeFolder
 argument_list|()
