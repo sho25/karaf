@@ -477,6 +477,8 @@ name|run
 argument_list|(
 name|commandProcessor
 argument_list|,
+name|threadio
+argument_list|,
 name|args
 argument_list|,
 name|in
@@ -496,6 +498,9 @@ name|run
 parameter_list|(
 name|CommandSession
 name|parent
+parameter_list|,
+name|ThreadIO
+name|threadIO
 parameter_list|,
 name|String
 name|args
@@ -565,6 +570,8 @@ name|run
 argument_list|(
 name|commandProcessor
 argument_list|,
+name|threadIO
+argument_list|,
 name|args
 argument_list|,
 name|in
@@ -581,6 +588,9 @@ name|run
 parameter_list|(
 name|CommandProcessorImpl
 name|commandProcessor
+parameter_list|,
+name|ThreadIO
+name|threadIO
 parameter_list|,
 name|String
 index|[]
@@ -1037,6 +1047,8 @@ name|run
 argument_list|(
 name|commandProcessor
 argument_list|,
+name|threadIO
+argument_list|,
 name|sb
 operator|.
 name|toString
@@ -1057,6 +1069,9 @@ parameter_list|(
 specifier|final
 name|CommandProcessorImpl
 name|commandProcessor
+parameter_list|,
+name|ThreadIO
+name|threadIO
 parameter_list|,
 name|String
 name|command
@@ -1355,6 +1370,8 @@ name|createConsole
 argument_list|(
 name|commandProcessor
 argument_list|,
+name|threadIO
+argument_list|,
 name|in
 argument_list|,
 name|out
@@ -1518,6 +1535,9 @@ parameter_list|(
 name|CommandProcessorImpl
 name|commandProcessor
 parameter_list|,
+name|ThreadIO
+name|threadIO
+parameter_list|,
 name|InputStream
 name|in
 parameter_list|,
@@ -1538,6 +1558,8 @@ operator|new
 name|ConsoleImpl
 argument_list|(
 name|commandProcessor
+argument_list|,
+name|threadIO
 argument_list|,
 name|in
 argument_list|,

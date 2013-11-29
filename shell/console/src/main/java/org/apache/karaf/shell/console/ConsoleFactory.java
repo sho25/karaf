@@ -73,6 +73,22 @@ name|CommandProcessor
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|felix
+operator|.
+name|service
+operator|.
+name|threadio
+operator|.
+name|ThreadIO
+import|;
+end_import
+
 begin_interface
 specifier|public
 interface|interface
@@ -83,6 +99,9 @@ name|create
 parameter_list|(
 name|CommandProcessor
 name|processor
+parameter_list|,
+name|ThreadIO
+name|threadIO
 parameter_list|,
 name|InputStream
 name|in
@@ -109,6 +128,9 @@ name|createLocal
 parameter_list|(
 name|CommandProcessor
 name|processor
+parameter_list|,
+name|ThreadIO
+name|threadIO
 parameter_list|,
 name|Terminal
 name|terminal
