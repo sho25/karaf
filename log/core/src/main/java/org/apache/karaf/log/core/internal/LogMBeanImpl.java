@@ -71,6 +71,16 @@ name|LogService
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
 begin_comment
 comment|/**  * Implementation of the LogMBean.  */
 end_comment
@@ -122,14 +132,19 @@ block|{
 return|return
 name|logService
 operator|.
-name|getLevelSt
+name|getLevel
 argument_list|()
 return|;
 block|}
 annotation|@
 name|Override
 specifier|public
+name|Map
+argument_list|<
 name|String
+argument_list|,
+name|String
+argument_list|>
 name|getLevel
 parameter_list|(
 name|String
@@ -139,14 +154,12 @@ block|{
 return|return
 name|logService
 operator|.
-name|getLevelSt
+name|getLevel
 argument_list|(
 name|logger
 argument_list|)
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|setLevel
@@ -165,8 +178,6 @@ name|level
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|setLevel

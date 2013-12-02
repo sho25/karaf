@@ -17,6 +17,16 @@ name|core
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
 begin_comment
 comment|/**  * Log MBean.  */
 end_comment
@@ -30,30 +40,20 @@ name|String
 name|getLevel
 parameter_list|()
 function_decl|;
+name|Map
+argument_list|<
 name|String
+argument_list|,
+name|String
+argument_list|>
 name|getLevel
 parameter_list|(
 name|String
 name|logger
 parameter_list|)
 function_decl|;
-name|void
-name|setLevel
-parameter_list|(
-name|String
-name|level
-parameter_list|)
-function_decl|;
-name|void
-name|setLevel
-parameter_list|(
-name|String
-name|logger
-parameter_list|,
-name|String
-name|level
-parameter_list|)
-function_decl|;
+comment|// void setLevel(String level);
+comment|// void setLevel(String logger, String level);
 block|}
 end_interface
 
