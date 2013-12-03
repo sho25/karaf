@@ -160,6 +160,8 @@ name|logger
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setLevel
@@ -172,12 +174,14 @@ name|this
 operator|.
 name|logService
 operator|.
-name|setLevelSt
+name|setLevel
 argument_list|(
 name|level
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setLevel
@@ -193,7 +197,7 @@ name|this
 operator|.
 name|logService
 operator|.
-name|setLevelSt
+name|setLevel
 argument_list|(
 name|logger
 argument_list|,

@@ -52,8 +52,23 @@ name|String
 name|logger
 parameter_list|)
 function_decl|;
-comment|// void setLevel(String level);
-comment|// void setLevel(String logger, String level);
+name|void
+name|setLevel
+parameter_list|(
+name|String
+name|level
+parameter_list|)
+function_decl|;
+name|void
+name|setLevel
+parameter_list|(
+name|String
+name|logger
+parameter_list|,
+name|String
+name|level
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

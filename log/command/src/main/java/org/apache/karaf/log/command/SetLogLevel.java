@@ -136,7 +136,7 @@ name|Exception
 block|{
 name|logService
 operator|.
-name|setLevelSt
+name|setLevel
 argument_list|(
 name|logger
 argument_list|,

@@ -312,8 +312,18 @@ name|Exception
 block|{
 try|try
 block|{
-comment|// logMBean.setLevel("INVALID");
-comment|// fail("Exception expected");
+name|logMBean
+operator|.
+name|setLevel
+argument_list|(
+literal|"INVALID"
+argument_list|)
+expr_stmt|;
+name|fail
+argument_list|(
+literal|"Exception expected"
+argument_list|)
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
@@ -331,8 +341,27 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// logMBean.setLevel("org.apache.karaf.test", "INFO");
-comment|// assertEquals("INFO", properties.get(PACKAGE_LOGGER));
+name|logMBean
+operator|.
+name|setLevel
+argument_list|(
+literal|"org.apache.karaf.test"
+argument_list|,
+literal|"INFO"
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"INFO"
+argument_list|,
+name|properties
+operator|.
+name|get
+argument_list|(
+name|PACKAGE_LOGGER
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -341,8 +370,25 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// logMBean.setLevel("INFO");
-comment|// assertEquals("INFO", properties.get(ROOT_LOGGER));
+name|logMBean
+operator|.
+name|setLevel
+argument_list|(
+literal|"INFO"
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"INFO"
+argument_list|,
+name|properties
+operator|.
+name|get
+argument_list|(
+name|ROOT_LOGGER
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -351,8 +397,27 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// logMBean.setLevel("org.apache.karaf.test", "info");
-comment|// assertEquals("INFO", properties.get(PACKAGE_LOGGER));
+name|logMBean
+operator|.
+name|setLevel
+argument_list|(
+literal|"org.apache.karaf.test"
+argument_list|,
+literal|"info"
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"INFO"
+argument_list|,
+name|properties
+operator|.
+name|get
+argument_list|(
+name|PACKAGE_LOGGER
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -361,8 +426,25 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// logMBean.setLevel("info");
-comment|// assertEquals("INFO", properties.get(ROOT_LOGGER));
+name|logMBean
+operator|.
+name|setLevel
+argument_list|(
+literal|"info"
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"INFO"
+argument_list|,
+name|properties
+operator|.
+name|get
+argument_list|(
+name|ROOT_LOGGER
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -380,8 +462,27 @@ argument_list|,
 literal|"DEBUG"
 argument_list|)
 expr_stmt|;
-comment|// logMBean.setLevel("org.apache.karaf.test", "INFO");
-comment|// assertEquals("INFO", properties.get(PACKAGE_LOGGER));
+name|logMBean
+operator|.
+name|setLevel
+argument_list|(
+literal|"org.apache.karaf.test"
+argument_list|,
+literal|"INFO"
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"INFO"
+argument_list|,
+name|properties
+operator|.
+name|get
+argument_list|(
+name|PACKAGE_LOGGER
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -399,8 +500,25 @@ argument_list|,
 literal|"DEBUG"
 argument_list|)
 expr_stmt|;
-comment|// logMBean.setLevel("INFO");
-comment|// assertEquals("INFO", properties.get(ROOT_LOGGER));
+name|logMBean
+operator|.
+name|setLevel
+argument_list|(
+literal|"INFO"
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"INFO"
+argument_list|,
+name|properties
+operator|.
+name|get
+argument_list|(
+name|ROOT_LOGGER
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -418,8 +536,27 @@ argument_list|,
 literal|"DEBUG, APPENDER1"
 argument_list|)
 expr_stmt|;
-comment|// logMBean.setLevel("org.apache.karaf.test", "INFO");
-comment|// assertEquals("INFO, APPENDER1", properties.get(PACKAGE_LOGGER));
+name|logMBean
+operator|.
+name|setLevel
+argument_list|(
+literal|"org.apache.karaf.test"
+argument_list|,
+literal|"INFO"
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"INFO, APPENDER1"
+argument_list|,
+name|properties
+operator|.
+name|get
+argument_list|(
+name|PACKAGE_LOGGER
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -437,8 +574,25 @@ argument_list|,
 literal|"DEBUG, APPENDER1"
 argument_list|)
 expr_stmt|;
-comment|// logMBean.setLevel("INFO");
-comment|// assertEquals("INFO, APPENDER1", properties.get(ROOT_LOGGER));
+name|logMBean
+operator|.
+name|setLevel
+argument_list|(
+literal|"INFO"
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"INFO, APPENDER1"
+argument_list|,
+name|properties
+operator|.
+name|get
+argument_list|(
+name|ROOT_LOGGER
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -456,8 +610,27 @@ argument_list|,
 literal|"DEBUG"
 argument_list|)
 expr_stmt|;
-comment|// logMBean.setLevel("org.apache.karaf.test", "DEFAULT");
-comment|// assertFalse("Configuration for logger org.apache.karaf.test has been removed", properties.containsKey(PACKAGE_LOGGER));
+name|logMBean
+operator|.
+name|setLevel
+argument_list|(
+literal|"org.apache.karaf.test"
+argument_list|,
+literal|"DEFAULT"
+argument_list|)
+expr_stmt|;
+name|assertFalse
+argument_list|(
+literal|"Configuration for logger org.apache.karaf.test has been removed"
+argument_list|,
+name|properties
+operator|.
+name|containsKey
+argument_list|(
+name|PACKAGE_LOGGER
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -475,8 +648,29 @@ argument_list|,
 literal|"INFO"
 argument_list|)
 expr_stmt|;
-comment|// logMBean.setLevel("org.apache.karaf.test", "DEFAULT");
-comment|// assertEquals("Configuration for root logger should not be removed", "INFO", properties.get(ROOT_LOGGER));
+name|logMBean
+operator|.
+name|setLevel
+argument_list|(
+literal|"org.apache.karaf.test"
+argument_list|,
+literal|"DEFAULT"
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"Configuration for root logger should not be removed"
+argument_list|,
+literal|"INFO"
+argument_list|,
+name|properties
+operator|.
+name|get
+argument_list|(
+name|ROOT_LOGGER
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class
