@@ -86,23 +86,6 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-name|void
-name|update
-parameter_list|(
-name|String
-name|pid
-parameter_list|,
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
-name|properties
-parameter_list|)
-throws|throws
-name|MBeanException
-function_decl|;
 comment|/**      * Delete a configuration identified by the given PID.      *      * @param pid the configuration PID to delete.      * @throws Exception      */
 name|void
 name|delete
