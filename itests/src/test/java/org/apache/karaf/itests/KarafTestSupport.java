@@ -59,6 +59,26 @@ name|options
 operator|.
 name|KarafDistributionOption
 operator|.
+name|configureSecurity
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|exam
+operator|.
+name|karaf
+operator|.
+name|options
+operator|.
+name|KarafDistributionOption
+operator|.
 name|editConfigurationFilePut
 import|;
 end_import
@@ -120,26 +140,6 @@ operator|.
 name|KarafDistributionOption
 operator|.
 name|replaceConfigurationFile
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|ops4j
-operator|.
-name|pax
-operator|.
-name|exam
-operator|.
-name|karaf
-operator|.
-name|options
-operator|.
-name|KarafDistributionOption
-operator|.
-name|configureSecurity
 import|;
 end_import
 
@@ -2577,7 +2577,7 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * The feature service does not uninstall feature dependencies when uninstalling a single feature.      * So we need to make sure we uninstall all features that were newly installed.      *      * @param featuresBefore      * @throws Exception      */
-specifier|private
+specifier|protected
 name|void
 name|uninstallNewFeatures
 parameter_list|(
