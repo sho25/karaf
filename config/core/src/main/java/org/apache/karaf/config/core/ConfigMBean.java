@@ -156,6 +156,24 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
+comment|/**      * Update a complete configuration.      *      * @param pid the configuration PID.      * @param properties the new properties to set in the configuration.      * @throws MBeanException      */
+name|void
+name|update
+parameter_list|(
+name|String
+name|pid
+parameter_list|,
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|properties
+parameter_list|)
+throws|throws
+name|MBeanException
+function_decl|;
 block|}
 end_interface
 
