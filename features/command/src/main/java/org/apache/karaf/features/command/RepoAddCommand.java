@@ -136,11 +136,11 @@ literal|0
 argument_list|,
 name|name
 operator|=
-literal|"Feature name or uri"
+literal|"name/url"
 argument_list|,
 name|description
 operator|=
-literal|"Shortcut name of the feature repository or the full URI"
+literal|"Shortcut name of the features repository or the full URL"
 argument_list|,
 name|required
 operator|=
@@ -163,11 +163,11 @@ literal|1
 argument_list|,
 name|name
 operator|=
-literal|"Feature version"
+literal|"version"
 argument_list|,
 name|description
 operator|=
-literal|"The version of the feature if using the feature name. Should be empty if using the uri"
+literal|"The version of the features repository if using features repository name as first argument. It should be empty if using the URL"
 argument_list|,
 name|required
 operator|=
@@ -196,7 +196,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"Install all features contained in the repository"
+literal|"Install all features contained in the features repository"
 argument_list|,
 name|required
 operator|=
