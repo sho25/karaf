@@ -486,7 +486,9 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"presentationname"
+literal|"symbolicname"
+block|,
+literal|"version"
 block|}
 argument_list|)
 decl_stmt|;
@@ -574,6 +576,9 @@ name|i
 index|]
 operator|.
 name|getVersion
+argument_list|()
+operator|.
+name|toString
 argument_list|()
 block|}
 argument_list|)
