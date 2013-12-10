@@ -17,29 +17,37 @@ name|commands
 package|;
 end_package
 
-begin_comment
-comment|/**  * An action allows to easily execute commands in karaf.  * It can be assumed that each action is only accessed by a single thread at a time.  *   * An Action is always part of an AbstractCommand. The AbstractCommand makes sure  * the single threaded assumption above is true. Before the call to the execute method  * the action is checked for annotated fields (@Argument, @Option). These fields  * are populated from the command arguments before the action is called.  *   * @deprecated use org.apache.karaf.shell.commands.Action instead  */
-end_comment
-
-begin_interface
-annotation|@
-name|Deprecated
-specifier|public
-interface|interface
-name|Action
-extends|extends
+begin_import
+import|import
 name|org
 operator|.
 name|apache
 operator|.
-name|karaf
+name|felix
 operator|.
-name|shell
+name|service
 operator|.
-name|commands
+name|command
 operator|.
+name|CommandSession
+import|;
+end_import
+
+begin_interface
+specifier|public
+interface|interface
 name|Action
-block|{ }
+block|{
+name|Object
+name|execute
+parameter_list|(
+name|CommandSession
+name|session
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+block|}
 end_interface
 
 end_unit
