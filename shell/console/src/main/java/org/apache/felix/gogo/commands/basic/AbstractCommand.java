@@ -67,13 +67,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|karaf
+name|felix
 operator|.
-name|shell
+name|service
 operator|.
-name|commands
+name|command
 operator|.
-name|CompatibleCommandWithAction
+name|Function
 import|;
 end_import
 
@@ -85,7 +85,7 @@ specifier|abstract
 class|class
 name|AbstractCommand
 implements|implements
-name|CompatibleCommandWithAction
+name|Function
 block|{
 specifier|public
 name|Object
