@@ -475,6 +475,8 @@ control|)
 block|{
 if|if
 condition|(
+name|showAll
+operator|||
 operator|!
 name|isCommand
 argument_list|(
