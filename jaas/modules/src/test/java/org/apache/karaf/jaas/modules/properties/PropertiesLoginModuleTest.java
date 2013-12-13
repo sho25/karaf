@@ -1676,10 +1676,7 @@ name|assertEquals
 argument_list|(
 literal|"Users file not found at /test/users.properties"
 argument_list|,
-name|e
-operator|.
-name|getMessage
-argument_list|()
+name|message
 argument_list|)
 expr_stmt|;
 block|}
