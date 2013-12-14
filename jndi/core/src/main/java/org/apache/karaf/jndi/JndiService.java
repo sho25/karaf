@@ -21,6 +21,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Map
 import|;
 end_import
@@ -54,6 +64,29 @@ argument_list|,
 name|String
 argument_list|>
 name|names
+parameter_list|(
+name|String
+name|context
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * List all JNDI sub-contexts.      *      * @return a list containing the sub-context names.      * @throws Exception      */
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|contexts
+parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * List the JNDI sub-context from a given context.      *      * @param context the base JNDI context.      * @return a list containing the sub-context names.      * @throws Exception      */
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|contexts
 parameter_list|(
 name|String
 name|context
