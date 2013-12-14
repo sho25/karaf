@@ -85,7 +85,7 @@ literal|"jndi"
 argument_list|,
 name|name
 operator|=
-literal|"list"
+literal|"names"
 argument_list|,
 name|description
 operator|=
@@ -93,7 +93,7 @@ literal|"List the JNDI names."
 argument_list|)
 specifier|public
 class|class
-name|ListCommand
+name|NamesCommand
 extends|extends
 name|JndiCommandSupport
 block|{
@@ -173,7 +173,7 @@ operator|.
 name|getJndiService
 argument_list|()
 operator|.
-name|list
+name|names
 argument_list|()
 expr_stmt|;
 block|}
@@ -186,7 +186,7 @@ operator|.
 name|getJndiService
 argument_list|()
 operator|.
-name|list
+name|names
 argument_list|(
 name|context
 argument_list|)

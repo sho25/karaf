@@ -167,7 +167,7 @@ name|String
 argument_list|,
 name|String
 argument_list|>
-name|list
+name|names
 parameter_list|()
 throws|throws
 name|Exception
@@ -180,7 +180,7 @@ name|String
 argument_list|>
 name|result
 init|=
-name|list
+name|names
 argument_list|(
 literal|"/"
 argument_list|)
@@ -189,7 +189,7 @@ name|result
 operator|.
 name|putAll
 argument_list|(
-name|list
+name|names
 argument_list|(
 name|OSGI_JNDI_CONTEXT_PREFIX
 operator|+
@@ -210,7 +210,7 @@ name|String
 argument_list|,
 name|String
 argument_list|>
-name|list
+name|names
 parameter_list|(
 name|String
 name|name
@@ -475,7 +475,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|list
+name|names
 argument_list|(
 operator|(
 name|Context
@@ -517,7 +517,7 @@ specifier|private
 specifier|static
 specifier|final
 name|void
-name|list
+name|names
 parameter_list|(
 name|Context
 name|ctx
@@ -608,7 +608,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|list
+name|names
 argument_list|(
 operator|(
 name|Context

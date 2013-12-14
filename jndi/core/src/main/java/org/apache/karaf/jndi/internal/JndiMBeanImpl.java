@@ -101,7 +101,7 @@ name|this
 operator|.
 name|jndiService
 operator|.
-name|list
+name|names
 argument_list|()
 return|;
 block|}
@@ -149,7 +149,7 @@ name|this
 operator|.
 name|jndiService
 operator|.
-name|list
+name|names
 argument_list|(
 name|context
 argument_list|)

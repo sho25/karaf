@@ -41,19 +41,19 @@ name|String
 argument_list|,
 name|String
 argument_list|>
-name|list
+name|names
 parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * List the current JNDI name in the given context.      *      * @param context the JNDI context.      * @return the JNDI names in the context.      * @throws Exception      */
+comment|/**      * List the current JNDI names in the given context.      *      * @param context the JNDI context.      * @return the JNDI names in the context.      * @throws Exception      */
 name|Map
 argument_list|<
 name|String
 argument_list|,
 name|String
 argument_list|>
-name|list
+name|names
 parameter_list|(
 name|String
 name|context
