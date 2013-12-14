@@ -90,6 +90,8 @@ operator|.
 name|FIELD
 block|}
 argument_list|)
+annotation|@
+name|Deprecated
 specifier|public
 annotation_defn|@interface
 name|CompleterValues

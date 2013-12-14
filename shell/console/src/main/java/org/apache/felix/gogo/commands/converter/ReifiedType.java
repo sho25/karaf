@@ -24,6 +24,8 @@ comment|/**  * Provides access to a concrete type and its optional generic type 
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|ReifiedType

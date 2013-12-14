@@ -34,6 +34,8 @@ comment|/**  * Base class for exceptions thrown when executing commands.  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|CommandException
