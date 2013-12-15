@@ -67,6 +67,17 @@ parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
+comment|/**      * Get a list of JNDI sub-contexts (as attribute).      *      * @return the MBean attribute containing the list of sub-contexts.      * @throws MBeanException      */
+specifier|public
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|getContexts
+parameter_list|()
+throws|throws
+name|MBeanException
+function_decl|;
 comment|/**      * Get a map of JNDI names/class names children of a given base context.      *      * @param context the base context.      * @return the map of names/class names.      * @throws MBeanException      */
 specifier|public
 name|Map
@@ -80,17 +91,6 @@ parameter_list|(
 name|String
 name|context
 parameter_list|)
-throws|throws
-name|MBeanException
-function_decl|;
-comment|/**      * Get a list of JNDI sub-contexts (as attribute).      *      * @return the MBean attribute containing the list of sub-contexts.      * @throws MBeanException      */
-specifier|public
-name|List
-argument_list|<
-name|String
-argument_list|>
-name|getContexts
-parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
