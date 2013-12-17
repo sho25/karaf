@@ -1420,6 +1420,27 @@ argument_list|(
 name|commandService
 argument_list|)
 expr_stmt|;
+name|String
+name|subShellName
+init|=
+literal|".subshell."
+operator|+
+name|scope
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|context
+operator|.
+name|getComponentDefinitionRegistry
+argument_list|()
+operator|.
+name|containsComponentDefinition
+argument_list|(
+name|subShellName
+argument_list|)
+condition|)
+block|{
 comment|// create the sub-shell action
 name|MutableBeanMetadata
 name|subShellAction
@@ -1641,8 +1662,7 @@ name|subShellCommandService
 operator|.
 name|setId
 argument_list|(
-name|getName
-argument_list|()
+name|subShellName
 argument_list|)
 expr_stmt|;
 name|subShellCommandService
@@ -1752,6 +1772,7 @@ argument_list|(
 name|subShellCommandService
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|private
 name|MutableBeanMetadata
