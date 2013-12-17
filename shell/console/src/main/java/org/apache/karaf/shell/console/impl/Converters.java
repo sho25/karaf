@@ -185,7 +185,7 @@ name|framework
 operator|.
 name|startlevel
 operator|.
-name|FrameworkStartLevel
+name|BundleStartLevel
 import|;
 end_import
 
@@ -231,7 +231,7 @@ name|bundle
 operator|.
 name|adapt
 argument_list|(
-name|FrameworkStartLevel
+name|BundleStartLevel
 operator|.
 name|class
 argument_list|)
