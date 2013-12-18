@@ -1363,7 +1363,10 @@ name|scope
 init|=
 name|dependency
 operator|.
-name|getPremanagedScope
+name|getDependency
+argument_list|()
+operator|.
+name|getScope
 argument_list|()
 decl_stmt|;
 if|if
