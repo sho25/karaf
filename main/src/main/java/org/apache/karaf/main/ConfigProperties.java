@@ -249,7 +249,7 @@ name|PROPERTY_LOCK_CLASS
 init|=
 literal|"karaf.lock.class"
 decl_stmt|;
-specifier|private
+specifier|public
 specifier|static
 specifier|final
 name|String
@@ -382,6 +382,14 @@ name|SECURITY_PROVIDERS
 init|=
 literal|"org.apache.karaf.security.providers"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DEFAULT_LOCK_DELAY
+init|=
+literal|"1000"
+decl_stmt|;
 comment|/**      * If a lock should be used before starting the runtime      */
 specifier|private
 specifier|static
@@ -425,8 +433,6 @@ literal|1
 decl_stmt|;
 name|int
 name|lockDelay
-init|=
-literal|1000
 decl_stmt|;
 name|int
 name|shutdownTimeout
@@ -992,12 +998,7 @@ name|getProperty
 argument_list|(
 name|PROPERTY_LOCK_DELAY
 argument_list|,
-name|Integer
-operator|.
-name|toString
-argument_list|(
-name|lockDelay
-argument_list|)
+name|DEFAULT_LOCK_DELAY
 argument_list|)
 argument_list|)
 expr_stmt|;

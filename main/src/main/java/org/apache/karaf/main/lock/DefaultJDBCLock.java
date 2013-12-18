@@ -95,6 +95,18 @@ name|util
 operator|.
 name|logging
 operator|.
+name|Level
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|logging
+operator|.
 name|Logger
 import|;
 end_import
@@ -403,6 +415,7 @@ name|init
 argument_list|()
 expr_stmt|;
 block|}
+comment|/**      * This method is called to create an instance of the Statements instance.      *      * @return an instance of a Statements object      */
 name|Statements
 name|createStatements
 parameter_list|()
@@ -453,10 +466,14 @@ parameter_list|)
 block|{
 name|LOG
 operator|.
-name|severe
+name|log
 argument_list|(
-literal|"Error occured while attempting to obtain connection: "
-operator|+
+name|Level
+operator|.
+name|SEVERE
+argument_list|,
+literal|"Error occured while attempting to obtain connection"
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -468,6 +485,7 @@ parameter_list|()
 block|{
 comment|// do nothing in the default implementation
 block|}
+comment|/**      * This method is called to check and create the required schemas that are used by this instance.      */
 name|void
 name|createSchema
 parameter_list|()
@@ -499,12 +517,21 @@ name|statement
 init|=
 literal|null
 decl_stmt|;
+name|Connection
+name|connection
+init|=
+literal|null
+decl_stmt|;
 try|try
 block|{
-name|statement
+name|connection
 operator|=
 name|getConnection
 argument_list|()
+expr_stmt|;
+name|statement
+operator|=
+name|connection
 operator|.
 name|createStatement
 argument_list|()
@@ -517,6 +544,15 @@ range|:
 name|createStatments
 control|)
 block|{
+name|LOG
+operator|.
+name|info
+argument_list|(
+literal|"Executing statement: "
+operator|+
+name|stmt
+argument_list|)
+expr_stmt|;
 name|statement
 operator|.
 name|execute
@@ -540,13 +576,40 @@ parameter_list|)
 block|{
 name|LOG
 operator|.
-name|severe
+name|log
 argument_list|(
-literal|"Could not create schema: "
-operator|+
+name|Level
+operator|.
+name|SEVERE
+argument_list|,
+literal|"Could not create schema"
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
+try|try
+block|{
+comment|// Rollback transaction if and only if there was a failure...
+if|if
+condition|(
+name|connection
+operator|!=
+literal|null
+condition|)
+name|connection
+operator|.
+name|rollback
+argument_list|()
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|ie
+parameter_list|)
+block|{
+comment|// Do nothing....
+block|}
 block|}
 finally|finally
 block|{
@@ -557,9 +620,28 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * This method is called to determine if the required database schemas have already been created or not.      *      * @return true, if the schemas are available else false.      */
 name|boolean
 name|schemaExists
 parameter_list|()
+block|{
+return|return
+name|schemaExist
+argument_list|(
+name|statements
+operator|.
+name|getFullLockTableName
+argument_list|()
+argument_list|)
+return|;
+block|}
+comment|/**      * This method is called to determine if the required table is available or not.      *      * @param tableName  The name of the table to determine if it exists      *      * @return true, if the table exists else false      */
+name|boolean
+name|schemaExist
+parameter_list|(
+name|String
+name|tableName
+parameter_list|)
 block|{
 name|ResultSet
 name|rs
@@ -587,10 +669,7 @@ literal|null
 argument_list|,
 literal|null
 argument_list|,
-name|statements
-operator|.
-name|getFullLockTableName
-argument_list|()
+name|tableName
 argument_list|,
 operator|new
 name|String
@@ -616,10 +695,14 @@ parameter_list|)
 block|{
 name|LOG
 operator|.
-name|severe
+name|log
 argument_list|(
-literal|"Error testing for db table: "
-operator|+
+name|Level
+operator|.
+name|SEVERE
+argument_list|,
+literal|"Error testing for db table"
+argument_list|,
 name|ignore
 argument_list|)
 expr_stmt|;
@@ -718,12 +801,17 @@ name|Exception
 name|e
 parameter_list|)
 block|{
+comment|// Do we want to display this message everytime???
 name|LOG
 operator|.
-name|warning
+name|log
 argument_list|(
-literal|"Failed to acquire database lock: "
-operator|+
+name|Level
+operator|.
+name|WARNING
+argument_list|,
+literal|"Failed to acquire database lock"
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -809,10 +897,14 @@ parameter_list|)
 block|{
 name|LOG
 operator|.
-name|warning
+name|log
 argument_list|(
-literal|"Failed to update database lock: "
-operator|+
+name|Level
+operator|.
+name|WARNING
+argument_list|,
+literal|"Failed to update database lock"
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -860,10 +952,14 @@ parameter_list|)
 block|{
 name|LOG
 operator|.
-name|severe
+name|log
 argument_list|(
-literal|"Exception while rollbacking the connection on release: "
-operator|+
+name|Level
+operator|.
+name|SEVERE
+argument_list|,
+literal|"Exception while rollbacking the connection on release"
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -887,10 +983,14 @@ parameter_list|)
 block|{
 name|LOG
 operator|.
-name|fine
+name|log
 argument_list|(
-literal|"Exception while closing connection on release: "
-operator|+
+name|Level
+operator|.
+name|FINE
+argument_list|,
+literal|"Exception while closing connection on release"
+argument_list|,
 name|ignored
 argument_list|)
 expr_stmt|;
@@ -933,6 +1033,7 @@ name|updateLock
 argument_list|()
 return|;
 block|}
+comment|/**      * This method is called to determine if this instance jdbc connection is      * still connected.      *      * @return true, if the connection is still connected else false      *      * @throws SQLException      */
 name|boolean
 name|isConnected
 parameter_list|()
@@ -951,6 +1052,7 @@ name|isClosed
 argument_list|()
 return|;
 block|}
+comment|/**      * This method is called to safely close a Statement.      *      * @param preparedStatement The statement to be closed      */
 name|void
 name|closeSafely
 parameter_list|(
@@ -981,16 +1083,21 @@ parameter_list|)
 block|{
 name|LOG
 operator|.
-name|severe
+name|log
 argument_list|(
-literal|"Failed to close statement: "
-operator|+
+name|Level
+operator|.
+name|SEVERE
+argument_list|,
+literal|"Failed to close statement"
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 block|}
+comment|/**      * This method is called to safely close a ResultSet instance.      *      * @param rs The result set to be closed      */
 name|void
 name|closeSafely
 parameter_list|(
@@ -1021,16 +1128,21 @@ parameter_list|)
 block|{
 name|LOG
 operator|.
-name|severe
+name|log
 argument_list|(
-literal|"Error occured while releasing ResultSet: "
-operator|+
+name|Level
+operator|.
+name|SEVERE
+argument_list|,
+literal|"Error occured while releasing ResultSet"
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 block|}
+comment|/**      * This method will return an active connection for this given jdbc driver.      *      * @return jdbc Connection instance      *      * @throws Exception      */
 name|Connection
 name|getConnection
 parameter_list|()
@@ -1145,10 +1257,14 @@ parameter_list|)
 block|{
 name|LOG
 operator|.
-name|severe
+name|log
 argument_list|(
-literal|"Error occured while setting up JDBC connection: "
-operator|+
+name|Level
+operator|.
+name|SEVERE
+argument_list|,
+literal|"Error occured while setting up JDBC connection"
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
