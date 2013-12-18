@@ -483,6 +483,14 @@ name|DEFAULT_SHUTDOWN_COMMAND
 init|=
 literal|"SHUTDOWN"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DEFAULT_JAVA_OPTS
+init|=
+literal|"-server -Xmx512M -Dcom.sun.management.jmxremote -XX:+UnlockDiagnosticVMOptions -XX:+UnsyncloadClass"
+decl_stmt|;
 specifier|private
 name|LinkedHashMap
 argument_list|<
@@ -2359,7 +2367,7 @@ condition|)
 block|{
 name|javaOpts
 operator|=
-literal|"-server -Xmx512M -Dcom.sun.management.jmxremote"
+name|DEFAULT_JAVA_OPTS
 expr_stmt|;
 block|}
 name|InstanceState
@@ -2832,7 +2840,7 @@ condition|)
 block|{
 name|opts
 operator|=
-literal|"-server -Xmx512M -Dcom.sun.management.jmxremote"
+name|DEFAULT_JAVA_OPTS
 expr_stmt|;
 block|}
 name|String
@@ -4436,7 +4444,7 @@ condition|)
 block|{
 name|javaOpts
 operator|=
-literal|"-server -Xmx512M -Dcom.sun.management.jmxremote"
+name|DEFAULT_JAVA_OPTS
 expr_stmt|;
 block|}
 name|InstanceState
