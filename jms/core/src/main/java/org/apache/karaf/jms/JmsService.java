@@ -80,7 +80,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Get details about a given JMS connection factory.      *      * @param connectionFactory the JMS connection factory name.      * @return a map (property/value) containing details.      * @throws Exception      */
+comment|/**      * Get details about a given JMS connection factory.      *      * @param connectionFactory the JMS connection factory name.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return a map (property/value) containing details.      * @throws Exception      */
 name|Map
 argument_list|<
 name|String
@@ -91,11 +91,17 @@ name|info
 parameter_list|(
 name|String
 name|connectionFactory
+parameter_list|,
+name|String
+name|username
+parameter_list|,
+name|String
+name|password
 parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Count the number of messages in a JMS queue.      *      * @param connectionFactory the JMS connection factory name.      * @param queue the queue name.      * @return the number of messages in a JMS queue.      * @throws Exception      */
+comment|/**      * Count the number of messages in a JMS queue.      *      * @param connectionFactory the JMS connection factory name.      * @param queue the queue name.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return the number of messages in a JMS queue.      * @throws Exception      */
 name|int
 name|count
 parameter_list|(
@@ -104,11 +110,17 @@ name|connectionFactory
 parameter_list|,
 name|String
 name|queue
+parameter_list|,
+name|String
+name|username
+parameter_list|,
+name|String
+name|password
 parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * List the queues.      *      * @param connectionFactory the JMS connection factory name.      * @return the list of queues.      * @throws Exception      */
+comment|/**      * List the queues.      *      * @param connectionFactory the JMS connection factory name.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return the list of queues.      * @throws Exception      */
 name|List
 argument_list|<
 name|String
@@ -117,11 +129,17 @@ name|queues
 parameter_list|(
 name|String
 name|connectionFactory
+parameter_list|,
+name|String
+name|username
+parameter_list|,
+name|String
+name|password
 parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * List the topics.      *      * @param connectionFactory the JMS connection factory name.      * @return the list of topics.      * @throws Exception      */
+comment|/**      * List the topics.      *      * @param connectionFactory the JMS connection factory name.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return the list of topics.      * @throws Exception      */
 name|List
 argument_list|<
 name|String
@@ -130,11 +148,17 @@ name|topics
 parameter_list|(
 name|String
 name|connectionFactory
+parameter_list|,
+name|String
+name|username
+parameter_list|,
+name|String
+name|password
 parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Browse a destination.      *      * @param connectionFactory the JMS connection factory name.      * @param queue the queue name.      * @param selector the selector.      * @return the list of messages.      * @throws Exception      */
+comment|/**      * Browse a destination.      *      * @param connectionFactory the JMS connection factory name.      * @param queue the queue name.      * @param selector the selector.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return the list of messages.      * @throws Exception      */
 name|List
 argument_list|<
 name|JmsMessage
@@ -149,11 +173,17 @@ name|queue
 parameter_list|,
 name|String
 name|selector
+parameter_list|,
+name|String
+name|username
+parameter_list|,
+name|String
+name|password
 parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Send a message on the given queue.      *      * @param connectionFactory the JMS connection factory name.      * @param queue the queue name.      * @param body the message body.      * @param replyTo the message replyTo header.      * @throws Exception      */
+comment|/**      * Send a message on the given queue.      *      * @param connectionFactory the JMS connection factory name.      * @param queue the queue name.      * @param body the message body.      * @param replyTo the message replyTo header.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @throws Exception      */
 name|void
 name|send
 parameter_list|(
@@ -168,11 +198,17 @@ name|body
 parameter_list|,
 name|String
 name|replyTo
+parameter_list|,
+name|String
+name|username
+parameter_list|,
+name|String
+name|password
 parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Consume messages from a given destination.      *      * @param connectionFactory the JMS connection factory name.      * @param queue the queue name.      * @param selector the messages selector.      * @return the number of messages consumed.      * @throws Exception      */
+comment|/**      * Consume messages from a given destination.      *      * @param connectionFactory the JMS connection factory name.      * @param queue the queue name.      * @param selector the messages selector.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return the number of messages consumed.      * @throws Exception      */
 name|int
 name|consume
 parameter_list|(
@@ -184,11 +220,17 @@ name|queue
 parameter_list|,
 name|String
 name|selector
+parameter_list|,
+name|String
+name|username
+parameter_list|,
+name|String
+name|password
 parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Move messages from a destination to another.      *      * @param connectionFactory the JMS connection factory name.      * @param sourceQueue the source queue.      * @param targetQueue the target queue.      * @param selector the messages selector on the source queue.      * @return the number of messages moved.      * @throws Exception      */
+comment|/**      * Move messages from a destination to another.      *      * @param connectionFactory the JMS connection factory name.      * @param sourceQueue the source queue.      * @param targetQueue the target queue.      * @param selector the messages selector on the source queue.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return the number of messages moved.      * @throws Exception      */
 name|int
 name|move
 parameter_list|(
@@ -203,6 +245,12 @@ name|targetQueue
 parameter_list|,
 name|String
 name|selector
+parameter_list|,
+name|String
+name|username
+parameter_list|,
+name|String
+name|password
 parameter_list|)
 throws|throws
 name|Exception
