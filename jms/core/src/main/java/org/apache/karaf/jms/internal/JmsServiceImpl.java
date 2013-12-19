@@ -2163,6 +2163,11 @@ operator|!=
 literal|null
 condition|)
 do|;
+name|session
+operator|.
+name|commit
+argument_list|()
+expr_stmt|;
 block|}
 finally|finally
 block|{

@@ -959,7 +959,7 @@ argument_list|()
 block|,
 name|message
 operator|.
-name|getProperties
+name|getPriority
 argument_list|()
 block|,
 name|message
