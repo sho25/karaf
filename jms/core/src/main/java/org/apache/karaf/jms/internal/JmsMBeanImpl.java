@@ -797,7 +797,7 @@ name|STRING
 block|,
 name|SimpleType
 operator|.
-name|INTEGER
+name|STRING
 block|,
 name|SimpleType
 operator|.
@@ -805,7 +805,7 @@ name|STRING
 block|,
 name|SimpleType
 operator|.
-name|LONG
+name|STRING
 block|,
 name|SimpleType
 operator|.
@@ -821,7 +821,7 @@ name|STRING
 block|,
 name|SimpleType
 operator|.
-name|LONG
+name|STRING
 block|}
 argument_list|)
 decl_stmt|;
