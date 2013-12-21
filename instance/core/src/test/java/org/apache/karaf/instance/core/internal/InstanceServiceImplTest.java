@@ -271,7 +271,7 @@ argument_list|()
 operator|.
 name|replace
 argument_list|(
-literal|"etc/startup.properties"
+literal|"startup.properties"
 argument_list|,
 literal|""
 argument_list|)
@@ -280,7 +280,7 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
-literal|"karaf.base"
+literal|"karaf.etc"
 argument_list|,
 name|buildDirectory
 argument_list|)
