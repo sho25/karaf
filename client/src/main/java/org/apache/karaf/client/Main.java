@@ -556,6 +556,13 @@ operator|.
 name|console
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|console
+operator|!=
+literal|null
+condition|)
+block|{
 name|console
 operator|.
 name|printf
@@ -568,6 +575,7 @@ name|getUser
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
