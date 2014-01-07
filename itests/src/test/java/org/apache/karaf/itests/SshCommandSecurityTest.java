@@ -408,220 +408,221 @@ argument_list|,
 name|vieweruser
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+comment|// TODO viewer user
+name|assertCommand
 argument_list|(
 name|manageruser
 argument_list|,
-literal|"bundle:refresh -f 999\n"
+literal|"bundle:refresh -f 999"
 argument_list|,
 name|Result
 operator|.
 name|NO_CREDENTIALS
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 name|manageruser
 argument_list|,
-literal|"bundle:refresh 999\n"
+literal|"bundle:refresh 999"
 argument_list|,
 name|Result
 operator|.
 name|OK
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"bundle:refresh -f 999\n"
+literal|"bundle:refresh -f 999"
 argument_list|,
 name|Result
 operator|.
 name|OK
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 name|manageruser
 argument_list|,
-literal|"bundle:restart -f 999\n"
+literal|"bundle:restart -f 999"
 argument_list|,
 name|Result
 operator|.
 name|NO_CREDENTIALS
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 name|manageruser
 argument_list|,
-literal|"bundle:restart 999\n"
+literal|"bundle:restart 999"
 argument_list|,
 name|Result
 operator|.
 name|OK
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"bundle:restart -f 999\n"
+literal|"bundle:restart -f 999"
 argument_list|,
 name|Result
 operator|.
 name|OK
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 name|manageruser
 argument_list|,
-literal|"bundle:start -f 999\n"
+literal|"bundle:start -f 999"
 argument_list|,
 name|Result
 operator|.
 name|NO_CREDENTIALS
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 name|manageruser
 argument_list|,
-literal|"bundle:start 999\n"
+literal|"bundle:start 999"
 argument_list|,
 name|Result
 operator|.
 name|OK
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"bundle:start -f 999\n"
+literal|"bundle:start -f 999"
 argument_list|,
 name|Result
 operator|.
 name|OK
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 name|manageruser
 argument_list|,
-literal|"bundle:stop -f 999\n"
+literal|"bundle:stop -f 999"
 argument_list|,
 name|Result
 operator|.
 name|NO_CREDENTIALS
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 name|manageruser
 argument_list|,
-literal|"bundle:stop 999\n"
+literal|"bundle:stop 999"
 argument_list|,
 name|Result
 operator|.
 name|OK
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"bundle:stop -f 999\n"
+literal|"bundle:stop -f 999"
 argument_list|,
 name|Result
 operator|.
 name|OK
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 name|manageruser
 argument_list|,
-literal|"bundle:uninstall -f 999\n"
+literal|"bundle:uninstall -f 999"
 argument_list|,
 name|Result
 operator|.
 name|NO_CREDENTIALS
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 name|manageruser
 argument_list|,
-literal|"bundle:uninstall 999\n"
+literal|"bundle:uninstall 999"
 argument_list|,
 name|Result
 operator|.
 name|OK
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"bundle:uninstall -f 999\n"
+literal|"bundle:uninstall -f 999"
 argument_list|,
 name|Result
 operator|.
 name|OK
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 name|manageruser
 argument_list|,
-literal|"bundle:update -f 999\n"
+literal|"bundle:update -f 999"
 argument_list|,
 name|Result
 operator|.
 name|NO_CREDENTIALS
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 name|manageruser
 argument_list|,
-literal|"bundle:update 999\n"
+literal|"bundle:update 999"
 argument_list|,
 name|Result
 operator|.
 name|OK
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"bundle:update -f 999\n"
+literal|"bundle:update -f 999"
 argument_list|,
 name|Result
 operator|.
 name|OK
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 name|manageruser
 argument_list|,
-literal|"bundle:install xyz\n"
+literal|"bundle:install xyz"
 argument_list|,
 name|Result
 operator|.
 name|NOT_FOUND
 argument_list|)
 expr_stmt|;
-name|testCommandCredentials
+name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"bundle:install xyz\n"
+literal|"bundle:install xyz"
 argument_list|,
 name|Result
 operator|.
@@ -629,9 +630,338 @@ name|OK
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testConfigCommandSecurityViaSsh
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|String
+name|manageruser
+init|=
+literal|"man"
+operator|+
+name|System
+operator|.
+name|nanoTime
+argument_list|()
+operator|+
+literal|"_"
+operator|+
+name|counter
+operator|++
+decl_stmt|;
+name|String
+name|vieweruser
+init|=
+literal|"view"
+operator|+
+name|System
+operator|.
+name|nanoTime
+argument_list|()
+operator|+
+literal|"_"
+operator|+
+name|counter
+operator|++
+decl_stmt|;
+name|addUsers
+argument_list|(
+name|manageruser
+argument_list|,
+name|vieweruser
+argument_list|)
+expr_stmt|;
+name|testConfigEditsSuccessful
+argument_list|(
+name|manageruser
+argument_list|,
+literal|false
+argument_list|)
+expr_stmt|;
+name|testConfigEditsSuccessful
+argument_list|(
+literal|"karaf"
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
 specifier|private
 name|void
-name|testCommandCredentials
+name|testConfigEditsSuccessful
+parameter_list|(
+name|String
+name|user
+parameter_list|,
+name|boolean
+name|isAdmin
+parameter_list|)
+throws|throws
+name|Exception
+throws|,
+name|IOException
+block|{
+name|String
+name|pid
+init|=
+literal|"cfg."
+operator|+
+name|user
+operator|+
+literal|"_"
+operator|+
+name|counter
+operator|++
+decl_stmt|;
+name|assertCommand
+argument_list|(
+name|user
+argument_list|,
+literal|"config:edit "
+operator|+
+name|pid
+operator|+
+literal|"\n"
+operator|+
+literal|"config:property-set x y\n"
+operator|+
+literal|"config:property-set a b\n"
+operator|+
+literal|"config:property-append x z\n"
+operator|+
+literal|"config:update"
+argument_list|,
+name|Result
+operator|.
+name|OK
+argument_list|)
+expr_stmt|;
+name|String
+name|result
+init|=
+name|assertCommand
+argument_list|(
+name|user
+argument_list|,
+literal|"config:edit "
+operator|+
+name|pid
+operator|+
+literal|"\n"
+operator|+
+literal|"config:property-list"
+argument_list|,
+name|Result
+operator|.
+name|OK
+argument_list|)
+decl_stmt|;
+name|Assert
+operator|.
+name|assertTrue
+argument_list|(
+name|result
+operator|.
+name|contains
+argument_list|(
+literal|"x = yz"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|Assert
+operator|.
+name|assertTrue
+argument_list|(
+name|result
+operator|.
+name|contains
+argument_list|(
+literal|"a = b"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|String
+name|result2
+init|=
+name|assertCommand
+argument_list|(
+name|user
+argument_list|,
+literal|"config:edit "
+operator|+
+name|pid
+operator|+
+literal|"\n"
+operator|+
+literal|"config:property-delete a\n"
+operator|+
+literal|"config:property-list\n"
+operator|+
+literal|"config:update"
+argument_list|,
+name|Result
+operator|.
+name|OK
+argument_list|)
+decl_stmt|;
+name|Assert
+operator|.
+name|assertTrue
+argument_list|(
+name|result2
+operator|.
+name|contains
+argument_list|(
+literal|"x = yz"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|Assert
+operator|.
+name|assertFalse
+argument_list|(
+name|result2
+operator|.
+name|contains
+argument_list|(
+literal|"a = b"
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|isAdmin
+condition|)
+block|{
+name|assertCommand
+argument_list|(
+name|user
+argument_list|,
+literal|"config:delete "
+operator|+
+name|pid
+argument_list|,
+name|Result
+operator|.
+name|OK
+argument_list|)
+expr_stmt|;
+name|String
+name|result3
+init|=
+name|assertCommand
+argument_list|(
+name|user
+argument_list|,
+literal|"config:edit "
+operator|+
+name|pid
+operator|+
+literal|"\n"
+operator|+
+literal|"config:property-list"
+argument_list|,
+name|Result
+operator|.
+name|OK
+argument_list|)
+decl_stmt|;
+name|Assert
+operator|.
+name|assertFalse
+argument_list|(
+name|result3
+operator|.
+name|contains
+argument_list|(
+literal|"x = yz"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|Assert
+operator|.
+name|assertFalse
+argument_list|(
+name|result3
+operator|.
+name|contains
+argument_list|(
+literal|"a = b"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|assertCommand
+argument_list|(
+name|user
+argument_list|,
+literal|"config:delete "
+operator|+
+name|pid
+argument_list|,
+name|Result
+operator|.
+name|NOT_FOUND
+argument_list|)
+expr_stmt|;
+name|String
+name|result3
+init|=
+name|assertCommand
+argument_list|(
+name|user
+argument_list|,
+literal|"config:edit "
+operator|+
+name|pid
+operator|+
+literal|"\n"
+operator|+
+literal|"config:property-list"
+argument_list|,
+name|Result
+operator|.
+name|OK
+argument_list|)
+decl_stmt|;
+name|Assert
+operator|.
+name|assertTrue
+argument_list|(
+literal|"The delete command should have had no effect"
+argument_list|,
+name|result3
+operator|.
+name|contains
+argument_list|(
+literal|"x = yz"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|Assert
+operator|.
+name|assertFalse
+argument_list|(
+name|result3
+operator|.
+name|contains
+argument_list|(
+literal|"a = b"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+specifier|private
+name|String
+name|assertCommand
 parameter_list|(
 name|String
 name|user
@@ -647,6 +977,20 @@ name|Exception
 throws|,
 name|IOException
 block|{
+if|if
+condition|(
+operator|!
+name|command
+operator|.
+name|endsWith
+argument_list|(
+literal|"\n"
+argument_list|)
+condition|)
+name|command
+operator|+=
+literal|"\n"
+expr_stmt|;
 name|ByteArrayOutputStream
 name|out
 init|=
@@ -662,6 +1006,8 @@ argument_list|(
 name|user
 argument_list|,
 name|user
+argument_list|,
+name|out
 argument_list|,
 name|out
 argument_list|)
@@ -781,6 +1127,9 @@ name|result
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|output
+return|;
 block|}
 specifier|private
 name|void
