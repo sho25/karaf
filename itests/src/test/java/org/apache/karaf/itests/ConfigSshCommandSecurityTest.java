@@ -109,6 +109,10 @@ name|PerClass
 import|;
 end_import
 
+begin_comment
+comment|/**  * This test exercises the Shell Command ACL for the config scope commands as defined in  * /framework/src/main/resources/resources/etc/org.apache.karaf.command.acl.config.cfg  */
+end_comment
+
 begin_class
 annotation|@
 name|RunWith
