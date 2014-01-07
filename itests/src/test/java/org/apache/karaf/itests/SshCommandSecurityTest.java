@@ -408,7 +408,17 @@ argument_list|,
 name|vieweruser
 argument_list|)
 expr_stmt|;
-comment|// TODO viewer user
+name|assertCommand
+argument_list|(
+name|vieweruser
+argument_list|,
+literal|"bundle:refresh 999"
+argument_list|,
+name|Result
+operator|.
+name|NOT_FOUND
+argument_list|)
+expr_stmt|;
 name|assertCommand
 argument_list|(
 name|manageruser
@@ -440,6 +450,28 @@ argument_list|,
 name|Result
 operator|.
 name|OK
+argument_list|)
+expr_stmt|;
+name|assertCommand
+argument_list|(
+literal|"karaf"
+argument_list|,
+literal|"bundle:refresh 999"
+argument_list|,
+name|Result
+operator|.
+name|OK
+argument_list|)
+expr_stmt|;
+name|assertCommand
+argument_list|(
+name|vieweruser
+argument_list|,
+literal|"bundle:restart 999"
+argument_list|,
+name|Result
+operator|.
+name|NOT_FOUND
 argument_list|)
 expr_stmt|;
 name|assertCommand
@@ -477,6 +509,28 @@ argument_list|)
 expr_stmt|;
 name|assertCommand
 argument_list|(
+literal|"karaf"
+argument_list|,
+literal|"bundle:restart 999"
+argument_list|,
+name|Result
+operator|.
+name|OK
+argument_list|)
+expr_stmt|;
+name|assertCommand
+argument_list|(
+name|vieweruser
+argument_list|,
+literal|"bundle:start 999"
+argument_list|,
+name|Result
+operator|.
+name|NOT_FOUND
+argument_list|)
+expr_stmt|;
+name|assertCommand
+argument_list|(
 name|manageruser
 argument_list|,
 literal|"bundle:start -f 999"
@@ -506,6 +560,28 @@ argument_list|,
 name|Result
 operator|.
 name|OK
+argument_list|)
+expr_stmt|;
+name|assertCommand
+argument_list|(
+literal|"karaf"
+argument_list|,
+literal|"bundle:start 999"
+argument_list|,
+name|Result
+operator|.
+name|OK
+argument_list|)
+expr_stmt|;
+name|assertCommand
+argument_list|(
+name|vieweruser
+argument_list|,
+literal|"bundle:stop 999"
+argument_list|,
+name|Result
+operator|.
+name|NOT_FOUND
 argument_list|)
 expr_stmt|;
 name|assertCommand
@@ -543,6 +619,28 @@ argument_list|)
 expr_stmt|;
 name|assertCommand
 argument_list|(
+literal|"karaf"
+argument_list|,
+literal|"bundle:stop 999"
+argument_list|,
+name|Result
+operator|.
+name|OK
+argument_list|)
+expr_stmt|;
+name|assertCommand
+argument_list|(
+name|vieweruser
+argument_list|,
+literal|"bundle:uninstall 999"
+argument_list|,
+name|Result
+operator|.
+name|NOT_FOUND
+argument_list|)
+expr_stmt|;
+name|assertCommand
+argument_list|(
 name|manageruser
 argument_list|,
 literal|"bundle:uninstall -f 999"
@@ -576,6 +674,28 @@ argument_list|)
 expr_stmt|;
 name|assertCommand
 argument_list|(
+literal|"karaf"
+argument_list|,
+literal|"bundle:uninstall 999"
+argument_list|,
+name|Result
+operator|.
+name|OK
+argument_list|)
+expr_stmt|;
+name|assertCommand
+argument_list|(
+name|vieweruser
+argument_list|,
+literal|"bundle:update 999"
+argument_list|,
+name|Result
+operator|.
+name|NOT_FOUND
+argument_list|)
+expr_stmt|;
+name|assertCommand
+argument_list|(
 name|manageruser
 argument_list|,
 literal|"bundle:update -f 999"
@@ -605,6 +725,28 @@ argument_list|,
 name|Result
 operator|.
 name|OK
+argument_list|)
+expr_stmt|;
+name|assertCommand
+argument_list|(
+literal|"karaf"
+argument_list|,
+literal|"bundle:update 999"
+argument_list|,
+name|Result
+operator|.
+name|OK
+argument_list|)
+expr_stmt|;
+name|assertCommand
+argument_list|(
+name|vieweruser
+argument_list|,
+literal|"bundle:install xyz"
+argument_list|,
+name|Result
+operator|.
+name|NOT_FOUND
 argument_list|)
 expr_stmt|;
 name|assertCommand
