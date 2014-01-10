@@ -7188,6 +7188,22 @@ if|if
 condition|(
 name|source
 operator|.
+name|getName
+argument_list|()
+operator|.
+name|matches
+argument_list|(
+literal|"transaction_\\d+\\.log"
+argument_list|)
+condition|)
+block|{
+comment|// ignore active txlog files
+return|return;
+block|}
+if|if
+condition|(
+name|source
+operator|.
 name|isDirectory
 argument_list|()
 condition|)
