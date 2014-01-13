@@ -115,6 +115,22 @@ name|ConfigurationAdmin
 name|getConfigAdmin
 parameter_list|()
 function_decl|;
+comment|/**      * Create a factory based configuration.      *      * @param factoryPid      * @param properties the new properties to set in the configuration.      * @return created pid      */
+name|String
+name|createFactoryConfiguration
+parameter_list|(
+name|String
+name|factoryPid
+parameter_list|,
+name|Dictionary
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
+name|properties
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

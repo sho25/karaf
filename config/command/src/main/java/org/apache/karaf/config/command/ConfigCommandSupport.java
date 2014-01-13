@@ -87,6 +87,14 @@ name|PROPERTY_CONFIG_PROPS
 init|=
 literal|"ConfigCommand.Props"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|PROPERTY_FACTORY
+init|=
+literal|"ConfigCommand.Factory"
+decl_stmt|;
 specifier|protected
 name|ConfigRepository
 name|configRepository
