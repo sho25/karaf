@@ -183,10 +183,6 @@ name|SYNTAX
 init|=
 literal|"blueprint: bp-xml-uri"
 decl_stmt|;
-specifier|private
-name|URL
-name|blueprintXmlURL
-decl_stmt|;
 comment|/**      * Open the connection for the given URL.      *      * @param url the url from which to open a connection.      * @return a connection on the specified URL.      * @throws IOException if an error occurs or if the URL is malformed.      */
 annotation|@
 name|Override
@@ -233,24 +229,16 @@ name|SYNTAX
 argument_list|)
 throw|;
 block|}
-name|blueprintXmlURL
-operator|=
-operator|new
-name|URL
-argument_list|(
-name|url
-operator|.
-name|getPath
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|logger
 operator|.
 name|debug
 argument_list|(
 literal|"Blueprint xml URL is: ["
 operator|+
-name|blueprintXmlURL
+name|url
+operator|.
+name|getPath
+argument_list|()
 operator|+
 literal|"]"
 argument_list|)
@@ -261,15 +249,6 @@ name|Connection
 argument_list|(
 name|url
 argument_list|)
-return|;
-block|}
-specifier|public
-name|URL
-name|getBlueprintXmlURL
-parameter_list|()
-block|{
-return|return
-name|blueprintXmlURL
 return|;
 block|}
 specifier|public
@@ -322,7 +301,14 @@ name|BlueprintTransformer
 operator|.
 name|transform
 argument_list|(
-name|blueprintXmlURL
+operator|new
+name|URL
+argument_list|(
+name|url
+operator|.
+name|getPath
+argument_list|()
+argument_list|)
 argument_list|,
 name|os
 argument_list|)
