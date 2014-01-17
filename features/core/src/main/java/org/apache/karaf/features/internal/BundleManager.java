@@ -702,6 +702,11 @@ operator|*
 literal|1024
 argument_list|)
 expr_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"resource"
+argument_list|)
 name|JarInputStream
 name|jar
 init|=
