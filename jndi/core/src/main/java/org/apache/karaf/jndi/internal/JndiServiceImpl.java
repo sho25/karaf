@@ -168,7 +168,7 @@ specifier|static
 name|String
 name|OSGI_JNDI_CONTEXT_PREFIX
 init|=
-literal|"osgi:service"
+literal|"osgi:service/"
 decl_stmt|;
 specifier|private
 specifier|final
@@ -212,8 +212,6 @@ argument_list|(
 name|names
 argument_list|(
 name|OSGI_JNDI_CONTEXT_PREFIX
-operator|+
-literal|"/"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -489,6 +487,8 @@ name|sb
 operator|.
 name|append
 argument_list|(
+literal|"/"
+operator|+
 name|pair
 operator|.
 name|getName
@@ -514,6 +514,8 @@ name|map
 operator|.
 name|put
 argument_list|(
+literal|"/"
+operator|+
 name|pair
 operator|.
 name|getName
