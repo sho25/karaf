@@ -78,13 +78,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Completer on the JMS connection factories.  */
+comment|/**  * Completer on the JMS connection factory file names.  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|ConnectionFactoriesCompleter
+name|ConnectionFactoriesFileNameCompleter
 implements|implements
 name|Completer
 block|{
@@ -127,7 +127,7 @@ name|connectionFactory
 range|:
 name|jmsService
 operator|.
-name|connectionFactories
+name|connectionFactoryFileNames
 argument_list|()
 control|)
 block|{
@@ -139,6 +139,20 @@ operator|.
 name|add
 argument_list|(
 name|connectionFactory
+operator|.
+name|replace
+argument_list|(
+literal|"connectionfactory-"
+argument_list|,
+literal|""
+argument_list|)
+operator|.
+name|replace
+argument_list|(
+literal|".xml"
+argument_list|,
+literal|""
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

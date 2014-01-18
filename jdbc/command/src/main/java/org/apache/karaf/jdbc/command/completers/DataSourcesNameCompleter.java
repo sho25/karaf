@@ -78,13 +78,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Completer on the JDBC datasources JNDI name (identifier).  */
+comment|/**  * Completer on the JDBC datasources name (JNDI or OSGi service property).  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|DataSourcesJNDINameCompleter
+name|DataSourcesNameCompleter
 implements|implements
 name|Completer
 block|{

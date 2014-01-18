@@ -54,6 +54,16 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * List the JMS connecion factories file names.      *      * @return the list of JMS connection factory file names.      * @throws Exception      */
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|connectionFactoryFileNames
+parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
 comment|/**      * Create a new JMS connection factory.      *      * @param name the JMS connection factory name.      * @param type the JMS connection factory type (ActiveMQ, WebsphereMQ, ...).      * @param url the JMS URL to use.      * @throws Exception      */
 name|void
 name|create

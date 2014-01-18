@@ -140,7 +140,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"JNDI Name"
+literal|"Name"
 block|,
 literal|"Database product"
 block|,
