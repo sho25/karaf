@@ -78,13 +78,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Completer on the JDBC datasources name/identifier  */
+comment|/**  * Completer on the JDBC datasources file name.  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|DataSourcesCompleter
+name|DataSourcesFileNameCompleter
 implements|implements
 name|Completer
 block|{
@@ -123,11 +123,11 @@ block|{
 for|for
 control|(
 name|String
-name|datasource
+name|datasourceFileName
 range|:
 name|jdbcService
 operator|.
-name|datasources
+name|datasourceFileNames
 argument_list|()
 control|)
 block|{
@@ -138,7 +138,21 @@ argument_list|()
 operator|.
 name|add
 argument_list|(
-name|datasource
+name|datasourceFileName
+operator|.
+name|replace
+argument_list|(
+literal|"datasource-"
+argument_list|,
+literal|""
+argument_list|)
+operator|.
+name|replace
+argument_list|(
+literal|".xml"
+argument_list|,
+literal|""
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
