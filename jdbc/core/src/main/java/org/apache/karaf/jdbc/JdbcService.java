@@ -95,6 +95,16 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * List the JDBC datasources configuration file names present in the deploy folder.      *      * @return a list of the JDBC datasources configuration file names.      */
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|datasourceFileNames
+parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
 comment|/**      * Execute a SQL query on a given JDBC datasource.      *      * @param datasource the JDBC datasource name.      * @param query the SQL query to execute.      * @return the SQL query result (as a String).      */
 name|Map
 argument_list|<

@@ -140,7 +140,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"JDBC DataSource Name"
+literal|"Name"
 block|,
 literal|"Database product"
 block|,
