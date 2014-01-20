@@ -820,10 +820,14 @@ name|f
 operator|.
 name|addConfigFile
 argument_list|(
+operator|new
+name|ConfigFileRef
+argument_list|(
 name|c
 operator|.
 name|getTextContent
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
