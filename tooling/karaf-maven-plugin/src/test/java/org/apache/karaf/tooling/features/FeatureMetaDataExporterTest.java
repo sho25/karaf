@@ -61,7 +61,7 @@ name|features
 operator|.
 name|model
 operator|.
-name|BundleRef
+name|ArtifactRef
 import|;
 end_import
 
@@ -79,7 +79,7 @@ name|features
 operator|.
 name|model
 operator|.
-name|ConfigFileRef
+name|BundleRef
 import|;
 end_import
 
@@ -226,11 +226,11 @@ argument_list|(
 name|bundleArtifact
 argument_list|)
 expr_stmt|;
-name|ConfigFileRef
+name|ArtifactRef
 name|configFile
 init|=
 operator|new
-name|ConfigFileRef
+name|ArtifactRef
 argument_list|(
 literal|"mvn:org.apache.example/example/1.0.0/cfg"
 argument_list|)
