@@ -184,6 +184,15 @@ range|:
 name|ids
 control|)
 block|{
+if|if
+condition|(
+name|id
+operator|==
+literal|null
+condition|)
+block|{
+continue|continue;
+block|}
 name|addMatchingBundles
 argument_list|(
 name|id
