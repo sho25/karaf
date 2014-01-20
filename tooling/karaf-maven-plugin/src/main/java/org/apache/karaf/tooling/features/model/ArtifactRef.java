@@ -36,7 +36,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|ConfigFileRef
+name|ArtifactRef
 block|{
 name|String
 name|url
@@ -45,7 +45,7 @@ name|Artifact
 name|artifact
 decl_stmt|;
 specifier|public
-name|ConfigFileRef
+name|ArtifactRef
 parameter_list|(
 name|String
 name|url

@@ -131,14 +131,14 @@ decl_stmt|;
 specifier|private
 name|List
 argument_list|<
-name|ConfigFileRef
+name|ArtifactRef
 argument_list|>
 name|configFiles
 init|=
 operator|new
 name|ArrayList
 argument_list|<
-name|ConfigFileRef
+name|ArtifactRef
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -235,7 +235,7 @@ block|}
 specifier|public
 name|List
 argument_list|<
-name|ConfigFileRef
+name|ArtifactRef
 argument_list|>
 name|getConfigFiles
 parameter_list|()
@@ -306,7 +306,7 @@ specifier|public
 name|void
 name|addConfigFile
 parameter_list|(
-name|ConfigFileRef
+name|ArtifactRef
 name|configFile
 parameter_list|)
 block|{

@@ -121,7 +121,7 @@ name|features
 operator|.
 name|model
 operator|.
-name|ConfigFileRef
+name|ArtifactRef
 import|;
 end_import
 
@@ -603,7 +603,7 @@ expr_stmt|;
 block|}
 for|for
 control|(
-name|ConfigFileRef
+name|ArtifactRef
 name|config
 range|:
 name|feature

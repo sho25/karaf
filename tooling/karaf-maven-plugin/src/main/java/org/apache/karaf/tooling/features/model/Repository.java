@@ -821,7 +821,7 @@ operator|.
 name|addConfigFile
 argument_list|(
 operator|new
-name|ConfigFileRef
+name|ArtifactRef
 argument_list|(
 name|c
 operator|.
