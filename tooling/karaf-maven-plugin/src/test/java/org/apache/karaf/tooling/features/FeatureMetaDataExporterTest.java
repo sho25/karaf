@@ -25,7 +25,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertEquals
+name|assertTrue
 import|;
 end_import
 
@@ -36,6 +36,16 @@ operator|.
 name|io
 operator|.
 name|ByteArrayOutputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|UnsupportedEncodingException
 import|;
 end_import
 
@@ -172,6 +182,8 @@ name|testWriteFeature
 parameter_list|()
 throws|throws
 name|XMLStreamException
+throws|,
+name|UnsupportedEncodingException
 block|{
 name|ByteArrayOutputStream
 name|baos
@@ -304,19 +316,21 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
-name|assertEquals
+name|assertTrue
 argument_list|(
-name|formatString
-argument_list|(
-name|expectedValue
-argument_list|()
-argument_list|)
-argument_list|,
 name|formatString
 argument_list|(
 name|baos
 operator|.
 name|toString
+argument_list|(
+literal|"UTF-8"
+argument_list|)
+argument_list|)
+operator|.
+name|contains
+argument_list|(
+name|expectedValue
 argument_list|()
 argument_list|)
 argument_list|)
@@ -328,8 +342,8 @@ name|expectedValue
 parameter_list|()
 block|{
 return|return
-literal|"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-operator|+
+name|formatString
+argument_list|(
 literal|"<features>"
 operator|+
 literal|"<feature name=\"example\">"
@@ -341,6 +355,7 @@ operator|+
 literal|"</feature>"
 operator|+
 literal|"</features>"
+argument_list|)
 return|;
 block|}
 specifier|private
