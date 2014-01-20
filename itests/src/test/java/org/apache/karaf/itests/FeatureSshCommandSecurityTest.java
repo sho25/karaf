@@ -50,13 +50,6 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testDummy
-parameter_list|()
-block|{
-comment|// The real test below sometimes fails. Comment it out until I've found what the issues is...
-block|}
-specifier|public
-name|void
 name|testFeatureCommandSecurityViaSsh
 parameter_list|()
 throws|throws
@@ -97,13 +90,13 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-literal|"Precondition failed, this test uses the transaction subsystem to test features with..."
+literal|"Precondition failed, this test uses the eventadmin subsystem to test features with..."
 argument_list|,
 name|r
 operator|.
 name|contains
 argument_list|(
-literal|"transaction"
+literal|"eventadmin"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -111,7 +104,7 @@ name|assertCommand
 argument_list|(
 name|vieweruser
 argument_list|,
-literal|"feature:install transaction"
+literal|"feature:install eventadmin"
 argument_list|,
 name|Result
 operator|.
@@ -136,13 +129,13 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-literal|"Transaction features should not have been installed, as viewer doesn't have credentials"
+literal|"eventadmin features should not have been installed, as viewer doesn't have credentials"
 argument_list|,
 name|r2
 operator|.
 name|contains
 argument_list|(
-literal|"transaction"
+literal|"eventadmin"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -150,7 +143,7 @@ name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"feature:install transaction"
+literal|"feature:install eventadmin"
 argument_list|,
 name|Result
 operator|.
@@ -175,13 +168,13 @@ name|Assert
 operator|.
 name|assertTrue
 argument_list|(
-literal|"Transaction feature should have been installed by 'karaf' user"
+literal|"eventadmin feature should have been installed by 'karaf' user"
 argument_list|,
 name|r3
 operator|.
 name|contains
 argument_list|(
-literal|"transaction"
+literal|"eventadmin"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -189,7 +182,7 @@ name|assertCommand
 argument_list|(
 name|vieweruser
 argument_list|,
-literal|"feature:uninstall transaction"
+literal|"feature:uninstall eventadmin"
 argument_list|,
 name|Result
 operator|.
@@ -214,13 +207,13 @@ name|Assert
 operator|.
 name|assertTrue
 argument_list|(
-literal|"Transaction feature should still be there, as viewer doesn't have credentials"
+literal|"eventadmin feature should still be there, as viewer doesn't have credentials"
 argument_list|,
 name|r4
 operator|.
 name|contains
 argument_list|(
-literal|"transaction"
+literal|"eventadmin"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -228,7 +221,7 @@ name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"feature:uninstall transaction"
+literal|"feature:uninstall eventadmin"
 argument_list|,
 name|Result
 operator|.
@@ -253,13 +246,13 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-literal|"The transaction subsystem should have been uninstalled"
+literal|"The eventadmin subsystem should have been uninstalled"
 argument_list|,
 name|r5
 operator|.
 name|contains
 argument_list|(
-literal|"transaction"
+literal|"eventadmin"
 argument_list|)
 argument_list|)
 expr_stmt|;
