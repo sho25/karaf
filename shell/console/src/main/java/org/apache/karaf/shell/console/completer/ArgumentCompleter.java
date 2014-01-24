@@ -153,11 +153,11 @@ name|apache
 operator|.
 name|felix
 operator|.
-name|service
+name|gogo
 operator|.
-name|command
+name|commands
 operator|.
-name|Function
+name|Action
 import|;
 end_import
 
@@ -167,13 +167,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|karaf
+name|felix
 operator|.
-name|shell
+name|service
 operator|.
-name|commands
+name|command
 operator|.
-name|Action
+name|Function
 import|;
 end_import
 

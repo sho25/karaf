@@ -37,11 +37,11 @@ name|apache
 operator|.
 name|felix
 operator|.
-name|service
+name|gogo
 operator|.
-name|command
+name|commands
 operator|.
-name|CommandSession
+name|Action
 import|;
 end_import
 
@@ -51,13 +51,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|karaf
+name|felix
 operator|.
-name|shell
+name|service
 operator|.
-name|commands
+name|command
 operator|.
-name|Action
+name|CommandSession
 import|;
 end_import
 
@@ -66,10 +66,15 @@ specifier|public
 interface|interface
 name|ActionPreparator
 block|{
-comment|/**      * Check if the arguments are valid for the action and inject the arguments into the fields      * of the action      *       * @param action      * @param session      * @param arguments      * @return      * @throws Exception      */
+comment|/**      * Check if the arguments are valid for the action and inject the arguments into the fields      * of the action      *       * Using deprecated Action for compatiblity      *       * @param action      * @param session      * @param arguments      * @return      * @throws Exception      */
 name|boolean
 name|prepare
 parameter_list|(
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 name|Action
 name|action
 parameter_list|,
