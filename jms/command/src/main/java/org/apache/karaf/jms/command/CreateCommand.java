@@ -132,7 +132,7 @@ literal|"The JMS connection factory type (ActiveMQ or WebsphereMQ)"
 argument_list|,
 name|required
 operator|=
-literal|true
+literal|false
 argument_list|,
 name|multiValued
 operator|=
@@ -140,27 +140,23 @@ literal|false
 argument_list|)
 name|String
 name|type
+init|=
+literal|"ActiveMQ"
 decl_stmt|;
 annotation|@
 name|Option
 argument_list|(
 name|name
 operator|=
-literal|"-u"
-argument_list|,
-name|aliases
-operator|=
-block|{
 literal|"--url"
-block|}
 argument_list|,
 name|description
 operator|=
-literal|"The JMS URL. NB: for WebsphereMQ type, the URL is hostname/port/queuemanager/channel"
+literal|"URL of the JMS broker. For WebsphereMQ type, the URL is hostname/port/queuemanager/channel"
 argument_list|,
 name|required
 operator|=
-literal|true
+literal|false
 argument_list|,
 name|multiValued
 operator|=
@@ -168,6 +164,8 @@ literal|false
 argument_list|)
 name|String
 name|url
+init|=
+literal|"tcp://localhost:61616"
 decl_stmt|;
 specifier|public
 name|Object

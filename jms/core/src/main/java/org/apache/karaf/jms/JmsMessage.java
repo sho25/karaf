@@ -39,16 +39,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
-operator|.
-name|SimpleDateFormat
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Date
