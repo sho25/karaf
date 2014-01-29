@@ -11,9 +11,7 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|jms
-operator|.
-name|internal
+name|util
 package|;
 end_package
 
@@ -110,10 +108,10 @@ end_import
 begin_class
 specifier|public
 class|class
-name|TemplateUtil
+name|TemplateUtils
 block|{
 specifier|private
-name|TemplateUtil
+name|TemplateUtils
 parameter_list|()
 block|{     }
 specifier|public
@@ -124,8 +122,8 @@ parameter_list|(
 name|File
 name|outFile
 parameter_list|,
-name|String
-name|resource
+name|InputStream
+name|templateIs
 parameter_list|,
 name|HashMap
 argument_list|<
@@ -159,37 +157,6 @@ literal|" already exists. Remove it if you wish to recreate it."
 argument_list|)
 throw|;
 block|}
-name|InputStream
-name|is
-init|=
-name|TemplateUtil
-operator|.
-name|class
-operator|.
-name|getResourceAsStream
-argument_list|(
-name|resource
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|is
-operator|==
-literal|null
-condition|)
-block|{
-throw|throw
-operator|new
-name|IllegalArgumentException
-argument_list|(
-literal|"Resource "
-operator|+
-name|resource
-operator|+
-literal|" doesn't exist"
-argument_list|)
-throw|;
-block|}
 name|PrintStream
 name|out
 init|=
@@ -220,7 +187,7 @@ operator|=
 operator|new
 name|Scanner
 argument_list|(
-name|is
+name|templateIs
 argument_list|)
 expr_stmt|;
 while|while
@@ -289,7 +256,7 @@ argument_list|)
 expr_stmt|;
 name|safeClose
 argument_list|(
-name|is
+name|templateIs
 argument_list|)
 expr_stmt|;
 block|}
