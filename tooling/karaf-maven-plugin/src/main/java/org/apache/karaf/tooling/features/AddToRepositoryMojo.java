@@ -136,7 +136,7 @@ name|AddToRepositoryMojo
 extends|extends
 name|AbstractFeatureMojo
 block|{
-comment|/**      * @parameter expression="${project.build.directory}/features-repo"      */
+comment|/**      * @parameter default-value="${project.build.directory}/features-repo"      */
 specifier|protected
 name|File
 name|repository

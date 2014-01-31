@@ -556,22 +556,22 @@ name|InstallKarsMojo
 extends|extends
 name|MojoSupport
 block|{
-comment|/**      * Directory that resources are copied to during the build.      *      * @parameter expression="${project.build.directory}/assembly"      * @required      */
+comment|/**      * Base directory used to copy the resources during the build (working directory).      *      * @parameter default-value="${project.build.directory}/assembly"      * @required      */
 specifier|protected
 name|String
 name|workDirectory
 decl_stmt|;
-comment|/**      * features config file.      *      * @parameter expression="${project.build.directory}/assembly/etc/org.apache.karaf.features.cfg"      * @required      */
+comment|/**      * Features configuration file (etc/org.apache.karaf.features.cfg).      *      * @parameter default-value="${project.build.directory}/assembly/etc/org.apache.karaf.features.cfg"      * @required      */
 specifier|protected
 name|File
 name|featuresCfgFile
 decl_stmt|;
-comment|/**      * startup.properties file.      *      * @parameter expression="${project.build.directory}/assembly/etc/startup.properties"      * @required      */
+comment|/**      * startup.properties file.      *      * @parameter default-value="${project.build.directory}/assembly/etc/startup.properties"      * @required      */
 specifier|protected
 name|File
 name|startupPropertiesFile
 decl_stmt|;
-comment|/**      * default start level for bundles in features that dont' specify it      *      * @parameter      */
+comment|/**      * default start level for bundles in features that don't specify it.      *      * @parameter      */
 specifier|protected
 name|int
 name|defaultStartLevel
@@ -583,7 +583,7 @@ specifier|protected
 name|boolean
 name|dontAddToStartup
 decl_stmt|;
-comment|/**      * Directory that resources are copied to during the build.      *      * @parameter expression="${project.build.directory}/assembly/system"      * @required      */
+comment|/**      * Directory used during build to construction the Karaf system repository.      *      * @parameter default-value="${project.build.directory}/assembly/system"      * @required      */
 specifier|protected
 name|File
 name|systemDirectory

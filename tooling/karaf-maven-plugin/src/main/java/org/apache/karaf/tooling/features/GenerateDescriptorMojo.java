@@ -645,7 +645,7 @@ decl_stmt|;
 comment|// *************************************************
 comment|// READ-ONLY MAVEN PLUGIN PARAMETERS
 comment|// *************************************************
-comment|/**      * (wrapper) The maven project.      *      * @parameter expression="${project}"      * @required      * @readonly      */
+comment|/**      * (wrapper) The maven project.      *      * @parameter default-value="${project}"      * @required      * @readonly      */
 specifier|protected
 name|MavenProject
 name|project
@@ -678,7 +678,7 @@ specifier|protected
 name|MavenResourcesFiltering
 name|mavenResourcesFiltering
 decl_stmt|;
-comment|/**      * @parameter expression="${session}"      * @required      * @readonly      */
+comment|/**      * @parameter default-value="${session}"      * @required      * @readonly      */
 specifier|protected
 name|MavenSession
 name|session
@@ -1897,12 +1897,12 @@ name|boolean
 name|overwriteChangedDependencies
 decl_stmt|;
 comment|//filtering support
-comment|/**      * The character encoding scheme to be applied when filtering resources.      *      * @parameter expression="${encoding}" default-value="${project.build.sourceEncoding}"      */
+comment|/**      * The character encoding scheme to be applied when filtering resources.      *      * @parameter default-value="${project.build.sourceEncoding}"      */
 specifier|protected
 name|String
 name|encoding
 decl_stmt|;
-comment|/**      * Expression preceded with the String won't be interpolated      * \${foo} will be replaced with ${foo}      *      * @parameter expression="${maven.resources.escapeString}"      */
+comment|/**      * Expression preceded with the String won't be interpolated      * \${foo} will be replaced with ${foo}      *      * @parameter default-value="${maven.resources.escapeString}"      */
 specifier|protected
 name|String
 name|escapeString

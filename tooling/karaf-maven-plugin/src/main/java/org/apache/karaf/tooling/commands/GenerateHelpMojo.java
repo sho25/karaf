@@ -300,7 +300,7 @@ name|GenerateHelpMojo
 extends|extends
 name|AbstractMojo
 block|{
-comment|/**      * The maven project.      *      * @parameter expression="${project}"      * @required      */
+comment|/**      * The maven project.      *      * @parameter default-value="${project}"      * @required      */
 specifier|protected
 name|MavenProject
 name|project
@@ -310,7 +310,7 @@ specifier|protected
 name|File
 name|targetFolder
 decl_stmt|;
-comment|/**      * The output format      *      * @parameter default-value="docbx" expression="${format}"      */
+comment|/**      * The output format      *      * @parameter default-value="docbx"      */
 specifier|protected
 name|String
 name|format
@@ -320,7 +320,7 @@ specifier|protected
 name|String
 name|classLoader
 decl_stmt|;
-comment|/**      * Includes the --help command output in the generated documentation      *      * @parameter default_value="true"      */
+comment|/**      * Includes the --help command output in the generated documentation      *      * @parameter default-value="true"      */
 specifier|protected
 name|boolean
 name|includeHelpOption

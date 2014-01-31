@@ -414,14 +414,14 @@ name|jarArchiver
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * Directory containing the generated archive.      *      * @parameter expression="${project.build.directory}"      * @required      */
+comment|/**      * Directory containing the generated archive.      *      * @parameter default-value="${project.build.directory}"      * @required      */
 specifier|private
 name|File
 name|outputDirectory
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * Name of the generated archive.      *      * @parameter expression="${project.build.finalName}"      * @required      */
+comment|/**      * Name of the generated archive.      *      * @parameter default-value="${project.build.finalName}"      * @required      */
 specifier|private
 name|String
 name|finalName
@@ -438,7 +438,7 @@ specifier|protected
 name|String
 name|classifier
 decl_stmt|;
-comment|/**      * Location of resources directory for additional content to include in the kar.      * Note that it includes everything under classes so as to include maven-remote-resources      *      * @parameter expression="${project.build.directory}/classes"      */
+comment|/**      * Location of resources directory for additional content to include in the kar.      * Note that it includes everything under classes so as to include maven-remote-resources      *      * @parameter default-value="${project.build.directory}/classes"      */
 specifier|private
 name|File
 name|resourcesDir

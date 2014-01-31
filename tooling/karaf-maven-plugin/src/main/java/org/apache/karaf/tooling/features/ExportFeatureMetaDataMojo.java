@@ -174,7 +174,7 @@ specifier|protected
 name|boolean
 name|oneVersion
 decl_stmt|;
-comment|/**      * Name of the file for exported feature meta data      *       * @parameter expression="${project.build.directory}/features.xml"      */
+comment|/**      * Name of the file for exported feature meta data      *       * @parameter default-value="${project.build.directory}/features.xml"      */
 specifier|private
 name|File
 name|metaDataFile

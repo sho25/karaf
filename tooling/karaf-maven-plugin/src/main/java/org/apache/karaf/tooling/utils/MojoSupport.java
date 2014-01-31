@@ -455,12 +455,12 @@ specifier|protected
 name|MavenProjectHelper
 name|projectHelper
 decl_stmt|;
-comment|/**      * The Maven project.      *      * @parameter expression="${project}"      * @required      * @readonly      */
+comment|/**      * The Maven project.      *      * @parameter default-value="${project}"      * @required      * @readonly      */
 specifier|protected
 name|MavenProject
 name|project
 decl_stmt|;
-comment|/**      * Directory that resources are copied to during the build.      *      * @parameter expression="${project.build.directory}/${project.artifactId}-${project.version}-installer"      * @required      */
+comment|/**      * Directory that resources are copied to during the build.      *      * @parameter default-value="${project.build.directory}/${project.artifactId}-${project.version}-installer"      * @required      */
 specifier|protected
 name|File
 name|workDirectory
@@ -505,7 +505,7 @@ name|featureArtifactType
 init|=
 literal|"xml"
 decl_stmt|;
-comment|/**      * The Maven session.      *       * @parameter expression="${session}"      * @readonly      * @required      */
+comment|/**      * The Maven session.      *       * @parameter default-value="${session}"      * @readonly      * @required      */
 specifier|protected
 name|MavenSession
 name|mavenSession

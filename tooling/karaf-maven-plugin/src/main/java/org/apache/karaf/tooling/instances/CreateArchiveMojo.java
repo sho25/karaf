@@ -214,17 +214,17 @@ name|CreateArchiveMojo
 extends|extends
 name|MojoSupport
 block|{
-comment|/**      * The target directory of the project.      *      * @parameter expression="${project.build.directory}"      * @required      * @readonly      */
+comment|/**      * The target directory of the project.      *      * @parameter default-value="${project.build.directory}"      * @required      * @readonly      */
 specifier|private
 name|File
 name|destDir
 decl_stmt|;
-comment|/**      * The location of the server repository.      *      * @parameter expression="${project.build.directory}/assembly"      * @required      */
+comment|/**      * The location of the server repository.      *      * @parameter default-value="${project.build.directory}/assembly"      * @required      */
 specifier|private
 name|File
 name|targetServerDirectory
 decl_stmt|;
-comment|/**      * The target file to set as the project's artifact.      *      * @parameter expression="${project.file}"      * @required      */
+comment|/**      * The target file to set as the project's artifact.      *      * @parameter default-value="${project.file}"      * @required      */
 specifier|private
 name|File
 name|targetFile
