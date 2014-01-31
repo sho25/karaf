@@ -246,11 +246,6 @@ finally|finally
 block|{
 name|safeClose
 argument_list|(
-name|scanner
-argument_list|)
-expr_stmt|;
-name|safeClose
-argument_list|(
 name|out
 argument_list|)
 expr_stmt|;
