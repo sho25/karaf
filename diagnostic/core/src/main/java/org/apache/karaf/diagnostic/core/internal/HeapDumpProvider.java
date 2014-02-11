@@ -243,21 +243,6 @@ name|buffer
 argument_list|)
 expr_stmt|;
 block|}
-name|in
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-name|out
-operator|.
-name|flush
-argument_list|()
-expr_stmt|;
-name|out
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 comment|// remove the original dump
 if|if
 condition|(
