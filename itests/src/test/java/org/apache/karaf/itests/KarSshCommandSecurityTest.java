@@ -125,7 +125,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testConfigCommandSecurityViaSsh
+name|testKarCommandSecurityViaSsh
 parameter_list|()
 throws|throws
 name|Exception
