@@ -321,7 +321,7 @@ specifier|final
 name|String
 name|VENDOR_WARNING
 init|=
-literal|"Malicious code possibly introduced by patch override, see log for details"
+literal|"Bundle Vendor has changed, please check if this is intentional. Bundle: "
 decl_stmt|;
 comment|/**      * Compute a list of bundles to install, taking into account overrides.      *      * The file containing the overrides will be loaded from the given url.      * Blank lines and lines starting with a '#' will be ignored, all other lines      * are considered as urls to override bundles.      *      * The list of bundles to install will be scanned and for each bundle,      * if a bundle override matches that bundle, it will be used instead.      *      * Matching is done on bundle symbolic name (they have to be the same)      * and version (the bundle override version needs to be greater than the      * bundle to be installed, and less than the next minor version.  A range      * directive can be added to the override url in which case, the matching      * will succeed if the bundle to be installed is within the given range.      *      * @param infos the list of bundles to install      * @param overridesUrl url pointing to the file containing the list of override bundles      * @return a new list of bundles to install      */
 specifier|public
@@ -651,6 +651,8 @@ operator|.
 name|warn
 argument_list|(
 name|VENDOR_WARNING
+operator|+
+name|bsn
 argument_list|)
 expr_stmt|;
 block|}
@@ -669,6 +671,8 @@ operator|.
 name|warn
 argument_list|(
 name|VENDOR_WARNING
+operator|+
+name|bsn
 argument_list|)
 expr_stmt|;
 block|}
@@ -690,6 +694,8 @@ operator|.
 name|warn
 argument_list|(
 name|VENDOR_WARNING
+operator|+
+name|bsn
 argument_list|)
 expr_stmt|;
 block|}
