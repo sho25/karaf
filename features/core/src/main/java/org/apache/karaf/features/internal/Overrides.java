@@ -718,7 +718,7 @@ condition|)
 block|{
 name|LOGGER
 operator|.
-name|info
+name|warn
 argument_list|(
 literal|"Overriding original bundle "
 operator|+
