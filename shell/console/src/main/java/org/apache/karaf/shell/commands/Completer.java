@@ -105,6 +105,19 @@ argument_list|>
 name|value
 parameter_list|()
 function_decl|;
+name|String
+index|[]
+name|values
+argument_list|()
+expr|default
+block|{ }
+expr_stmt|;
+name|boolean
+name|caseSensitive
+parameter_list|()
+default|default
+literal|false
+function_decl|;
 block|}
 end_annotation_defn
 
