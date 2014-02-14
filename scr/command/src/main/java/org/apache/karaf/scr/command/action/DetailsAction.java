@@ -101,6 +101,24 @@ name|apache
 operator|.
 name|karaf
 operator|.
+name|scr
+operator|.
+name|command
+operator|.
+name|completer
+operator|.
+name|DetailsCompleter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
 name|shell
 operator|.
 name|commands
@@ -122,6 +140,22 @@ operator|.
 name|commands
 operator|.
 name|Command
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|commands
+operator|.
+name|Completer
 import|;
 end_import
 
@@ -216,7 +250,7 @@ literal|"name"
 argument_list|,
 name|description
 operator|=
-literal|"The name of the Component to display the detials of"
+literal|"The name of the Component to display the details of"
 argument_list|,
 name|required
 operator|=
@@ -225,6 +259,13 @@ argument_list|,
 name|multiValued
 operator|=
 literal|false
+argument_list|)
+annotation|@
+name|Completer
+argument_list|(
+name|DetailsCompleter
+operator|.
+name|class
 argument_list|)
 name|String
 name|name

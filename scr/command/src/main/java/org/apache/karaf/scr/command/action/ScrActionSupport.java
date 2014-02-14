@@ -253,7 +253,7 @@ specifier|abstract
 class|class
 name|ScrActionSupport
 extends|extends
-name|SubShellAction
+name|AbstractAction
 block|{
 annotation|@
 name|Option
@@ -328,13 +328,7 @@ decl_stmt|;
 specifier|public
 name|ScrActionSupport
 parameter_list|()
-block|{
-name|setSubShell
-argument_list|(
-literal|"scr"
-argument_list|)
-expr_stmt|;
-block|}
+block|{     }
 annotation|@
 name|Override
 specifier|public
