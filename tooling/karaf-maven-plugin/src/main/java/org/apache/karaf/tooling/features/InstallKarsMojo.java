@@ -1357,6 +1357,27 @@ operator|.
 name|getLocation
 argument_list|()
 decl_stmt|;
+comment|// remove wrap: protocol to resolve from maven
+if|if
+condition|(
+name|key
+operator|.
+name|startsWith
+argument_list|(
+literal|"wrap:"
+argument_list|)
+condition|)
+block|{
+name|key
+operator|=
+name|key
+operator|.
+name|substring
+argument_list|(
+literal|5
+argument_list|)
+expr_stmt|;
+block|}
 name|String
 name|path
 init|=
