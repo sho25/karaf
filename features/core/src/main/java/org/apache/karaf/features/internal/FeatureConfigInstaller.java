@@ -358,7 +358,7 @@ name|configurationAdmin
 operator|.
 name|createFactoryConfiguration
 argument_list|(
-name|pid
+name|factoryPid
 argument_list|,
 literal|null
 argument_list|)
