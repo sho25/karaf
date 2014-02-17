@@ -420,7 +420,7 @@ index|]
 operator|.
 name|equals
 argument_list|(
-literal|"-f "
+literal|"-f"
 argument_list|)
 condition|)
 block|{
