@@ -53,6 +53,22 @@ name|Command
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_class
 annotation|@
 name|Command
@@ -69,6 +85,8 @@ name|description
 operator|=
 literal|"Lists properties from the currently edited configuration."
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|PropListCommand

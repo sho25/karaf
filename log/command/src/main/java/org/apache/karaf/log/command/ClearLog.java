@@ -33,6 +33,22 @@ name|Command
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_comment
 comment|/**  * Clear the last log entries.  */
 end_comment
@@ -53,6 +69,8 @@ name|description
 operator|=
 literal|"Clear log entries."
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|ClearLog

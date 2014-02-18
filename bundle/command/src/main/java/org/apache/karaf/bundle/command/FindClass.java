@@ -75,6 +75,22 @@ name|karaf
 operator|.
 name|shell
 operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
 name|util
 operator|.
 name|ShellUtil
@@ -143,6 +159,8 @@ name|description
 operator|=
 literal|"Locates a specified class in any deployed bundle"
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|FindClass

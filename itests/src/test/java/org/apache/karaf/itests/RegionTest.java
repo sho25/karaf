@@ -190,7 +190,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"region:addregion itest"
+literal|"region:region-add itest"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -93,6 +93,22 @@ name|karaf
 operator|.
 name|shell
 operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
 name|table
 operator|.
 name|ShellTable
@@ -125,6 +141,8 @@ name|description
 operator|=
 literal|"List the JNDI names."
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|NamesCommand

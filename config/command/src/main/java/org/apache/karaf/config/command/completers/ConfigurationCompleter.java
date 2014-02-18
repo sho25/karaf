@@ -59,6 +59,54 @@ name|karaf
 operator|.
 name|shell
 operator|.
+name|inject
+operator|.
+name|Init
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Reference
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
 name|console
 operator|.
 name|completer
@@ -140,10 +188,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * {@link jline.Completor} for Configuration Admin configurations.  *  * Displays a list of existing config instance configurations for completion.  *  */
+comment|/**  * {@link Completer} for Configuration Admin configurations.  *  * Displays a list of existing config instance configurations for completion.  *  */
 end_comment
 
 begin_class
+annotation|@
+name|Service
 specifier|public
 class|class
 name|ConfigurationCompleter
@@ -161,6 +211,8 @@ operator|new
 name|StringsCompleter
 argument_list|()
 decl_stmt|;
+annotation|@
+name|Reference
 specifier|private
 name|ConfigurationAdmin
 name|admin
@@ -180,6 +232,8 @@ operator|=
 name|admin
 expr_stmt|;
 block|}
+annotation|@
+name|Init
 specifier|public
 name|void
 name|init

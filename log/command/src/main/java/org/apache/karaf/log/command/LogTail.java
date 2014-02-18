@@ -69,6 +69,22 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|ops4j
 operator|.
 name|pax
@@ -113,6 +129,8 @@ name|description
 operator|=
 literal|"Continuously display log entries. Use ctrl-c to quit this command"
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|LogTail

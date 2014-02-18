@@ -131,6 +131,38 @@ name|karaf
 operator|.
 name|shell
 operator|.
+name|inject
+operator|.
+name|Reference
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
 name|console
 operator|.
 name|CommandSessionHolder
@@ -230,10 +262,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * {@link jline.Completor} for Configuration Admin properties.  *  * Displays a list of existing properties based on the current configuration being edited.  *  */
+comment|/**  * {@link Completer} for Configuration Admin properties.  *  * Displays a list of existing properties based on the current configuration being edited.  *  */
 end_comment
 
 begin_class
+annotation|@
+name|Service
 specifier|public
 class|class
 name|ConfigurationPropertyCompleter
@@ -265,6 +299,8 @@ name|ALIAS
 init|=
 literal|"--pid"
 decl_stmt|;
+annotation|@
+name|Reference
 specifier|private
 name|ConfigurationAdmin
 name|configAdmin

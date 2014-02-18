@@ -49,6 +49,22 @@ name|AbstractAction
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Reference
+import|;
+end_import
+
 begin_class
 specifier|public
 specifier|abstract
@@ -57,6 +73,8 @@ name|LogCommandSupport
 extends|extends
 name|AbstractAction
 block|{
+annotation|@
+name|Reference
 specifier|protected
 name|LogService
 name|logService

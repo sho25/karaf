@@ -83,6 +83,22 @@ name|StringsCompleter
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_comment
 comment|/**  * Set the log level for a given logger  */
 end_comment
@@ -103,6 +119,8 @@ name|description
 operator|=
 literal|"Sets the log level."
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|SetLogLevel

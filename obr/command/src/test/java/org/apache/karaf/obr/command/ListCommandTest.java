@@ -135,7 +135,7 @@ argument_list|()
 decl_stmt|;
 name|command
 operator|.
-name|setRepoAdmin
+name|setRepositoryAdmin
 argument_list|(
 name|repoAdmin
 argument_list|)

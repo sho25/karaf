@@ -143,6 +143,22 @@ name|InstanceSettings
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_comment
 comment|/**  * Creates a new instance.  */
 end_comment
@@ -163,6 +179,8 @@ name|description
 operator|=
 literal|"Creates a new container instance."
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|CreateCommand
