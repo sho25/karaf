@@ -145,6 +145,22 @@ name|Completer
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_comment
 comment|/**  * Activates the given component by supplying its component name.  */
 end_comment
@@ -169,6 +185,8 @@ name|description
 operator|=
 literal|"Activates a Component for the given name"
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|ActivateAction

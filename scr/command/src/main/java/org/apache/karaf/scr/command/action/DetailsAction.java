@@ -163,6 +163,22 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|osgi
 operator|.
 name|framework
@@ -231,6 +247,8 @@ name|description
 operator|=
 literal|"Displays a list of available components"
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|DetailsAction
