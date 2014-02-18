@@ -147,6 +147,22 @@ name|AbstractAction
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_comment
 comment|/**  * Grab the text from the standard input and return it as a string.  * Also write this text to a file if specified  */
 end_comment
@@ -167,6 +183,8 @@ name|description
 operator|=
 literal|"Captures the STDIN and returns it as a string. Optionally writes the content to a file."
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|TacAction

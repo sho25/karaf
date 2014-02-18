@@ -51,6 +51,22 @@ name|AbstractAction
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_comment
 comment|/**  * A command to clear the console buffer  */
 end_comment
@@ -71,6 +87,8 @@ name|description
 operator|=
 literal|"Clears the console buffer."
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|ClearAction

@@ -91,6 +91,22 @@ name|StringsCompleter
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Reference
+import|;
+end_import
+
 begin_comment
 comment|/**  * Base completer for feature commands.  */
 end_comment
@@ -104,6 +120,8 @@ implements|implements
 name|Completer
 block|{
 comment|/**      * Feature service.      */
+annotation|@
+name|Reference
 specifier|protected
 name|FeaturesService
 name|featuresService

@@ -151,6 +151,22 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|security
@@ -209,6 +225,8 @@ name|description
 operator|=
 literal|"Manage users and roles of a JAAS Realm"
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|ManageRealmCommand

@@ -83,6 +83,22 @@ name|SessionProperties
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_comment
 comment|/**  * Command for showing the full tree of bundles that have been used to resolve  * a given bundle.  */
 end_comment
@@ -103,6 +119,8 @@ name|description
 operator|=
 literal|"Prints the full stack trace in the console when the execution of a command throws an exception."
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|PrintStackTracesAction

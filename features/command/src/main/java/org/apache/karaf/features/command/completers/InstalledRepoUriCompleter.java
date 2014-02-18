@@ -91,17 +91,53 @@ name|Repository
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Reference
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_comment
-comment|/**  * {@link jline.Completor} for Feature Repository URLs.  *  * Displays a list of currently installed Feature repositories.  *  */
+comment|/**  * {@link Completer} for Feature Repository URLs.  *  * Displays a list of currently installed Feature repositories.  *  */
 end_comment
 
 begin_class
+annotation|@
+name|Service
 specifier|public
 class|class
 name|InstalledRepoUriCompleter
 implements|implements
 name|Completer
 block|{
+annotation|@
+name|Reference
 specifier|private
 name|FeaturesService
 name|featuresService

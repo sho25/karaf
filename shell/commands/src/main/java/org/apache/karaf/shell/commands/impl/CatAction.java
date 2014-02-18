@@ -193,6 +193,22 @@ name|AbstractAction
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_comment
 comment|/**  * Concatenate and print files and/or URLs.  */
 end_comment
@@ -213,6 +229,8 @@ name|description
 operator|=
 literal|"Displays the content of a file or URL."
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|CatAction

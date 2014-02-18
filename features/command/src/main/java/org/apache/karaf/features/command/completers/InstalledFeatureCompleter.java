@@ -33,11 +33,29 @@ name|Feature
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_comment
-comment|/**  * {@link jline.Completor} for installed features.  */
+comment|/**  * {@link org.apache.karaf.shell.console.Completer} for installed features.  */
 end_comment
 
 begin_class
+annotation|@
+name|Service
 specifier|public
 class|class
 name|InstalledFeatureCompleter

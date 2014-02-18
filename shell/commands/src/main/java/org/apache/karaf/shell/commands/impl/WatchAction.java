@@ -215,6 +215,22 @@ name|CommandsCompleter
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Reference
+import|;
+end_import
+
 begin_class
 annotation|@
 name|Command
@@ -334,6 +350,8 @@ name|String
 index|[]
 name|arguments
 decl_stmt|;
+annotation|@
+name|Reference
 name|CommandProcessor
 name|commandProcessor
 decl_stmt|;

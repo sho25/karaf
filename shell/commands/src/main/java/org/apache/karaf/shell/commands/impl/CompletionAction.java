@@ -83,6 +83,22 @@ name|SessionProperties
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_comment
 comment|/**  * Command to change the completion mode while using the shell console.  */
 end_comment
@@ -103,6 +119,8 @@ name|description
 operator|=
 literal|"Display or change the completion mode on the current console session."
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|CompletionAction

@@ -105,6 +105,22 @@ name|AbstractAction
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_comment
 comment|/**  * Execute a Java standard application.  *  *<p>By default looks for static main(String[]) to execute, but  * you can specify a different static method that takes a String[]  * to execute instead.  */
 end_comment
@@ -125,6 +141,8 @@ name|description
 operator|=
 literal|"Executes a Java standard application."
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|JavaAction

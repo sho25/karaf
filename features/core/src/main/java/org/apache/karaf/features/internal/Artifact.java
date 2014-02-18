@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|features
 operator|.
-name|command
+name|internal
 package|;
 end_package
 

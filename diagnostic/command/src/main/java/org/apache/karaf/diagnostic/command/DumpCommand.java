@@ -225,21 +225,6 @@ name|DumpCommand
 extends|extends
 name|OsgiCommandSupport
 block|{
-comment|/**      * Registered dump providers.      */
-specifier|private
-name|List
-argument_list|<
-name|DumpProvider
-argument_list|>
-name|providers
-init|=
-operator|new
-name|LinkedList
-argument_list|<
-name|DumpProvider
-argument_list|>
-argument_list|()
-decl_stmt|;
 comment|/**      * Output format of the filename if not defined otherwise      */
 specifier|private
 name|SimpleDateFormat
@@ -300,6 +285,19 @@ name|Exception
 block|{
 name|DumpDestination
 name|destination
+decl_stmt|;
+name|List
+argument_list|<
+name|DumpProvider
+argument_list|>
+name|providers
+init|=
+name|getAllServices
+argument_list|(
+name|DumpProvider
+operator|.
+name|class
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -433,25 +431,6 @@ expr_stmt|;
 return|return
 literal|null
 return|;
-block|}
-comment|/**      * Sets dump providers to use.      *       * @param providers Providers.      */
-specifier|public
-name|void
-name|setProviders
-parameter_list|(
-name|List
-argument_list|<
-name|DumpProvider
-argument_list|>
-name|providers
-parameter_list|)
-block|{
-name|this
-operator|.
-name|providers
-operator|=
-name|providers
-expr_stmt|;
 block|}
 block|}
 end_class
