@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|scr
+name|tooling
 operator|.
-name|support
+name|scr
 package|;
 end_package
 
