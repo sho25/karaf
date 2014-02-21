@@ -199,6 +199,22 @@ name|OsgiCommandSupport
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|inject
+operator|.
+name|Service
+import|;
+end_import
+
 begin_comment
 comment|/**  * Command to create dump from shell.  */
 end_comment
@@ -219,6 +235,8 @@ name|description
 operator|=
 literal|"Creates zip archive with diagnostic info."
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|DumpCommand
@@ -425,7 +443,14 @@ argument_list|()
 operator|.
 name|println
 argument_list|(
-literal|"Diagnostic dump created."
+literal|"Diagnostic dump created at "
+operator|+
+name|target
+operator|.
+name|getAbsolutePath
+argument_list|()
+operator|+
+literal|"."
 argument_list|)
 expr_stmt|;
 return|return
