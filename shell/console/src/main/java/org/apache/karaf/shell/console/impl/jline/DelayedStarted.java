@@ -158,6 +158,9 @@ parameter_list|(
 name|Runnable
 name|console
 parameter_list|,
+name|String
+name|name
+parameter_list|,
 name|BundleContext
 name|bundleContext
 parameter_list|,
@@ -167,7 +170,7 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-literal|"Karaf Shell Console Thread"
+name|name
 argument_list|)
 expr_stmt|;
 name|this

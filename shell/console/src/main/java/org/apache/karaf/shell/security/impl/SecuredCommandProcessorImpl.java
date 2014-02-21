@@ -171,6 +171,22 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|util
+operator|.
+name|ShellUtil
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|osgi
 operator|.
 name|framework
@@ -238,6 +254,20 @@ operator|.
 name|auth
 operator|.
 name|Subject
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|nio
+operator|.
+name|file
+operator|.
+name|attribute
+operator|.
+name|UserPrincipal
 import|;
 end_import
 
@@ -453,7 +483,14 @@ throw|throw
 operator|new
 name|SecurityException
 argument_list|(
-literal|"Current user has no associated roles."
+literal|"Current user "
+operator|+
+name|ShellUtil
+operator|.
+name|getCurrentUserName
+argument_list|()
+operator|+
+literal|" has no associated roles."
 argument_list|)
 throw|;
 comment|// TODO cater for custom roles
