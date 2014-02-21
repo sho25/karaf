@@ -14,8 +14,26 @@ operator|.
 name|shell
 operator|.
 name|commands
+operator|.
+name|basic
 package|;
 end_package
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|commands
+operator|.
+name|Action
+import|;
+end_import
 
 begin_import
 import|import

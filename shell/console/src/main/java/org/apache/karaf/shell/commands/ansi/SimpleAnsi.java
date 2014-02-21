@@ -13,7 +13,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|util
+name|commands
+operator|.
+name|ansi
 package|;
 end_package
 

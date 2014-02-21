@@ -27,7 +27,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|util
+name|commands
+operator|.
+name|ansi
 operator|.
 name|SimpleAnsi
 import|;

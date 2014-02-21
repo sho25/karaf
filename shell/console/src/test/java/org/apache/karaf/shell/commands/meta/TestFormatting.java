@@ -13,7 +13,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|util
+name|commands
+operator|.
+name|meta
 package|;
 end_package
 
@@ -57,9 +59,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|util
+name|commands
 operator|.
-name|IndentFormatter
+name|meta
+operator|.
+name|ActionMetaData
 import|;
 end_import
 
@@ -84,7 +88,7 @@ operator|new
 name|ByteArrayOutputStream
 argument_list|()
 decl_stmt|;
-name|IndentFormatter
+name|ActionMetaData
 operator|.
 name|printFormatted
 argument_list|(
@@ -101,6 +105,8 @@ name|baos
 argument_list|,
 literal|true
 argument_list|)
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|System

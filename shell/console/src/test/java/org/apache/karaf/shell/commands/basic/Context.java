@@ -14,6 +14,8 @@ operator|.
 name|shell
 operator|.
 name|commands
+operator|.
+name|basic
 package|;
 end_package
 
