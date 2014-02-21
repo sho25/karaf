@@ -123,7 +123,7 @@ name|karaf
 operator|.
 name|util
 operator|.
-name|properties
+name|locks
 operator|.
 name|FileLockUtils
 import|;
@@ -298,16 +298,6 @@ operator|.
 name|util
 operator|.
 name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
 import|;
 end_import
 

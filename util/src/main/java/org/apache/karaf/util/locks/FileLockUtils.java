@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|util
 operator|.
-name|properties
+name|locks
 package|;
 end_package
 

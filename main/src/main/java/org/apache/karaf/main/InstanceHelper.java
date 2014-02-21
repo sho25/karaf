@@ -163,7 +163,7 @@ name|karaf
 operator|.
 name|util
 operator|.
-name|properties
+name|locks
 operator|.
 name|FileLockUtils
 import|;
