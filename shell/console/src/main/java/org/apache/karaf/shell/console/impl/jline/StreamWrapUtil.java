@@ -361,7 +361,10 @@ name|wrapInIfNeeded
 argument_list|(
 name|unwrapBIS
 argument_list|(
+name|unwrap
+argument_list|(
 name|stream
+argument_list|)
 argument_list|)
 argument_list|)
 return|;

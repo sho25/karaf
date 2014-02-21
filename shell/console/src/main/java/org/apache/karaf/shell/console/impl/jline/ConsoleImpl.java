@@ -1257,11 +1257,22 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+try|try
+block|{
 name|secCP
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Throwable
+name|t
+parameter_list|)
+block|{
+comment|// Ignore
+block|}
 name|close
 argument_list|(
 literal|true
@@ -1270,11 +1281,22 @@ expr_stmt|;
 block|}
 finally|finally
 block|{
+try|try
+block|{
 name|threadIO
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Throwable
+name|t
+parameter_list|)
+block|{
+comment|// Ignore
+block|}
 block|}
 block|}
 name|SecuredCommandProcessorImpl
