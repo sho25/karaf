@@ -111,6 +111,8 @@ name|karaf
 operator|.
 name|util
 operator|.
+name|properties
+operator|.
 name|InterpolationHelper
 import|;
 end_import

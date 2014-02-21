@@ -115,9 +115,15 @@ end_import
 
 begin_import
 import|import
-name|java
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
 operator|.
 name|util
+operator|.
+name|properties
 operator|.
 name|Properties
 import|;
@@ -422,7 +428,12 @@ name|put
 argument_list|(
 literal|"karaf.lock.jdbc.timeout"
 argument_list|,
+name|Integer
+operator|.
+name|toString
+argument_list|(
 name|timeout
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -41,9 +41,15 @@ end_import
 
 begin_import
 import|import
-name|java
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
 operator|.
 name|util
+operator|.
+name|properties
 operator|.
 name|Properties
 import|;

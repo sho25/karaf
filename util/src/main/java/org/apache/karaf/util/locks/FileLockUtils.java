@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|util
 operator|.
-name|properties
+name|locks
 package|;
 end_package
 
@@ -85,9 +85,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
-name|utils
+name|util
 operator|.
 name|properties
 operator|.
