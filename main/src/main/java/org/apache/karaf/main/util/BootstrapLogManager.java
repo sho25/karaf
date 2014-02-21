@@ -79,11 +79,33 @@ end_import
 
 begin_import
 import|import
-name|java
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
 operator|.
 name|util
 operator|.
+name|properties
+operator|.
 name|Properties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|util
+operator|.
+name|properties
+operator|.
+name|InterpolationHelper
 import|;
 end_import
 
@@ -287,7 +309,7 @@ argument_list|()
 decl_stmt|;
 name|filename
 operator|=
-name|SubstHelper
+name|InterpolationHelper
 operator|.
 name|substVars
 argument_list|(

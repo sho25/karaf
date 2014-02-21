@@ -31,16 +31,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|FileInputStream
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|FileOutputStream
 import|;
 end_import
@@ -116,16 +106,6 @@ operator|.
 name|net
 operator|.
 name|ServerSocket
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Properties
 import|;
 end_import
 
@@ -364,9 +344,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
-name|utils
+name|util
 operator|.
 name|properties
 operator|.
