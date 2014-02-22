@@ -153,7 +153,7 @@ name|Exception
 block|{
 name|assertContains
 argument_list|(
-literal|"Diagnostic dump created."
+literal|"Diagnostic dump created"
 argument_list|,
 name|executeCommand
 argument_list|(
