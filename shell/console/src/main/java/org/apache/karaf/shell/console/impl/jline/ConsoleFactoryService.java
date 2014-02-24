@@ -360,6 +360,8 @@ argument_list|,
 name|closeCallback
 argument_list|,
 name|bundleContext
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 name|CommandSession
