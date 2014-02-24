@@ -254,14 +254,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-if|if
-condition|(
-name|logger
-operator|.
-name|isDebugEnabled
-argument_list|()
-condition|)
-block|{
 name|logger
 operator|.
 name|debug
@@ -278,7 +270,6 @@ operator|+
 name|name
 argument_list|)
 expr_stmt|;
-block|}
 name|Component
 index|[]
 name|components
