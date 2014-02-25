@@ -287,10 +287,10 @@ name|Pattern
 operator|.
 name|compile
 argument_list|(
-literal|"mvn:([^/ ]+)/([^/ ]+)/([^/ ]*)(/([^/ ]+)(/([^/ ]+))?)?"
+literal|"(?:wrap:)?mvn:([^/ ]+)/([^/ ]+)/([^/\\$ ]*)(/([^/\\$ ]+)(/([^/\\$ ]+))?)?(\\$.+)?"
 argument_list|)
 decl_stmt|;
-comment|/**      * Convert PAX URL mvn format to aether coordinate format.      * N.B. we do not handle repository-url in mvn urls.      * N.B. version is required in mvn urls.      *      * @param name PAX URL mvn format: mvn-uri := 'mvn:' [ repository-url '!' ] group-id '/' artifact-id [ '/' [version] [ '/' [type] [ '/' classifier ] ] ] ]      * @return aether coordinate format:<groupId>:<artifactId>[:<extension>[:<classifier>]]:<version>      */
+comment|/**      * Convert PAX URL mvn format to aether coordinate format.      * N.B. we do not handle repository-url in mvn urls.      * N.B. version is required in mvn urls.      *      * @param name PAX URL mvn format: mvn-uri := [ 'wrap:' ] 'mvn:' [ repository-url '!' ] group-id '/' artifact-id [ '/' [version] [ '/' [type] [ '/' classifier ] ] ] ]      * @return aether coordinate format:<groupId>:<artifactId>[:<extension>[:<classifier>]]:<version>      */
 specifier|static
 name|String
 name|mvnToAether
