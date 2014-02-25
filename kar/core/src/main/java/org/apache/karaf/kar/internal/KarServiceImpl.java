@@ -355,13 +355,13 @@ begin_import
 import|import
 name|org
 operator|.
-name|ops4j
+name|apache
 operator|.
-name|pax
+name|karaf
 operator|.
-name|url
+name|util
 operator|.
-name|mvn
+name|maven
 operator|.
 name|Parser
 import|;
