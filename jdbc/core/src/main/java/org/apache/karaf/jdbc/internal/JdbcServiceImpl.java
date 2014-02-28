@@ -197,9 +197,9 @@ argument_list|)
 block|,
 name|HSQL
 argument_list|(
-literal|"mvn:com.h2database/h2/"
+literal|"mvn:org.hsqldb/hsqldb/"
 argument_list|,
-literal|"1.3.163"
+literal|"2.3.2"
 argument_list|,
 literal|"datasource-hsql.xml"
 argument_list|)
