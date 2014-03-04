@@ -399,6 +399,20 @@ name|BundleException
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|service
+operator|.
+name|packageadmin
+operator|.
+name|PackageAdmin
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -1163,6 +1177,8 @@ argument_list|(
 name|Collections
 operator|.
 name|EMPTY_LIST
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|EasyMock
@@ -1604,6 +1620,8 @@ argument_list|(
 name|Collections
 operator|.
 name|EMPTY_LIST
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|EasyMock
@@ -1788,6 +1806,8 @@ argument_list|(
 name|Collections
 operator|.
 name|EMPTY_LIST
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|EasyMock
@@ -2123,6 +2143,8 @@ argument_list|(
 name|Collections
 operator|.
 name|EMPTY_LIST
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|EasyMock
@@ -2369,6 +2391,8 @@ argument_list|(
 name|Collections
 operator|.
 name|EMPTY_LIST
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|EasyMock
