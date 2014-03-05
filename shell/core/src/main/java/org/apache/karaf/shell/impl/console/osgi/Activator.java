@@ -400,12 +400,12 @@ operator|.
 name|unregister
 argument_list|()
 expr_stmt|;
-name|sessionFactory
+name|localConsoleManager
 operator|.
 name|stop
 argument_list|()
 expr_stmt|;
-name|localConsoleManager
+name|sessionFactory
 operator|.
 name|stop
 argument_list|()
