@@ -37,7 +37,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Command
 import|;
@@ -53,7 +55,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|inject
+name|api
+operator|.
+name|action
+operator|.
+name|lifecycle
 operator|.
 name|Service
 import|;
@@ -68,6 +74,8 @@ operator|.
 name|karaf
 operator|.
 name|shell
+operator|.
+name|support
 operator|.
 name|table
 operator|.
@@ -99,9 +107,11 @@ name|InfoCommand
 extends|extends
 name|JmsConnectionCommandSupport
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Object
-name|doExecute
+name|execute
 parameter_list|()
 throws|throws
 name|Exception

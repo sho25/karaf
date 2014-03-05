@@ -66,7 +66,7 @@ argument_list|)
 expr_stmt|;
 name|listServices
 operator|.
-name|doExecute
+name|execute
 argument_list|()
 expr_stmt|;
 block|}

@@ -41,9 +41,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|console
+name|api
 operator|.
-name|OsgiCommandSupport
+name|action
+operator|.
+name|Action
 import|;
 end_import
 
@@ -57,7 +59,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|inject
+name|api
+operator|.
+name|action
+operator|.
+name|lifecycle
 operator|.
 name|Reference
 import|;
@@ -68,8 +74,8 @@ specifier|public
 specifier|abstract
 class|class
 name|JdbcCommandSupport
-extends|extends
-name|OsgiCommandSupport
+implements|implements
+name|Action
 block|{
 annotation|@
 name|Reference
@@ -77,14 +83,6 @@ specifier|private
 name|JdbcService
 name|jdbcService
 decl_stmt|;
-specifier|public
-specifier|abstract
-name|Object
-name|doExecute
-parameter_list|()
-throws|throws
-name|Exception
-function_decl|;
 specifier|public
 name|JdbcService
 name|getJdbcService

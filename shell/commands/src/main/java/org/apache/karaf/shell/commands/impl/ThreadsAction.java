@@ -231,6 +231,8 @@ name|karaf
 operator|.
 name|shell
 operator|.
+name|support
+operator|.
 name|table
 operator|.
 name|ShellTable

@@ -27,7 +27,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Argument
 import|;
@@ -43,7 +45,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Command
 import|;
@@ -59,9 +63,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
 operator|.
-name|Completer
+name|action
+operator|.
+name|Completion
 import|;
 end_import
 
@@ -75,7 +81,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Option
 import|;
@@ -91,11 +99,13 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|console
+name|api
 operator|.
-name|completer
+name|action
 operator|.
-name|StringsCompleter
+name|lifecycle
+operator|.
+name|Service
 import|;
 end_import
 
@@ -109,9 +119,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|inject
+name|support
 operator|.
-name|Service
+name|completers
+operator|.
+name|StringsCompleter
 import|;
 end_import
 
@@ -191,7 +203,7 @@ operator|=
 literal|false
 argument_list|)
 annotation|@
-name|Completer
+name|Completion
 argument_list|(
 name|value
 operator|=
@@ -236,9 +248,11 @@ name|url
 init|=
 literal|"tcp://localhost:61616"
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|Object
-name|doExecute
+name|execute
 parameter_list|()
 throws|throws
 name|Exception

@@ -87,7 +87,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Argument
 import|;
@@ -103,7 +105,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Command
 import|;
@@ -119,7 +123,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|inject
+name|api
+operator|.
+name|action
+operator|.
+name|lifecycle
 operator|.
 name|Service
 import|;
@@ -363,8 +371,7 @@ decl_stmt|;
 name|BundleContext
 name|framework
 init|=
-name|getBundleContext
-argument_list|()
+name|bundleContext
 operator|.
 name|getBundle
 argument_list|(

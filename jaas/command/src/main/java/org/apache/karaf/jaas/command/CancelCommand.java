@@ -19,17 +19,11 @@ end_package
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|util
 operator|.
-name|karaf
-operator|.
-name|shell
-operator|.
-name|commands
-operator|.
-name|Command
+name|LinkedList
 import|;
 end_import
 
@@ -59,19 +53,31 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|inject
+name|api
 operator|.
-name|Service
+name|action
+operator|.
+name|Command
 import|;
 end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|LinkedList
+name|karaf
+operator|.
+name|shell
+operator|.
+name|api
+operator|.
+name|action
+operator|.
+name|lifecycle
+operator|.
+name|Service
 import|;
 end_import
 
@@ -101,9 +107,9 @@ name|JaasCommandSupport
 block|{
 annotation|@
 name|Override
-specifier|protected
+specifier|public
 name|Object
-name|doExecute
+name|execute
 parameter_list|()
 throws|throws
 name|Exception

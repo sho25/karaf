@@ -45,7 +45,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Argument
 import|;
@@ -61,9 +63,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
 operator|.
-name|Completer
+name|action
+operator|.
+name|Completion
 import|;
 end_import
 
@@ -77,7 +81,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Option
 import|;
@@ -119,7 +125,7 @@ operator|=
 literal|false
 argument_list|)
 annotation|@
-name|Completer
+name|Completion
 argument_list|(
 name|ConnectionFactoriesNameCompleter
 operator|.

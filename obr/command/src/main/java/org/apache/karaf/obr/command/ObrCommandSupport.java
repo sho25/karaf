@@ -201,9 +201,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|console
+name|api
 operator|.
-name|OsgiCommandSupport
+name|action
+operator|.
+name|Action
 import|;
 end_import
 
@@ -217,7 +219,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|inject
+name|api
+operator|.
+name|action
+operator|.
+name|lifecycle
 operator|.
 name|Reference
 import|;
@@ -243,7 +249,7 @@ name|osgi
 operator|.
 name|framework
 operator|.
-name|InvalidSyntaxException
+name|BundleContext
 import|;
 end_import
 
@@ -255,7 +261,7 @@ name|osgi
 operator|.
 name|framework
 operator|.
-name|ServiceReference
+name|InvalidSyntaxException
 import|;
 end_import
 
@@ -276,8 +282,8 @@ specifier|public
 specifier|abstract
 class|class
 name|ObrCommandSupport
-extends|extends
-name|OsgiCommandSupport
+implements|implements
+name|Action
 block|{
 specifier|protected
 specifier|static
@@ -292,6 +298,11 @@ name|Reference
 specifier|private
 name|RepositoryAdmin
 name|repositoryAdmin
+decl_stmt|;
+annotation|@
+name|Reference
+name|BundleContext
+name|bundleContext
 decl_stmt|;
 specifier|public
 name|void
@@ -308,9 +319,11 @@ operator|=
 name|repositoryAdmin
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|Override
+specifier|public
 name|Object
-name|doExecute
+name|execute
 parameter_list|()
 throws|throws
 name|Exception
@@ -357,8 +370,7 @@ block|{
 name|Bundle
 name|bundle
 init|=
-name|getBundleContext
-argument_list|()
+name|bundleContext
 operator|.
 name|getBundle
 argument_list|(

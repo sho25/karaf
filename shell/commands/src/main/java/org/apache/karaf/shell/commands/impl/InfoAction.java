@@ -249,6 +249,8 @@ name|shell
 operator|.
 name|commands
 operator|.
+name|info
+operator|.
 name|InfoProvider
 import|;
 end_import

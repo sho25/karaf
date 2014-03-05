@@ -45,7 +45,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Argument
 import|;
@@ -61,7 +63,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Command
 import|;
@@ -77,9 +81,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
 operator|.
-name|Completer
+name|action
+operator|.
+name|Completion
 import|;
 end_import
 
@@ -93,7 +99,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|inject
+name|api
+operator|.
+name|action
+operator|.
+name|lifecycle
 operator|.
 name|Service
 import|;
@@ -108,6 +118,8 @@ operator|.
 name|karaf
 operator|.
 name|shell
+operator|.
+name|support
 operator|.
 name|table
 operator|.
@@ -173,7 +185,7 @@ operator|=
 literal|false
 argument_list|)
 annotation|@
-name|Completer
+name|Completion
 argument_list|(
 name|DataSourcesNameCompleter
 operator|.
@@ -182,9 +194,11 @@ argument_list|)
 name|String
 name|datasource
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|Object
-name|doExecute
+name|execute
 parameter_list|()
 throws|throws
 name|Exception
