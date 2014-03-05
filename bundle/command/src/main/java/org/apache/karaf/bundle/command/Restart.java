@@ -47,7 +47,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Command
 import|;
@@ -63,9 +65,13 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|console
+name|api
 operator|.
-name|MultiException
+name|action
+operator|.
+name|lifecycle
+operator|.
+name|Service
 import|;
 end_import
 
@@ -79,9 +85,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|inject
+name|support
 operator|.
-name|Service
+name|MultiException
 import|;
 end_import
 

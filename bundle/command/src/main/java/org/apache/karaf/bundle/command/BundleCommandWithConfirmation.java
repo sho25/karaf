@@ -27,7 +27,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Option
 import|;
@@ -83,9 +85,9 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|Object
-name|doExecute
+name|execute
 parameter_list|()
 throws|throws
 name|Exception

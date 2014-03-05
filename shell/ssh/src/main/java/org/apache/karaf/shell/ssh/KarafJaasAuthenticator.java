@@ -319,6 +319,24 @@ name|String
 name|realm
 decl_stmt|;
 specifier|public
+name|KarafJaasAuthenticator
+parameter_list|()
+block|{     }
+specifier|public
+name|KarafJaasAuthenticator
+parameter_list|(
+name|String
+name|realm
+parameter_list|)
+block|{
+name|this
+operator|.
+name|realm
+operator|=
+name|realm
+expr_stmt|;
+block|}
+specifier|public
 name|String
 name|getRealm
 parameter_list|()

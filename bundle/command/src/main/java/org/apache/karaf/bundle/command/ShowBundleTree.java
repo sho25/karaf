@@ -18,18 +18,6 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|java
-operator|.
-name|lang
-operator|.
-name|String
-operator|.
-name|format
-import|;
-end_import
-
-begin_import
 import|import
 name|java
 operator|.
@@ -199,7 +187,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Command
 import|;
@@ -215,7 +205,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|inject
+name|api
+operator|.
+name|action
+operator|.
+name|lifecycle
 operator|.
 name|Service
 import|;
@@ -332,6 +326,18 @@ operator|.
 name|slf4j
 operator|.
 name|LoggerFactory
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+operator|.
+name|format
 import|;
 end_import
 

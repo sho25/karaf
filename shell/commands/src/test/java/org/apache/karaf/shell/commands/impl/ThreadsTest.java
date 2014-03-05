@@ -62,7 +62,7 @@ literal|true
 expr_stmt|;
 name|action
 operator|.
-name|doExecute
+name|execute
 argument_list|()
 expr_stmt|;
 block|}
@@ -90,7 +90,7 @@ literal|1L
 expr_stmt|;
 name|action
 operator|.
-name|doExecute
+name|execute
 argument_list|()
 expr_stmt|;
 block|}
@@ -118,7 +118,7 @@ literal|true
 expr_stmt|;
 name|action
 operator|.
-name|doExecute
+name|execute
 argument_list|()
 expr_stmt|;
 block|}
@@ -140,7 +140,7 @@ argument_list|()
 decl_stmt|;
 name|action
 operator|.
-name|doExecute
+name|execute
 argument_list|()
 expr_stmt|;
 block|}

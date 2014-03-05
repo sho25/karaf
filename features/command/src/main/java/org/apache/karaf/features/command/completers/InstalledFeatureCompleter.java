@@ -43,7 +43,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|inject
+name|api
+operator|.
+name|action
+operator|.
+name|lifecycle
 operator|.
 name|Service
 import|;

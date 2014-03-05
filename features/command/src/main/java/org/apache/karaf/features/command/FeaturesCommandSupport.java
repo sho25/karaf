@@ -41,9 +41,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|console
+name|api
 operator|.
-name|OsgiCommandSupport
+name|action
+operator|.
+name|Action
 import|;
 end_import
 
@@ -57,7 +59,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|inject
+name|api
+operator|.
+name|action
+operator|.
+name|lifecycle
 operator|.
 name|Reference
 import|;
@@ -68,8 +74,8 @@ specifier|public
 specifier|abstract
 class|class
 name|FeaturesCommandSupport
-extends|extends
-name|OsgiCommandSupport
+implements|implements
+name|Action
 block|{
 annotation|@
 name|Reference
@@ -77,9 +83,11 @@ specifier|private
 name|FeaturesService
 name|featuresService
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Override
+specifier|public
 name|Object
-name|doExecute
+name|execute
 parameter_list|()
 throws|throws
 name|Exception
@@ -91,15 +99,13 @@ operator|==
 literal|null
 condition|)
 block|{
-name|featuresService
-operator|=
-name|getService
+throw|throw
+operator|new
+name|IllegalStateException
 argument_list|(
-name|FeaturesService
-operator|.
-name|class
+literal|"FeaturesService not found"
 argument_list|)
-expr_stmt|;
+throw|;
 block|}
 name|doExecute
 argument_list|(

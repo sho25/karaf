@@ -59,9 +59,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|console
+name|api
 operator|.
-name|OsgiCommandSupport
+name|action
+operator|.
+name|Action
 import|;
 end_import
 
@@ -75,7 +77,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|inject
+name|api
+operator|.
+name|action
+operator|.
+name|lifecycle
 operator|.
 name|Reference
 import|;
@@ -86,8 +92,8 @@ specifier|public
 specifier|abstract
 class|class
 name|InstanceCommandSupport
-extends|extends
-name|OsgiCommandSupport
+implements|implements
+name|Action
 block|{
 annotation|@
 name|Reference
@@ -160,6 +166,28 @@ return|return
 name|i
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|Object
+name|execute
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+return|return
+name|doExecute
+argument_list|()
+return|;
+block|}
+specifier|protected
+specifier|abstract
+name|Object
+name|doExecute
+parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
 block|}
 end_class
 
