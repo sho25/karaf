@@ -167,7 +167,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|mina
+name|sshd
+operator|.
+name|common
 operator|.
 name|util
 operator|.
