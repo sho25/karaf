@@ -27,9 +27,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
 operator|.
-name|Command
+name|action
+operator|.
+name|Action
 import|;
 end_import
 
@@ -43,7 +45,9 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Argument
 import|;
@@ -59,9 +63,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
 operator|.
-name|Completer
+name|action
+operator|.
+name|Command
 import|;
 end_import
 
@@ -75,9 +81,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|console
+name|api
 operator|.
-name|OsgiCommandSupport
+name|action
+operator|.
+name|Completion
 import|;
 end_import
 
@@ -91,7 +99,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|inject
+name|api
+operator|.
+name|action
+operator|.
+name|lifecycle
 operator|.
 name|Service
 import|;
@@ -118,8 +130,8 @@ name|Service
 specifier|public
 class|class
 name|MyCommand
-extends|extends
-name|OsgiCommandSupport
+implements|implements
+name|Action
 block|{
 annotation|@
 name|Argument
@@ -145,7 +157,7 @@ operator|=
 literal|false
 argument_list|)
 annotation|@
-name|Completer
+name|Completion
 argument_list|(
 name|MyCompleter
 operator|.
@@ -158,9 +170,9 @@ literal|null
 decl_stmt|;
 annotation|@
 name|Override
-specifier|protected
+specifier|public
 name|Object
-name|doExecute
+name|execute
 parameter_list|()
 throws|throws
 name|Exception
