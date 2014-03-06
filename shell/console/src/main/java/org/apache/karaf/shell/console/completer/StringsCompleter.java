@@ -90,6 +90,8 @@ comment|/**  * Completer for a set of strings.  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|StringsCompleter

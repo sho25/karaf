@@ -53,6 +53,8 @@ name|description
 operator|=
 literal|"Exit from the current shell"
 argument_list|)
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|ExitAction

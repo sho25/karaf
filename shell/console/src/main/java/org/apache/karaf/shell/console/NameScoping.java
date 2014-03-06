@@ -38,6 +38,8 @@ comment|/**  * A helper class for name scoping  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|NameScoping

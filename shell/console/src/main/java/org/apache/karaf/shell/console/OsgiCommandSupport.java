@@ -128,6 +128,8 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 specifier|abstract
 class|class

@@ -76,6 +76,8 @@ comment|/**  * A file name completer takes the buffer and issues a list of  * po
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|FileCompleter

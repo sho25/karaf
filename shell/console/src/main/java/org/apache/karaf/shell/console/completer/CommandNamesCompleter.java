@@ -188,6 +188,8 @@ comment|/**  * Completes command names  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|CommandNamesCompleter

@@ -36,6 +36,8 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|BasicSubShell

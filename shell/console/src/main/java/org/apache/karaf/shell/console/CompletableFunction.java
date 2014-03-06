@@ -54,6 +54,8 @@ import|;
 end_import
 
 begin_interface
+annotation|@
+name|Deprecated
 specifier|public
 interface|interface
 name|CompletableFunction

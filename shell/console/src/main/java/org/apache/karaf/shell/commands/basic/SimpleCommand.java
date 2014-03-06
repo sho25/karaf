@@ -122,6 +122,8 @@ comment|/**  * A very simple {@link Function} which creates {@link Action} based
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|SimpleCommand

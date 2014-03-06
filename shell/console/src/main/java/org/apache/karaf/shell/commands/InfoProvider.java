@@ -32,6 +32,8 @@ comment|/**  * A bundle can publish a service with this interface to offer some 
 end_comment
 
 begin_interface
+annotation|@
+name|Deprecated
 specifier|public
 interface|interface
 name|InfoProvider

@@ -38,6 +38,8 @@ comment|/**  * An action allows to easily execute commands in karaf.  * It can b
 end_comment
 
 begin_interface
+annotation|@
+name|Deprecated
 specifier|public
 interface|interface
 name|Action

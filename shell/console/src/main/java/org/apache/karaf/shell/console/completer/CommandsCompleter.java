@@ -320,6 +320,8 @@ comment|/**  * Like the {@link org.apache.karaf.shell.console.completer.Commands
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|CommandsCompleter
