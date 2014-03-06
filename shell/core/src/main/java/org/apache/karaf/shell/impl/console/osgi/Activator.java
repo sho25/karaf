@@ -81,9 +81,9 @@ name|impl
 operator|.
 name|action
 operator|.
-name|osgi
+name|command
 operator|.
-name|CommandExtender
+name|ManagerImpl
 import|;
 end_import
 
@@ -101,9 +101,9 @@ name|impl
 operator|.
 name|action
 operator|.
-name|command
+name|osgi
 operator|.
-name|ManagerImpl
+name|CommandExtender
 import|;
 end_import
 
