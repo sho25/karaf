@@ -83,9 +83,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|karaf
+name|felix
 operator|.
-name|util
+name|utils
 operator|.
 name|properties
 operator|.
@@ -128,20 +128,6 @@ operator|.
 name|main
 operator|.
 name|ConfigProperties
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|main
-operator|.
-name|Main
 import|;
 end_import
 

@@ -83,9 +83,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|karaf
+name|felix
 operator|.
-name|util
+name|utils
 operator|.
 name|properties
 operator|.
@@ -99,9 +99,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|karaf
+name|felix
 operator|.
-name|util
+name|utils
 operator|.
 name|properties
 operator|.
