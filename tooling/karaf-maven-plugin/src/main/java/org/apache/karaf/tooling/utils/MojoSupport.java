@@ -431,6 +431,18 @@ name|Proxy
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|codehaus
+operator|.
+name|plexus
+operator|.
+name|PlexusContainer
+import|;
+end_import
+
 begin_class
 annotation|@
 name|SuppressWarnings
@@ -509,6 +521,11 @@ comment|/**      * The Maven session.      *       * @parameter default-value="$
 specifier|protected
 name|MavenSession
 name|mavenSession
+decl_stmt|;
+comment|/**      *<p>We can't autowire strongly typed RepositorySystem from Aether because it may be Sonatype (Maven 3.0.x)      * or Eclipse (Maven 3.1.x/3.2.x) version, so we switch to service locator by autowiring entire {@link PlexusContainer}</p>      *      *<p>It's a bit of a hack but we have not choice when we want to be usable both in Maven 3.0.x and 3.1.x/3.2.x</p>      *      * @component      * @required      * @readonly      */
+specifier|protected
+name|PlexusContainer
+name|container
 decl_stmt|;
 specifier|protected
 name|MavenProject
