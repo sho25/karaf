@@ -81,7 +81,7 @@ specifier|final
 name|String
 name|OSGI
 init|=
-literal|"bundles:"
+literal|"osgi:"
 decl_stmt|;
 specifier|private
 name|JDBCUtils
