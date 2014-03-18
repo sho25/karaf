@@ -2671,7 +2671,7 @@ argument_list|()
 operator|.
 name|loadClass
 argument_list|(
-literal|"org.bundles.service.event.EventAdmin"
+literal|"org.osgi.service.event.EventAdmin"
 argument_list|)
 expr_stmt|;
 name|listener
