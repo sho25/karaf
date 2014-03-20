@@ -1032,8 +1032,6 @@ parameter_list|(
 name|String
 name|uris
 parameter_list|)
-throws|throws
-name|URISyntaxException
 block|{
 name|String
 index|[]
@@ -1081,6 +1079,8 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
+try|try
+block|{
 name|this
 operator|.
 name|uris
@@ -1094,6 +1094,23 @@ name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|URISyntaxException
+name|e
+parameter_list|)
+block|{
+name|LOGGER
+operator|.
+name|warn
+argument_list|(
+literal|"Invalid features repository URI: "
+operator|+
+name|value
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -5141,8 +5158,6 @@ specifier|public
 name|void
 name|start
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|this
 operator|.
@@ -5161,8 +5176,6 @@ specifier|public
 name|void
 name|stop
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|stopped
 operator|.
