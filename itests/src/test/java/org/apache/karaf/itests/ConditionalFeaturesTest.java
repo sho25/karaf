@@ -235,6 +235,19 @@ argument_list|(
 literal|"org.apache.felix.webconsole.plugins.event"
 argument_list|)
 expr_stmt|;
+comment|//Remove eventadmin
+name|featureService
+operator|.
+name|uninstallFeature
+argument_list|(
+literal|"eventadmin"
+argument_list|)
+expr_stmt|;
+name|assertBundleNotInstalled
+argument_list|(
+literal|"org.apache.felix.webconsole.plugins.event"
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class
