@@ -126,10 +126,6 @@ operator|new
 name|BundleServiceImpl
 argument_list|(
 name|bundleContext
-argument_list|,
-name|Collections
-operator|.
-name|EMPTY_LIST
 argument_list|)
 argument_list|)
 expr_stmt|;

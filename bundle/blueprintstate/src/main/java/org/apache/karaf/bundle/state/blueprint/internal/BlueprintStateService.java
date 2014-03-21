@@ -13,7 +13,9 @@ name|karaf
 operator|.
 name|bundle
 operator|.
-name|core
+name|state
+operator|.
+name|blueprint
 operator|.
 name|internal
 package|;
@@ -192,7 +194,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|BlueprintListener
+name|BlueprintStateService
 implements|implements
 name|org
 operator|.
@@ -220,7 +222,7 @@ name|LoggerFactory
 operator|.
 name|getLogger
 argument_list|(
-name|BlueprintListener
+name|BlueprintStateService
 operator|.
 name|class
 argument_list|)
@@ -236,7 +238,7 @@ argument_list|>
 name|states
 decl_stmt|;
 specifier|public
-name|BlueprintListener
+name|BlueprintStateService
 parameter_list|()
 block|{
 name|states
