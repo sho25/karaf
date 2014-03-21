@@ -3007,6 +3007,7 @@ operator|=
 name|DEFAULT_JAVA_OPTS
 expr_stmt|;
 block|}
+comment|// fallback and read karafOpts from KARAF_OPTS environment if no System property present
 name|String
 name|karafOpts
 init|=
@@ -3016,7 +3017,12 @@ name|getProperty
 argument_list|(
 literal|"karaf.opts"
 argument_list|,
-literal|""
+name|System
+operator|.
+name|getenv
+argument_list|(
+literal|"KARAF_OPTS"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|File
