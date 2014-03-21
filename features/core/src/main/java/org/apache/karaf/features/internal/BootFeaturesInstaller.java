@@ -357,6 +357,8 @@ name|void
 name|installBootFeatures
 parameter_list|()
 block|{
+try|try
+block|{
 name|List
 argument_list|<
 name|Feature
@@ -401,8 +403,6 @@ argument_list|(
 name|stagedFeatureNames
 argument_list|)
 decl_stmt|;
-try|try
-block|{
 for|for
 control|(
 name|Set

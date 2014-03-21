@@ -2229,6 +2229,8 @@ parameter_list|(
 name|String
 name|featureName
 parameter_list|)
+throws|throws
+name|Exception
 block|{
 name|Feature
 index|[]
@@ -2283,6 +2285,8 @@ name|String
 modifier|...
 name|expectedFeatures
 parameter_list|)
+throws|throws
+name|Exception
 block|{
 name|Set
 argument_list|<

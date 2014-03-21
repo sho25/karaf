@@ -292,6 +292,8 @@ name|Feature
 index|[]
 name|listInstalledFeatures
 parameter_list|()
+throws|throws
+name|Exception
 function_decl|;
 name|boolean
 name|isInstalled
