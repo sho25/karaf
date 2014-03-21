@@ -57,13 +57,9 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|region
-operator|.
-name|persist
-operator|.
-name|internal
-operator|.
 name|util
+operator|.
+name|tracker
 operator|.
 name|SingleServiceTracker
 import|;

@@ -11,15 +11,9 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|shell
+name|util
 operator|.
-name|impl
-operator|.
-name|console
-operator|.
-name|osgi
-operator|.
-name|secured
+name|tracker
 package|;
 end_package
 
