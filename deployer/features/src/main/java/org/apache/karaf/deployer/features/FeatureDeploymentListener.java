@@ -609,8 +609,6 @@ specifier|public
 name|void
 name|destroy
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|bundleContext
 operator|.
