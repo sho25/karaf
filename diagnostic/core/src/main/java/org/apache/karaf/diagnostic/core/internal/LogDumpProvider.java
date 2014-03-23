@@ -185,12 +185,12 @@ implements|implements
 name|DumpProvider
 block|{
 specifier|private
+specifier|final
 name|BundleContext
 name|bundleContext
 decl_stmt|;
 specifier|public
-name|void
-name|setBundleContext
+name|LogDumpProvider
 parameter_list|(
 name|BundleContext
 name|bundleContext
