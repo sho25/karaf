@@ -403,6 +403,11 @@ name|Object
 name|service
 parameter_list|)
 block|{
+synchronized|synchronized
+init|(
+name|services
+init|)
+block|{
 if|if
 condition|(
 name|service
@@ -516,6 +521,7 @@ name|service
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 specifier|protected
 name|Function
 name|wrap
@@ -541,6 +547,11 @@ parameter_list|(
 name|Object
 name|service
 parameter_list|)
+block|{
+synchronized|synchronized
+init|(
+name|services
+init|)
 block|{
 name|super
 operator|.
@@ -636,6 +647,7 @@ block|}
 block|}
 block|}
 block|}
+block|}
 annotation|@
 name|Override
 specifier|public
@@ -663,7 +675,7 @@ parameter_list|)
 block|{
 synchronized|synchronized
 init|(
-name|this
+name|sessions
 init|)
 block|{
 if|if
@@ -735,7 +747,7 @@ parameter_list|)
 block|{
 synchronized|synchronized
 init|(
-name|this
+name|sessions
 init|)
 block|{
 if|if
@@ -788,7 +800,7 @@ parameter_list|()
 block|{
 synchronized|synchronized
 init|(
-name|this
+name|sessions
 init|)
 block|{
 name|closed

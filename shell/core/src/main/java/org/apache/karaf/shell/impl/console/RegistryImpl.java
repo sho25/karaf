@@ -114,12 +114,12 @@ name|RegistryImpl
 implements|implements
 name|Registry
 block|{
-specifier|private
+specifier|protected
 specifier|final
 name|Registry
 name|parent
 decl_stmt|;
-specifier|private
+specifier|protected
 specifier|final
 name|Map
 argument_list|<
