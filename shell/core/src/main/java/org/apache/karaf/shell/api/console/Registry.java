@@ -58,6 +58,17 @@ argument_list|>
 name|getCommands
 parameter_list|()
 function_decl|;
+comment|/**      *      * @param scope      * @param name      * @return      * @throws InterruptedException      */
+name|boolean
+name|hasCommand
+parameter_list|(
+name|String
+name|scope
+parameter_list|,
+name|String
+name|name
+parameter_list|)
+function_decl|;
 comment|/**      * Register a delayed service (or factory).      * In cases where instances must be created for each injection,      * a {@link Callable} can be registered and each injection will      * call it to obtain the actual service implementation.      *      * @param factory      * @param clazz      * @param<T>      */
 parameter_list|<
 name|T
