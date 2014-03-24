@@ -3009,6 +3009,16 @@ expr_stmt|;
 block|}
 comment|// fallback and read karafOpts from KARAF_OPTS environment if no System property present
 name|String
+name|karafOptsEnv
+init|=
+name|System
+operator|.
+name|getenv
+argument_list|(
+literal|"KARAF_OPTS"
+argument_list|)
+decl_stmt|;
+name|String
 name|karafOpts
 init|=
 name|System
@@ -3017,12 +3027,13 @@ name|getProperty
 argument_list|(
 literal|"karaf.opts"
 argument_list|,
-name|System
-operator|.
-name|getenv
-argument_list|(
-literal|"KARAF_OPTS"
-argument_list|)
+name|karafOptsEnv
+operator|!=
+literal|null
+condition|?
+name|karafOptsEnv
+else|:
+literal|""
 argument_list|)
 decl_stmt|;
 name|File
