@@ -984,15 +984,6 @@ argument_list|)
 block|,
 name|editConfigurationFilePut
 argument_list|(
-literal|"etc/org.apache.karaf.features.cfg"
-argument_list|,
-literal|"featuresBoot"
-argument_list|,
-literal|"config,standard,region,package,kar,management"
-argument_list|)
-block|,
-name|editConfigurationFilePut
-argument_list|(
 literal|"etc/org.ops4j.pax.web.cfg"
 argument_list|,
 literal|"org.osgi.service.http.port"

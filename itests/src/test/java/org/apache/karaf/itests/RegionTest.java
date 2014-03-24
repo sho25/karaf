@@ -131,6 +131,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|installAndAssertFeature
+argument_list|(
+literal|"region"
+argument_list|)
+expr_stmt|;
 name|String
 name|infoOutput
 init|=
@@ -182,6 +187,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|installAndAssertFeature
+argument_list|(
+literal|"region"
+argument_list|)
+expr_stmt|;
 name|System
 operator|.
 name|out
