@@ -241,9 +241,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
+name|api
+operator|.
 name|console
 operator|.
-name|Console
+name|Session
 import|;
 end_import
 
@@ -257,11 +259,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
+name|api
+operator|.
 name|console
 operator|.
-name|factory
-operator|.
-name|ConsoleFactory
+name|SessionFactory
 import|;
 end_import
 
@@ -298,7 +300,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * WebConsole plugin for {@link Console}.  */
+comment|/**  * WebConsole plugin for {@link Session}.  */
 end_comment
 
 begin_class
@@ -359,8 +361,8 @@ name|BundleContext
 name|bundleContext
 decl_stmt|;
 specifier|private
-name|ConsoleFactory
-name|consoleFactory
+name|SessionFactory
+name|sessionFactory
 decl_stmt|;
 annotation|@
 name|Override
@@ -393,17 +395,17 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|setConsoleFactory
+name|setSessionFactory
 parameter_list|(
-name|ConsoleFactory
-name|consoleFactory
+name|SessionFactory
+name|sessionFactory
 parameter_list|)
 block|{
 name|this
 operator|.
-name|consoleFactory
+name|sessionFactory
 operator|=
-name|consoleFactory
+name|sessionFactory
 expr_stmt|;
 block|}
 specifier|public
@@ -1046,10 +1048,10 @@ argument_list|,
 literal|true
 argument_list|)
 decl_stmt|;
-name|Console
-name|console
+name|Session
+name|session
 init|=
-name|consoleFactory
+name|sessionFactory
 operator|.
 name|create
 argument_list|(
@@ -1079,7 +1081,7 @@ decl_stmt|;
 operator|new
 name|Thread
 argument_list|(
-name|console
+name|session
 argument_list|,
 literal|"Karaf web console user "
 operator|+
