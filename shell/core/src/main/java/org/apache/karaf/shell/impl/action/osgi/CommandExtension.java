@@ -537,6 +537,23 @@ name|void
 name|found
 parameter_list|()
 block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"Registering commands for bundle {}/{}"
+argument_list|,
+name|bundle
+operator|.
+name|getSymbolicName
+argument_list|()
+argument_list|,
+name|bundle
+operator|.
+name|getVersion
+argument_list|()
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Satisfiable
@@ -828,8 +845,18 @@ name|LOGGER
 operator|.
 name|info
 argument_list|(
-literal|"Command registration delayed. Missing dependencies: "
-operator|+
+literal|"Command registration delayed for bundle {}/{}. Missing dependencies: {}"
+argument_list|,
+name|bundle
+operator|.
+name|getSymbolicName
+argument_list|()
+argument_list|,
+name|bundle
+operator|.
+name|getVersion
+argument_list|()
+argument_list|,
 name|tracker
 operator|.
 name|getMissingServices
