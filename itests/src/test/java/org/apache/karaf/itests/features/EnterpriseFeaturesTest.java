@@ -37,6 +37,16 @@ name|org
 operator|.
 name|junit
 operator|.
+name|Ignore
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
 name|Test
 import|;
 end_import
@@ -263,6 +273,11 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
+annotation|@
+name|Ignore
+argument_list|(
+literal|"Pax-cdi depends on scr feature [2.3,3.5) so it does not work with 4.0"
+argument_list|)
 specifier|public
 name|void
 name|installOpenWebBeansFeature
@@ -278,6 +293,11 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
+annotation|@
+name|Ignore
+argument_list|(
+literal|"Pax-cdi depends on scr feature [2.3,3.5) so it does not work with 4.0"
+argument_list|)
 specifier|public
 name|void
 name|installWeldFeature

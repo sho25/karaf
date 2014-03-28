@@ -178,7 +178,7 @@ specifier|final
 name|String
 name|KARAF_VERSION
 init|=
-literal|"3"
+literal|"4"
 decl_stmt|;
 annotation|@
 name|Test
