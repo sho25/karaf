@@ -1108,8 +1108,6 @@ name|BundleManager
 argument_list|(
 literal|null
 argument_list|,
-literal|null
-argument_list|,
 literal|0l
 argument_list|)
 decl_stmt|;
