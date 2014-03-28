@@ -1447,8 +1447,8 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|Exception
-name|e
+name|Throwable
+name|t
 parameter_list|)
 block|{
 name|LOGGER
@@ -1457,7 +1457,7 @@ name|warn
 argument_list|(
 literal|"Error starting FeaturesService"
 argument_list|,
-name|e
+name|t
 argument_list|)
 expr_stmt|;
 name|doStop
