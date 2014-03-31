@@ -1320,7 +1320,9 @@ parameter_list|()
 block|{
 operator|new
 name|Thread
-argument_list|()
+argument_list|(
+literal|"Karaf Lock Monitor Thread"
+argument_list|)
 block|{
 specifier|public
 name|void

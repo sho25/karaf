@@ -167,6 +167,11 @@ name|Framework
 name|framework
 parameter_list|)
 block|{
+name|super
+argument_list|(
+literal|"Karaf Shutdown Socket Thread"
+argument_list|)
+expr_stmt|;
 name|this
 operator|.
 name|shutdown
