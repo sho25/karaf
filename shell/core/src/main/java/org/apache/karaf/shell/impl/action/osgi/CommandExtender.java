@@ -171,6 +171,11 @@ name|Registry
 name|registry
 parameter_list|)
 block|{
+name|setSynchronous
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|this
 operator|.
 name|registry
