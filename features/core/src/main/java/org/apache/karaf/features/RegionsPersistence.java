@@ -11,9 +11,7 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|region
-operator|.
-name|persist
+name|features
 package|;
 end_package
 
