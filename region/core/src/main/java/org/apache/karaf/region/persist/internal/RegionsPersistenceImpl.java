@@ -155,9 +155,7 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|region
-operator|.
-name|persist
+name|features
 operator|.
 name|RegionsPersistence
 import|;

@@ -27,9 +27,7 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|region
-operator|.
-name|persist
+name|features
 operator|.
 name|RegionsPersistence
 import|;
@@ -186,6 +184,9 @@ name|bundleTracker
 operator|=
 operator|new
 name|BundleTracker
+argument_list|<
+name|Bundle
+argument_list|>
 argument_list|(
 name|bundleContext
 argument_list|,
@@ -193,12 +194,15 @@ name|stateMask
 argument_list|,
 operator|new
 name|BundleTrackerCustomizer
+argument_list|<
+name|Bundle
+argument_list|>
 argument_list|()
 block|{
 annotation|@
 name|Override
 specifier|public
-name|Object
+name|Bundle
 name|addingBundle
 parameter_list|(
 name|Bundle
@@ -231,7 +235,7 @@ parameter_list|,
 name|BundleEvent
 name|bundleEvent
 parameter_list|,
-name|Object
+name|Bundle
 name|o
 parameter_list|)
 block|{             }
@@ -247,7 +251,7 @@ parameter_list|,
 name|BundleEvent
 name|bundleEvent
 parameter_list|,
-name|Object
+name|Bundle
 name|o
 parameter_list|)
 block|{             }
@@ -261,7 +265,7 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|private
-name|Object
+name|Bundle
 name|addingBundle
 parameter_list|(
 name|Bundle

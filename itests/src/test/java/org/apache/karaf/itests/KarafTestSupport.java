@@ -2763,7 +2763,7 @@ block|}
 block|}
 specifier|protected
 name|void
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 parameter_list|(
 name|String
 modifier|...
