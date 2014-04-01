@@ -145,7 +145,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"transaction"
 argument_list|)
@@ -160,7 +160,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"jpa"
 argument_list|)
@@ -175,7 +175,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"openjpa"
 argument_list|)
@@ -190,7 +190,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"hibernate"
 argument_list|)
@@ -205,7 +205,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"hibernate-envers"
 argument_list|)
@@ -220,7 +220,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"hibernate-validator"
 argument_list|)
@@ -235,7 +235,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"jndi"
 argument_list|)
@@ -250,7 +250,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"jdbc"
 argument_list|)
@@ -265,7 +265,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"jms"
 argument_list|)
@@ -285,7 +285,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"openwebbeans"
 argument_list|)
@@ -305,7 +305,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"weld"
 argument_list|)
@@ -320,7 +320,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"application-without-isolation"
 argument_list|)

@@ -179,7 +179,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"spring-dm"
 argument_list|)
@@ -194,7 +194,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"spring-dm-web"
 argument_list|)
@@ -429,7 +429,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"spring-security"
 argument_list|)
@@ -444,7 +444,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"gemini-blueprint"
 argument_list|)

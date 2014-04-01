@@ -136,14 +136,14 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"aries-annotation"
 argument_list|,
 literal|"pax-http"
 argument_list|)
 expr_stmt|;
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"pax-http"
 argument_list|,
@@ -160,7 +160,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"aries-annotation"
 argument_list|)
@@ -175,7 +175,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"blueprint-web"
 argument_list|)
@@ -190,7 +190,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"wrapper"
 argument_list|)
@@ -205,7 +205,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"obr"
 argument_list|)
@@ -220,7 +220,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"config"
 argument_list|)
@@ -235,7 +235,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"region"
 argument_list|)
@@ -250,7 +250,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"package"
 argument_list|)
@@ -265,7 +265,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"http"
 argument_list|)
@@ -280,7 +280,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"http-whiteboard"
 argument_list|)
@@ -295,7 +295,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"war"
 argument_list|)
@@ -310,7 +310,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"kar"
 argument_list|)
@@ -325,7 +325,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"webconsole"
 argument_list|)
@@ -340,7 +340,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"ssh"
 argument_list|)
@@ -355,7 +355,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"management"
 argument_list|)
@@ -370,7 +370,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"scheduler"
 argument_list|)
@@ -385,7 +385,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"eventadmin"
 argument_list|)
@@ -400,7 +400,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"jasypt-encryption"
 argument_list|)
@@ -415,7 +415,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeature
+name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"scr"
 argument_list|)
