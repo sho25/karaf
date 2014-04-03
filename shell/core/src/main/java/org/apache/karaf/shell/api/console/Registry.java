@@ -58,9 +58,9 @@ argument_list|>
 name|getCommands
 parameter_list|()
 function_decl|;
-comment|/**      *      * @param scope      * @param name      * @return      * @throws InterruptedException      */
-name|boolean
-name|hasCommand
+comment|/**      *      * @param scope      * @param name      * @return      */
+name|Command
+name|getCommand
 parameter_list|(
 name|String
 name|scope

@@ -766,6 +766,7 @@ control|)
 block|{
 if|if
 condition|(
+operator|!
 name|single
 operator|.
 name|containsKey

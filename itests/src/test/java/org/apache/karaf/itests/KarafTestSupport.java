@@ -1960,12 +1960,14 @@ operator|.
 name|getRegistry
 argument_list|()
 operator|.
-name|hasCommand
+name|getCommand
 argument_list|(
 name|scope
 argument_list|,
 name|name
 argument_list|)
+operator|!=
+literal|null
 condition|)
 block|{
 return|return;

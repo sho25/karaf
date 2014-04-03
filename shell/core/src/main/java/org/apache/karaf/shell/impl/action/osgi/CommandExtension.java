@@ -920,10 +920,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|action
-operator|=
-literal|null
-expr_stmt|;
+return|return;
 block|}
 name|LOGGER
 operator|.
