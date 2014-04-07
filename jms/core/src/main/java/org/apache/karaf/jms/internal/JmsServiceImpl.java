@@ -1636,8 +1636,10 @@ name|message
 operator|=
 name|consumer
 operator|.
-name|receiveNoWait
-argument_list|()
+name|receive
+argument_list|(
+literal|5000L
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1759,8 +1761,10 @@ name|message
 operator|=
 name|consumer
 operator|.
-name|receiveNoWait
-argument_list|()
+name|receive
+argument_list|(
+literal|5000L
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
