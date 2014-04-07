@@ -213,6 +213,15 @@ argument_list|,
 literal|"datasource-mysql.xml"
 argument_list|)
 block|,
+name|MSSQL
+argument_list|(
+literal|"wrap:mvn:net.sourceforge.jtds/jtds/"
+argument_list|,
+literal|"1.2.4"
+argument_list|,
+literal|"datasource-mssql.xml"
+argument_list|)
+block|,
 name|ORACLE
 argument_list|(
 literal|"wrap:mvn:ojdbc/ojdbc/"

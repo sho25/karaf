@@ -192,7 +192,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"The JDBC datasource type (generic, MySQL, Oracle, Postgres, H2, HSQL, Derby)"
+literal|"The JDBC datasource type (generic, MySQL, Oracle, Postgres, H2, HSQL, Derby, MSSQL)"
 argument_list|,
 name|required
 operator|=
@@ -229,6 +229,8 @@ block|,
 literal|"oracle"
 block|,
 literal|"postgres"
+block|,
+literal|"mssql"
 block|}
 argument_list|)
 name|String
