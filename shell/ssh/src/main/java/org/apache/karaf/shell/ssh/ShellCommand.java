@@ -437,6 +437,11 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+name|int
+name|exitStatus
+init|=
+literal|0
+decl_stmt|;
 try|try
 block|{
 specifier|final
@@ -647,6 +652,10 @@ name|Throwable
 name|t
 parameter_list|)
 block|{
+name|exitStatus
+operator|=
+literal|1
+expr_stmt|;
 name|ShellUtil
 operator|.
 name|logException
@@ -664,6 +673,10 @@ name|Exception
 name|e
 parameter_list|)
 block|{
+name|exitStatus
+operator|=
+literal|1
+expr_stmt|;
 throw|throw
 operator|(
 name|IOException
@@ -697,7 +710,7 @@ name|callback
 operator|.
 name|onExit
 argument_list|(
-literal|0
+name|exitStatus
 argument_list|)
 expr_stmt|;
 block|}
