@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|net
-operator|.
-name|URI
-import|;
-end_import
-
-begin_import
-import|import
 name|junit
 operator|.
 name|framework
@@ -46,6 +36,8 @@ operator|.
 name|features
 operator|.
 name|internal
+operator|.
+name|service
 operator|.
 name|RepositoryImpl
 import|;
@@ -76,7 +68,7 @@ argument_list|()
 operator|.
 name|getResource
 argument_list|(
-literal|"internal/f06.xml"
+literal|"internal/service/f06.xml"
 argument_list|)
 operator|.
 name|toURI

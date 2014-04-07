@@ -383,7 +383,7 @@ name|featureInstallOutput
 init|=
 name|executeCommand
 argument_list|(
-literal|"feature:install -v eventadmin"
+literal|"feature:install -v wrapper"
 argument_list|,
 operator|new
 name|RolePrincipal
@@ -414,7 +414,7 @@ name|featureListOutput
 init|=
 name|executeCommand
 argument_list|(
-literal|"feature:list -i | grep eventadmin"
+literal|"feature:list -i | grep wrapper"
 argument_list|)
 decl_stmt|;
 name|System
@@ -442,7 +442,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"feature:uninstall eventadmin"
+literal|"feature:uninstall wrapper"
 argument_list|,
 operator|new
 name|RolePrincipal
@@ -456,7 +456,7 @@ name|featureListOutput
 operator|=
 name|executeCommand
 argument_list|(
-literal|"feature:list -i | grep eventadmin"
+literal|"feature:list -i | grep wrapper"
 argument_list|)
 expr_stmt|;
 name|System
@@ -529,7 +529,7 @@ operator|new
 name|Object
 index|[]
 block|{
-literal|"eventadmin"
+literal|"wrapper"
 block|}
 argument_list|,
 operator|new
@@ -552,7 +552,7 @@ operator|new
 name|Object
 index|[]
 block|{
-literal|"eventadmin"
+literal|"wrapper"
 block|}
 argument_list|,
 operator|new

@@ -169,7 +169,7 @@ name|featureService
 operator|.
 name|uninstallFeature
 argument_list|(
-literal|"eventadmin"
+literal|"scr"
 argument_list|)
 expr_stmt|;
 block|}

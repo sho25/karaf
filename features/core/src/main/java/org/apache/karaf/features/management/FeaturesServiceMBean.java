@@ -426,8 +426,6 @@ index|[]
 name|REPOSITORY_EVENT
 init|=
 block|{
-name|REPOSITORY_NAME
-block|,
 name|REPOSITORY_URI
 block|,
 name|REPOSITORY_EVENT_EVENT_TYPE

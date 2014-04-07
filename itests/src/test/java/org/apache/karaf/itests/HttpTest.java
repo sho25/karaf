@@ -155,6 +155,18 @@ name|PerClass
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
+name|Constants
+import|;
+end_import
+
 begin_class
 annotation|@
 name|RunWith
@@ -200,6 +212,13 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|waitForService
+argument_list|(
+literal|"(objectClass=javax.servlet.ServletContext)"
+argument_list|,
+literal|5000
+argument_list|)
+expr_stmt|;
 name|assertContains
 argument_list|(
 literal|"/system/console"

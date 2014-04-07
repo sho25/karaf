@@ -135,6 +135,24 @@ name|String
 name|getRegion
 parameter_list|()
 function_decl|;
+name|List
+argument_list|<
+name|?
+extends|extends
+name|Capability
+argument_list|>
+name|getCapabilities
+parameter_list|()
+function_decl|;
+name|List
+argument_list|<
+name|?
+extends|extends
+name|Requirement
+argument_list|>
+name|getRequirements
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

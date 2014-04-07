@@ -101,6 +101,8 @@ name|features
 operator|.
 name|internal
 operator|.
+name|service
+operator|.
 name|FeatureValidationUtil
 import|;
 end_import
@@ -116,6 +118,8 @@ operator|.
 name|features
 operator|.
 name|internal
+operator|.
+name|service
 operator|.
 name|RepositoryImpl
 import|;

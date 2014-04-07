@@ -67,6 +67,11 @@ argument_list|()
 operator|+
 literal|"_features"
 decl_stmt|;
+name|String
+name|feature
+init|=
+literal|"wrapper"
+decl_stmt|;
 name|addViewer
 argument_list|(
 name|vieweruser
@@ -90,13 +95,17 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-literal|"Precondition failed, this test uses the eventadmin subsystem to test features with..."
+literal|"Precondition failed, this test uses the "
+operator|+
+name|feature
+operator|+
+literal|" subsystem to test features with..."
 argument_list|,
 name|r
 operator|.
 name|contains
 argument_list|(
-literal|"eventadmin"
+name|feature
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -104,7 +113,9 @@ name|assertCommand
 argument_list|(
 name|vieweruser
 argument_list|,
-literal|"feature:install eventadmin"
+literal|"feature:install "
+operator|+
+name|feature
 argument_list|,
 name|Result
 operator|.
@@ -129,13 +140,15 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-literal|"eventadmin features should not have been installed, as viewer doesn't have credentials"
+name|feature
+operator|+
+literal|" features should not have been installed, as viewer doesn't have credentials"
 argument_list|,
 name|r2
 operator|.
 name|contains
 argument_list|(
-literal|"eventadmin"
+name|feature
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -143,7 +156,9 @@ name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"feature:install eventadmin"
+literal|"feature:install "
+operator|+
+name|feature
 argument_list|,
 name|Result
 operator|.
@@ -168,13 +183,15 @@ name|Assert
 operator|.
 name|assertTrue
 argument_list|(
-literal|"eventadmin feature should have been installed by 'karaf' user"
+name|feature
+operator|+
+literal|" feature should have been installed by 'karaf' user"
 argument_list|,
 name|r3
 operator|.
 name|contains
 argument_list|(
-literal|"eventadmin"
+name|feature
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -182,7 +199,9 @@ name|assertCommand
 argument_list|(
 name|vieweruser
 argument_list|,
-literal|"feature:uninstall eventadmin"
+literal|"feature:uninstall "
+operator|+
+name|feature
 argument_list|,
 name|Result
 operator|.
@@ -207,13 +226,15 @@ name|Assert
 operator|.
 name|assertTrue
 argument_list|(
-literal|"eventadmin feature should still be there, as viewer doesn't have credentials"
+name|feature
+operator|+
+literal|" feature should still be there, as viewer doesn't have credentials"
 argument_list|,
 name|r4
 operator|.
 name|contains
 argument_list|(
-literal|"eventadmin"
+name|feature
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -221,7 +242,9 @@ name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"feature:uninstall eventadmin"
+literal|"feature:uninstall "
+operator|+
+name|feature
 argument_list|,
 name|Result
 operator|.
@@ -246,13 +269,15 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-literal|"The eventadmin subsystem should have been uninstalled"
+name|feature
+operator|+
+literal|" feature should have been uninstalled"
 argument_list|,
 name|r5
 operator|.
 name|contains
 argument_list|(
-literal|"eventadmin"
+name|feature
 argument_list|)
 argument_list|)
 expr_stmt|;

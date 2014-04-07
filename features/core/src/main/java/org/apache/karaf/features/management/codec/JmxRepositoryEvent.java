@@ -176,19 +176,6 @@ operator|.
 name|getRepository
 argument_list|()
 operator|.
-name|getName
-argument_list|()
-expr_stmt|;
-name|itemValues
-index|[
-literal|1
-index|]
-operator|=
-name|event
-operator|.
-name|getRepository
-argument_list|()
-operator|.
 name|getURI
 argument_list|()
 operator|.
@@ -208,7 +195,7 @@ name|RepositoryAdded
 case|:
 name|itemValues
 index|[
-literal|2
+literal|1
 index|]
 operator|=
 name|FeaturesServiceMBean
@@ -221,7 +208,7 @@ name|RepositoryRemoved
 case|:
 name|itemValues
 index|[
-literal|2
+literal|1
 index|]
 operator|=
 name|FeaturesServiceMBean
@@ -353,32 +340,16 @@ name|SimpleType
 operator|.
 name|STRING
 expr_stmt|;
-name|itemTypes
-index|[
-literal|2
-index|]
-operator|=
-name|SimpleType
-operator|.
-name|STRING
-expr_stmt|;
 name|itemDescriptions
 index|[
 literal|0
-index|]
-operator|=
-literal|"The name of the repository"
-expr_stmt|;
-name|itemDescriptions
-index|[
-literal|1
 index|]
 operator|=
 literal|"The uri of the repository"
 expr_stmt|;
 name|itemDescriptions
 index|[
-literal|2
+literal|1
 index|]
 operator|=
 literal|"The type of event"
