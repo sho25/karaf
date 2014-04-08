@@ -155,6 +155,17 @@ name|System
 operator|.
 name|setProperty
 argument_list|(
+literal|"karaf.etc"
+argument_list|,
+name|root
+operator|+
+literal|"/etc"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|setProperty
+argument_list|(
 literal|"karaf.history"
 argument_list|,
 name|root

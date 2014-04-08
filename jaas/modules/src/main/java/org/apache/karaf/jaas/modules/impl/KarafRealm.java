@@ -194,14 +194,8 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.base"
+literal|"karaf.etc"
 argument_list|)
-operator|+
-name|File
-operator|.
-name|separatorChar
-operator|+
-literal|"etc"
 decl_stmt|;
 specifier|private
 specifier|static

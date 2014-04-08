@@ -718,10 +718,10 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.base"
+literal|"karaf.etc"
 argument_list|)
 operator|+
-literal|"/etc/host.key"
+literal|"/host.key"
 argument_list|)
 decl_stmt|;
 name|String
