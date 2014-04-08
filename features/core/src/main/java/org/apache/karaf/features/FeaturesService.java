@@ -63,6 +63,8 @@ name|PrintBundlesToRefresh
 block|,
 name|NoAutoRefreshBundles
 block|,
+name|NoAutoStartBundles
+block|,
 name|ContinueBatchOnFailure
 block|,
 name|Verbose

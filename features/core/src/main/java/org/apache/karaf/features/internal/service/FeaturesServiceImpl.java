@@ -4193,6 +4193,18 @@ name|noRefresh
 init|=
 literal|false
 decl_stmt|;
+name|boolean
+name|noStart
+init|=
+name|options
+operator|.
+name|contains
+argument_list|(
+name|Option
+operator|.
+name|NoAutoStartBundles
+argument_list|)
+decl_stmt|;
 comment|// TODO: make this configurable  through ConfigAdmin
 comment|// TODO: though opening it as some important effects
 name|String
@@ -6080,11 +6092,18 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
+if|if
+condition|(
+operator|!
+name|noStart
+condition|)
+block|{
 name|bundle
 operator|.
 name|start
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
