@@ -305,34 +305,6 @@ name|karaf
 operator|.
 name|features
 operator|.
-name|Conditional
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|features
-operator|.
-name|Dependency
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|features
-operator|.
 name|Feature
 import|;
 end_import
@@ -816,6 +788,38 @@ name|FeaturesServiceImpl
 implements|implements
 name|FeaturesService
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|UPDATE_SNAPSHOTS_NONE
+init|=
+literal|"none"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|UPDATE_SNAPSHOTS_CRC
+init|=
+literal|"crc"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|UPDATE_SNAPSHOTS_ALWAYS
+init|=
+literal|"always"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DEFAULT_UPDATE_SNAPSHOTS
+init|=
+name|UPDATE_SNAPSHOTS_CRC
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
@@ -847,16 +851,19 @@ name|MAVEN
 init|=
 literal|"mvn:"
 decl_stmt|;
+comment|/**      * Our bundle.      * We use it to check bundle operations affecting our own bundle.      */
 specifier|private
 specifier|final
 name|Bundle
 name|bundle
 decl_stmt|;
+comment|/**      * The system bundle context.      * For all bundles related operations, we use the system bundle context      * to allow this bundle to be stopped and still allow the deployment to      * take place.      */
 specifier|private
 specifier|final
 name|BundleContext
 name|systemBundleContext
 decl_stmt|;
+comment|/**      * Used to load and save the {@link State} of this service.      */
 specifier|private
 specifier|final
 name|StateStorage
@@ -881,6 +888,40 @@ specifier|private
 specifier|final
 name|String
 name|overrides
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DEFAULT_FEATURE_RESOLUTION_RANGE
+init|=
+literal|"${range;[====,====]}"
+decl_stmt|;
+comment|/**      * Range to use when a version is specified on a feature dependency.      * The default is {@link FeaturesServiceImpl#DEFAULT_FEATURE_RESOLUTION_RANGE}      */
+specifier|private
+specifier|final
+name|String
+name|featureResolutionRange
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DEFAULT_BUNDLE_UPDATE_RANGE
+init|=
+literal|"${range;[==,=+)}"
+decl_stmt|;
+comment|/**      * Range to use when verifying if a bundle should be updated or      * new bundle installed.      * The default is {@link FeaturesServiceImpl#DEFAULT_BUNDLE_UPDATE_RANGE}      */
+specifier|private
+specifier|final
+name|String
+name|bundleUpdateRange
+decl_stmt|;
+comment|/**      * Use CRC to check snapshot bundles and update them if changed.      * Either:      *   - none : never update snapshots      *   - always : always update snapshots      *   - crc : use CRC to detect changes      */
+specifier|private
+specifier|final
+name|String
+name|updateSnaphots
 decl_stmt|;
 specifier|private
 specifier|final
@@ -972,6 +1013,15 @@ name|configInstaller
 parameter_list|,
 name|String
 name|overrides
+parameter_list|,
+name|String
+name|featureResolutionRange
+parameter_list|,
+name|String
+name|bundleUpdateRange
+parameter_list|,
+name|String
+name|updateSnaphots
 parameter_list|)
 block|{
 name|this
@@ -1015,6 +1065,24 @@ operator|.
 name|overrides
 operator|=
 name|overrides
+expr_stmt|;
+name|this
+operator|.
+name|featureResolutionRange
+operator|=
+name|featureResolutionRange
+expr_stmt|;
+name|this
+operator|.
+name|bundleUpdateRange
+operator|=
+name|bundleUpdateRange
+expr_stmt|;
+name|this
+operator|.
+name|updateSnaphots
+operator|=
+name|updateSnaphots
 expr_stmt|;
 name|loadState
 argument_list|()
@@ -1073,6 +1141,28 @@ init|(
 name|lock
 init|)
 block|{
+comment|// Make sure we don't store bundle checksums if
+comment|// it has been disabled through configadmin
+comment|// so that we don't keep out-of-date checksums.
+if|if
+condition|(
+operator|!
+name|UPDATE_SNAPSHOTS_CRC
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|updateSnaphots
+argument_list|)
+condition|)
+block|{
+name|state
+operator|.
+name|bundleChecksums
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
+block|}
 name|storage
 operator|.
 name|save
@@ -4238,33 +4328,41 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// TODO: make this configurable  through ConfigAdmin
-comment|// TODO: this needs to be tested a bit
-comment|// TODO: note that this only applies to managed and updateable bundles
-name|boolean
-name|updateSnaphots
-init|=
-literal|true
-decl_stmt|;
-comment|// TODO: make this configurable at runtime
-comment|// TODO: note that integration tests will fail if set to false
-comment|// TODO: but I think it should be the default anyway
 name|boolean
 name|noRefreshUnmanaged
 init|=
-literal|true
+name|options
+operator|.
+name|contains
+argument_list|(
+name|Option
+operator|.
+name|NoAutoRefreshUnmanagedBundles
+argument_list|)
 decl_stmt|;
-comment|// TODO: make this configurable at runtime
 name|boolean
 name|noRefreshManaged
 init|=
-literal|true
+name|options
+operator|.
+name|contains
+argument_list|(
+name|Option
+operator|.
+name|NoAutoRefreshManagedBundles
+argument_list|)
 decl_stmt|;
-comment|// TODO: make this configurable at runtime
 name|boolean
 name|noRefresh
 init|=
-literal|false
+name|options
+operator|.
+name|contains
+argument_list|(
+name|Option
+operator|.
+name|NoAutoRefreshBundles
+argument_list|)
 decl_stmt|;
 name|boolean
 name|noStart
@@ -4277,19 +4375,6 @@ name|Option
 operator|.
 name|NoAutoStartBundles
 argument_list|)
-decl_stmt|;
-comment|// TODO: make this configurable  through ConfigAdmin
-comment|// TODO: though opening it as some important effects
-name|String
-name|featureResolutionRange
-init|=
-literal|"${range;[====,====]}"
-decl_stmt|;
-comment|// TODO: make this configurable through ConfigAdmin
-name|String
-name|bundleUpdateRange
-init|=
-literal|"${range;[==,=+)}"
 decl_stmt|;
 name|boolean
 name|verbose
@@ -4762,8 +4847,6 @@ name|computeDeployment
 argument_list|(
 name|managed
 argument_list|,
-name|updateSnaphots
-argument_list|,
 name|bundles
 argument_list|,
 name|providers
@@ -4771,8 +4854,6 @@ argument_list|,
 name|resources
 argument_list|,
 name|bundleChecksums
-argument_list|,
-name|bundleUpdateRange
 argument_list|)
 decl_stmt|;
 if|if
@@ -5364,6 +5445,13 @@ expr_stmt|;
 comment|// save a checksum of installed snapshot bundle
 if|if
 condition|(
+name|UPDATE_SNAPSHOTS_CRC
+operator|.
+name|equals
+argument_list|(
+name|updateSnaphots
+argument_list|)
+operator|&&
 name|isUpdateable
 argument_list|(
 name|resource
@@ -6102,6 +6190,7 @@ argument_list|)
 throw|;
 block|}
 block|}
+comment|// TODO: call listeners for features added and removed
 name|print
 argument_list|(
 literal|"Done."
@@ -6487,9 +6576,6 @@ name|Long
 argument_list|>
 name|managed
 parameter_list|,
-name|boolean
-name|updateSnaphots
-parameter_list|,
 name|Bundle
 index|[]
 name|bundles
@@ -6515,9 +6601,6 @@ argument_list|,
 name|Long
 argument_list|>
 name|bundleChecksums
-parameter_list|,
-name|String
-name|bundleUpdateRange
 parameter_list|)
 throws|throws
 name|IOException
@@ -6637,8 +6720,6 @@ comment|// In case of snapshots, check if the snapshot is out of date
 comment|// and flag it as to update
 if|if
 condition|(
-name|updateSnaphots
-operator|&&
 name|managed
 operator|.
 name|contains
@@ -6652,6 +6733,52 @@ operator|&&
 name|isUpdateable
 argument_list|(
 name|resource
+argument_list|)
+condition|)
+block|{
+comment|// Always update snapshots
+if|if
+condition|(
+name|UPDATE_SNAPSHOTS_ALWAYS
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|updateSnaphots
+argument_list|)
+condition|)
+block|{
+name|LOGGER
+operator|.
+name|debug
+argument_list|(
+literal|"Update snapshot for "
+operator|+
+name|bundle
+operator|.
+name|getLocation
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|deployment
+operator|.
+name|toUpdate
+operator|.
+name|put
+argument_list|(
+name|bundle
+argument_list|,
+name|resource
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|UPDATE_SNAPSHOTS_CRC
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|updateSnaphots
 argument_list|)
 condition|)
 block|{
@@ -6767,6 +6894,7 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}

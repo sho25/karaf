@@ -61,6 +61,10 @@ name|NoCleanIfFailure
 block|,
 name|PrintBundlesToRefresh
 block|,
+name|NoAutoRefreshManagedBundles
+block|,
+name|NoAutoRefreshUnmanagedBundles
+block|,
 name|NoAutoRefreshBundles
 block|,
 name|NoAutoStartBundles
