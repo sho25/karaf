@@ -104,9 +104,6 @@ name|String
 name|name
 parameter_list|,
 name|boolean
-name|noClean
-parameter_list|,
-name|boolean
 name|noRefresh
 parameter_list|)
 throws|throws
@@ -117,9 +114,6 @@ name|installFeature
 parameter_list|(
 name|String
 name|name
-parameter_list|,
-name|boolean
-name|noClean
 parameter_list|,
 name|boolean
 name|noRefresh
@@ -152,9 +146,6 @@ name|String
 name|version
 parameter_list|,
 name|boolean
-name|noClean
-parameter_list|,
-name|boolean
 name|noRefresh
 parameter_list|)
 throws|throws
@@ -168,9 +159,6 @@ name|name
 parameter_list|,
 name|String
 name|version
-parameter_list|,
-name|boolean
-name|noClean
 parameter_list|,
 name|boolean
 name|noRefresh

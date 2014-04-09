@@ -1152,6 +1152,8 @@ name|URI
 argument_list|>
 name|featuresRepositories
 parameter_list|)
+throws|throws
+name|Exception
 block|{
 for|for
 control|(
@@ -2131,6 +2133,8 @@ name|URI
 argument_list|>
 name|featuresRepositories
 parameter_list|)
+throws|throws
+name|Exception
 block|{
 for|for
 control|(

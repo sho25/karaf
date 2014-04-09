@@ -62,7 +62,7 @@ annotation|@
 name|Service
 specifier|public
 class|class
-name|InstalledFeatureCompleter
+name|RequiredFeatureCompleter
 extends|extends
 name|FeatureCompleterSupport
 block|{
@@ -79,7 +79,7 @@ block|{
 return|return
 name|featuresService
 operator|.
-name|isInstalled
+name|isRequired
 argument_list|(
 name|feature
 argument_list|)

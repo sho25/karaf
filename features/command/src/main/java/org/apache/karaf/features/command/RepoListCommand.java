@@ -332,7 +332,7 @@ name|FeaturesService
 name|featuresService
 parameter_list|)
 throws|throws
-name|MultiException
+name|Exception
 block|{
 name|System
 operator|.
