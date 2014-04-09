@@ -4388,6 +4388,18 @@ operator|.
 name|Verbose
 argument_list|)
 decl_stmt|;
+name|boolean
+name|simulate
+init|=
+name|options
+operator|.
+name|contains
+argument_list|(
+name|Option
+operator|.
+name|Simulate
+argument_list|)
+decl_stmt|;
 comment|// Get a list of resolved and unmanaged bundles to use as capabilities during resolution
 name|List
 argument_list|<
@@ -4895,8 +4907,17 @@ comment|//
 name|logDeployment
 argument_list|(
 name|deployment
+argument_list|,
+name|verbose
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|simulate
+condition|)
+block|{
+return|return;
+block|}
 name|Set
 argument_list|<
 name|Bundle
@@ -6386,13 +6407,16 @@ name|logDeployment
 parameter_list|(
 name|Deployment
 name|deployment
+parameter_list|,
+name|boolean
+name|verbose
 parameter_list|)
 block|{
-name|LOGGER
-operator|.
-name|info
+name|print
 argument_list|(
 literal|"Changes to perform:"
+argument_list|,
+name|verbose
 argument_list|)
 expr_stmt|;
 if|if
@@ -6406,11 +6430,11 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|LOGGER
-operator|.
-name|info
+name|print
 argument_list|(
 literal|"  Bundles to uninstall:"
+argument_list|,
+name|verbose
 argument_list|)
 expr_stmt|;
 for|for
@@ -6423,9 +6447,7 @@ operator|.
 name|toDelete
 control|)
 block|{
-name|LOGGER
-operator|.
-name|info
+name|print
 argument_list|(
 literal|"    "
 operator|+
@@ -6440,6 +6462,8 @@ name|bundle
 operator|.
 name|getVersion
 argument_list|()
+argument_list|,
+name|verbose
 argument_list|)
 expr_stmt|;
 block|}
@@ -6455,11 +6479,11 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|LOGGER
-operator|.
-name|info
+name|print
 argument_list|(
 literal|"  Bundles to update:"
+argument_list|,
+name|verbose
 argument_list|)
 expr_stmt|;
 for|for
@@ -6482,9 +6506,7 @@ name|entrySet
 argument_list|()
 control|)
 block|{
-name|LOGGER
-operator|.
-name|info
+name|print
 argument_list|(
 literal|"    "
 operator|+
@@ -6517,6 +6539,8 @@ operator|.
 name|getValue
 argument_list|()
 argument_list|)
+argument_list|,
+name|verbose
 argument_list|)
 expr_stmt|;
 block|}
@@ -6532,11 +6556,11 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|LOGGER
-operator|.
-name|info
+name|print
 argument_list|(
 literal|"  Bundles to install:"
+argument_list|,
+name|verbose
 argument_list|)
 expr_stmt|;
 for|for
@@ -6549,9 +6573,7 @@ operator|.
 name|toInstall
 control|)
 block|{
-name|LOGGER
-operator|.
-name|info
+name|print
 argument_list|(
 literal|"    "
 operator|+
@@ -6561,6 +6583,8 @@ name|getUri
 argument_list|(
 name|resource
 argument_list|)
+argument_list|,
+name|verbose
 argument_list|)
 expr_stmt|;
 block|}

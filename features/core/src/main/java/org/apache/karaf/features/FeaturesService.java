@@ -71,6 +71,8 @@ name|NoAutoStartBundles
 block|,
 name|ContinueBatchOnFailure
 block|,
+name|Simulate
+block|,
 name|Verbose
 block|}
 comment|/**      * Validate repository contents.      *       * @param uri Repository uri.      * @throws Exception When validation fails.      */
