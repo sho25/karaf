@@ -289,6 +289,13 @@ range|:
 name|repos
 control|)
 block|{
+if|if
+condition|(
+name|repo
+operator|!=
+literal|null
+condition|)
+block|{
 name|table
 operator|.
 name|addRow
@@ -310,6 +317,7 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|table
 operator|.
