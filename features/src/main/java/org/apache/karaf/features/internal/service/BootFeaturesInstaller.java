@@ -416,6 +416,8 @@ argument_list|(
 literal|"Error installing boot feature repository "
 operator|+
 name|repo
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
 block|}

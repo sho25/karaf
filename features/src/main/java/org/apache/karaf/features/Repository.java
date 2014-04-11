@@ -19,6 +19,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|net
 operator|.
 name|URI
@@ -37,6 +47,8 @@ block|{
 name|String
 name|getName
 parameter_list|()
+throws|throws
+name|IOException
 function_decl|;
 name|URI
 name|getURI

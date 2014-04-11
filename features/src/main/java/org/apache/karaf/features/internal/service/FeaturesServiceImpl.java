@@ -1590,14 +1590,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// TODO: merge validation and loading by loading the DOM, validating, unmarshalling
-name|FeatureValidationUtil
-operator|.
-name|validate
-argument_list|(
-name|uri
-argument_list|)
-expr_stmt|;
 name|RepositoryImpl
 name|repo
 init|=
@@ -1610,7 +1602,9 @@ decl_stmt|;
 name|repo
 operator|.
 name|load
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
 return|return
 name|repo
