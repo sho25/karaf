@@ -42,9 +42,7 @@ name|Conditional
 block|{
 name|List
 argument_list|<
-name|?
-extends|extends
-name|Dependency
+name|String
 argument_list|>
 name|getCondition
 parameter_list|()

@@ -4732,8 +4732,6 @@ operator|.
 name|resolve
 argument_list|(
 name|systemBundles
-argument_list|,
-literal|true
 argument_list|)
 decl_stmt|;
 name|Collection
