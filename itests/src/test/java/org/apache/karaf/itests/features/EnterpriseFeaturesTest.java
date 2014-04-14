@@ -326,6 +326,21 @@ literal|"application-without-isolation"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|installSubsystems
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|installAssertAndUninstallFeatures
+argument_list|(
+literal|"subsystems"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 
