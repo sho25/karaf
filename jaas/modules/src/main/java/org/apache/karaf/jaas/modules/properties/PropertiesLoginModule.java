@@ -391,6 +391,11 @@ name|propertiesInstaller
 operator|==
 literal|null
 operator|||
+operator|(
+name|usersFile
+operator|!=
+literal|null
+operator|&&
 operator|!
 name|usersFile
 operator|.
@@ -401,9 +406,10 @@ operator|.
 name|getUsersFileName
 argument_list|()
 argument_list|)
+operator|)
 condition|)
 block|{
-name|LOG
+name|LOGGER
 operator|.
 name|debug
 argument_list|(
