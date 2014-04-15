@@ -324,6 +324,7 @@ name|String
 name|usersFile
 decl_stmt|;
 specifier|private
+specifier|static
 name|PropertiesInstaller
 name|propertiesInstaller
 decl_stmt|;
@@ -384,6 +385,31 @@ name|usersFile
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|propertiesInstaller
+operator|==
+literal|null
+operator|||
+operator|!
+name|usersFile
+operator|.
+name|equals
+argument_list|(
+name|propertiesInstaller
+operator|.
+name|getUsersFileName
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|LOG
+operator|.
+name|debug
+argument_list|(
+literal|"Register PropertiesInstaller service"
+argument_list|)
+expr_stmt|;
 name|propertiesInstaller
 operator|=
 operator|new
@@ -416,6 +442,7 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 specifier|public

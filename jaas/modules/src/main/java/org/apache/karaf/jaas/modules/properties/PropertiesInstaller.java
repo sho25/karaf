@@ -281,6 +281,17 @@ literal|"the users.properties was removed"
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|String
+name|getUsersFileName
+parameter_list|()
+block|{
+return|return
+name|this
+operator|.
+name|usersFileName
+return|;
+block|}
 block|}
 end_class
 
