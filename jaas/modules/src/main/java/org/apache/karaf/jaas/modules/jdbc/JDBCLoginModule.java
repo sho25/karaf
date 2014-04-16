@@ -284,6 +284,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|USER_QUERY
+init|=
+literal|"query.user"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|ROLE_QUERY
 init|=
 literal|"query.role"

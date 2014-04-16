@@ -278,7 +278,7 @@ name|get
 argument_list|(
 name|JDBCLoginModule
 operator|.
-name|PASSWORD_QUERY
+name|USER_QUERY
 argument_list|)
 decl_stmt|;
 name|String
