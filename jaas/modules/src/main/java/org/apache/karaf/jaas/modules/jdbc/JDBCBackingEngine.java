@@ -876,7 +876,6 @@ argument_list|()
 expr_stmt|;
 while|while
 condition|(
-operator|!
 name|usersResultSet
 operator|.
 name|next
@@ -1075,7 +1074,6 @@ argument_list|()
 expr_stmt|;
 while|while
 condition|(
-operator|!
 name|rolesResultSet
 operator|.
 name|next
