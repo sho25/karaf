@@ -527,19 +527,6 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|System
-operator|.
-name|err
-operator|.
-name|println
-argument_list|(
-literal|"Bundle "
-operator|+
-name|id
-operator|+
-literal|" is not found"
-argument_list|)
-expr_stmt|;
 return|return
 literal|null
 return|;
