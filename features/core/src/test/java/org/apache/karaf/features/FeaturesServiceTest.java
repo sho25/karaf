@@ -537,6 +537,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|svc
@@ -708,6 +710,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|svc
@@ -794,10 +798,12 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|MalformedURLException
-name|e
+name|Exception
+name|t
 parameter_list|)
-block|{         }
+block|{
+comment|// Expected
+block|}
 name|verify
 argument_list|(
 name|bundleContext
@@ -837,6 +843,8 @@ argument_list|,
 operator|new
 name|Storage
 argument_list|()
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|,
@@ -924,6 +932,8 @@ argument_list|,
 operator|new
 name|Storage
 argument_list|()
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|,

@@ -229,6 +229,20 @@ name|Resource
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|service
+operator|.
+name|repository
+operator|.
+name|ContentNamespace
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -244,7 +258,7 @@ literal|"dynamic"
 decl_stmt|;
 specifier|public
 specifier|static
-name|Resource
+name|ResourceImpl
 name|build
 parameter_list|(
 name|String
@@ -447,9 +461,9 @@ name|attrs
 operator|.
 name|put
 argument_list|(
-name|UriNamespace
+name|ContentNamespace
 operator|.
-name|URI_NAMESPACE
+name|CAPABILITY_URL_ATTRIBUTE
 argument_list|,
 name|uri
 argument_list|)
@@ -463,9 +477,9 @@ name|CapabilityImpl
 argument_list|(
 name|resource
 argument_list|,
-name|UriNamespace
+name|ContentNamespace
 operator|.
-name|URI_NAMESPACE
+name|CONTENT_NAMESPACE
 argument_list|,
 name|Collections
 operator|.

@@ -185,7 +185,7 @@ index|[]
 name|getRepositories
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
 block|{
 name|load
 argument_list|()
@@ -278,7 +278,7 @@ index|[]
 name|getFeatures
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
 block|{
 name|load
 argument_list|()
@@ -502,19 +502,6 @@ argument_list|)
 throw|;
 block|}
 block|}
-block|}
-annotation|@
-name|Override
-specifier|public
-name|boolean
-name|isValid
-parameter_list|()
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|()
-throw|;
 block|}
 block|}
 end_class

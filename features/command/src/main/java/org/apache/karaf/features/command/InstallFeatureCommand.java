@@ -342,6 +342,24 @@ argument_list|)
 name|boolean
 name|simulate
 decl_stmt|;
+annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
+literal|"-g"
+argument_list|,
+name|aliases
+operator|=
+literal|"--region"
+argument_list|,
+name|description
+operator|=
+literal|"Region to install to"
+argument_list|)
+name|String
+name|region
+decl_stmt|;
 specifier|protected
 name|void
 name|doExecute
@@ -451,6 +469,8 @@ argument_list|>
 argument_list|(
 name|features
 argument_list|)
+argument_list|,
+name|region
 argument_list|,
 name|options
 argument_list|)

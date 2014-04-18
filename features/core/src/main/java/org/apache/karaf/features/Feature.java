@@ -131,10 +131,6 @@ name|int
 name|getStartLevel
 parameter_list|()
 function_decl|;
-name|String
-name|getRegion
-parameter_list|()
-function_decl|;
 name|List
 argument_list|<
 name|?
@@ -151,6 +147,10 @@ extends|extends
 name|Requirement
 argument_list|>
 name|getRequirements
+parameter_list|()
+function_decl|;
+name|Scoping
+name|getScoping
 parameter_list|()
 function_decl|;
 block|}
