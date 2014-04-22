@@ -401,20 +401,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|eclipse
-operator|.
-name|equinox
-operator|.
-name|region
-operator|.
-name|RegionFilter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|osgi
 operator|.
 name|framework
@@ -555,6 +541,22 @@ begin_import
 import|import static
 name|org
 operator|.
+name|eclipse
+operator|.
+name|equinox
+operator|.
+name|region
+operator|.
+name|RegionFilter
+operator|.
+name|VISIBLE_ALL_NAMESPACE
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
 name|osgi
 operator|.
 name|framework
@@ -684,8 +686,6 @@ name|Collections
 operator|.
 name|singletonMap
 argument_list|(
-name|RegionFilter
-operator|.
 name|VISIBLE_ALL_NAMESPACE
 argument_list|,
 name|Collections

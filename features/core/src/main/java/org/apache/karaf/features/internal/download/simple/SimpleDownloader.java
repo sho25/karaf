@@ -243,6 +243,20 @@ name|MultiException
 import|;
 end_import
 
+begin_import
+import|import static
+name|java
+operator|.
+name|util
+operator|.
+name|jar
+operator|.
+name|JarFile
+operator|.
+name|MANIFEST_NAME
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -560,7 +574,7 @@ condition|)
 block|{
 if|if
 condition|(
-literal|"META-INF/MANIFEST.MF"
+name|MANIFEST_NAME
 operator|.
 name|equals
 argument_list|(
