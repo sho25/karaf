@@ -991,9 +991,6 @@ argument_list|(
 name|configurationAdmin
 argument_list|)
 decl_stmt|;
-comment|// TODO: honor respectStartLvlDuringFeatureStartup and respectStartLvlDuringFeatureUninstall
-comment|//        boolean respectStartLvlDuringFeatureStartup = getBoolean("respectStartLvlDuringFeatureStartup", true);
-comment|//        boolean respectStartLvlDuringFeatureUninstall = getBoolean("respectStartLvlDuringFeatureUninstall", true);
 name|String
 name|overrides
 init|=

@@ -175,6 +175,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|SortedMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|TreeMap
 import|;
 end_import
@@ -5455,7 +5465,6 @@ block|}
 comment|//
 comment|// Compute deployment
 comment|//
-comment|// TODO: compute bundles/region mapping to support multiple bundles and bunde moving into a different region
 name|Deployment
 name|deployment
 init|=
@@ -9138,13 +9147,6 @@ argument_list|>
 name|bundles
 parameter_list|)
 block|{
-comment|// TODO: make this pluggable ?
-comment|// TODO: honor respectStartLvlDuringFeatureStartup
-comment|// We hit FELIX-2949 if we don't use the correct order as Felix resolver isn't greedy.
-comment|// In order to minimize that, we make sure we resolve the bundles in the order they
-comment|// are given back by the resolution, meaning that all root bundles (i.e. those that were
-comment|// not flagged as dependencies in features) are started before the others.   This should
-comment|// make sure those important bundles are started first and minimize the problem.
 comment|// Restart the features service last, regardless of any other consideration
 comment|// so that we don't end up with the service trying to do stuff before we're done
 name|boolean
@@ -9157,6 +9159,79 @@ argument_list|(
 name|bundle
 argument_list|)
 decl_stmt|;
+name|SortedMap
+argument_list|<
+name|Integer
+argument_list|,
+name|Set
+argument_list|<
+name|Bundle
+argument_list|>
+argument_list|>
+name|bundlesPerStartLevel
+init|=
+operator|new
+name|TreeMap
+argument_list|<
+name|Integer
+argument_list|,
+name|Set
+argument_list|<
+name|Bundle
+argument_list|>
+argument_list|>
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|Bundle
+name|bundle
+range|:
+name|bundles
+control|)
+block|{
+name|int
+name|sl
+init|=
+name|bundle
+operator|.
+name|adapt
+argument_list|(
+name|BundleStartLevel
+operator|.
+name|class
+argument_list|)
+operator|.
+name|getStartLevel
+argument_list|()
+decl_stmt|;
+name|addToMapSet
+argument_list|(
+name|bundlesPerStartLevel
+argument_list|,
+name|sl
+argument_list|,
+name|bundle
+argument_list|)
+expr_stmt|;
+block|}
+name|bundles
+operator|=
+name|bundlesPerStartLevel
+operator|.
+name|remove
+argument_list|(
+name|bundlesPerStartLevel
+operator|.
+name|firstKey
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|// We hit FELIX-2949 if we don't use the correct order as Felix resolver isn't greedy.
+comment|// In order to minimize that, we make sure we resolve the bundles in the order they
+comment|// are given back by the resolution, meaning that all root bundles (i.e. those that were
+comment|// not flagged as dependencies in features) are started before the others.   This should
+comment|// make sure those important bundles are started first and minimize the problem.
 name|List
 argument_list|<
 name|BundleRevision
@@ -9232,6 +9307,11 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|sorted
+operator|.
+name|isEmpty
+argument_list|()
+operator|&&
 name|restart
 condition|)
 block|{
@@ -9261,8 +9341,74 @@ argument_list|>
 name|bundles
 parameter_list|)
 block|{
-comment|// TODO: make this pluggable ?
-comment|// TODO: honor respectStartLvlDuringFeatureUninstall
+name|SortedMap
+argument_list|<
+name|Integer
+argument_list|,
+name|Set
+argument_list|<
+name|Bundle
+argument_list|>
+argument_list|>
+name|bundlesPerStartLevel
+init|=
+operator|new
+name|TreeMap
+argument_list|<
+name|Integer
+argument_list|,
+name|Set
+argument_list|<
+name|Bundle
+argument_list|>
+argument_list|>
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|Bundle
+name|bundle
+range|:
+name|bundles
+control|)
+block|{
+name|int
+name|sl
+init|=
+name|bundle
+operator|.
+name|adapt
+argument_list|(
+name|BundleStartLevel
+operator|.
+name|class
+argument_list|)
+operator|.
+name|getStartLevel
+argument_list|()
+decl_stmt|;
+name|addToMapSet
+argument_list|(
+name|bundlesPerStartLevel
+argument_list|,
+name|sl
+argument_list|,
+name|bundle
+argument_list|)
+expr_stmt|;
+block|}
+name|bundles
+operator|=
+name|bundlesPerStartLevel
+operator|.
+name|get
+argument_list|(
+name|bundlesPerStartLevel
+operator|.
+name|lastKey
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|List
 argument_list|<
 name|Bundle
