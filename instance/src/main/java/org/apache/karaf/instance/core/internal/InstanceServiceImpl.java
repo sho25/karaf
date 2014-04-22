@@ -2176,15 +2176,6 @@ name|copyResourceToDir
 argument_list|(
 name|karafBase
 argument_list|,
-literal|"etc/regions-config.xml"
-argument_list|,
-name|printOutput
-argument_list|)
-expr_stmt|;
-name|copyResourceToDir
-argument_list|(
-name|karafBase
-argument_list|,
 literal|"etc/shell.init.script"
 argument_list|,
 name|printOutput
