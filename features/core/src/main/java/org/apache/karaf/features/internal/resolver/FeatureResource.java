@@ -239,6 +239,8 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
+name|?
+extends|extends
 name|Resource
 argument_list|>
 name|locToRes
@@ -496,6 +498,8 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
+name|?
+extends|extends
 name|Resource
 argument_list|>
 name|locToRes

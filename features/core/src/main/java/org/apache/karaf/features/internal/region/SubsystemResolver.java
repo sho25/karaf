@@ -101,16 +101,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|TreeMap
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -670,6 +660,12 @@ name|Resource
 argument_list|>
 name|system
 parameter_list|,
+name|Set
+argument_list|<
+name|String
+argument_list|>
+name|overrides
+parameter_list|,
 name|String
 name|featureResolutionRange
 parameter_list|)
@@ -941,6 +937,8 @@ argument_list|(
 name|allFeatures
 argument_list|,
 name|manager
+argument_list|,
+name|overrides
 argument_list|,
 name|featureResolutionRange
 argument_list|)

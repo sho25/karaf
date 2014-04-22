@@ -268,6 +268,11 @@ decl_stmt|;
 comment|/**      * Compute a list of bundles to install, taking into account overrides.      *      * The file containing the overrides will be loaded from the given url.      * Blank lines and lines starting with a '#' will be ignored, all other lines      * are considered as urls to override bundles.      *      * The list of resources to resolve will be scanned and for each bundle,      * if a bundle override matches that resource, it will be used instead.      *      * Matching is done on bundle symbolic name (they have to be the same)      * and version (the bundle override version needs to be greater than the      * resource to be resolved, and less than the next minor version.  A range      * directive can be added to the override url in which case, the matching      * will succeed if the resource to be resolved is within the given range.      *      * @param resources the list of resources to resolve      * @param overrides list of bundle overrides      */
 specifier|public
 specifier|static
+parameter_list|<
+name|T
+extends|extends
+name|Resource
+parameter_list|>
 name|void
 name|override
 parameter_list|(
@@ -275,7 +280,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|Resource
+name|T
 argument_list|>
 name|resources
 parameter_list|,
@@ -330,7 +335,7 @@ argument_list|(
 name|OVERRIDE_RANGE
 argument_list|)
 decl_stmt|;
-name|Resource
+name|T
 name|over
 init|=
 name|resources

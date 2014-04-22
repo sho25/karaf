@@ -5098,7 +5098,6 @@ block|}
 comment|// Resolve
 comment|// TODO: requirements
 comment|// TODO: bundles
-comment|// TODO: overrides
 name|Set
 argument_list|<
 name|String
@@ -5179,6 +5178,8 @@ argument_list|,
 name|features
 argument_list|,
 name|systemBundles
+argument_list|,
+name|overrides
 argument_list|,
 name|featureResolutionRange
 argument_list|)
