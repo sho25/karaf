@@ -117,7 +117,7 @@ name|internal
 operator|.
 name|repository
 operator|.
-name|StaticRepository
+name|BaseRepository
 import|;
 end_import
 
@@ -451,7 +451,7 @@ expr_stmt|;
 name|repository
 operator|=
 operator|new
-name|StaticRepository
+name|BaseRepository
 argument_list|(
 name|resToSub
 operator|.
