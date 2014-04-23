@@ -533,6 +533,8 @@ argument_list|,
 name|FeaturesServiceImpl
 operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 name|verify
@@ -768,6 +770,8 @@ argument_list|,
 name|FeaturesServiceImpl
 operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 name|verify
@@ -921,6 +925,8 @@ argument_list|,
 name|FeaturesServiceImpl
 operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 name|verify

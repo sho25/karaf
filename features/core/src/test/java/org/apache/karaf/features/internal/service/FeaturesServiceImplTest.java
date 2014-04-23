@@ -282,6 +282,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 block|{
 specifier|protected
@@ -401,6 +403,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 block|{
 specifier|protected
@@ -495,6 +499,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|""
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|,
@@ -625,6 +631,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|""
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|,

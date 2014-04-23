@@ -539,6 +539,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|svc
@@ -712,6 +714,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|svc
@@ -859,6 +863,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 try|try
@@ -932,6 +938,8 @@ argument_list|,
 operator|new
 name|Storage
 argument_list|()
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|,

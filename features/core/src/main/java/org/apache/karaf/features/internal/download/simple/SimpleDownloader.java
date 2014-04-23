@@ -367,6 +367,13 @@ expr_stmt|;
 block|}
 try|try
 block|{
+if|if
+condition|(
+name|downloadCallback
+operator|!=
+literal|null
+condition|)
+block|{
 name|downloadCallback
 operator|.
 name|downloaded
@@ -379,6 +386,7 @@ name|location
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
