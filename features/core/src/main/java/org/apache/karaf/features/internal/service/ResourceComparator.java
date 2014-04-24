@@ -15,7 +15,7 @@ name|features
 operator|.
 name|internal
 operator|.
-name|region
+name|service
 package|;
 end_package
 

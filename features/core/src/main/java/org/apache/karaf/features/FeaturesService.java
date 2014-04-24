@@ -67,6 +67,8 @@ name|NoAutoRefreshBundles
 block|,
 name|NoAutoStartBundles
 block|,
+name|NoAutoManageBundles
+block|,
 name|Simulate
 block|,
 name|Verbose
