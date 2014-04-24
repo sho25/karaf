@@ -6081,6 +6081,9 @@ block|{
 if|if
 condition|(
 operator|!
+name|noRefresh
+operator|&&
+operator|!
 name|toRefresh
 operator|.
 name|isEmpty
@@ -8037,9 +8040,7 @@ range|:
 name|bs
 control|)
 block|{
-name|LOGGER
-operator|.
-name|info
+name|print
 argument_list|(
 literal|"  "
 operator|+
@@ -8054,6 +8055,8 @@ name|bundle
 operator|.
 name|getVersion
 argument_list|()
+argument_list|,
+name|verbose
 argument_list|)
 expr_stmt|;
 try|try
