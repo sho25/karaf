@@ -1154,6 +1154,15 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|url
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+if|if
+condition|(
 name|url
 operator|.
 name|startsWith
@@ -1224,6 +1233,7 @@ operator|+
 name|url
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|Repository
