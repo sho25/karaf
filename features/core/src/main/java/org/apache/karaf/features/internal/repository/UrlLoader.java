@@ -279,6 +279,8 @@ return|return
 literal|false
 return|;
 block|}
+try|try
+init|(
 name|BufferedInputStream
 name|bis
 init|=
@@ -290,8 +292,7 @@ operator|.
 name|getInputStream
 argument_list|()
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 comment|// Auto-detect gzipped streams
 name|InputStream
@@ -362,14 +363,6 @@ expr_stmt|;
 return|return
 name|r
 return|;
-block|}
-finally|finally
-block|{
-name|bis
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 catch|catch

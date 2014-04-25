@@ -544,6 +544,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+try|try
+init|(
 name|InputStream
 name|is
 init|=
@@ -555,8 +557,7 @@ argument_list|)
 operator|.
 name|openStream
 argument_list|()
-decl_stmt|;
-try|try
+init|)
 block|{
 name|BufferedReader
 name|reader
@@ -621,14 +622,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
-finally|finally
-block|{
-name|is
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 block|}
