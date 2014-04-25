@@ -263,6 +263,20 @@ name|org
 operator|.
 name|osgi
 operator|.
+name|framework
+operator|.
+name|wiring
+operator|.
+name|BundleRevision
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
 name|resource
 operator|.
 name|Capability
@@ -1045,13 +1059,21 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|// This should never happen because resource have been
-comment|// de-duplicated during the pre-resolution phase.
-throw|throw
-operator|new
-name|IllegalStateException
-argument_list|()
-throw|;
+comment|// One of the resource has to be a bundle, use that one
+name|c
+operator|=
+operator|(
+name|prev
+operator|instanceof
+name|BundleRevision
+operator|)
+condition|?
+operator|-
+literal|1
+else|:
+operator|+
+literal|1
+expr_stmt|;
 block|}
 name|resource
 operator|=
