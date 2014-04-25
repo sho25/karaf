@@ -467,7 +467,7 @@ parameter_list|()
 throws|throws
 name|IOException
 function_decl|;
-specifier|protected
+specifier|static
 name|Map
 argument_list|<
 name|String
@@ -546,7 +546,7 @@ return|return
 name|nm
 return|;
 block|}
-specifier|protected
+specifier|static
 name|Map
 argument_list|<
 name|String
@@ -625,7 +625,7 @@ return|return
 name|nm
 return|;
 block|}
-specifier|protected
+specifier|static
 name|Set
 argument_list|<
 name|String
@@ -673,7 +673,7 @@ return|return
 name|ns
 return|;
 block|}
-specifier|protected
+specifier|static
 name|Set
 argument_list|<
 name|Long
@@ -721,7 +721,7 @@ return|return
 name|ns
 return|;
 block|}
-specifier|protected
+specifier|static
 name|Map
 argument_list|<
 name|Long
@@ -791,7 +791,7 @@ return|return
 name|nm
 return|;
 block|}
-specifier|protected
+specifier|static
 name|Map
 argument_list|<
 name|String
