@@ -10840,12 +10840,7 @@ comment|// so that we don't end up with the service trying to do stuff before we
 name|boolean
 name|restart
 init|=
-name|bundles
-operator|.
-name|remove
-argument_list|(
-name|bundle
-argument_list|)
+literal|false
 decl_stmt|;
 name|SortedMap
 argument_list|<
@@ -10870,6 +10865,22 @@ name|bundle
 range|:
 name|bundles
 control|)
+block|{
+if|if
+condition|(
+name|bundle
+operator|==
+name|this
+operator|.
+name|bundle
+condition|)
+block|{
+name|restart
+operator|=
+literal|true
+expr_stmt|;
+block|}
+else|else
 block|{
 name|int
 name|sl
@@ -10896,6 +10907,25 @@ name|bundle
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+if|if
+condition|(
+name|bundlesPerStartLevel
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|bundles
+operator|=
+name|Collections
+operator|.
+name|emptyList
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
 name|bundles
 operator|=
 name|bundlesPerStartLevel
@@ -10908,6 +10938,7 @@ name|firstKey
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 comment|// We hit FELIX-2949 if we don't use the correct order as Felix resolver isn't greedy.
 comment|// In order to minimize that, we make sure we resolve the bundles in the order they
 comment|// are given back by the resolution, meaning that all root bundles (i.e. those that were
