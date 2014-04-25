@@ -7676,6 +7676,8 @@ argument_list|,
 name|verbose
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|InputStream
 name|is
 init|=
@@ -7685,7 +7687,8 @@ name|resource
 argument_list|,
 name|providers
 argument_list|)
-decl_stmt|;
+init|)
+block|{
 name|bundle
 operator|.
 name|update
@@ -7693,6 +7696,7 @@ argument_list|(
 name|is
 argument_list|)
 expr_stmt|;
+block|}
 name|toStart
 operator|.
 name|add
