@@ -239,9 +239,18 @@ end_comment
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|Overrides
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|String
+name|OVERRIDE_RANGE
+init|=
+literal|"range"
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
@@ -257,15 +266,11 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-specifier|protected
-specifier|static
-specifier|final
-name|String
-name|OVERRIDE_RANGE
-init|=
-literal|"range"
-decl_stmt|;
-comment|/**      * Compute a list of bundles to install, taking into account overrides.      *      * The file containing the overrides will be loaded from the given url.      * Blank lines and lines starting with a '#' will be ignored, all other lines      * are considered as urls to override bundles.      *      * The list of resources to resolve will be scanned and for each bundle,      * if a bundle override matches that resource, it will be used instead.      *      * Matching is done on bundle symbolic name (they have to be the same)      * and version (the bundle override version needs to be greater than the      * resource to be resolved, and less than the next minor version.  A range      * directive can be added to the override url in which case, the matching      * will succeed if the resource to be resolved is within the given range.      *      * @param resources the list of resources to resolve      * @param overrides list of bundle overrides      */
+specifier|private
+name|Overrides
+parameter_list|()
+block|{     }
+comment|/**      * Compute a list of bundles to install, taking into account overrides.      *<p/>      * The file containing the overrides will be loaded from the given url.      * Blank lines and lines starting with a '#' will be ignored, all other lines      * are considered as urls to override bundles.      *<p/>      * The list of resources to resolve will be scanned and for each bundle,      * if a bundle override matches that resource, it will be used instead.      *<p/>      * Matching is done on bundle symbolic name (they have to be the same)      * and version (the bundle override version needs to be greater than the      * resource to be resolved, and less than the next minor version.  A range      * directive can be added to the override url in which case, the matching      * will succeed if the resource to be resolved is within the given range.      *      * @param resources the list of resources to resolve      * @param overrides list of bundle overrides      */
 specifier|public
 specifier|static
 parameter_list|<

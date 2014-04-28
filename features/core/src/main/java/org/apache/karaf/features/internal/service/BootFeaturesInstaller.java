@@ -105,16 +105,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|TreeSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|regex
 operator|.
 name|Matcher
@@ -212,6 +202,14 @@ specifier|public
 class|class
 name|BootFeaturesInstaller
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|VERSION_PREFIX
+init|=
+literal|"version="
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
@@ -226,13 +224,6 @@ name|BootFeaturesInstaller
 operator|.
 name|class
 argument_list|)
-decl_stmt|;
-specifier|public
-specifier|static
-name|String
-name|VERSION_PREFIX
-init|=
-literal|"version="
 decl_stmt|;
 specifier|private
 specifier|final
@@ -259,7 +250,7 @@ specifier|final
 name|boolean
 name|asynchronous
 decl_stmt|;
-comment|/**      *      * @param features list of boot features separated by comma. Optionally contains ;version=x.x.x to specify a specific feature version      */
+comment|/**      * @param features list of boot features separated by comma. Optionally contains ;version=x.x.x to specify a specific feature version      */
 specifier|public
 name|BootFeaturesInstaller
 parameter_list|(
@@ -531,7 +522,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      *      * @param featureSt either feature name or<featurename>;version=<version>      * @return feature matching the feature string      * @throws Exception      */
+comment|/**      * @param featureSt either feature name or<featurename>;version=<version>      * @return feature matching the feature string      * @throws Exception      */
 specifier|private
 name|Feature
 name|getFeature
@@ -826,7 +817,7 @@ init|=
 operator|new
 name|BootFinished
 argument_list|()
-block|{}
+block|{             }
 decl_stmt|;
 name|bundleContext
 operator|.

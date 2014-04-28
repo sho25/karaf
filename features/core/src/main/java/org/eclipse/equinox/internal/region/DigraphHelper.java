@@ -319,6 +319,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|DigraphHelper
 block|{
@@ -370,6 +371,10 @@ name|POLICY
 init|=
 literal|"policy"
 decl_stmt|;
+specifier|private
+name|DigraphHelper
+parameter_list|()
+block|{     }
 specifier|public
 specifier|static
 name|StandardRegionDigraph

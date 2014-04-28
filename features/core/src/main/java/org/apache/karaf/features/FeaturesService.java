@@ -73,7 +73,7 @@ name|Simulate
 block|,
 name|Verbose
 block|}
-comment|/**      * Validate repository contents.      *       * @param uri Repository uri.      * @throws Exception When validation fails.      */
+comment|/**      * Validate repository contents.      *      * @param uri Repository uri.      * @throws Exception When validation fails.      */
 name|void
 name|validateRepository
 parameter_list|(
@@ -423,7 +423,6 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-specifier|public
 name|URI
 name|getRepositoryUriFor
 parameter_list|(
@@ -434,7 +433,6 @@ name|String
 name|version
 parameter_list|)
 function_decl|;
-specifier|public
 name|String
 index|[]
 name|getRepositoryNames

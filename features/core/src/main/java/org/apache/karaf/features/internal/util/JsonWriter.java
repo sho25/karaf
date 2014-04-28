@@ -85,9 +85,14 @@ end_comment
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|JsonWriter
 block|{
+specifier|private
+name|JsonWriter
+parameter_list|()
+block|{     }
 specifier|public
 specifier|static
 name|void

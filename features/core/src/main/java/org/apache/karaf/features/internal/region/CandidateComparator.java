@@ -203,6 +203,9 @@ operator|=
 operator|(
 operator|(
 name|Comparable
+argument_list|<
+name|Object
+argument_list|>
 operator|)
 name|cap1
 operator|.
@@ -325,8 +328,8 @@ name|v1
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 comment|// Compare package capabilities.
+block|}
 elseif|else
 if|if
 condition|(
@@ -354,6 +357,9 @@ operator|=
 operator|(
 operator|(
 name|Comparable
+argument_list|<
+name|Object
+argument_list|>
 operator|)
 name|cap1
 operator|.
@@ -568,8 +574,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
 comment|// Compare feature capabilities
+block|}
 elseif|else
 if|if
 condition|(
@@ -597,6 +603,9 @@ operator|=
 operator|(
 operator|(
 name|Comparable
+argument_list|<
+name|Object
+argument_list|>
 operator|)
 name|cap1
 operator|.

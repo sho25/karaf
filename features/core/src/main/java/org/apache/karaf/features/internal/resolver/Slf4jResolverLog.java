@@ -132,9 +132,7 @@ name|throwable
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-name|LOG_DEBUG
-case|:
+default|default:
 name|logger
 operator|.
 name|debug

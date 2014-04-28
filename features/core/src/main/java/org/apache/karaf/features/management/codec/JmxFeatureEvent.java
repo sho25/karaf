@@ -51,7 +51,7 @@ name|management
 operator|.
 name|openmbean
 operator|.
-name|OpenDataException
+name|CompositeType
 import|;
 end_import
 
@@ -63,7 +63,7 @@ name|management
 operator|.
 name|openmbean
 operator|.
-name|CompositeType
+name|OpenDataException
 import|;
 end_import
 

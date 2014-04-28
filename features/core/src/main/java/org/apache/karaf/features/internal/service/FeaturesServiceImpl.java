@@ -1334,7 +1334,7 @@ specifier|final
 name|String
 name|bundleUpdateRange
 decl_stmt|;
-comment|/**      * Use CRC to check snapshot bundles and update them if changed.      * Either:      *   - none : never update snapshots      *   - always : always update snapshots      *   - crc : use CRC to detect changes      */
+comment|/**      * Use CRC to check snapshot bundles and update them if changed.      * Either:      * - none : never update snapshots      * - always : always update snapshots      * - crc : use CRC to detect changes      */
 specifier|private
 specifier|final
 name|String
@@ -1364,9 +1364,7 @@ name|listeners
 init|=
 operator|new
 name|CopyOnWriteArrayIdentityList
-argument_list|<
-name|FeaturesListener
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|// Synchronized on lock
@@ -5398,11 +5396,9 @@ condition|)
 block|{
 throw|throw
 operator|(
-operator|(
 name|RuntimeException
 operator|)
 name|t
-operator|)
 throw|;
 block|}
 elseif|else
@@ -5415,11 +5411,9 @@ condition|)
 block|{
 throw|throw
 operator|(
-operator|(
 name|Error
 operator|)
 name|t
-operator|)
 throw|;
 block|}
 elseif|else
@@ -7059,8 +7053,6 @@ name|bundle
 operator|.
 name|stop
 argument_list|(
-name|Bundle
-operator|.
 name|STOP_TRANSIENT
 argument_list|)
 expr_stmt|;
@@ -7483,7 +7475,6 @@ control|)
 block|{
 if|if
 condition|(
-operator|(
 name|hasToDelete
 operator|=
 operator|!
@@ -7493,7 +7484,6 @@ name|toDelete
 operator|.
 name|isEmpty
 argument_list|()
-operator|)
 condition|)
 block|{
 break|break;
@@ -8165,7 +8155,6 @@ control|)
 block|{
 if|if
 condition|(
-operator|(
 name|hasToUpdate
 operator|=
 operator|!
@@ -8175,7 +8164,6 @@ name|toUpdate
 operator|.
 name|isEmpty
 argument_list|()
-operator|)
 condition|)
 block|{
 break|break;
@@ -8375,7 +8363,6 @@ control|)
 block|{
 if|if
 condition|(
-operator|(
 name|hasToInstall
 operator|=
 operator|!
@@ -8385,7 +8372,6 @@ name|toInstall
 operator|.
 name|isEmpty
 argument_list|()
-operator|)
 condition|)
 block|{
 break|break;
@@ -8694,10 +8680,8 @@ if|if
 condition|(
 operator|!
 name|noStart
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
+operator|(
 name|bi
 operator|==
 literal|null
@@ -8706,6 +8690,7 @@ name|bi
 operator|.
 name|isStart
 argument_list|()
+operator|)
 condition|)
 block|{
 name|toStart
@@ -8715,7 +8700,6 @@ argument_list|(
 name|bundle
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}
@@ -10216,10 +10200,7 @@ argument_list|(
 name|res
 argument_list|)
 argument_list|)
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|bundle
 operator|.
 name|getVersion
@@ -10239,7 +10220,6 @@ operator|=
 name|res
 expr_stmt|;
 break|break;
-block|}
 block|}
 block|}
 comment|// We found a matching bundle
@@ -10360,7 +10340,7 @@ name|getBundleId
 argument_list|()
 argument_list|)
 else|:
-literal|0l
+literal|0L
 decl_stmt|;
 if|if
 condition|(

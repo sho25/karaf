@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * Licensed to the Apache Software Foundation (ASF) under one  * or more contributor license agreements.  See the NOTICE file  * distributed with this work for additional information  * regarding copyright ownership.  The ASF licenses this file  * to you under the Apache License, Version 2.0 (the  * "License"); you may not use this file except in compliance  * with the License.  You may obtain a copy of the License at  *  *  http://www.apache.org/licenses/LICENSE-2.0  *  * Unless required by applicable law or agreed to in writing,  * software distributed under the License is distributed on an  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  * KIND, either express or implied.  See the License for the  * specific language governing permissions and limitations  * under the License.  */
+comment|/*  * Licensed to the Apache Software Foundation (ASF) under one or more  * contributor license agreements.  See the NOTICE file distributed with  * this work for additional information regarding copyright ownership.  * The ASF licenses this file to You under the Apache License, Version 2.0  * (the "License"); you may not use this file except in compliance with  * the License.  You may obtain a copy of the License at  *  *      http://www.apache.org/licenses/LICENSE-2.0  *  * Unless required by applicable law or agreed to in writing, software  * distributed under the License is distributed on an "AS IS" BASIS,  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  * See the License for the specific language governing permissions and  * limitations under the License.  */
 end_comment
 
 begin_package
@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *   * Dependency of feature.  *               *   *<p>Java class for dependency complex type.  *   *<p>The following schema fragment specifies the expected content contained within this class.  *   *<pre>  *&lt;complexType name="dependency">  *&lt;simpleContent>  *&lt;extension base="&lt;http://karaf.apache.org/xmlns/features/v1.0.0>featureName">  *&lt;attribute name="version" type="{http://www.w3.org/2001/XMLSchema}string" default="0.0.0" />  *&lt;/extension>  *&lt;/simpleContent>  *&lt;/complexType>  *</pre>  *   *   */
+comment|/**  * Dependency of feature.  *<p/>  *<p/>  *<p>Java class for dependency complex type.  *<p/>  *<p>The following schema fragment specifies the expected content contained within this class.  *<p/>  *<pre>  *&lt;complexType name="dependency">  *&lt;simpleContent>  *&lt;extension base="&lt;http://karaf.apache.org/xmlns/features/v1.0.0>featureName">  *&lt;attribute name="version" type="{http://www.w3.org/2001/XMLSchema}string" default="0.0.0" />  *&lt;/extension>  *&lt;/simpleContent>  *&lt;/complexType>  *</pre>  */
 end_comment
 
 begin_class
@@ -140,7 +140,7 @@ specifier|protected
 name|String
 name|version
 decl_stmt|;
-comment|/**      *       * Feature name should be non empty string.      *                   *       * @return      *     possible object is      *     {@link String }      *           */
+comment|/**      * Feature name should be non empty string.      *      * @return possible object is      * {@link String }      */
 specifier|public
 name|String
 name|getName
@@ -150,7 +150,7 @@ return|return
 name|value
 return|;
 block|}
-comment|/**      * Sets the value of the value property.      *       * @param value      *     allowed object is      *     {@link String }      *           */
+comment|/**      * Sets the value of the value property.      *      * @param value allowed object is      *              {@link String }      */
 specifier|public
 name|void
 name|setName
@@ -166,7 +166,7 @@ operator|=
 name|value
 expr_stmt|;
 block|}
-comment|/**      * Gets the value of the version property.      *       * @return      *     possible object is      *     {@link String }      *           */
+comment|/**      * Gets the value of the version property.      *      * @return possible object is      * {@link String }      */
 specifier|public
 name|String
 name|getVersion
@@ -190,7 +190,7 @@ name|version
 return|;
 block|}
 block|}
-comment|/**      * Sets the value of the version property.      *       * @param value      *     allowed object is      *     {@link String }      *           */
+comment|/**      * Sets the value of the version property.      *      * @param value allowed object is      *              {@link String }      */
 specifier|public
 name|void
 name|setVersion
@@ -211,9 +211,7 @@ name|String
 name|toString
 parameter_list|()
 block|{
-name|String
-name|ret
-init|=
+return|return
 name|getName
 argument_list|()
 operator|+
@@ -223,9 +221,6 @@ name|SPLIT_FOR_NAME_AND_VERSION
 operator|+
 name|getVersion
 argument_list|()
-decl_stmt|;
-return|return
-name|ret
 return|;
 block|}
 block|}

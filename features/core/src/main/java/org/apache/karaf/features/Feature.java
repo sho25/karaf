@@ -44,8 +44,6 @@ specifier|public
 interface|interface
 name|Feature
 block|{
-specifier|public
-specifier|static
 name|String
 name|DEFAULT_INSTALL_MODE
 init|=

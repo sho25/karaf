@@ -909,7 +909,8 @@ control|)
 block|{
 name|String
 name|name
-decl_stmt|,
+decl_stmt|;
+name|String
 name|range
 decl_stmt|;
 name|int
@@ -2707,6 +2708,7 @@ operator|.
 name|entrySet
 argument_list|()
 control|)
+block|{
 for|for
 control|(
 name|String
@@ -2717,6 +2719,7 @@ operator|.
 name|getValue
 argument_list|()
 control|)
+block|{
 name|result
 operator|.
 name|allow
@@ -2729,6 +2732,8 @@ argument_list|,
 name|filter
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 return|return
 name|result
 return|;

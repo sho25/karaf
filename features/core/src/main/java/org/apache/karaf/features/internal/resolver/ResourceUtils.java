@@ -195,6 +195,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|ResourceUtils
 block|{
@@ -214,6 +215,10 @@ name|TYPE_FEATURE
 init|=
 literal|"karaf.feature"
 decl_stmt|;
+specifier|private
+name|ResourceUtils
+parameter_list|()
+block|{     }
 specifier|public
 specifier|static
 name|String

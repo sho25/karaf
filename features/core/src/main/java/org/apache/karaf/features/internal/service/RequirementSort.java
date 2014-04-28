@@ -155,6 +155,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|RequirementSort
 parameter_list|<
@@ -163,6 +164,10 @@ extends|extends
 name|Resource
 parameter_list|>
 block|{
+specifier|private
+name|RequirementSort
+parameter_list|()
+block|{     }
 comment|/**      * Sorts {@link Resource} based on their {@link Requirement}s and {@link Capability}s.      */
 specifier|public
 specifier|static

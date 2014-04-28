@@ -101,9 +101,14 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|MapUtils
 block|{
+specifier|private
+name|MapUtils
+parameter_list|()
+block|{     }
 specifier|public
 interface|interface
 name|Function

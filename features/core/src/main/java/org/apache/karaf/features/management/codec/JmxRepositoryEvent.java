@@ -39,7 +39,7 @@ name|management
 operator|.
 name|openmbean
 operator|.
-name|CompositeType
+name|CompositeDataSupport
 import|;
 end_import
 
@@ -51,7 +51,7 @@ name|management
 operator|.
 name|openmbean
 operator|.
-name|CompositeDataSupport
+name|CompositeType
 import|;
 end_import
 

@@ -262,9 +262,7 @@ name|configfile
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ConfigFile
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -294,9 +292,7 @@ name|feature
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Dependency
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -326,9 +322,7 @@ name|bundle
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Bundle
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

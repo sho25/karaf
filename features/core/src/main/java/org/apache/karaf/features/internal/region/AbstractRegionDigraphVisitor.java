@@ -413,10 +413,12 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|)
+block|{
 return|return
 literal|false
 return|;
 comment|// this filter does not apply; avoid traversing this edge
+block|}
 comment|// push the filtered candidates for the next region
 name|filteredDeque
 operator|.
@@ -485,7 +487,7 @@ name|candidates
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Determines whether the given region contains the given candidate.      *      * @param region the {@link Region}      * @param candidate the candidate      * @return<code>true</code> if and only if the given region contains the given candidate      */
+comment|/**      * Determines whether the given region contains the given candidate.      *      * @param region    the {@link Region}      * @param candidate the candidate      * @return<code>true</code> if and only if the given region contains the given candidate      */
 specifier|protected
 specifier|abstract
 name|boolean
@@ -498,7 +500,7 @@ name|C
 name|candidate
 parameter_list|)
 function_decl|;
-comment|/**      * Determines whether the given candidate is allowed by the given {@link RegionFilter}.      *      * @param candidate the candidate      * @param filter the filter      * @return<code>true</code> if and only if the given candidate is allowed by the given filter      */
+comment|/**      * Determines whether the given candidate is allowed by the given {@link RegionFilter}.      *      * @param candidate the candidate      * @param filter    the filter      * @return<code>true</code> if and only if the given candidate is allowed by the given filter      */
 specifier|protected
 specifier|abstract
 name|boolean
