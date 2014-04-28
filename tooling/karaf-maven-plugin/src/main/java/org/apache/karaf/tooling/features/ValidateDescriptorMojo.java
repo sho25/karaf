@@ -455,6 +455,18 @@ name|util
 operator|.
 name|zip
 operator|.
+name|ZipEntry
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|zip
+operator|.
 name|ZipException
 import|;
 end_import
@@ -2533,48 +2545,6 @@ return|;
 block|}
 catch|catch
 parameter_list|(
-name|ZipException
-name|e
-parameter_list|)
-block|{
-name|getLog
-argument_list|()
-operator|.
-name|debug
-argument_list|(
-literal|"Unable to determine if "
-operator|+
-name|artifact
-operator|+
-literal|" is a bundle; defaulting to false"
-argument_list|,
-name|e
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-name|getLog
-argument_list|()
-operator|.
-name|debug
-argument_list|(
-literal|"Unable to determine if "
-operator|+
-name|artifact
-operator|+
-literal|" is a bundle; defaulting to false"
-argument_list|,
-name|e
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
 name|Exception
 name|e
 parameter_list|)
@@ -2615,8 +2585,6 @@ name|ArtifactResolutionException
 throws|,
 name|ArtifactNotFoundException
 throws|,
-name|ZipException
-throws|,
 name|IOException
 block|{
 if|if
@@ -2631,15 +2599,11 @@ condition|)
 block|{
 comment|//not resolved as mvn artifact, so it's non-mvn protocol, just use the CustomBundleURLStreamHandlerFactory
 comment|// to open stream
+try|try
+init|(
 name|InputStream
 name|is
 init|=
-literal|null
-decl_stmt|;
-try|try
-block|{
-name|is
-operator|=
 operator|new
 name|BufferedInputStream
 argument_list|(
@@ -2652,45 +2616,9 @@ operator|.
 name|openStream
 argument_list|()
 argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
+init|;                 JarInputStream jar = new JarInputStream(is)
+block|)
 block|{
-name|getLog
-argument_list|()
-operator|.
-name|warn
-argument_list|(
-literal|"Error while opening artifact"
-argument_list|,
-name|e
-argument_list|)
-expr_stmt|;
-block|}
-try|try
-block|{
-name|is
-operator|.
-name|mark
-argument_list|(
-literal|256
-operator|*
-literal|1024
-argument_list|)
-expr_stmt|;
-name|JarInputStream
-name|jar
-init|=
-operator|new
-name|JarInputStream
-argument_list|(
-name|is
-argument_list|)
-decl_stmt|;
 name|Manifest
 name|m
 init|=
@@ -2714,30 +2642,15 @@ literal|"Manifest not present in the first entry of the zip"
 argument_list|)
 throw|;
 block|}
-name|silentClose
-argument_list|(
-name|jar
-argument_list|)
-expr_stmt|;
 return|return
 name|m
 return|;
-block|}
-finally|finally
-block|{
-name|silentClose
-argument_list|(
-name|is
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 else|else
 block|{
 name|ZipFile
 name|file
-init|=
-literal|null
 decl_stmt|;
 name|Artifact
 name|mvnArtifact
@@ -2805,6 +2718,31 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|ZipEntry
+name|entry
+init|=
+name|file
+operator|.
+name|getEntry
+argument_list|(
+literal|"META-INF/MANIFEST.MF"
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|entry
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IOException
+argument_list|(
+literal|"Manifest not present in the first entry of the zip"
+argument_list|)
+throw|;
+block|}
 comment|// let's replace syserr for now to hide warnings being issues by the Manifest reading process
 name|PrintStream
 name|original
@@ -2828,28 +2766,32 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+try|try
+init|(
+name|InputStream
+name|is
+init|=
+name|file
+operator|.
+name|getInputStream
+argument_list|(
+name|entry
+argument_list|)
+init|)
+block|{
 name|Manifest
 name|manifest
 init|=
 operator|new
 name|Manifest
 argument_list|(
-name|file
-operator|.
-name|getInputStream
-argument_list|(
-name|file
-operator|.
-name|getEntry
-argument_list|(
-literal|"META-INF/MANIFEST.MF"
-argument_list|)
-argument_list|)
+name|is
 argument_list|)
 decl_stmt|;
 return|return
 name|manifest
 return|;
+block|}
 block|}
 finally|finally
 block|{
@@ -2863,7 +2805,13 @@ expr_stmt|;
 block|}
 block|}
 block|}
+end_class
+
+begin_comment
 comment|/*      * Resolve an artifact, downloading it from remote repositories when necessary      */
+end_comment
+
+begin_function
 specifier|private
 name|Object
 name|resolve
@@ -3039,7 +2987,13 @@ name|artifact
 return|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/*      * Create an artifact for a given mvn: uri      */
+end_comment
+
+begin_function
 specifier|private
 name|Artifact
 name|getArtifact
@@ -3184,7 +3138,13 @@ literal|null
 return|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/*     * see if bundle url is start with mvn protocol     */
+end_comment
+
+begin_function
 specifier|private
 name|boolean
 name|isMavenProtocol
@@ -3202,7 +3162,13 @@ name|MVN_URI_PREFIX
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/*      * Helper method for debug logging      */
+end_comment
+
+begin_function
 specifier|private
 name|void
 name|debug
@@ -3241,7 +3207,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/*      * Helper method for info logging      */
+end_comment
+
+begin_function
 specifier|private
 name|void
 name|info
@@ -3270,7 +3242,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_comment
 comment|/*      * Helper method for warn logging      */
+end_comment
+
+begin_function
 specifier|private
 name|void
 name|warn
@@ -3299,7 +3277,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_comment
 comment|/*      * Helper method for error logging      */
+end_comment
+
+begin_function
 specifier|private
 name|void
 name|error
@@ -3333,7 +3317,13 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_comment
 comment|/*      * Convenience collection for holding features      */
+end_comment
+
+begin_class
 specifier|private
 class|class
 name|Features
@@ -3459,8 +3449,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
-block|}
 end_class
 
+unit|}
 end_unit
 

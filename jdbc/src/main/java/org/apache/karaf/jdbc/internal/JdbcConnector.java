@@ -220,9 +220,7 @@ name|resources
 operator|=
 operator|new
 name|LinkedList
-argument_list|<
-name|Closeable
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -680,14 +678,6 @@ operator|.
 name|close
 argument_list|(
 name|resources
-operator|.
-name|toArray
-argument_list|(
-operator|new
-name|Closeable
-index|[]
-block|{}
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

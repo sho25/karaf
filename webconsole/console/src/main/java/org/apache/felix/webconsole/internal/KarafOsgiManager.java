@@ -115,9 +115,9 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|jaas
+name|util
 operator|.
-name|modules
+name|jaas
 operator|.
 name|JaasHelper
 import|;

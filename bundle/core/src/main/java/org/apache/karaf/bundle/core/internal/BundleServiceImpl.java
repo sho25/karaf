@@ -20,18 +20,6 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|java
-operator|.
-name|lang
-operator|.
-name|String
-operator|.
-name|format
-import|;
-end_import
-
-begin_import
 import|import
 name|java
 operator|.
@@ -195,9 +183,9 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|jaas
+name|util
 operator|.
-name|modules
+name|jaas
 operator|.
 name|JaasHelper
 import|;
@@ -368,6 +356,18 @@ operator|.
 name|slf4j
 operator|.
 name|LoggerFactory
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+operator|.
+name|format
 import|;
 end_import
 
