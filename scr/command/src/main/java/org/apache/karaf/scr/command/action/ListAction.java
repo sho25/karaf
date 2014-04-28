@@ -279,45 +279,12 @@ name|components
 argument_list|)
 control|)
 block|{
+comment|// Display only non hidden components, or all if showHidden is true
 if|if
 condition|(
 name|showHidden
-condition|)
-block|{
-comment|// we display all because we are overridden
-name|table
-operator|.
-name|addRow
-argument_list|()
-operator|.
-name|addContent
-argument_list|(
-name|component
-operator|.
-name|getId
-argument_list|()
-argument_list|,
-name|ScrUtils
-operator|.
-name|getState
-argument_list|(
-name|component
-operator|.
-name|getState
-argument_list|()
-argument_list|)
-argument_list|,
-name|component
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-if|if
-condition|(
+operator|||
+operator|!
 name|ScrActionSupport
 operator|.
 name|isHiddenComponent
@@ -326,11 +293,6 @@ name|component
 argument_list|)
 condition|)
 block|{
-comment|// do nothing
-block|}
-else|else
-block|{
-comment|// we aren't hidden so print it
 name|table
 operator|.
 name|addRow
@@ -359,7 +321,6 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 name|table
