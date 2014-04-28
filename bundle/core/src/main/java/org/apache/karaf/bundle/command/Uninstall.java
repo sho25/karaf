@@ -89,17 +89,19 @@ specifier|public
 class|class
 name|Uninstall
 extends|extends
-name|BundlesCommandWithConfirmation
+name|BundlesCommand
 block|{
 specifier|public
 name|Uninstall
 parameter_list|()
 block|{
-name|this
-operator|.
+name|defaultAllBundles
+operator|=
+literal|false
+expr_stmt|;
 name|errorMessage
 operator|=
-literal|"Unable to uninstall bundle"
+literal|"Error uninstalling bundle"
 expr_stmt|;
 block|}
 annotation|@

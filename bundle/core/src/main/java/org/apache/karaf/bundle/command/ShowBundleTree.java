@@ -430,20 +430,10 @@ name|Bundle
 argument_list|>
 name|tree
 decl_stmt|;
-specifier|public
-name|ShowBundleTree
-parameter_list|()
-block|{
-name|super
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
-block|}
 annotation|@
 name|Override
 specifier|protected
-name|void
+name|Object
 name|doExecute
 parameter_list|(
 name|Bundle
@@ -509,6 +499,9 @@ name|start
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
 block|}
 comment|/**      * Return a String representation of a bundle state      */
 specifier|private

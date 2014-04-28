@@ -185,7 +185,7 @@ annotation|@
 name|Service
 specifier|public
 class|class
-name|ListBundleServices
+name|Services
 extends|extends
 name|BundlesCommand
 block|{
@@ -202,7 +202,7 @@ block|{}
 argument_list|,
 name|description
 operator|=
-literal|"Shows all services. (By default Karaf commands are hidden)"
+literal|"Shows all services. (Karaf commands and completers are hidden by default)"
 argument_list|,
 name|required
 operator|=
@@ -296,38 +296,17 @@ block|}
 argument_list|)
 argument_list|)
 decl_stmt|;
-specifier|public
-name|ListBundleServices
-parameter_list|()
-block|{
-name|super
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-block|}
 annotation|@
 name|Override
 specifier|protected
 name|void
-name|doExecute
+name|executeOnBundle
 parameter_list|(
-name|List
-argument_list|<
 name|Bundle
-argument_list|>
-name|bundles
+name|bundle
 parameter_list|)
 throws|throws
 name|Exception
-block|{
-for|for
-control|(
-name|Bundle
-name|bundle
-range|:
-name|bundles
-control|)
 block|{
 name|ServiceReference
 argument_list|<
@@ -359,7 +338,6 @@ argument_list|,
 name|showProperties
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|private
 name|void

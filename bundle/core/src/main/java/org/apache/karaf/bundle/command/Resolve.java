@@ -115,18 +115,8 @@ name|Resolve
 extends|extends
 name|BundlesCommand
 block|{
-specifier|public
-name|Resolve
-parameter_list|()
-block|{
-name|super
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-block|}
 specifier|protected
-name|void
+name|Object
 name|doExecute
 parameter_list|(
 name|List
@@ -173,7 +163,22 @@ else|:
 name|bundles
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
 block|}
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|executeOnBundle
+parameter_list|(
+name|Bundle
+name|bundle
+parameter_list|)
+throws|throws
+name|Exception
+block|{     }
 block|}
 end_class
 

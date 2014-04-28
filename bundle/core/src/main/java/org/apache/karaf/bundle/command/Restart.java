@@ -125,19 +125,23 @@ specifier|public
 class|class
 name|Restart
 extends|extends
-name|BundlesCommandWithConfirmation
+name|BundlesCommand
 block|{
 specifier|public
 name|Restart
 parameter_list|()
 block|{
+name|defaultAllBundles
+operator|=
+literal|false
+expr_stmt|;
 name|errorMessage
 operator|=
 literal|"Error restarting bundle"
 expr_stmt|;
 block|}
 specifier|protected
-name|void
+name|Object
 name|doExecute
 parameter_list|(
 name|List
@@ -166,7 +170,9 @@ argument_list|(
 literal|"No bundles specified."
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+literal|null
+return|;
 block|}
 name|List
 argument_list|<
@@ -194,7 +200,11 @@ block|{
 name|bundle
 operator|.
 name|stop
-argument_list|()
+argument_list|(
+name|Bundle
+operator|.
+name|STOP_TRANSIENT
+argument_list|)
 expr_stmt|;
 block|}
 catch|catch
@@ -243,7 +253,11 @@ block|{
 name|bundle
 operator|.
 name|start
-argument_list|()
+argument_list|(
+name|Bundle
+operator|.
+name|START_TRANSIENT
+argument_list|)
 expr_stmt|;
 block|}
 catch|catch
@@ -288,6 +302,9 @@ argument_list|,
 name|exceptions
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
 block|}
 annotation|@
 name|Override
