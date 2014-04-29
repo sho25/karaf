@@ -63,7 +63,7 @@ name|long
 name|bundleId
 parameter_list|)
 function_decl|;
-comment|/** 	 * Gets a map of all exported packages with their version and the bundles that exprot them 	 * The key is in the form packagename:version. 	 *  	 * @return  	 */
+comment|/** 	 * Gets a map of all exported packages with their version and the bundles that export them 	 * The key is in the form packagename:version. 	 *  	 * @return  	 */
 name|SortedMap
 argument_list|<
 name|String
