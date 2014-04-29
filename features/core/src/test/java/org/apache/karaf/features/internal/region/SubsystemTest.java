@@ -183,7 +183,7 @@ name|karaf
 operator|.
 name|features
 operator|.
-name|Repository
+name|FeaturesService
 import|;
 end_import
 
@@ -202,24 +202,6 @@ operator|.
 name|download
 operator|.
 name|StreamProvider
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|features
-operator|.
-name|internal
-operator|.
-name|service
-operator|.
-name|FeaturesServiceImpl
 import|;
 end_import
 
@@ -540,7 +522,7 @@ operator|>
 name|emptySet
 argument_list|()
 argument_list|,
-name|FeaturesServiceImpl
+name|FeaturesService
 operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
 argument_list|,
@@ -777,7 +759,7 @@ operator|>
 name|emptySet
 argument_list|()
 argument_list|,
-name|FeaturesServiceImpl
+name|FeaturesService
 operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
 argument_list|,
@@ -932,7 +914,7 @@ argument_list|(
 literal|"b"
 argument_list|)
 argument_list|,
-name|FeaturesServiceImpl
+name|FeaturesService
 operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
 argument_list|,
@@ -1088,7 +1070,7 @@ operator|>
 name|emptySet
 argument_list|()
 argument_list|,
-name|FeaturesServiceImpl
+name|FeaturesService
 operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
 argument_list|,
@@ -1262,7 +1244,7 @@ operator|>
 name|emptySet
 argument_list|()
 argument_list|,
-name|FeaturesServiceImpl
+name|FeaturesService
 operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
 argument_list|,

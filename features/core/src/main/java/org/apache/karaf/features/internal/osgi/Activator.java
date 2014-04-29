@@ -1322,7 +1322,7 @@ name|getString
 argument_list|(
 literal|"featureResolutionRange"
 argument_list|,
-name|FeaturesServiceImpl
+name|FeaturesService
 operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
 argument_list|)
@@ -1334,7 +1334,7 @@ name|getString
 argument_list|(
 literal|"bundleUpdateRange"
 argument_list|,
-name|FeaturesServiceImpl
+name|FeaturesService
 operator|.
 name|DEFAULT_BUNDLE_UPDATE_RANGE
 argument_list|)
@@ -1346,7 +1346,7 @@ name|getString
 argument_list|(
 literal|"updateSnapshots"
 argument_list|,
-name|FeaturesServiceImpl
+name|FeaturesService
 operator|.
 name|DEFAULT_UPDATE_SNAPSHOTS
 argument_list|)
