@@ -961,6 +961,22 @@ expr_stmt|;
 comment|// Hack to set felix logger
 try|try
 block|{
+if|if
+condition|(
+name|framework
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|.
+name|startsWith
+argument_list|(
+literal|"org.apache.felix."
+argument_list|)
+condition|)
+block|{
 name|Field
 name|field
 init|=
@@ -1119,6 +1135,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
