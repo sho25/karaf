@@ -2254,6 +2254,15 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
+name|addIdentityRequirement
+argument_list|(
+name|resCond
+argument_list|,
+name|this
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 name|installable
 operator|.
 name|add
