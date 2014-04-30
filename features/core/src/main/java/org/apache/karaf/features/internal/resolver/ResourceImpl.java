@@ -132,7 +132,7 @@ name|ResourceImpl
 implements|implements
 name|Resource
 block|{
-specifier|private
+specifier|protected
 specifier|final
 name|List
 argument_list|<
@@ -140,7 +140,7 @@ name|Capability
 argument_list|>
 name|caps
 decl_stmt|;
-specifier|private
+specifier|protected
 specifier|final
 name|List
 argument_list|<
