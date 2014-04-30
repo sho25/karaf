@@ -1507,15 +1507,29 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+comment|// We need to do the following because slashes are handled badly. For example, when searching
+comment|// for a user with lots of special characters like cn=admin,=+<>#;\
+comment|// SearchResult contains 2 different results:
+comment|//
+comment|// SearchResult.getName = cn=admin\,\=\+\<\>\#\;\\\\
+comment|// SearchResult.getNameInNamespace = cn=admin\,\=\+\<\>#\;\\,ou=people,dc=example,dc=com
+comment|//
+comment|// the second escapes the slashes correctly.
 name|userDN
 operator|=
-operator|(
-name|String
-operator|)
 name|result
 operator|.
-name|getName
+name|getNameInNamespace
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|","
+operator|+
+name|userBaseDN
+argument_list|,
+literal|""
+argument_list|)
 expr_stmt|;
 name|namingEnumeration
 operator|.
