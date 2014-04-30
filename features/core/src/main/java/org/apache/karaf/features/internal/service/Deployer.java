@@ -265,6 +265,24 @@ name|internal
 operator|.
 name|download
 operator|.
+name|DownloadManager
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
+operator|.
+name|download
+operator|.
 name|StreamProvider
 import|;
 end_import
@@ -1313,7 +1331,10 @@ specifier|static
 class|class
 name|DeploymentRequest
 block|{
+name|Set
+argument_list|<
 name|String
+argument_list|>
 name|overrides
 decl_stmt|;
 name|String
@@ -1464,16 +1485,30 @@ argument_list|)
 decl_stmt|;
 specifier|private
 specifier|final
+name|DownloadManager
+name|manager
+decl_stmt|;
+specifier|private
+specifier|final
 name|DeployCallback
 name|callback
 decl_stmt|;
 specifier|public
 name|Deployer
 parameter_list|(
+name|DownloadManager
+name|manager
+parameter_list|,
 name|DeployCallback
 name|callback
 parameter_list|)
 block|{
+name|this
+operator|.
+name|manager
+operator|=
+name|manager
+expr_stmt|;
 name|this
 operator|.
 name|callback
@@ -1670,7 +1705,9 @@ name|resolver
 init|=
 operator|new
 name|SubsystemResolver
-argument_list|()
+argument_list|(
+name|manager
+argument_list|)
 decl_stmt|;
 name|resolver
 operator|.
@@ -1699,14 +1736,9 @@ name|class
 argument_list|)
 argument_list|)
 argument_list|,
-name|Overrides
-operator|.
-name|loadOverrides
-argument_list|(
 name|request
 operator|.
 name|overrides
-argument_list|)
 argument_list|,
 name|request
 operator|.
@@ -2601,116 +2633,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|//
-comment|// Log deployment
-comment|//
-name|logDeployment
-argument_list|(
-name|deployment
-argument_list|,
-name|verbose
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|simulate
-condition|)
-block|{
-if|if
-condition|(
-operator|!
-name|noRefresh
-operator|&&
-operator|!
-name|toRefresh
-operator|.
-name|isEmpty
-argument_list|()
-condition|)
-block|{
-name|print
-argument_list|(
-literal|"  Bundles to refresh:"
-argument_list|,
-name|verbose
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|Bundle
-name|bundle
-range|:
-name|toRefresh
-control|)
-block|{
-name|print
-argument_list|(
-literal|"    "
-operator|+
-name|bundle
-operator|.
-name|getSymbolicName
-argument_list|()
-operator|+
-literal|" / "
-operator|+
-name|bundle
-operator|.
-name|getVersion
-argument_list|()
-argument_list|,
-name|verbose
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-if|if
-condition|(
-operator|!
-name|toManage
-operator|.
-name|isEmpty
-argument_list|()
-condition|)
-block|{
-name|print
-argument_list|(
-literal|"  Managing bundle:"
-argument_list|,
-name|verbose
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|Bundle
-name|bundle
-range|:
-name|toManage
-control|)
-block|{
-name|print
-argument_list|(
-literal|"    "
-operator|+
-name|bundle
-operator|.
-name|getSymbolicName
-argument_list|()
-operator|+
-literal|" / "
-operator|+
-name|bundle
-operator|.
-name|getVersion
-argument_list|()
-argument_list|,
-name|verbose
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-return|return;
-block|}
 name|Set
 argument_list|<
 name|Bundle
@@ -2744,20 +2666,6 @@ name|HashSet
 argument_list|<>
 argument_list|()
 decl_stmt|;
-comment|//
-comment|// Execute deployment
-comment|//
-comment|// #1: stop bundles that needs to be updated or uninstalled in order
-comment|// #2: uninstall needed bundles
-comment|// #3: update regions
-comment|// #4: update bundles
-comment|// #5: install bundles
-comment|// #6: save state
-comment|// #7: install configuration
-comment|// #8: refresh bundles
-comment|// #9: start bundles in order
-comment|// #10: send events
-comment|//
 comment|//
 comment|// Compute bundle states
 comment|//
@@ -3172,6 +3080,130 @@ block|}
 block|}
 block|}
 block|}
+comment|//
+comment|// Log deployment
+comment|//
+name|logDeployment
+argument_list|(
+name|deployment
+argument_list|,
+name|verbose
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|simulate
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|noRefresh
+operator|&&
+operator|!
+name|toRefresh
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|print
+argument_list|(
+literal|"  Bundles to refresh:"
+argument_list|,
+name|verbose
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|Bundle
+name|bundle
+range|:
+name|toRefresh
+control|)
+block|{
+name|print
+argument_list|(
+literal|"    "
+operator|+
+name|bundle
+operator|.
+name|getSymbolicName
+argument_list|()
+operator|+
+literal|" / "
+operator|+
+name|bundle
+operator|.
+name|getVersion
+argument_list|()
+argument_list|,
+name|verbose
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+operator|!
+name|toManage
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|print
+argument_list|(
+literal|"  Managing bundle:"
+argument_list|,
+name|verbose
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|Bundle
+name|bundle
+range|:
+name|toManage
+control|)
+block|{
+name|print
+argument_list|(
+literal|"    "
+operator|+
+name|bundle
+operator|.
+name|getSymbolicName
+argument_list|()
+operator|+
+literal|" / "
+operator|+
+name|bundle
+operator|.
+name|getVersion
+argument_list|()
+argument_list|,
+name|verbose
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+return|return;
+block|}
+comment|//
+comment|// Execute deployment
+comment|//
+comment|// #1: stop bundles that needs to be updated or uninstalled in order
+comment|// #2: uninstall needed bundles
+comment|// #3: update regions
+comment|// #4: update bundles
+comment|// #5: install bundles
+comment|// #6: save state
+comment|// #7: install configuration
+comment|// #8: refresh bundles
+comment|// #9: start bundles in order
+comment|// #10: send events
+comment|//
 comment|//
 comment|// Handle updates on the FeaturesService bundle
 comment|//
@@ -4499,6 +4531,15 @@ argument_list|(
 name|resource
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|startLevel
+operator|!=
+name|dstate
+operator|.
+name|initialBundleStartLevel
+condition|)
+block|{
 name|callback
 operator|.
 name|setBundleStartLevel
@@ -4508,6 +4549,7 @@ argument_list|,
 name|startLevel
 argument_list|)
 expr_stmt|;
+block|}
 name|FeaturesService
 operator|.
 name|RequestedState
