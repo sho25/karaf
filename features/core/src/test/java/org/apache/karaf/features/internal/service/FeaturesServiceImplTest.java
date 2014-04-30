@@ -690,7 +690,7 @@ name|DEFAULT_VERSION
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|assertSame
+name|assertEquals
 argument_list|(
 literal|"2.0.0"
 argument_list|,
