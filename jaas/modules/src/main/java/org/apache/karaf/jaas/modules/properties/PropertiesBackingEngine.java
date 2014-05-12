@@ -196,13 +196,6 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-specifier|static
-specifier|final
-name|String
-name|GROUP_PREFIX
-init|=
-literal|"_g_:"
-decl_stmt|;
 specifier|private
 name|Properties
 name|users
