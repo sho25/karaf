@@ -416,6 +416,15 @@ name|Exception
 name|e
 parameter_list|)
 block|{
+name|logger
+operator|.
+name|warn
+argument_list|(
+literal|"Error starting activator"
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
 name|doStop
 argument_list|()
 expr_stmt|;
