@@ -1105,6 +1105,12 @@ operator|.
 name|randomUUID
 argument_list|()
 expr_stmt|;
+name|opts
+operator|.
+name|name
+operator|=
+name|name
+expr_stmt|;
 block|}
 specifier|final
 name|Trigger
