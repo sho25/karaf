@@ -476,7 +476,7 @@ literal|3
 index|]
 expr_stmt|;
 block|}
-comment|// classifier is optional (if not pressent or empty we will have a null classsifier
+comment|// classifier is optional (if not present or empty we will have a null classifier
 name|m_fullClassifier
 operator|=
 literal|""

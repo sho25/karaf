@@ -21,6 +21,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|net
+operator|.
+name|URI
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|ArrayList
@@ -302,7 +312,7 @@ literal|true
 argument_list|)
 name|List
 argument_list|<
-name|String
+name|URI
 argument_list|>
 name|urls
 decl_stmt|;
@@ -453,7 +463,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Insufficient priviledges"
+literal|"Insufficient privileges"
 argument_list|)
 throw|;
 block|}
@@ -484,7 +494,7 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|String
+name|URI
 name|url
 range|:
 name|urls
@@ -501,6 +511,9 @@ operator|.
 name|installBundle
 argument_list|(
 name|url
+operator|.
+name|toString
+argument_list|()
 argument_list|,
 literal|null
 argument_list|)

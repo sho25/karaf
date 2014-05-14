@@ -33,7 +33,7 @@ name|java
 operator|.
 name|net
 operator|.
-name|URL
+name|URI
 import|;
 end_import
 
@@ -152,7 +152,7 @@ name|multiValued
 operator|=
 literal|false
 argument_list|)
-name|String
+name|URI
 name|location
 decl_stmt|;
 specifier|protected
@@ -177,11 +177,10 @@ init|(
 name|InputStream
 name|is
 init|=
-operator|new
-name|URL
-argument_list|(
 name|location
-argument_list|)
+operator|.
+name|toURL
+argument_list|()
 operator|.
 name|openStream
 argument_list|()
