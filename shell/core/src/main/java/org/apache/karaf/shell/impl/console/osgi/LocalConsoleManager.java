@@ -360,9 +360,6 @@ name|session
 operator|=
 name|JaasHelper
 operator|.
-expr|<
-name|Session
-operator|>
 name|doAs
 argument_list|(
 name|subject
@@ -533,7 +530,7 @@ name|getEncoding
 parameter_list|()
 block|{
 name|String
-name|ctype
+name|encoding
 init|=
 name|System
 operator|.
@@ -541,11 +538,6 @@ name|getenv
 argument_list|(
 literal|"LC_CTYPE"
 argument_list|)
-decl_stmt|;
-name|String
-name|encoding
-init|=
-name|ctype
 decl_stmt|;
 if|if
 condition|(

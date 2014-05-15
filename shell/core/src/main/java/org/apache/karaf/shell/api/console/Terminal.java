@@ -19,6 +19,16 @@ name|console
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|EnumSet
+import|;
+end_import
+
 begin_comment
 comment|/**  * Session terminal.  */
 end_comment
@@ -54,6 +64,48 @@ name|setEchoEnabled
 parameter_list|(
 name|boolean
 name|enabled
+parameter_list|)
+function_decl|;
+comment|/**      * Add a qualified listener for the specific signal      * @param listener the listener to register      * @param signal the signal the listener is interested in      */
+name|void
+name|addSignalListener
+parameter_list|(
+name|SignalListener
+name|listener
+parameter_list|,
+name|Signal
+modifier|...
+name|signal
+parameter_list|)
+function_decl|;
+comment|/**      * Add a qualified listener for the specific set of signal      * @param listener the listener to register      * @param signals the signals the listener is interested in      */
+name|void
+name|addSignalListener
+parameter_list|(
+name|SignalListener
+name|listener
+parameter_list|,
+name|EnumSet
+argument_list|<
+name|Signal
+argument_list|>
+name|signals
+parameter_list|)
+function_decl|;
+comment|/**      * Add a global listener for all signals      * @param listener the listener to register      */
+name|void
+name|addSignalListener
+parameter_list|(
+name|SignalListener
+name|listener
+parameter_list|)
+function_decl|;
+comment|/**      * Remove a previously registered listener for all the signals it was registered      * @param listener the listener to remove      */
+name|void
+name|removeSignalListener
+parameter_list|(
+name|SignalListener
+name|listener
 parameter_list|)
 function_decl|;
 block|}
