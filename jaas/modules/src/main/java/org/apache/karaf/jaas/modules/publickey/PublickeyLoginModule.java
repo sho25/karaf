@@ -851,6 +851,9 @@ index|[
 name|i
 index|]
 operator|.
+name|trim
+argument_list|()
+operator|.
 name|startsWith
 argument_list|(
 name|PropertiesBackingEngine
@@ -871,6 +874,9 @@ name|infos
 index|[
 name|i
 index|]
+operator|.
+name|trim
+argument_list|()
 operator|.
 name|substring
 argument_list|(
@@ -898,6 +904,9 @@ name|infos
 index|[
 name|i
 index|]
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
@@ -946,6 +955,9 @@ name|roles
 index|[
 name|j
 index|]
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -966,6 +978,9 @@ name|infos
 index|[
 name|i
 index|]
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
