@@ -246,7 +246,7 @@ literal|"bundles"
 argument_list|,
 name|description
 operator|=
-literal|"List of bundles to download the sources for"
+literal|"List of bundles to download the sources for. The bundles are identified using the following syntax: symbolic_name,version where version is optional."
 argument_list|,
 name|required
 operator|=

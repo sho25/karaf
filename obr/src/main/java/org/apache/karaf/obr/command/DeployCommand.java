@@ -152,7 +152,7 @@ literal|"bundles"
 argument_list|,
 name|description
 operator|=
-literal|"List of bundle names to deploy (separated by whitespaces)"
+literal|"List of bundle names to deploy (separated by whitespaces). The bundles are identified using the following syntax: symbolic_name,version where version is optional."
 argument_list|,
 name|required
 operator|=

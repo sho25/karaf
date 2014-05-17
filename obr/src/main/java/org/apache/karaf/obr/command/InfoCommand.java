@@ -218,7 +218,7 @@ literal|"bundles"
 argument_list|,
 name|description
 operator|=
-literal|"Specify bundles to query for information (separated by whitespaces)"
+literal|"Specify bundles to query for information (separated by whitespaces). The bundles are identified using the following syntax: symbolic_name,version where version is optional."
 argument_list|,
 name|required
 operator|=
