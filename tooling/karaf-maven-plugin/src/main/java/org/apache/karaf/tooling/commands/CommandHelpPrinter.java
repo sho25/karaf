@@ -57,27 +57,11 @@ name|karaf
 operator|.
 name|shell
 operator|.
-name|commands
+name|api
+operator|.
+name|action
 operator|.
 name|Action
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|shell
-operator|.
-name|commands
-operator|.
-name|meta
-operator|.
-name|ActionMetaData
 import|;
 end_import
 
@@ -86,15 +70,12 @@ specifier|public
 interface|interface
 name|CommandHelpPrinter
 block|{
-comment|/**      * Print help for a single action to the out stream      *       * @param action      * @param actionMeta      * @param out stream to write to      * @param includeHelpOption include the help option in the doc      */
+comment|/**      * Print help for a single action to the out stream      *       * @param action      * @param out stream to write to      * @param includeHelpOption include the help option in the doc      */
 name|void
 name|printHelp
 parameter_list|(
 name|Action
 name|action
-parameter_list|,
-name|ActionMetaData
-name|actionMeta
 parameter_list|,
 name|PrintStream
 name|out
