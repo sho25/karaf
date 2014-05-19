@@ -236,6 +236,11 @@ return|return
 name|op
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|String
 name|toString
@@ -243,8 +248,6 @@ parameter_list|()
 block|{
 name|String
 name|s
-init|=
-literal|null
 decl_stmt|;
 switch|switch
 condition|(
@@ -701,6 +704,11 @@ name|toString
 argument_list|()
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 specifier|static
 name|SimpleFilter
@@ -2382,6 +2390,11 @@ name|startIdx
 return|;
 block|}
 comment|/**      * Converts a attribute map to a filter. The filter is created by iterating      * over the map's entry set. If ordering of attributes is important (e.g.,      * for hitting attribute indices), then the map's entry set should iterate      * in the desired order. Equality testing is assumed for all attribute types      * other than version ranges, which are handled appropriated. If the attribute      * map is empty, then a filter that matches anything is returned.      *      * @param attrs Map of attributes to convert to a filter.      * @return A filter corresponding to the attributes.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 specifier|static
 name|SimpleFilter
@@ -2406,9 +2419,7 @@ name|filters
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|SimpleFilter
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
