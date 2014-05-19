@@ -28,6 +28,10 @@ name|String
 name|getVersion
 parameter_list|()
 function_decl|;
+name|boolean
+name|isPrerequisite
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

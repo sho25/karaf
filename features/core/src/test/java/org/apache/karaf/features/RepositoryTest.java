@@ -475,7 +475,7 @@ name|model
 operator|.
 name|Feature
 operator|.
-name|SPLIT_FOR_NAME_AND_VERSION
+name|VERSION_SEPARATOR
 operator|+
 name|org
 operator|.
@@ -1047,7 +1047,7 @@ name|model
 operator|.
 name|Feature
 operator|.
-name|SPLIT_FOR_NAME_AND_VERSION
+name|VERSION_SEPARATOR
 operator|+
 name|org
 operator|.

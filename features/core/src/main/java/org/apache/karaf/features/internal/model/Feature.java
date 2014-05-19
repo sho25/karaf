@@ -169,22 +169,6 @@ name|VersionCleaner
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|felix
-operator|.
-name|utils
-operator|.
-name|version
-operator|.
-name|VersionTable
-import|;
-end_import
-
 begin_comment
 comment|/**  * Definition of the Feature.  *<p/>  *<p/>  *<p>Java class for feature complex type.  *<p/>  *<p>The following schema fragment specifies the expected content contained within this class.  *<p/>  *<pre>  *&lt;complexType name="feature">  *&lt;complexContent>  *&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">  *&lt;sequence>  *&lt;element name="details" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>  *&lt;element name="config" type="{http://karaf.apache.org/xmlns/features/v1.0.0}config" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="configfile" type="{http://karaf.apache.org/xmlns/features/v1.0.0}configFile" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="feature" type="{http://karaf.apache.org/xmlns/features/v1.0.0}dependency" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="bundle" type="{http://karaf.apache.org/xmlns/features/v1.0.0}bundle" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="conditional" type="{http://karaf.apache.org/xmlns/features/v1.0.0}conditional" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="capability" type="{http://karaf.apache.org/xmlns/features/v1.0.0}capability" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="requirement" type="{http://karaf.apache.org/xmlns/features/v1.0.0}requirement" maxOccurs="unbounded" minOccurs="0"/>  *&lt;/sequence>  *&lt;attribute name="name" use="required" type="{http://karaf.apache.org/xmlns/features/v1.0.0}featureName" />  *&lt;attribute name="version" type="{http://www.w3.org/2001/XMLSchema}string" default="0.0.0" />  *&lt;attribute name="description" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;attribute name="resolver" type="{http://karaf.apache.org/xmlns/features/v1.0.0}resolver" />  *&lt;/restriction>  *&lt;/complexContent>  *&lt;/complexType>  *</pre>  */
 end_comment
@@ -246,7 +230,7 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|SPLIT_FOR_NAME_AND_VERSION
+name|VERSION_SEPARATOR
 init|=
 literal|"/"
 decl_stmt|;
@@ -402,7 +386,7 @@ name|str
 operator|.
 name|contains
 argument_list|(
-name|SPLIT_FOR_NAME_AND_VERSION
+name|VERSION_SEPARATOR
 argument_list|)
 condition|)
 block|{
@@ -419,7 +403,7 @@ name|str
 operator|.
 name|indexOf
 argument_list|(
-name|SPLIT_FOR_NAME_AND_VERSION
+name|VERSION_SEPARATOR
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -434,10 +418,10 @@ name|str
 operator|.
 name|indexOf
 argument_list|(
-name|SPLIT_FOR_NAME_AND_VERSION
+name|VERSION_SEPARATOR
 argument_list|)
 operator|+
-name|SPLIT_FOR_NAME_AND_VERSION
+name|VERSION_SEPARATOR
 operator|.
 name|length
 argument_list|()
@@ -478,7 +462,7 @@ return|return
 name|getName
 argument_list|()
 operator|+
-name|SPLIT_FOR_NAME_AND_VERSION
+name|VERSION_SEPARATOR
 operator|+
 name|getVersion
 argument_list|()
