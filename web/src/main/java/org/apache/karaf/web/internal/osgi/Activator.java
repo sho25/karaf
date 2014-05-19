@@ -223,11 +223,6 @@ operator|.
 name|class
 argument_list|)
 argument_list|)
-annotation|@
-name|Managed
-argument_list|(
-literal|"org.apache.karaf.shell"
-argument_list|)
 specifier|public
 class|class
 name|Activator
