@@ -160,7 +160,7 @@ argument_list|()
 expr_stmt|;
 name|state
 operator|.
-name|requestedFeatures
+name|requirements
 operator|.
 name|clear
 argument_list|()
@@ -247,7 +247,7 @@ argument_list|)
 expr_stmt|;
 name|state
 operator|.
-name|requestedFeatures
+name|requirements
 operator|.
 name|putAll
 argument_list|(
@@ -420,7 +420,7 @@ literal|"features"
 argument_list|,
 name|state
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|)
 expr_stmt|;
 name|json

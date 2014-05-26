@@ -129,7 +129,7 @@ argument_list|<
 name|String
 argument_list|>
 argument_list|>
-name|requestedFeatures
+name|requirements
 init|=
 operator|new
 name|HashMap
@@ -279,7 +279,7 @@ argument_list|()
 expr_stmt|;
 name|to
 operator|.
-name|requestedFeatures
+name|requirements
 operator|.
 name|clear
 argument_list|()
@@ -346,11 +346,11 @@ name|copy
 argument_list|(
 name|from
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|,
 name|to
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|)
 expr_stmt|;
 name|MapUtils

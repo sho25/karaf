@@ -164,7 +164,7 @@ argument_list|)
 expr_stmt|;
 name|oldState
 operator|.
-name|requestedFeatures
+name|requirements
 operator|.
 name|put
 argument_list|(
@@ -302,11 +302,11 @@ name|assertEquals
 argument_list|(
 name|oldState
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|,
 name|newState
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|)
 expr_stmt|;
 name|assertEquals

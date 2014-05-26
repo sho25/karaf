@@ -1427,7 +1427,7 @@ argument_list|<
 name|String
 argument_list|>
 argument_list|>
-name|requestedFeatures
+name|requirements
 decl_stmt|;
 name|Map
 argument_list|<
@@ -1767,8 +1767,6 @@ argument_list|)
 argument_list|)
 decl_stmt|;
 comment|// Resolve
-comment|// TODO: requirements
-comment|// TODO: bundles
 name|SubsystemResolver
 name|resolver
 init|=
@@ -1791,7 +1789,7 @@ argument_list|()
 argument_list|,
 name|request
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|,
 name|apply
 argument_list|(
@@ -2104,7 +2102,7 @@ name|overrides
 expr_stmt|;
 name|newRequest
 operator|.
-name|requestedFeatures
+name|requirements
 operator|=
 name|copy
 argument_list|(
@@ -2112,7 +2110,7 @@ name|dstate
 operator|.
 name|state
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|)
 expr_stmt|;
 for|for
@@ -2127,7 +2125,7 @@ name|addToMapSet
 argument_list|(
 name|newRequest
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|,
 name|ROOT_REGION
 argument_list|,
@@ -4997,6 +4995,22 @@ argument_list|(
 name|resource
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|reqState
+operator|==
+literal|null
+condition|)
+block|{
+name|reqState
+operator|=
+name|FeaturesService
+operator|.
+name|RequestedState
+operator|.
+name|Started
+expr_stmt|;
+block|}
 switch|switch
 condition|(
 name|reqState
@@ -5058,13 +5072,13 @@ argument_list|)
 expr_stmt|;
 name|newState
 operator|.
-name|requestedFeatures
+name|requirements
 operator|.
 name|putAll
 argument_list|(
 name|request
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|)
 expr_stmt|;
 name|newState

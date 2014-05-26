@@ -85,16 +85,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Hashtable
 import|;
 end_import
@@ -835,7 +825,7 @@ name|UPDATE_SNAPSHOTS_NONE
 expr_stmt|;
 name|request
 operator|.
-name|requestedFeatures
+name|requirements
 operator|=
 operator|new
 name|HashMap
@@ -846,7 +836,7 @@ name|addToMapSet
 argument_list|(
 name|request
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|,
 name|ROOT_REGION
 argument_list|,
@@ -1661,7 +1651,7 @@ name|UPDATE_SNAPSHOTS_NONE
 expr_stmt|;
 name|request
 operator|.
-name|requestedFeatures
+name|requirements
 operator|=
 operator|new
 name|HashMap
@@ -1672,7 +1662,7 @@ name|addToMapSet
 argument_list|(
 name|request
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|,
 name|ROOT_REGION
 argument_list|,
@@ -2154,7 +2144,7 @@ name|UPDATE_SNAPSHOTS_NONE
 expr_stmt|;
 name|request
 operator|.
-name|requestedFeatures
+name|requirements
 operator|=
 operator|new
 name|HashMap
@@ -2165,7 +2155,7 @@ name|addToMapSet
 argument_list|(
 name|request
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|,
 name|ROOT_REGION
 argument_list|,
@@ -2691,7 +2681,7 @@ name|UPDATE_SNAPSHOTS_NONE
 expr_stmt|;
 name|request
 operator|.
-name|requestedFeatures
+name|requirements
 operator|=
 operator|new
 name|HashMap
@@ -2702,7 +2692,7 @@ name|addToMapSet
 argument_list|(
 name|request
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|,
 name|ROOT_REGION
 argument_list|,
@@ -3195,7 +3185,7 @@ name|UPDATE_SNAPSHOTS_NONE
 expr_stmt|;
 name|request
 operator|.
-name|requestedFeatures
+name|requirements
 operator|=
 operator|new
 name|HashMap
@@ -3206,7 +3196,7 @@ name|addToMapSet
 argument_list|(
 name|request
 operator|.
-name|requestedFeatures
+name|requirements
 argument_list|,
 name|ROOT_REGION
 argument_list|,
