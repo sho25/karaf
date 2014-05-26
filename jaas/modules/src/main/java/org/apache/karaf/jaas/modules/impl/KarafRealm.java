@@ -442,6 +442,13 @@ argument_list|(
 name|props
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|properties
+operator|!=
+literal|null
+condition|)
+block|{
 for|for
 control|(
 name|Enumeration
@@ -484,6 +491,7 @@ name|key
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|this
 operator|.
