@@ -258,6 +258,34 @@ name|Option
 argument_list|(
 name|name
 operator|=
+literal|"-s"
+argument_list|,
+name|aliases
+operator|=
+block|{
+literal|"--show-hidden"
+block|}
+argument_list|,
+name|description
+operator|=
+literal|"Display hidden features"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
+argument_list|)
+name|boolean
+name|showHidden
+decl_stmt|;
+annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
 literal|"-o"
 argument_list|,
 name|aliases
@@ -478,6 +506,20 @@ argument_list|)
 condition|)
 block|{
 comment|// Filter out not installed features if we only want to see the installed ones
+continue|continue;
+block|}
+if|if
+condition|(
+operator|!
+name|showHidden
+operator|&&
+name|f
+operator|.
+name|isHidden
+argument_list|()
+condition|)
+block|{
+comment|// Filter out hidden feature if not asked to display those
 continue|continue;
 block|}
 name|table

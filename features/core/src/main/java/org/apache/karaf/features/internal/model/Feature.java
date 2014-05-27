@@ -292,6 +292,12 @@ specifier|protected
 name|Integer
 name|startLevel
 decl_stmt|;
+annotation|@
+name|XmlAttribute
+specifier|protected
+name|boolean
+name|hidden
+decl_stmt|;
 specifier|protected
 name|List
 argument_list|<
@@ -683,6 +689,32 @@ block|{
 name|this
 operator|.
 name|startLevel
+operator|=
+name|value
+expr_stmt|;
+block|}
+comment|/**      * Gets the value of the hidden property.      */
+specifier|public
+name|boolean
+name|isHidden
+parameter_list|()
+block|{
+return|return
+name|hidden
+return|;
+block|}
+comment|/**      * Sets the value of the hidden property.      */
+specifier|public
+name|void
+name|setHidden
+parameter_list|(
+name|boolean
+name|value
+parameter_list|)
+block|{
+name|this
+operator|.
+name|hidden
 operator|=
 name|value
 expr_stmt|;

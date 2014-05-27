@@ -81,6 +81,10 @@ name|String
 name|getInstall
 parameter_list|()
 function_decl|;
+name|boolean
+name|isHidden
+parameter_list|()
+function_decl|;
 name|List
 argument_list|<
 name|Dependency

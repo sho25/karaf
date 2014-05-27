@@ -84,6 +84,12 @@ name|isInstalled
 argument_list|(
 name|feature
 argument_list|)
+operator|&&
+operator|!
+name|feature
+operator|.
+name|isHidden
+argument_list|()
 return|;
 block|}
 block|}
