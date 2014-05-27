@@ -741,6 +741,15 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+operator|!
+name|updated
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
 try|try
 block|{
 specifier|final
@@ -838,6 +847,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+block|}
 try|try
 block|{
 name|Thread
@@ -921,8 +931,6 @@ name|Bundle
 name|bundle
 parameter_list|)
 throws|throws
-name|FileNotFoundException
-throws|,
 name|BundleException
 throws|,
 name|IOException
