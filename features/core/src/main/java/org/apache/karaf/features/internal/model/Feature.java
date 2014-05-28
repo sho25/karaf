@@ -295,7 +295,7 @@ decl_stmt|;
 annotation|@
 name|XmlAttribute
 specifier|protected
-name|boolean
+name|Boolean
 name|hidden
 decl_stmt|;
 specifier|protected
@@ -701,6 +701,12 @@ parameter_list|()
 block|{
 return|return
 name|hidden
+operator|==
+literal|null
+condition|?
+literal|false
+else|:
+name|hidden
 return|;
 block|}
 comment|/**      * Sets the value of the hidden property.      */
@@ -708,7 +714,7 @@ specifier|public
 name|void
 name|setHidden
 parameter_list|(
-name|boolean
+name|Boolean
 name|value
 parameter_list|)
 block|{
