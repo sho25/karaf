@@ -144,12 +144,17 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|/**      * Build a Backing engine for the JDBCLoginModule.      *      * @param options      * @return      */
+comment|/**      * Build a Backing engine for the JDBCLoginModule.      */
 specifier|public
 name|BackingEngine
 name|build
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|options
 parameter_list|)
 block|{
@@ -301,9 +306,6 @@ block|{
 name|DataSource
 name|dataSource
 init|=
-operator|(
-name|DataSource
-operator|)
 name|JDBCUtils
 operator|.
 name|createDatasource
@@ -458,7 +460,7 @@ return|return
 name|instance
 return|;
 block|}
-comment|/**      * Returns the login module class, that this factory can build.      *      * @return      */
+comment|/**      * Returns the login module class, that this factory can build.      */
 specifier|public
 name|String
 name|getModuleClass

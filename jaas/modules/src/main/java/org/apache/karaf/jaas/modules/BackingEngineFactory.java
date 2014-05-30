@@ -32,16 +32,21 @@ specifier|public
 interface|interface
 name|BackingEngineFactory
 block|{
-comment|/**      * Returns the corresponding module class.      *      * @return      */
+comment|/**      * Returns the corresponding module class.      */
 name|String
 name|getModuleClass
 parameter_list|()
 function_decl|;
-comment|/**      * Backing engine factory method.      *      * @param options      * @return      */
+comment|/**      * Backing engine factory method.      */
 name|BackingEngine
 name|build
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|options
 parameter_list|)
 function_decl|;

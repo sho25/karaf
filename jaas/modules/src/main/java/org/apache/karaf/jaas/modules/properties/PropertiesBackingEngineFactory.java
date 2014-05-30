@@ -166,12 +166,17 @@ name|USER_FILE
 init|=
 literal|"users"
 decl_stmt|;
-comment|/**      * Builds the Backing Engine      *      * @param options      * @return      */
+comment|/**      * Builds the Backing Engine      */
 specifier|public
 name|BackingEngine
 name|build
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|options
 parameter_list|)
 block|{
@@ -251,14 +256,11 @@ name|usersFile
 argument_list|)
 expr_stmt|;
 block|}
-finally|finally
-block|{
 return|return
 name|engine
 return|;
 block|}
-block|}
-comment|/**      * Returns the login module class, that this factory can build.      *      * @return      */
+comment|/**      * Returns the login module class, that this factory can build.      */
 specifier|public
 name|String
 name|getModuleClass
