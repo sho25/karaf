@@ -115,6 +115,11 @@ name|FEATURE_EVENT_EVENT_TYPE_UNINSTALLED
 init|=
 literal|"Uninstalled"
 decl_stmt|;
+name|String
+name|FEATURE_EVENT_REGION
+init|=
+literal|"Region"
+decl_stmt|;
 comment|/**      * The item names in the CompositeData representing a feature      */
 name|String
 index|[]
@@ -183,6 +188,8 @@ block|{
 name|FEATURE_NAME
 block|,
 name|FEATURE_VERSION
+block|,
+name|FEATURE_EVENT_REGION
 block|,
 name|FEATURE_EVENT_EVENT_TYPE
 block|}

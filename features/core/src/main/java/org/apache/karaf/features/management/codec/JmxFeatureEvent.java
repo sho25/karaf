@@ -192,6 +192,16 @@ operator|.
 name|getVersion
 argument_list|()
 expr_stmt|;
+name|itemValues
+index|[
+literal|2
+index|]
+operator|=
+name|event
+operator|.
+name|getRegion
+argument_list|()
+expr_stmt|;
 switch|switch
 condition|(
 name|event
@@ -359,6 +369,15 @@ name|SimpleType
 operator|.
 name|STRING
 expr_stmt|;
+name|itemTypes
+index|[
+literal|3
+index|]
+operator|=
+name|SimpleType
+operator|.
+name|STRING
+expr_stmt|;
 name|itemDescriptions
 index|[
 literal|0
@@ -379,6 +398,13 @@ literal|2
 index|]
 operator|=
 literal|"The type of the event"
+expr_stmt|;
+name|itemDescriptions
+index|[
+literal|3
+index|]
+operator|=
+literal|"The region of this feature"
 expr_stmt|;
 return|return
 operator|new
