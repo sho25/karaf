@@ -624,6 +624,15 @@ name|getDependencies
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+operator|!
+name|dep
+operator|.
+name|isDependency
+argument_list|()
+condition|)
+block|{
 name|addDependency
 argument_list|(
 name|resource
@@ -633,6 +642,7 @@ argument_list|,
 name|featureRange
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 for|for
 control|(
