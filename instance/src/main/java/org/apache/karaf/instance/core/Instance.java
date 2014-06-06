@@ -129,6 +129,15 @@ throws|throws
 name|Exception
 function_decl|;
 name|void
+name|restart
+parameter_list|(
+name|String
+name|javaOpts
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+name|void
 name|start
 parameter_list|(
 name|String
