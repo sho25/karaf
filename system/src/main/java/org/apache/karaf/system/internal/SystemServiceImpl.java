@@ -1190,7 +1190,7 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"Error settting framework debugging: "
+literal|"Error setting framework debugging: "
 operator|+
 name|e
 operator|.
