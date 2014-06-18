@@ -211,7 +211,7 @@ literal|0
 argument_list|,
 name|name
 operator|=
-literal|"feature"
+literal|"features"
 argument_list|,
 name|description
 operator|=
