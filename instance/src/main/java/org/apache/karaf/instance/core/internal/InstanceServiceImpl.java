@@ -1471,6 +1471,10 @@ argument_list|<
 name|T
 argument_list|>
 name|callback
+parameter_list|,
+specifier|final
+name|boolean
+name|writeToFile
 parameter_list|)
 block|{
 specifier|final
@@ -1602,6 +1606,11 @@ argument_list|(
 name|state
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|writeToFile
+condition|)
+block|{
 name|saveData
 argument_list|(
 name|state
@@ -1609,11 +1618,14 @@ argument_list|,
 name|properties
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|t
 return|;
 block|}
 block|}
+argument_list|,
+name|writeToFile
 argument_list|)
 return|;
 block|}
@@ -2635,6 +2647,8 @@ name|instance
 return|;
 block|}
 block|}
+argument_list|,
+literal|true
 argument_list|)
 return|;
 block|}
@@ -2709,6 +2723,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -2863,6 +2879,8 @@ argument_list|)
 return|;
 block|}
 block|}
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -2905,6 +2923,8 @@ argument_list|)
 return|;
 block|}
 block|}
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -4178,6 +4198,8 @@ literal|null
 return|;
 block|}
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -4304,6 +4326,8 @@ literal|null
 return|;
 block|}
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -4424,6 +4448,8 @@ literal|null
 return|;
 block|}
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -4873,6 +4899,8 @@ literal|null
 return|;
 block|}
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -5395,6 +5423,8 @@ name|cloneInstance
 return|;
 block|}
 block|}
+argument_list|,
+literal|true
 argument_list|)
 return|;
 block|}
@@ -6019,6 +6049,8 @@ argument_list|)
 return|;
 block|}
 block|}
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -6140,6 +6172,8 @@ argument_list|)
 return|;
 block|}
 block|}
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -6310,6 +6344,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 return|return
@@ -6317,6 +6353,8 @@ literal|null
 return|;
 block|}
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -6386,6 +6424,8 @@ name|root
 return|;
 block|}
 block|}
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -6455,6 +6495,8 @@ name|loc
 return|;
 block|}
 block|}
+argument_list|,
+literal|true
 argument_list|)
 return|;
 block|}
@@ -6529,6 +6571,8 @@ name|pid
 return|;
 block|}
 block|}
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -6598,6 +6642,8 @@ name|opts
 return|;
 block|}
 block|}
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -6674,6 +6720,8 @@ literal|null
 return|;
 block|}
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -6837,6 +6885,8 @@ return|;
 block|}
 block|}
 block|}
+argument_list|,
+literal|true
 argument_list|)
 return|;
 block|}
