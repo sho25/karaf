@@ -3027,6 +3027,8 @@ literal|null
 return|;
 block|}
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
