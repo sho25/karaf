@@ -321,6 +321,10 @@ parameter_list|,
 specifier|final
 name|RunnableWithProperties
 name|callback
+parameter_list|,
+specifier|final
+name|boolean
+name|writeToFile
 parameter_list|)
 throws|throws
 name|IOException
@@ -391,6 +395,11 @@ argument_list|(
 name|props
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|writeToFile
+condition|)
+block|{
 name|ByteArrayOutputStream
 name|baos
 init|=
@@ -426,6 +435,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
 argument_list|)
 expr_stmt|;
 block|}
@@ -446,6 +456,10 @@ argument_list|<
 name|T
 argument_list|>
 name|callback
+parameter_list|,
+specifier|final
+name|boolean
+name|writeToFile
 parameter_list|)
 throws|throws
 name|IOException
@@ -523,6 +537,11 @@ argument_list|(
 name|props
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|writeToFile
+condition|)
+block|{
 name|ByteArrayOutputStream
 name|baos
 init|=
@@ -556,6 +575,7 @@ name|toByteArray
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|result
 return|;
