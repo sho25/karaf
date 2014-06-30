@@ -211,6 +211,9 @@ parameter_list|()
 block|{
 return|return
 name|value
+operator|.
+name|trim
+argument_list|()
 return|;
 block|}
 comment|/**      * Sets the value of the value property.      *      * @param value allowed object is      *              {@link String }      */
