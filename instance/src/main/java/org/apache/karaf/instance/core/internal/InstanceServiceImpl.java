@@ -2147,6 +2147,15 @@ name|copyResourceToDir
 argument_list|(
 name|karafBase
 argument_list|,
+literal|"etc/org.apache.karaf.command.acl.scope_bundle.cfg"
+argument_list|,
+name|printOutput
+argument_list|)
+expr_stmt|;
+name|copyResourceToDir
+argument_list|(
+name|karafBase
+argument_list|,
 literal|"etc/org.apache.karaf.command.acl.shell.cfg"
 argument_list|,
 name|printOutput
