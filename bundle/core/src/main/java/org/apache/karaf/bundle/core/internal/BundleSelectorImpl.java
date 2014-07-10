@@ -262,7 +262,7 @@ if|if
 condition|(
 name|matcher
 operator|.
-name|find
+name|matches
 argument_list|()
 condition|)
 block|{
@@ -310,7 +310,7 @@ if|if
 condition|(
 name|matcher
 operator|.
-name|find
+name|matches
 argument_list|()
 condition|)
 block|{
@@ -794,13 +794,13 @@ literal|null
 operator|&&
 name|nameMatcher
 operator|.
-name|find
+name|matches
 argument_list|()
 operator|)
 operator|||
 name|symbolicNameMatcher
 operator|.
-name|find
+name|matches
 argument_list|()
 decl_stmt|;
 if|if
@@ -832,7 +832,7 @@ if|if
 condition|(
 name|versionMatcher
 operator|.
-name|find
+name|matches
 argument_list|()
 condition|)
 block|{
@@ -859,13 +859,13 @@ literal|null
 operator|&&
 name|nameMatcher
 operator|.
-name|find
+name|matches
 argument_list|()
 operator|)
 operator|||
 name|symbolicNameMatcher
 operator|.
-name|find
+name|matches
 argument_list|()
 decl_stmt|;
 if|if
@@ -953,7 +953,7 @@ if|if
 condition|(
 name|locationMatcher
 operator|.
-name|find
+name|matches
 argument_list|()
 condition|)
 block|{
