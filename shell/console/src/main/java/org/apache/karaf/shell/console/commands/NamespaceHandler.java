@@ -1282,7 +1282,7 @@ name|setAutoExport
 argument_list|(
 name|ServiceMetadata
 operator|.
-name|AUTO_EXPORT_INTERFACES
+name|AUTO_EXPORT_ALL_CLASSES
 argument_list|)
 expr_stmt|;
 name|commandService
@@ -1770,7 +1770,7 @@ name|setAutoExport
 argument_list|(
 name|ServiceMetadata
 operator|.
-name|AUTO_EXPORT_INTERFACES
+name|AUTO_EXPORT_ALL_CLASSES
 argument_list|)
 expr_stmt|;
 name|subShellCommandService
