@@ -725,7 +725,7 @@ argument_list|)
 operator|.
 name|maxSize
 argument_list|(
-literal|35
+literal|64
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -780,7 +780,15 @@ argument_list|()
 operator|.
 name|addContent
 argument_list|(
+name|SimpleAnsi
+operator|.
+name|INTENSITY_BOLD
+operator|+
 name|key
+operator|+
+name|SimpleAnsi
+operator|.
+name|INTENSITY_NORMAL
 argument_list|,
 name|entry
 operator|.
