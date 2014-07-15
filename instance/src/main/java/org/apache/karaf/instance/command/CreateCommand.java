@@ -537,12 +537,12 @@ argument_list|,
 name|aliases
 operator|=
 block|{
-literal|"--adderss"
+literal|"--address"
 block|}
 argument_list|,
 name|description
 operator|=
-literal|"IP address of the new container instance running on(When Virtual IP is used)"
+literal|"IP address of the new container instance running on (when virtual IP is used)"
 argument_list|,
 name|required
 operator|=

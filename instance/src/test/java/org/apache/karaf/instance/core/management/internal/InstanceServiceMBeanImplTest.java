@@ -224,6 +224,8 @@ literal|"webconsole"
 argument_list|,
 literal|"funfeat"
 argument_list|)
+argument_list|,
+literal|"localhost"
 argument_list|)
 decl_stmt|;
 specifier|final
@@ -396,6 +398,8 @@ name|String
 operator|>
 name|emptyList
 argument_list|()
+argument_list|,
+literal|"localhost"
 argument_list|)
 decl_stmt|;
 name|InstanceService
