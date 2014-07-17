@@ -51,7 +51,7 @@ name|command
 operator|.
 name|completers
 operator|.
-name|InstanceCompleter
+name|StoppedInstanceCompleter
 import|;
 end_import
 
@@ -316,7 +316,7 @@ argument_list|)
 annotation|@
 name|Completion
 argument_list|(
-name|InstanceCompleter
+name|StoppedInstanceCompleter
 operator|.
 name|class
 argument_list|)
