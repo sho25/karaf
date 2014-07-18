@@ -336,6 +336,18 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
+name|void
+name|changeSshHost
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|host
+parameter_list|)
+throws|throws
+name|MBeanException
+function_decl|;
 comment|// Attributes
 name|TabularData
 name|getInstances

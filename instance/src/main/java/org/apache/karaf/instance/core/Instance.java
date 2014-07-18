@@ -170,6 +170,15 @@ name|boolean
 name|isAttached
 parameter_list|()
 function_decl|;
+name|void
+name|changeSshHost
+parameter_list|(
+name|String
+name|host
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 block|}
 end_interface
 

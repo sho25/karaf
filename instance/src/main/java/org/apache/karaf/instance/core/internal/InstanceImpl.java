@@ -401,6 +401,26 @@ operator|!=
 literal|0
 return|;
 block|}
+specifier|public
+name|void
+name|changeSshHost
+parameter_list|(
+name|String
+name|host
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+name|service
+operator|.
+name|changeInstanceSshHost
+argument_list|(
+name|name
+argument_list|,
+name|host
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 
