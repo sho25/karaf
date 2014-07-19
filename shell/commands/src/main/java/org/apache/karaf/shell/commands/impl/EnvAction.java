@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Command to get the value of a session variable.  */
+comment|/**  * Command to get/set the value of a session variable.  */
 end_comment
 
 begin_class
