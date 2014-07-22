@@ -403,7 +403,7 @@ expr_stmt|;
 block|}
 name|assertEquals
 argument_list|(
-literal|3
+literal|2
 argument_list|,
 name|bundleContext
 operator|.
