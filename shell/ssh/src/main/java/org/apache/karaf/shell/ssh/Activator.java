@@ -688,7 +688,9 @@ block|{
 name|server
 operator|.
 name|stop
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
 block|}
 catch|catch
