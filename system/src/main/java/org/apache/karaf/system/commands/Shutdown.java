@@ -338,9 +338,9 @@ literal|"Shutdown after a specified delay. The time argument can have different"
 operator|+
 literal|" formats. First, it can be an absolute time in the format hh:mm, in which hh is the hour (1 or 2 digits) and mm"
 operator|+
-literal|" is the minute of the hour (in two digits). Second, it can be in the format +m, in which m is the number of minutes"
+literal|" is the minute of the hour (in two digits). Second, it can be in the format m (or +m), in which m is the number of minutes"
 operator|+
-literal|" to wait. The word now is an alias for +0."
+literal|" to wait. The word now is an alias for 0 (or +0)."
 argument_list|,
 name|required
 operator|=
