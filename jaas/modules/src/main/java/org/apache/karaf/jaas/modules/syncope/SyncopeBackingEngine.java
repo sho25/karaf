@@ -1009,7 +1009,15 @@ parameter_list|,
 name|String
 name|role
 parameter_list|)
-block|{      }
+block|{
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"Roles management should be done on the Syncope side"
+argument_list|)
+throw|;
+block|}
 specifier|public
 name|void
 name|deleteRole
@@ -1020,7 +1028,15 @@ parameter_list|,
 name|String
 name|role
 parameter_list|)
-block|{      }
+block|{
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"Roles management should be done on the Syncope side"
+argument_list|)
+throw|;
+block|}
 specifier|public
 name|List
 argument_list|<
