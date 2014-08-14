@@ -804,6 +804,19 @@ name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|response
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|response
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
 comment|// extract the<memberships> element
 name|int
 name|index
@@ -947,6 +960,7 @@ argument_list|(
 literal|"<roleName>"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|roles
