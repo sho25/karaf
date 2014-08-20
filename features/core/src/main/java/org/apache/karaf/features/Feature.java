@@ -35,6 +35,24 @@ name|Map
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
+operator|.
+name|model
+operator|.
+name|Config
+import|;
+end_import
+
 begin_comment
 comment|/**  * A feature is a list of bundles associated identified by its name.  */
 end_comment
@@ -99,16 +117,10 @@ argument_list|>
 name|getBundles
 parameter_list|()
 function_decl|;
-name|Map
+comment|//    Map<String, Map<String, String>> getConfigurations();
+name|List
 argument_list|<
-name|String
-argument_list|,
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+name|ConfigInfo
 argument_list|>
 name|getConfigurations
 parameter_list|()
