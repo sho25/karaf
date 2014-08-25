@@ -378,9 +378,12 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|String
-name|featureInstallOutput
-init|=
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
 name|executeCommand
 argument_list|(
 literal|"feature:install -v wrapper"
@@ -391,47 +394,11 @@ argument_list|(
 literal|"admin"
 argument_list|)
 argument_list|)
-decl_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-name|featureInstallOutput
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertFeatureInstalled
 argument_list|(
-name|featureInstallOutput
-operator|.
-name|isEmpty
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|String
-name|featureListOutput
-init|=
-name|executeCommand
-argument_list|(
-literal|"feature:list -i | grep wrapper"
-argument_list|)
-decl_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-name|featureListOutput
-argument_list|)
-expr_stmt|;
-name|assertFalse
-argument_list|(
-name|featureListOutput
-operator|.
-name|isEmpty
-argument_list|()
+literal|"wrapper"
 argument_list|)
 expr_stmt|;
 name|System
@@ -452,28 +419,9 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|featureListOutput
-operator|=
-name|executeCommand
+name|assertFeatureNotInstalled
 argument_list|(
-literal|"feature:list -i | grep wrapper"
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-name|featureListOutput
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-name|featureListOutput
-operator|.
-name|isEmpty
-argument_list|()
+literal|"wrapper"
 argument_list|)
 expr_stmt|;
 block|}
@@ -540,6 +488,11 @@ literal|"java.lang.String"
 block|}
 argument_list|)
 expr_stmt|;
+name|assertFeatureInstalled
+argument_list|(
+literal|"wrapper"
+argument_list|)
+expr_stmt|;
 name|connection
 operator|.
 name|invoke
@@ -561,6 +514,11 @@ index|[]
 block|{
 literal|"java.lang.String"
 block|}
+argument_list|)
+expr_stmt|;
+name|assertFeatureNotInstalled
+argument_list|(
+literal|"wrapper"
 argument_list|)
 expr_stmt|;
 block|}
@@ -590,7 +548,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"feature:repo-add mvn:org.apache.karaf.cellar/apache-karaf-cellar/2.2.4/xml/features"
+literal|"feature:repo-add mvn:org.apache.karaf.cellar/apache-karaf-cellar/3.0.0/xml/features"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -612,7 +570,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"feature:repo-remove mvn:org.apache.karaf.cellar/apache-karaf-cellar/2.2.4/xml/features"
+literal|"feature:repo-remove mvn:org.apache.karaf.cellar/apache-karaf-cellar/3.0.0/xml/features"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -679,7 +637,7 @@ operator|new
 name|Object
 index|[]
 block|{
-literal|"mvn:org.apache.karaf.cellar/apache-karaf-cellar/2.2.4/xml/features"
+literal|"mvn:org.apache.karaf.cellar/apache-karaf-cellar/3.0.0/xml/features"
 block|}
 argument_list|,
 operator|new
@@ -702,7 +660,7 @@ operator|new
 name|Object
 index|[]
 block|{
-literal|"mvn:org.apache.karaf.cellar/apache-karaf-cellar/2.2.4/xml/features"
+literal|"mvn:org.apache.karaf.cellar/apache-karaf-cellar/3.0.0/xml/features"
 block|}
 argument_list|,
 operator|new
