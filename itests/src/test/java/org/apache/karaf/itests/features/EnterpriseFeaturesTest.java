@@ -101,7 +101,7 @@ name|spi
 operator|.
 name|reactors
 operator|.
-name|PerClass
+name|PerMethod
 import|;
 end_import
 
@@ -116,7 +116,7 @@ argument_list|)
 annotation|@
 name|ExamReactorStrategy
 argument_list|(
-name|PerClass
+name|PerMethod
 operator|.
 name|class
 argument_list|)
