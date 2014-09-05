@@ -804,6 +804,8 @@ operator|.
 name|createFactoryConfiguration
 argument_list|(
 literal|"encrypt.config"
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|Dictionary
@@ -831,13 +833,6 @@ argument_list|(
 literal|"foo"
 argument_list|,
 name|encryptedValue
-argument_list|)
-expr_stmt|;
-name|config
-operator|.
-name|setBundleLocation
-argument_list|(
-literal|null
 argument_list|)
 expr_stmt|;
 name|config
