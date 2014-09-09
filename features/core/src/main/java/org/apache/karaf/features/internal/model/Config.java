@@ -346,6 +346,11 @@ parameter_list|)
 block|{
 comment|// ignore??
 block|}
+name|interpolation
+argument_list|(
+name|props
+argument_list|)
+expr_stmt|;
 return|return
 name|props
 return|;

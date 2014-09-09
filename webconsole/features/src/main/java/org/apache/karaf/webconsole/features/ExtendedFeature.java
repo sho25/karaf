@@ -292,7 +292,6 @@ argument_list|>
 name|getConfigurations
 parameter_list|()
 block|{
-comment|//    public Map<String, Map<String, String>> getConfigurations() {
 return|return
 name|this
 operator|.
