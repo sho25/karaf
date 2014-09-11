@@ -179,7 +179,7 @@ literal|"shutdown"
 argument_list|,
 name|description
 operator|=
-literal|"Shutdown Karaf."
+literal|"Shutdown the Karaf container."
 argument_list|)
 annotation|@
 name|Service
