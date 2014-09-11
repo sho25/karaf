@@ -87,7 +87,7 @@ argument_list|()
 operator|.
 name|getResource
 argument_list|(
-literal|"internal/f08.xml"
+literal|"internal/service/f08.xml"
 argument_list|)
 operator|.
 name|toURI
