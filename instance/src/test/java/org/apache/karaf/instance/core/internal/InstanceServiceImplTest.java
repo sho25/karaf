@@ -676,11 +676,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|AdminServiceImpl
+name|InstanceServiceImpl
 name|service
 init|=
 operator|new
-name|AdminServiceImpl
+name|InstanceServiceImpl
 argument_list|()
 decl_stmt|;
 name|service
@@ -755,6 +755,8 @@ literal|null
 argument_list|,
 literal|null
 argument_list|,
+literal|null
+argument_list|,
 name|textResources
 argument_list|,
 operator|new
@@ -778,6 +780,8 @@ name|getName
 argument_list|()
 argument_list|,
 name|settings
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 name|assertFileExists
