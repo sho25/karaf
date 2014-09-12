@@ -394,6 +394,20 @@ argument_list|,
 name|destination
 argument_list|)
 expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Created dump "
+operator|+
+name|destination
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 literal|null
 return|;

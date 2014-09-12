@@ -440,20 +440,6 @@ parameter_list|)
 block|{
 comment|// Ignore
 block|}
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Created dump "
-operator|+
-name|destination
-operator|.
-name|toString
-argument_list|()
-argument_list|)
-expr_stmt|;
 block|}
 comment|// Private constructor
 specifier|private

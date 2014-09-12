@@ -365,6 +365,13 @@ operator|new
 name|DiagnosticDumpMBeanImpl
 argument_list|()
 decl_stmt|;
+name|diagnostic
+operator|.
+name|setBundleContext
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
 name|Hashtable
 argument_list|<
 name|String
