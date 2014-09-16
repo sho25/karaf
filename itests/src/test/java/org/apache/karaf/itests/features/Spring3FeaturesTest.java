@@ -37,16 +37,6 @@ name|org
 operator|.
 name|junit
 operator|.
-name|Ignore
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
 name|Test
 import|;
 end_import
@@ -111,7 +101,7 @@ name|spi
 operator|.
 name|reactors
 operator|.
-name|PerMethod
+name|PerClass
 import|;
 end_import
 
@@ -126,7 +116,7 @@ argument_list|)
 annotation|@
 name|ExamReactorStrategy
 argument_list|(
-name|PerMethod
+name|PerClass
 operator|.
 name|class
 argument_list|)
