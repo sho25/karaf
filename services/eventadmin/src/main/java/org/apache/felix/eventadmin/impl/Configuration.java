@@ -1705,8 +1705,6 @@ argument_list|,
 name|m_ignoreTimeout
 argument_list|,
 name|m_ignoreTopics
-argument_list|,
-literal|0.0
 argument_list|)
 return|;
 block|}
