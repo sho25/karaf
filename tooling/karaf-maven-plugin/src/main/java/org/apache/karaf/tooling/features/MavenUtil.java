@@ -258,7 +258,7 @@ name|Pattern
 operator|.
 name|compile
 argument_list|(
-literal|"(?:wrap:)?mvn:([^/ ]+)/([^/ ]+)/([^/\\$ ]*)(/([^/\\$ ]+)(/([^/\\$ ]+))?)?(\\$.+)?"
+literal|"(?:(?:wrap:)|(?:blueprint:))?mvn:([^/ ]+)/([^/ ]+)/([^/\\$ ]*)(/([^/\\$ ]+)(/([^/\\$ ]+))?)?(/\\$.+)?"
 argument_list|)
 decl_stmt|;
 comment|/**      * Convert PAX URL mvn format to aether coordinate format.      * N.B. we do not handle repository-url in mvn urls.      * N.B. version is required in mvn urls.      *      * @param name PAX URL mvn format: mvn-uri := [ 'wrap:' ] 'mvn:' [ repository-url '!' ] group-id '/' artifact-id [ '/' [version] [ '/' [type] [ '/' classifier ] ] ] ]      * @return aether coordinate format:<groupId>:<artifactId>[:<extension>[:<classifier>]]:<version>      */
