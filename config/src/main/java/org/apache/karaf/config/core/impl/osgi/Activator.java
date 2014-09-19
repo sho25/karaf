@@ -151,6 +151,16 @@ name|ConfigurationAdmin
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
+import|;
+end_import
+
 begin_class
 annotation|@
 name|Services
@@ -214,6 +224,17 @@ operator|new
 name|ConfigRepositoryImpl
 argument_list|(
 name|configurationAdmin
+argument_list|,
+operator|new
+name|File
+argument_list|(
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"karaf.etc"
+argument_list|)
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|register
