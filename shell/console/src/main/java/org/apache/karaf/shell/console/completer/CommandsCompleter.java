@@ -580,6 +580,8 @@ operator|.
 name|startsWith
 argument_list|(
 name|subShell
+operator|+
+literal|":"
 argument_list|)
 condition|)
 block|{
@@ -710,6 +712,8 @@ operator|.
 name|startsWith
 argument_list|(
 name|subShell
+operator|+
+literal|":"
 argument_list|)
 condition|)
 block|{
