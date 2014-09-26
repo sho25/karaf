@@ -2237,6 +2237,11 @@ condition|)
 block|{
 if|if
 condition|(
+operator|(
+name|installedFeatures
+operator|!=
+literal|null
+operator|&&
 operator|!
 name|installedFeatures
 operator|.
@@ -2244,6 +2249,12 @@ name|contains
 argument_list|(
 name|condition
 argument_list|)
+operator|)
+operator|&&
+operator|(
+name|bootFeatures
+operator|!=
+literal|null
 operator|&&
 operator|!
 name|bootFeatures
@@ -2252,6 +2263,7 @@ name|contains
 argument_list|(
 name|condition
 argument_list|)
+operator|)
 condition|)
 block|{
 name|found
