@@ -559,7 +559,7 @@ specifier|private
 name|Integer
 name|startLevel
 decl_stmt|;
-comment|/**      * Installation mode. If present, generate "feature.install" attribute:      *      *<a href="http://karaf.apache.org/xmlns/features/v1.1.0">Installation mode</a>      *      * Can be either manual or auto. Specifies whether the feature should be automatically installed when      * dropped inside the deploy folder. Note: this attribute doesn't affect feature descriptors that are installed      * from the feature:install command or as part of the etc/org.apache.karaf.features.cfg file.      *      * @parameter      */
+comment|/**      * Installation mode. If present, generate "feature.install" attribute:      *<p/>      *<a href="http://karaf.apache.org/xmlns/features/v1.1.0">Installation mode</a>      *<p/>      * Can be either manual or auto. Specifies whether the feature should be automatically installed when      * dropped inside the deploy folder. Note: this attribute doesn't affect feature descriptors that are installed      * from the feature:install command or as part of the etc/org.apache.karaf.features.cfg file.      *      * @parameter      */
 specifier|private
 name|String
 name|installMode
@@ -573,6 +573,11 @@ comment|/**      * The standard behavior is to add dependencies as<code>&lt;bund
 specifier|private
 name|boolean
 name|addBundlesToPrimaryFeature
+decl_stmt|;
+comment|/**      * The standard behavior is to add any dependencies other than those in the<code>runtime</code> scope to the feature bundle.      * Setting this flag to "true" disables adding any dependencies (transient or otherwise) that are in      *<code>&lt;scope&gt;provided&lt;/scope&gt;</code>.      *      * @parameter default-value="false"      */
+specifier|private
+name|boolean
+name|ignoreScopeProvided
 decl_stmt|;
 comment|// *************************************************
 comment|// READ-ONLY MAVEN PLUGIN PARAMETERS
@@ -1337,6 +1342,23 @@ argument_list|(
 name|bundleName
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+literal|"provided"
+operator|.
+name|equals
+argument_list|(
+name|entry
+operator|.
+name|getValue
+argument_list|()
+argument_list|)
+operator|||
+operator|!
+name|ignoreScopeProvided
+condition|)
+block|{
 name|feature
 operator|.
 name|getBundle
@@ -1347,6 +1369,7 @@ argument_list|(
 name|bundle
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(

@@ -295,12 +295,10 @@ name|String
 argument_list|>
 name|installedFeatures
 decl_stmt|;
-comment|/**      * Ignore the dependency attribute (dependency="[true|false]") on bundle      *      * @parameter      */
+comment|/**      * Ignore the dependency attribute (dependency="[true|false]") on bundle      *      * @parameter default-value="true"      */
 specifier|protected
 name|boolean
 name|ignoreDependencyFlag
-init|=
-literal|true
 decl_stmt|;
 specifier|private
 name|URI
