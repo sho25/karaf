@@ -1818,6 +1818,8 @@ operator|.
 name|getConfiguration
 argument_list|(
 name|generalPid
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|List

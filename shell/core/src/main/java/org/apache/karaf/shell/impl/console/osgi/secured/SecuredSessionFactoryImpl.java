@@ -1138,6 +1138,8 @@ name|event
 operator|.
 name|getPid
 argument_list|()
+argument_list|,
+literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;

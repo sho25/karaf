@@ -340,6 +340,8 @@ operator|.
 name|getConfiguration
 argument_list|(
 name|pid
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|Dictionary

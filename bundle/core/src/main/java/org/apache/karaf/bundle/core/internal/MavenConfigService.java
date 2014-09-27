@@ -213,6 +213,8 @@ operator|.
 name|getConfiguration
 argument_list|(
 literal|"org.ops4j.pax.url.mvn"
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 if|if

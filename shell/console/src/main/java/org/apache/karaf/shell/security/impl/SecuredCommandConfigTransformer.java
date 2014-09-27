@@ -725,6 +725,8 @@ name|entry
 operator|.
 name|getKey
 argument_list|()
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|genConfig
@@ -979,6 +981,8 @@ name|event
 operator|.
 name|getPid
 argument_list|()
+argument_list|,
+literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -994,6 +998,8 @@ name|event
 operator|.
 name|getPid
 argument_list|()
+argument_list|,
+literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;

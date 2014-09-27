@@ -480,6 +480,11 @@ name|String
 operator|.
 name|class
 argument_list|)
+argument_list|,
+name|EasyMock
+operator|.
+name|anyString
+argument_list|()
 argument_list|)
 argument_list|)
 operator|.
@@ -1097,6 +1102,8 @@ operator|.
 name|getConfiguration
 argument_list|(
 name|testPid
+argument_list|,
+literal|null
 argument_list|)
 argument_list|)
 operator|.

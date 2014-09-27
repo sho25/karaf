@@ -267,6 +267,8 @@ operator|.
 name|getConfiguration
 argument_list|(
 name|PID
+argument_list|,
+literal|null
 argument_list|)
 argument_list|)
 operator|.
@@ -380,6 +382,8 @@ operator|.
 name|getConfiguration
 argument_list|(
 name|PID
+argument_list|,
+literal|null
 argument_list|)
 argument_list|)
 operator|.

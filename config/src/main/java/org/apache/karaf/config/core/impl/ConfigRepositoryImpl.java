@@ -392,6 +392,8 @@ operator|.
 name|getConfiguration
 argument_list|(
 name|pid
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|configuration
@@ -900,6 +902,8 @@ operator|.
 name|getConfiguration
 argument_list|(
 name|pid
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 if|if
@@ -980,6 +984,8 @@ operator|.
 name|createFactoryConfiguration
 argument_list|(
 name|factoryPid
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|config
