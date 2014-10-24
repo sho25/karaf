@@ -35,6 +35,16 @@ name|Map
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
 begin_comment
 comment|/**  * JDBC Service.  */
 end_comment
@@ -91,6 +101,21 @@ argument_list|<
 name|String
 argument_list|>
 name|datasources
+parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * List the datasources available and      * group aliases for the same datasource.      *      * @return a list of aliases.      */
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Set
+argument_list|<
+name|String
+argument_list|>
+argument_list|>
+name|aliases
 parameter_list|()
 throws|throws
 name|Exception
