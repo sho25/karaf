@@ -59,6 +59,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|net
+operator|.
+name|SocketTimeoutException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|security
 operator|.
 name|AccessControlException
@@ -214,6 +224,14 @@ name|stream
 init|=
 literal|null
 decl_stmt|;
+name|long
+name|acceptStartTime
+init|=
+name|System
+operator|.
+name|currentTimeMillis
+argument_list|()
+decl_stmt|;
 try|try
 block|{
 name|socket
@@ -240,6 +258,47 @@ operator|.
 name|getInputStream
 argument_list|()
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|SocketTimeoutException
+name|ste
+parameter_list|)
+block|{
+comment|// This should never happen but bug 3325 suggests that it does
+name|LOG
+operator|.
+name|log
+argument_list|(
+name|Level
+operator|.
+name|WARNING
+argument_list|,
+literal|"Karaf shutdown socket: "
+operator|+
+literal|"The socket listening for the shutdown command experienced "
+operator|+
+literal|"an unexpected timeout "
+operator|+
+literal|"["
+operator|+
+operator|(
+name|System
+operator|.
+name|currentTimeMillis
+argument_list|()
+operator|-
+name|acceptStartTime
+operator|)
+operator|+
+literal|"] milliseconds "
+operator|+
+literal|"after the call to accept(). Is this an instance of bug 3325?"
+argument_list|,
+name|ste
+argument_list|)
+expr_stmt|;
+continue|continue;
 block|}
 catch|catch
 parameter_list|(
