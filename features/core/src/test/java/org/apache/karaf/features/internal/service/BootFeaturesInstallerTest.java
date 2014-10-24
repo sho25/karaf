@@ -220,7 +220,7 @@ name|installer
 operator|.
 name|parseBootFeatures
 argument_list|(
-literal|"(test1, test2), test3"
+literal|" ( test1 , test2 ) , test3 "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -244,7 +244,37 @@ name|installer
 operator|.
 name|parseBootFeatures
 argument_list|(
-literal|"test1, test2, test3"
+literal|" test1 , test2, test3"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|Assert
+operator|.
+name|assertEquals
+argument_list|(
+name|asList
+argument_list|(
+name|setOf
+argument_list|(
+literal|"test1"
+argument_list|)
+argument_list|,
+name|setOf
+argument_list|(
+literal|"test2"
+argument_list|)
+argument_list|,
+name|setOf
+argument_list|(
+literal|"test3"
+argument_list|)
+argument_list|)
+argument_list|,
+name|installer
+operator|.
+name|parseBootFeatures
+argument_list|(
+literal|"(test1), (test2), test3"
 argument_list|)
 argument_list|)
 expr_stmt|;

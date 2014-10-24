@@ -521,7 +521,7 @@ name|Pattern
 operator|.
 name|compile
 argument_list|(
-literal|"(\\((.+))\\),|.+"
+literal|"(\\s*\\(([^)]+))\\s*\\)\\s*,\\s*|.+"
 argument_list|)
 decl_stmt|;
 name|Matcher
