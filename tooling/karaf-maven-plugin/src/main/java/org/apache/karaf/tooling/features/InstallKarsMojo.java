@@ -2208,77 +2208,16 @@ name|getConditional
 argument_list|()
 control|)
 block|{
-name|boolean
-name|found
-init|=
-literal|true
-decl_stmt|;
-for|for
-control|(
-name|String
-name|condition
-range|:
-name|conditional
-operator|.
-name|getCondition
-argument_list|()
-control|)
-block|{
-if|if
-condition|(
-operator|!
-name|condition
-operator|.
-name|startsWith
-argument_list|(
-literal|"req:"
-argument_list|)
-condition|)
-block|{
-if|if
-condition|(
-operator|(
-name|installedFeatures
-operator|!=
-literal|null
-operator|&&
-operator|!
-name|installedFeatures
-operator|.
-name|contains
-argument_list|(
-name|condition
-argument_list|)
-operator|)
-operator|&&
-operator|(
-name|bootFeatures
-operator|!=
-literal|null
-operator|&&
-operator|!
-name|bootFeatures
-operator|.
-name|contains
-argument_list|(
-name|condition
-argument_list|)
-operator|)
-condition|)
-block|{
-name|found
-operator|=
-literal|false
-expr_stmt|;
-break|break;
-block|}
-block|}
-block|}
-if|if
-condition|(
-name|found
-condition|)
-block|{
+comment|//            boolean found = true;
+comment|//            for (String condition : conditional.getCondition()) {
+comment|//                if (!condition.startsWith("req:")) {
+comment|//                    if ((installedFeatures != null&& !installedFeatures.contains(condition))&& (bootFeatures != null&& !bootFeatures.contains(condition))) {
+comment|//                        found = false;
+comment|//                        break;
+comment|//                    }
+comment|//                }
+comment|//            }
+comment|//            if (found) {
 name|getLog
 argument_list|()
 operator|.
@@ -2401,7 +2340,7 @@ name|configFile
 argument_list|)
 expr_stmt|;
 block|}
-block|}
+comment|//            }
 block|}
 block|}
 specifier|private
