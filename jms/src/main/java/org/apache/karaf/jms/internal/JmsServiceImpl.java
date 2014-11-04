@@ -1733,7 +1733,11 @@ init|=
 name|connector
 operator|.
 name|createSession
-argument_list|()
+argument_list|(
+name|Session
+operator|.
+name|SESSION_TRANSACTED
+argument_list|)
 decl_stmt|;
 name|MessageConsumer
 name|consumer
@@ -1807,6 +1811,11 @@ operator|!=
 literal|null
 condition|)
 do|;
+name|session
+operator|.
+name|commit
+argument_list|()
+expr_stmt|;
 name|consumer
 operator|.
 name|close
