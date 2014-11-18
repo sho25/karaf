@@ -73,6 +73,34 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
+comment|/**      * Install the service wrapper.      *      * @param name the service name.      * @param displayName the service display name.      * @param description the service description.      * @param startType the start type.      * @param envs The environment variable and values      * @param includes The include statement for JSW wrapper conf      * @return the wrapper configuration (index 0) and service files (index 1).      * @throws MBeanException in case of installation failure.      */
+name|File
+index|[]
+name|install
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|displayName
+parameter_list|,
+name|String
+name|description
+parameter_list|,
+name|String
+name|startType
+parameter_list|,
+name|String
+index|[]
+name|envs
+parameter_list|,
+name|String
+index|[]
+name|includes
+parameter_list|)
+throws|throws
+name|MBeanException
+function_decl|;
 block|}
 end_interface
 
