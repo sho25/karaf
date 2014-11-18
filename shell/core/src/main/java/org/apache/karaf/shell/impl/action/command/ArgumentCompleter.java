@@ -1077,6 +1077,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+try|try
+block|{
 name|Class
 name|clazz
 init|=
@@ -1136,6 +1138,15 @@ name|clazz
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|Throwable
+name|t
+parameter_list|)
+block|{
+comment|// Ignore in case the completer class is not even available
 block|}
 block|}
 else|else
