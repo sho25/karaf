@@ -52,14 +52,6 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-annotation|@
-name|Deprecated
-name|void
-name|refreshInstance
-parameter_list|()
-throws|throws
-name|Exception
-function_decl|;
 name|Instance
 name|cloneInstance
 parameter_list|(

@@ -216,12 +216,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|getInstanceService
-argument_list|()
-operator|.
-name|refreshInstance
-argument_list|()
-expr_stmt|;
 name|Instance
 index|[]
 name|instances

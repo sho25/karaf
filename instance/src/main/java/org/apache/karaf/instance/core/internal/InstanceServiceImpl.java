@@ -1675,14 +1675,6 @@ argument_list|)
 throw|;
 block|}
 block|}
-specifier|public
-specifier|synchronized
-name|void
-name|refreshInstance
-parameter_list|()
-throws|throws
-name|Exception
-block|{     }
 specifier|private
 name|void
 name|logInfo
