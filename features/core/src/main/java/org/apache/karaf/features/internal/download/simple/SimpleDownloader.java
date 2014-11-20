@@ -396,7 +396,7 @@ parameter_list|)
 block|{
 name|exception
 operator|.
-name|addException
+name|addSuppressed
 argument_list|(
 name|e
 argument_list|)
