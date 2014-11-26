@@ -125,6 +125,22 @@ name|MojoFailureException
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Parameter
+import|;
+end_import
+
 begin_comment
 comment|/**  * Add features to a repository directory  *  * @goal features-add-to-repository  * @phase compile  * @execute phase="compile"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Add the features to the repository  */
 end_comment
@@ -136,17 +152,26 @@ name|AddToRepositoryMojo
 extends|extends
 name|AbstractFeatureMojo
 block|{
-comment|/**      * @parameter default-value="${project.build.directory}/features-repo"      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}/features-repo"
+argument_list|)
 specifier|protected
 name|File
 name|repository
 decl_stmt|;
-comment|/**      * If set to true the exported bundles will be directly copied into the repository dir.      * If set to false the default maven repository layout will be used      * @parameter      */
+comment|/**      * If set to true the exported bundles will be directly copied into the repository dir.      * If set to false the default maven repository layout will be used      */
+annotation|@
+name|Parameter
 specifier|private
 name|boolean
 name|flatRepoLayout
 decl_stmt|;
-comment|/**      * @parameter      */
+annotation|@
+name|Parameter
 specifier|protected
 name|List
 argument_list|<

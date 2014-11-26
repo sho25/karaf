@@ -431,6 +431,100 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Component
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|LifecyclePhase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Mojo
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Parameter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|ResolutionScope
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|codehaus
+operator|.
+name|plexus
+operator|.
+name|archiver
+operator|.
+name|Archiver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|codehaus
 operator|.
 name|plexus
@@ -444,17 +538,38 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * assembles a kar archive  *  * @goal features-create-kar  * @phase package  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Assemble a kar archive from a features.xml file  */
+comment|/**  * Assemble a kar archive from a features.xml file  */
 end_comment
 
 begin_class
+annotation|@
+name|Mojo
+argument_list|(
+name|name
+operator|=
+literal|"features-create-kar"
+argument_list|,
+name|defaultPhase
+operator|=
+name|LifecyclePhase
+operator|.
+name|PACKAGE
+argument_list|,
+name|requiresDependencyResolution
+operator|=
+name|ResolutionScope
+operator|.
+name|RUNTIME
+argument_list|)
 specifier|public
 class|class
 name|CreateKarMojo
 extends|extends
 name|MojoSupport
 block|{
-comment|/**      * The maven archive configuration to use.      *<p/>      * See<a href="http://maven.apache.org/ref/current/maven-archiver/apidocs/org/apache/maven/archiver/MavenArchiveConfiguration.html">the Javadocs for MavenArchiveConfiguration</a>.      *      * @parameter      */
+comment|/**      * The maven archive configuration to use.      *<p/>      * See<a href="http://maven.apache.org/ref/current/maven-archiver/apidocs/org/apache/maven/archiver/MavenArchiveConfiguration.html">the Javadocs for MavenArchiveConfiguration</a>.      */
+annotation|@
+name|Parameter
 specifier|private
 name|MavenArchiveConfiguration
 name|archive
@@ -463,48 +578,105 @@ operator|new
 name|MavenArchiveConfiguration
 argument_list|()
 decl_stmt|;
-comment|/**      * The Jar archiver.      *      * @component role="org.codehaus.plexus.archiver.Archiver" roleHint="jar"      * @required      * @readonly      */
+comment|/**      * The Jar archiver.      */
+annotation|@
+name|Component
+argument_list|(
+name|role
+operator|=
+name|Archiver
+operator|.
+name|class
+argument_list|,
+name|hint
+operator|=
+literal|"jar"
+argument_list|)
 specifier|private
 name|JarArchiver
 name|jarArchiver
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * Directory containing the generated archive.      *      * @parameter default-value="${project.build.directory}"      * @required      */
+comment|/**      * Directory containing the generated archive.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}"
+argument_list|)
 specifier|private
 name|File
 name|outputDirectory
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * Name of the generated archive.      *      * @parameter default-value="${project.build.finalName}"      * @required      */
+comment|/**      * Name of the generated archive.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.finalName}"
+argument_list|)
 specifier|private
 name|String
 name|finalName
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * Ignore the dependency flag on the bundles in the features XML      *      * @parameter default-value="false"      */
+comment|/**      * Ignore the dependency flag on the bundles in the features XML      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"false"
+argument_list|)
 specifier|private
 name|boolean
 name|ignoreDependencyFlag
 decl_stmt|;
-comment|/**      * Classifier to add to the artifact generated. If given, the artifact will be attached.      * If it's not given, it will merely be written to the output directory according to the finalName.      *      * @parameter      */
+comment|/**      * Classifier to add to the artifact generated. If given, the artifact will be attached.      * If it's not given, it will merely be written to the output directory according to the finalName.      */
+annotation|@
+name|Parameter
 specifier|protected
 name|String
 name|classifier
 decl_stmt|;
-comment|/**      * Location of resources directory for additional content to include in the kar.      * Note that it includes everything under classes so as to include maven-remote-resources      *      * @parameter default-value="${project.build.directory}/classes"      */
+comment|/**      * Location of resources directory for additional content to include in the kar.      * Note that it includes everything under classes so as to include maven-remote-resources      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}/classes"
+argument_list|)
 specifier|private
 name|File
 name|resourcesDir
 decl_stmt|;
-comment|/**      * The features file to use as instructions      *      * @parameter default-value="${project.build.directory}/feature/feature.xml"      */
+comment|/**      * The features file to use as instructions      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}/feature/feature.xml"
+argument_list|)
 specifier|private
 name|String
 name|featuresFile
 decl_stmt|;
-comment|/**      * The wrapper repository in the kar.      *      * @parameter default-value="${repositoryPath}"      */
+comment|/**      * The wrapper repository in the kar.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${repositoryPath}"
+argument_list|)
 specifier|private
 name|String
 name|repositoryPath
@@ -805,7 +977,7 @@ condition|)
 block|{
 try|try
 block|{
-name|resolver
+name|artifactResolver
 operator|.
 name|resolve
 argument_list|(
@@ -1533,7 +1705,7 @@ range|:
 name|bundles
 control|)
 block|{
-name|resolver
+name|artifactResolver
 operator|.
 name|resolve
 argument_list|(

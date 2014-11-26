@@ -23,26 +23,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|BufferedOutputStream
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|Closeable
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|File
 import|;
 end_import
@@ -383,6 +363,38 @@ name|apache
 operator|.
 name|maven
 operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Component
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Parameter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
 name|project
 operator|.
 name|MavenProject
@@ -476,32 +488,65 @@ name|MojoSupport
 extends|extends
 name|AbstractMojo
 block|{
-comment|/**      * Maven ProjectHelper      *      * @component      */
+comment|/**      * Maven ProjectHelper      */
+annotation|@
+name|Component
 specifier|protected
 name|MavenProjectHelper
 name|projectHelper
 decl_stmt|;
-comment|/**      * The Maven project.      *      * @parameter default-value="${project}"      * @required      * @readonly      */
+comment|/**      * The Maven project.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project}"
+argument_list|,
+name|readonly
+operator|=
+literal|true
+argument_list|)
 specifier|protected
 name|MavenProject
 name|project
 decl_stmt|;
-comment|/**      * Directory that resources are copied to during the build.      *      * @parameter default-value="${project.build.directory}/${project.artifactId}-${project.version}-installer"      * @required      */
+comment|/**      * Directory that resources are copied to during the build.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}/${project.artifactId}-${project.version}-installer"
+argument_list|)
 specifier|protected
 name|File
 name|workDirectory
 decl_stmt|;
-comment|/**      * @component      */
+annotation|@
+name|Component
 specifier|protected
 name|MavenProjectBuilder
 name|projectBuilder
 decl_stmt|;
-comment|/**      * @parameter default-value="${localRepository}"      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${localRepository}"
+argument_list|)
 specifier|protected
 name|ArtifactRepository
 name|localRepo
 decl_stmt|;
-comment|/**      * @parameter default-value="${project.remoteArtifactRepositories}"      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.remoteArtifactRepositories}"
+argument_list|)
 specifier|protected
 name|List
 argument_list|<
@@ -509,34 +554,57 @@ name|ArtifactRepository
 argument_list|>
 name|remoteRepos
 decl_stmt|;
-comment|/**      * @component      */
+annotation|@
+name|Component
 specifier|protected
 name|ArtifactMetadataSource
 name|artifactMetadataSource
 decl_stmt|;
-comment|/**      * @component      */
+annotation|@
+name|Component
 specifier|protected
 name|ArtifactResolver
-name|resolver
+name|artifactResolver
 decl_stmt|;
-comment|/**      * @component      */
+annotation|@
+name|Component
 specifier|protected
 name|ArtifactFactory
 name|factory
 decl_stmt|;
-comment|/**      * The artifact type of a feature      *       * @parameter default-value="xml"      */
+comment|/**      * The artifact type of a feature      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"xml"
+argument_list|)
 specifier|private
 name|String
 name|featureArtifactType
 init|=
 literal|"xml"
 decl_stmt|;
-comment|/**      * The Maven session.      *       * @parameter default-value="${session}"      * @readonly      * @required      */
+comment|/**      * The Maven session.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${session}"
+argument_list|,
+name|readonly
+operator|=
+literal|true
+argument_list|)
 specifier|protected
 name|MavenSession
 name|mavenSession
 decl_stmt|;
-comment|/**      *<p>We can't autowire strongly typed RepositorySystem from Aether because it may be Sonatype (Maven 3.0.x)      * or Eclipse (Maven 3.1.x/3.2.x) version, so we switch to service locator by autowiring entire {@link PlexusContainer}</p>      *      *<p>It's a bit of a hack but we have not choice when we want to be usable both in Maven 3.0.x and 3.1.x/3.2.x</p>      *      * @component      * @required      * @readonly      */
+comment|/**      *<p>We can't autowire strongly typed RepositorySystem from Aether because it may be Sonatype (Maven 3.0.x)      * or Eclipse (Maven 3.1.x/3.2.x) version, so we switch to service locator by autowiring entire {@link PlexusContainer}</p>      *      *<p>It's a bit of a hack but we have not choice when we want to be usable both in Maven 3.0.x and 3.1.x/3.2.x</p>      */
+annotation|@
+name|Component
 specifier|protected
 name|PlexusContainer
 name|container

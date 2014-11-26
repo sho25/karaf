@@ -23,7 +23,107 @@ name|java
 operator|.
 name|io
 operator|.
-name|*
+name|BufferedInputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|BufferedWriter
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|FileInputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|FileOutputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|InputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|OutputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|OutputStreamWriter
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|PrintStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|StringWriter
 import|;
 end_import
 
@@ -33,7 +133,57 @@ name|java
 operator|.
 name|util
 operator|.
-name|*
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Comparator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
 import|;
 end_import
 
@@ -211,6 +361,22 @@ name|org
 operator|.
 name|apache
 operator|.
+name|karaf
+operator|.
+name|tooling
+operator|.
+name|utils
+operator|.
+name|MojoSupport
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|maven
 operator|.
 name|artifact
@@ -248,20 +414,6 @@ operator|.
 name|execution
 operator|.
 name|MavenSession
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|maven
-operator|.
-name|plugin
-operator|.
-name|Mojo
 import|;
 end_import
 
@@ -333,9 +485,11 @@ name|apache
 operator|.
 name|maven
 operator|.
-name|project
+name|plugins
 operator|.
-name|MavenProject
+name|annotations
+operator|.
+name|Component
 import|;
 end_import
 
@@ -347,9 +501,59 @@ name|apache
 operator|.
 name|maven
 operator|.
-name|project
+name|plugins
 operator|.
-name|MavenProjectHelper
+name|annotations
+operator|.
+name|LifecyclePhase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Mojo
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Parameter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|ResolutionScope
 import|;
 end_import
 
@@ -421,20 +625,6 @@ name|codehaus
 operator|.
 name|plexus
 operator|.
-name|logging
-operator|.
-name|AbstractLogEnabled
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|codehaus
-operator|.
-name|plexus
-operator|.
 name|util
 operator|.
 name|ReaderFactory
@@ -486,34 +676,74 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates the features XML file  * NB this requires a recent maven-install-plugin such as 2.3.1  *  * @goal features-generate-descriptor  * @phase compile  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Generates the features XML file starting with an optional source feature.xml and adding  * project dependencies as bundles and feature/car dependencies  */
+comment|/**  * Generates the features XML file starting with an optional source feature.xml and adding  * project dependencies as bundles and feature/car dependencies.  *   * NB this requires a recent maven-install-plugin such as 2.3.1  */
 end_comment
 
 begin_class
+annotation|@
+name|Mojo
+argument_list|(
+name|name
+operator|=
+literal|"features-generate-descriptor"
+argument_list|,
+name|defaultPhase
+operator|=
+name|LifecyclePhase
+operator|.
+name|COMPILE
+argument_list|,
+name|requiresDependencyResolution
+operator|=
+name|ResolutionScope
+operator|.
+name|RUNTIME
+argument_list|)
 specifier|public
 class|class
 name|GenerateDescriptorMojo
 extends|extends
-name|AbstractLogEnabled
-implements|implements
-name|Mojo
+name|MojoSupport
 block|{
-comment|/**      * An (optional) input feature file to extend.  This is highly recommended as it is the only way to add<code>&lt;feature/&gt;</code>      * elements to the individual features that are generated.  Note that this file is filtered using standard Maven      * resource interpolation, allowing attributes of the input file to be set with information such as ${project.version}      * from the current build.      *<p/>      * When dependencies are processed, if they are duplicated in this file, the dependency here provides the baseline      * information and is supplemented by additional information from the dependency.      *      * @parameter default-value="${project.basedir}/src/main/feature/feature.xml"      */
+comment|/**      * An (optional) input feature file to extend.  This is highly recommended as it is the only way to add<code>&lt;feature/&gt;</code>      * elements to the individual features that are generated.  Note that this file is filtered using standard Maven      * resource interpolation, allowing attributes of the input file to be set with information such as ${project.version}      * from the current build.      *<p/>      * When dependencies are processed, if they are duplicated in this file, the dependency here provides the baseline      * information and is supplemented by additional information from the dependency.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.basedir}/src/main/feature/feature.xml"
+argument_list|)
 specifier|private
 name|File
 name|inputFile
 decl_stmt|;
-comment|/**      * (wrapper) The filtered input file. This file holds the result of Maven resource interpolation and is generally      * not necessary to change, although it may be helpful for debugging.      *      * @parameter default-value="${project.build.directory}/feature/filteredInputFeature.xml"      */
+comment|/**      * (wrapper) The filtered input file. This file holds the result of Maven resource interpolation and is generally      * not necessary to change, although it may be helpful for debugging.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}/feature/filteredInputFeature.xml"
+argument_list|)
 specifier|private
 name|File
 name|filteredInputFile
 decl_stmt|;
-comment|/**      * (wrapper) The file to generate.  This file is attached as a project output artifact.      *      * @parameter default-value="${project.build.directory}/feature/feature.xml"      */
+comment|/**      * (wrapper) The file to generate.  This file is attached as a project output artifact.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}/feature/feature.xml"
+argument_list|)
 specifier|private
 name|File
 name|outputFile
 decl_stmt|;
-comment|/**      * (wrapper) Exclude some artifacts from the generated feature.      *      * @parameter      */
+comment|/**      * (wrapper) Exclude some artifacts from the generated feature.      */
+annotation|@
+name|Parameter
 specifier|private
 name|List
 argument_list|<
@@ -528,58 +758,118 @@ name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * The resolver to use for the feature.  Normally null or "OBR" or "(OBR)"      *      * @parameter default-value="${resolver}"      */
+comment|/**      * The resolver to use for the feature.  Normally null or "OBR" or "(OBR)"      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${resolver}"
+argument_list|)
 specifier|private
 name|String
 name|resolver
 decl_stmt|;
-comment|/**      * (wrapper) The artifact type for attaching the generated file to the project      *      * @parameter default-value="xml"      */
+comment|/**      * (wrapper) The artifact type for attaching the generated file to the project      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"xml"
+argument_list|)
 specifier|private
 name|String
 name|attachmentArtifactType
 init|=
 literal|"xml"
 decl_stmt|;
-comment|/**      * (wrapper) The artifact classifier for attaching the generated file to the project      *      * @parameter default-value="features"      */
+comment|/**      * (wrapper) The artifact classifier for attaching the generated file to the project      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"features"
+argument_list|)
 specifier|private
 name|String
 name|attachmentArtifactClassifier
 init|=
 literal|"features"
 decl_stmt|;
-comment|/**      * Specifies whether features dependencies of this project will be included inline of the the      * final output (<code>true</code>) or simply referenced as output artifact dependencies (<code>false</code>).      * If<code>true</code>, feature dependencies xml descriptors are read and their contents added to the features descriptor under assembly.      * If<code>false</code>, feature dependencies are added to the assembled feature as dependencies.      * Setting this value to<code>true</code> is especially helpful in multiproject builds where subprojects build their own features      * using<code>aggregateFeatures = false</code>, then combined with<code>aggregateFeatures = true</code> in an      * aggregation project with explicit dependencies to the child projects.      *      * @parameter default-value="false"      */
+comment|/**      * Specifies whether features dependencies of this project will be included inline of the the      * final output (<code>true</code>) or simply referenced as output artifact dependencies (<code>false</code>).      * If<code>true</code>, feature dependencies xml descriptors are read and their contents added to the features descriptor under assembly.      * If<code>false</code>, feature dependencies are added to the assembled feature as dependencies.      * Setting this value to<code>true</code> is especially helpful in multiproject builds where subprojects build their own features      * using<code>aggregateFeatures = false</code>, then combined with<code>aggregateFeatures = true</code> in an      * aggregation project with explicit dependencies to the child projects.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"false"
+argument_list|)
 specifier|private
 name|boolean
 name|aggregateFeatures
 init|=
 literal|false
 decl_stmt|;
-comment|/**      * If present, the bundles added to the feature constructed from the dependencies will be marked with this default      * startlevel.  If this parameter is not present, no startlevel attribute will be created. Finer resolution for specific      * dependencies can be obtained by specifying the dependency in the file referenced by the<code>inputFile</code> parameter.      *      * @parameter      */
+comment|/**      * If present, the bundles added to the feature constructed from the dependencies will be marked with this default      * startlevel.  If this parameter is not present, no startlevel attribute will be created. Finer resolution for specific      * dependencies can be obtained by specifying the dependency in the file referenced by the<code>inputFile</code> parameter.      */
+annotation|@
+name|Parameter
 specifier|private
 name|Integer
 name|startLevel
 decl_stmt|;
-comment|/**      * Installation mode. If present, generate "feature.install" attribute:      *<p/>      *<a href="http://karaf.apache.org/xmlns/features/v1.1.0">Installation mode</a>      *<p/>      * Can be either manual or auto. Specifies whether the feature should be automatically installed when      * dropped inside the deploy folder. Note: this attribute doesn't affect feature descriptors that are installed      * from the feature:install command or as part of the etc/org.apache.karaf.features.cfg file.      *      * @parameter      */
+comment|/**      * Installation mode. If present, generate "feature.install" attribute:      *<p/>      *<a href="http://karaf.apache.org/xmlns/features/v1.1.0">Installation mode</a>      *<p/>      * Can be either manual or auto. Specifies whether the feature should be automatically installed when      * dropped inside the deploy folder. Note: this attribute doesn't affect feature descriptors that are installed      * from the feature:install command or as part of the etc/org.apache.karaf.features.cfg file.      */
+annotation|@
+name|Parameter
 specifier|private
 name|String
 name|installMode
 decl_stmt|;
-comment|/**      * Flag indicating whether transitive dependencies should be included (<code>true</code>) or not (<code>false</code>).      *<p/>      * N.B. Note the default value of this is true, but is suboptimal in cases where specific<code>&lt;feature/&gt;</code> dependencies are      * provided by the<code>inputFile</code> parameter.      *      * @parameter default-value="true"      */
+comment|/**      * Flag indicating whether transitive dependencies should be included (<code>true</code>) or not (<code>false</code>).      *<p/>      * N.B. Note the default value of this is true, but is suboptimal in cases where specific<code>&lt;feature/&gt;</code> dependencies are      * provided by the<code>inputFile</code> parameter.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"true"
+argument_list|)
 specifier|private
 name|boolean
 name|includeTransitiveDependency
 decl_stmt|;
-comment|/**      * The standard behavior is to add dependencies as<code>&lt;bundle&gt;</code> elements to a<code>&lt;feature&gt;</code>      * with the same name as the artifactId of the project.  This flag disables that behavior.      *      * @parameter default-value="true"      */
+comment|/**      * The standard behavior is to add dependencies as<code>&lt;bundle&gt;</code> elements to a<code>&lt;feature&gt;</code>      * with the same name as the artifactId of the project.  This flag disables that behavior.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"true"
+argument_list|)
 specifier|private
 name|boolean
 name|addBundlesToPrimaryFeature
 decl_stmt|;
-comment|/**      * The standard behavior is to add any dependencies other than those in the<code>runtime</code> scope to the feature bundle.      * Setting this flag to "true" disables adding any dependencies (transient or otherwise) that are in      *<code>&lt;scope&gt;provided&lt;/scope&gt;</code>.      *      * @parameter default-value="false"      */
+comment|/**      * The standard behavior is to add any dependencies other than those in the<code>runtime</code> scope to the feature bundle.      * Setting this flag to "true" disables adding any dependencies (transient or otherwise) that are in      *<code>&lt;scope&gt;provided&lt;/scope&gt;</code>.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"false"
+argument_list|)
 specifier|private
 name|boolean
 name|ignoreScopeProvided
 decl_stmt|;
-comment|/**      * Flag indicating whether the main project artifact should be included (<code>true</code>) or not (<code>false</code>).      *<p/>      * Assumes the main project artifact is a bundle and the feature will be attached alongside using<code>attachmentArtifactClassifier</code>.      *      * @parameter default-value="false"      */
+comment|/**      * Flag indicating whether the main project artifact should be included (<code>true</code>) or not (<code>false</code>).      *<p/>      * Assumes the main project artifact is a bundle and the feature will be attached alongside using<code>attachmentArtifactClassifier</code>.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"false"
+argument_list|)
 specifier|private
 name|boolean
 name|includeProjectArtifact
@@ -587,32 +877,21 @@ decl_stmt|;
 comment|// *************************************************
 comment|// READ-ONLY MAVEN PLUGIN PARAMETERS
 comment|// *************************************************
-comment|/**      * (wrapper) The maven project.      *      * @parameter default-value="${project}"      * @required      * @readonly      */
-specifier|protected
-name|MavenProject
-name|project
-decl_stmt|;
-comment|/**      * The maven project's helper.      *      * @component      * @required      * @readonly      */
-specifier|protected
-name|MavenProjectHelper
-name|projectHelper
-decl_stmt|;
-comment|/**      * We can't autowire strongly typed RepositorySystem from Aether because it may be Sonatype (Maven 3.0.x)      * or Eclipse (Maven 3.1.x/3.2.x) implementation, so we switch to service locator.      *      * @component      * @required      * @readonly      */
+comment|/**      * We can't autowire strongly typed RepositorySystem from Aether because it may be Sonatype (Maven 3.0.x)      * or Eclipse (Maven 3.1.x/3.2.x) implementation, so we switch to service locator.      */
+annotation|@
+name|Component
 specifier|private
 name|PlexusContainer
 name|container
 decl_stmt|;
-comment|/**      * @component role="org.apache.maven.shared.filtering.MavenResourcesFiltering" role-hint="default"      * @required      * @readonly      */
+annotation|@
+name|Component
 specifier|protected
 name|MavenResourcesFiltering
 name|mavenResourcesFiltering
 decl_stmt|;
-comment|/**      * @parameter default-value="${session}"      * @required      * @readonly      */
-specifier|protected
-name|MavenSession
-name|session
-decl_stmt|;
-comment|/**      * @plexus.requirement role-hint="default"      * @component      * @required      * @readonly      */
+annotation|@
+name|Component
 specifier|protected
 name|MavenFileFilter
 name|mavenFileFilter
@@ -671,7 +950,7 @@ name|project
 argument_list|,
 name|this
 operator|.
-name|session
+name|mavenSession
 argument_list|,
 name|getLog
 argument_list|()
@@ -790,7 +1069,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|getLogger
+name|getLog
 argument_list|()
 operator|.
 name|error
@@ -839,7 +1118,7 @@ name|XMLStreamException
 throws|,
 name|MojoExecutionException
 block|{
-name|getLogger
+name|getLog
 argument_list|()
 operator|.
 name|info
@@ -1557,7 +1836,7 @@ name|e
 argument_list|)
 throw|;
 block|}
-name|getLogger
+name|getLog
 argument_list|()
 operator|.
 name|info
@@ -1603,7 +1882,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|getLogger
+name|getLog
 argument_list|()
 operator|.
 name|warn
@@ -1652,7 +1931,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|getLogger
+name|getLog
 argument_list|()
 operator|.
 name|warn
@@ -1765,50 +2044,112 @@ return|;
 block|}
 comment|//------------------------------------------------------------------------//
 comment|// dependency change detection
-comment|/**      * Master switch to look for and log changed dependencies.  If this is set to<code>true</code> and the file referenced by      *<code>dependencyCache</code> does not exist, it will be unconditionally generated.  If the file does exist, it is      * used to detect changes from previous builds and generate logs of those changes.  In that case,      *<code>failOnDependencyChange = true</code> will cause the build to fail.      *      * @parameter default-value="false"      */
+comment|/**      * Master switch to look for and log changed dependencies.  If this is set to<code>true</code> and the file referenced by      *<code>dependencyCache</code> does not exist, it will be unconditionally generated.  If the file does exist, it is      * used to detect changes from previous builds and generate logs of those changes.  In that case,      *<code>failOnDependencyChange = true</code> will cause the build to fail.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"false"
+argument_list|)
 specifier|private
 name|boolean
 name|checkDependencyChange
 decl_stmt|;
-comment|/**      * (wrapper) Location of dependency cache.  This file is generated to contain known dependencies and is generally      * located in SCM so that it may be used across separate developer builds. This is parameter is ignored unless      *<code>checkDependencyChange</code> is set to<code>true</code>.      *      * @parameter default-value="${basedir}/src/main/history/dependencies.xml"      */
+comment|/**      * (wrapper) Location of dependency cache.  This file is generated to contain known dependencies and is generally      * located in SCM so that it may be used across separate developer builds. This is parameter is ignored unless      *<code>checkDependencyChange</code> is set to<code>true</code>.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${basedir}/src/main/history/dependencies.xml"
+argument_list|)
 specifier|private
 name|File
 name|dependencyCache
 decl_stmt|;
-comment|/**      * Location of filtered dependency file.      *      * @parameter default-value="${basedir}/target/history/dependencies.xml"      * @readonly      */
+comment|/**      * Location of filtered dependency file.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${basedir}/target/history/dependencies.xml"
+argument_list|,
+name|readonly
+operator|=
+literal|true
+argument_list|)
 specifier|private
 name|File
 name|filteredDependencyCache
 decl_stmt|;
-comment|/**      * Whether to fail on changed dependencies (default,<code>true</code>) or warn (<code>false</code>). This is parameter is ignored unless      *<code>checkDependencyChange</code> is set to<code>true</code> and<code>dependencyCache</code> exists to compare      * against.      *      * @parameter default-value="true"      */
+comment|/**      * Whether to fail on changed dependencies (default,<code>true</code>) or warn (<code>false</code>). This is parameter is ignored unless      *<code>checkDependencyChange</code> is set to<code>true</code> and<code>dependencyCache</code> exists to compare      * against.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"true"
+argument_list|)
 specifier|private
 name|boolean
 name|failOnDependencyChange
 decl_stmt|;
-comment|/**      * Copies the contents of dependency change logs that are generated to stdout. This is parameter is ignored unless      *<code>checkDependencyChange</code> is set to<code>true</code> and<code>dependencyCache</code> exists to compare      * against.      *      * @parameter default-value="false"      */
+comment|/**      * Copies the contents of dependency change logs that are generated to stdout. This is parameter is ignored unless      *<code>checkDependencyChange</code> is set to<code>true</code> and<code>dependencyCache</code> exists to compare      * against.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"false"
+argument_list|)
 specifier|private
 name|boolean
 name|logDependencyChanges
 decl_stmt|;
-comment|/**      * Whether to overwrite the file referenced by<code>dependencyCache</code> if it has changed.  This is parameter is      * ignored unless<code>checkDependencyChange</code> is set to<code>true</code>,<code>failOnDependencyChange</code>      * is set to<code>false</code> and<code>dependencyCache</code> exists to compare against.      *      * @parameter default-value="false"      */
+comment|/**      * Whether to overwrite the file referenced by<code>dependencyCache</code> if it has changed.  This is parameter is      * ignored unless<code>checkDependencyChange</code> is set to<code>true</code>,<code>failOnDependencyChange</code>      * is set to<code>false</code> and<code>dependencyCache</code> exists to compare against.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"false"
+argument_list|)
 specifier|private
 name|boolean
 name|overwriteChangedDependencies
 decl_stmt|;
 comment|//filtering support
-comment|/**      * The character encoding scheme to be applied when filtering resources.      *      * @parameter default-value="${project.build.sourceEncoding}"      */
+comment|/**      * The character encoding scheme to be applied when filtering resources.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.sourceEncoding}"
+argument_list|)
 specifier|protected
 name|String
 name|encoding
 decl_stmt|;
-comment|/**      * Expression preceded with the String won't be interpolated      * \${foo} will be replaced with ${foo}      *      * @parameter default-value="${maven.resources.escapeString}"      */
+comment|/**      * Expression preceded with the String won't be interpolated      * \${foo} will be replaced with ${foo}      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${maven.resources.escapeString}"
+argument_list|)
 specifier|protected
 name|String
 name|escapeString
 init|=
 literal|"\\"
 decl_stmt|;
-comment|/**      * System properties.      *      * @parameter      */
+comment|/**      * System properties.      */
+annotation|@
+name|Parameter
 specifier|protected
 name|Map
 argument_list|<
@@ -2184,7 +2525,7 @@ operator|!=
 name|t2
 condition|)
 block|{
-name|getLogger
+name|getLog
 argument_list|()
 operator|.
 name|warn
@@ -2210,7 +2551,7 @@ name|s2
 operator|)
 condition|)
 block|{
-name|getLogger
+name|getLog
 argument_list|()
 operator|.
 name|warn
@@ -2329,7 +2670,7 @@ operator|!=
 name|t2
 condition|)
 block|{
-name|getLogger
+name|getLog
 argument_list|()
 operator|.
 name|warn
@@ -2355,7 +2696,7 @@ name|s2
 operator|)
 condition|)
 block|{
-name|getLogger
+name|getLog
 argument_list|()
 operator|.
 name|warn
@@ -2948,7 +3289,7 @@ literal|null
 argument_list|,
 literal|true
 argument_list|,
-name|session
+name|mavenSession
 argument_list|,
 literal|null
 argument_list|)

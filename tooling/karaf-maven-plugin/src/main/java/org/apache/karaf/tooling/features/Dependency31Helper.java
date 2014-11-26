@@ -406,7 +406,7 @@ specifier|final
 name|RepositorySystemSession
 name|repositorySystemSession
 decl_stmt|;
-comment|/**      * The project's remote repositories to use for the resolution of project dependencies.      *      * @parameter default-value="${project.remoteProjectDependencies}"      * @readonly      */
+comment|/**      * The project's remote repositories to use for the resolution of project dependencies.      */
 specifier|private
 specifier|final
 name|List

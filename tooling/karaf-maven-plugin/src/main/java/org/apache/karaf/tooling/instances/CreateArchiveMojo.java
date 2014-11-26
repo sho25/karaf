@@ -73,6 +73,70 @@ name|org
 operator|.
 name|apache
 operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|LifecyclePhase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Mojo
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Parameter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|ResolutionScope
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|tools
 operator|.
 name|ant
@@ -204,39 +268,83 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Package a server archive from an assembled server  *  * @goal instance-create-archive  * @phase package  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Package a server archive from an assembled server  */
+comment|/**  * Package a server archive from an assembled server  */
 end_comment
 
 begin_class
+annotation|@
+name|Mojo
+argument_list|(
+name|name
+operator|=
+literal|"instance-create-archive"
+argument_list|,
+name|defaultPhase
+operator|=
+name|LifecyclePhase
+operator|.
+name|PACKAGE
+argument_list|,
+name|requiresDependencyResolution
+operator|=
+name|ResolutionScope
+operator|.
+name|RUNTIME
+argument_list|)
 specifier|public
 class|class
 name|CreateArchiveMojo
 extends|extends
 name|MojoSupport
 block|{
-comment|/**      * The target directory of the project.      *      * @parameter default-value="${project.build.directory}"      * @required      * @readonly      */
+comment|/**      * The target directory of the project.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}"
+argument_list|)
 specifier|private
 name|File
 name|destDir
 decl_stmt|;
-comment|/**      * The location of the server repository.      *      * @parameter default-value="${project.build.directory}/assembly"      * @required      */
+comment|/**      * The location of the server repository.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}/assembly"
+argument_list|)
 specifier|private
 name|File
 name|targetServerDirectory
 decl_stmt|;
-comment|/**      * The target file to set as the project's artifact.      *      * @parameter default-value="${project.file}"      * @required      */
+comment|/**      * The target file to set as the project's artifact.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.file}"
+argument_list|)
 specifier|private
 name|File
 name|targetFile
 decl_stmt|;
-comment|/**      * pack a assembly as a tar.gz archive      *      * @parameter      */
+comment|/**      * pack a assembly as a tar.gz archive      */
+annotation|@
+name|Parameter
 specifier|private
 name|boolean
 name|archiveTarGz
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * pack a assembly as a zip archive      *      * @parameter      */
+comment|/**      * pack a assembly as a zip archive      */
+annotation|@
+name|Parameter
 specifier|private
 name|boolean
 name|archiveZip

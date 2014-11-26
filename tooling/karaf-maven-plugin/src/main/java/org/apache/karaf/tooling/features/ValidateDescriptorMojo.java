@@ -335,6 +335,86 @@ name|apache
 operator|.
 name|maven
 operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Component
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|LifecyclePhase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Mojo
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Parameter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|ResolutionScope
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
 name|shared
 operator|.
 name|dependency
@@ -467,18 +547,6 @@ name|util
 operator|.
 name|zip
 operator|.
-name|ZipException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|zip
-operator|.
 name|ZipFile
 import|;
 end_import
@@ -502,10 +570,29 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Validates a features XML file  *  * @goal features-validate-descriptor  * @execute phase="process-resources"  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Validates the features XML file  */
+comment|/**  * Validates a features XML file  */
 end_comment
 
 begin_class
+annotation|@
+name|Mojo
+argument_list|(
+name|name
+operator|=
+literal|"features-validate-descriptor"
+argument_list|,
+name|defaultPhase
+operator|=
+name|LifecyclePhase
+operator|.
+name|PROCESS_RESOURCES
+argument_list|,
+name|requiresDependencyResolution
+operator|=
+name|ResolutionScope
+operator|.
+name|RUNTIME
+argument_list|)
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -554,37 +641,66 @@ specifier|static
 name|boolean
 name|isCustomStreamURLHandlerSet
 decl_stmt|;
-comment|/**      * The dependency tree builder to use.      *      * @component      * @required      * @readonly      */
+comment|/**      * The dependency tree builder to use.      */
+annotation|@
+name|Component
 specifier|private
 name|DependencyTreeBuilder
 name|dependencyTreeBuilder
 decl_stmt|;
-comment|/**      * The ArtifactCollector provided by Maven at runtime      *      * @component      * @required      * @readonly      */
+comment|/**      * The ArtifactCollector provided by Maven at runtime      */
+annotation|@
+name|Component
 specifier|private
 name|ArtifactCollector
 name|collector
 decl_stmt|;
-comment|/**      * The file to generate      *      * @parameter default-value="${project.build.directory}/classes/features.xml"      */
+comment|/**      * The file to generate      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}/classes/features.xml"
+argument_list|)
 specifier|private
 name|File
 name|file
 decl_stmt|;
-comment|/**      * Karaf config.properties      *      * @parameter default-value="config.properties"      */
+comment|/**      * Karaf config.properties      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"config.properties"
+argument_list|)
 specifier|private
 name|String
 name|karafConfig
 decl_stmt|;
-comment|/**      * which JRE version to parse from config.properties to get the JRE exported packages      *      * @parameter default-value="jre-1.5"      */
+comment|/**      * which JRE version to parse from config.properties to get the JRE exported packages      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"jre-1.5"
+argument_list|)
 specifier|private
 name|String
 name|jreVersion
 decl_stmt|;
-comment|/**      * which Karaf version used for Karaf core features resolution      *      * @parameter      */
+comment|/**      * which Karaf version used for Karaf core features resolution      */
+annotation|@
+name|Parameter
 specifier|private
 name|String
 name|karafVersion
 decl_stmt|;
-comment|/**      * The repositories which are included from the plugin config      *      * @parameter      */
+comment|/**      * The repositories which are included from the plugin config      */
+annotation|@
+name|Parameter
 specifier|private
 name|List
 argument_list|<
@@ -592,7 +708,9 @@ name|String
 argument_list|>
 name|repositories
 decl_stmt|;
-comment|/**      * skip non maven protocols or not skip      *      * @parameter default-value="false"      */
+comment|/**      * skip non maven protocols or not skip      */
+annotation|@
+name|Parameter
 specifier|private
 name|boolean
 name|skipNonMavenProtocols
@@ -2695,7 +2813,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|resolver
+name|artifactResolver
 operator|.
 name|resolve
 argument_list|(
@@ -2937,7 +3055,7 @@ argument_list|(
 name|repository
 argument_list|)
 expr_stmt|;
-name|resolver
+name|artifactResolver
 operator|.
 name|resolve
 argument_list|(
@@ -2951,7 +3069,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|resolver
+name|artifactResolver
 operator|.
 name|resolve
 argument_list|(

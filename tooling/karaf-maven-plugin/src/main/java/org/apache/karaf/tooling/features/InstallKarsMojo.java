@@ -233,45 +233,160 @@ name|MojoFailureException
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|LifecyclePhase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Mojo
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Parameter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|ResolutionScope
+import|;
+end_import
+
 begin_comment
-comment|/**  * Installs kar dependencies into a server-under-construction in target/assembly  *  * @goal install-kars  * @phase process-resources  * @requiresDependencyResolution runtime  * @inheritByDefault true  * @description Install kar dependencies  */
+comment|/**  * Installs kar dependencies into a server-under-construction in target/assembly  */
 end_comment
 
 begin_class
+annotation|@
+name|Mojo
+argument_list|(
+name|name
+operator|=
+literal|"install-kars"
+argument_list|,
+name|defaultPhase
+operator|=
+name|LifecyclePhase
+operator|.
+name|PROCESS_RESOURCES
+argument_list|,
+name|requiresDependencyResolution
+operator|=
+name|ResolutionScope
+operator|.
+name|RUNTIME
+argument_list|)
 specifier|public
 class|class
 name|InstallKarsMojo
 extends|extends
 name|MojoSupport
 block|{
-comment|/**      * Base directory used to copy the resources during the build (working directory).      *      * @parameter default-value="${project.build.directory}/assembly"      * @required      */
+comment|/**      * Base directory used to copy the resources during the build (working directory).      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}/assembly"
+argument_list|)
 specifier|protected
 name|String
 name|workDirectory
 decl_stmt|;
-comment|/**      * Features configuration file (etc/org.apache.karaf.features.cfg).      *      * @parameter default-value="${project.build.directory}/assembly/etc/org.apache.karaf.features.cfg"      * @required      */
+comment|/**      * Features configuration file (etc/org.apache.karaf.features.cfg).      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}/assembly/etc/org.apache.karaf.features.cfg"
+argument_list|)
 specifier|protected
 name|File
 name|featuresCfgFile
 decl_stmt|;
-comment|/**      * startup.properties file.      *      * @parameter default-value="${project.build.directory}/assembly/etc/startup.properties"      * @required      */
+comment|/**      * startup.properties file.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}/assembly/etc/startup.properties"
+argument_list|)
 specifier|protected
 name|File
 name|startupPropertiesFile
 decl_stmt|;
-comment|/**      * default start level for bundles in features that don't specify it.      *      * @parameter      */
+comment|/**      * default start level for bundles in features that don't specify it.      */
+annotation|@
+name|Parameter
 specifier|protected
 name|int
 name|defaultStartLevel
 init|=
 literal|30
 decl_stmt|;
-comment|/**      * Directory used during build to construction the Karaf system repository.      *      * @parameter default-value="${project.build.directory}/assembly/system"      * @required      */
+comment|/**      * Directory used during build to construction the Karaf system repository.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.build.directory}/assembly/system"
+argument_list|)
 specifier|protected
 name|File
 name|systemDirectory
 decl_stmt|;
-comment|/**      * List of features from runtime-scope features xml and kars to be installed into system and listed in startup.properties.      *      * @parameter      */
+comment|/**      * List of features from runtime-scope features xml and kars to be installed into system and listed in startup.properties.      */
+annotation|@
+name|Parameter
 specifier|private
 name|List
 argument_list|<
@@ -279,7 +394,9 @@ name|String
 argument_list|>
 name|startupFeatures
 decl_stmt|;
-comment|/**      * List of features from runtime-scope features xml and kars to be installed into system repo and listed in features service boot features.      *      * @parameter      */
+comment|/**      * List of features from runtime-scope features xml and kars to be installed into system repo and listed in features service boot features.      */
+annotation|@
+name|Parameter
 specifier|private
 name|List
 argument_list|<
@@ -287,7 +404,9 @@ name|String
 argument_list|>
 name|bootFeatures
 decl_stmt|;
-comment|/**      * List of features from runtime-scope features xml and kars to be installed into system repo and not mentioned elsewhere.      *      * @parameter      */
+comment|/**      * List of features from runtime-scope features xml and kars to be installed into system repo and not mentioned elsewhere.      */
+annotation|@
+name|Parameter
 specifier|private
 name|List
 argument_list|<
@@ -295,7 +414,14 @@ name|String
 argument_list|>
 name|installedFeatures
 decl_stmt|;
-comment|/**      * Ignore the dependency attribute (dependency="[true|false]") on bundle      *      * @parameter default-value="true"      */
+comment|/**      * Ignore the dependency attribute (dependency="[true|false]") on bundle      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"true"
+argument_list|)
 specifier|protected
 name|boolean
 name|ignoreDependencyFlag

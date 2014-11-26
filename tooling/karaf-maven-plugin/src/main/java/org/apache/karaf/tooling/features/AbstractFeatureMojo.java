@@ -247,6 +247,22 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Parameter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|osgi
 operator|.
 name|framework
@@ -267,7 +283,8 @@ name|AbstractFeatureMojo
 extends|extends
 name|MojoSupport
 block|{
-comment|/**      * @parameter      */
+annotation|@
+name|Parameter
 specifier|protected
 name|List
 argument_list|<
@@ -282,7 +299,8 @@ name|Artifact
 argument_list|>
 name|descriptorArtifacts
 decl_stmt|;
-comment|/**      * @parameter      */
+annotation|@
+name|Parameter
 specifier|protected
 name|List
 argument_list|<
@@ -290,42 +308,49 @@ name|String
 argument_list|>
 name|features
 decl_stmt|;
-comment|/**      * @parameter      */
+annotation|@
+name|Parameter
 specifier|protected
 name|boolean
 name|addTransitiveFeatures
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * @parameter      */
+annotation|@
+name|Parameter
 specifier|private
 name|boolean
 name|includeMvnBasedDescriptors
 init|=
 literal|false
 decl_stmt|;
-comment|/**      * @parameter      */
+annotation|@
+name|Parameter
 specifier|private
 name|boolean
 name|failOnArtifactResolutionError
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * @parameter      */
+annotation|@
+name|Parameter
 specifier|private
 name|boolean
 name|resolveDefinedRepositoriesRecursively
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * @parameter      */
+annotation|@
+name|Parameter
 specifier|protected
 name|boolean
 name|skipNonMavenProtocols
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * The start level exported when no explicit start level is set for a bundle      * @parameter       */
+comment|/**      * The start level exported when no explicit start level is set for a bundle      */
+annotation|@
+name|Parameter
 specifier|private
 name|int
 name|defaultStartLevel
@@ -661,7 +686,7 @@ argument_list|)
 else|:
 name|remoteRepos
 decl_stmt|;
-name|resolver
+name|artifactResolver
 operator|.
 name|resolve
 argument_list|(
