@@ -338,6 +338,8 @@ specifier|final
 name|DownloadCallback
 name|downloadCallback
 parameter_list|)
+throws|throws
+name|MalformedURLException
 block|{
 if|if
 condition|(
@@ -408,6 +410,8 @@ parameter_list|(
 name|String
 name|location
 parameter_list|)
+throws|throws
+name|MalformedURLException
 block|{
 try|try
 block|{
