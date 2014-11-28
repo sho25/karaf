@@ -338,8 +338,6 @@ specifier|final
 name|DownloadCallback
 name|downloadCallback
 parameter_list|)
-throws|throws
-name|MalformedURLException
 block|{
 if|if
 condition|(
@@ -410,8 +408,8 @@ parameter_list|(
 name|String
 name|location
 parameter_list|)
-throws|throws
-name|MalformedURLException
+block|{
+try|try
 block|{
 return|return
 operator|new
@@ -424,6 +422,25 @@ name|location
 argument_list|)
 argument_list|)
 return|;
+block|}
+catch|catch
+parameter_list|(
+name|MalformedURLException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Error opening URL "
+operator|+
+name|location
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
 block|}
 specifier|public
 name|Map
