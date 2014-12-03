@@ -1048,7 +1048,7 @@ name|logLevel
 argument_list|(
 name|LogLevel
 operator|.
-name|DEBUG
+name|INFO
 argument_list|)
 block|,
 name|replaceConfigurationFile
