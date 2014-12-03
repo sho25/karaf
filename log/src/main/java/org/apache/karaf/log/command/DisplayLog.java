@@ -428,6 +428,8 @@ name|PaxLoggingEvent
 name|event
 parameter_list|)
 block|{
+try|try
+block|{
 if|if
 condition|(
 operator|(
@@ -499,6 +501,17 @@ name|noColor
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|NoClassDefFoundError
+name|e
+parameter_list|)
+block|{
+comment|// KARAF-3350: Ignore NoClassDefFoundError exceptions
+comment|// Those exceptions may happen if the underlying pax-logging service
+comment|// bundle has been refreshed somehow.
 block|}
 block|}
 block|}
