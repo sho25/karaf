@@ -80,6 +80,11 @@ init|=
 literal|"Elements"
 decl_stmt|;
 name|String
+name|FEATURE_CONFIG_APPEND
+init|=
+literal|"Append"
+decl_stmt|;
+name|String
 name|FEATURE_CONFIG_ELEMENT_KEY
 init|=
 literal|"Key"
@@ -159,6 +164,8 @@ block|{
 name|FEATURE_CONFIG_PID
 block|,
 name|FEATURE_CONFIG_ELEMENTS
+block|,
+name|FEATURE_CONFIG_APPEND
 block|}
 decl_stmt|;
 name|String
