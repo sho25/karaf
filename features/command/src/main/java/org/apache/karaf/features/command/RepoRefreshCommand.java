@@ -147,6 +147,26 @@ name|Completion
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|api
+operator|.
+name|action
+operator|.
+name|lifecycle
+operator|.
+name|Service
+import|;
+end_import
+
 begin_class
 annotation|@
 name|Command
@@ -163,6 +183,8 @@ name|description
 operator|=
 literal|"Refresh a features repository"
 argument_list|)
+annotation|@
+name|Service
 specifier|public
 class|class
 name|RepoRefreshCommand
