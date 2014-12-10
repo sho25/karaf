@@ -33,16 +33,6 @@ name|java
 operator|.
 name|net
 operator|.
-name|MalformedURLException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|net
-operator|.
 name|URL
 import|;
 end_import
@@ -136,20 +126,6 @@ operator|.
 name|artifact
 operator|.
 name|Artifact
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|maven
-operator|.
-name|artifact
-operator|.
-name|DependencyResolutionRequiredException
 import|;
 end_import
 

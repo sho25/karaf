@@ -703,6 +703,20 @@ name|reconfigure
 argument_list|()
 expr_stmt|;
 block|}
+specifier|protected
+name|Dictionary
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
+name|getConfiguration
+parameter_list|()
+block|{
+return|return
+name|configuration
+return|;
+block|}
 comment|/**      * Called in {@link #doStart()}      */
 specifier|protected
 name|int

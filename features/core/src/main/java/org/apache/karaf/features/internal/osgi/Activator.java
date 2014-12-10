@@ -1574,7 +1574,7 @@ name|featureFinder
 argument_list|,
 name|eventAdminListener
 argument_list|,
-name|configInstaller
+name|configurationAdmin
 argument_list|,
 name|digraph
 argument_list|,
