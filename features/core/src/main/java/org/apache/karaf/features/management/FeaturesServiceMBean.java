@@ -323,6 +323,15 @@ throws|throws
 name|Exception
 function_decl|;
 name|void
+name|refreshRepository
+parameter_list|(
+name|String
+name|url
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+name|void
 name|installFeature
 parameter_list|(
 name|String
