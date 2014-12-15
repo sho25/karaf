@@ -3497,6 +3497,8 @@ argument_list|()
 operator|+
 literal|"\""
 operator|+
+literal|" -Djavax.management.builder.initial=org.apache.karaf.management.boot.KarafMBeanServerBuilder"
+operator|+
 literal|" -Djava.endorsed.dirs=\""
 operator|+
 operator|new
