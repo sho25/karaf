@@ -221,6 +221,11 @@ operator|new
 name|StringBuilder
 argument_list|()
 decl_stmt|;
+name|boolean
+name|endOfOptionsMarkerReached
+init|=
+literal|false
+decl_stmt|;
 for|for
 control|(
 name|int
@@ -240,6 +245,9 @@ control|)
 block|{
 if|if
 condition|(
+operator|!
+name|endOfOptionsMarkerReached
+operator|&&
 name|args
 index|[
 name|i
@@ -686,6 +694,25 @@ name|showHelp
 argument_list|()
 expr_stmt|;
 block|}
+elseif|else
+if|if
+condition|(
+name|args
+index|[
+name|i
+index|]
+operator|.
+name|equals
+argument_list|(
+literal|"--"
+argument_list|)
+condition|)
+block|{
+name|endOfOptionsMarkerReached
+operator|=
+literal|true
+expr_stmt|;
+block|}
 else|else
 block|{
 name|System
@@ -956,7 +983,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"  [commands]    commands to run"
+literal|"  [commands] [--]   commands to run"
 argument_list|)
 expr_stmt|;
 name|System
