@@ -122,7 +122,7 @@ name|class
 argument_list|)
 specifier|public
 class|class
-name|Spring4FeaturesTest
+name|Spring41FeaturesTest
 extends|extends
 name|KarafTestSupport
 block|{
@@ -143,7 +143,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"spring40.version"
+literal|"spring41.version"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -165,7 +165,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"spring40.version"
+literal|"spring41.version"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -187,7 +187,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"spring40.version"
+literal|"spring41.version"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -209,7 +209,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"spring40.version"
+literal|"spring41.version"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -231,7 +231,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"spring40.version"
+literal|"spring41.version"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -253,7 +253,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"spring40.version"
+literal|"spring41.version"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -275,7 +275,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"spring40.version"
+literal|"spring41.version"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -297,7 +297,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"spring40.version"
+literal|"spring41.version"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -319,7 +319,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"spring40.version"
+literal|"spring41.version"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -341,7 +341,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"spring40.version"
+literal|"spring41.version"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -363,7 +363,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"spring40.version"
+literal|"spring41.version"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -385,7 +385,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"spring40.version"
+literal|"spring41.version"
 argument_list|)
 argument_list|)
 expr_stmt|;
