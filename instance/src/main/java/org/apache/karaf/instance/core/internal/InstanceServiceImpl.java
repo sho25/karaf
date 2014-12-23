@@ -2131,15 +2131,6 @@ argument_list|,
 name|printOutput
 argument_list|)
 expr_stmt|;
-name|mkdir
-argument_list|(
-name|karafBase
-argument_list|,
-literal|"data/log"
-argument_list|,
-name|printOutput
-argument_list|)
-expr_stmt|;
 name|Map
 argument_list|<
 name|String
