@@ -23,18 +23,6 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertTrue
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
 name|assertEquals
 import|;
 end_import
@@ -250,24 +238,6 @@ operator|.
 name|reactors
 operator|.
 name|PerClass
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|ops4j
-operator|.
-name|pax
-operator|.
-name|exam
-operator|.
-name|spi
-operator|.
-name|reactors
-operator|.
-name|PerMethod
 import|;
 end_import
 

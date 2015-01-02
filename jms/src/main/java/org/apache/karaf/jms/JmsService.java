@@ -80,6 +80,28 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Create a new JMS connection factory.      *      * @param name the JMS connection factory name.      * @param type the JMS connection factory type (ActiveMQ, WebsphereMQ, ...).      * @param url the JMS URL to use.      * @param username the username to use.      * @param password the password to use.      * @throws Exception      */
+name|void
+name|create
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|type
+parameter_list|,
+name|String
+name|url
+parameter_list|,
+name|String
+name|username
+parameter_list|,
+name|String
+name|password
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 comment|/**      * Delete a JMS connection factory.      *      * @param name the JMS connection factory name.      * @throws Exception      */
 name|void
 name|delete
