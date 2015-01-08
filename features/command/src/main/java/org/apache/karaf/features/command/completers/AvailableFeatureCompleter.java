@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * {@link org.apache.karaf.shell.console.Completer} for features not installed yet.  */
+comment|/**  * {@link org.apache.karaf.shell.api.console.Completer} for features not installed yet.  */
 end_comment
 
 begin_class
