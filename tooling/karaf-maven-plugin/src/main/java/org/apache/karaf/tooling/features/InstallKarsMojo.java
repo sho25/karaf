@@ -2071,6 +2071,16 @@ argument_list|)
 decl_stmt|;
 name|Files
 operator|.
+name|createDirectories
+argument_list|(
+name|configFile
+operator|.
+name|getParent
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|Files
+operator|.
 name|write
 argument_list|(
 name|configFile
