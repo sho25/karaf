@@ -127,6 +127,16 @@ begin_import
 import|import
 name|javax
 operator|.
+name|jms
+operator|.
+name|ConnectionFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
 name|management
 operator|.
 name|MBeanServerConnection
@@ -249,12 +259,16 @@ literal|"jms:create -t ActiveMQ -u karaf -p karaf --url tcp://localhost:61616 te
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// give time to fileinstall to load the blueprint file
-name|Thread
-operator|.
-name|sleep
+comment|// give time to fileinstall to load the blueprint file by looking for the connection factory OSGi service
+name|getOsgiService
 argument_list|(
-literal|5000
+name|ConnectionFactory
+operator|.
+name|class
+argument_list|,
+literal|"name=test"
+argument_list|,
+literal|30000
 argument_list|)
 expr_stmt|;
 comment|// jms:connectionfactories command
@@ -602,11 +616,16 @@ literal|"java.lang.String"
 block|}
 argument_list|)
 expr_stmt|;
-name|Thread
-operator|.
-name|sleep
+comment|// give time to fileinstall to load the blueprint file by looking for the connection factory OSGi service
+name|getOsgiService
 argument_list|(
-literal|5000
+name|ConnectionFactory
+operator|.
+name|class
+argument_list|,
+literal|"name=testMBean"
+argument_list|,
+literal|30000
 argument_list|)
 expr_stmt|;
 name|List
