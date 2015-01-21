@@ -495,6 +495,13 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|callbackHandler
+operator|!=
+literal|null
+condition|)
+block|{
 try|try
 block|{
 name|callbackHandler
@@ -540,6 +547,7 @@ operator|+
 literal|" not available to obtain information from user"
 argument_list|)
 throw|;
+block|}
 block|}
 comment|// user callback get value
 if|if
