@@ -256,7 +256,7 @@ argument_list|)
 decl_stmt|;
 name|log
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Executing: {}"
 argument_list|,
@@ -303,7 +303,7 @@ argument_list|()
 decl_stmt|;
 name|log
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Process exited w/status: {}"
 argument_list|,
