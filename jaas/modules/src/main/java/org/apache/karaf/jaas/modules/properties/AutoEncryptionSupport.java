@@ -389,6 +389,25 @@ literal|"karaf.etc"
 argument_list|)
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|watchService
+operator|==
+literal|null
+condition|)
+block|{
+comment|// just to prevent NPE (KARAF-3460)
+name|watchService
+operator|=
+name|FileSystems
+operator|.
+name|getDefault
+argument_list|()
+operator|.
+name|newWatchService
+argument_list|()
+expr_stmt|;
+block|}
 name|dir
 operator|.
 name|register
