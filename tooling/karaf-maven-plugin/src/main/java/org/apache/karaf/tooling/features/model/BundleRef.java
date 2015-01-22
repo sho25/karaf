@@ -63,20 +63,6 @@ name|Manifest
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|maven
-operator|.
-name|artifact
-operator|.
-name|Artifact
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -86,9 +72,6 @@ name|ArtifactRef
 block|{
 name|Integer
 name|startLevel
-decl_stmt|;
-name|Artifact
-name|artifact
 decl_stmt|;
 name|String
 name|bundleSymbolicName
