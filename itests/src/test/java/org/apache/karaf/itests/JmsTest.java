@@ -171,6 +171,16 @@ name|java
 operator|.
 name|net
 operator|.
+name|Socket
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
 name|URI
 import|;
 end_import
@@ -236,9 +246,69 @@ argument_list|(
 literal|"activemq-broker-noweb"
 argument_list|)
 expr_stmt|;
+comment|// check if ActiveMQ is completely started
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Waiting for the ActiveMQ transport connector on 61616 ..."
+argument_list|)
+expr_stmt|;
+name|boolean
+name|bound
+init|=
+literal|false
+decl_stmt|;
+while|while
+condition|(
+operator|!
+name|bound
+condition|)
+block|{
+try|try
+block|{
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|2000
+argument_list|)
+expr_stmt|;
+name|Socket
+name|socket
+init|=
+operator|new
+name|Socket
+argument_list|(
+literal|"localhost"
+argument_list|,
+literal|61616
+argument_list|)
+decl_stmt|;
+name|bound
+operator|=
+literal|true
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+comment|// wait the connection
+block|}
+block|}
 block|}
 annotation|@
 name|Test
+argument_list|(
+name|timeout
+operator|=
+literal|120000
+argument_list|)
 specifier|public
 name|void
 name|testCommands
@@ -538,6 +608,11 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
+argument_list|(
+name|timeout
+operator|=
+literal|120000
+argument_list|)
 specifier|public
 name|void
 name|testMBean
@@ -577,6 +652,15 @@ literal|"org.apache.karaf:type=jms,name=root"
 argument_list|)
 decl_stmt|;
 comment|// create operation
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"JMS MBean create operation invocation"
+argument_list|)
+expr_stmt|;
 name|connection
 operator|.
 name|invoke
@@ -662,6 +746,15 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|// send operation
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"JMS MBean send operation invocation"
+argument_list|)
+expr_stmt|;
 name|connection
 operator|.
 name|invoke
@@ -706,6 +799,15 @@ block|}
 argument_list|)
 expr_stmt|;
 comment|// count operation
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"JMS MBean count operation invocation"
+argument_list|)
+expr_stmt|;
 name|Integer
 name|count
 init|=
@@ -758,6 +860,15 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// queues operation
+name|System
+operator|.
+name|out
+operator|.
+name|print
+argument_list|(
+literal|"JMS MBean queues operation invocation: "
+argument_list|)
+expr_stmt|;
 name|List
 argument_list|<
 name|String
@@ -801,6 +912,15 @@ literal|"java.lang.String"
 block|}
 argument_list|)
 decl_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+name|queues
+argument_list|)
+expr_stmt|;
 name|assertTrue
 argument_list|(
 name|queues
@@ -812,6 +932,15 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|// delete operation
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"JMS MBean delete operation invocation"
+argument_list|)
+expr_stmt|;
 name|connection
 operator|.
 name|invoke
