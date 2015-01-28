@@ -53,6 +53,11 @@ name|boolean
 name|scoped
 parameter_list|)
 function_decl|;
+comment|/**      * Retrieve the parser associated with this command or null for the default one.      *      * @return      */
+name|Parser
+name|getParser
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
