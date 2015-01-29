@@ -147,7 +147,7 @@ name|ws
 parameter_list|()
 block|{
 comment|// derek: BUGFIX: loop if comment  at beginning of input
-comment|//while (!eof()&& Character.isWhitespace(peek())) {
+comment|//while (!eof()&& isWhitespace(peek())) {
 while|while
 condition|(
 operator|!
@@ -158,8 +158,6 @@ operator|(
 operator|!
 name|escaped
 operator|&&
-name|Character
-operator|.
 name|isWhitespace
 argument_list|(
 name|peek
@@ -181,8 +179,6 @@ operator|||
 operator|!
 name|escaped
 operator|&&
-name|Character
-operator|.
 name|isWhitespace
 argument_list|(
 name|peek
@@ -236,6 +232,27 @@ block|{
 break|break;
 block|}
 block|}
+block|}
+specifier|private
+name|boolean
+name|isWhitespace
+parameter_list|(
+name|char
+name|ch
+parameter_list|)
+block|{
+return|return
+name|ch
+operator|!=
+literal|'\n'
+operator|&&
+name|Character
+operator|.
+name|isWhitespace
+argument_list|(
+name|ch
+argument_list|)
+return|;
 block|}
 specifier|private
 name|void
@@ -569,6 +586,11 @@ name|peek
 argument_list|()
 operator|==
 literal|';'
+operator|||
+name|peek
+argument_list|()
+operator|==
+literal|'\n'
 condition|)
 block|{
 name|current
@@ -819,6 +841,11 @@ name|peek
 argument_list|()
 operator|==
 literal|';'
+operator|||
+name|peek
+argument_list|()
+operator|==
+literal|'\n'
 condition|)
 block|{
 break|break;
@@ -918,8 +945,10 @@ name|c
 operator|==
 literal|'|'
 operator|||
-name|Character
-operator|.
+name|c
+operator|==
+literal|'\n'
+operator|||
 name|isWhitespace
 argument_list|(
 name|c
@@ -1139,8 +1168,6 @@ condition|)
 block|{
 if|if
 condition|(
-name|Character
-operator|.
 name|isWhitespace
 argument_list|(
 name|c
