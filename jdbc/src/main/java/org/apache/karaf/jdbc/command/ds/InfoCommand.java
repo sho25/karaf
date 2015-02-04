@@ -14,8 +14,26 @@ operator|.
 name|jdbc
 operator|.
 name|command
+operator|.
+name|ds
 package|;
 end_package
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|jdbc
+operator|.
+name|command
+operator|.
+name|JdbcCommandSupport
+import|;
+end_import
 
 begin_import
 import|import
@@ -147,7 +165,7 @@ literal|"jdbc"
 argument_list|,
 name|name
 operator|=
-literal|"info"
+literal|"ds-info"
 argument_list|,
 name|description
 operator|=

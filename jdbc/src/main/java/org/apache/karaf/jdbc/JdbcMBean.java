@@ -63,7 +63,7 @@ parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Create a JDBC datasource.      *      * @param name the JDBC datasource name.      * @param type the JDBC datasource type (generic, MySQL, Oracle, Postgres, H2, HSQL, Derby, MSSQL).      * @param driver the JDBC datasource driver class name (can be null).      * @param version the target JDBC driver version (can be null).      * @param url the JDBC URL.      * @param user the database username.      * @param password the database password.      * @param installBundles true to install the bundles providing the JDBC driver, false to not install.      * @throws MBeanException      */
+comment|/**      * Create a JDBC datasource.      *      * @param name the JDBC datasource name      * @param driverName org.osgi.driver.name of the DataSourceFactory to use      * @param driverClass org.osgi.driver.class of the DataSourceFactory to use      * @param databaseName name of the database to access      * @param url JDBC URL      * @param user Database username      * @param password Database password      * @throws MBeanException      */
 name|void
 name|create
 parameter_list|(
@@ -71,13 +71,13 @@ name|String
 name|name
 parameter_list|,
 name|String
-name|type
+name|driverName
 parameter_list|,
 name|String
-name|driver
+name|driverClass
 parameter_list|,
 name|String
-name|version
+name|databaseName
 parameter_list|,
 name|String
 name|url
@@ -87,9 +87,6 @@ name|user
 parameter_list|,
 name|String
 name|password
-parameter_list|,
-name|boolean
-name|installBundles
 parameter_list|)
 throws|throws
 name|MBeanException

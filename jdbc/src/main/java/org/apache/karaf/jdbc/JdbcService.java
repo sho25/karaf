@@ -35,16 +35,6 @@ name|Map
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Set
-import|;
-end_import
-
 begin_comment
 comment|/**  * JDBC Service.  */
 end_comment
@@ -54,7 +44,7 @@ specifier|public
 interface|interface
 name|JdbcService
 block|{
-comment|/**      * Create a JDBC datasource (using a default template).      *      * @param name the JDBC datasource name.      * @param type the backend database type (generic, Oracle, MySQL, ...)      * @param driverClassName the JDBC driver classname.      * @param version the JDBC driver version to use.      * @param url the JDBC URL.      * @param user the database user name.      * @param password the database password.      * @param tryToInstallBundles true to try to automatically install the required bundles (JDBC driver, etc) when possible, false else.      */
+comment|/**      * Create a JDBC datasource configuration.      *      * @param name Datasource name       * @param driverName Backend database type (osgi.jdbc.driver.name of DataSourceFactory)      * @param url JDBC URL      * @param user Database user name      * @param password Database password      * @param password2       */
 name|void
 name|create
 parameter_list|(
@@ -62,13 +52,13 @@ name|String
 name|name
 parameter_list|,
 name|String
-name|type
+name|driverName
 parameter_list|,
 name|String
-name|driverClassName
+name|driverClass
 parameter_list|,
 name|String
-name|version
+name|databaseName
 parameter_list|,
 name|String
 name|url
@@ -78,14 +68,11 @@ name|user
 parameter_list|,
 name|String
 name|password
-parameter_list|,
-name|boolean
-name|tryToInstallBundles
 parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Delete a JDBC datasource identified by a name.      *      * @param name the JDBC datasource name.      */
+comment|/**      * Delete a JDBC datasource identified by a name. Works only      * for datasources that have a corresponding configuration      *      * @param name Datasource name      */
 name|void
 name|delete
 parameter_list|(
@@ -95,37 +82,22 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * List the JDBC datasources available.      *      * @return a list of datasources name.      */
+comment|/**      * List the JDBC DataSourceFactories available.      *      * @return a list of DataSourceFactory names      */
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|factoryNames
+parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * List the JDBC datasources available.      *      * @return a list of datasources names      */
 name|List
 argument_list|<
 name|String
 argument_list|>
 name|datasources
-parameter_list|()
-throws|throws
-name|Exception
-function_decl|;
-comment|/**      * List the datasources available and      * group aliases for the same datasource.      *      * @return a list of aliases.      */
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Set
-argument_list|<
-name|String
-argument_list|>
-argument_list|>
-name|aliases
-parameter_list|()
-throws|throws
-name|Exception
-function_decl|;
-comment|/**      * List the JDBC datasources configuration file names present in the deploy folder.      *      * @return a list of the JDBC datasources configuration file names.      */
-name|List
-argument_list|<
-name|String
-argument_list|>
-name|datasourceFileNames
 parameter_list|()
 throws|throws
 name|Exception

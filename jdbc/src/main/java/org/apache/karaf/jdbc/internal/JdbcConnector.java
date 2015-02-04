@@ -83,6 +83,16 @@ name|javax
 operator|.
 name|sql
 operator|.
+name|CommonDataSource
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|sql
+operator|.
 name|DataSource
 import|;
 end_import
@@ -139,7 +149,7 @@ implements|implements
 name|Closeable
 block|{
 specifier|private
-name|Object
+name|CommonDataSource
 name|datasource
 decl_stmt|;
 specifier|private
@@ -172,6 +182,9 @@ name|this
 operator|.
 name|datasource
 operator|=
+operator|(
+name|CommonDataSource
+operator|)
 name|bundleContext
 operator|.
 name|getService
