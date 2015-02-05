@@ -168,12 +168,26 @@ argument_list|,
 literal|"localhost"
 argument_list|)
 expr_stmt|;
-name|port
-operator|=
-name|Integer
+if|if
+condition|(
+name|host
 operator|.
-name|parseInt
+name|contains
 argument_list|(
+literal|"${"
+argument_list|)
+condition|)
+block|{
+comment|// if sshHost property contains a reference to another property (coming from etc/config.properties
+comment|// or etc/custom.properties), we fall back to "localhost" default value
+name|host
+operator|=
+literal|"localhost"
+expr_stmt|;
+block|}
+name|String
+name|portString
+init|=
 name|shellCfg
 operator|.
 name|getProperty
@@ -182,6 +196,31 @@ literal|"sshPort"
 argument_list|,
 literal|"8101"
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|portString
+operator|.
+name|contains
+argument_list|(
+literal|"${"
+argument_list|)
+condition|)
+block|{
+comment|// if sshPort property contains a reference to another property (coming from etc/config.properties
+comment|// or etc/custom.properties), we fall back to "8101" default value
+name|portString
+operator|=
+literal|"8101"
+expr_stmt|;
+block|}
+name|port
+operator|=
+name|Integer
+operator|.
+name|parseInt
+argument_list|(
+name|portString
 argument_list|)
 expr_stmt|;
 name|level
@@ -1035,7 +1074,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"Could not load properties from: "
+literal|"Warning: could not load properties from: "
 operator|+
 name|file
 operator|+
