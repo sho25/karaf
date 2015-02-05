@@ -2262,6 +2262,8 @@ literal|"etc/org.ops4j.pax.url.mvn.cfg"
 block|,
 literal|"etc/shell.init.script"
 block|,
+literal|"etc/users.properties"
+block|,
 name|FEATURES_CFG
 block|}
 decl_stmt|;
