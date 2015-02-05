@@ -460,6 +460,12 @@ block|}
 name|String
 name|str
 init|=
+literal|null
+decl_stmt|;
+try|try
+block|{
+name|str
+operator|=
 name|session
 operator|.
 name|readLine
@@ -468,7 +474,31 @@ name|msg
 argument_list|,
 literal|null
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|UnsupportedOperationException
+name|e
+parameter_list|)
+block|{
+comment|//this is a remote client with shutdown argument so here isn't a interactive way
+comment|// so return a prompt message instead of NPE
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"please use \"shutdown -f\" or \"shutdown --force\" to shutdown instance: "
+operator|+
+name|karafName
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 if|if
 condition|(
 name|str
