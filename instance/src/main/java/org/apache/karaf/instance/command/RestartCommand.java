@@ -314,6 +314,11 @@ name|DEFAULT_OPTS
 init|=
 literal|"-server -Xmx512M -Dcom.sun.management.jmxremote"
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|protected
 name|Object
 name|doExecute

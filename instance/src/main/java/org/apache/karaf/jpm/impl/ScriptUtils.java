@@ -394,6 +394,11 @@ name|line
 argument_list|)
 expr_stmt|;
 block|}
+name|scanner
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
 block|}
 finally|finally
 block|{
