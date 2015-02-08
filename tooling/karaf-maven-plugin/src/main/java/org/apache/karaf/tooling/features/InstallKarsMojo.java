@@ -2294,6 +2294,9 @@ name|bundleInfo
 operator|.
 name|getLocation
 argument_list|()
+operator|.
+name|trim
+argument_list|()
 decl_stmt|;
 name|int
 name|bundleStartLevel
@@ -2438,6 +2441,9 @@ name|bundleInfo
 operator|.
 name|getLocation
 argument_list|()
+operator|.
+name|trim
+argument_list|()
 decl_stmt|;
 name|int
 name|bundleStartLevel
@@ -2536,6 +2542,9 @@ name|configFile
 operator|.
 name|getLocation
 argument_list|()
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 operator|.
 name|openStream
@@ -2632,6 +2641,9 @@ argument_list|(
 name|configFile
 operator|.
 name|getLocation
+argument_list|()
+operator|.
+name|trim
 argument_list|()
 argument_list|)
 operator|.
@@ -3410,6 +3422,9 @@ name|bundle
 operator|.
 name|getLocation
 argument_list|()
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -3455,6 +3470,9 @@ argument_list|(
 name|bundle
 operator|.
 name|getLocation
+argument_list|()
+operator|.
+name|trim
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -3601,6 +3619,9 @@ name|configFile
 operator|.
 name|getLocation
 argument_list|()
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -3631,6 +3652,9 @@ argument_list|(
 name|configFile
 operator|.
 name|getLocation
+argument_list|()
+operator|.
+name|trim
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -4298,6 +4322,9 @@ name|bundle
 operator|.
 name|getLocation
 argument_list|()
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -4341,6 +4368,9 @@ argument_list|(
 name|bundle
 operator|.
 name|getLocation
+argument_list|()
+operator|.
+name|trim
 argument_list|()
 argument_list|)
 expr_stmt|;
