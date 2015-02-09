@@ -258,6 +258,35 @@ name|String
 name|password
 decl_stmt|;
 annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
+literal|"-k"
+argument_list|,
+name|aliases
+operator|=
+block|{
+literal|"--keyfile"
+block|}
+argument_list|,
+name|description
+operator|=
+literal|"Remote key file to use for key authentication"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
+argument_list|)
+specifier|private
+name|String
+name|keyFile
+decl_stmt|;
+annotation|@
 name|Argument
 argument_list|(
 name|index
@@ -432,6 +461,13 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+name|keyFile
+operator|==
+literal|null
+condition|)
+block|{
 name|session
 operator|.
 name|execute
@@ -449,6 +485,31 @@ operator|+
 name|cmdStr
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|session
+operator|.
+name|execute
+argument_list|(
+literal|"ssh:ssh -q -l "
+operator|+
+name|username
+operator|+
+literal|" -p "
+operator|+
+name|port
+operator|+
+literal|" -k "
+operator|+
+name|keyFile
+operator|+
+literal|" localhost "
+operator|+
+name|cmdStr
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -477,6 +538,13 @@ block|}
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|keyFile
+operator|==
+literal|null
+condition|)
+block|{
 name|session
 operator|.
 name|execute
@@ -490,6 +558,27 @@ operator|+
 name|cmdStr
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|session
+operator|.
+name|execute
+argument_list|(
+literal|"ssh:ssh -q -p "
+operator|+
+name|port
+operator|+
+literal|" -k "
+operator|+
+name|keyFile
+operator|+
+literal|" localhost "
+operator|+
+name|cmdStr
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 return|return
 literal|null
