@@ -102,6 +102,52 @@ specifier|final
 name|boolean
 name|quiet
 decl_stmt|;
+specifier|private
+specifier|final
+specifier|static
+name|String
+name|keyChangedMessage
+init|=
+literal|" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ \n"
+operator|+
+literal|" @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!      @ \n"
+operator|+
+literal|" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ \n"
+operator|+
+literal|"IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\n"
+operator|+
+literal|"Someone could be eavesdropping on you right now (man-in-the-middle attack)!\n"
+operator|+
+literal|"It is also possible that the RSA host key has just been changed.\n"
+operator|+
+literal|"Please contact your system administrator.\n"
+operator|+
+literal|"Add correct host key in "
+operator|+
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"user.home"
+argument_list|)
+operator|+
+literal|"/.sshkaraf/known_hosts to get rid of this message.\n"
+operator|+
+literal|"Offending key in "
+operator|+
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"user.home"
+argument_list|)
+operator|+
+literal|"/.sshkaraf/known_hosts\n"
+operator|+
+literal|"RSA host key has changed and you have requested strict checking.\n"
+operator|+
+literal|"Host key verification failed."
+decl_stmt|;
 specifier|public
 name|ServerKeyVerifierImpl
 parameter_list|(
@@ -300,6 +346,15 @@ operator|+
 name|remoteAddress
 operator|+
 literal|" does not match the stored key !! Terminating session."
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+name|keyChangedMessage
 argument_list|)
 expr_stmt|;
 block|}

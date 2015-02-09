@@ -357,34 +357,6 @@ name|sshd
 operator|.
 name|common
 operator|.
-name|RuntimeSshException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|sshd
-operator|.
-name|common
-operator|.
-name|SshException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|sshd
-operator|.
-name|common
-operator|.
 name|keyprovider
 operator|.
 name|FileKeyPairProvider
@@ -714,52 +686,6 @@ name|Reference
 specifier|private
 name|Session
 name|session
-decl_stmt|;
-specifier|private
-specifier|final
-specifier|static
-name|String
-name|keyChangedMessage
-init|=
-literal|" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ \n"
-operator|+
-literal|" @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!      @ \n"
-operator|+
-literal|" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ \n"
-operator|+
-literal|"IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\n"
-operator|+
-literal|"Someone could be eavesdropping on you right now (man-in-the-middle attack)!\n"
-operator|+
-literal|"It is also possible that the RSA host key has just been changed.\n"
-operator|+
-literal|"Please contact your system administrator.\n"
-operator|+
-literal|"Add correct host key in "
-operator|+
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"user.home"
-argument_list|)
-operator|+
-literal|"/.sshkaraf/known_hosts to get rid of this message.\n"
-operator|+
-literal|"Offending key in "
-operator|+
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"user.home"
-argument_list|)
-operator|+
-literal|"/.sshkaraf/known_hosts\n"
-operator|+
-literal|"RSA host key has changed and you have requested strict checking.\n"
-operator|+
-literal|"Host key verification failed."
 decl_stmt|;
 annotation|@
 name|Override
@@ -1140,8 +1066,6 @@ name|password
 argument_list|)
 expr_stmt|;
 block|}
-try|try
-block|{
 name|sshSession
 operator|.
 name|auth
@@ -1150,50 +1074,15 @@ operator|.
 name|verify
 argument_list|()
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
-block|{
-if|if
-condition|(
-name|e
-operator|.
-name|getCause
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|e
-operator|.
-name|getCause
-argument_list|()
-operator|.
-name|getMessage
-argument_list|()
-operator|.
-name|contains
-argument_list|(
-literal|"Session is closed"
-argument_list|)
-condition|)
-block|{
 name|System
 operator|.
-name|err
+name|out
 operator|.
 name|println
 argument_list|(
-name|keyChangedMessage
+literal|"Connected"
 argument_list|)
 expr_stmt|;
-block|}
-throw|throw
-name|e
-throw|;
-block|}
 name|this
 operator|.
 name|session
