@@ -351,6 +351,21 @@ decl_stmt|;
 if|if
 condition|(
 name|configs
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"No config found"
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+name|configs
 operator|.
 name|length
 operator|==
