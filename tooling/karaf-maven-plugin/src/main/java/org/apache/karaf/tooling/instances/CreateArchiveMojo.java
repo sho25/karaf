@@ -327,7 +327,7 @@ name|Parameter
 argument_list|(
 name|defaultValue
 operator|=
-literal|"${project.file}"
+literal|"${project.artifactId}-${project.version}"
 argument_list|)
 specifier|private
 name|File
