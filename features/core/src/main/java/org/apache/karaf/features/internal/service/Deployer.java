@@ -1207,6 +1207,9 @@ parameter_list|(
 name|Bundle
 name|bundle
 parameter_list|,
+name|String
+name|uri
+parameter_list|,
 name|InputStream
 name|is
 parameter_list|)
@@ -3997,6 +4000,8 @@ name|dstate
 operator|.
 name|serviceBundle
 argument_list|,
+name|uri
+argument_list|,
 name|is
 argument_list|)
 expr_stmt|;
@@ -4764,6 +4769,8 @@ operator|.
 name|updateBundle
 argument_list|(
 name|bundle
+argument_list|,
+name|uri
 argument_list|,
 name|is
 argument_list|)

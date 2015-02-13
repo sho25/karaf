@@ -1100,6 +1100,14 @@ argument_list|,
 name|EasyMock
 operator|.
 expr|<
+name|String
+operator|>
+name|anyObject
+argument_list|()
+argument_list|,
+name|EasyMock
+operator|.
+expr|<
 name|InputStream
 operator|>
 name|anyObject

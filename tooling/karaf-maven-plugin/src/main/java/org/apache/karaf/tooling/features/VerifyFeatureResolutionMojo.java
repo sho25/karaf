@@ -5067,6 +5067,9 @@ parameter_list|(
 name|Bundle
 name|bundle
 parameter_list|,
+name|String
+name|uri
+parameter_list|,
 name|InputStream
 name|is
 parameter_list|)
