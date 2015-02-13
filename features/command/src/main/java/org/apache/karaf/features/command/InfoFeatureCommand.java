@@ -552,6 +552,12 @@ condition|(
 name|features
 operator|==
 literal|null
+operator|||
+name|features
+operator|.
+name|length
+operator|==
+literal|0
 condition|)
 block|{
 name|System
