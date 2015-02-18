@@ -90,6 +90,23 @@ name|PrintStream
 name|err
 parameter_list|)
 function_decl|;
+comment|/**      * Create a new headless session inheriting from the parent session.      * Headless session can only be used to execute commands, so that      * {@link org.apache.karaf.shell.api.console.Session#run()} can not be used.      * All variables and the terminal properties from the parent session will be available.      *      * @param in the input stream, can be<code>null</code> if the session is only used to execute a command using {@link Session#execute(CharSequence)}      * @param out the output stream      * @param err the error stream      * @param session the parent session      * @return the new session      */
+name|Session
+name|create
+parameter_list|(
+name|InputStream
+name|in
+parameter_list|,
+name|PrintStream
+name|out
+parameter_list|,
+name|PrintStream
+name|err
+parameter_list|,
+name|Session
+name|session
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

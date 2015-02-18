@@ -121,16 +121,6 @@ literal|null
 return|;
 block|}
 block|}
-name|String
-name|resolved
-init|=
-name|session
-operator|.
-name|resolveCommand
-argument_list|(
-name|path
-argument_list|)
-decl_stmt|;
 name|ByteArrayOutputStream
 name|baos
 init|=
@@ -164,6 +154,8 @@ argument_list|,
 name|ps
 argument_list|,
 name|ps
+argument_list|,
+name|session
 argument_list|)
 decl_stmt|;
 name|s
