@@ -7647,11 +7647,6 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-comment|// Given we already have computed the wiring,
-comment|// there's no need to resolve the bundles all at the same time.
-comment|// It's much more efficient to resolve them by small chunks.
-comment|// We could be even smarter and order the bundles according to the
-comment|// order given by RequirementSort to minimize the size of needed chunks.
 name|FrameworkWiring
 name|frameworkWiring
 init|=
@@ -7667,27 +7662,13 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-for|for
-control|(
-name|Bundle
-name|bundle
-range|:
-name|bundles
-control|)
-block|{
 name|frameworkWiring
 operator|.
 name|resolveBundles
 argument_list|(
-name|Collections
-operator|.
-name|singleton
-argument_list|(
-name|bundle
-argument_list|)
+name|bundles
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 finally|finally
 block|{
