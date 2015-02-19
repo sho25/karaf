@@ -1146,11 +1146,7 @@ name|SAXSource
 argument_list|(
 name|xmlFilter
 argument_list|,
-operator|new
-name|InputSource
-argument_list|(
-name|uri
-argument_list|)
+name|is
 argument_list|)
 decl_stmt|;
 return|return
