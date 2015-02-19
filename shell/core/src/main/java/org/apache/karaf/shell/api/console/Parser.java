@@ -41,6 +41,16 @@ name|int
 name|cursor
 parameter_list|)
 function_decl|;
+name|String
+name|preprocess
+parameter_list|(
+name|Session
+name|session
+parameter_list|,
+name|CommandLine
+name|commandLine
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
