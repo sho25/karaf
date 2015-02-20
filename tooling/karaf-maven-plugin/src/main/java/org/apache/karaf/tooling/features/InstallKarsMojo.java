@@ -971,7 +971,7 @@ name|Parameter
 argument_list|(
 name|defaultValue
 operator|=
-literal|"true"
+literal|"false"
 argument_list|)
 specifier|protected
 name|boolean
