@@ -458,7 +458,7 @@ return|;
 block|}
 catch|catch
 parameter_list|(
-name|IOException
+name|Exception
 name|ignore
 parameter_list|)
 block|{
