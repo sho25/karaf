@@ -102,6 +102,18 @@ name|ATTRIBUTE_PREFIX
 init|=
 literal|"attribute."
 decl_stmt|;
+comment|/**      * The config prefix for in the agent configuration      */
+name|String
+name|CONFIG_PREFIX
+init|=
+literal|"config."
+decl_stmt|;
+comment|/**      * The config prefix for in the agent configuration      */
+name|String
+name|SYSTEM_PREFIX
+init|=
+literal|"system."
+decl_stmt|;
 name|Map
 argument_list|<
 name|String
@@ -109,6 +121,24 @@ argument_list|,
 name|String
 argument_list|>
 name|getAttributes
+parameter_list|()
+function_decl|;
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|getConfig
+parameter_list|()
+function_decl|;
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|getSystem
 parameter_list|()
 function_decl|;
 name|List
