@@ -247,7 +247,7 @@ name|File
 argument_list|(
 name|base
 argument_list|,
-literal|"lib"
+literal|"lib/wrapper"
 argument_list|)
 decl_stmt|;
 if|if
@@ -275,11 +275,7 @@ name|props
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|props
@@ -400,13 +396,9 @@ argument_list|)
 decl_stmt|;
 name|File
 name|serviceFile
-init|=
-literal|null
 decl_stmt|;
 name|File
 name|wrapperConf
-init|=
-literal|null
 decl_stmt|;
 if|if
 condition|(
@@ -1999,7 +1991,7 @@ argument_list|,
 literal|"karaf-wrapper-main.jar"
 argument_list|)
 argument_list|,
-literal|"org/apache/karaf/wrapper/internal/Main.class"
+literal|"org/apache/karaf/wrapper/internal/service/Main.class"
 argument_list|)
 expr_stmt|;
 name|File
@@ -2317,8 +2309,6 @@ try|try
 block|{
 name|int
 name|c
-init|=
-literal|0
 decl_stmt|;
 while|while
 condition|(

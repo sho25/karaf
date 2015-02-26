@@ -14,6 +14,8 @@ operator|.
 name|wrapper
 operator|.
 name|internal
+operator|.
+name|service
 package|;
 end_package
 
