@@ -55,7 +55,25 @@ name|BaseActivator
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|util
+operator|.
+name|tracker
+operator|.
+name|Services
+import|;
+end_import
+
 begin_class
+annotation|@
+name|Services
 specifier|public
 class|class
 name|Activator

@@ -553,8 +553,13 @@ name|root
 decl_stmt|;
 specifier|private
 specifier|final
-name|RegionDigraph
-name|digraph
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Region
+argument_list|>
+name|regions
 decl_stmt|;
 specifier|private
 specifier|final
@@ -640,12 +645,6 @@ name|root
 expr_stmt|;
 name|this
 operator|.
-name|digraph
-operator|=
-name|digraph
-expr_stmt|;
-name|this
-operator|.
 name|globalRepository
 operator|=
 name|globalRepository
@@ -682,6 +681,34 @@ name|keySet
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|regions
+operator|=
+operator|new
+name|HashMap
+argument_list|<>
+argument_list|()
+expr_stmt|;
+for|for
+control|(
+name|Region
+name|region
+range|:
+name|digraph
+control|)
+block|{
+name|regions
+operator|.
+name|put
+argument_list|(
+name|region
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|region
+argument_list|)
+expr_stmt|;
+block|}
 comment|// Add a heuristic to sort capabilities :
 comment|//  if a capability comes from a resource which needs to be installed,
 comment|//  prefer that one over any capabilities from other resources
@@ -882,9 +909,7 @@ name|caps
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Capability
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Region
@@ -1340,9 +1365,9 @@ name|resource
 parameter_list|)
 block|{
 return|return
-name|digraph
+name|regions
 operator|.
-name|getRegion
+name|get
 argument_list|(
 name|getSubsystem
 argument_list|(
