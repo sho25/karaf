@@ -587,7 +587,7 @@ argument_list|()
 expr_stmt|;
 name|callback
 operator|.
-name|installFeatureConfigs
+name|installFeature
 argument_list|(
 name|f100
 argument_list|)
@@ -1383,7 +1383,7 @@ argument_list|()
 expr_stmt|;
 name|callback
 operator|.
-name|installFeatureConfigs
+name|installFeature
 argument_list|(
 name|f101
 argument_list|)
@@ -2026,7 +2026,7 @@ argument_list|()
 expr_stmt|;
 name|callback
 operator|.
-name|installFeatureConfigs
+name|installFeature
 argument_list|(
 name|f1
 argument_list|)
@@ -2599,7 +2599,7 @@ argument_list|()
 expr_stmt|;
 name|callback
 operator|.
-name|installFeatureConfigs
+name|installFeature
 argument_list|(
 name|f1
 argument_list|)
@@ -3055,7 +3055,7 @@ argument_list|()
 expr_stmt|;
 name|callback
 operator|.
-name|installFeatureConfigs
+name|installFeature
 argument_list|(
 name|f2
 argument_list|)

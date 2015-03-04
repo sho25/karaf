@@ -1235,7 +1235,7 @@ throws|throws
 name|IOException
 function_decl|;
 name|void
-name|installFeatureConfigs
+name|installFeature
 parameter_list|(
 name|Feature
 name|feature
@@ -5315,7 +5315,7 @@ name|newState
 argument_list|)
 expr_stmt|;
 comment|//
-comment|// Install configurations
+comment|// Install configurations and libraries
 comment|//
 if|if
 condition|(
@@ -5365,7 +5365,7 @@ condition|)
 block|{
 name|callback
 operator|.
-name|installFeatureConfigs
+name|installFeature
 argument_list|(
 name|feature
 argument_list|)
@@ -5415,7 +5415,7 @@ condition|)
 block|{
 name|callback
 operator|.
-name|installFeatureConfigs
+name|installFeature
 argument_list|(
 name|condFeature
 argument_list|)

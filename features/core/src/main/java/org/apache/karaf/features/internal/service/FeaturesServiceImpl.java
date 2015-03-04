@@ -7029,7 +7029,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|installFeatureConfigs
+name|installFeature
 parameter_list|(
 name|Feature
 name|feature
@@ -7054,6 +7054,7 @@ name|feature
 argument_list|)
 expr_stmt|;
 block|}
+comment|// TODO: install libraries
 block|}
 annotation|@
 name|Override

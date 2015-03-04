@@ -167,6 +167,15 @@ name|Scoping
 name|getScoping
 parameter_list|()
 function_decl|;
+name|List
+argument_list|<
+name|?
+extends|extends
+name|Library
+argument_list|>
+name|getLibraries
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

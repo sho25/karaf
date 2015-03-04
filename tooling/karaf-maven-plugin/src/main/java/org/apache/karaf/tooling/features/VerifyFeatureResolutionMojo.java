@@ -4708,7 +4708,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|installFeatureConfigs
+name|installFeature
 parameter_list|(
 name|Feature
 name|feature

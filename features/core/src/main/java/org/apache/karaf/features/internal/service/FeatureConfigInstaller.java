@@ -1062,6 +1062,7 @@ name|finalname
 argument_list|)
 expr_stmt|;
 block|}
+comment|// TODO: use download manager to download the configuration
 try|try
 init|(
 name|InputStream
