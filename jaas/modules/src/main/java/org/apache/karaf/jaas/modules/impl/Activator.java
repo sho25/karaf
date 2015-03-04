@@ -229,6 +229,8 @@ name|util
 operator|.
 name|tracker
 operator|.
+name|annotation
+operator|.
 name|Managed
 import|;
 end_import
@@ -245,6 +247,8 @@ name|util
 operator|.
 name|tracker
 operator|.
+name|annotation
+operator|.
 name|ProvideService
 import|;
 end_import
@@ -260,6 +264,8 @@ operator|.
 name|util
 operator|.
 name|tracker
+operator|.
+name|annotation
 operator|.
 name|Services
 import|;

@@ -14,6 +14,8 @@ operator|.
 name|util
 operator|.
 name|tracker
+operator|.
+name|annotation
 package|;
 end_package
 
@@ -51,23 +53,11 @@ name|RUNTIME
 argument_list|)
 specifier|public
 annotation_defn|@interface
-name|RequireService
+name|ProvideService
 block|{
 name|Class
 name|value
 parameter_list|()
-function_decl|;
-name|String
-name|filter
-parameter_list|()
-default|default
-literal|""
-function_decl|;
-name|boolean
-name|optional
-parameter_list|()
-default|default
-literal|false
 function_decl|;
 block|}
 end_annotation_defn
