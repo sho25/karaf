@@ -631,6 +631,20 @@ index|[]
 name|getRepositoryNames
 parameter_list|()
 function_decl|;
+name|void
+name|registerListener
+parameter_list|(
+name|FeaturesListener
+name|listener
+parameter_list|)
+function_decl|;
+name|void
+name|unregisterListener
+parameter_list|(
+name|FeaturesListener
+name|listener
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
