@@ -81,6 +81,16 @@ name|org
 operator|.
 name|junit
 operator|.
+name|Ignore
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
 name|Test
 import|;
 end_import
@@ -90,8 +100,11 @@ specifier|public
 class|class
 name|BuilderTest
 block|{
+comment|// TODO This test can not run at this position as it needs the staticFramework kar which is not yet available
 annotation|@
 name|Test
+annotation|@
+name|Ignore
 specifier|public
 name|void
 name|testBuilder
