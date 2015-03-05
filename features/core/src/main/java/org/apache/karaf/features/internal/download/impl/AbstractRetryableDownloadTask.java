@@ -170,7 +170,7 @@ condition|(
 operator|++
 name|scheduleNbRun
 operator|<
-literal|5
+literal|9
 condition|)
 block|{
 name|long
@@ -224,7 +224,7 @@ name|schedule
 argument_list|(
 name|this
 argument_list|,
-name|scheduleDelay
+name|delay
 argument_list|,
 name|TimeUnit
 operator|.
