@@ -6427,6 +6427,12 @@ name|featureResolutionRange
 expr_stmt|;
 name|request
 operator|.
+name|updateSnaphots
+operator|=
+name|updateSnaphots
+expr_stmt|;
+name|request
+operator|.
 name|globalRepository
 operator|=
 name|globalRepository
