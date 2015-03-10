@@ -295,6 +295,16 @@ name|List
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -1123,6 +1133,40 @@ name|group
 parameter_list|,
 name|String
 name|role
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"Group management is not supported by Syncope backend"
+argument_list|)
+throw|;
+block|}
+specifier|public
+name|Map
+argument_list|<
+name|GroupPrincipal
+argument_list|,
+name|String
+argument_list|>
+name|listGroups
+parameter_list|()
+block|{
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"Group management is not supported by Syncope backend"
+argument_list|)
+throw|;
+block|}
+specifier|public
+name|void
+name|createGroup
+parameter_list|(
+name|String
+name|group
 parameter_list|)
 block|{
 throw|throw

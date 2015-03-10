@@ -39,6 +39,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -141,6 +151,16 @@ name|UserPrincipal
 name|user
 parameter_list|)
 function_decl|;
+comment|/**      * List groups in a certain realm      * @return the groups in a certain realm      */
+name|Map
+argument_list|<
+name|GroupPrincipal
+argument_list|,
+name|String
+argument_list|>
+name|listGroups
+parameter_list|()
+function_decl|;
 comment|/**      * Add a user to a group.      *      * @param username      * @param group      */
 name|void
 name|addGroup
@@ -148,6 +168,14 @@ parameter_list|(
 name|String
 name|username
 parameter_list|,
+name|String
+name|group
+parameter_list|)
+function_decl|;
+comment|/**      * Create a group      * @param group      */
+name|void
+name|createGroup
+parameter_list|(
 name|String
 name|group
 parameter_list|)
