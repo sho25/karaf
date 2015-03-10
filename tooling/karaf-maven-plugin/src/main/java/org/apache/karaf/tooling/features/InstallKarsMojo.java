@@ -459,10 +459,16 @@ decl_stmt|;
 annotation|@
 name|Parameter
 specifier|protected
-name|boolean
-name|use24SyntaxForStartup
+name|Builder
+operator|.
+name|KarafVersion
+name|karafVersion
 init|=
-literal|false
+name|Builder
+operator|.
+name|KarafVersion
+operator|.
+name|v4x
 decl_stmt|;
 comment|// an access layer for available Aether implementation
 specifier|protected
@@ -1058,9 +1064,9 @@ block|}
 block|}
 name|builder
 operator|.
-name|use24SyntaxForStartup
+name|karafVersion
 argument_list|(
-name|use24SyntaxForStartup
+name|karafVersion
 argument_list|)
 operator|.
 name|useReferenceUrls
