@@ -882,6 +882,16 @@ break|break;
 case|case
 name|FeaturesNamespaces
 operator|.
+name|URI_1_2_1
+case|:
+name|schemaLocation
+operator|=
+literal|"/org/apache/karaf/features/karaf-features-1.2.1.xsd"
+expr_stmt|;
+break|break;
+case|case
+name|FeaturesNamespaces
+operator|.
 name|URI_1_3_0
 case|:
 name|schemaLocation
