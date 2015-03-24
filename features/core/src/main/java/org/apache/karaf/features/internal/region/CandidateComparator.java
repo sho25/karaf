@@ -45,11 +45,15 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
 operator|.
 name|resolver
 operator|.
-name|Util
+name|ResolverUtil
 import|;
 end_import
 
@@ -870,7 +874,7 @@ comment|// We just want to have a deterministic heuristic
 name|String
 name|n1
 init|=
-name|Util
+name|ResolverUtil
 operator|.
 name|getSymbolicName
 argument_list|(
@@ -883,7 +887,7 @@ decl_stmt|;
 name|String
 name|n2
 init|=
-name|Util
+name|ResolverUtil
 operator|.
 name|getSymbolicName
 argument_list|(

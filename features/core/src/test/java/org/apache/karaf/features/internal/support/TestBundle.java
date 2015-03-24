@@ -127,11 +127,15 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
 operator|.
 name|resolver
 operator|.
-name|Util
+name|ResolverUtil
 import|;
 end_import
 
@@ -940,7 +944,7 @@ name|getSymbolicName
 parameter_list|()
 block|{
 return|return
-name|Util
+name|ResolverUtil
 operator|.
 name|getSymbolicName
 argument_list|(
@@ -956,7 +960,7 @@ name|getVersion
 parameter_list|()
 block|{
 return|return
-name|Util
+name|ResolverUtil
 operator|.
 name|getVersion
 argument_list|(

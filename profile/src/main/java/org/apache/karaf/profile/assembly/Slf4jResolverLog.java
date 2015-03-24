@@ -11,11 +11,9 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|features
+name|profile
 operator|.
-name|internal
-operator|.
-name|resolver
+name|assembly
 package|;
 end_package
 
