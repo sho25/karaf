@@ -286,6 +286,8 @@ condition|)
 block|{
 name|printHelp
 argument_list|(
+name|session
+argument_list|,
 name|System
 operator|.
 name|out
@@ -345,6 +347,9 @@ specifier|protected
 name|void
 name|printHelp
 parameter_list|(
+name|Session
+name|session
+parameter_list|,
 name|PrintStream
 name|out
 parameter_list|)
