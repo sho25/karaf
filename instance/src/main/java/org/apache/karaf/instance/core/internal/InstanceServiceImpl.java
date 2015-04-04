@@ -8481,6 +8481,22 @@ if|if
 condition|(
 name|source
 operator|.
+name|getName
+argument_list|()
+operator|.
+name|endsWith
+argument_list|(
+literal|".instance"
+argument_list|)
+condition|)
+block|{
+comment|// ignore instance bundles cache
+return|return;
+block|}
+if|if
+condition|(
+name|source
+operator|.
 name|isDirectory
 argument_list|()
 condition|)
