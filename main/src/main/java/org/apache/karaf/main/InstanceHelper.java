@@ -194,6 +194,10 @@ name|karafHome
 parameter_list|,
 name|File
 name|karafBase
+parameter_list|,
+specifier|final
+name|boolean
+name|isStartingInstance
 parameter_list|)
 block|{
 try|try
@@ -213,8 +217,12 @@ specifier|final
 name|String
 name|pid
 init|=
+name|isStartingInstance
+condition|?
 name|getPid
 argument_list|()
+else|:
+literal|"0"
 decl_stmt|;
 specifier|final
 name|boolean
@@ -426,11 +434,26 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|String
+name|errMsg
+init|=
+literal|"Child instance "
+operator|+
+operator|(
+name|isStartingInstance
+condition|?
+literal|"started"
+else|:
+literal|"stopped"
+operator|)
+operator|+
+literal|" but no root registered in "
+decl_stmt|;
 throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Child instance started but no root registered in "
+name|errMsg
 operator|+
 name|propertiesFile
 argument_list|)
