@@ -13,7 +13,7 @@ name|karaf
 operator|.
 name|tooling
 operator|.
-name|features
+name|utils
 package|;
 end_package
 
@@ -262,6 +262,7 @@ literal|"(?:(?:wrap:)|(?:blueprint:))?mvn:([^/ ]+)/([^/ ]+)/([^/\\$ ]*)(/([^/\\$
 argument_list|)
 decl_stmt|;
 comment|/**      * Convert PAX URL mvn format to aether coordinate format.      * N.B. we do not handle repository-url in mvn urls.      * N.B. version is required in mvn urls.      *      * @param name PAX URL mvn format: mvn-uri := [ 'wrap:' ] 'mvn:' [ repository-url '!' ] group-id '/' artifact-id [ '/' [version] [ '/' [type] [ '/' classifier ] ] ] ]      * @return aether coordinate format:<groupId>:<artifactId>[:<extension>[:<classifier>]]:<version>      */
+specifier|public
 specifier|static
 name|String
 name|mvnToAether
@@ -481,6 +482,7 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Convert Aether coordinate format to PAX mvn format.      * N.B. we do not handle repository-url in mvn urls.      * N.B. version is required in mvn urls.      *      * @param name aether coordinate format:<groupId>:<artifactId>[:<extension>[:<classifier>]]:<version>      * @return PAX URL mvn format: mvn-uri := 'mvn:' [ repository-url '!' ] group-id '/' artifact-id [ '/' [version] [ '/' [type] [ '/' classifier ] ] ] ]      */
+specifier|public
 specifier|static
 name|String
 name|aetherToMvn
@@ -671,6 +673,7 @@ name|toString
 argument_list|()
 return|;
 block|}
+specifier|public
 specifier|static
 name|boolean
 name|isEmpty
@@ -693,6 +696,7 @@ literal|0
 return|;
 block|}
 comment|/**      * Generate the maven-metadata-local.xml for the given Maven<code>Artifact</code>.      *      * @param artifact the Maven<code>Artifact</code>.      * @param target   the target maven-metadata-local.xml file to generate.      * @throws IOException if the maven-metadata-local.xml can't be generated.      */
+specifier|public
 specifier|static
 name|void
 name|generateMavenMetadata
@@ -887,6 +891,7 @@ name|metadata
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
 specifier|static
 name|String
 name|getFileName
@@ -939,6 +944,7 @@ return|return
 name|name
 return|;
 block|}
+specifier|public
 specifier|static
 name|String
 name|getDir

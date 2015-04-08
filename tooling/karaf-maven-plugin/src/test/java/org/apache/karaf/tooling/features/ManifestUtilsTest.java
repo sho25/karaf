@@ -27,7 +27,7 @@ name|karaf
 operator|.
 name|tooling
 operator|.
-name|features
+name|utils
 operator|.
 name|ManifestUtils
 operator|.
@@ -97,6 +97,22 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|tooling
+operator|.
+name|utils
+operator|.
+name|ManifestUtils
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|osgi
 operator|.
 name|framework
@@ -106,7 +122,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Test cased for {@link org.apache.karaf.tooling.features.ManifestUtils}   */
+comment|/**  * Test cased for {@link org.apache.karaf.tooling.utils.ManifestUtils}  */
 end_comment
 
 begin_class
