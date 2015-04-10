@@ -1187,6 +1187,11 @@ specifier|final
 name|int
 name|scheduleMaxRun
 decl_stmt|;
+specifier|private
+specifier|final
+name|String
+name|blacklisted
+decl_stmt|;
 comment|/**      * Optional global repository      */
 specifier|private
 specifier|final
@@ -1320,6 +1325,9 @@ name|scheduleDelay
 parameter_list|,
 name|int
 name|scheduleMaxRun
+parameter_list|,
+name|String
+name|blacklisted
 parameter_list|)
 block|{
 name|this
@@ -1439,6 +1447,12 @@ operator|.
 name|scheduleMaxRun
 operator|=
 name|scheduleMaxRun
+expr_stmt|;
+name|this
+operator|.
+name|blacklisted
+operator|=
+name|blacklisted
 expr_stmt|;
 name|loadState
 argument_list|()
@@ -2034,6 +2048,8 @@ name|create
 argument_list|(
 name|uri
 argument_list|)
+argument_list|,
+name|blacklisted
 argument_list|)
 decl_stmt|;
 name|listener
@@ -2312,6 +2328,8 @@ operator|new
 name|RepositoryImpl
 argument_list|(
 name|uri
+argument_list|,
+name|blacklisted
 argument_list|)
 decl_stmt|;
 name|repo
@@ -2634,6 +2652,8 @@ operator|new
 name|RepositoryImpl
 argument_list|(
 name|uri
+argument_list|,
+name|blacklisted
 argument_list|)
 expr_stmt|;
 block|}
@@ -3624,6 +3644,8 @@ name|create
 argument_list|(
 name|uri
 argument_list|)
+argument_list|,
+name|blacklisted
 argument_list|)
 decl_stmt|;
 name|rep
