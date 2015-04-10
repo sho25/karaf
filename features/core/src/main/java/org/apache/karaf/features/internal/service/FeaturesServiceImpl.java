@@ -421,6 +421,20 @@ name|karaf
 operator|.
 name|features
 operator|.
+name|FeatureState
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
 name|FeaturesListener
 import|;
 end_import
@@ -1650,7 +1664,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|RequestedState
+name|FeatureState
 argument_list|>
 argument_list|>
 name|stateChanges
@@ -4905,7 +4919,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|RequestedState
+name|FeatureState
 argument_list|>
 argument_list|>
 name|stateChanges
@@ -5351,7 +5365,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|RequestedState
+name|FeatureState
 argument_list|>
 argument_list|>
 name|stateChanges
@@ -5387,7 +5401,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|RequestedState
+name|FeatureState
 argument_list|>
 argument_list|>
 name|stateChanges
@@ -5489,7 +5503,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|RequestedState
+name|FeatureState
 argument_list|>
 argument_list|>
 name|stateChanges
@@ -5576,7 +5590,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|RequestedState
+name|FeatureState
 argument_list|>
 argument_list|>
 name|stateChanges
@@ -5747,7 +5761,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|RequestedState
+name|FeatureState
 argument_list|>
 argument_list|>
 name|stateChanges
@@ -6288,7 +6302,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|RequestedState
+name|FeatureState
 argument_list|>
 argument_list|>
 name|stateChanges
@@ -6392,7 +6406,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|RequestedState
+name|FeatureState
 argument_list|>
 argument_list|>
 name|stateChanges

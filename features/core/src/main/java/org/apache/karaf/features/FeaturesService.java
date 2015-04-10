@@ -41,16 +41,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Map
 import|;
 end_import
@@ -147,15 +137,6 @@ block|,
 name|Simulate
 block|,
 name|Verbose
-block|}
-enum|enum
-name|RequestedState
-block|{
-name|Installed
-block|,
-name|Resolved
-block|,
-name|Started
 block|}
 comment|/**      * Validate repository contents.      *      * @param uri Repository uri.      * @throws Exception When validation fails.      */
 name|void
@@ -517,7 +498,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|RequestedState
+name|FeatureState
 argument_list|>
 argument_list|>
 name|stateChanges
