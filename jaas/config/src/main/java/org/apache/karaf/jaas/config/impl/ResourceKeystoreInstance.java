@@ -609,6 +609,13 @@ argument_list|(
 literal|'='
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|pos
+operator|>
+literal|0
+condition|)
+block|{
 name|this
 operator|.
 name|keyPasswords
@@ -637,6 +644,7 @@ name|toCharArray
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
