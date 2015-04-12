@@ -484,6 +484,11 @@ init|=
 literal|1
 decl_stmt|;
 name|int
+name|lockDefaultBootLevel
+init|=
+literal|1
+decl_stmt|;
+name|int
 name|lockDelay
 decl_stmt|;
 name|int
@@ -1068,7 +1073,7 @@ name|Integer
 operator|.
 name|toString
 argument_list|(
-name|lockStartLevel
+name|lockDefaultBootLevel
 argument_list|)
 argument_list|)
 expr_stmt|;
