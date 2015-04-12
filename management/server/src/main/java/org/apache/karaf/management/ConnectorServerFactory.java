@@ -1137,6 +1137,15 @@ name|Exception
 block|{
 try|try
 block|{
+if|if
+condition|(
+name|this
+operator|.
+name|connectorServer
+operator|!=
+literal|null
+condition|)
+block|{
 name|this
 operator|.
 name|connectorServer
@@ -1144,6 +1153,7 @@ operator|.
 name|stop
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 finally|finally
 block|{
