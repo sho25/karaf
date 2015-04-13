@@ -213,6 +213,24 @@ name|features
 operator|.
 name|internal
 operator|.
+name|region
+operator|.
+name|DigraphHelper
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
+operator|.
 name|repository
 operator|.
 name|AggregateRepository
@@ -427,7 +445,7 @@ name|internal
 operator|.
 name|region
 operator|.
-name|DigraphHelper
+name|CollisionHookHelper
 import|;
 end_import
 
@@ -973,7 +991,7 @@ name|CollisionHook
 operator|.
 name|class
 argument_list|,
-name|DigraphHelper
+name|CollisionHookHelper
 operator|.
 name|getCollisionHook
 argument_list|(
