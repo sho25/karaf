@@ -1956,17 +1956,7 @@ init|=
 name|cond
 operator|.
 name|asFeature
-argument_list|(
-name|feature
-operator|.
-name|getName
 argument_list|()
-argument_list|,
-name|feature
-operator|.
-name|getVersion
-argument_list|()
-argument_list|)
 decl_stmt|;
 name|String
 name|ssName

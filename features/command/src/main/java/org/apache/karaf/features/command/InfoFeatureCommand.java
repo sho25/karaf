@@ -1779,17 +1779,7 @@ init|=
 name|featureConditional
 operator|.
 name|asFeature
-argument_list|(
-name|feature
-operator|.
-name|getName
 argument_list|()
-argument_list|,
-name|feature
-operator|.
-name|getVersion
-argument_list|()
-argument_list|)
 decl_stmt|;
 if|if
 condition|(

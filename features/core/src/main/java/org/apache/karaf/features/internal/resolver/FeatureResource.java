@@ -305,17 +305,7 @@ init|=
 name|conditional
 operator|.
 name|asFeature
-argument_list|(
-name|feature
-operator|.
-name|getName
 argument_list|()
-argument_list|,
-name|feature
-operator|.
-name|getVersion
-argument_list|()
-argument_list|)
 decl_stmt|;
 name|FeatureResource
 name|resource
