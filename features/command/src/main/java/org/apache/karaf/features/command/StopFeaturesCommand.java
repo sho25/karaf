@@ -111,6 +111,24 @@ name|apache
 operator|.
 name|karaf
 operator|.
+name|features
+operator|.
+name|command
+operator|.
+name|completers
+operator|.
+name|StartedFeatureCompleter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
 name|shell
 operator|.
 name|api
@@ -232,7 +250,7 @@ literal|"feature"
 argument_list|,
 name|description
 operator|=
-literal|"The name and version of the features to install. A feature id looks like name/version. The version is optional."
+literal|"The name and version of the features to stop. A feature id looks like name/version."
 argument_list|,
 name|required
 operator|=
@@ -245,7 +263,7 @@ argument_list|)
 annotation|@
 name|Completion
 argument_list|(
-name|AvailableFeatureCompleter
+name|StartedFeatureCompleter
 operator|.
 name|class
 argument_list|)

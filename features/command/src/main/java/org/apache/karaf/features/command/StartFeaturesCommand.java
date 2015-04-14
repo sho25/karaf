@@ -43,16 +43,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -109,7 +99,7 @@ name|command
 operator|.
 name|completers
 operator|.
-name|AvailableFeatureCompleter
+name|ResolvedFeatureCompleter
 import|;
 end_import
 
@@ -242,7 +232,7 @@ literal|"feature"
 argument_list|,
 name|description
 operator|=
-literal|"The name and version of the features to install. A feature id looks like name/version. The version is optional."
+literal|"The name and version of the features to start. A feature id looks like name/version."
 argument_list|,
 name|required
 operator|=
@@ -255,7 +245,7 @@ argument_list|)
 annotation|@
 name|Completion
 argument_list|(
-name|AvailableFeatureCompleter
+name|ResolvedFeatureCompleter
 operator|.
 name|class
 argument_list|)
