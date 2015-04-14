@@ -20,6 +20,8 @@ specifier|public
 enum|enum
 name|FeatureState
 block|{
+name|Uninstalled
+block|,
 name|Installed
 block|,
 name|Resolved

@@ -154,6 +154,7 @@ name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
+comment|// State of features by region and feature id (name/version)
 specifier|public
 specifier|final
 name|Map

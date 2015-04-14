@@ -378,7 +378,7 @@ name|table
 operator|.
 name|column
 argument_list|(
-literal|"Installed"
+literal|"State"
 argument_list|)
 expr_stmt|;
 name|table
@@ -552,14 +552,13 @@ literal|""
 argument_list|,
 name|featuresService
 operator|.
-name|isInstalled
+name|getState
 argument_list|(
 name|f
+operator|.
+name|getId
+argument_list|()
 argument_list|)
-condition|?
-literal|"x"
-else|:
-literal|""
 argument_list|,
 name|r
 operator|.

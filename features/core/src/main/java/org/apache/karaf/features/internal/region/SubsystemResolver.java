@@ -2060,6 +2060,7 @@ return|return
 name|bundlesPerRegions
 return|;
 block|}
+comment|/**      *       * @return map of bundles and the region they are deployed in      */
 specifier|public
 name|Map
 argument_list|<
@@ -2195,6 +2196,7 @@ return|return
 name|features
 return|;
 block|}
+comment|/**      *       * @param resourceFilter      * @return map from resource to region name      */
 specifier|private
 name|Map
 argument_list|<

@@ -25,34 +25,6 @@ name|List
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|features
-operator|.
-name|internal
-operator|.
-name|model
-operator|.
-name|Config
-import|;
-end_import
-
 begin_comment
 comment|/**  * A feature is a list of bundles associated identified by its name.  */
 end_comment

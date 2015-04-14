@@ -641,6 +641,13 @@ name|FeaturesListener
 name|listener
 parameter_list|)
 function_decl|;
+name|FeatureState
+name|getState
+parameter_list|(
+name|String
+name|featureId
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
