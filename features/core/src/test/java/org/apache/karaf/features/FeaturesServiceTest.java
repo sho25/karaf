@@ -658,8 +658,10 @@ literal|0
 index|]
 argument_list|)
 expr_stmt|;
-name|assertNull
+name|assertEquals
 argument_list|(
+literal|0
+argument_list|,
 name|svc
 operator|.
 name|getFeatures
@@ -668,9 +670,8 @@ literal|"f2"
 argument_list|,
 literal|"0.3"
 argument_list|)
-index|[
-literal|0
-index|]
+operator|.
+name|length
 argument_list|)
 expr_stmt|;
 block|}
