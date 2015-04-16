@@ -1267,34 +1267,6 @@ name|TYPE_BUNDLE
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|osgi
-operator|.
-name|resource
-operator|.
-name|Namespace
-operator|.
-name|CAPABILITY_EFFECTIVE_DIRECTIVE
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|osgi
-operator|.
-name|resource
-operator|.
-name|Namespace
-operator|.
-name|EFFECTIVE_ACTIVE
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
