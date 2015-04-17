@@ -12,8 +12,6 @@ operator|.
 name|karaf
 operator|.
 name|tooling
-operator|.
-name|features
 package|;
 end_package
 
@@ -1171,7 +1169,7 @@ name|Mojo
 argument_list|(
 name|name
 operator|=
-literal|"verify-features"
+literal|"verify"
 argument_list|,
 name|requiresDependencyResolution
 operator|=
@@ -1181,7 +1179,7 @@ name|COMPILE_PLUS_RUNTIME
 argument_list|)
 specifier|public
 class|class
-name|VerifyFeatureResolutionMojo
+name|VerifyMojo
 extends|extends
 name|MojoSupport
 block|{

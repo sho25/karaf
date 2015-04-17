@@ -12,8 +12,6 @@ operator|.
 name|karaf
 operator|.
 name|tooling
-operator|.
-name|instances
 package|;
 end_package
 
@@ -351,7 +349,7 @@ name|Mojo
 argument_list|(
 name|name
 operator|=
-literal|"instance-create-archive"
+literal|"archive"
 argument_list|,
 name|defaultPhase
 operator|=
@@ -367,7 +365,7 @@ name|RUNTIME
 argument_list|)
 specifier|public
 class|class
-name|CreateArchiveMojo
+name|ArchiveMojo
 extends|extends
 name|MojoSupport
 block|{

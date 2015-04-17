@@ -316,7 +316,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Common functionality for mojos that need to reolve features  */
+comment|/**  * Common functionality for mojos that need to resolve features  */
 end_comment
 
 begin_class

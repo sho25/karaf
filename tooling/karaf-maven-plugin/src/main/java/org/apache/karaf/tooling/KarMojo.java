@@ -12,8 +12,6 @@ operator|.
 name|karaf
 operator|.
 name|tooling
-operator|.
-name|features
 package|;
 end_package
 
@@ -563,7 +561,7 @@ name|Mojo
 argument_list|(
 name|name
 operator|=
-literal|"features-create-kar"
+literal|"kar"
 argument_list|,
 name|defaultPhase
 operator|=
@@ -579,7 +577,7 @@ name|RUNTIME
 argument_list|)
 specifier|public
 class|class
-name|CreateKarMojo
+name|KarMojo
 extends|extends
 name|MojoSupport
 block|{
