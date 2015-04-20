@@ -64,6 +64,10 @@ name|String
 name|getVersion
 parameter_list|()
 function_decl|;
+name|String
+name|getRevisions
+parameter_list|()
+function_decl|;
 comment|/**      * Combined bundle state from OSGi and all BundleStateServices      * @return      */
 name|BundleState
 name|getState
