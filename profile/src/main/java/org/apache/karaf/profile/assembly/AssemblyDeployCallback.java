@@ -1524,6 +1524,9 @@ expr_stmt|;
 try|try
 block|{
 name|String
+name|regUri
+decl_stmt|;
+name|String
 name|path
 decl_stmt|;
 if|if
@@ -1536,6 +1539,10 @@ literal|"mvn:"
 argument_list|)
 condition|)
 block|{
+name|regUri
+operator|=
+name|uri
+expr_stmt|;
 name|path
 operator|=
 name|Parser
@@ -1560,6 +1567,12 @@ literal|"[^0-9a-zA-Z.\\-_]+"
 argument_list|,
 literal|"_"
 argument_list|)
+expr_stmt|;
+name|regUri
+operator|=
+literal|"file:"
+operator|+
+name|path
 expr_stmt|;
 block|}
 specifier|final
@@ -1725,7 +1738,7 @@ name|bundles
 operator|.
 name|put
 argument_list|(
-name|path
+name|regUri
 argument_list|,
 name|bundle
 argument_list|)
