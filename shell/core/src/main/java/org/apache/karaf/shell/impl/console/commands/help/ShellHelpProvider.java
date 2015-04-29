@@ -961,7 +961,7 @@ literal|"${command-list|"
 operator|+
 name|path
 operator|+
-literal|"|embedded}"
+literal|"|indent}"
 argument_list|)
 expr_stmt|;
 block|}
