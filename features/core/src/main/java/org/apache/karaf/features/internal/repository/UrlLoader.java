@@ -271,6 +271,10 @@ decl_stmt|;
 if|if
 condition|(
 name|lm
+operator|>
+literal|0
+operator|&&
+name|lm
 operator|<=
 name|lastModified
 condition|)
