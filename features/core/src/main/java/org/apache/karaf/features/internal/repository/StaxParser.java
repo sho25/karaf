@@ -910,7 +910,7 @@ name|writeStartElement
 argument_list|(
 name|REPOSITORY_NAMESPACE
 argument_list|,
-name|DIRECTIVE
+name|ATTRIBUTE
 argument_list|)
 expr_stmt|;
 name|writer
@@ -1361,9 +1361,9 @@ name|repo
 operator|.
 name|increment
 operator|=
-name|Integer
+name|Long
 operator|.
-name|parseInt
+name|parseLong
 argument_list|(
 name|attrValue
 argument_list|)
