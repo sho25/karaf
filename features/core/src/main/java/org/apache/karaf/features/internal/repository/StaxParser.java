@@ -43,6 +43,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|Writer
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|ArrayList
@@ -525,7 +535,7 @@ parameter_list|(
 name|XmlRepository
 name|repository
 parameter_list|,
-name|OutputStreamWriter
+name|Writer
 name|os
 parameter_list|)
 throws|throws
@@ -1351,7 +1361,7 @@ name|repo
 operator|.
 name|name
 operator|=
-name|attrName
+name|attrValue
 expr_stmt|;
 break|break;
 case|case

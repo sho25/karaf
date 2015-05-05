@@ -262,10 +262,12 @@ name|XmlRepository
 extends|extends
 name|BaseRepository
 block|{
+specifier|protected
 specifier|final
 name|String
 name|url
 decl_stmt|;
+specifier|protected
 specifier|final
 name|Map
 argument_list|<
@@ -284,6 +286,7 @@ name|XmlLoader
 argument_list|>
 argument_list|()
 decl_stmt|;
+specifier|protected
 specifier|final
 name|ReadWriteLock
 name|lock
