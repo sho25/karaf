@@ -119,6 +119,12 @@ name|DEFAULT_SCHEDULE_MAX_RUN
 init|=
 literal|9
 decl_stmt|;
+name|long
+name|DEFAULT_REPOSITORY_EXPIRATION
+init|=
+literal|60000
+decl_stmt|;
+comment|// 1 minute
 enum|enum
 name|Option
 block|{
