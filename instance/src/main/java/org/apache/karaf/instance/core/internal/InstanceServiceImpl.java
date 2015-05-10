@@ -3311,8 +3311,6 @@ argument_list|()
 operator|+
 literal|"\""
 operator|+
-literal|" -Djavax.management.builder.initial=org.apache.karaf.management.boot.KarafMBeanServerBuilder"
-operator|+
 literal|" -Djava.endorsed.dirs=\""
 operator|+
 operator|new
@@ -3520,8 +3518,6 @@ literal|"etc"
 argument_list|)
 operator|+
 literal|"\""
-operator|+
-literal|" -Djavax.management.builder.initial=org.apache.karaf.management.boot.KarafMBeanServerBuilder"
 operator|+
 literal|" -Dkaraf.startLocalConsole=false"
 operator|+
@@ -4182,8 +4178,6 @@ literal|"karaf.instances"
 argument_list|)
 operator|+
 literal|"\""
-operator|+
-literal|" -Djavax.management.builder.initial=org.apache.karaf.management.boot.KarafMBeanServerBuilder"
 operator|+
 literal|" -classpath \""
 operator|+

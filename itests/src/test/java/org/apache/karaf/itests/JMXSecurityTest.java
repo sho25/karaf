@@ -587,12 +587,6 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|new
-name|VMOption
-argument_list|(
-literal|"-Djavax.management.builder.initial=org.apache.karaf.management.boot.KarafMBeanServerBuilder"
-argument_list|)
-argument_list|,
 name|editConfigurationFilePut
 argument_list|(
 literal|"etc/jmx.acl.org.apache.karaf.service.cfg"

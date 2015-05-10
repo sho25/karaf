@@ -1022,7 +1022,7 @@ comment|// enable JMX RBAC security, thanks to the KarafMBeanServerBuilder
 name|configureSecurity
 argument_list|()
 operator|.
-name|enableKarafMBeanServerBuilder
+name|disableKarafMBeanServerBuilder
 argument_list|()
 block|,
 name|keepRuntimeFolder
