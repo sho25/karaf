@@ -64,20 +64,16 @@ name|bundleId
 parameter_list|)
 function_decl|;
 comment|/** 	 * Gets a map of all exported packages with their version and the bundles that export them 	 * The key is in the form packagename:version. 	 *  	 * @return  	 */
-name|SortedMap
+name|List
 argument_list|<
-name|String
-argument_list|,
 name|PackageVersion
 argument_list|>
 name|getExports
 parameter_list|()
 function_decl|;
 comment|/**      * Gets a map of all package imports.       * The key is the import filter.      *        * @return      */
-name|SortedMap
+name|List
 argument_list|<
-name|String
-argument_list|,
 name|PackageRequirement
 argument_list|>
 name|getImports
