@@ -847,7 +847,7 @@ name|getInt
 argument_list|(
 literal|"keySize"
 argument_list|,
-literal|1024
+literal|4096
 argument_list|)
 decl_stmt|;
 name|String
@@ -857,7 +857,7 @@ name|getString
 argument_list|(
 literal|"algorithm"
 argument_list|,
-literal|"DSA"
+literal|"RSA"
 argument_list|)
 decl_stmt|;
 name|String
