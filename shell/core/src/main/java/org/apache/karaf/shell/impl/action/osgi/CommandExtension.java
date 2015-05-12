@@ -738,6 +738,8 @@ argument_list|,
 literal|""
 argument_list|)
 expr_stmt|;
+try|try
+block|{
 name|inspectClass
 argument_list|(
 name|bundle
@@ -748,6 +750,28 @@ name|className
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+specifier|final
+name|ClassNotFoundException
+decl||
+name|NoClassDefFoundError
+name|ex
+parameter_list|)
+block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"Inspection of class {} failed."
+argument_list|,
+name|className
+argument_list|,
+name|ex
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 name|AggregateServiceTracker
