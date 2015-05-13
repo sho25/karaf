@@ -985,6 +985,17 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+name|users
+operator|.
+name|iterator
+argument_list|()
+operator|.
+name|hasNext
+argument_list|()
+condition|)
+block|{
 name|user
 operator|=
 operator|(
@@ -998,6 +1009,7 @@ operator|.
 name|next
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 name|password
 operator|=
