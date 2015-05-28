@@ -285,47 +285,12 @@ argument_list|(
 literal|"org.apache.karaf.webconsole.http"
 argument_list|)
 expr_stmt|;
-name|assertBundleNotInstalled
-argument_list|(
-literal|"org.apache.felix.webconsole.plugins.event"
-argument_list|)
-expr_stmt|;
-comment|//Add eventadmin
-try|try
-block|{
-name|featureService
-operator|.
-name|installFeature
-argument_list|(
-literal|"eventadmin"
-argument_list|,
-name|EnumSet
-operator|.
-name|of
-argument_list|(
-name|FeaturesService
-operator|.
-name|Option
-operator|.
-name|NoAutoRefreshBundles
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|ex
-parameter_list|)
-block|{
-comment|//ignore as the eventadmin activator might throw an error.
-block|}
 name|assertBundleInstalled
 argument_list|(
 literal|"org.apache.felix.webconsole.plugins.event"
 argument_list|)
 expr_stmt|;
-comment|//Remove eventadmin
+comment|// remove eventadmin
 name|featureService
 operator|.
 name|uninstallFeature

@@ -207,6 +207,8 @@ name|Exception
 block|{
 name|assertFeaturesInstalled
 argument_list|(
+literal|"eventadmin"
+argument_list|,
 literal|"jaas"
 argument_list|,
 literal|"ssh"
@@ -386,7 +388,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"feature:install -v wrapper"
+literal|"feature:install -v -r wrapper"
 argument_list|,
 operator|new
 name|RolePrincipal
@@ -409,7 +411,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"feature:uninstall wrapper"
+literal|"feature:uninstall -r wrapper"
 argument_list|,
 operator|new
 name|RolePrincipal
@@ -478,6 +480,8 @@ name|Object
 index|[]
 block|{
 literal|"wrapper"
+block|,
+literal|true
 block|}
 argument_list|,
 operator|new
@@ -485,6 +489,8 @@ name|String
 index|[]
 block|{
 literal|"java.lang.String"
+block|,
+literal|"boolean"
 block|}
 argument_list|)
 expr_stmt|;
@@ -506,6 +512,8 @@ name|Object
 index|[]
 block|{
 literal|"wrapper"
+block|,
+literal|true
 block|}
 argument_list|,
 operator|new
@@ -513,6 +521,8 @@ name|String
 index|[]
 block|{
 literal|"java.lang.String"
+block|,
+literal|"boolean"
 block|}
 argument_list|)
 expr_stmt|;

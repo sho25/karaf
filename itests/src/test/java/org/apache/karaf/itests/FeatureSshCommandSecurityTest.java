@@ -113,7 +113,7 @@ name|assertCommand
 argument_list|(
 name|vieweruser
 argument_list|,
-literal|"feature:install "
+literal|"feature:install -r "
 operator|+
 name|feature
 argument_list|,
@@ -156,7 +156,7 @@ name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"feature:install "
+literal|"feature:install -r "
 operator|+
 name|feature
 argument_list|,
@@ -199,7 +199,7 @@ name|assertCommand
 argument_list|(
 name|vieweruser
 argument_list|,
-literal|"feature:uninstall "
+literal|"feature:uninstall -r "
 operator|+
 name|feature
 argument_list|,
@@ -242,7 +242,7 @@ name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"feature:uninstall "
+literal|"feature:uninstall -r "
 operator|+
 name|feature
 argument_list|,
