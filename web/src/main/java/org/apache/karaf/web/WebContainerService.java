@@ -80,6 +80,14 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * Retrieves the Web-ContextPath of the corresponding bundle      *       * @param id of the bundle.       * @return       */
+name|String
+name|getWebContextPath
+parameter_list|(
+name|Long
+name|id
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
