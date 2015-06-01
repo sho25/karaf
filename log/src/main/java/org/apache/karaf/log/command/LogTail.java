@@ -462,7 +462,7 @@ name|minLevel
 init|=
 name|Integer
 operator|.
-name|MIN_VALUE
+name|MAX_VALUE
 decl_stmt|;
 if|if
 condition|(

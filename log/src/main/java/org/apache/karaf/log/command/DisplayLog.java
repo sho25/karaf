@@ -372,7 +372,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"The miniml log level to display"
+literal|"The minimal log level to display"
 argument_list|,
 name|required
 operator|=
