@@ -141,7 +141,14 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"my first column value|my second column value is quite long\n"
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"%s%n"
+argument_list|,
+literal|"my first column value|my second column value is quite long"
+argument_list|)
 argument_list|,
 name|baos
 operator|.
@@ -232,7 +239,14 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"my first column value|my second column value is q\n"
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"%s%n"
+argument_list|,
+literal|"my first column value|my second column value is q"
+argument_list|)
 argument_list|,
 name|baos
 operator|.
@@ -326,9 +340,16 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"my first column value|my second column value is\n"
-operator|+
-literal|"                     |quite long\n"
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"%1$s\n%2$s%n"
+argument_list|,
+literal|"my first column value|my second column value is"
+argument_list|,
+literal|"                     |quite long"
+argument_list|)
 argument_list|,
 name|baos
 operator|.
