@@ -441,7 +441,16 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"# My comment\nfoo = bar2\n"
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"%1$s%n%2$s%n"
+argument_list|,
+literal|"# My comment"
+argument_list|,
+literal|"foo = bar2"
+argument_list|)
 argument_list|,
 name|outPid1
 argument_list|)
