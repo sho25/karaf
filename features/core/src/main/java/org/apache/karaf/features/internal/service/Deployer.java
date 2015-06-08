@@ -1654,6 +1654,10 @@ name|Option
 argument_list|>
 name|options
 decl_stmt|;
+specifier|public
+name|String
+name|outputFile
+decl_stmt|;
 block|}
 specifier|static
 class|class
@@ -2341,6 +2345,10 @@ argument_list|,
 name|request
 operator|.
 name|globalRepository
+argument_list|,
+name|request
+operator|.
+name|outputFile
 argument_list|)
 expr_stmt|;
 name|Map
