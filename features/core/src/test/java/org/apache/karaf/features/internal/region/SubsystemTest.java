@@ -533,6 +533,8 @@ operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 name|verify
@@ -782,6 +784,8 @@ operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 name|verify
@@ -947,6 +951,8 @@ argument_list|,
 name|FeaturesService
 operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|)
@@ -1115,6 +1121,8 @@ argument_list|,
 name|FeaturesService
 operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|)
@@ -1303,6 +1311,8 @@ operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 name|verify
@@ -1489,6 +1499,8 @@ operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 name|verify
@@ -1664,6 +1676,8 @@ argument_list|,
 name|FeaturesService
 operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|)
@@ -1850,6 +1864,8 @@ argument_list|,
 name|FeaturesService
 operator|.
 name|DEFAULT_FEATURE_RESOLUTION_RANGE
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|)
