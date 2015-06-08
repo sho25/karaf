@@ -363,6 +363,20 @@ name|Option
 argument_list|(
 name|name
 operator|=
+literal|"--store"
+argument_list|,
+name|description
+operator|=
+literal|"Store the resolution into the given file and result for offline analysis"
+argument_list|)
+name|String
+name|outputFile
+decl_stmt|;
+annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
 literal|"-g"
 argument_list|,
 name|aliases
@@ -439,6 +453,13 @@ operator|.
 name|Verbose
 argument_list|,
 name|verbose
+argument_list|)
+expr_stmt|;
+name|admin
+operator|.
+name|setResolutionOutputFile
+argument_list|(
+name|outputFile
 argument_list|)
 expr_stmt|;
 name|admin

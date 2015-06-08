@@ -247,6 +247,13 @@ throws|throws
 name|Exception
 function_decl|;
 name|void
+name|setResolutionOutputFile
+parameter_list|(
+name|String
+name|outputFile
+parameter_list|)
+function_decl|;
+name|void
 name|installFeature
 parameter_list|(
 name|String
