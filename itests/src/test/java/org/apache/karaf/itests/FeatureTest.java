@@ -207,8 +207,6 @@ name|Exception
 block|{
 name|assertFeaturesInstalled
 argument_list|(
-literal|"eventadmin"
-argument_list|,
 literal|"jaas"
 argument_list|,
 literal|"ssh"
