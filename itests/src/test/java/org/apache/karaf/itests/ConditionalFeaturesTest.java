@@ -251,6 +251,24 @@ name|featureService
 operator|.
 name|installFeature
 argument_list|(
+literal|"eventadmin"
+argument_list|,
+name|EnumSet
+operator|.
+name|of
+argument_list|(
+name|FeaturesService
+operator|.
+name|Option
+operator|.
+name|NoAutoRefreshBundles
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|featureService
+operator|.
+name|installFeature
+argument_list|(
 literal|"webconsole"
 argument_list|,
 name|EnumSet
@@ -290,7 +308,7 @@ argument_list|(
 literal|"org.apache.felix.webconsole.plugins.event"
 argument_list|)
 expr_stmt|;
-comment|// remove eventadmin
+comment|// add eventadmin
 name|featureService
 operator|.
 name|uninstallFeature
