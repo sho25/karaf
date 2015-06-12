@@ -455,7 +455,7 @@ specifier|public
 name|KarServiceImpl
 parameter_list|(
 name|String
-name|storage
+name|karafBase
 parameter_list|,
 name|FeaturesService
 name|featuresService
@@ -468,7 +468,7 @@ operator|=
 operator|new
 name|File
 argument_list|(
-name|storage
+name|karafBase
 argument_list|)
 expr_stmt|;
 name|this
@@ -478,7 +478,17 @@ operator|=
 operator|new
 name|File
 argument_list|(
-name|storage
+name|this
+operator|.
+name|base
+argument_list|,
+literal|"data"
+operator|+
+name|File
+operator|.
+name|separator
+operator|+
+literal|"kar"
 argument_list|)
 expr_stmt|;
 name|this
@@ -497,8 +507,6 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|this
-operator|.
 name|storage
 operator|.
 name|isDirectory
@@ -511,8 +519,6 @@ name|IllegalStateException
 argument_list|(
 literal|"KAR storage "
 operator|+
-name|this
-operator|.
 name|storage
 operator|+
 literal|" is not a directory"
