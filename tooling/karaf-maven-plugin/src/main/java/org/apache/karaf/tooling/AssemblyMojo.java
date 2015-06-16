@@ -497,6 +497,18 @@ specifier|protected
 name|boolean
 name|useReferenceUrls
 decl_stmt|;
+comment|/**      * Include project build output directory in the assembly      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"true"
+argument_list|)
+specifier|protected
+name|boolean
+name|includeBuildOutputDirectory
+decl_stmt|;
 annotation|@
 name|Parameter
 specifier|protected
@@ -1382,10 +1394,35 @@ name|installedProfiles
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|// Generate the assembly
 name|builder
 operator|.
 name|generateAssembly
 argument_list|()
+expr_stmt|;
+comment|// Include project classes content
+if|if
+condition|(
+name|includeBuildOutputDirectory
+condition|)
+name|IoUtils
+operator|.
+name|copyDirectory
+argument_list|(
+operator|new
+name|File
+argument_list|(
+name|project
+operator|.
+name|getBuild
+argument_list|()
+operator|.
+name|getOutputDirectory
+argument_list|()
+argument_list|)
+argument_list|,
+name|workDirectory
+argument_list|)
 expr_stmt|;
 block|}
 specifier|private
