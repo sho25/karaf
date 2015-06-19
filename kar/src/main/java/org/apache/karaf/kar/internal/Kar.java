@@ -559,26 +559,16 @@ name|destFile
 argument_list|)
 condition|)
 block|{
-name|String
-name|uri
-init|=
-name|Parser
-operator|.
-name|pathToMaven
-argument_list|(
-name|path
-argument_list|)
-decl_stmt|;
+comment|// String uri = Parser.pathToMaven(path);
+comment|// featureRepos.add(URI.create(uri));
 name|featureRepos
 operator|.
 name|add
 argument_list|(
-name|URI
+name|destFile
 operator|.
-name|create
-argument_list|(
-name|uri
-argument_list|)
+name|toURI
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
