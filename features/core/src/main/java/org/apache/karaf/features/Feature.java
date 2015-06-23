@@ -148,6 +148,10 @@ argument_list|>
 name|getLibraries
 parameter_list|()
 function_decl|;
+name|String
+name|getNamespace
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

@@ -576,6 +576,8 @@ literal|null
 argument_list|,
 literal|null
 argument_list|,
+literal|null
+argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -858,6 +860,8 @@ literal|null
 argument_list|,
 literal|null
 argument_list|,
+literal|null
+argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -1017,6 +1021,8 @@ literal|null
 argument_list|,
 literal|null
 argument_list|,
+literal|null
+argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -1105,6 +1111,8 @@ argument_list|,
 literal|null
 argument_list|,
 name|resolver
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|,

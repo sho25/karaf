@@ -1549,6 +1549,9 @@ parameter_list|,
 name|String
 name|featureResolutionRange
 parameter_list|,
+name|String
+name|serviceRequirements
+parameter_list|,
 specifier|final
 name|Repository
 name|globalRepository
@@ -1583,6 +1586,8 @@ argument_list|,
 name|overrides
 argument_list|,
 name|featureResolutionRange
+argument_list|,
+name|serviceRequirements
 argument_list|)
 expr_stmt|;
 comment|// Populate digraph and resolve
@@ -1624,6 +1629,8 @@ argument_list|,
 name|globalRepository
 argument_list|,
 name|downloader
+argument_list|,
+name|serviceRequirements
 argument_list|)
 decl_stmt|;
 if|if
