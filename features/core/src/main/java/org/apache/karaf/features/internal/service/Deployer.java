@@ -1609,6 +1609,10 @@ name|featureResolutionRange
 decl_stmt|;
 specifier|public
 name|String
+name|serviceRequirements
+decl_stmt|;
+specifier|public
+name|String
 name|bundleUpdateRange
 decl_stmt|;
 specifier|public
@@ -2243,6 +2247,14 @@ name|featureResolutionRange
 expr_stmt|;
 name|newRequest
 operator|.
+name|serviceRequirements
+operator|=
+name|request
+operator|.
+name|serviceRequirements
+expr_stmt|;
+name|newRequest
+operator|.
 name|globalRepository
 operator|=
 name|request
@@ -2341,6 +2353,10 @@ argument_list|,
 name|request
 operator|.
 name|featureResolutionRange
+argument_list|,
+name|request
+operator|.
+name|serviceRequirements
 argument_list|,
 name|request
 operator|.

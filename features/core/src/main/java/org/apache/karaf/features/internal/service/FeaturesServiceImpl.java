@@ -1204,6 +1204,12 @@ specifier|final
 name|String
 name|updateSnaphots
 decl_stmt|;
+comment|/**      * Service requirements enforcement      */
+specifier|private
+specifier|final
+name|String
+name|serviceRequirements
+decl_stmt|;
 specifier|private
 specifier|final
 name|int
@@ -1351,6 +1357,9 @@ parameter_list|,
 name|String
 name|updateSnaphots
 parameter_list|,
+name|String
+name|serviceRequirements
+parameter_list|,
 name|org
 operator|.
 name|osgi
@@ -1462,6 +1471,12 @@ operator|.
 name|updateSnaphots
 operator|=
 name|updateSnaphots
+expr_stmt|;
+name|this
+operator|.
+name|serviceRequirements
+operator|=
+name|serviceRequirements
 expr_stmt|;
 name|this
 operator|.
@@ -6574,6 +6589,12 @@ operator|.
 name|featureResolutionRange
 operator|=
 name|featureResolutionRange
+expr_stmt|;
+name|request
+operator|.
+name|serviceRequirements
+operator|=
+name|serviceRequirements
 expr_stmt|;
 name|request
 operator|.
