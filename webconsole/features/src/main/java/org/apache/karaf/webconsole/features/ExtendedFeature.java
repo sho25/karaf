@@ -618,6 +618,20 @@ name|getLibraries
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|getNamespace
+parameter_list|()
+block|{
+return|return
+name|feature
+operator|.
+name|getNamespace
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
