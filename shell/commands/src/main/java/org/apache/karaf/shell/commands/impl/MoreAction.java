@@ -282,6 +282,11 @@ name|lines
 decl_stmt|;
 annotation|@
 name|Reference
+argument_list|(
+name|optional
+operator|=
+literal|true
+argument_list|)
 name|Terminal
 name|terminal
 decl_stmt|;

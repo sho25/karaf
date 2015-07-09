@@ -545,8 +545,9 @@ name|getDeclaredFields
 argument_list|()
 control|)
 block|{
-if|if
-condition|(
+name|Reference
+name|ref
+init|=
 name|field
 operator|.
 name|getAnnotation
@@ -555,6 +556,10 @@ name|Reference
 operator|.
 name|class
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|ref
 operator|!=
 literal|null
 condition|)
@@ -714,6 +719,12 @@ operator|&&
 name|value
 operator|==
 literal|null
+operator|&&
+operator|!
+name|ref
+operator|.
+name|optional
+argument_list|()
 condition|)
 block|{
 throw|throw

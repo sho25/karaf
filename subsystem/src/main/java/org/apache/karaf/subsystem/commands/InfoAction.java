@@ -443,6 +443,11 @@ name|id
 decl_stmt|;
 annotation|@
 name|Reference
+argument_list|(
+name|optional
+operator|=
+literal|true
+argument_list|)
 name|Terminal
 name|terminal
 decl_stmt|;
@@ -1510,9 +1515,15 @@ parameter_list|()
 block|{
 return|return
 name|terminal
+operator|!=
+literal|null
+condition|?
+name|terminal
 operator|.
 name|getWidth
 argument_list|()
+else|:
+literal|80
 return|;
 block|}
 specifier|protected

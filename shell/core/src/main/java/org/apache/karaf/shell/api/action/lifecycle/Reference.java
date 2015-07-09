@@ -93,7 +93,14 @@ argument_list|)
 specifier|public
 annotation_defn|@interface
 name|Reference
-block|{ }
+block|{
+name|boolean
+name|optional
+parameter_list|()
+default|default
+literal|false
+function_decl|;
+block|}
 end_annotation_defn
 
 end_unit
