@@ -4114,7 +4114,7 @@ operator|.
 name|getSymbolicName
 argument_list|()
 operator|+
-literal|" / "
+literal|"/"
 operator|+
 name|bundle
 operator|.
@@ -4168,7 +4168,7 @@ operator|.
 name|getSymbolicName
 argument_list|()
 operator|+
-literal|" / "
+literal|"/"
 operator|+
 name|bundle
 operator|.
@@ -4588,7 +4588,7 @@ operator|.
 name|getSymbolicName
 argument_list|()
 operator|+
-literal|" / "
+literal|"/"
 operator|+
 name|bundle
 operator|.
@@ -4738,7 +4738,7 @@ operator|.
 name|getSymbolicName
 argument_list|()
 operator|+
-literal|" / "
+literal|"/"
 operator|+
 name|bundle
 operator|.
@@ -5866,7 +5866,7 @@ operator|.
 name|getSymbolicName
 argument_list|()
 operator|+
-literal|" / "
+literal|"/"
 operator|+
 name|bundle
 operator|.
@@ -5953,7 +5953,7 @@ operator|.
 name|getSymbolicName
 argument_list|()
 operator|+
-literal|" / "
+literal|"/"
 operator|+
 name|bundle
 operator|.
@@ -6134,7 +6134,7 @@ operator|.
 name|getSymbolicName
 argument_list|()
 operator|+
-literal|" / "
+literal|"/"
 operator|+
 name|bundle
 operator|.
@@ -7823,7 +7823,7 @@ operator|.
 name|getSymbolicName
 argument_list|()
 operator|+
-literal|" / "
+literal|"/"
 operator|+
 name|bundle
 operator|.
@@ -7885,7 +7885,7 @@ operator|.
 name|getSymbolicName
 argument_list|()
 operator|+
-literal|" / "
+literal|"/"
 operator|+
 name|entry
 operator|.
