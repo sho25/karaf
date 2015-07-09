@@ -1622,6 +1622,8 @@ name|Hashtable
 argument_list|<>
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|JarFile
 name|jar
 init|=
@@ -1633,7 +1635,8 @@ operator|.
 name|toFile
 argument_list|()
 argument_list|)
-decl_stmt|;
+init|)
+block|{
 name|Attributes
 name|attributes
 init|=
@@ -1679,6 +1682,7 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|BundleRevision
 name|revision
