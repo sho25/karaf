@@ -357,6 +357,11 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+name|featuresServiceTracker
+operator|.
+name|open
+argument_list|()
+expr_stmt|;
 specifier|final
 name|DiagnosticDumpMBeanImpl
 name|diagnostic
