@@ -233,6 +233,13 @@ argument_list|,
 literal|"PEM"
 argument_list|)
 argument_list|,
+name|mavenBundle
+argument_list|(
+literal|"org.apache.servicemix.bundles"
+argument_list|,
+literal|"org.apache.servicemix.bundles.bcpg-jdk16"
+argument_list|)
+argument_list|,
 name|vmOption
 argument_list|(
 literal|"-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
