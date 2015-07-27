@@ -986,7 +986,7 @@ block|{
 name|keyPairProvider
 operator|=
 operator|new
-name|PEMGeneratorHostKeyProvider
+name|OpenSSHGeneratorFileKeyProvider
 argument_list|()
 expr_stmt|;
 block|}

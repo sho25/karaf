@@ -198,7 +198,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-literal|"src/test/resources/test.pem"
+literal|"src/test/resources/etc/test.pem"
 argument_list|)
 decl_stmt|;
 return|return
@@ -232,18 +232,8 @@ literal|"hostKeyFormat"
 argument_list|,
 literal|"PEM"
 argument_list|)
-argument_list|,
-name|mavenBundle
-argument_list|(
-literal|"org.apache.servicemix.bundles"
-argument_list|,
-literal|"org.apache.servicemix.bundles.bcpg-jdk16"
-argument_list|)
-argument_list|,
-name|vmOption
-argument_list|(
-literal|"-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
-argument_list|)
+comment|//                ,
+comment|//                vmOption("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005")
 argument_list|)
 return|;
 block|}
