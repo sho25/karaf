@@ -457,6 +457,17 @@ operator|!=
 literal|0
 condition|)
 block|{
+name|System
+operator|.
+name|err
+operator|.
+name|format
+argument_list|(
+literal|"ret %d%n"
+argument_list|,
+name|ret
+argument_list|)
+expr_stmt|;
 throw|throw
 operator|new
 name|Exception
