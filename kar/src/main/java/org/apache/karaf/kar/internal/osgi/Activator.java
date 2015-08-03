@@ -267,6 +267,13 @@ argument_list|(
 literal|"karaf.base"
 argument_list|)
 argument_list|,
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"karaf.data"
+argument_list|)
+argument_list|,
 name|featuresService
 argument_list|)
 decl_stmt|;
