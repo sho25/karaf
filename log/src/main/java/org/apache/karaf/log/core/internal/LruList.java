@@ -250,6 +250,10 @@ name|end
 operator|=
 literal|0
 expr_stmt|;
+name|full
+operator|=
+literal|false
+expr_stmt|;
 name|elements
 operator|=
 operator|new
