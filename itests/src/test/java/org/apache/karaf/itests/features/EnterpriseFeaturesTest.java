@@ -218,7 +218,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|installTransaction110Feature
+name|installTransaction130Feature
 parameter_list|()
 throws|throws
 name|Exception
@@ -227,7 +227,7 @@ name|installAssertAndUninstallFeature
 argument_list|(
 literal|"transaction"
 argument_list|,
-literal|"1.1.1"
+literal|"1.3.0"
 argument_list|)
 expr_stmt|;
 block|}
