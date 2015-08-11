@@ -282,8 +282,6 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
-annotation|@
-name|RunIfNotOnJdk8
 specifier|public
 name|void
 name|installOpenJpa222Feature
