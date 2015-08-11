@@ -1134,7 +1134,21 @@ argument_list|(
 literal|"spring41.version"
 argument_list|)
 argument_list|)
-block|}
+block|,
+name|editConfigurationFilePut
+argument_list|(
+literal|"etc/system.properties"
+argument_list|,
+literal|"spring42.version"
+argument_list|,
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"spring42.version"
+argument_list|)
+argument_list|)
+block|,         }
 return|;
 block|}
 comment|/**      * Executes a shell command and returns output as a String.      * Commands have a default timeout of 10 seconds.      *      * @param command The command to execute      * @param principals The principals (e.g. RolePrincipal objects) to run the command under      * @return      */
