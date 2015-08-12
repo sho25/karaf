@@ -817,7 +817,7 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-comment|// extract the<memberships> element
+comment|// extract the<memberships> element if it exists
 name|int
 name|index
 init|=
@@ -828,6 +828,14 @@ argument_list|(
 literal|"<memberships>"
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|index
+operator|!=
+operator|-
+literal|1
+condition|)
+block|{
 name|response
 operator|=
 name|response
@@ -960,6 +968,7 @@ argument_list|(
 literal|"<roleName>"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 return|return
