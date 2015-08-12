@@ -14,6 +14,8 @@ operator|.
 name|webconsole
 operator|.
 name|internal
+operator|.
+name|servlet
 package|;
 end_package
 
@@ -254,20 +256,6 @@ operator|.
 name|servlet
 operator|.
 name|Base64
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|cm
-operator|.
-name|ConfigurationException
 import|;
 end_import
 

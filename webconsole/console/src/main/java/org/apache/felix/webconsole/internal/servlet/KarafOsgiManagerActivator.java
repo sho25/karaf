@@ -14,6 +14,8 @@ operator|.
 name|webconsole
 operator|.
 name|internal
+operator|.
+name|servlet
 package|;
 end_package
 
