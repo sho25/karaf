@@ -945,10 +945,14 @@ name|Bundle
 argument_list|>
 name|bundles
 init|=
-name|doSelectBundles
+operator|new
+name|BundleSelectorImpl
 argument_list|(
 name|bundleContext
-argument_list|,
+argument_list|)
+operator|.
+name|selectBundles
+argument_list|(
 name|Collections
 operator|.
 name|singletonList
