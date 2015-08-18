@@ -1053,6 +1053,16 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
+name|String
+name|term
+init|=
+name|System
+operator|.
+name|getenv
+argument_list|(
+literal|"TERM"
+argument_list|)
+decl_stmt|;
 specifier|final
 name|Terminal
 name|terminal
@@ -1064,6 +1074,8 @@ name|terminalFactory
 operator|.
 name|getTerminal
 argument_list|()
+argument_list|,
+name|term
 argument_list|)
 decl_stmt|;
 name|Session

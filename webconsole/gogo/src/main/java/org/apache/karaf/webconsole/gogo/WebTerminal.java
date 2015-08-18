@@ -102,6 +102,17 @@ block|}
 annotation|@
 name|Override
 specifier|public
+name|String
+name|getType
+parameter_list|()
+block|{
+return|return
+literal|"ansi"
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
 name|boolean
 name|isAnsiSupported
 parameter_list|()

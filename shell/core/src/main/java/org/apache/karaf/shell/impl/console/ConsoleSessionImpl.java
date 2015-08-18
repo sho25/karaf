@@ -795,6 +795,8 @@ argument_list|(
 operator|new
 name|UnsupportedTerminal
 argument_list|()
+argument_list|,
+literal|"dumb"
 argument_list|)
 else|:
 name|term
@@ -802,6 +804,15 @@ expr_stmt|;
 comment|// Console reader
 try|try
 block|{
+name|System
+operator|.
+name|setProperty
+argument_list|(
+literal|"jline.sigcont"
+argument_list|,
+literal|"true"
+argument_list|)
+expr_stmt|;
 name|reader
 operator|=
 operator|new
@@ -1235,6 +1246,18 @@ argument_list|,
 name|ShellUtil
 operator|.
 name|getCurrentUserName
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|session
+operator|.
+name|put
+argument_list|(
+literal|"TERM"
+argument_list|,
+name|terminal
+operator|.
+name|getType
 argument_list|()
 argument_list|)
 expr_stmt|;

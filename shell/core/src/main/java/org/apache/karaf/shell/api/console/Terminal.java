@@ -38,6 +38,11 @@ specifier|public
 interface|interface
 name|Terminal
 block|{
+comment|/**      * The infocmp type of this terminal      */
+name|String
+name|getType
+parameter_list|()
+function_decl|;
 comment|/**      * Width of the terminal.      */
 name|int
 name|getWidth

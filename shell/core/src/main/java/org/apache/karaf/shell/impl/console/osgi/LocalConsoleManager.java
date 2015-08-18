@@ -421,6 +421,13 @@ operator|new
 name|JLineTerminal
 argument_list|(
 name|terminal
+argument_list|,
+name|System
+operator|.
+name|getenv
+argument_list|(
+literal|"TERM"
+argument_list|)
 argument_list|)
 argument_list|,
 name|encoding
