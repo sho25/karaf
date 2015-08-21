@@ -1139,6 +1139,9 @@ name|map
 index|[
 literal|0
 index|]
+operator|.
+name|trim
+argument_list|()
 decl_stmt|;
 name|String
 index|[]
@@ -1208,6 +1211,9 @@ operator|.
 name|add
 argument_list|(
 name|karafRole
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
