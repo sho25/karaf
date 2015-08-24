@@ -375,6 +375,15 @@ operator|=
 name|enabled
 expr_stmt|;
 block|}
+specifier|public
+name|Environment
+name|getEnvironment
+parameter_list|()
+block|{
+return|return
+name|environment
+return|;
+block|}
 block|}
 end_class
 
