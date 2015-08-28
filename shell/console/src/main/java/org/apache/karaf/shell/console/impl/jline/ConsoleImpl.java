@@ -595,6 +595,10 @@ specifier|final
 name|BundleContext
 name|bundleContext
 decl_stmt|;
+specifier|private
+name|CommandsCompleter
+name|completer
+decl_stmt|;
 specifier|public
 name|ConsoleImpl
 parameter_list|(
@@ -929,12 +933,11 @@ name|getHistory
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|Completer
 name|completer
-init|=
+operator|=
 name|createCompleter
 argument_list|()
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|completer
@@ -1100,6 +1103,11 @@ expr_stmt|;
 name|pipe
 operator|.
 name|interrupt
+argument_list|()
+expr_stmt|;
+name|completer
+operator|.
+name|dispose
 argument_list|()
 expr_stmt|;
 if|if
@@ -2107,7 +2115,7 @@ block|}
 block|}
 block|}
 specifier|protected
-name|Completer
+name|CommandsCompleter
 name|createCompleter
 parameter_list|()
 block|{
