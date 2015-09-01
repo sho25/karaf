@@ -803,6 +803,16 @@ operator|.
 name|newInstance
 argument_list|()
 decl_stmt|;
+name|builder
+operator|.
+name|offline
+argument_list|(
+name|mavenSession
+operator|.
+name|isOffline
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// Set up blacklisted items
 name|builder
 operator|.
