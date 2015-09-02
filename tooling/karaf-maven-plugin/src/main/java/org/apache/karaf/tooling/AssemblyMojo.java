@@ -557,6 +557,18 @@ name|KarafVersion
 operator|.
 name|v4x
 decl_stmt|;
+comment|/**      * Specify the version of Java SE to be assumed for osgi.ee.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"1.7"
+argument_list|)
+specifier|protected
+name|String
+name|javase
+decl_stmt|;
 annotation|@
 name|Override
 specifier|public
@@ -811,6 +823,13 @@ name|mavenSession
 operator|.
 name|isOffline
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|javase
+argument_list|(
+name|javase
 argument_list|)
 expr_stmt|;
 comment|// Set up blacklisted items
