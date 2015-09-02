@@ -2715,6 +2715,9 @@ argument_list|(
 literal|"^D"
 argument_list|)
 expr_stmt|;
+name|interrupt
+argument_list|()
+expr_stmt|;
 return|return;
 block|}
 elseif|else
