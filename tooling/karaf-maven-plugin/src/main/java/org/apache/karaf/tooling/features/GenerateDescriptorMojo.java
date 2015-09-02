@@ -739,7 +739,7 @@ name|GenerateDescriptorMojo
 extends|extends
 name|MojoSupport
 block|{
-comment|/**      * An (optional) input feature file to extend.  This is highly recommended as it is the only way to add<code>&lt;feature/&gt;</code>      * elements to the individual features that are generated.  Note that this file is filtered using standard Maven      * resource interpolation, allowing attributes of the input file to be set with information such as ${project.version}      * from the current build.      *<p/>      * When dependencies are processed, if they are duplicated in this file, the dependency here provides the baseline      * information and is supplemented by additional information from the dependency.      */
+comment|/**      * An (optional) input feature file to extend. The plugin reads this file, and uses it as a template      * to create the output.      * This is highly recommended as it is the only way to add<code>&lt;feature/&gt;</code>      * elements to the individual features that are generated.  Note that this file is filtered using standard Maven      * resource interpolation, allowing attributes of the input file to be set with information such as ${project.version}      * from the current build.      *<p/>      * When dependencies are processed, if they are duplicated in this file, the dependency here provides the baseline      * information and is supplemented by additional information from the dependency.      */
 annotation|@
 name|Parameter
 argument_list|(
@@ -763,7 +763,7 @@ specifier|private
 name|File
 name|filteredInputFile
 decl_stmt|;
-comment|/**      * (wrapper) The file to generate.  This file is attached as a project output artifact.      */
+comment|/**      * The file to generate.  This file is attached as a project output artifact with the classifier specified by      *<code>attachmentArtifactClassifier</code>.      */
 annotation|@
 name|Parameter
 argument_list|(
@@ -775,7 +775,7 @@ specifier|private
 name|File
 name|outputFile
 decl_stmt|;
-comment|/**      * (wrapper) Exclude some artifacts from the generated feature.      */
+comment|/**      * Exclude some artifacts from the generated feature.      * See addBundlesToPrimaryFeature for more details.      *      */
 annotation|@
 name|Parameter
 specifier|private
@@ -804,7 +804,7 @@ specifier|private
 name|String
 name|resolver
 decl_stmt|;
-comment|/**      * (wrapper) The artifact type for attaching the generated file to the project      */
+comment|/**      * The artifact type for attaching the generated file to the project      */
 annotation|@
 name|Parameter
 argument_list|(
@@ -832,7 +832,7 @@ name|attachmentArtifactClassifier
 init|=
 literal|"features"
 decl_stmt|;
-comment|/**      * Specifies whether features dependencies of this project will be included inline of the the      * final output (<code>true</code>) or simply referenced as output artifact dependencies (<code>false</code>).      * If<code>true</code>, feature dependencies xml descriptors are read and their contents added to the features descriptor under assembly.      * If<code>false</code>, feature dependencies are added to the assembled feature as dependencies.      * Setting this value to<code>true</code> is especially helpful in multiproject builds where subprojects build their own features      * using<code>aggregateFeatures = false</code>, then combined with<code>aggregateFeatures = true</code> in an      * aggregation project with explicit dependencies to the child projects.      */
+comment|/**      * Specifies whether features dependencies of this project will be included inline in the      * final output (<code>true</code>), or simply referenced as output artifact dependencies (<code>false</code>).      * If<code>true</code>, feature dependencies' xml descriptors are read and their contents added to the features descriptor under assembly.      * If<code>false</code>, feature dependencies are added to the assembled feature as dependencies.      * Setting this value to<code>true</code> is especially helpful in multiproject builds where subprojects build their own features      * using<code>aggregateFeatures = false</code>, then combined with<code>aggregateFeatures = true</code> in an      * aggregation project with explicit dependencies to the child projects.      */
 annotation|@
 name|Parameter
 argument_list|(
@@ -872,7 +872,7 @@ specifier|private
 name|boolean
 name|includeTransitiveDependency
 decl_stmt|;
-comment|/**      * The standard behavior is to add dependencies as<code>&lt;bundle&gt;</code> elements to a<code>&lt;feature&gt;</code>      * with the same name as the artifactId of the project.  This flag disables that behavior.      */
+comment|/**      * The standard behavior is to add dependencies as<code>&lt;bundle&gt;</code> elements to a<code>&lt;feature&gt;</code>      * with the same name as the artifactId of the project.  This flag disables that behavior.      * If this parameter is<code>true</code>, then two other parameters refine the list of bundles added to the primary feature:      *<code>excludedArtifactIds</code> and<code>ignoreScopeProvided</code>. Each of these specifies dependent artifacts      * that should<strong>not</strong> be added to the primary feature.      *<p>      *     Note that you may tune the<code>bundle</code> elements by including them in the<code>inputFile</code>.      *     If the<code>inputFile</code> has a<code>feature</code> element for the primary feature, the plugin will      *     respect it, so that you can, for example, set the<code>startLevel</code> or<code>start</code> attribute.      *</p>      *      */
 annotation|@
 name|Parameter
 argument_list|(
@@ -884,7 +884,7 @@ specifier|private
 name|boolean
 name|addBundlesToPrimaryFeature
 decl_stmt|;
-comment|/**      * The standard behavior is to add any dependencies other than those in the<code>runtime</code> scope to the feature bundle.      * Setting this flag to "true" disables adding any dependencies (transient or otherwise) that are in      *<code>&lt;scope&gt;provided&lt;/scope&gt;</code>.      */
+comment|/**      * The standard behavior is to add any dependencies other than those in the<code>runtime</code> scope to the feature bundle.      * Setting this flag to "true" disables adding any dependencies (transient or otherwise) that are in      *<code>&lt;scope&gt;provided&lt;/scope&gt;</code>. See<code>addBundlesToPrimaryFeature</code> for more details.      */
 annotation|@
 name|Parameter
 argument_list|(
@@ -896,7 +896,7 @@ specifier|private
 name|boolean
 name|ignoreScopeProvided
 decl_stmt|;
-comment|/**      * Flag indicating whether the main project artifact should be included (<code>true</code>) or not (<code>false</code>).      *<p/>      * Assumes the main project artifact is a bundle and the feature will be attached alongside using<code>attachmentArtifactClassifier</code>.      */
+comment|/**      * Flag indicating whether the main project artifact should be included (<code>true</code>) or not (<code>false</code>).      * This parameter is useful when you add an execution of this plugin to a project with some packaging that is<strong>not</strong>      *<code>feature</code>. If you don't set this, then you will get a feature that contains the dependencies but      * not the primary artifact itself.      *<p/>      * Assumes the main project artifact is a bundle and the feature will be attached alongside using<code>attachmentArtifactClassifier</code>.      */
 annotation|@
 name|Parameter
 argument_list|(

@@ -572,7 +572,7 @@ specifier|protected
 name|ArtifactFactory
 name|factory
 decl_stmt|;
-comment|/**      * The artifact type of a feature      */
+comment|/**      * The artifact type of a feature.      */
 annotation|@
 name|Parameter
 argument_list|(
