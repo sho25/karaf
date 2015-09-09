@@ -242,7 +242,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Installs kar dependencies into a server-under-construction in target/assembly  */
+comment|/**  * Creates a customized Karaf distribution by installing features and setting up  * configuration files. The plugin gets features from feature.xml files and KAR  * archives declared as dependencies or as files configured with the  * featureRespositories parameter. It picks up other files, such as config files,  * from ${project.build.directory}/classes. Thus, a file in src/main/resources/etc  * will be copied by the resource plugin to ${project.build.directory}/classes/etc,  * and then added to the assembly by this goal.  *<br>  */
 end_comment
 
 begin_class
