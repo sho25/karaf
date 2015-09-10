@@ -3350,6 +3350,13 @@ operator|.
 name|flush
 argument_list|()
 expr_stmt|;
+name|ConsoleSessionImpl
+operator|.
+name|this
+operator|.
+name|interrupt
+argument_list|()
+expr_stmt|;
 return|return;
 block|}
 elseif|else
