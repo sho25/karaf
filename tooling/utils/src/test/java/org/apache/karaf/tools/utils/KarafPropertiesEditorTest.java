@@ -282,6 +282,14 @@ argument_list|,
 literal|"test-etc"
 argument_list|)
 decl_stmt|;
+name|outputEtc
+operator|.
+name|toFile
+argument_list|()
+operator|.
+name|deleteOnExit
+argument_list|()
+expr_stmt|;
 name|KarafPropertiesEditor
 name|editor
 init|=
@@ -373,7 +381,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"root,toor"
+literal|"prepended,root,toor"
 argument_list|,
 name|properties
 operator|.
