@@ -447,6 +447,14 @@ index|[
 literal|1
 index|]
 decl_stmt|;
+name|File
+name|systemdFile
+init|=
+name|wrapperPaths
+index|[
+literal|2
+index|]
+decl_stmt|;
 name|System
 operator|.
 name|out
@@ -928,7 +936,7 @@ name|println
 argument_list|(
 name|INTENSITY_BOLD
 operator|+
-literal|"RedHat/Fedora/CentOS Linux system detected:"
+literal|"RedHat/Fedora/CentOS Linux system detected (SystemV):"
 operator|+
 name|INTENSITY_NORMAL
 argument_list|)
@@ -1185,7 +1193,7 @@ name|println
 argument_list|(
 name|INTENSITY_BOLD
 operator|+
-literal|"Ubuntu/Debian Linux system detected:"
+literal|"Ubuntu/Debian Linux system detected (SystemV):"
 operator|+
 name|INTENSITY_NORMAL
 argument_list|)
@@ -1403,7 +1411,7 @@ name|println
 argument_list|(
 name|INTENSITY_BOLD
 operator|+
-literal|"On Redhat/Fedora/CentOS Systems:"
+literal|"On Redhat/Fedora/CentOS Systems (SystemV):"
 operator|+
 name|INTENSITY_NORMAL
 argument_list|)
@@ -1650,7 +1658,7 @@ name|println
 argument_list|(
 name|INTENSITY_BOLD
 operator|+
-literal|"On Ubuntu/Debian Systems:"
+literal|"On Ubuntu/Debian Systems (SystemV):"
 operator|+
 name|INTENSITY_NORMAL
 argument_list|)
@@ -1846,6 +1854,204 @@ name|serviceFile
 operator|.
 name|getName
 argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|systemdFile
+operator|!=
+literal|null
+condition|)
+block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+name|INTENSITY_BOLD
+operator|+
+literal|"For SystemD compliant Linux: "
+operator|+
+name|INTENSITY_NORMAL
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"  To install the service (and enable at system boot):"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"   $ systemctl enable "
+operator|+
+name|systemdFile
+operator|.
+name|getPath
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"  To start the service:"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"   $ systemctl start "
+operator|+
+name|name
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"  To stop the service:"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"   $ systemctl stop "
+operator|+
+name|name
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"  To check the current service status:"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"   $ systemctl status "
+operator|+
+name|name
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"  To see service activity journal:"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"   $ journalctl -u "
+operator|+
+name|name
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"  To uninstall the service (and disable at system boot):"
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"   $ systemctl disable "
+operator|+
+name|name
 argument_list|)
 expr_stmt|;
 block|}
