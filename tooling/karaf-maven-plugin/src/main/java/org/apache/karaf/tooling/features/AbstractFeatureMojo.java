@@ -1333,7 +1333,7 @@ argument_list|()
 operator|.
 name|info
 argument_list|(
-literal|"Base repo: "
+literal|"Using local repository at: "
 operator|+
 name|localRepo
 operator|.

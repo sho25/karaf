@@ -379,6 +379,14 @@ argument_list|,
 name|skipNonMavenProtocols
 argument_list|)
 decl_stmt|;
+comment|// Avoid getting NPE on artifact.getFile in some cases
+name|resolveArtifact
+argument_list|(
+name|artifact
+argument_list|,
+name|remoteRepos
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|artifact
@@ -432,6 +440,14 @@ argument_list|,
 name|skipNonMavenProtocols
 argument_list|)
 decl_stmt|;
+comment|// Avoid getting NPE on artifact.getFile in some cases
+name|resolveArtifact
+argument_list|(
+name|artifact
+argument_list|,
+name|remoteRepos
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|artifact
@@ -486,6 +502,24 @@ name|artifact
 argument_list|)
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|artifact
+operator|.
+name|getFile
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Artifact is not present in local repo."
+argument_list|)
+throw|;
+block|}
 name|copy
 argument_list|(
 name|artifact
