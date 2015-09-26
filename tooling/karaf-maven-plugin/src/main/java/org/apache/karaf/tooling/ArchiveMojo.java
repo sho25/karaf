@@ -405,6 +405,15 @@ specifier|private
 name|String
 name|pathPrefix
 decl_stmt|;
+comment|/**      * Use a path prefix of files in the created archive      */
+annotation|@
+name|Parameter
+specifier|private
+name|boolean
+name|usePathPrefix
+init|=
+literal|true
+decl_stmt|;
 comment|/**      * The target file to set as the project's artifact.      */
 annotation|@
 name|Parameter
@@ -693,11 +702,20 @@ expr_stmt|;
 name|String
 name|prefix
 init|=
+literal|""
+decl_stmt|;
+if|if
+condition|(
+name|usePathPrefix
+condition|)
+block|{
+name|prefix
+operator|=
 name|pathPrefix
 operator|.
 name|trim
 argument_list|()
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|prefix
@@ -720,6 +738,7 @@ name|prefix
 operator|+=
 literal|"/"
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
