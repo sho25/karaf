@@ -827,6 +827,16 @@ argument_list|)
 expr_stmt|;
 name|builder
 operator|.
+name|localRepository
+argument_list|(
+name|localRepo
+operator|.
+name|getBasedir
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
 name|javase
 argument_list|(
 name|javase
