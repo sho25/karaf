@@ -1649,6 +1649,13 @@ name|arch
 operator|.
 name|equalsIgnoreCase
 argument_list|(
+literal|"amd64"
+argument_list|)
+operator|||
+name|arch
+operator|.
+name|equalsIgnoreCase
+argument_list|(
 literal|"x86_64"
 argument_list|)
 condition|)
