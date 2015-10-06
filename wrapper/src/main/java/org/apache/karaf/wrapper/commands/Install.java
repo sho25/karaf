@@ -1881,7 +1881,7 @@ name|println
 argument_list|(
 name|INTENSITY_BOLD
 operator|+
-literal|"For SystemD compliant Linux: "
+literal|"For systemd compliant Linux: "
 operator|+
 name|INTENSITY_NORMAL
 argument_list|)
