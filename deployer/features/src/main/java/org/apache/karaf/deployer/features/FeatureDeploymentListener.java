@@ -804,6 +804,8 @@ name|File
 name|getPropertiesFile
 parameter_list|()
 block|{
+try|try
+block|{
 return|return
 name|bundleContext
 operator|.
@@ -812,6 +814,26 @@ argument_list|(
 literal|"FeatureDeploymentListener.cfg"
 argument_list|)
 return|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|logger
+operator|.
+name|debug
+argument_list|(
+literal|"Unable to get FeatureDeploymentListener.cfg"
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 block|}
 specifier|public
 name|boolean
