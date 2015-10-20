@@ -1577,6 +1577,17 @@ block|{
 comment|// Ignore
 block|}
 block|}
+if|if
+condition|(
+name|session
+operator|!=
+literal|null
+condition|)
+name|session
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|void
