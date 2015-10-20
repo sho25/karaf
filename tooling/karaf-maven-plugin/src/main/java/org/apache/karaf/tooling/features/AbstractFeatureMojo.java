@@ -689,6 +689,15 @@ parameter_list|)
 block|{
 try|try
 block|{
+if|if
+condition|(
+name|artifact
+operator|==
+literal|null
+condition|)
+block|{
+return|return;
+block|}
 name|List
 argument_list|<
 name|ArtifactRepository
