@@ -257,7 +257,7 @@ name|defaultPhase
 operator|=
 name|LifecyclePhase
 operator|.
-name|PROCESS_RESOURCES
+name|PACKAGE
 argument_list|,
 name|requiresDependencyResolution
 operator|=
