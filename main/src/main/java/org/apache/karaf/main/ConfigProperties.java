@@ -702,7 +702,10 @@ name|PROP_KARAF_HOME
 argument_list|,
 name|karafHome
 operator|.
-name|getPath
+name|toURI
+argument_list|()
+operator|.
+name|getRawPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -714,7 +717,10 @@ name|PROP_KARAF_BASE
 argument_list|,
 name|karafBase
 operator|.
-name|getPath
+name|toURI
+argument_list|()
+operator|.
+name|getRawPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -726,7 +732,10 @@ name|PROP_KARAF_DATA
 argument_list|,
 name|karafData
 operator|.
-name|getPath
+name|toURI
+argument_list|()
+operator|.
+name|getRawPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -738,7 +747,10 @@ name|PROP_KARAF_INSTANCES
 argument_list|,
 name|karafInstances
 operator|.
-name|getPath
+name|toURI
+argument_list|()
+operator|.
+name|getRawPath
 argument_list|()
 argument_list|)
 expr_stmt|;
