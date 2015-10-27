@@ -65,18 +65,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|osgi
-operator|.
-name|framework
-operator|.
-name|ServiceRegistration
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|springframework
 operator|.
 name|osgi
@@ -96,10 +84,6 @@ name|Activator
 implements|implements
 name|BundleActivator
 block|{
-specifier|private
-name|ServiceRegistration
-name|registration
-decl_stmt|;
 specifier|public
 name|void
 name|start
@@ -138,8 +122,6 @@ name|getName
 argument_list|()
 block|}
 decl_stmt|;
-name|registration
-operator|=
 name|bundleContext
 operator|.
 name|registerService
@@ -160,11 +142,7 @@ name|BundleContext
 name|context
 parameter_list|)
 block|{
-name|registration
-operator|.
-name|unregister
-argument_list|()
-expr_stmt|;
+comment|// unregister happens automatically
 block|}
 block|}
 end_class
