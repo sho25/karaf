@@ -271,6 +271,18 @@ name|AssemblyMojo
 extends|extends
 name|MojoSupport
 block|{
+comment|/**      * Base directory used to overwrite resources in generated assembly after the build (resource directory).      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.basedir}/src/main/resources/assembly"
+argument_list|)
+specifier|protected
+name|File
+name|sourceDirectory
+decl_stmt|;
 comment|/**      * Base directory used to copy the resources during the build (working directory).      */
 annotation|@
 name|Parameter
@@ -1629,6 +1641,23 @@ operator|.
 name|getOutputDirectory
 argument_list|()
 argument_list|)
+argument_list|,
+name|workDirectory
+argument_list|)
+expr_stmt|;
+comment|// Overwrite assembly dir contents
+if|if
+condition|(
+name|sourceDirectory
+operator|.
+name|exists
+argument_list|()
+condition|)
+name|IoUtils
+operator|.
+name|copyDirectory
+argument_list|(
+name|sourceDirectory
 argument_list|,
 name|workDirectory
 argument_list|)
