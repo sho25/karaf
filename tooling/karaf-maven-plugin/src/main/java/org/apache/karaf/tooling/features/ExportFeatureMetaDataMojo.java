@@ -951,6 +951,16 @@ operator|.
 name|getMainAttributes
 argument_list|()
 expr_stmt|;
+block|}
+else|else
+block|{
+name|attributes
+operator|=
+operator|new
+name|Attributes
+argument_list|()
+expr_stmt|;
+block|}
 name|manifests
 operator|.
 name|put
@@ -963,7 +973,6 @@ argument_list|,
 name|attributes
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 catch|catch
 parameter_list|(
