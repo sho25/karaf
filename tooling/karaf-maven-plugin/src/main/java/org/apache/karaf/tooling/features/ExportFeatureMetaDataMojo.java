@@ -810,7 +810,7 @@ control|)
 block|{
 name|merged
 operator|.
-name|getBundles
+name|getBundle
 argument_list|()
 operator|.
 name|add
