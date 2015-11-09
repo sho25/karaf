@@ -934,6 +934,18 @@ specifier|private
 name|boolean
 name|includeProjectArtifact
 decl_stmt|;
+comment|/**      * The name of the primary feature. This is the feature that will be created or modified to include the      * main project artifact and/or the bundles.      * @see #addBundlesToPrimaryFeature      * @see #includeProjectArtifact      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.artifactId}"
+argument_list|)
+specifier|private
+name|String
+name|primaryFeatureName
+decl_stmt|;
 comment|// *************************************************
 comment|// READ-ONLY MAVEN PLUGIN PARAMETERS
 comment|// *************************************************
@@ -1281,10 +1293,7 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-name|project
-operator|.
-name|getArtifactId
-argument_list|()
+name|primaryFeatureName
 argument_list|)
 condition|)
 block|{
@@ -1312,10 +1321,7 @@ name|feature
 operator|.
 name|setName
 argument_list|(
-name|project
-operator|.
-name|getArtifactId
-argument_list|()
+name|primaryFeatureName
 argument_list|)
 expr_stmt|;
 block|}
@@ -1971,8 +1977,6 @@ name|IOException
 block|{
 name|InputStream
 name|is
-init|=
-literal|null
 decl_stmt|;
 try|try
 block|{
@@ -2069,20 +2073,12 @@ return|;
 block|}
 finally|finally
 block|{
-if|if
-condition|(
-name|is
-operator|!=
-literal|null
-condition|)
-block|{
 comment|// just in case when we did not open bundle
 name|is
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 block|}
 specifier|private
