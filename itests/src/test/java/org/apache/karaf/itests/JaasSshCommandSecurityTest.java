@@ -16,12 +16,26 @@ package|;
 end_package
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
+operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
 operator|.
 name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -117,8 +131,6 @@ operator|.
 name|OK
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 literal|"The viewer should not have the credentials to add the new user"
@@ -166,8 +178,6 @@ operator|.
 name|OK
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 literal|"The admin user should have the rights to add the new user"
