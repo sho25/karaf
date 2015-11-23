@@ -3711,7 +3711,7 @@ argument_list|>
 name|strings
 init|=
 operator|new
-name|TreeSet
+name|LinkedHashSet
 argument_list|<>
 argument_list|()
 decl_stmt|;
