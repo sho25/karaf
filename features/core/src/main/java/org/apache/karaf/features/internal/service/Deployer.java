@@ -6092,8 +6092,6 @@ argument_list|,
 name|UNINSTALLED
 operator||
 name|ACTIVE
-operator||
-name|STARTING
 argument_list|)
 expr_stmt|;
 if|if
