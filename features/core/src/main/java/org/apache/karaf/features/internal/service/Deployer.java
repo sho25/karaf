@@ -5506,7 +5506,7 @@ name|crc
 argument_list|)
 expr_stmt|;
 block|}
-name|int
+name|Integer
 name|startLevel
 init|=
 name|startLevels
@@ -5518,6 +5518,10 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|startLevel
+operator|!=
+literal|null
+operator|&&
 name|startLevel
 operator|!=
 name|dstate
