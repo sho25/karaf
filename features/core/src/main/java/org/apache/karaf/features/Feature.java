@@ -152,6 +152,17 @@ name|String
 name|getNamespace
 parameter_list|()
 function_decl|;
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|getResourceRepositories
+parameter_list|()
+function_decl|;
+name|String
+name|getRepositoryUrl
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

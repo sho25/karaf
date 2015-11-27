@@ -395,24 +395,6 @@ name|internal
 operator|.
 name|resolver
 operator|.
-name|ResourceUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|features
-operator|.
-name|internal
-operator|.
-name|resolver
-operator|.
 name|SimpleFilter
 import|;
 end_import
@@ -1577,6 +1559,13 @@ argument_list|()
 return|;
 block|}
 comment|// Download bundles
+name|RepositoryManager
+name|repos
+init|=
+operator|new
+name|RepositoryManager
+argument_list|()
+decl_stmt|;
 name|root
 operator|.
 name|downloadBundles
@@ -1588,6 +1577,8 @@ argument_list|,
 name|featureResolutionRange
 argument_list|,
 name|serviceRequirements
+argument_list|,
+name|repos
 argument_list|)
 expr_stmt|;
 comment|// Populate digraph and resolve

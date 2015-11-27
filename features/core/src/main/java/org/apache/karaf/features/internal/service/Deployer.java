@@ -9719,17 +9719,17 @@ operator|==
 literal|null
 condition|)
 block|{
-throw|throw
+return|return
 operator|new
-name|IllegalStateException
+name|URL
 argument_list|(
-literal|"Resource "
-operator|+
 name|uri
-operator|+
-literal|" has no StreamProvider"
 argument_list|)
-throw|;
+operator|.
+name|openStream
+argument_list|()
+return|;
+comment|//            throw new IllegalStateException("Resource " + uri + " has no StreamProvider");
 block|}
 return|return
 name|provider
