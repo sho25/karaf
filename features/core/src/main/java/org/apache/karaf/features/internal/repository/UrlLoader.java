@@ -172,6 +172,15 @@ operator|=
 name|expiration
 expr_stmt|;
 block|}
+specifier|public
+name|String
+name|getUrl
+parameter_list|()
+block|{
+return|return
+name|url
+return|;
+block|}
 specifier|protected
 name|boolean
 name|checkAndLoadCache
