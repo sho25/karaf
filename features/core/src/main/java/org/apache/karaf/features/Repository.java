@@ -61,6 +61,13 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+name|URI
+index|[]
+name|getResourceRepositories
+parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
 name|Feature
 index|[]
 name|getFeatures

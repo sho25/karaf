@@ -615,7 +615,9 @@ block|}
 name|features
 operator|.
 name|postUnmarshall
-argument_list|()
+argument_list|(
+name|uri
+argument_list|)
 expr_stmt|;
 return|return
 name|features
@@ -907,6 +909,16 @@ case|:
 name|schemaLocation
 operator|=
 literal|"/org/apache/karaf/features/karaf-features-1.3.0.xsd"
+expr_stmt|;
+break|break;
+case|case
+name|FeaturesNamespaces
+operator|.
+name|URI_1_4_0
+case|:
+name|schemaLocation
+operator|=
+literal|"/org/apache/karaf/features/karaf-features-1.4.0.xsd"
 expr_stmt|;
 break|break;
 default|default:
