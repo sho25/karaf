@@ -1381,13 +1381,13 @@ block|}
 elseif|else
 if|if
 condition|(
-name|type
-operator|.
-name|isAssignableFrom
-argument_list|(
 name|Enum
 operator|.
 name|class
+operator|.
+name|isAssignableFrom
+argument_list|(
+name|type
 argument_list|)
 condition|)
 block|{
