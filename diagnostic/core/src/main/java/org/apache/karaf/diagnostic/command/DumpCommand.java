@@ -271,6 +271,38 @@ argument_list|)
 name|boolean
 name|directory
 decl_stmt|;
+annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
+literal|"--no-thread-dump"
+argument_list|,
+name|description
+operator|=
+literal|"Include or not the thread dump in ZIP archive"
+argument_list|)
+name|boolean
+name|noThreadDump
+init|=
+literal|false
+decl_stmt|;
+annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
+literal|"--no-heap-dump"
+argument_list|,
+name|description
+operator|=
+literal|"Include or not the heap dump in ZIP archive"
+argument_list|)
+name|boolean
+name|noHeapDump
+init|=
+literal|false
+decl_stmt|;
 comment|/**      * Name of created directory or archive.      */
 annotation|@
 name|Argument
@@ -392,6 +424,10 @@ argument_list|(
 name|bundleContext
 argument_list|,
 name|destination
+argument_list|,
+name|noThreadDump
+argument_list|,
+name|noHeapDump
 argument_list|)
 expr_stmt|;
 name|System

@@ -55,6 +55,12 @@ name|directory
 parameter_list|,
 name|String
 name|name
+parameter_list|,
+name|boolean
+name|noThreadDump
+parameter_list|,
+name|boolean
+name|noHeapDump
 parameter_list|)
 throws|throws
 name|MBeanException

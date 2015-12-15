@@ -166,6 +166,66 @@ annotation|@
 name|Test
 specifier|public
 name|void
+name|dumpCreateCommandNoHeapDump
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|assertContains
+argument_list|(
+literal|"Created dump zip"
+argument_list|,
+name|executeCommand
+argument_list|(
+literal|"dev:dump-create --no-heap-dump"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|dumpCreateCommandNoThreadDump
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|assertContains
+argument_list|(
+literal|"Created dump zip"
+argument_list|,
+name|executeCommand
+argument_list|(
+literal|"dev:dump-create --no-thread-dump"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|dumpCreateCommandNoHeapAndThreadDump
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|assertContains
+argument_list|(
+literal|"Created dump zip"
+argument_list|,
+name|executeCommand
+argument_list|(
+literal|"dev:dump-create --no-heap-dump --no-thread-dump"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+annotation|@
+name|Test
+specifier|public
+name|void
 name|createDumpViaMBean
 parameter_list|()
 throws|throws

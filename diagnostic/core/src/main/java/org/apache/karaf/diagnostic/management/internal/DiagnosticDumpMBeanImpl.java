@@ -221,6 +221,10 @@ argument_list|(
 literal|false
 argument_list|,
 name|name
+argument_list|,
+literal|false
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -234,6 +238,12 @@ name|directory
 parameter_list|,
 name|String
 name|name
+parameter_list|,
+name|boolean
+name|noThreadDump
+parameter_list|,
+name|boolean
+name|noHeapDump
 parameter_list|)
 block|{
 if|if
@@ -322,6 +332,10 @@ argument_list|(
 name|bundleContext
 argument_list|,
 name|destination
+argument_list|,
+name|noThreadDump
+argument_list|,
+name|noHeapDump
 argument_list|)
 expr_stmt|;
 name|LOGGER
