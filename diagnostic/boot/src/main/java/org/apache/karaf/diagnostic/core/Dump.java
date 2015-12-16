@@ -263,6 +263,12 @@ name|bundleContext
 parameter_list|,
 name|DumpDestination
 name|destination
+parameter_list|,
+name|boolean
+name|noThreadDump
+parameter_list|,
+name|boolean
+name|noHeapDump
 parameter_list|)
 block|{
 name|List
@@ -298,6 +304,11 @@ name|MemoryDumpProvider
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|noThreadDump
+condition|)
 name|providers
 operator|.
 name|add
@@ -307,6 +318,11 @@ name|ThreadDumpProvider
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|noHeapDump
+condition|)
 name|providers
 operator|.
 name|add
