@@ -684,6 +684,11 @@ block|}
 name|out
 operator|.
 name|println
+argument_list|()
+expr_stmt|;
+name|out
+operator|.
+name|println
 argument_list|(
 literal|"| "
 operator|+
@@ -823,6 +828,11 @@ operator|+
 literal|")"
 expr_stmt|;
 block|}
+name|out
+operator|.
+name|println
+argument_list|()
+expr_stmt|;
 name|out
 operator|.
 name|println
