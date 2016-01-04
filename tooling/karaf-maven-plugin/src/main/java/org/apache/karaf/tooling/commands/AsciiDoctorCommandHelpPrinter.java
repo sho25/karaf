@@ -450,6 +450,11 @@ expr_stmt|;
 name|out
 operator|.
 name|println
+argument_list|()
+expr_stmt|;
+name|out
+operator|.
+name|println
 argument_list|(
 name|command
 operator|.
@@ -570,6 +575,11 @@ expr_stmt|;
 name|out
 operator|.
 name|println
+argument_list|()
+expr_stmt|;
+name|out
+operator|.
+name|println
 argument_list|(
 name|syntax
 operator|.
@@ -598,6 +608,11 @@ name|println
 argument_list|(
 literal|"== Arguments"
 argument_list|)
+expr_stmt|;
+name|out
+operator|.
+name|println
+argument_list|()
 expr_stmt|;
 name|out
 operator|.
@@ -715,6 +730,11 @@ argument_list|(
 literal|"|==="
 argument_list|)
 expr_stmt|;
+name|out
+operator|.
+name|println
+argument_list|()
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -732,6 +752,11 @@ name|println
 argument_list|(
 literal|"== Options"
 argument_list|)
+expr_stmt|;
+name|out
+operator|.
+name|println
+argument_list|()
 expr_stmt|;
 name|out
 operator|.
@@ -859,6 +884,11 @@ argument_list|(
 literal|"|==="
 argument_list|)
 expr_stmt|;
+name|out
+operator|.
+name|println
+argument_list|()
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -879,6 +909,11 @@ name|println
 argument_list|(
 literal|"== Details"
 argument_list|)
+expr_stmt|;
+name|out
+operator|.
+name|println
+argument_list|()
 expr_stmt|;
 name|out
 operator|.
