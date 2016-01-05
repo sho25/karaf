@@ -3785,6 +3785,8 @@ argument_list|,
 name|blacklisted
 argument_list|)
 decl_stmt|;
+try|try
+block|{
 name|rep
 operator|.
 name|load
@@ -3809,7 +3811,6 @@ name|repo
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 for|for
 control|(
 name|URI
@@ -3831,6 +3832,26 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|LOGGER
+operator|.
+name|warn
+argument_list|(
+literal|"Can't load features repository {}"
+argument_list|,
+name|uri
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 name|List
