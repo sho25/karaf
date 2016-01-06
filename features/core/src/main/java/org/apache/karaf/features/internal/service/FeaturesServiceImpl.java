@@ -3762,6 +3762,8 @@ name|uri
 argument_list|)
 expr_stmt|;
 block|}
+try|try
+block|{
 if|if
 condition|(
 name|repo
@@ -3785,8 +3787,6 @@ argument_list|,
 name|blacklisted
 argument_list|)
 decl_stmt|;
-try|try
-block|{
 name|rep
 operator|.
 name|load
@@ -3810,6 +3810,7 @@ argument_list|,
 name|repo
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 for|for
 control|(
@@ -3851,7 +3852,6 @@ argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 name|List
