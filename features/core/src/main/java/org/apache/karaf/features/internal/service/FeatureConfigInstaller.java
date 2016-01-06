@@ -820,10 +820,7 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|pid
-index|[
-literal|0
-index|]
+name|key
 argument_list|,
 name|props
 operator|.
