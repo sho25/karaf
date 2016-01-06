@@ -1687,7 +1687,7 @@ name|options
 operator|.
 name|put
 argument_list|(
-name|LDAPLoginModule
+name|LDAPOptions
 operator|.
 name|ROLE_MAPPING
 argument_list|,
@@ -1963,7 +1963,7 @@ name|options
 operator|.
 name|put
 argument_list|(
-name|LDAPLoginModule
+name|LDAPOptions
 operator|.
 name|ROLE_MAPPING
 argument_list|,
@@ -2273,7 +2273,7 @@ name|options
 operator|.
 name|put
 argument_list|(
-name|LDAPLoginModule
+name|LDAPOptions
 operator|.
 name|ROLE_MAPPING
 argument_list|,
