@@ -3000,6 +3000,20 @@ argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|// Gather bundles required by a feature
+if|if
+condition|(
+name|resolver
+operator|!=
+literal|null
+operator|&&
+name|resolver
+operator|.
+name|getWiring
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
 for|for
 control|(
 name|List
@@ -3061,6 +3075,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+block|}
 comment|// Now, we know which bundles are completely unmanaged
 name|unmanaged
 operator|.
@@ -3070,6 +3085,20 @@ name|requested
 argument_list|)
 expr_stmt|;
 comment|// Check if bundles have wires from really unmanaged bundles
+if|if
+condition|(
+name|resolver
+operator|!=
+literal|null
+operator|&&
+name|resolver
+operator|.
+name|getWiring
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
 for|for
 control|(
 name|List
@@ -3128,6 +3157,7 @@ name|getProvider
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -6773,6 +6803,13 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|resolution
+operator|!=
+literal|null
+condition|)
+block|{
 for|for
 control|(
 name|Resource
@@ -6879,6 +6916,7 @@ argument_list|(
 name|r
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
