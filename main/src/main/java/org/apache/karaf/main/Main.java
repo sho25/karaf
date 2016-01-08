@@ -1364,7 +1364,7 @@ if|if
 condition|(
 name|config
 operator|.
-name|lockExclusive
+name|lockSlaveBlock
 condition|)
 block|{
 name|LOG

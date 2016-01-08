@@ -321,9 +321,9 @@ specifier|private
 specifier|static
 specifier|final
 name|String
-name|PROPERTY_LOCK_EXCLUSIVE
+name|PROPERTY_LOCK_SLAVE_BLOCK
 init|=
-literal|"karaf.lock.exclusive"
+literal|"karaf.lock.slave.block"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -500,7 +500,7 @@ name|int
 name|lockDelay
 decl_stmt|;
 name|boolean
-name|lockExclusive
+name|lockSlaveBlock
 init|=
 literal|false
 decl_stmt|;
@@ -1074,7 +1074,7 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|lockExclusive
+name|lockSlaveBlock
 operator|=
 name|Boolean
 operator|.
@@ -1084,7 +1084,7 @@ name|props
 operator|.
 name|getProperty
 argument_list|(
-name|PROPERTY_LOCK_EXCLUSIVE
+name|PROPERTY_LOCK_SLAVE_BLOCK
 argument_list|,
 literal|"false"
 argument_list|)
