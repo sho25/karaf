@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A class annotated with {@link @Service} can have fields  * annotated with<code>@Reference</code> in which case matching  * services will be retrieved from the  * {@link org.apache.karaf.shell.api.console.Registry} and  * injected.  *  * If a field has a {@link java.util.List} type, it will be injected  * with a list containing all matching services.  */
+comment|/**  * A class annotated with {@link @Service} can have fields  * annotated with<code>@Service</code> in which case matching  * services will be retrieved from the  * {@link org.apache.karaf.shell.api.console.Registry} and  * injected.  *  * If a field has a {@link java.util.List} type, it will be injected  * with a list containing all matching services.  */
 end_comment
 
 begin_annotation_defn
