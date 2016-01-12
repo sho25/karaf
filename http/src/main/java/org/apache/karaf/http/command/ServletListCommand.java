@@ -343,9 +343,6 @@ name|addContent
 argument_list|(
 name|info
 operator|.
-name|getBundle
-argument_list|()
-operator|.
 name|getBundleId
 argument_list|()
 argument_list|,

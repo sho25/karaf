@@ -713,34 +713,6 @@ name|bundleId
 argument_list|)
 condition|)
 block|{
-name|WebEvent
-name|webEvent
-init|=
-name|webEventHandler
-operator|.
-name|getBundleEvents
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|bundleId
-argument_list|)
-decl_stmt|;
-name|Bundle
-name|bundle
-init|=
-name|webEvent
-operator|.
-name|getBundle
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|bundle
-operator|!=
-literal|null
-condition|)
-block|{
 comment|// deploy
 name|warManager
 operator|.
@@ -751,32 +723,6 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Bundle ID "
-operator|+
-name|bundleId
-operator|+
-literal|" is invalid"
-argument_list|)
-expr_stmt|;
-name|LOGGER
-operator|.
-name|warn
-argument_list|(
-literal|"Bundle ID {} is invalid"
-argument_list|,
-name|bundleId
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 block|}
@@ -828,35 +774,7 @@ name|bundleId
 argument_list|)
 condition|)
 block|{
-name|WebEvent
-name|webEvent
-init|=
-name|webEventHandler
-operator|.
-name|getBundleEvents
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|bundleId
-argument_list|)
-decl_stmt|;
-name|Bundle
-name|bundle
-init|=
-name|webEvent
-operator|.
-name|getBundle
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|bundle
-operator|!=
-literal|null
-condition|)
-block|{
-comment|// deploy
+comment|// undeploy
 name|warManager
 operator|.
 name|stop
@@ -864,32 +782,6 @@ argument_list|(
 name|bundleId
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Bundle ID "
-operator|+
-name|bundleId
-operator|+
-literal|" is invalid"
-argument_list|)
-expr_stmt|;
-name|LOGGER
-operator|.
-name|warn
-argument_list|(
-literal|"Bundle ID {} is invalid"
-argument_list|,
-name|bundleId
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 block|}
