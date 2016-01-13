@@ -183,6 +183,15 @@ name|String
 argument_list|>
 argument_list|()
 expr_stmt|;
+name|properties
+operator|.
+name|put
+argument_list|(
+name|ROOT_LOGGER
+argument_list|,
+literal|"info"
+argument_list|)
+expr_stmt|;
 specifier|final
 name|Configuration
 name|configuration

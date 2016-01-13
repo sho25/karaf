@@ -394,7 +394,7 @@ literal|"org.ops4j.pax.url.mvn"
 argument_list|,
 literal|"org.ops4j.pax.logging.pax-logging-api"
 argument_list|,
-literal|"org.ops4j.pax.logging.pax-logging-service"
+literal|"org.ops4j.pax.logging.pax-logging-log4j2"
 argument_list|)
 decl_stmt|;
 annotation|@
