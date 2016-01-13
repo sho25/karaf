@@ -189,6 +189,13 @@ name|int
 name|getSystemBundleThreshold
 parameter_list|()
 function_decl|;
+name|String
+name|getStatus
+parameter_list|(
+name|String
+name|id
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

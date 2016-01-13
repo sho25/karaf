@@ -190,6 +190,15 @@ name|long
 name|bundleId
 parameter_list|)
 function_decl|;
+name|String
+name|getStatus
+parameter_list|(
+name|String
+name|bundleId
+parameter_list|)
+throws|throws
+name|MBeanException
+function_decl|;
 block|}
 end_interface
 
