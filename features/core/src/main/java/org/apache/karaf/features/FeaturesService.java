@@ -158,6 +158,8 @@ block|,
 name|Simulate
 block|,
 name|Verbose
+block|,
+name|Upgrade
 block|}
 comment|/**      * Validate repository contents.      *      * @param uri Repository uri.      * @throws Exception When validation fails.      */
 name|void
