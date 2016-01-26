@@ -733,6 +733,12 @@ operator|.
 name|start
 argument_list|()
 expr_stmt|;
+name|String
+name|sshPort
+init|=
+name|getSshPort
+argument_list|()
+decl_stmt|;
 name|ConnectFuture
 name|future
 init|=
@@ -744,7 +750,12 @@ name|username
 argument_list|,
 literal|"localhost"
 argument_list|,
-literal|8101
+name|Integer
+operator|.
+name|parseInt
+argument_list|(
+name|sshPort
+argument_list|)
 argument_list|)
 operator|.
 name|await

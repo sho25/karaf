@@ -134,7 +134,6 @@ name|ConditionalFeaturesTest
 extends|extends
 name|KarafTestSupport
 block|{
-comment|/*     @Inject     private FeaturesService featuresService;      @Inject     private BundleContext bundleContext;          @Inject     BootFinished bootFinished;       @ProbeBuilder     public TestProbeBuilder probeConfiguration(TestProbeBuilder probe) {         probe.setHeader(Constants.DYNAMICIMPORT_PACKAGE, "*,org.apache.felix.service.*;status=provisional");         return probe;     }       @Configuration     public Option[] config() {                  MavenArtifactUrlReference karafUrl = maven().groupId("org.apache.karaf").artifactId("apache-karaf").type("zip").versionAsInProject();         return new Option[]{             karafDistributionConfiguration().frameworkUrl(karafUrl),             KarafDistributionOption.editConfigurationFilePut("etc/org.ops4j.pax.web.cfg", "org.osgi.service.http.port", KarafTestSupport.HTTP_PORT)         };     }     */
 annotation|@
 name|Test
 specifier|public

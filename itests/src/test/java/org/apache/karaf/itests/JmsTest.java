@@ -139,7 +139,7 @@ name|javax
 operator|.
 name|management
 operator|.
-name|MBeanServerConnection
+name|MBeanServer
 import|;
 end_import
 
@@ -155,13 +155,13 @@ end_import
 
 begin_import
 import|import
-name|javax
+name|java
+operator|.
+name|lang
 operator|.
 name|management
 operator|.
-name|remote
-operator|.
-name|JMXConnector
+name|ManagementFactory
 import|;
 end_import
 
@@ -620,26 +620,12 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|JMXConnector
-name|connector
+name|MBeanServer
+name|mbeanServer
 init|=
-literal|null
-decl_stmt|;
-try|try
-block|{
-name|connector
-operator|=
-name|this
+name|ManagementFactory
 operator|.
-name|getJMXConnector
-argument_list|()
-expr_stmt|;
-name|MBeanServerConnection
-name|connection
-init|=
-name|connector
-operator|.
-name|getMBeanServerConnection
+name|getPlatformMBeanServer
 argument_list|()
 decl_stmt|;
 name|ObjectName
@@ -661,7 +647,7 @@ argument_list|(
 literal|"JMS MBean create operation invocation"
 argument_list|)
 expr_stmt|;
-name|connection
+name|mbeanServer
 operator|.
 name|invoke
 argument_list|(
@@ -724,7 +710,7 @@ argument_list|<
 name|String
 argument_list|>
 operator|)
-name|connection
+name|mbeanServer
 operator|.
 name|getAttribute
 argument_list|(
@@ -755,7 +741,7 @@ argument_list|(
 literal|"JMS MBean send operation invocation"
 argument_list|)
 expr_stmt|;
-name|connection
+name|mbeanServer
 operator|.
 name|invoke
 argument_list|(
@@ -814,7 +800,7 @@ init|=
 operator|(
 name|Integer
 operator|)
-name|connection
+name|mbeanServer
 operator|.
 name|invoke
 argument_list|(
@@ -881,7 +867,7 @@ argument_list|<
 name|String
 argument_list|>
 operator|)
-name|connection
+name|mbeanServer
 operator|.
 name|invoke
 argument_list|(
@@ -941,7 +927,7 @@ argument_list|(
 literal|"JMS MBean delete operation invocation"
 argument_list|)
 expr_stmt|;
-name|connection
+name|mbeanServer
 operator|.
 name|invoke
 argument_list|(
@@ -964,15 +950,6 @@ literal|"java.lang.String"
 block|}
 argument_list|)
 expr_stmt|;
-block|}
-finally|finally
-block|{
-name|close
-argument_list|(
-name|connector
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 end_class

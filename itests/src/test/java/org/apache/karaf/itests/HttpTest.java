@@ -33,7 +33,7 @@ name|javax
 operator|.
 name|management
 operator|.
-name|MBeanServerConnection
+name|MBeanServer
 import|;
 end_import
 
@@ -56,18 +56,6 @@ operator|.
 name|openmbean
 operator|.
 name|TabularData
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|management
-operator|.
-name|remote
-operator|.
-name|JMXConnector
 import|;
 end_import
 
@@ -157,13 +145,13 @@ end_import
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|osgi
+name|lang
 operator|.
-name|framework
+name|management
 operator|.
-name|Constants
+name|ManagementFactory
 import|;
 end_import
 
@@ -239,26 +227,12 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|JMXConnector
-name|connector
+name|MBeanServer
+name|mbeanServer
 init|=
-literal|null
-decl_stmt|;
-try|try
-block|{
-name|connector
-operator|=
-name|this
+name|ManagementFactory
 operator|.
-name|getJMXConnector
-argument_list|()
-expr_stmt|;
-name|MBeanServerConnection
-name|connection
-init|=
-name|connector
-operator|.
-name|getMBeanServerConnection
+name|getPlatformMBeanServer
 argument_list|()
 decl_stmt|;
 name|ObjectName
@@ -276,7 +250,7 @@ init|=
 operator|(
 name|TabularData
 operator|)
-name|connection
+name|mbeanServer
 operator|.
 name|getAttribute
 argument_list|(
@@ -295,15 +269,6 @@ operator|>
 literal|0
 argument_list|)
 expr_stmt|;
-block|}
-finally|finally
-block|{
-name|close
-argument_list|(
-name|connector
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 end_class
