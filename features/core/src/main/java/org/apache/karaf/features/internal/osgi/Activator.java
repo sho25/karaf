@@ -1939,6 +1939,11 @@ literal|null
 condition|)
 block|{
 name|featuresService
+operator|.
+name|stop
+argument_list|()
+expr_stmt|;
+name|featuresService
 operator|=
 literal|null
 expr_stmt|;
