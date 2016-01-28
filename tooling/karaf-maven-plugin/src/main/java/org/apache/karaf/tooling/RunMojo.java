@@ -462,6 +462,10 @@ operator|=
 name|ResolutionScope
 operator|.
 name|RUNTIME
+argument_list|,
+name|threadSafe
+operator|=
+literal|false
 argument_list|)
 specifier|public
 class|class

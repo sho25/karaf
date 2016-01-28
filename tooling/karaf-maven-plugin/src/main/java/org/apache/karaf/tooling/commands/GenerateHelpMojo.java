@@ -348,6 +348,10 @@ argument_list|,
 name|inheritByDefault
 operator|=
 literal|false
+argument_list|,
+name|threadSafe
+operator|=
+literal|true
 argument_list|)
 specifier|public
 class|class

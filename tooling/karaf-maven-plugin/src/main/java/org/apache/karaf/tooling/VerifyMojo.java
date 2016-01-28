@@ -1206,6 +1206,10 @@ operator|=
 name|ResolutionScope
 operator|.
 name|COMPILE_PLUS_RUNTIME
+argument_list|,
+name|threadSafe
+operator|=
+literal|true
 argument_list|)
 specifier|public
 class|class
