@@ -229,6 +229,12 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|clear
+condition|)
+block|{
 for|for
 control|(
 name|int
@@ -310,6 +316,7 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 literal|null
