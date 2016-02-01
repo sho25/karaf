@@ -592,6 +592,15 @@ operator|+
 literal|"/users/self"
 argument_list|)
 decl_stmt|;
+name|get
+operator|.
+name|setHeader
+argument_list|(
+literal|"Content-Type"
+argument_list|,
+literal|"application/xml"
+argument_list|)
+expr_stmt|;
 name|List
 argument_list|<
 name|String
