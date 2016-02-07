@@ -183,6 +183,12 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
+name|TabularData
+name|getDiag
+parameter_list|()
+throws|throws
+name|MBeanException
+function_decl|;
 name|String
 name|getDiag
 parameter_list|(
