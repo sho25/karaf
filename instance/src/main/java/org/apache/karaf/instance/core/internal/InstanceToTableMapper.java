@@ -234,12 +234,27 @@ argument_list|()
 block|,
 name|instance
 operator|.
+name|getSshHost
+argument_list|()
+block|,
+name|instance
+operator|.
 name|getRmiRegistryPort
 argument_list|()
 block|,
 name|instance
 operator|.
+name|getRmiRegistryHost
+argument_list|()
+block|,
+name|instance
+operator|.
 name|getRmiServerPort
+argument_list|()
+block|,
+name|instance
+operator|.
+name|getRmiServerHost
 argument_list|()
 block|,
 name|state
@@ -311,11 +326,23 @@ name|INTEGER
 block|,
 name|SimpleType
 operator|.
-name|INTEGER
+name|STRING
 block|,
 name|SimpleType
 operator|.
 name|INTEGER
+block|,
+name|SimpleType
+operator|.
+name|STRING
+block|,
+name|SimpleType
+operator|.
+name|INTEGER
+block|,
+name|SimpleType
+operator|.
+name|STRING
 block|,
 name|SimpleType
 operator|.
@@ -346,9 +373,15 @@ literal|"Whether the instance is root"
 block|,
 literal|"The SSH port that can be used to connect to the instance"
 block|,
+literal|"The host address where the SSH server is listening"
+block|,
 literal|"The RMI registry port that can be used to manage the instance"
 block|,
+literal|"The host address where the RMI registry is listening"
+block|,
 literal|"The RMI server port that can be used to manage the instance"
+block|,
+literal|"The host address where the RMI server is listening"
 block|,
 literal|"The state of the instance"
 block|,

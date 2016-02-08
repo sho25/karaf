@@ -247,6 +247,16 @@ name|table
 operator|.
 name|column
 argument_list|(
+literal|"SSH Host"
+argument_list|)
+operator|.
+name|alignRight
+argument_list|()
+expr_stmt|;
+name|table
+operator|.
+name|column
+argument_list|(
 literal|"RMI Registry"
 argument_list|)
 operator|.
@@ -257,7 +267,27 @@ name|table
 operator|.
 name|column
 argument_list|(
+literal|"RMI Registry Host"
+argument_list|)
+operator|.
+name|alignRight
+argument_list|()
+expr_stmt|;
+name|table
+operator|.
+name|column
+argument_list|(
 literal|"RMI Server"
+argument_list|)
+operator|.
+name|alignRight
+argument_list|()
+expr_stmt|;
+name|table
+operator|.
+name|column
+argument_list|(
+literal|"RMI Server Host"
 argument_list|)
 operator|.
 name|alignRight
@@ -307,12 +337,27 @@ argument_list|()
 argument_list|,
 name|instance
 operator|.
+name|getSshHost
+argument_list|()
+argument_list|,
+name|instance
+operator|.
 name|getRmiRegistryPort
 argument_list|()
 argument_list|,
 name|instance
 operator|.
+name|getRmiRegistryHost
+argument_list|()
+argument_list|,
+name|instance
+operator|.
 name|getRmiServerPort
+argument_list|()
+argument_list|,
+name|instance
+operator|.
+name|getRmiServerHost
 argument_list|()
 argument_list|,
 name|instance

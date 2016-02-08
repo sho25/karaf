@@ -65,14 +65,29 @@ init|=
 literal|"SSH Port"
 decl_stmt|;
 name|String
+name|INSTANCE_SSH_HOST
+init|=
+literal|"SSH Host"
+decl_stmt|;
+name|String
 name|INSTANCE_RMI_REGISTRY_PORT
 init|=
 literal|"RMI Registry Port"
 decl_stmt|;
 name|String
+name|INSTANCE_RMI_REGISTRY_HOST
+init|=
+literal|"RMI Registry Host"
+decl_stmt|;
+name|String
 name|INSTANCE_RMI_SERVER_PORT
 init|=
 literal|"RMI Server Port"
+decl_stmt|;
+name|String
+name|INSTANCE_RMI_SERVER_HOST
+init|=
+literal|"RMI Server Host"
 decl_stmt|;
 name|String
 name|INSTANCE_STATE
@@ -102,9 +117,15 @@ name|INSTANCE_IS_ROOT
 block|,
 name|INSTANCE_SSH_PORT
 block|,
+name|INSTANCE_SSH_HOST
+block|,
 name|INSTANCE_RMI_REGISTRY_PORT
 block|,
+name|INSTANCE_RMI_REGISTRY_HOST
+block|,
 name|INSTANCE_RMI_SERVER_PORT
+block|,
+name|INSTANCE_RMI_SERVER_HOST
 block|,
 name|INSTANCE_STATE
 block|,

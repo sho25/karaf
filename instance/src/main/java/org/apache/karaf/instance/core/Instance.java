@@ -71,6 +71,10 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+name|String
+name|getSshHost
+parameter_list|()
+function_decl|;
 name|int
 name|getRmiRegistryPort
 parameter_list|()
@@ -84,6 +88,10 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+name|String
+name|getRmiRegistryHost
+parameter_list|()
+function_decl|;
 name|int
 name|getRmiServerPort
 parameter_list|()
@@ -96,6 +104,10 @@ name|port
 parameter_list|)
 throws|throws
 name|Exception
+function_decl|;
+name|String
+name|getRmiServerHost
+parameter_list|()
 function_decl|;
 name|String
 name|getJavaOpts
