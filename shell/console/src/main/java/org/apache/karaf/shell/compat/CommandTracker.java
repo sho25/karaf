@@ -1220,7 +1220,8 @@ block|}
 else|else
 block|{
 return|return
-literal|null
+name|getName
+argument_list|()
 return|;
 block|}
 block|}
