@@ -1259,6 +1259,11 @@ name|JaasHelper
 operator|.
 name|currentUserHasRole
 argument_list|(
+name|context
+operator|.
+name|getPrincipals
+argument_list|()
+argument_list|,
 name|role
 argument_list|)
 condition|)
