@@ -195,7 +195,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"The port to setup the SSH server (Default: 8101)"
+literal|"The port to setup the SSH server"
 argument_list|,
 name|required
 operator|=
@@ -226,7 +226,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"The service will run in the background (Default: true)"
+literal|"The service will run in the background"
 argument_list|,
 name|required
 operator|=
@@ -257,7 +257,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"The session idle timeout (Default: 1800000ms)"
+literal|"The session idle timeout in milliseconds"
 argument_list|,
 name|required
 operator|=
