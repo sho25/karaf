@@ -406,6 +406,7 @@ name|downloaded
 argument_list|)
 return|;
 block|}
+specifier|protected
 class|class
 name|MavenDownloader
 implements|implements
