@@ -921,13 +921,13 @@ name|println
 argument_list|(
 literal|"   "
 operator|+
+name|getResourceId
+argument_list|(
 name|resources
 index|[
 name|resIdx
 index|]
-operator|.
-name|getPresentationName
-argument_list|()
+argument_list|)
 operator|+
 literal|" ("
 operator|+
@@ -1010,13 +1010,13 @@ name|println
 argument_list|(
 literal|"   "
 operator|+
+name|getResourceId
+argument_list|(
 name|resources
 index|[
 name|resIdx
 index|]
-operator|.
-name|getPresentationName
-argument_list|()
+argument_list|)
 operator|+
 literal|" ("
 operator|+
@@ -1105,13 +1105,13 @@ name|println
 argument_list|(
 literal|"   "
 operator|+
+name|getResourceId
+argument_list|(
 name|resources
 index|[
 name|resIdx
 index|]
-operator|.
-name|getPresentationName
-argument_list|()
+argument_list|)
 operator|+
 literal|" ("
 operator|+
@@ -1271,6 +1271,8 @@ name|println
 argument_list|(
 literal|"      "
 operator|+
+name|getResourceId
+argument_list|(
 name|reqs
 index|[
 name|reqIdx
@@ -1278,9 +1280,7 @@ index|]
 operator|.
 name|getResource
 argument_list|()
-operator|.
-name|getPresentationName
-argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1299,6 +1299,33 @@ expr_stmt|;
 block|}
 block|}
 block|}
+block|}
+specifier|protected
+name|String
+name|getResourceId
+parameter_list|(
+name|Resource
+name|resource
+parameter_list|)
+block|{
+return|return
+name|resource
+operator|.
+name|getPresentationName
+argument_list|()
+operator|!=
+literal|null
+condition|?
+name|resource
+operator|.
+name|getPresentationName
+argument_list|()
+else|:
+name|resource
+operator|.
+name|getSymbolicName
+argument_list|()
+return|;
 block|}
 specifier|protected
 name|Requirement
@@ -1390,6 +1417,22 @@ block|{
 name|name
 operator|=
 literal|"service"
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|req
+operator|.
+name|contains
+argument_list|(
+literal|"osgi.extender"
+argument_list|)
+condition|)
+block|{
+name|name
+operator|=
+literal|"osgi.extender"
 expr_stmt|;
 block|}
 else|else
