@@ -7064,11 +7064,17 @@ argument_list|>
 name|newWires
 init|=
 name|resolution
+operator|!=
+literal|null
+condition|?
+name|resolution
 operator|.
 name|get
 argument_list|(
 name|resource
 argument_list|)
+else|:
+literal|null
 decl_stmt|;
 if|if
 condition|(
