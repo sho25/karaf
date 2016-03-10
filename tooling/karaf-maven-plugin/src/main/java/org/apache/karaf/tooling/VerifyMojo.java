@@ -1556,6 +1556,24 @@ name|getBasedir
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|config
+operator|.
+name|put
+argument_list|(
+literal|"maven.settings"
+argument_list|,
+name|mavenSession
+operator|.
+name|getRequest
+argument_list|()
+operator|.
+name|getUserSettingsFile
+argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// TODO: add more configuration bits ?
 name|resolver
 operator|=
