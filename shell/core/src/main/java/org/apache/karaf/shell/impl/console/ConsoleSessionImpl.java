@@ -1370,7 +1370,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Subclasses can override to use a different history file.      *      * @return      */
+comment|/**      * Subclasses can override to use a different history file.      *      * @return the history file      */
 specifier|protected
 name|File
 name|getHistoryFile

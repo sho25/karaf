@@ -58,7 +58,7 @@ parameter_list|()
 throws|throws
 name|IOException
 function_decl|;
-comment|/**      * Destroy the process.      *      * @throws IOException      */
+comment|/**      * Destroy the process.      *      * @throws IOException If an error occurs.      */
 name|void
 name|destroy
 parameter_list|()

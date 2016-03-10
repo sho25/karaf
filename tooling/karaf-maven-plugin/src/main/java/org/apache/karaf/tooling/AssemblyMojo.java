@@ -338,7 +338,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates a customized Karaf distribution by installing features and setting up  * configuration files. The plugin gets features from feature.xml files and KAR  * archives declared as dependencies or as files configured with the  * featureRespositories parameter. It picks up other files, such as config files,  * from ${project.build.directory}/classes. Thus, a file in src/main/resources/etc  * will be copied by the resource plugin to ${project.build.directory}/classes/etc,  * and then added to the assembly by this goal.  *<br>  */
+comment|/**  * Creates a customized Karaf distribution by installing features and setting up  * configuration files. The plugin gets features from feature.xml files and KAR  * archives declared as dependencies or as files configured with the  * featureRespositories parameter. It picks up other files, such as config files,  * from ${project.build.directory}/classes. Thus, a file in src/main/resources/etc  * will be copied by the resource plugin to ${project.build.directory}/classes/etc,  * and then added to the assembly by this goal.  */
 end_comment
 
 begin_class
@@ -681,7 +681,7 @@ specifier|protected
 name|String
 name|javase
 decl_stmt|;
-comment|/**      * Specify an XML file that instructs this goal to apply edits to      * one or more standard Karaf property files.      * The contents of this file are documented in detail on      *<a href="karaf-property-instructions-model.html">this page</a>.      * This allows you to      * customize these files without making copies in your resources      * directories. Here's a simple example:      *<pre>      * {@literal<property-edits xmlns="http://karaf.apache.org/tools/property-edits/1.0.0"><edits><edit><file>config.properties</file><operation>put</operation><key>karaf.framework</key><value>equinox</value></edit><edit><file>config.properties</file><operation>extend</operation><key>org.osgi.framework.system.capabilities</key><value>my-magic-capability</value></edit><edit><file>config.properties</file><operation prepend='true'>extend</operation><key>some-other-list</key><value>my-value-goes-first</value></edit></edits></property-edits></pre>     }      */
+comment|/**      * Specify an XML file that instructs this goal to apply edits to      * one or more standard Karaf property files.      * The contents of this file are documented in detail on      *<a href="karaf-property-instructions-model.html">this page</a>.      * This allows you to      * customize these files without making copies in your resources      * directories. Here's a simple example:      *<pre>      * {@literal<property-edits xmlns="http://karaf.apache.org/tools/property-edits/1.0.0"><edits><edit><file>config.properties</file><operation>put</operation><key>karaf.framework</key><value>equinox</value></edit><edit><file>config.properties</file><operation>extend</operation><key>org.osgi.framework.system.capabilities</key><value>my-magic-capability</value></edit><edit><file>config.properties</file><operation prepend='true'>extend</operation><key>some-other-list</key><value>my-value-goes-first</value></edit></edits></property-edits>     }</pre>      */
 annotation|@
 name|Parameter
 argument_list|(

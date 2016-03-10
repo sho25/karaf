@@ -28,7 +28,7 @@ specifier|public
 interface|interface
 name|SignalListener
 block|{
-comment|/**      *      * @param signal      */
+comment|/**      * Callback method called when a signal occurs.      *      * @param signal the signal event.      */
 name|void
 name|signal
 parameter_list|(

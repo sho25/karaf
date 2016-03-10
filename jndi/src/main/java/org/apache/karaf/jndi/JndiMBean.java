@@ -54,7 +54,7 @@ specifier|public
 interface|interface
 name|JndiMBean
 block|{
-comment|/**      * Get a map of JNDI names/class names (as attribute).      *      * @return the MBean attribute containing the map of names/class names.      * @throws MBeanException      */
+comment|/**      * Get a map of JNDI names/class names (as attribute).      *      * @return The MBean attribute containing the {@link Map} of names/class names.      * @throws MBeanException If the MBean fails.      */
 specifier|public
 name|Map
 argument_list|<
@@ -67,7 +67,7 @@ parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Get a list of JNDI sub-contexts (as attribute).      *      * @return the MBean attribute containing the list of sub-contexts.      * @throws MBeanException      */
+comment|/**      * Get a list of JNDI sub-contexts (as attribute).      *      * @return The MBean attribute containing the {@link List} of sub-contexts.      * @throws MBeanException If the MBean fails.      */
 specifier|public
 name|List
 argument_list|<
@@ -78,7 +78,7 @@ parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Get a map of JNDI names/class names children of a given base context.      *      * @param context the base context.      * @return the map of names/class names.      * @throws MBeanException      */
+comment|/**      * Get a {@link Map} of JNDI names/class names children of a given base context.      *      * @param context The base context.      * @return The {@link Map} of names/class names.      * @throws MBeanException If the MBean fails.      */
 specifier|public
 name|Map
 argument_list|<
@@ -94,7 +94,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Get a list of JNDI sub-contexts children of a given base context.      *      * @param context the base context.      * @return the list of sub-contexts.      * @throws MBeanException      */
+comment|/**      * Get a {@link List} of JNDI sub-contexts children of a given base context.      *      * @param context The base context.      * @return The {@link List} of sub-contexts.      * @throws MBeanException If the MBean fails.      */
 specifier|public
 name|List
 argument_list|<
@@ -108,7 +108,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Create a JNDI sub-context.      *      * @param context the JNDI sub-context name.      * @throws MBeanException      */
+comment|/**      * Create a JNDI sub-context.      *      * @param context The JNDI sub-context name.      * @throws MBeanException If the MBean fails.      */
 specifier|public
 name|void
 name|create
@@ -119,7 +119,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Delete a JNDI sub-context.      *      * @param context the JNDI sub-context name.      * @throws MBeanException      */
+comment|/**      * Delete a JNDI sub-context.      *      * @param context The JNDI sub-context name.      * @throws MBeanException If the MBean fails.      */
 specifier|public
 name|void
 name|delete
@@ -130,7 +130,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Create another JNDI name (alias) for a given one.      *      * @param name the "source" JNDI name.      * @param alias the JNDI alias name.      * @throws MBeanException      */
+comment|/**      * Create another JNDI name (alias) for a given one.      *      * @param name The "source" JNDI name.      * @param alias The JNDI alias name.      * @throws MBeanException If the MBean fails.      */
 specifier|public
 name|void
 name|alias
@@ -144,7 +144,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Bind an OSGi service with a JNDI name.      *      * @param serviceId the OSGi service id (service.id property on the service, created by the framework).      * @param name the JNDI name.      * @throws MBeanException      */
+comment|/**      * Bind an OSGi service with a JNDI name.      *      * @param serviceId The OSGi service id (service.id property on the service, created by the framework).      * @param name The JNDI name.      * @throws MBeanException If the MBean fails.      */
 specifier|public
 name|void
 name|bind
@@ -158,7 +158,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Unbind a given JNDI name.      *      * @param name the JNDI name.      * @throws MBeanException      */
+comment|/**      * Unbind a given JNDI name.      *      * @param name The JNDI name.      * @throws MBeanException If the MBean fails.      */
 specifier|public
 name|void
 name|unbind

@@ -308,7 +308,6 @@ name|selectRolesQuery
 init|=
 literal|"SELECT ROLE FROM ROLES WHERE USERNAME=?"
 decl_stmt|;
-comment|/**      * Constructor      */
 specifier|public
 name|JDBCBackingEngine
 parameter_list|(
@@ -346,7 +345,7 @@ operator|=
 name|encryptionSupport
 expr_stmt|;
 block|}
-comment|/**      * Adds a new user.      */
+comment|/**      * Add a new user.      *      * @param username the user name.      * @param password the user password.      */
 specifier|public
 name|void
 name|addUser
@@ -489,7 +488,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Delete user by username.      */
+comment|/**      * Delete user by username.      *      * @param username the user name.      */
 specifier|public
 name|void
 name|deleteUser
@@ -563,7 +562,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * List all Users      */
+comment|/**      * List all users.      *      * @return the list of {@link UserPrincipal}.      */
 specifier|public
 name|List
 argument_list|<
@@ -655,7 +654,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * List the roles of the {@param principal}.      */
+comment|/**      * List the roles of the<code>principal</code>.      *      * @param principal the principal (user or group).      * @return the list of {@link RolePrincipal}.      */
 specifier|public
 name|List
 argument_list|<
@@ -818,7 +817,7 @@ return|return
 name|roles
 return|;
 block|}
-comment|/**      * Add a role to a user.      */
+comment|/**      * Add a role to a user.      *      * @param username the user name.      * @param role the role.      */
 specifier|public
 name|void
 name|addRole
@@ -888,7 +887,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Remove role from user.      */
+comment|/**      * Remove role from user.      *      * @param username the user name.      * @param role the role to remove.      */
 specifier|public
 name|void
 name|deleteRole

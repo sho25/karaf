@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class is used to create the sql statements for the karaf lock tables that are used  * for clustering of karaf instances.  *   * It will generate sql statement to create two separate tables, a lock table and a lock id table  *   *   CREATE TABLE LOCK ( ID INTEGER DEFAULT 0, STATE INTEGER DEFAULT 0, LOCK_DELAY INTEGER DEFAULT 0 )  *     *   CREATE TABLE LOCK_ID ( ID INTEGER DEFAULT 0 )  *     * @author Claudio Corsi  *   */
+comment|/**  *<p>This class is used to create the sql statements for the Karaf lock tables that are used  * for clustering of Karaf instances.</p>  *   *<p>It will generate sql statement to create two separate tables, a lock table and a lock id table:</p>  *  *<code>  *   CREATE TABLE LOCK ( ID INTEGER DEFAULT 0, STATE INTEGER DEFAULT 0, LOCK_DELAY INTEGER DEFAULT 0 )  *     *   CREATE TABLE LOCK_ID ( ID INTEGER DEFAULT 0 )  *</code>  *   */
 end_comment
 
 begin_class
@@ -61,7 +61,7 @@ specifier|final
 name|String
 name|clusterName
 decl_stmt|;
-comment|/** 	 * This constructor is used to determine the name of the karaf lock table, the karaf lock id 	 * table and the name of the clustered instances. 	 * 	 * @param lockTableName The name of the karaf lock table 	 * @param lockIdTableName The name of the karaf lock id table 	 * @param clusterName the name of the cluster being used 	 */
+comment|/** 	 * This constructor is used to determine the name of the Karaf lock table, the Karaf lock id 	 * table and the name of the clustered instances. 	 * 	 * @param lockTableName The name of the karaf lock table. 	 * @param lockIdTableName The name of the karaf lock id table. 	 * @param clusterName the name of the cluster being used. 	 */
 specifier|public
 name|GenericStatements
 parameter_list|(
@@ -94,7 +94,7 @@ operator|=
 name|clusterName
 expr_stmt|;
 block|}
-comment|/** 	 * This method will return the name of the cluster that the instances are using to compete for the 	 * master lock. 	 * 	 * @return cluster node name 	 */
+comment|/** 	 * This method will return the name of the cluster that the instances are using to compete for the 	 * master lock. 	 * 	 * @return The cluster node name. 	 */
 specifier|public
 specifier|final
 name|String
@@ -107,7 +107,7 @@ operator|.
 name|clusterName
 return|;
 block|}
-comment|/** 	 * This method will return the name of the karaf lock table. 	 * 	 * @return name of the karaf lock table 	 */
+comment|/** 	 * This method will return the name of the Karaf lock table. 	 * 	 * @return The name of the Karaf lock table. 	 */
 specifier|public
 specifier|final
 name|String
@@ -118,7 +118,7 @@ return|return
 name|lockTableName
 return|;
 block|}
-comment|/** 	 * This method will return the insert statement used to create a row in the Lock table and will 	 * generate the following sql statement. 	 * 	 * INSERT INTO KARAF_LOCK (ID, STATE, LOCK_DELAY) VALUES (0, 0, 0) 	 *  	 * @return sql insert statement 	 */
+comment|/** 	 * This method will return the insert statement used to create a row in the Lock table and will 	 * generate the following sql statement. 	 * 	 *<code> 	 * INSERT INTO KARAF_LOCK (ID, STATE, LOCK_DELAY) VALUES (0, 0, 0) 	 *</code> 	 *  	 * @return The SQL insert statement. 	 */
 specifier|private
 name|String
 name|getLockTableInitialInsertStatement
@@ -135,7 +135,7 @@ operator|+
 literal|"(ID, STATE, LOCK_DELAY) VALUES (0, 0, 0)"
 return|;
 block|}
-comment|/** 	 * This will be called when trying to acquire the lock and will generate the following sql statemnt. 	 * 	 *  UPDATE KARAF_LOCK SET ID = ?, STATE = ?, LOCK_DELAY = ? WHERE ID = 0 OR ID = ? 	 *  	 * You are then expected to assign the values associated with the sql statement. 	 * 	 * @return sql update statement 	 */
+comment|/** 	 * This will be called when trying to acquire the lock and will generate the following sql statement. 	 * 	 *<code> 	 *  UPDATE KARAF_LOCK SET ID = ?, STATE = ?, LOCK_DELAY = ? WHERE ID = 0 OR ID = ? 	 *</code> 	 *  	 * You are then expected to assign the values associated with the sql statement. 	 * 	 * @param id The new ID. 	 * @param state The new lock state. 	 * @param lock_delay The new lock delay. 	 * @param curId The current ID. 	 * @return The SQL update statement. 	 */
 specifier|public
 name|String
 name|getLockUpdateIdStatement
@@ -175,7 +175,7 @@ name|curId
 argument_list|)
 return|;
 block|}
-comment|/** 	 * This will be called when trying to steal the lock and will generate the following sql statemnt. 	 * 	 *  UPDATE KARAF_LOCK SET ID = ?, STATE = ?, LOCK_DELAY = ? WHERE ( ID = 0 OR ID = ? ) AND STATE = ? 	 * 	 * You are then responsible to assign the values of the different fields using standard jdbc statement 	 * calls. 	 *  	 * @return sql update statement 	 */
+comment|/** 	 * This will be called when trying to steal the lock and will generate the following sql statement. 	 * 	 *<code> 	 *  UPDATE KARAF_LOCK SET ID = ?, STATE = ?, LOCK_DELAY = ? WHERE ( ID = 0 OR ID = ? ) AND STATE = ? 	 *</code> 	 * 	 * You are then responsible to assign the values of the different fields using standard JDBC statement 	 * calls. 	 * 	 * @param id The new ID. 	 * @param state The new lock state. 	 * @param lock_delay The new lock delay. 	 * @param curId The current ID.      * @param curState The current state. 	 * @return The SQL update statement. 	 */
 specifier|public
 name|String
 name|getLockUpdateIdStatementToStealLock
@@ -220,7 +220,7 @@ name|curState
 argument_list|)
 return|;
 block|}
-comment|/** 	 * This method is called only when we are releasing the lock and will generate the following sql 	 * statement. 	 * 	 *  UPDATE KARAF_LOCK SET ID = 0 WHERE ID = ? 	 *  	 * @return sql update statement 	 */
+comment|/** 	 * This method is called only when we are releasing the lock and will generate the following sql 	 * statement. 	 * 	 *  UPDATE KARAF_LOCK SET ID = 0 WHERE ID = ? 	 * 	 * @param id The current ID. 	 * @return sql update statement 	 */
 specifier|public
 name|String
 name|getLockResetIdStatement
@@ -245,7 +245,7 @@ name|id
 argument_list|)
 return|;
 block|}
-comment|/** 	 * This will be called to determine the current master instance for the lock table and will  	 * generate the following sql statement. 	 * 	 * SELECT ID, STATE, LOCK_DELAY FROM KARAF_LOCK 	 * 	 * @return sql select statement 	 */
+comment|/** 	 * This will be called to determine the current master instance for the lock table and will  	 * generate the following sql statement. 	 * 	 *<code> 	 * SELECT ID, STATE, LOCK_DELAY FROM KARAF_LOCK 	 *</code> 	 * 	 * @return sql select statement 	 */
 specifier|public
 name|String
 name|getLockSelectStatement
@@ -317,7 +317,7 @@ literal|3
 argument_list|)
 return|;
 block|}
-comment|/** 	 * This method should only be called during the creation of the KARAF_LOCK table and will 	 * generate the following sql statement. 	 * 	 * CREATE TABLE KARAF_LOCK (ID INTEGER DEFAULT 0, STATE INTEGER DEFAULT 0, LOCK_DELAY INTEGER DEFAULT 0) 	 *  	 * @return sql create table statement 	 */
+comment|/** 	 * This method should only be called during the creation of the KARAF_LOCK table and will 	 * generate the following sql statement. 	 *      *<code> 	 * CREATE TABLE KARAF_LOCK (ID INTEGER DEFAULT 0, STATE INTEGER DEFAULT 0, LOCK_DELAY INTEGER DEFAULT 0) 	 *</code>      * 	 * @return The SQL create table statement. 	 */
 specifier|private
 name|String
 name|getLockTableCreateStatement
@@ -334,8 +334,7 @@ operator|+
 literal|" ( ID INTEGER DEFAULT 0, STATE INTEGER DEFAULT 0 , LOCK_DELAY INTEGER DEFAULT 0 )"
 return|;
 block|}
-comment|//  ==================  LOCK ID TABLE ========================
-comment|/** 	 * This method will generate the create table sql statement to create the karaf id table and will 	 * generate the following sql statement. 	 * 	 * CREATE TABLE KARAF_ID ( ID INTEGER DEFAULT 0 ) 	 * 	 * @return sql create table statement 	 */
+comment|/** 	 * This method will generate the create table sql statement to create the karaf id table and will 	 * generate the following sql statement. 	 *      *<code> 	 * CREATE TABLE KARAF_ID ( ID INTEGER DEFAULT 0 )      *</code> 	 * 	 * @return The SQL create table statement. 	 */
 specifier|private
 name|String
 name|getLockIdTableCreateStatement
@@ -352,7 +351,7 @@ operator|+
 literal|" ( ID INTEGER DEFAULT 0 )"
 return|;
 block|}
-comment|/** 	 * This method will return the sql statement to retreive the id of the lock id table and will 	 * generate the following sql statement. 	 * 	 * SELECT ID FROM KARAF_ID 	 * 	 * @return sql select statement 	 */
+comment|/** 	 * This method will return the sql statement to retreive the id of the lock id table and will 	 * generate the following sql statement. 	 *      *<code> 	 * SELECT ID FROM KARAF_ID      *</code> 	 * 	 * @return The SQL select statement. 	 */
 specifier|public
 name|String
 name|getLockIdSelectStatement
@@ -386,7 +385,7 @@ literal|1
 argument_list|)
 return|;
 block|}
-comment|/** 	 * This method will return the update statement for the lock id table and will generate the 	 * following sql statement. 	 * 	 * UPDATE KARAF_ID SET ID = ? WHERE ID = ? 	 * 	 * @return sql update statement 	 */
+comment|/** 	 * This method will return the update statement for the lock id table and will generate the 	 * following sql statement. 	 *      *<code> 	 * UPDATE KARAF_ID SET ID = ? WHERE ID = ?      *</code> 	 *      * @param id The new ID.      * @param curId The current ID. 	 * @return The SQL update statement. 	 */
 specifier|public
 name|String
 name|getLockIdUpdateIdStatement
@@ -416,7 +415,7 @@ name|curId
 argument_list|)
 return|;
 block|}
-comment|/** 	 * This method will return the name of the karaf lock id table. 	 * 	 * @return name of the karaf lock id table 	 */
+comment|/** 	 * This method will return the name of the Karaf lock id table. 	 * 	 * @return The name of the Karaf lock id table. 	 */
 specifier|public
 specifier|final
 name|String
@@ -427,7 +426,7 @@ return|return
 name|lockIdTableName
 return|;
 block|}
-comment|/** 	 * This method will return the required sql statements to initialize the lock database. 	 * 	 * @return array of sql statements 	 */
+comment|/** 	 * This method will return the required sql statements to initialize the lock database. 	 *      * @param moment The moment. 	 * @return The array of SQL statements. 	 */
 specifier|public
 name|String
 index|[]
@@ -456,7 +455,7 @@ argument_list|()
 block|, 		}
 return|;
 block|}
-comment|/** 	 * This method will return the insert statement to insert a row in the lock id table and will 	 * generate the following sql statement. 	 * 	 * INSERT INTO KARAF_ID (ID) VALUES (0) 	 * 	 * @return sql insert statement 	 */
+comment|/** 	 * This method will return the insert statement to insert a row in the lock id table and will 	 * generate the following sql statement. 	 *      *<code> 	 * INSERT INTO KARAF_ID (ID) VALUES (0)      *</code> 	 * 	 * @return The SQL insert statement. 	 */
 specifier|private
 name|String
 name|getLockIdTableInitialInsertStatement

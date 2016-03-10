@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Parser for mvn: protocol.<br/>  *  * @author Alin Dreghiciu  * @author Toni Menzel  *  * @since August 10, 2007  */
+comment|/**  * Parser for mvn: protocol.  *  * @author Alin Dreghiciu  * @author Toni Menzel  *  * @since August 10, 2007  */
 end_comment
 
 begin_class
@@ -198,7 +198,7 @@ specifier|private
 name|String
 name|m_fullClassifier
 decl_stmt|;
-comment|/**      * Creates a new protocol parser.      *      * @param path the path part of the url (without starting mvn:)      *      * @throws MalformedURLException if provided path does not comply to expected syntax or an malformed repository URL      */
+comment|/**      * Creates a new protocol parser.      *      * @param path the path part of the url (without starting mvn:)      * @throws MalformedURLException if provided path does not comply to expected syntax or an malformed repository URL      */
 specifier|public
 name|Parser
 parameter_list|(
@@ -312,7 +312,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns the artifact path from the given maven uri.      * @param uri the maven uri      * @return the artifact path      * @throws MalformedURLException      */
+comment|/**      * Return the artifact path from the given maven uri.      * @param uri the Maven URI.      * @return the artifact actual path.      * @throws MalformedURLException in case of "bad" provided URL/URI.      */
 specifier|public
 specifier|static
 name|String
@@ -772,7 +772,7 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/**      * Parses the artifact part of the url ( without the repository).      *      * @param part url part without protocol and repository.      *      * @throws MalformedURLException if provided path does not comply to syntax.      */
+comment|/**      * Parse the artifact part of the url (without the repository).      *      * @param part url part without protocol and repository.      * @throws MalformedURLException if provided path does not comply to syntax.      */
 specifier|private
 name|void
 name|parseArtifactPart
@@ -988,7 +988,7 @@ name|m_classifier
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns the repository URL if present, null otherwise      *      * @return repository URL      */
+comment|/**      * Return the repository URL if present, null otherwise.      *      * @return repository URL.      */
 specifier|public
 name|String
 name|getRepositoryURL
@@ -998,7 +998,7 @@ return|return
 name|m_repositoryURL
 return|;
 block|}
-comment|/**      * Returns the group id of the artifact.      *      * @return group Id      */
+comment|/**      * Return the group id of the artifact.      *      * @return group ID.      */
 specifier|public
 name|String
 name|getGroup
@@ -1008,7 +1008,7 @@ return|return
 name|m_group
 return|;
 block|}
-comment|/**      * Returns the artifact id.      *      * @return artifact id      */
+comment|/**      * Return the artifact id.      *      * @return artifact id.      */
 specifier|public
 name|String
 name|getArtifact
@@ -1018,7 +1018,7 @@ return|return
 name|m_artifact
 return|;
 block|}
-comment|/**      * Returns the artifact version.      *      * @return version      */
+comment|/**      * Return the artifact version.      *      * @return version.      */
 specifier|public
 name|String
 name|getVersion
@@ -1028,7 +1028,7 @@ return|return
 name|m_version
 return|;
 block|}
-comment|/**      * Returns the artifact type.      *      * @return type      */
+comment|/**      * Return the artifact type.      *      * @return type.      */
 specifier|public
 name|String
 name|getType
@@ -1038,7 +1038,7 @@ return|return
 name|m_type
 return|;
 block|}
-comment|/**      * Returns the artifact classifier.      *      * @return classifier      */
+comment|/**      * Return the artifact classifier.      *      * @return classifier.      */
 specifier|public
 name|String
 name|getClassifier
@@ -1048,7 +1048,7 @@ return|return
 name|m_classifier
 return|;
 block|}
-comment|/**      * Returns the complete path to artifact as stated by Maven 2 repository layout.      *      * @return artifact path      */
+comment|/**      * Return the complete path to artifact as stated by Maven 2 repository layout.      *      * @return artifact path.      */
 specifier|public
 name|String
 name|getArtifactPath
@@ -1061,7 +1061,7 @@ name|m_version
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the complete path to artifact as stated by Maven 2 repository layout.      *      * @param version The version of the artifact.      *      * @return artifact path      */
+comment|/**      * Return the complete path to artifact as stated by Maven 2 repository layout.      *      * @param version The version of the artifact.      * @return artifact path.      */
 specifier|public
 name|String
 name|getArtifactPath
@@ -1147,7 +1147,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the version for an artifact for a snapshot version.      *      * @param version     The version of the snapshot.      * @param timestamp   The timestamp of the snapshot.      * @param buildnumber The buildnumber of the snapshot.      *      * @return artifact path      */
+comment|/**      * Return the version for an artifact for a snapshot version.      *      * @param version The version of the snapshot.      * @param timestamp The timestamp of the snapshot.      * @param buildnumber The buildnumber of the snapshot.      * @return artifact path.      */
 specifier|public
 name|String
 name|getSnapshotVersion
@@ -1180,7 +1180,7 @@ operator|+
 name|buildnumber
 return|;
 block|}
-comment|/**      * Returns the complete path to artifact for a snapshot file.      *      * @param version     The version of the snapshot.      * @param timestamp   The timestamp of the snapshot.      * @param buildnumber The buildnumber of the snapshot.      *      * @return artifact path      */
+comment|/**      * Return the complete path to artifact for a snapshot file.      *      * @param version The version of the snapshot.      * @param timestamp The timestamp of the snapshot.      * @param buildnumber The buildnumber of the snapshot.      * @return artifact path.      */
 specifier|public
 name|String
 name|getSnapshotPath
@@ -1281,7 +1281,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the path to metdata file corresponding to this artifact version.      *      * @param version The version of the the metadata.      *      * @return metadata file path      */
+comment|/**      * Return the path to metadata file corresponding to this artifact version.      *      * @param version The version of the the metadata.      * @return metadata file path.      */
 specifier|public
 name|String
 name|getVersionMetadataPath
@@ -1342,7 +1342,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the path to local metdata file corresponding to this artifact version.      *      * @param version The version of the the metadata.      *      * @return metadata file path      */
+comment|/**      * Return the path to local metadata file corresponding to this artifact version.      *      * @param version The version of the the metadata.      * @return metadata file path.      */
 specifier|public
 name|String
 name|getVersionLocalMetadataPath
@@ -1403,7 +1403,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the complete path to artifact local metadata file.      *      * @return artifact path      */
+comment|/**      * Return the complete path to artifact local metadata file.      *      * @return artifact path.      */
 specifier|public
 name|String
 name|getArtifactLocalMetdataPath
@@ -1450,7 +1450,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the complete path to artifact metadata file.      *      * @return artifact path      */
+comment|/**      * Return the complete path to artifact metadata file.      *      * @return artifact path.      */
 specifier|public
 name|String
 name|getArtifactMetdataPath

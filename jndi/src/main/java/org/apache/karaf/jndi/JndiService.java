@@ -44,7 +44,7 @@ specifier|public
 interface|interface
 name|JndiService
 block|{
-comment|/**      * List the current JNDI names (with the bound class name).      *      * @return the JNDI names.      * @throws Exception      */
+comment|/**      * List the current JNDI names (with the bound class name).      *      * @return The JNDI names.      * @throws Exception If the service fails.      */
 name|Map
 argument_list|<
 name|String
@@ -56,7 +56,7 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * List the current JNDI names in the given context.      *      * @param context the JNDI context.      * @return the JNDI names in the context.      * @throws Exception      */
+comment|/**      * List the current JNDI names in the given context.      *      * @param context The JNDI context.      * @return The JNDI names in the context.      * @throws Exception If the service fails.      */
 name|Map
 argument_list|<
 name|String
@@ -71,7 +71,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * List all JNDI sub-contexts.      *      * @return a list containing the sub-context names.      * @throws Exception      */
+comment|/**      * List all JNDI sub-contexts.      *      * @return A {@link List} containing the sub-context names.      * @throws Exception If the service fails.      */
 name|List
 argument_list|<
 name|String
@@ -81,7 +81,7 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * List the JNDI sub-context from a given context.      *      * @param context the base JNDI context.      * @return a list containing the sub-context names.      * @throws Exception      */
+comment|/**      * List the JNDI sub-context from a given context.      *      * @param context The base JNDI context.      * @return A {@link List} containing the sub-context names.      * @throws Exception If the service fails.      */
 name|List
 argument_list|<
 name|String
@@ -94,7 +94,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Create a sub-context.      *      * @param context the new sub-context name to create.      * @throws Exception      */
+comment|/**      * Create a sub-context.      *      * @param context The new sub-context name to create.      * @throws Exception If the service fails.      */
 name|void
 name|create
 parameter_list|(
@@ -104,7 +104,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Delete a sub-context.      *      * @param context the sub-context name to delete.      * @throws Exception      */
+comment|/**      * Delete a sub-context.      *      * @param context The sub-context name to delete.      * @throws Exception If the service fails.      */
 name|void
 name|delete
 parameter_list|(
@@ -114,7 +114,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Create an alias on a given JNDI name.      *      * @param name the JNDI name.      * @param alias the alias.      * @throws Exception      */
+comment|/**      * Create an alias on a given JNDI name.      *      * @param name The JNDI name.      * @param alias The alias.      * @throws Exception If the service fails.      */
 name|void
 name|alias
 parameter_list|(
@@ -127,7 +127,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Bind a given OSGi service to a JNDI name.      *      * @param serviceId the OSGi service ID.      * @param name the JNDI name.      * @throws Exception      */
+comment|/**      * Bind a given OSGi service to a JNDI name.      *      * @param serviceId The OSGi service ID.      * @param name The JNDI name.      * @throws Exception If the service fails.      */
 name|void
 name|bind
 parameter_list|(
@@ -140,7 +140,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Unbind an existing name.      *      * @param name the JNDI name to unbind.      * @throws Exception      */
+comment|/**      * Unbind an existing name.      *      * @param name The JNDI name to unbind.      * @throws Exception If the service fails.      */
 name|void
 name|unbind
 parameter_list|(

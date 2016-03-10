@@ -461,7 +461,7 @@ return|return
 name|context
 return|;
 block|}
-comment|/**      * Returns list of PIDs related to RBAC/ACL      * @return      */
+comment|/**      * Return list of PIDs related to RBAC/ACL.      *      * @return The list of PIDs.      */
 specifier|public
 name|List
 argument_list|<
@@ -474,7 +474,7 @@ return|return
 name|allPids
 return|;
 block|}
-comment|/**      * Returns list of configurations from      * @return      */
+comment|/**      * Return list of configurations from the whitelist.      *      * @return The list of configurations.      */
 specifier|public
 name|List
 argument_list|<
@@ -492,7 +492,7 @@ return|return
 name|whiteListProperties
 return|;
 block|}
-comment|/**      * Returns {@link Configuration ConfigAdmin configuration} - may be cached in this instance of      * {@link BulkRequestContext context}      * @param generalPid      * @return      */
+comment|/**      * Return {@link Configuration ConfigAdmin configuration} - may be cached in this instance of      * {@link BulkRequestContext context}      *      * @param generalPid The configuration PID.      * @return The configuration.      * @throws IOException If an error ocurrs while retrieving the configuration.      */
 specifier|public
 name|Dictionary
 argument_list|<

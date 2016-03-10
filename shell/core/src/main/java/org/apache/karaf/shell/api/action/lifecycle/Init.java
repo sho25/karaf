@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A class annotated with {@link @Service} can have a method  * annotation with<code>@Init</code> in which case the annotated  * method will be called after a successful injection.  */
+comment|/**  * A class annotated with {@link Service} can have a method  * annotation with<code>@Init</code> in which case the annotated  * method will be called after a successful injection.  */
 end_comment
 
 begin_annotation_defn

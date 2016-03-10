@@ -222,7 +222,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Perform an action on the properties.      * @param props      */
+comment|/**      * Perform an action on the properties.      *      * @param props the dictionary where to apply the action.      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -237,7 +237,7 @@ name|Dictionary
 name|props
 parameter_list|)
 function_decl|;
-comment|/**      * Checks if the configuration requires to be updated.      * The default behavior is to update if a valid pid has been passed to the method.      * @param pid      * @return      */
+comment|/**      * Check if the configuration requires to be updated.      * The default behavior is to update if a valid pid has been passed to the method.      *      * @param pid the PID to check.      * @return<code>true</code> if the configuration requires an update,<code>false</code> else.      */
 specifier|protected
 name|boolean
 name|requiresUpdate
@@ -264,7 +264,7 @@ literal|false
 return|;
 block|}
 block|}
-comment|/**      * Retrieves confguration from the pid, if used or delegates to session from getting the configuration.      * @return      * @throws Exception      */
+comment|/**      * Retrieve configuration from the pid, if used or delegates to session from getting the configuration.      *      * @return the edited dictionary.      * @throws Exception in case of configuration failure.      */
 annotation|@
 name|SuppressWarnings
 argument_list|(

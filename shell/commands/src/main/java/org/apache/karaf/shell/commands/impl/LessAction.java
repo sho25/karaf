@@ -3772,7 +3772,7 @@ literal|false
 return|;
 block|}
 block|}
-comment|/**      * This is for long running commands to be interrupted by ctrl-c      *      * @throws InterruptedException      */
+comment|/**      * This is for long running commands to be interrupted by ctrl-c.      *      * @throws InterruptedException If the command is interrupted.      */
 specifier|public
 specifier|static
 name|void

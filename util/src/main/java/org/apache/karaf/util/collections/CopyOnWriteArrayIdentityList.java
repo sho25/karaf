@@ -4918,7 +4918,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Reads the object state from the ObjectOutputStream.      *      * @param ois ObjectInputStream to read object from.      * @throws IOException if an I/O error occur.      */
+comment|/**      * Reads the object state from the ObjectOutputStream.      *      * @param ois ObjectInputStream to read object from.      * @throws IOException if an I/O error occur.      * @throws ClassNotFoundException If the object class is not found.      */
 specifier|private
 name|void
 name|readObject

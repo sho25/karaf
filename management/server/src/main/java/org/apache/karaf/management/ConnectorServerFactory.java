@@ -590,7 +590,7 @@ name|toLowerCase
 argument_list|()
 return|;
 block|}
-comment|/**      * Authenticator type to use. Acceptable values are "none", "password", and "certificate"      *      * @param value      */
+comment|/**      * Authenticator type to use. Acceptable values are "none", "password", and "certificate"      *      * @param value The authenticator type: "none", "password", "certificate".      */
 specifier|public
 name|void
 name|setAuthenticatorType
@@ -614,7 +614,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Use this param to allow KeyStoreManager to wait for expected keystores to be loaded by other bundle      *      * @param keyStoreAvailabilityTimeout      */
+comment|/**      * Use this param to allow KeyStoreManager to wait for expected keystores to be loaded by other bundle      *      * @param keyStoreAvailabilityTimeout The keystore timeout.      */
 specifier|public
 name|void
 name|setKeyStoreAvailabilityTimeout

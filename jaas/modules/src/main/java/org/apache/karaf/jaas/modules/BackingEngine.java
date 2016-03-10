@@ -113,7 +113,7 @@ name|GROUP_PREFIX
 init|=
 literal|"_g_:"
 decl_stmt|;
-comment|/**      * Create a new User.      *      * @param username      * @param password      */
+comment|/**      * Create a new user.      *      * @param username the user name.      * @param password the user password.      */
 name|void
 name|addUser
 parameter_list|(
@@ -124,7 +124,7 @@ name|String
 name|password
 parameter_list|)
 function_decl|;
-comment|/**      * Delete User      *      * @param username      */
+comment|/**      * Delete an user.      *      * @param username the user name.      */
 name|void
 name|deleteUser
 parameter_list|(
@@ -132,7 +132,7 @@ name|String
 name|username
 parameter_list|)
 function_decl|;
-comment|/**      * List Users      */
+comment|/**      * List all users.      *      * @return the list of {@link UserPrincipal}.      */
 name|List
 argument_list|<
 name|UserPrincipal
@@ -140,7 +140,7 @@ argument_list|>
 name|listUsers
 parameter_list|()
 function_decl|;
-comment|/**      * List groups that a user is in.      *      * @param user      * @return      */
+comment|/**      * List groups that a user is member of.      *      * @param user the {@link UserPrincipal}.      * @return the list of {@link GroupPrincipal}.      */
 name|List
 argument_list|<
 name|GroupPrincipal
@@ -151,7 +151,7 @@ name|UserPrincipal
 name|user
 parameter_list|)
 function_decl|;
-comment|/**      * List groups in a certain realm      * @return the groups in a certain realm      */
+comment|/**      * List all groups.      *      * @return the groups.      */
 name|Map
 argument_list|<
 name|GroupPrincipal
@@ -161,7 +161,7 @@ argument_list|>
 name|listGroups
 parameter_list|()
 function_decl|;
-comment|/**      * Add a user to a group.      *      * @param username      * @param group      */
+comment|/**      * Add a user into a given group.      *      * @param username the user name.      * @param group the group.      */
 name|void
 name|addGroup
 parameter_list|(
@@ -172,7 +172,7 @@ name|String
 name|group
 parameter_list|)
 function_decl|;
-comment|/**      * Create a group      * @param group      */
+comment|/**      * Create a group      *      * @param group the group.      */
 name|void
 name|createGroup
 parameter_list|(
@@ -180,7 +180,7 @@ name|String
 name|group
 parameter_list|)
 function_decl|;
-comment|/**      * Remove a user from a group.      *      * @param username      * @param group      */
+comment|/**      * Remove a user from a group.      *      * @param username the user name.      * @param group the group.      */
 name|void
 name|deleteGroup
 parameter_list|(
@@ -191,7 +191,7 @@ name|String
 name|group
 parameter_list|)
 function_decl|;
-comment|/**      * List Roles for {@param principal}. This could either be a      * {@link UserPrincipal} or a {@link GroupPrincipal}.      *      * @param principal      * @return      */
+comment|/**      * List Roles for<code>principal</code>. This could either be a      * {@link UserPrincipal} or a {@link GroupPrincipal}.      *      * @param principal the principal.      * @return the list of roles.      */
 name|List
 argument_list|<
 name|RolePrincipal
@@ -202,7 +202,7 @@ name|Principal
 name|principal
 parameter_list|)
 function_decl|;
-comment|/**      * Add a role to the user      *      * @param username      * @param role      */
+comment|/**      * Add a role to the user.      *      * @param username the user name.      * @param role the role.      */
 name|void
 name|addRole
 parameter_list|(
@@ -213,7 +213,7 @@ name|String
 name|role
 parameter_list|)
 function_decl|;
-comment|/**      * Remove a role from a user.      *      * @param username      * @param role      */
+comment|/**      * Remove a role from a user.      *      * @param username the user name.      * @param role the role.      */
 name|void
 name|deleteRole
 parameter_list|(
@@ -224,7 +224,7 @@ name|String
 name|role
 parameter_list|)
 function_decl|;
-comment|/**      * Add a role in a group.      *      * @param group      * @param role      */
+comment|/**      * Add a role in a group.      *      * @param group the group.      * @param role the role.      */
 name|void
 name|addGroupRole
 parameter_list|(
@@ -235,7 +235,7 @@ name|String
 name|role
 parameter_list|)
 function_decl|;
-comment|/**      * Remove a role from a group.      *      * @param group      * @param role      */
+comment|/**      * Remove a role from a group.      *      * @param group the group.      * @param role the role.      */
 name|void
 name|deleteGroupRole
 parameter_list|(

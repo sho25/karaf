@@ -221,7 +221,7 @@ name|outAndErr
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Set the input stream from which to read the standard output of the child.      */
+comment|/**      * Set the input stream from which to read the standard output of the child.      *      * @param in the the child output stream.      */
 specifier|public
 name|void
 name|setChildOutputStream
@@ -244,7 +244,7 @@ name|out
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Set the input stream from which to read the standard error of the child.      */
+comment|/**      * Set the input stream from which to read the standard error of the child.      *      * @param in set the child error stream.      */
 specifier|public
 name|void
 name|setChildErrorStream
@@ -275,7 +275,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Set the output stream by means of which input can be sent to the child.      */
+comment|/**      * Set the output stream by means of which input can be sent to the child.      *      * @param out set the child output stream.      */
 specifier|public
 name|void
 name|setChildInputStream
@@ -327,7 +327,7 @@ parameter_list|)
 block|{ }
 block|}
 block|}
-comment|/**      * Attach to a child streams from the given process.      *      * @param p     The process to attach to.      */
+comment|/**      * Attach to a child streams from the given process.      *      * @param p The process to attach to.      */
 specifier|public
 name|void
 name|attach
@@ -651,7 +651,7 @@ name|e
 parameter_list|)
 block|{ }
 block|}
-comment|/**      * Create the pump to handle child output.      */
+comment|/**      * Create the pump to handle child output.      *      * @param in the child input stream.      * @param out the child output stream.      */
 specifier|protected
 name|void
 name|createChildOutputPump
@@ -685,7 +685,7 @@ name|out
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Create the pump to handle error output.      */
+comment|/**      * Create the pump to handle error output.      *      * @param in the child input stream.      * @param out the child output stream.      */
 specifier|protected
 name|void
 name|createChildErrorPump
@@ -719,7 +719,7 @@ name|out
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a stream pumper to copy the given input stream to the given output stream.      */
+comment|/**      * Create a stream pumper to copy the given input stream to the given output stream.      *      * @param in the child input stream.      * @param out the child output stream.      * @return A thread object that does the pumping.      */
 specifier|protected
 name|StreamPumper
 name|createPump
@@ -754,7 +754,7 @@ literal|false
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a stream pumper to copy the given input stream to the      * given output stream.      *      * @param in                    The input stream to copy from.      * @param out                   The output stream to copy to.      * @param closeWhenExhausted    If true close the inputstream.      * @return                      A thread object that does the pumping.      */
+comment|/**      * Create a stream pumper to copy the given input stream to the      * given output stream.      *      * @param in The input stream to copy from.      * @param out The output stream to copy to.      * @param closeWhenExhausted If true close the input stream.      * @return A thread object that does the pumping.      */
 specifier|protected
 name|StreamPumper
 name|createPump
@@ -799,7 +799,7 @@ return|return
 name|pumper
 return|;
 block|}
-comment|/**      * Creates a stream pumper to copy the given input stream to the      * given output stream. Used for standard input.      */
+comment|/**      * Create a stream pumper to copy the given input stream to the      * given output stream. Used for standard input.      *      * @param in The input stream to copy from.      * @param out The output stream to copy to.      * @param closeWhenExhausted If true close the input stream.      * @return A thread object that does the pumping.      */
 specifier|protected
 name|StreamPumper
 name|createInputPump

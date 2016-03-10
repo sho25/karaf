@@ -38,32 +38,32 @@ specifier|public
 interface|interface
 name|Terminal
 block|{
-comment|/**      * The infocmp type of this terminal      */
+comment|/**      * The infocmp type of this terminal      *      * @return the terminal type.      */
 name|String
 name|getType
 parameter_list|()
 function_decl|;
-comment|/**      * Width of the terminal.      */
+comment|/**      * Width of the terminal.      *      * @return the terminal width.      */
 name|int
 name|getWidth
 parameter_list|()
 function_decl|;
-comment|/**      * Height of the terminal.      */
+comment|/**      * Height of the terminal.      *      * @return the terminal height.      */
 name|int
 name|getHeight
 parameter_list|()
 function_decl|;
-comment|/**      * Whether ansi sequences are supported or not.      */
+comment|/**      * Whether ansi sequences are supported or not.      *      * @return true if ANSI is supported, false else.      */
 name|boolean
 name|isAnsiSupported
 parameter_list|()
 function_decl|;
-comment|/**      * Whether echo is enabled or not.      */
+comment|/**      * Whether echo is enabled or not.      *      * @return true if echo is enabled, false else.      */
 name|boolean
 name|isEchoEnabled
 parameter_list|()
 function_decl|;
-comment|/**      * Enable or disable echo.      */
+comment|/**      * Enable or disable echo.      *      * @param enabled true to enable echo, false else.      */
 name|void
 name|setEchoEnabled
 parameter_list|(
@@ -71,7 +71,7 @@ name|boolean
 name|enabled
 parameter_list|)
 function_decl|;
-comment|/**      * Add a qualified listener for the specific signal      * @param listener the listener to register      * @param signal the signal the listener is interested in      */
+comment|/**      * Add a qualified listener for the specific signal.      *      * @param listener the listener to register.      * @param signal the signal the listener is interested in.      */
 name|void
 name|addSignalListener
 parameter_list|(
@@ -83,7 +83,7 @@ modifier|...
 name|signal
 parameter_list|)
 function_decl|;
-comment|/**      * Add a qualified listener for the specific set of signal      * @param listener the listener to register      * @param signals the signals the listener is interested in      */
+comment|/**      * Add a qualified listener for the specific set of signal.      *      * @param listener the listener to register.      * @param signals the signals the listener is interested in.      */
 name|void
 name|addSignalListener
 parameter_list|(
@@ -97,7 +97,7 @@ argument_list|>
 name|signals
 parameter_list|)
 function_decl|;
-comment|/**      * Add a global listener for all signals      * @param listener the listener to register      */
+comment|/**      * Add a global listener for all signals.      *      * @param listener the listener to register.      */
 name|void
 name|addSignalListener
 parameter_list|(
@@ -105,7 +105,7 @@ name|SignalListener
 name|listener
 parameter_list|)
 function_decl|;
-comment|/**      * Remove a previously registered listener for all the signals it was registered      * @param listener the listener to remove      */
+comment|/**      * Remove a previously registered listener for all the signals it was registered.      *      * @param listener the listener to remove.      */
 name|void
 name|removeSignalListener
 parameter_list|(

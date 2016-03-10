@@ -180,7 +180,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Definition of the Feature.  *<p/>  *<p/>  *<p>Java class for feature complex type.  *<p/>  *<p>The following schema fragment specifies the expected content contained within this class.  *<p/>  *<pre>  *&lt;complexType name="feature">  *&lt;complexContent>  *&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">  *&lt;sequence>  *&lt;element name="details" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>  *&lt;element name="config" type="{http://karaf.apache.org/xmlns/features/v1.0.0}config" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="configfile" type="{http://karaf.apache.org/xmlns/features/v1.0.0}configFile" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="feature" type="{http://karaf.apache.org/xmlns/features/v1.0.0}dependency" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="bundle" type="{http://karaf.apache.org/xmlns/features/v1.0.0}bundle" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="conditional" type="{http://karaf.apache.org/xmlns/features/v1.0.0}conditional" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="capability" type="{http://karaf.apache.org/xmlns/features/v1.0.0}capability" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="requirement" type="{http://karaf.apache.org/xmlns/features/v1.0.0}requirement" maxOccurs="unbounded" minOccurs="0"/>  *&lt;/sequence>  *&lt;attribute name="name" use="required" type="{http://karaf.apache.org/xmlns/features/v1.0.0}featureName" />  *&lt;attribute name="version" type="{http://www.w3.org/2001/XMLSchema}string" default="0.0.0" />  *&lt;attribute name="description" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;attribute name="resolver" type="{http://karaf.apache.org/xmlns/features/v1.0.0}resolver" />  *&lt;/restriction>  *&lt;/complexContent>  *&lt;/complexType>  *</pre>  */
+comment|/**  *<p>Definition of the Feature.</p>  *<p>Java class for feature complex type.</p>  *<p>The following schema fragment specifies the expected content contained within this class.</p>  *<pre>  *&lt;complexType name="feature"&gt;  *&lt;complexContent&gt;  *&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;  *&lt;sequence&gt;  *&lt;element name="details" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;  *&lt;element name="config" type="{http://karaf.apache.org/xmlns/features/v1.0.0}config" maxOccurs="unbounded" minOccurs="0"/&gt;  *&lt;element name="configfile" type="{http://karaf.apache.org/xmlns/features/v1.0.0}configFile" maxOccurs="unbounded" minOccurs="0"/&gt;  *&lt;element name="feature" type="{http://karaf.apache.org/xmlns/features/v1.0.0}dependency" maxOccurs="unbounded" minOccurs="0"/&gt;  *&lt;element name="bundle" type="{http://karaf.apache.org/xmlns/features/v1.0.0}bundle" maxOccurs="unbounded" minOccurs="0"/&gt;  *&lt;element name="conditional" type="{http://karaf.apache.org/xmlns/features/v1.0.0}conditional" maxOccurs="unbounded" minOccurs="0"/&gt;  *&lt;element name="capability" type="{http://karaf.apache.org/xmlns/features/v1.0.0}capability" maxOccurs="unbounded" minOccurs="0"/&gt;  *&lt;element name="requirement" type="{http://karaf.apache.org/xmlns/features/v1.0.0}requirement" maxOccurs="unbounded" minOccurs="0"/&gt;  *&lt;/sequence&gt;  *&lt;attribute name="name" use="required" type="{http://karaf.apache.org/xmlns/features/v1.0.0}featureName" /&gt;  *&lt;attribute name="version" type="{http://www.w3.org/2001/XMLSchema}string" default="0.0.0" /&gt;  *&lt;attribute name="description" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;  *&lt;attribute name="resolver" type="{http://karaf.apache.org/xmlns/features/v1.0.0}resolver" /&gt;  *&lt;/restriction&gt;  *&lt;/complexContent&gt;  *&lt;/complexType&gt;  *</pre>  */
 end_comment
 
 begin_class
@@ -514,7 +514,7 @@ name|getVersion
 argument_list|()
 return|;
 block|}
-comment|/**      * Gets the value of the name property.      *      * @return possible object is      * {@link String }      */
+comment|/**      * Get the value of the name property.      *      * @return possible object is {@link String}      */
 specifier|public
 name|String
 name|getName
@@ -524,7 +524,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Sets the value of the name property.      *      * @param value allowed object is      *              {@link String }      */
+comment|/**      * Set the value of the name property.      *      * @param value allowed object is {@link String}      */
 specifier|public
 name|void
 name|setName
@@ -540,7 +540,7 @@ operator|=
 name|value
 expr_stmt|;
 block|}
-comment|/**      * Gets the value of the version property.      *      * @return possible object is      * {@link String }      */
+comment|/**      * Get the value of the version property.      *      * @return possible object is {@link String}      */
 specifier|public
 name|String
 name|getVersion
@@ -564,7 +564,7 @@ name|version
 return|;
 block|}
 block|}
-comment|/**      * Sets the value of the version property.      *      * @param value allowed object is      *              {@link String }      */
+comment|/**      * Set the value of the version property.      *      * @param value allowed object is {@link String}      */
 annotation|@
 name|XmlAttribute
 specifier|public
@@ -587,7 +587,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Since version has a default value ("0.0.0"), returns      * whether or not the version has been set.      */
+comment|/**      * Since version has a default value ("0.0.0"), returns      * whether or not the version has been set.      *      * @return true if the feature has a version, false else.      */
 specifier|public
 name|boolean
 name|hasVersion
@@ -601,7 +601,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * Gets the value of the description property.      *      * @return possible object is      * {@link String }      */
+comment|/**      * Get the value of the description property.      *      * @return possible object is {@link String}.      */
 specifier|public
 name|String
 name|getDescription
@@ -611,7 +611,7 @@ return|return
 name|description
 return|;
 block|}
-comment|/**      * Sets the value of the description property.      *      * @param value allowed object is      *              {@link String }      */
+comment|/**      * Set the value of the description property.      *      * @param value allowed object is {@link String}.      */
 specifier|public
 name|void
 name|setDescription
@@ -627,6 +627,7 @@ operator|=
 name|value
 expr_stmt|;
 block|}
+comment|/**      * Get the feature details.      *      * @return the feature details.      */
 specifier|public
 name|String
 name|getDetails
@@ -636,6 +637,7 @@ return|return
 name|details
 return|;
 block|}
+comment|/**      * Set the feature details.      *      * @param details the feature details.      */
 specifier|public
 name|void
 name|setDetails
@@ -651,7 +653,7 @@ operator|=
 name|details
 expr_stmt|;
 block|}
-comment|/**      * Gets the value of the resolver property.      *      * @return possible object is      * {@link String }      */
+comment|/**      * Get the value of the resolver property.      *      * @return possible object is {@link String}.      */
 specifier|public
 name|String
 name|getResolver
@@ -661,6 +663,7 @@ return|return
 name|resolver
 return|;
 block|}
+comment|/**      * Get the feature install flag.      *      * @return the feature install flags.      */
 specifier|public
 name|String
 name|getInstall
@@ -670,6 +673,7 @@ return|return
 name|install
 return|;
 block|}
+comment|/**      * Set the feature install flag.      *      * @param install the feature install flag.      */
 specifier|public
 name|void
 name|setInstall
@@ -685,7 +689,7 @@ operator|=
 name|install
 expr_stmt|;
 block|}
-comment|/**      * Sets the value of the resolver property.      *      * @param value allowed object is      *              {@link String }      */
+comment|/**      * Set the value of the resolver property.      *      * @param value allowed object is {@link String}.      */
 specifier|public
 name|void
 name|setResolver
@@ -701,7 +705,7 @@ operator|=
 name|value
 expr_stmt|;
 block|}
-comment|/**      * Gets the value of the startLevel property.      *      * @return possible object is      * {@link Integer }      */
+comment|/**      * Get the value of the startLevel property.      *      * @return possible object is {@link Integer}.      */
 specifier|public
 name|int
 name|getStartLevel
@@ -717,7 +721,7 @@ else|:
 name|startLevel
 return|;
 block|}
-comment|/**      * Sets the value of the startLevel property.      *      * @param value allowed object is      *              {@link Integer }      */
+comment|/**      * Set the value of the startLevel property.      *      * @param value allowed object is {@link Integer}.      */
 specifier|public
 name|void
 name|setStartLevel
@@ -733,7 +737,7 @@ operator|=
 name|value
 expr_stmt|;
 block|}
-comment|/**      * Gets the value of the hidden property.      */
+comment|/**      * Get the value of the hidden property.      *      * @return true if the feature is hidden, false else.      */
 specifier|public
 name|boolean
 name|isHidden
@@ -749,7 +753,7 @@ else|:
 name|hidden
 return|;
 block|}
-comment|/**      * Sets the value of the hidden property.      */
+comment|/**      * Set the value of the hidden property.      *      * @param value true to set the feature as hidden, false else.      */
 specifier|public
 name|void
 name|setHidden
@@ -765,7 +769,7 @@ operator|=
 name|value
 expr_stmt|;
 block|}
-comment|/**      * Gets the value of the conditional property.      *<p/>      *<p/>      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the feature property.      *<p/>      *<p/>      * For example, to add a new item, do as follows:      *<pre>      *    getConditionals().add(newItem);      *</pre>      *<p/>      *<p/>      *<p/>      * Objects of the following type(s) are allowed in the list      * {@link Conditional }      */
+comment|/**      * Get the value of the conditional property.      *      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the feature property.      *      * For example, to add a new item, do as follows:      *      *<pre>      *    getConditionals().add(newItem);      *</pre>      *      * Objects of the following type(s) are allowed in the list      * {@link Conditional}.      *      * @return the list of feature conditions.      */
 specifier|public
 name|List
 argument_list|<
@@ -795,6 +799,7 @@ operator|.
 name|conditional
 return|;
 block|}
+comment|/**      * Get the feature capabilities.      *      * @return the feature capabilities as a {@link List}..      */
 specifier|public
 name|List
 argument_list|<
@@ -824,6 +829,7 @@ operator|.
 name|capability
 return|;
 block|}
+comment|/**      * Get the feature requirements.      *      * @return the feature requirements as a {@link List}.      */
 specifier|public
 name|List
 argument_list|<
@@ -853,6 +859,7 @@ operator|.
 name|requirement
 return|;
 block|}
+comment|/**      * Get the feature scoping.      *      * @return the feature scoping.      */
 specifier|public
 name|Scoping
 name|getScoping
@@ -862,6 +869,7 @@ return|return
 name|scoping
 return|;
 block|}
+comment|/**      * Set the feature scoping.      *      * @param scoping the feature scoping.      */
 specifier|public
 name|void
 name|setScoping
@@ -877,6 +885,7 @@ operator|=
 name|scoping
 expr_stmt|;
 block|}
+comment|/**      * Return a string representation of the feature.      *      * @return the feature string representation.      */
 specifier|public
 name|String
 name|toString

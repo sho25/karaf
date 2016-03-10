@@ -68,7 +68,7 @@ specifier|public
 interface|interface
 name|ActionPreparator
 block|{
-comment|/**      * Check if the arguments are valid for the action and inject the arguments into the fields      * of the action      *       * Using deprecated Action for compatiblity      *       * @param action      * @param session      * @param arguments      * @return      * @throws Exception      */
+comment|/**      * Check if the arguments are valid for the action and inject the arguments into the fields      * of the action.      *       * Using deprecated Action for compatibility.      *       * @param action The action to perform.      * @param session The command session to use.      * @param arguments The action arguments.      * @return True if the action preparation succeed, false else.      * @throws Exception In case of preparation failure.      */
 name|boolean
 name|prepare
 parameter_list|(

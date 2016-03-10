@@ -146,7 +146,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>A factory for user authentication factories to set on  * {@link org.apache.sshd.SshServer#setUserAuthFactories(java.util.List)} based on a  * comma-separated list of authentication methods.</p>  *  *<p>Currently, the following methods are supported:</p>  *<ul>  *<li><code>password</code>  *          Password authentication against a given JAAS domain.</p></li>  *<li><code>publickey</code>  *          Public key authentication against an OpenSSH<code>authorized_keys</code> file.</p></li>  *</ul>  *</p>  */
+comment|/**  *<p>A factory for user authentication factories to set on  * {@link org.apache.sshd.SshServer#setUserAuthFactories(java.util.List)} based on a  * comma-separated list of authentication methods.</p>  *  *<p>Currently, the following methods are supported:</p>  *<ul>  *<li><code>password</code> Password authentication against a given JAAS domain.</li>  *<li><code>publickey</code> Public key authentication against an OpenSSH<code>authorized_keys</code> file.</li>  *</ul>  */
 end_comment
 
 begin_class

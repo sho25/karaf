@@ -50,7 +50,7 @@ specifier|public
 interface|interface
 name|Registry
 block|{
-comment|/**      * Return a list of available commands.      */
+comment|/**      * Return a list of available commands.      *      * @return the list of available commands.      */
 name|List
 argument_list|<
 name|Command
@@ -58,7 +58,7 @@ argument_list|>
 name|getCommands
 parameter_list|()
 function_decl|;
-comment|/**      *      * @param scope      * @param name      * @return      */
+comment|/**      * Get the actual command with the corresponding scope and name.      *      * @param scope the command scope.      * @param name the command name.      * @return the actual corresponding {@link Command}.      */
 name|Command
 name|getCommand
 parameter_list|(
@@ -69,7 +69,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Register a delayed service (or factory).      * In cases where instances must be created for each injection,      * a {@link Callable} can be registered and each injection will      * call it to obtain the actual service implementation.      *      * @param factory      * @param clazz      * @param<T>      */
+comment|/**      * Register a delayed service (or factory).      * In cases where instances must be created for each injection,      * a {@link Callable} can be registered and each injection will      * call it to obtain the actual service implementation.      *      * @param factory the service factory.      * @param clazz the registration class.      * @param<T> the corresponding type.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -89,7 +89,7 @@ argument_list|>
 name|clazz
 parameter_list|)
 function_decl|;
-comment|/**      * Register a service.      */
+comment|/**      * Register a service.      *      * @param service register a given service.      */
 name|void
 name|register
 parameter_list|(
@@ -97,7 +97,7 @@ name|Object
 name|service
 parameter_list|)
 function_decl|;
-comment|/**      * Unregister a service.      * If the registration has been done using a factory, the same      * factory should be used to unregister.      */
+comment|/**      * Unregister a service.      * If the registration has been done using a factory, the same      * factory should be used to unregister.      *      * @param service unregister a given service.      */
 name|void
 name|unregister
 parameter_list|(
@@ -105,7 +105,7 @@ name|Object
 name|service
 parameter_list|)
 function_decl|;
-comment|/**      * Obtain a service implementing the given class.      */
+comment|/**      * Obtain a service implementing the given class.      *      * @param clazz the class/interface to look for service.      * @param<T> the service type.      * @return the service corresponding to the given class/interface.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -119,7 +119,7 @@ argument_list|>
 name|clazz
 parameter_list|)
 function_decl|;
-comment|/**      * Obtain a list of services implementing the given class.      */
+comment|/**      * Obtain a list of services implementing the given class.      *      * @param clazz the class/interface to look for services.      * @param<T> the service type.      * @return the list of services corresponding to the given class/interface.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -136,7 +136,7 @@ argument_list|>
 name|clazz
 parameter_list|)
 function_decl|;
-comment|/**      * Check whether the registry has a service of the given class.      */
+comment|/**      * Check whether the registry has a service of the given class.      *      * @param clazz the class/interface to look for service.      * @return true if at least one service is found for the corresponding interface, false else.      */
 name|boolean
 name|hasService
 parameter_list|(

@@ -6754,7 +6754,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/**      * Parses delimited string and returns an array containing the tokens. This      * parser obeys quotes, so the delimiter character will be ignored if it is      * inside of a quote. This method assumes that the quote character is not      * included in the set of delimiter characters.      *      * @param value the delimited string to parse.      * @param delim the characters delimiting the tokens.      * @return a list of string or an empty list if there are none.      */
+comment|/**      * Parses delimited string and returns an array containing the tokens. This      * parser obeys quotes, so the delimiter character will be ignored if it is      * inside of a quote. This method assumes that the quote character is not      * included in the set of delimiter characters.      *      * @param value the delimited string to parse.      * @param delim the characters delimiting the tokens.      * @param trim true to trim the string, false else.      * @return a list of string or an empty list if there are none.      */
 specifier|public
 specifier|static
 name|List

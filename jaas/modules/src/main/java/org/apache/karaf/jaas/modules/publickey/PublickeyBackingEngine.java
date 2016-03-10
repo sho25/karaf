@@ -220,7 +220,6 @@ specifier|private
 name|Properties
 name|users
 decl_stmt|;
-comment|/**      * Constructor      *      * @param users      */
 specifier|public
 name|PublickeyBackingEngine
 parameter_list|(

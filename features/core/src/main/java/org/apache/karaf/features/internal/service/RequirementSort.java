@@ -168,7 +168,7 @@ specifier|private
 name|RequirementSort
 parameter_list|()
 block|{     }
-comment|/**      * Sorts {@link Resource} based on their {@link Requirement}s and {@link Capability}s.      */
+comment|/**      * Sort {@link Resource} based on their {@link Requirement}s and {@link Capability}s.      *      * @param resources the resource to sort.      * @param<T> the resources type.      * @return sorted collection of resources.      */
 specifier|public
 specifier|static
 parameter_list|<

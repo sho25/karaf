@@ -440,7 +440,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      The option is expected to be in decimal and positive. In case of      error, zero is returned.  */
+comment|/**    * The option is expected to be in decimal and positive.    * In case of error, zero is returned.    *    * @return The precision value, or zero in case of error.    */
 specifier|protected
 name|int
 name|extractPrecisionOption

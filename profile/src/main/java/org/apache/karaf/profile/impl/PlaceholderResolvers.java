@@ -306,7 +306,7 @@ literal|null
 return|;
 block|}
 block|}
-comment|/**      * Substitutes a placeholder with profile:[property file]/[key], with the target value.      * @return  The target value or the key as is.      */
+comment|/**      * Substitute a placeholder with profile:[property file]/[key], with the target value.      *      * @param key The key in the configuration.      * @param configs A {@link Map} of configurations where to perform the substitution.      * @return The target value or the key as is.      */
 specifier|public
 specifier|static
 name|String
@@ -411,7 +411,7 @@ name|key
 return|;
 block|}
 block|}
-comment|/**      * Substitutes bundle property.      * @return  The target value or an empty String.      */
+comment|/**      * Substitutes bundle property.      *      * @param key The key in the configuration.      * @param bundleContext The bundle context to use.      * @return The target value or an empty String.      */
 specifier|public
 specifier|static
 name|String

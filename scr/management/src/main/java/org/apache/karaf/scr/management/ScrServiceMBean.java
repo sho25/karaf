@@ -188,18 +188,18 @@ block|,
 name|REFERENCE_BOUND_SERVICES
 block|}
 decl_stmt|;
-comment|/**      * Displays a {@link TabularData} with all the component details.      *      * @return      */
+comment|/**      * Display a {@link TabularData} with all the component details.      *      * @return A {@link TabularData} containing all SCR components.      */
 name|TabularData
 name|getComponents
 parameter_list|()
 function_decl|;
-comment|/**      * Presents a {@String} array of components currently registered with the SCR.      *      * @return String[]      */
+comment|/**      * Present a {@code String} array of components currently registered with the SCR.      *      * @return A {@code String[]} containing all SCR components ID.      */
 name|String
 index|[]
 name|listComponents
 parameter_list|()
 function_decl|;
-comment|/**      * Verifies if the named component is currently in an ACTIVE state.      *      * @param componentName the components name      * @return true if ACTIVE, otherwise false      * @throws Exception      */
+comment|/**      * Verify if the named component is currently in an ACTIVE state.      *      * @param componentName The component name.      * @return True if the component is ACTIVE, otherwise false.      * @throws MBeanException If the check fails.      */
 name|boolean
 name|isComponentActive
 parameter_list|(
@@ -209,7 +209,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Returns the named components state      *      * @param componentName the components name      * @return      */
+comment|/**      * Return the named components state.      *      * @param componentName The component name.      * @return The component status.      */
 name|int
 name|componentState
 parameter_list|(
@@ -217,7 +217,7 @@ name|String
 name|componentName
 parameter_list|)
 function_decl|;
-comment|/**      * Activates a component that is currently in a DISABLED state.      *      * @param componentName the components name      */
+comment|/**      * Activate a component that is currently in a DISABLED state.      *      * @param componentName The component name.      */
 name|void
 name|activateComponent
 parameter_list|(
@@ -225,7 +225,7 @@ name|String
 name|componentName
 parameter_list|)
 function_decl|;
-comment|/**      * Disables a component that is not in an ACTIVE state.      *      * @param componentName the components name      */
+comment|/**      * Disable a component that is not in an ACTIVE state.      *      * @param componentName The component name.      */
 name|void
 name|deactivateComponent
 parameter_list|(

@@ -70,7 +70,7 @@ parameter_list|()
 block|{
 comment|//Utility Class
 block|}
-comment|/**      * Strips download urls from wrapper protocols.      */
+comment|/**      * Strips download urls from wrapper protocols.      *      * @param url the given url.      * @return the stripped URL for the wrapper protocols.      */
 specifier|public
 specifier|static
 name|String

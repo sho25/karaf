@@ -63,7 +63,7 @@ name|BundleEvent
 name|event
 parameter_list|)
 function_decl|;
-comment|/**      * Adds a Bundle URLs to the watch list.      *       * @param url      */
+comment|/**      * Add a Bundle URLs to the watch list.      *       * @param url the URL to watch.      */
 name|void
 name|add
 parameter_list|(
@@ -71,7 +71,7 @@ name|String
 name|url
 parameter_list|)
 function_decl|;
-comment|/**      * Removes a bundle URLs from the watch list.      *       * @param url      */
+comment|/**      * Remove a bundle URLs from the watch list.      *       * @param url the URL to stop to watch.      */
 name|void
 name|remove
 parameter_list|(
@@ -79,7 +79,7 @@ name|String
 name|url
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the bundles that match      *       * @param url      * @return      */
+comment|/**      * Return the bundles that match      *       * @param url the bundles URL.      * @return the list of bundles.      */
 name|List
 argument_list|<
 name|Bundle

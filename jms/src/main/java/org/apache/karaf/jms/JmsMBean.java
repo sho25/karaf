@@ -66,7 +66,7 @@ specifier|public
 interface|interface
 name|JmsMBean
 block|{
-comment|/**      * List the JMS connection factories.      *      * @return the list of the JMS connection factories name.      * @throws MBeanException      */
+comment|/**      * List the JMS connection factories.      *      * @return The {@link List} of the JMS connection factories name.      * @throws MBeanException If the MBean fails.      */
 name|List
 argument_list|<
 name|String
@@ -76,7 +76,7 @@ parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Create a JMS connection factory.      *      * @param name the JMS connection factory name.      * @param type the JMS connection factory type (ActiveMQ or WebsphereMQ).      * @param url the JMS connection factory URL. NB: when type is WebsphereMQ, the URL has the format host/port/queuemanager/channel.      * @throws MBeanException      */
+comment|/**      * Create a JMS connection factory.      *      * @param name The JMS connection factory name.      * @param type The JMS connection factory type (ActiveMQ or WebsphereMQ).      * @param url The JMS connection factory URL. NB: when type is WebsphereMQ, the URL has the format host/port/queuemanager/channel.      * @throws MBeanException If the MBean fails.      */
 name|void
 name|create
 parameter_list|(
@@ -92,7 +92,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Create a JMS connection factory.      *      * @param name the JMS connection factory name.      * @param type the JMS connection factory type (ActiveMQ or WebsphereMQ).      * @param url the JMS connection factory URL. NB: when type is WebsphereMQ, the URL has the format host/port/queuemanager/channel.      * @param username the JMS connection factory authentication username.      * @param password the JMS connection factory authentication password.      * @throws MBeanException      */
+comment|/**      * Create a JMS connection factory.      *      * @param name The JMS connection factory name.      * @param type The JMS connection factory type (ActiveMQ or WebsphereMQ).      * @param url The JMS connection factory URL. NB: when type is WebsphereMQ, the URL has the format host/port/queuemanager/channel.      * @param username The JMS connection factory authentication username.      * @param password The JMS connection factory authentication password.      * @throws MBeanException If the MBean fails.      */
 name|void
 name|create
 parameter_list|(
@@ -114,7 +114,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Delete a JMS connection factory.      *      * @param name the JMS connection factory name.      * @throws MBeanException      */
+comment|/**      * Delete a JMS connection factory.      *      * @param name The JMS connection factory name.      * @throws MBeanException If the MBean fails.      */
 name|void
 name|delete
 parameter_list|(
@@ -124,7 +124,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Get details about a JMS connection factory.      *      * @param connectionFactory the JMS connection factory name.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return a map (property/value) containing details.      * @throws MBeanException      */
+comment|/**      * Get details about a JMS connection factory.      *      * @param connectionFactory The JMS connection factory name.      * @param username The (optional) username to connect to the JMS broker.      * @param password The (optional) password to connect to the JMS broker.      * @return A {@link Map} (property/value) containing details.      * @throws MBeanException If the MBean fails.      */
 name|Map
 argument_list|<
 name|String
@@ -145,7 +145,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Count the messages on a given JMS queue.      *      * @param connectionFactory the JMS connection factory name.      * @param queue the JMS queue name.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return      * @throws MBeanException      */
+comment|/**      * Count the messages on a given JMS queue.      *      * @param connectionFactory The JMS connection factory name.      * @param queue The JMS queue name.      * @param username The (optional) username to connect to the JMS broker.      * @param password The (optional) password to connect to the JMS broker.      * @return The number of messages in the queue.      * @throws MBeanException If the MBean fails.      */
 name|int
 name|count
 parameter_list|(
@@ -164,7 +164,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * List the JMS queues.      *      * @param connectionFactory the JMS connection factory name.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return the list of JMS queues.      * @throws MBeanException      */
+comment|/**      * List the JMS queues.      *      * @param connectionFactory The JMS connection factory name.      * @param username The (optional) username to connect to the JMS broker.      * @param password The (optional) password to connect to the JMS broker.      * @return The {@link List} of JMS queues.      * @throws MBeanException If the MBean fails.      */
 name|List
 argument_list|<
 name|String
@@ -183,7 +183,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * List the JMS topics.      *      * @param connectionFactory the JMS connection factory name.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return the list of JMS topics.      * @throws MBeanException      */
+comment|/**      * List the JMS topics.      *      * @param connectionFactory The JMS connection factory name.      * @param username The (optional) username to connect to the JMS broker.      * @param password The (optional) password to connect to the JMS broker.      * @return The @link List} of JMS topics.      * @throws MBeanException If the MBean fails.      */
 name|List
 argument_list|<
 name|String
@@ -202,7 +202,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Browse the messages in a JMS queue.      *      * @param connectionFactory the JMS connection factory name.      * @param queue the JMS queue name.      * @param selector a selector to use to browse only certain messages.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return a tabular data with messages details.      * @throws MBeanException      */
+comment|/**      * Browse the messages in a JMS queue.      *      * @param connectionFactory The JMS connection factory name.      * @param queue The JMS queue name.      * @param selector A selector to use to browse only certain messages.      * @param username The (optional) username to connect to the JMS broker.      * @param password The (optional) password to connect to the JMS broker.      * @return A {@link TabularData} containing messages details.      * @throws MBeanException If the MBean fails.      */
 name|TabularData
 name|browse
 parameter_list|(
@@ -224,7 +224,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Send a JMS message to given queue.      *      * @param connectionFactory the JMS connection factory name.      * @param queue the JMS queue name.      * @param content the message content.      * @param replyTo the message ReplyTo.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @throws MBeanException      */
+comment|/**      * Send a JMS message to given queue.      *      * @param connectionFactory The JMS connection factory name.      * @param queue The JMS queue name.      * @param content The message content.      * @param replyTo The message ReplyTo.      * @param username The (optional) username to connect to the JMS broker.      * @param password The (optional) password to connect to the JMS broker.      * @throws MBeanException If the MBean fails.      */
 name|void
 name|send
 parameter_list|(
@@ -249,7 +249,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Consume JMS messages from a given queue.      *      * @param connectionFactory the JMS connection factory name.      * @param queue the JMS queue name.      * @param selector a selector to use to consume only certain messages.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return the number of messages consumed.      * @throws MBeanException      */
+comment|/**      * Consume JMS messages from a given queue.      *      * @param connectionFactory The JMS connection factory name.      * @param queue The JMS queue name.      * @param selector A selector to use to consume only certain messages.      * @param username The (optional) username to connect to the JMS broker.      * @param password The (optional) password to connect to the JMS broker.      * @return The number of messages consumed.      * @throws MBeanException If the MBean fails.      */
 name|int
 name|consume
 parameter_list|(
@@ -271,7 +271,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Move JMS messages from one queue to another.      *      * @param connectionFactory the JMS connection factory name.      * @param source the source JMS queue name.      * @param destination the destination JMS queue name.      * @param selector a selector to move only certain messages.      * @param username optional username to connect to the JMS broker.      * @param password optional password to connect to the JMS broker.      * @return the number of messages moved.      * @throws MBeanException      */
+comment|/**      * Move JMS messages from one queue to another.      *      * @param connectionFactory The JMS connection factory name.      * @param source The source JMS queue name.      * @param destination The destination JMS queue name.      * @param selector A selector to move only certain messages.      * @param username The (optional) username to connect to the JMS broker.      * @param password The (optional) password to connect to the JMS broker.      * @return The number of messages moved.      * @throws MBeanException If the MBean fails.      */
 name|int
 name|move
 parameter_list|(

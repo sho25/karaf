@@ -1023,7 +1023,7 @@ operator|+
 name|factoryPid
 return|;
 block|}
-comment|/**      * Substitute variables in the final name and append prefix if necessary.      *       *<p>      *<ol>      *<li>If the final name does not start with '${' it is prefixed with      * karaf.base (+ file separator).</li>      *<li>It substitute also all variables (scheme ${...}) with the respective      * configuration values and system properties.</li>      *<li>All unknown variables kept unchanged.</li>      *<li>If the substituted string starts with an variable that could not be      * substituted, it will be prefixed with karaf.base (+ file separator), too.      *</li>      *</ol>      *</p>      *       * @param finalname      *            The final name that should be processed.      * @return the location in the file system that should be accesses.      */
+comment|/**      * Substitute variables in the final name and append prefix if necessary.      *      *<ol>      *<li>If the final name does not start with '${' it is prefixed with      * karaf.base (+ file separator).</li>      *<li>It substitute also all variables (scheme ${...}) with the respective      * configuration values and system properties.</li>      *<li>All unknown variables kept unchanged.</li>      *<li>If the substituted string starts with an variable that could not be      * substituted, it will be prefixed with karaf.base (+ file separator), too.      *</li>      *</ol>      *       * @param finalname      *            The final name that should be processed.      * @return the location in the file system that should be accesses.      */
 specifier|protected
 specifier|static
 name|String

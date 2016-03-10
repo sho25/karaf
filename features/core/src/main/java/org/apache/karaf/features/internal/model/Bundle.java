@@ -118,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Deployable element to install.  *<p/>  *<p/>  *<p>Java class for bundle complex type.  *<p/>  *<p>The following schema fragment specifies the expected content contained within this class.  *<p/>  *<pre>  *&lt;complexType name="bundle">  *&lt;simpleContent>  *&lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>anyURI">  *&lt;attribute name="start-level" type="{http://www.w3.org/2001/XMLSchema}int" />  *&lt;attribute name="start" type="{http://www.w3.org/2001/XMLSchema}boolean" />  *&lt;attribute name="dependency" type="{http://www.w3.org/2001/XMLSchema}boolean" />  *&lt;/extension>  *&lt;/simpleContent>  *&lt;/complexType>  *</pre>  */
+comment|/**  *<p>Deployable element to install.</p>  *  *<p>Java class for bundle complex type.</p>  *  *<p>The following schema fragment specifies the expected content contained within this class.</p>  *  *<pre>  *&lt;complexType name="bundle"&gt;  *&lt;simpleContent&gt;  *&lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;anyURI"&gt;  *&lt;attribute name="start-level" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;  *&lt;attribute name="start" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;  *&lt;attribute name="dependency" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;  *&lt;/extension&gt;  *&lt;/simpleContent&gt;  *&lt;/complexType&gt;  *</pre>  */
 end_comment
 
 begin_class

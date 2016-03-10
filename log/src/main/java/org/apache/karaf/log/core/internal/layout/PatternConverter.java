@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**<p>PatternConverter is an abtract class that provides the    formatting functionality that derived classes need.<p>Conversion specifiers in a conversion patterns are parsed to    individual PatternConverters. Each of which is responsible for    converting a logging event in a converter specific manner.     @since 0.8.2  */
+comment|/**  *<p>PatternConverter is an abtract class that provides the  * formatting functionality that derived classes need.</p>  *  *<p>Conversion specifiers in a conversion patterns are parsed to  * individual PatternConverters. Each of which is responsible for  * converting a logging event in a converter specific manner.</p>  *  * @since 0.8.2  */
 end_comment
 
 begin_class
@@ -70,7 +70,7 @@ decl_stmt|;
 specifier|protected
 name|PatternConverter
 parameter_list|()
-block|{  }
+block|{     }
 specifier|protected
 name|PatternConverter
 parameter_list|(
@@ -97,7 +97,7 @@ operator|.
 name|leftAlign
 expr_stmt|;
 block|}
-comment|/**      Derived pattern converters must override this method in order to      convert conversion specifiers in the correct way.   */
+comment|/**      * Derived pattern converters must override this method in order to      * convert conversion specifiers in the correct way.      *      * @param event The {@link PaxLoggingEvent} to convert.      * @return The {@link String} representing the {@link PaxLoggingEvent}.      */
 specifier|abstract
 specifier|protected
 name|String
@@ -107,7 +107,7 @@ name|PaxLoggingEvent
 name|event
 parameter_list|)
 function_decl|;
-comment|/**      A template method for formatting in a converter specific way.    */
+comment|/**      * A template method for formatting in a converter specific way.      *      * @param sbuf The {@link StringBuffer} used for formatting the {@link PaxLoggingEvent}.      * @param e    The {@link PaxLoggingEvent} to format.      */
 specifier|public
 name|void
 name|format
@@ -258,7 +258,7 @@ literal|"                                "
 block|}
 decl_stmt|;
 comment|// 32 spaces
-comment|/**      Fast space padding method.   */
+comment|/**      * Fast space padding method.      *      * @param sbuf   The {@link StringBuffer} used for space padding.      * @param length The padding length.      */
 specifier|public
 name|void
 name|spacePad

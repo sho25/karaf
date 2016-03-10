@@ -92,7 +92,7 @@ specifier|public
 annotation_defn|@interface
 name|Completion
 block|{
-comment|/**      * The completer class to use for this field.      * The console registry will be used to look for      * a completer of this class.      *      * A special case for simple static completions is to use      * {@link org.apache.karaf.shell.support.completers.StringsCompleter},      * in which case, the<code>values</code> property will be used      * as the list of possible completions.      */
+comment|/**      * The completer class to use for this field.      * The console registry will be used to look for      * a completer of this class.      *      * A special case for simple static completions is to use      * {@link org.apache.karaf.shell.support.completers.StringsCompleter},      * in which case, the<code>values</code> property will be used      * as the list of possible completions.      *      * @return the completer class.      */
 name|Class
 argument_list|<
 name|?
@@ -100,7 +100,7 @@ argument_list|>
 name|value
 parameter_list|()
 function_decl|;
-comment|/**      * When using a static completer, returns the possible values.      */
+comment|/**      * When using a static completer, returns the possible values.      *      * @return possible completion values as string array.      */
 name|String
 index|[]
 name|values
@@ -108,7 +108,7 @@ argument_list|()
 expr|default
 block|{ }
 expr_stmt|;
-comment|/**      * When using a static completer, indicates if completion      * should be done case sensitive or not.      */
+comment|/**      * When using a static completer, indicates if completion      * should be done case sensitive or not.      *      * @return true if the completion is case sensitive, false else.      */
 name|boolean
 name|caseSensitive
 parameter_list|()

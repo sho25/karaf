@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a tree that can be written to the console.  *  * The output will look like this:  *<pre>  * root  * +- child1  * |  +- grandchild  * +- child2  *</pre>  */
+comment|/**  *<p>Represent a tree that can be written to the console.</p>  *  * The output will look like this:  *  *<pre>  * root  * +- child1  * |  +- grandchild  * +- child2  *</pre>  */
 end_comment
 
 begin_class
@@ -56,7 +56,7 @@ argument_list|<
 name|T
 argument_list|>
 block|{
-comment|/**      * Creates a new tree with the given root node      *      * @param root the root node      */
+comment|/**      * Create a new tree with the given root node.      *      * @param root the root node      */
 specifier|public
 name|Tree
 parameter_list|(
@@ -70,7 +70,7 @@ name|root
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Write the tree to a PrintStream, using the default toString() method to output the node values      *      * @param stream      */
+comment|/**      * Write the tree to a PrintStream, using the default toString() method to output the node values.      *      * @param stream the stream where to write.      */
 specifier|public
 name|void
 name|write
@@ -89,7 +89,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Write the tree to a PrintStream, using the provided converter to output the node values      *      * @param stream      * @param converter      */
+comment|/**      * Write the tree to a PrintStream, using the provided converter to output the node values.      *      * @param stream the stream where to write.      * @param converter the converter to use.      */
 specifier|public
 name|void
 name|write
@@ -116,7 +116,7 @@ name|converter
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Write the tree to a PrintWriter, using the default toString() method to output the node values      *      * @param writer      */
+comment|/**      * Write the tree to a PrintWriter, using the default toString() method to output the node values.      *      * @param writer the writer where to write.      */
 specifier|public
 name|void
 name|write
@@ -155,7 +155,7 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Write the tree to a PrintWriter, using the provided converter to output the node values      *      * @param writer      * @param converter      */
+comment|/**      * Write the tree to a PrintWriter, using the provided converter to output the node values.      *      * @param writer the writer where to write.      * @param converter the converter to use.      */
 specifier|public
 name|void
 name|write
@@ -212,7 +212,7 @@ name|flush
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Interface to convert node values to string      *      * @param<T> the object type for the node value      */
+comment|/**      * Interface to convert node values to string.      *      * @param<T> the object type for the node value      */
 specifier|public
 specifier|static
 interface|interface

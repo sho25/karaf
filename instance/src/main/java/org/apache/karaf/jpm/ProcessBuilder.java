@@ -44,7 +44,7 @@ specifier|public
 interface|interface
 name|ProcessBuilder
 block|{
-comment|/**      * Specified the current directory to run the command from      *      * @param dir the directory to run the command from      * @return the ProcessBuilder instance      */
+comment|/**      * Specify the current directory to run the command from.      *      * @param dir The directory to run the command from.      * @return The {@link ProcessBuilder} instance.      */
 name|ProcessBuilder
 name|directory
 parameter_list|(
@@ -52,7 +52,7 @@ name|File
 name|dir
 parameter_list|)
 function_decl|;
-comment|/**      * Set the command to execute      *      * @param command the command to execute      * @return the ProcessBuilder instance      */
+comment|/**      * Set the command to execute.      *      * @param command The command to execute.      * @return The {@link ProcessBuilder} instance.      */
 name|ProcessBuilder
 name|command
 parameter_list|(
@@ -60,7 +60,7 @@ name|String
 name|command
 parameter_list|)
 function_decl|;
-comment|/**      * Create and start the process      *      * @return the process that has been started      * @throws IOException if the process can not be created      */
+comment|/**      * Create and start the process.      *      * @return The process that has been started.      * @throws IOException If the process can not be created.      */
 name|org
 operator|.
 name|apache
@@ -75,7 +75,7 @@ parameter_list|()
 throws|throws
 name|IOException
 function_decl|;
-comment|/**      * Attach to an existing process      *      * @return the process that has been attached      * @throws IOException if the process can not be attached to      */
+comment|/**      * Attach to an existing process.      *      * @param pid The process PID to attach.      * @return The process that has been attached.      * @throws IOException if the process can not be attached to.      */
 name|org
 operator|.
 name|apache

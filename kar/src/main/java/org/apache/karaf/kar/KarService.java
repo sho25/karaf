@@ -74,7 +74,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Install a kar with manually given repository and       * resource directories.      *       * @param karUri Uri of the kar to be installed      * @param repoDir destination for the repository contents of the kar      * @param resourceDir destination for the resource contents of the kar      * @throws Exception      */
+comment|/**      * Install a kar with manually given repository and       * resource directories.      *       * @param karUri Uri of the kar to be installed      * @param repoDir destination for the repository contents of the kar      * @param resourceDir destination for the resource contents of the kar      * @throws Exception in case of installation failure.      */
 name|void
 name|install
 parameter_list|(
@@ -110,7 +110,7 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Create a kar from the given feature and repo names.      * Each named feature including all transitive deps will be added.      * For each named repo all features in the repo and their transitive deps will be added.      *       * @param repoName      * @param features       * @param console      */
+comment|/**      * Create a kar from the given feature and repo names.      * Each named feature including all transitive deps will be added.      * For each named repo all features in the repo and their transitive deps will be added.      *       * @param repoName the feature repository to use to create the kar.      * @param features the list of features to include in the created kar.      * @param console the console stream where to print details.      */
 name|void
 name|create
 parameter_list|(

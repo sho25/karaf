@@ -743,7 +743,7 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * Check if a bundle is a system bundle (start level< 50)      *      * @param bundleContext      * @param bundle      * @return true if the bundle has start level minor than 50      */
+comment|/**      * Check if a bundle is a system bundle (start level minor than 50)      *      * @param bundleContext The bundle context.      * @param bundle The bundle to check.      * @return True if the bundle has start level minor than 50, false else.      */
 specifier|public
 specifier|static
 name|boolean

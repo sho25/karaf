@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Dependency of feature.  *<p/>  *<p/>  *<p>Java class for dependency complex type.  *<p/>  *<p>The following schema fragment specifies the expected content contained within this class.  *<p/>  *<pre>  *&lt;complexType name="dependency">  *&lt;simpleContent>  *&lt;extension base="&lt;http://karaf.apache.org/xmlns/features/v1.0.0>featureName">  *&lt;attribute name="version" type="{http://www.w3.org/2001/XMLSchema}string" default="0.0.0" />  *&lt;/extension>  *&lt;/simpleContent>  *&lt;/complexType>  *</pre>  */
+comment|/**  *<p>Dependency of feature.</p>  *<p>Java class for dependency complex type.</p>  *<p>The following schema fragment specifies the expected content contained within this class.</p>  *<pre>  *&lt;complexType name="dependency"&gt;  *&lt;simpleContent&gt;  *&lt;extension base="&lt;http://karaf.apache.org/xmlns/features/v1.0.0&gt;featureName"&gt;  *&lt;attribute name="version" type="{http://www.w3.org/2001/XMLSchema}string" default="0.0.0" /&gt;  *&lt;/extension&gt;  *&lt;/simpleContent&gt;  *&lt;/complexType&gt;  *</pre>  */
 end_comment
 
 begin_class

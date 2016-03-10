@@ -92,24 +92,24 @@ specifier|public
 annotation_defn|@interface
 name|Command
 block|{
-comment|/**      * Returns the scope or sub shell of the command      */
+comment|/**      * Return the scope or sub shell of the command.      *      * @return The command scope.      */
 name|String
 name|scope
 parameter_list|()
 function_decl|;
-comment|/**      * REturns the name of the command if used inside a shell      */
+comment|/**      * Return the name of the command if used inside a shell.      *      * @return The command name.      */
 name|String
 name|name
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the description of the command which is used to generate command line help      */
+comment|/**      * Return the description of the command which is used to generate command line help.      *      * @return The command description.      */
 name|String
 name|description
 parameter_list|()
 default|default
 literal|""
 function_decl|;
-comment|/**      * Returns a detailed description of the command      */
+comment|/**      * Return a detailed description of the command.      *      * @return The command detailed description.      */
 name|String
 name|detailedDescription
 parameter_list|()

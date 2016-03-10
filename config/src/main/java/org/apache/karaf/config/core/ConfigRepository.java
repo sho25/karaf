@@ -68,7 +68,7 @@ specifier|public
 interface|interface
 name|ConfigRepository
 block|{
-comment|/**      * Saves config to storage or ConfigurationAdmin.      * @param pid      * @param props      * @throws IOException      */
+comment|/**      * Save config to storage or ConfigurationAdmin.      *      * @param pid the configuration PID.      * @param props the dictionary used to update the configuration.      * @throws IOException in case of update failure.      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -115,7 +115,7 @@ name|ConfigurationAdmin
 name|getConfigAdmin
 parameter_list|()
 function_decl|;
-comment|/**      * Create a factory based configuration.      *      * @param factoryPid      * @param properties the new properties to set in the configuration.      * @return created pid      */
+comment|/**      * Create a factory based configuration.      *      * @param factoryPid the configuration factory PID.      * @param properties the new properties to set in the configuration.      * @return the created configuration PID.      */
 name|String
 name|createFactoryConfiguration
 parameter_list|(

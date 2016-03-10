@@ -28,17 +28,17 @@ specifier|public
 interface|interface
 name|History
 block|{
-comment|/**      * First available index.      */
+comment|/**      * First available index.      *      * @return first index in the history      */
 name|int
 name|first
 parameter_list|()
 function_decl|;
-comment|/**      * Last available index.      */
+comment|/**      * Last available index.      *      * @return last index in the history      */
 name|int
 name|last
 parameter_list|()
 function_decl|;
-comment|/**      * Command at the given index.      * Indices can range from<code>first()</code> to<code>last()</code>.      */
+comment|/**      * Command at the given index.      * Indices can range from<code>first()</code> to<code>last()</code>.      *      * @param index the index in the history.      * @return the command in the history at the given index.      */
 name|CharSequence
 name|get
 parameter_list|(

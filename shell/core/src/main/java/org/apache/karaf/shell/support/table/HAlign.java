@@ -206,7 +206,7 @@ return|;
 block|}
 block|}
 block|;
-comment|/**      * Calculate text position.      *       * @param text Text       * @param colWidth      * @return      */
+comment|/**      * Calculate text position.      *       * @param text  the text to align.      * @param colWidth the column width.      * @return the string at the given position.      */
 specifier|public
 specifier|abstract
 name|String

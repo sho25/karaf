@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a node in a {@link Tree}  */
+comment|/**  * Represent a node in a {@link Tree}  */
 end_comment
 
 begin_class
@@ -113,7 +113,7 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Creates a new node. Only meant for wrapper use,      * new nodes should be added using the {@link #addChild(Object)} method      *      * @param value the node value      */
+comment|/**      * Create a new node. Only meant for wrapper use,      * new nodes should be added using the {@link #addChild(Object)} method      *      * @param value the node value      */
 specifier|protected
 name|Node
 parameter_list|(
@@ -131,7 +131,7 @@ operator|=
 name|value
 expr_stmt|;
 block|}
-comment|/**      * Creates a new node. Only meant for wrapper use,      * new nodes should be added using the {@link #addChild(Object)} method      *      * @param value the node value      */
+comment|/**      * Create a new node. Only meant for wrapper use,      * new nodes should be added using the {@link #addChild(Object)} method.      *      * @param value the node value.      * @param parent the parent node.      */
 specifier|protected
 name|Node
 parameter_list|(
@@ -157,7 +157,7 @@ operator|=
 name|parent
 expr_stmt|;
 block|}
-comment|/**      * Access the node's value      */
+comment|/**      * Access the node's value.      *      * @return T the node's value.      */
 specifier|public
 name|T
 name|getValue
@@ -167,7 +167,7 @@ return|return
 name|value
 return|;
 block|}
-comment|/**      * Access the node's child nodes      */
+comment|/**      * Access the node's child nodes.      *      * @return the list of node children.      */
 specifier|public
 name|List
 argument_list|<
@@ -183,7 +183,7 @@ return|return
 name|children
 return|;
 block|}
-comment|/**      * Adds a child to this node      *      * @param value the child's value      * @return the child node      */
+comment|/**      * Add a child to this node.      *      * @param value the child's value.      * @return the child node.      */
 specifier|public
 name|Node
 argument_list|<
@@ -223,7 +223,7 @@ return|return
 name|node
 return|;
 block|}
-comment|/**      * Give a set of values in the tree.      *      * @return      */
+comment|/**      * Give a set of values in the tree.      *      * @return the set of values.      */
 specifier|public
 name|Set
 argument_list|<
@@ -280,7 +280,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Check if the node has an ancestor that represents the given value      *      * @param value the node value      * @return<code>true</code> it there's an ancestor that represents the value      */
+comment|/**      * Check if the node has an ancestor that represents the given value.      *      * @param value the node value.      * @return<code>true</code> if there's an ancestor that represents the value.      */
 specifier|public
 name|boolean
 name|hasAncestor

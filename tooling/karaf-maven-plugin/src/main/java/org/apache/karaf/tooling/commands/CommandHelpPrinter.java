@@ -70,7 +70,7 @@ specifier|public
 interface|interface
 name|CommandHelpPrinter
 block|{
-comment|/**      * Print help for a single action to the out stream      *       * @param action      * @param out stream to write to      * @param includeHelpOption include the help option in the doc      */
+comment|/**      * Print help for a single action to the out stream.      *       * @param action The command {@link Action}.      * @param out The stream where to print the help.      * @param includeHelpOption True to include the help option in the doc, false else.      */
 name|void
 name|printHelp
 parameter_list|(
@@ -84,7 +84,7 @@ name|boolean
 name|includeHelpOption
 parameter_list|)
 function_decl|;
-comment|/**      * Print the overview of all given commands to the out stream       *       * @param commands      * @param out      */
+comment|/**      * Print the overview of all given commands to the out stream.      *       * @param commands The {@link Map} of commands to consider in the overview.      * @param out The stream where to write the overview.      */
 name|void
 name|printOverview
 parameter_list|(

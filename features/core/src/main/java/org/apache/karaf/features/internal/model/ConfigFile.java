@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Additional configuration files which should be created during feature installation.  *<p/>  *<p/>  *<p>Java class for configFile complex type.  *<p/>  *<p>The following schema fragment specifies the expected content contained within this class.  *<p/>  *<pre>  *&lt;complexType name="configFile">  *&lt;simpleContent>  *&lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">  *&lt;attribute name="finalname" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;attribute name="override" type="{http://www.w3.org/2001/XMLSchema}boolean" />  *&lt;/extension>  *&lt;/simpleContent>  *&lt;/complexType>  *</pre>  */
+comment|/**  *<p>Additional configuration files which should be created during feature installation.</p>  *<p>Java class for configFile complex type.</p>  *<p>The following schema fragment specifies the expected content contained within this class.</p>  *<pre>  *&lt;complexType name="configFile"&gt;  *&lt;simpleContent&gt;  *&lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;  *&lt;attribute name="finalname" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;  *&lt;attribute name="override" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;  *&lt;/extension&gt;  *&lt;/simpleContent&gt;  *&lt;/complexType&gt;  *</pre>  */
 end_comment
 
 begin_class

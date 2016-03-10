@@ -152,7 +152,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Root element of Feature definition. It contains optional attribute which allow  * name of repository. This name will be used in shell to display source repository  * of given feature.  *<p/>  *<p/>  *<p>Java class for featuresRoot complex type.  *<p/>  *<p>The following schema fragment specifies the expected content contained within this class.  *<p/>  *<pre>  *&lt;complexType name="features">  *&lt;complexContent>  *&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">  *&lt;sequence>  *&lt;element name="repository" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="resource-repository" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded" minOccurs="0"/>  *&lt;element name="feature" type="{http://karaf.apache.org/xmlns/features/v1.0.0}feature" maxOccurs="unbounded" minOccurs="0"/>  *&lt;/sequence>  *&lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" />  *&lt;/restriction>  *&lt;/complexContent>  *&lt;/complexType>  *</pre>  */
+comment|/**  *<p>Root element of Feature definition. It contains optional attribute which allow  * name of repository. This name will be used in shell to display source repository  * of given feature.</p>  *<p>Java class for featuresRoot complex type.</p>  *<p>The following schema fragment specifies the expected content contained within this class.</p>  *<pre>  *&lt;complexType name="features"&gt;  *&lt;complexContent&gt;  *&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;  *&lt;sequence&gt;  *&lt;element name="repository" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded" minOccurs="0"/&gt;  *&lt;element name="resource-repository" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded" minOccurs="0"/&gt;  *&lt;element name="feature" type="{http://karaf.apache.org/xmlns/features/v1.0.0}feature" maxOccurs="unbounded" minOccurs="0"/&gt;  *&lt;/sequence&gt;  *&lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;  *&lt;/restriction&gt;  *&lt;/complexContent&gt;  *&lt;/complexType&gt;  *</pre>  */
 end_comment
 
 begin_class
@@ -245,7 +245,7 @@ specifier|private
 name|String
 name|namespace
 decl_stmt|;
-comment|/**      * Gets the value of the repository property.      *<p/>      *<p/>      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the repository property.      *<p/>      *<p/>      * For example, to add a new item, do as follows:      *<pre>      *    getRepository().add(newItem);      *</pre>      *<p/>      *<p/>      *<p/>      * Objects of the following type(s) are allowed in the list      * {@link String }      */
+comment|/**      *<p>Get the value of the repository property.</p>      *      *<p>This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the repository property.</p>      *      *<p>For example, to add a new item, do as follows:</p>      *      *<pre>      *    getRepository().add(newItem);      *</pre>      *      *<p>Objects of the following type(s) are allowed in the list      * {@link String}.</p>      *      * @return the list of inner repositories.      */
 specifier|public
 name|List
 argument_list|<
@@ -275,7 +275,7 @@ operator|.
 name|repository
 return|;
 block|}
-comment|/**      * Gets the value of the resource repository property.      *<p/>      *<p/>      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the resource repository property.      *<p/>      *<p/>      * For example, to add a new item, do as follows:      *<pre>      *    getResourceRepository().add(newItem);      *</pre>      *<p/>      *<p/>      *<p/>      * Objects of the following type(s) are allowed in the list      * {@link String }      */
+comment|/**      *<p>Get the value of the resource repository property.</p>      *      *<p>This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.</p>      *      *<p>This is why there is not a<CODE>set</CODE> method for      * the resource repository property.</p>      *      *<p>For example, to add a new item, do as follows:</p>      *      *<pre>      *    getResourceRepository().add(newItem);      *</pre>      *      *<p>Objects of the following type(s) are allowed in the list      * {@link String}</p>      *      * @return the list of inner resource repositories.      */
 specifier|public
 name|List
 argument_list|<
@@ -305,7 +305,7 @@ operator|.
 name|resourceRepository
 return|;
 block|}
-comment|/**      * Gets the value of the feature property.      *<p/>      *<p/>      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the feature property.      *<p/>      *<p/>      * For example, to add a new item, do as follows:      *<pre>      *    getFeatures().add(newItem);      *</pre>      *<p/>      *<p/>      *<p/>      * Objects of the following type(s) are allowed in the list      * {@link Feature }      */
+comment|/**      *<p>Get the value of the feature property.</p>      *      *<p>This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.</p>      *      *<p>This is why there is not a<CODE>set</CODE> method      * for the feature property.</p>      *      *<p>For example, to add a new item, do as follows:</p>      *      *<pre>      *    getFeatures().add(newItem);      *</pre>      *      *<p>Objects of the following type(s) are allowed in the list      * {@link Feature}.</p>      *      * @return the list of inner features.      */
 specifier|public
 name|List
 argument_list|<
@@ -335,7 +335,7 @@ operator|.
 name|feature
 return|;
 block|}
-comment|/**      * Gets the value of the name property.      *      * @return possible object is      * {@link String }      */
+comment|/**      * Get the value of the name property.      *      * @return possible object is {@link String}.      */
 specifier|public
 name|String
 name|getName
@@ -345,7 +345,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Sets the value of the name property.      *      * @param value allowed object is      *              {@link String }      */
+comment|/**      * Set the value of the name property.      *      * @param value allowed object is {@link String}.      */
 specifier|public
 name|void
 name|setName

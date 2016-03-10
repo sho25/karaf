@@ -146,7 +146,6 @@ name|USER_FILE
 init|=
 literal|"users"
 decl_stmt|;
-comment|/**      * Builds the Backing Engine      *      * @param options      * @return      */
 specifier|public
 name|BackingEngine
 name|build
@@ -227,7 +226,6 @@ name|engine
 return|;
 block|}
 block|}
-comment|/**      * Returns the login module class, that this factory can build.      *      * @return      */
 specifier|public
 name|String
 name|getModuleClass

@@ -192,7 +192,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|/**      * Creates new diagnostic mbean.      *      * @throws NotCompliantMBeanException      */
+comment|/**      * Create new diagnostic MBean.      *      * @throws NotCompliantMBeanException If the MBean is not valid.      */
 specifier|public
 name|DiagnosticDumpMBeanImpl
 parameter_list|()
@@ -207,7 +207,7 @@ name|class
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates dump witch given name      *      * @param name Name of the dump.      */
+comment|/**      * Create dump witch given name.      *      * @param name Name of the dump.      */
 specifier|public
 name|void
 name|createDump
@@ -351,7 +351,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Sets the bundle context      */
+comment|/**      * Set the bundle context.      *      * @param bundleContext The bundle context to use in the MBean.      */
 specifier|public
 name|void
 name|setBundleContext

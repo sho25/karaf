@@ -691,7 +691,7 @@ literal|null
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Called in {@link #doOpen()}      */
+comment|/**      * Called in {@link #doOpen()}.      *      * @param pid The configuration PID to manage (ManagedService).      */
 specifier|protected
 name|void
 name|manage
@@ -775,7 +775,7 @@ return|return
 name|configuration
 return|;
 block|}
-comment|/**      * Called in {@link #doStart()}      */
+comment|/**      * Called in {@link #doStart()}.      *      * @param key The configuration key      * @param def The default value.      * @return The value of the configuration key if found, the default value else.      */
 specifier|protected
 name|int
 name|getInt
@@ -848,7 +848,7 @@ return|return
 name|def
 return|;
 block|}
-comment|/**      * Called in {@link #doStart()}      */
+comment|/**      * Called in {@link #doStart()}.      *      * @param key The configuration key.      * @param def The default value.      * @return The value of the configuration key if found, the default value else.      */
 specifier|protected
 name|boolean
 name|getBoolean
@@ -916,7 +916,7 @@ return|return
 name|def
 return|;
 block|}
-comment|/**      * Called in {@link #doStart()}      */
+comment|/**      * Called in {@link #doStart()}.      *      * @param key The configuration key.      * @param def The default value.      * @return The value of the configuration key if found, the default value else.      */
 specifier|protected
 name|long
 name|getLong
@@ -989,7 +989,7 @@ return|return
 name|def
 return|;
 block|}
-comment|/**      * Called in {@link #doStart()}      */
+comment|/**      * Called in {@link #doStart()}.      *      * @param key The configuration key.      * @param def The default value.      * @return The value of the configuration key if found, the default value else.      */
 specifier|protected
 name|String
 name|getString
@@ -1139,7 +1139,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Called in {@link #doOpen()}      */
+comment|/**      * Called in {@link #doOpen()}.      *      * @param clazz The service interface to track.      * @throws InvalidSyntaxException If the tracker syntax is not correct.      */
 specifier|protected
 name|void
 name|trackService
@@ -1200,7 +1200,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Called in {@link #doOpen()}      */
+comment|/**      * Called in {@link #doOpen()}.      *      * @param clazz The service interface to track.      * @param filter The filter to use to select the services to track.      * @throws InvalidSyntaxException If the tracker syntax is not correct (in the filter especially).      */
 specifier|protected
 name|void
 name|trackService
@@ -1339,7 +1339,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Called in {@link #doStart()}      */
+comment|/**      * Called in {@link #doStart()}.      *      * @param clazz The service interface to get.      * @param<T> The service type.      * @return The actual tracker service object.      */
 specifier|protected
 parameter_list|<
 name|T
@@ -1396,7 +1396,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Called in {@link #doStart()}      */
+comment|/**      * Called in {@link #doStart()}.      *      * @param mbean The MBean to register.      * @param type The MBean type to register.      */
 specifier|protected
 name|void
 name|registerMBean
@@ -1459,7 +1459,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Called in {@link #doStart()}      */
+comment|/**      * Called in {@link #doStart()}.      *      * @param clazz The service interface to register.      * @param<T> The service type.      * @param service The actual service instance to register.      */
 specifier|protected
 parameter_list|<
 name|T
@@ -1487,7 +1487,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Called in {@link #doStart()}      */
+comment|/**      * Called in {@link #doStart()}.      *      * @param clazz The service interface to register.      * @param<T> The service type.      * @param service The actual service instance to register.      * @param props The service properties to register.      */
 specifier|protected
 parameter_list|<
 name|T
@@ -1528,7 +1528,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Called in {@link #doStart()}      */
+comment|/**      * Called in {@link #doStart()}.      *      * @param clazz The service interfaces to register.      * @param service The actual service instance to register.      */
 specifier|protected
 name|void
 name|register
@@ -1551,7 +1551,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Called in {@link #doStart()}      */
+comment|/**      * Called in {@link #doStart()}.      *      * @param clazz The service interfaces to register.      * @param service The actual service instance to register.      * @param props The service properties to register.      */
 specifier|protected
 name|void
 name|register

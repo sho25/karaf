@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A class annotated with {@link @Service} can have a method  * annotation with<code>@Destroy</code> in which case the annotated  * method will be called when the object is destroyed.  */
+comment|/**  * A class annotated with {@link Service} can have a method  * annotation with<code>@Destroy</code> in which case the annotated  * method will be called when the object is destroyed.  */
 end_comment
 
 begin_annotation_defn

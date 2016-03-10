@@ -36,7 +36,7 @@ specifier|public
 interface|interface
 name|DiagnosticDumpMBean
 block|{
-comment|/**      * Creates dump over JMX.      *       * @param name Name of the dump.      * @throws Exception In case of any problems.      */
+comment|/**      * Creates dump over JMX.      *       * @param name Name of the dump.      * @throws MBeanException In case of any problems.      */
 name|void
 name|createDump
 parameter_list|(
@@ -46,7 +46,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Create dump with directory switch and name.      *       * @param directory Should dump be created in directory.      * @param name Name of the dump.      * @throws Exception In case of any problems.      */
+comment|/**      * Create dump with directory switch and name.      *       * @param directory Should dump be created in directory.      * @param name Name of the dump.      * @param noThreadDump True to not include thread dump, false else.      * @param noHeapDump True to not include heap dump, false else.      * @throws MBeanException In case of any problems.      */
 name|void
 name|createDump
 parameter_list|(

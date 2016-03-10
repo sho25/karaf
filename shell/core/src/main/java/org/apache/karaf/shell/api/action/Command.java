@@ -92,24 +92,24 @@ specifier|public
 annotation_defn|@interface
 name|Command
 block|{
-comment|/**      * Returns the scope or sub shell of the command      */
+comment|/**      * Returns the scope or sub shell of the command.      *      * @return the command scope.      */
 name|String
 name|scope
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the name of the command if used inside a shell      */
+comment|/**      * Returns the name of the command if used inside a shell.      *      * @return the command name.      */
 name|String
 name|name
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the description of the command which is used to generate command line help      */
+comment|/**      * Returns the description of the command which is used to generate command line help.      *      * @return the command description.      */
 name|String
 name|description
 parameter_list|()
 default|default
 literal|""
 function_decl|;
-comment|/**      * Returns a detailed description of the command.      * This description will be shown in the help for the command.      * Longer descriptions can be externalized using a      *<code>classpath:[location]</code> url, in which case the      * descrition will be loaded from the bundle at the given location,      * relatively to the implementation of the command.      */
+comment|/**      * Returns a detailed description of the command.      * This description will be shown in the help for the command.      * Longer descriptions can be externalized using a      *<code>classpath:[location]</code> url, in which case the      * description will be loaded from the bundle at the given location,      * relatively to the implementation of the command.      *      * @return the command long description.      */
 name|String
 name|detailedDescription
 parameter_list|()

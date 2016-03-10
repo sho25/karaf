@@ -578,7 +578,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns whether there is any method that the current user can invoke.      *      * @param mbeanServer the MBeanServer where the object is registered.      * @param objectName the ObjectName to check.      * @return {@code true} if there is a method on the object that can be invoked, {@code false} else.      * @throws JMException      * @throws IOException      */
+comment|/**      * Return whether there is any method that the current user can invoke.      *      * @param mbeanServer The MBeanServer where the object is registered.      * @param objectName The ObjectName to check.      * @return {@code True} if there is a method on the object that can be invoked, {@code false} else.      * @throws JMException If the invocation fails.      * @throws IOException If the invocation fails.      */
 specifier|public
 name|boolean
 name|canInvoke
@@ -605,7 +605,7 @@ name|objectName
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns whether there is any method that the current user can invoke.      *      * @param context {@link BulkRequestContext} for optimized ConfigAdmin access, may be<code>null</code>      * @param mbeanServer the MBeanServer where the object is registered.      * @param objectName the ObjectName to check.      * @return {@code true} if there is a method on the object that can be invoked, {@code false} else.      * @throws JMException      * @throws IOException      */
+comment|/**      * Return whether there is any method that the current user can invoke.      *      * @param context {@link BulkRequestContext} for optimized ConfigAdmin access, may be<code>null</code>.      * @param mbeanServer The MBeanServer where the object is registered.      * @param objectName The ObjectName to check.      * @return {@code True} if there is a method on the object that can be invoked, {@code false} else.      * @throws JMException If the invocation fails.      * @throws IOException If the invocation fails.      */
 specifier|public
 name|boolean
 name|canInvoke
@@ -818,7 +818,7 @@ end_return
 
 begin_comment
 unit|}
-comment|/**      * Returns whether there is any overload of the specified method that can be invoked by the current user.      *      * @param mbeanServer the MBeanServer where the object is registered.      * @param objectName the MBean ObjectName.      * @param methodName the name of the method.      * @return {@code true} if there is an overload of the method that can be invoked by the current user.      * @throws JMException      * @throws IOException      */
+comment|/**      * Return whether there is any overload of the specified method that can be invoked by the current user.      *      * @param mbeanServer The MBeanServer where the object is registered.      * @param objectName The MBean ObjectName.      * @param methodName The name of the method.      * @return {@code True} if there is an overload of the method that can be invoked by the current user.      * @throws JMException If the invocation fails.      * @throws IOException If the invocation fails.      */
 end_comment
 
 begin_function
@@ -856,7 +856,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**      * Returns whether there is any overload of the specified method that can be invoked by the current user.      *      * @param context {@link BulkRequestContext} for optimized ConfigAdmin access, may be<code>null</code>      * @param mbeanServer the MBeanServer where the object is registered.      * @param objectName the MBean ObjectName.      * @param methodName the name of the method.      * @return {@code true} if there is an overload of the method that can be invoked by the current user.      * @throws JMException      * @throws IOException      */
+comment|/**      * Return whether there is any overload of the specified method that can be invoked by the current user.      *      * @param context {@link BulkRequestContext} for optimized ConfigAdmin access, may be<code>null</code>.      * @param mbeanServer The MBeanServer where the object is registered.      * @param objectName The MBean ObjectName.      * @param methodName The name of the method.      * @return {@code True} if there is an overload of the method that can be invoked by the current user.      * @throws JMException If the invocation fails.      * @throws IOException If the invocation fails.      */
 end_comment
 
 begin_function
@@ -1097,7 +1097,7 @@ end_expr_stmt
 
 begin_comment
 unit|}
-comment|/**      * Returns true if the method on the MBean with the specified signature can be invoked.      *      * @param mbeanServer the MBeanServer where the object is registered.      * @param objectName the MBean ObjectName.      * @param methodName the name of the method.      * @param signature the signature of the method.      * @return {@code true} if the method can be invoked, {@code false} else. Note that if a method name or signature      *      is provided that does not exist on the MBean, the behaviour of this method is undefined. In other words,      *      if you ask whether a method that does not exist can be invoked, the method may return {@code true} but      *      actually invoking that method will obviously not work.      * @throws IOException      */
+comment|/**      * Return true if the method on the MBean with the specified signature can be invoked.      *      * @param mbeanServer The MBeanServer where the object is registered.      * @param objectName The MBean ObjectName.      * @param methodName The name of the method.      * @param signature The signature of the method.      * @return {@code True} if the method can be invoked, {@code false} else. Note that if a method name or signature      *      is provided that does not exist on the MBean, the behaviour of this method is undefined. In other words,      *      if you ask whether a method that does not exist can be invoked, the method may return {@code true} but      *      actually invoking that method will obviously not work.      * @throws IOException If the invocation fails.      */
 end_comment
 
 begin_function
@@ -1139,7 +1139,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**      * Returns true if the method on the MBean with the specified signature can be invoked.      *      * @param context {@link BulkRequestContext} for optimized ConfigAdmin access, may be<code>null</code>      * @param mbeanServer the MBeanServer where the object is registered.      * @param objectName the MBean ObjectName.      * @param methodName the name of the method.      * @param signature the signature of the method.      * @return {@code true} if the method can be invoked, {@code false} else. Note that if a method name or signature      *      is provided that does not exist on the MBean, the behaviour of this method is undefined. In other words,      *      if you ask whether a method that does not exist can be invoked, the method may return {@code true} but      *      actually invoking that method will obviously not work.      * @throws IOException      */
+comment|/**      * Return true if the method on the MBean with the specified signature can be invoked.      *      * @param context {@link BulkRequestContext} for optimized ConfigAdmin access, may be<code>null</code>.      * @param mbeanServer The MBeanServer where the object is registered.      * @param objectName The MBean ObjectName.      * @param methodName The name of the method.      * @param signature The signature of the method.      * @return {@code True} if the method can be invoked, {@code false} else. Note that if a method name or signature      *      is provided that does not exist on the MBean, the behaviour of this method is undefined. In other words,      *      if you ask whether a method that does not exist can be invoked, the method may return {@code true} but      *      actually invoking that method will obviously not work.      * @throws IOException If the invocation fails.      */
 end_comment
 
 begin_function
@@ -2708,7 +2708,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**      *<code>nulls</code>-last comparator of PIDs split to segments. {@link #JMX_OBJECTNAME_PROPERTY_WILDCARD}      * in a segment makes the PID more generic, thus - with lower prioroty.      */
+comment|/**      *<code>nulls</code>-last comparator of PIDs split to segments. {@link #JMX_OBJECTNAME_PROPERTY_WILDCARD}      * in a segment makes the PID more generic, thus - with lower priority.      */
 end_comment
 
 begin_class

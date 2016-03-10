@@ -56,7 +56,7 @@ specifier|public
 interface|interface
 name|ConfigMBean
 block|{
-comment|/**      * Get the list of all configuration PIDs.      *      * @return the list of all configuration PIDs.      * @throws Exception      */
+comment|/**      * Get the list of all configuration PIDs.      *      * @return the list of all configuration PIDs.      * @throws MBeanException in case of MBean failure.      */
 name|List
 argument_list|<
 name|String
@@ -66,7 +66,7 @@ parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Create a new configuration for the given PID.      *      * @param pid the configuration PID.      * @throws Exception      */
+comment|/**      * Create a new configuration for the given PID.      *      * @param pid the configuration PID.      * @throws MBeanException in case of MBean failure.      */
 name|void
 name|create
 parameter_list|(
@@ -76,7 +76,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Delete a configuration identified by the given PID.      *      * @param pid the configuration PID to delete.      * @throws Exception      */
+comment|/**      * Delete a configuration identified by the given PID.      *      * @param pid the configuration PID to delete.      * @throws MBeanException in case of MBean failure.      */
 name|void
 name|delete
 parameter_list|(
@@ -86,7 +86,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Get the list of properties for a configuration PID.      *      * @param pid the configuration PID.      * @return the list of properties.      * @throws Exception      */
+comment|/**      * Get the list of properties for a configuration PID.      *      * @param pid the configuration PID.      * @return the list of properties.      * @throws MBeanException in case of MBean failure.      */
 name|Map
 argument_list|<
 name|String
@@ -101,7 +101,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Remove the configuration property identified by the given key.      *      * @param pid the configuration PID.      * @param key the property key.      * @throws Exception      */
+comment|/**      * Remove the configuration property identified by the given key.      *      * @param pid the configuration PID.      * @param key the property key.      * @throws MBeanException in case of MBean failure.      */
 name|void
 name|deleteProperty
 parameter_list|(
@@ -114,7 +114,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Append (or add) a value for the given configuration key.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the value to append to the current property value.      * @throws Exception      */
+comment|/**      * Append (or add) a value for the given configuration key.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the value to append to the current property value.      * @throws MBeanException in case of MBean failure.      */
 name|void
 name|appendProperty
 parameter_list|(
@@ -130,7 +130,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Set a configuration property.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the property value.      * @throws Exception      */
+comment|/**      * Set a configuration property.      *      * @param pid the configuration PID.      * @param key the property key.      * @param value the property value.      * @throws MBeanException in case of MBean failure.      */
 name|void
 name|setProperty
 parameter_list|(
@@ -146,7 +146,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Update a complete configuration.      *      * @param pid the configuration PID.      * @param properties the new properties to set in the configuration.      * @throws MBeanException      */
+comment|/**      * Update a complete configuration.      *      * @param pid the configuration PID.      * @param properties the new properties to set in the configuration.      * @throws MBeanException in case of MBean failure.      */
 name|void
 name|update
 parameter_list|(
@@ -164,7 +164,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Create a factory based configuration.      *      * @param factoryPid      * @param properties the new properties to set in the configuration.      * @return created pid      * @throws MBeanException      */
+comment|/**      * Create a factory based configuration.      *      * @param factoryPid the configuration factory PID.      * @param properties the new properties to set in the configuration.      * @return the created PID.      * @throws MBeanException in case of MBean failure.      */
 name|String
 name|createFactoryConfiguration
 parameter_list|(

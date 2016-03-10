@@ -460,7 +460,7 @@ name|args
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Use this method when the shell is being executed as a top level shell.      *      * @param args      * @throws Exception      */
+comment|/**      * Use this method when the shell is being executed as a top level shell.      *      * @param args the arguments.      * @throws Exception in case of a failure.      */
 specifier|public
 name|void
 name|run
@@ -1217,7 +1217,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Allow sub classes of main to change the ConsoleImpl implementation used.      *      * @param sessionFactory      * @param in      * @param out      * @param err      * @param terminal      * @return      * @throws Exception      */
+comment|/**      * Allow sub classes of main to change the ConsoleImpl implementation used.      *      * @param sessionFactory the session factory.      * @param in the input stream (console std in).      * @param out the output stream (console std out).      * @param err the error stream (console std err).      * @param terminal the terminal.      * @return the created session.      * @throws Exception if something goes wrong during session creation.      */
 specifier|protected
 name|Session
 name|createSession
@@ -1293,7 +1293,7 @@ return|return
 name|sessionFactory
 return|;
 block|}
-comment|/**      * Sub classes can override so that their registered commands do not conflict with the default shell      * implementation.      */
+comment|/**      * Sub classes can override so that their registered commands do not conflict with the default shell      * implementation.      *      * @return the location of the discovery resource.      */
 specifier|public
 name|String
 name|getDiscoveryResource
@@ -1514,7 +1514,7 @@ operator|=
 name|user
 expr_stmt|;
 block|}
-comment|/**      * Returns whether or not we are in multi-scope mode.      *<p/>      * The default mode is multi-scoped where we prefix commands by their scope. If we are in single      * scoped mode then we don't use scope prefixes when registering or tab completing commands.      */
+comment|/**      *<p>Returns whether or not we are in multi-scope mode.</p>      *      *<p>The default mode is multi-scoped where we prefix commands by their scope. If we are in single      * scoped mode then we don't use scope prefixes when registering or tab completing commands.</p>      *      * @return true if the console is multi-scope, false else.      */
 specifier|public
 name|boolean
 name|isMultiScopeMode

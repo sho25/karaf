@@ -140,7 +140,6 @@ specifier|private
 name|String
 name|username
 decl_stmt|;
-comment|/**      * Execute the RoleAddCommand in the given Excecution Context.      *      * @param engine      * @return      * @throws Exception      */
 annotation|@
 name|Override
 specifier|protected

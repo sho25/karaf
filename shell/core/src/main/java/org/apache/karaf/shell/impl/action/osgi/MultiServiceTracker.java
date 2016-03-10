@@ -158,7 +158,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Track multiple service by its type.  * When tracking multiple services, the dependency is always considered optional.  *  * @param<T>  */
+comment|/**  * Track multiple service by its type.  * When tracking multiple services, the dependency is always considered optional.  *  * @param<T> the service type (interface)..  */
 end_comment
 
 begin_class

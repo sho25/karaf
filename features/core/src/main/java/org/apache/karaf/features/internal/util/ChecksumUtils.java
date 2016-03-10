@@ -71,7 +71,7 @@ specifier|private
 name|ChecksumUtils
 parameter_list|()
 block|{     }
-comment|/**      * Compute a checksum for the file or directory that consists of the name, length and the last modified date      * for a file and its children in case of a directory      *      * @param is the input stream      * @return a checksum identifying any change      */
+comment|/**      * Compute a checksum for the file or directory that consists of the name, length and the last modified date      * for a file and its children in case of a directory      *      * @param is the input stream      * @return a checksum identifying any change      * @throws IOException in case of checksum failure.      */
 specifier|public
 specifier|static
 name|long

@@ -24,17 +24,17 @@ specifier|public
 interface|interface
 name|SubShell
 block|{
-comment|/**      * Returns the name of the command if used inside a shell      */
+comment|/**      * Return the name of the command if used inside a shell.      *      * @return The name of the command in the shell.      */
 name|String
 name|getName
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the description of the command which is used to generate command line help      */
+comment|/**      * Return the description of the command which is used to generate command line help.      *      * @return The description of the command in the shell.      */
 name|String
 name|getDescription
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a detailed description of the command      */
+comment|/**      * Return a detailed description of the command.      *      * @return The detailed description of the command in the shell.      */
 name|String
 name|getDetailedDescription
 parameter_list|()

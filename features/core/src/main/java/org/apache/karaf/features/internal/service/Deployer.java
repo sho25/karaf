@@ -1793,7 +1793,7 @@ operator|=
 name|callback
 expr_stmt|;
 block|}
-comment|/**      *      * @param dstate  deployment state      * @param request deployment request      * @throws Exception      */
+comment|/**      * Perform a deployment.      *      * @param dstate  deployment state      * @param request deployment request      * @throws Exception in case of deployment failure.      */
 specifier|public
 name|void
 name|deploy

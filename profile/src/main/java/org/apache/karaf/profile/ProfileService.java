@@ -34,23 +34,17 @@ specifier|public
 interface|interface
 name|ProfileService
 block|{
-comment|//
-comment|// Lock management
-comment|//
-comment|/**      * Acquire a write lock for the profile.      */
+comment|/**      * Acquire a write lock for the profile.      *      * @return The write lock handler.      */
 name|LockHandle
 name|acquireWriteLock
 parameter_list|()
 function_decl|;
-comment|/**      * Acquire a read lock for the profile.      * A read lock cannot be upgraded to a write lock.      */
+comment|/**      * Acquire a read lock for the profile.      * A read lock cannot be upgraded to a write lock.      *      * @return The read lock handler.      */
 name|LockHandle
 name|acquireReadLock
 parameter_list|()
 function_decl|;
-comment|//
-comment|// PlaceholderResolver management
-comment|//
-comment|/**      * Register the given resolver.      * @param resolver the resolver to register      */
+comment|/**      * Register the given resolver.      *      * @param resolver The resolver to register.      */
 name|void
 name|registerResolver
 parameter_list|(
@@ -58,7 +52,7 @@ name|PlaceholderResolver
 name|resolver
 parameter_list|)
 function_decl|;
-comment|/**      * Unregister the given resolver.      * @param resolver the resolver to unregister      */
+comment|/**      * Unregister the given resolver.      *      * @param resolver The resolver to unregister.      */
 name|void
 name|unregisterResolver
 parameter_list|(
@@ -66,10 +60,7 @@ name|PlaceholderResolver
 name|resolver
 parameter_list|)
 function_decl|;
-comment|//
-comment|// Profile management
-comment|//
-comment|/**      * Create the given profile in the data store.      */
+comment|/**      * Create the given profile in the data store.      *      * @param profile The profile to create.      */
 name|void
 name|createProfile
 parameter_list|(
@@ -77,7 +68,7 @@ name|Profile
 name|profile
 parameter_list|)
 function_decl|;
-comment|/**      * Create the given profile in the data store.      */
+comment|/**      * Create the given profile in the data store.      *      * @param profile The profile to update.      */
 name|void
 name|updateProfile
 parameter_list|(
@@ -85,7 +76,7 @@ name|Profile
 name|profile
 parameter_list|)
 function_decl|;
-comment|/**      * True if the given profile exists in the given version.      */
+comment|/**      * True if the given profile exists in the given version.      *      * @param profileId The profile ID.      * @return True if the given profile exists, false else.      */
 name|boolean
 name|hasProfile
 parameter_list|(
@@ -93,7 +84,7 @@ name|String
 name|profileId
 parameter_list|)
 function_decl|;
-comment|/**      * Get the profile for the given version and id.      * @return The profile or null      */
+comment|/**      * Get the profile for the given version and id.      *      * @param profileId The profile ID.      * @return The profile or null if not found.      */
 name|Profile
 name|getProfile
 parameter_list|(
@@ -101,7 +92,7 @@ name|String
 name|profileId
 parameter_list|)
 function_decl|;
-comment|/**      * Get the profile for the given version and id.      * @throws IllegalStateException if the required profile does not exist      */
+comment|/**      * Get the profile for the given version and id.      *      * @param profileId The profile ID.      * @return The profile or null if not found.      */
 name|Profile
 name|getRequiredProfile
 parameter_list|(
@@ -109,7 +100,7 @@ name|String
 name|profileId
 parameter_list|)
 function_decl|;
-comment|/**       * Get the list of profiles associated with the given version.      */
+comment|/**       * Get the list of profiles associated with the given version.      *      * @return The collection of all profiles.      */
 name|Collection
 argument_list|<
 name|String
@@ -117,7 +108,7 @@ argument_list|>
 name|getProfiles
 parameter_list|()
 function_decl|;
-comment|/**      * Delete the given profile from the data store.      */
+comment|/**      * Delete the given profile from the data store.      *      * @param profileId The profile ID to remove.      */
 name|void
 name|deleteProfile
 parameter_list|(
@@ -125,7 +116,7 @@ name|String
 name|profileId
 parameter_list|)
 function_decl|;
-comment|/**      * Compute the overlay profile.      *      * The overlay profile is computed by getting all the parent profiles      * and overriding the settings by children profiles.      */
+comment|/**      * Compute the overlay profile.      *      * The overlay profile is computed by getting all the parent profiles      * and overriding the settings by children profiles.      *      * @param profile The profile.      * @return The overlay profile.      */
 name|Profile
 name|getOverlayProfile
 parameter_list|(
@@ -133,7 +124,7 @@ name|Profile
 name|profile
 parameter_list|)
 function_decl|;
-comment|/**      * Compute the overlay profile.      *      * The overlay profile is computed by getting all the parent profiles      * and overriding the settings by children profiles.      */
+comment|/**      * Compute the overlay profile.      *      * The overlay profile is computed by getting all the parent profiles      * and overriding the settings by children profiles.      *      * @param profile The profile.      * @param environment The environment.      * @return The overlay profile.      */
 name|Profile
 name|getOverlayProfile
 parameter_list|(
@@ -144,7 +135,7 @@ name|String
 name|environment
 parameter_list|)
 function_decl|;
-comment|/**      * Compute the effective profile.      *      * The effective profile is computed by performing all substitutions      * in the given profile configurations.      */
+comment|/**      * Compute the effective profile.      *      * The effective profile is computed by performing all substitutions      * in the given profile configurations.      *      * @param profile The profile to compute.      * @return The effective profile.      */
 name|Profile
 name|getEffectiveProfile
 parameter_list|(
@@ -152,7 +143,7 @@ name|Profile
 name|profile
 parameter_list|)
 function_decl|;
-comment|/**      * Compute the effective profile.      *      * The effective profile is computed by performing all substitutions      * in the given profile configurations.      *      * @param defaultsToEmptyString if no substitution is valid, defaults to an empty string      */
+comment|/**      * Compute the effective profile.      *      * The effective profile is computed by performing all substitutions      * in the given profile configurations.      *      * @param profile The profile to compute.      * @param defaultsToEmptyString if no substitution is valid, defaults to an empty string.      * @return The effective profile.      */
 name|Profile
 name|getEffectiveProfile
 parameter_list|(

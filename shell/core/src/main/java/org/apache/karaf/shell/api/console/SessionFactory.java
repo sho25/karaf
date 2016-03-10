@@ -48,7 +48,7 @@ specifier|public
 interface|interface
 name|SessionFactory
 block|{
-comment|/**      * Retrieve the {@link Registry} used by this<code>SessionFactory</code>.      */
+comment|/**      * Retrieve the {@link Registry} used by this<code>SessionFactory</code>.      *      * @return a registry built by the factory.      */
 name|Registry
 name|getRegistry
 parameter_list|()

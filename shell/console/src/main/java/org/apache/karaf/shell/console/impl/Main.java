@@ -404,7 +404,7 @@ name|args
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Use this method when the shell is being executed as a top level shell.      *      * @param args      * @throws Exception      */
+comment|/**      * Use this method when the shell is being executed as a top level shell.      *      * @param args The console main arguments.      * @throws Exception In case of console running failure.      */
 specifier|public
 name|void
 name|run
@@ -491,7 +491,7 @@ expr_stmt|;
 comment|// TODO: do we need to stop the threadio that was started?
 comment|// threadio.stop();
 block|}
-comment|/**      * Use this method when the shell is being executed as a command      * of another shell.      *      * @param parent      * @param args      * @throws Exception      */
+comment|/**      * Use this method when the shell is being executed as a command      * of another shell.      *      * @param parent The parent command session.      * @param threadIO The thread IO to use to execute the console.      * @param args The console arguments.      * @throws Exception In case of console running failure.      */
 specifier|public
 name|void
 name|run
@@ -1527,7 +1527,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Allow sub classes of main to change the ConsoleImpl implementation used.      *      * @param commandProcessor      * @param in      * @param out      * @param err      * @param terminal      * @return      * @throws Exception      */
+comment|/**      * Allow sub classes of main to change the ConsoleImpl implementation used.      *      * @param commandProcessor The command processor to use.      * @param threadIO The thread IO to use for the console.      * @param in The input stream.      * @param out The output stream.      * @param err The error stream.      * @param terminal The terminal to use.      * @return The created console implementation.      * @throws Exception If the console creation fails.      */
 specifier|protected
 name|ConsoleImpl
 name|createConsole
@@ -1579,7 +1579,7 @@ literal|false
 argument_list|)
 return|;
 block|}
-comment|/**      * Sub classes can override so that their registered commands do not conflict with the default shell      * implementation.      *      * @return      */
+comment|/**      * Sub classes can override so that their registered commands do not conflict with the default shell      * implementation.      *      * @return The location of the commands resource.      */
 specifier|public
 name|String
 name|getDiscoveryResource
@@ -1901,7 +1901,7 @@ operator|=
 name|user
 expr_stmt|;
 block|}
-comment|/**      * Returns whether or not we are in multi-scope mode.      *<p/>      * The default mode is multi-scoped where we prefix commands by their scope. If we are in single      * scoped mode then we don't use scope prefixes when registering or tab completing commands.      */
+comment|/**      *<p>Returns whether or not we are in multi-scope mode.</p>      *      *<p>The default mode is multi-scoped where we prefix commands by their scope. If we are in single      * scoped mode then we don't use scope prefixes when registering or tab completing commands.</p>      *      * @return True if the command is multi-scoped, false else.      */
 specifier|public
 name|boolean
 name|isMultiScopeMode

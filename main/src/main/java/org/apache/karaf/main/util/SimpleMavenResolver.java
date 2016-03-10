@@ -110,7 +110,7 @@ operator|=
 name|mavenRepos
 expr_stmt|;
 block|}
-comment|/**      * Resolve from pax-url format for maven URIs to the file that is referenced by the URI      * The URI format is:      * mvn:<groupId>/<artifactId>/<version>/<type>/<classifier>      *       * If artifactUri does not match the Syntax the local file that corresponds to the path is returned      *       * @param artifactUri Maven artifact URI      * @return resolved URI      */
+comment|/**      * Resolve from pax-url format for maven URIs to the file that is referenced by the URI      * The URI format is:      * mvn:&lt;groupId&gt;/&lt;artifactId&gt;/&lt;version&gt;/&lt;type&gt;/&lt;classifier&gt;      *       * If artifactUri does not match the Syntax the local file that corresponds to the path is returned      *       * @param artifactUri Maven artifact URI      * @return resolved URI      */
 specifier|public
 name|URI
 name|resolve

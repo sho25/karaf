@@ -28,33 +28,33 @@ specifier|public
 interface|interface
 name|CommandLine
 block|{
-comment|/**      * Retrieve the argument index for the cursor position      */
+comment|/**      * Retrieve the argument index for the cursor position      *      * @return the cursor argument index      */
 name|int
 name|getCursorArgumentIndex
 parameter_list|()
 function_decl|;
-comment|/**      * Retrieve the argument for the cursor position      */
+comment|/**      * Retrieve the argument for the cursor position      *      * @return the cursor argument at position      */
 name|String
 name|getCursorArgument
 parameter_list|()
 function_decl|;
-comment|/**      * Retrieve the position of the cursor within the argument      */
+comment|/**      * Retrieve the position of the cursor within the argument      *      * @return the position of the argument      */
 name|int
 name|getArgumentPosition
 parameter_list|()
 function_decl|;
-comment|/**      * List of arguments on the current command.      * If the command line contains multiple commands, only the command corresponding      * to the cursor position is available.      */
+comment|/**      * List of arguments on the current command.      * If the command line contains multiple commands, only the command corresponding      * to the cursor position is available.      *      * @return array of arguments      */
 name|String
 index|[]
 name|getArguments
 parameter_list|()
 function_decl|;
-comment|/**      * Retrieve the position of the cursor within the command line.      */
+comment|/**      * Retrieve the position of the cursor within the command line.      *      * @return the buffer position      */
 name|int
 name|getBufferPosition
 parameter_list|()
 function_decl|;
-comment|/**      * Retrieve the full buffer.      */
+comment|/**      * Retrieve the full buffer.      *      * @return the buffer      */
 name|String
 name|getBuffer
 parameter_list|()

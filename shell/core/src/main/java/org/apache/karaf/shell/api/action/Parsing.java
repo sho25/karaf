@@ -92,7 +92,7 @@ specifier|public
 annotation_defn|@interface
 name|Parsing
 block|{
-comment|/**      * The parser class to use for this command.      */
+comment|/**      * The parser class to use for this command.      *      * @return the parsing value.      */
 name|Class
 argument_list|<
 name|?

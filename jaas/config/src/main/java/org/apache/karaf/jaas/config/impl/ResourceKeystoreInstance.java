@@ -313,10 +313,6 @@ name|LoggerFactory
 import|;
 end_import
 
-begin_comment
-comment|/**  *  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -466,7 +462,7 @@ return|return
 name|path
 return|;
 block|}
-comment|/**      * @param keystorePath the keystorePath to set      */
+comment|/**      * @param keystorePath the keystorePath to set.      * @throws IOException in case of failure while setting the path.      */
 specifier|public
 name|void
 name|setPath

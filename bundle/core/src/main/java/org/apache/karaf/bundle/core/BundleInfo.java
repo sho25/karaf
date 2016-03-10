@@ -68,7 +68,7 @@ name|String
 name|getRevisions
 parameter_list|()
 function_decl|;
-comment|/**      * Combined bundle state from OSGi and all BundleStateServices      * @return      */
+comment|/**      * Combined bundle state from OSGi and all BundleStateServices      *      * @return the current {@link BundleState}.      */
 name|BundleState
 name|getState
 parameter_list|()

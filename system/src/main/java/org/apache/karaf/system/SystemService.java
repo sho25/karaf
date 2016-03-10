@@ -38,14 +38,14 @@ block|,
 comment|/** Forces a clean restart by removing the working directory; this option is compatible to the former clean method. */
 name|ALL
 block|}
-comment|/**      * Halt the Karaf container.      */
+comment|/**      * Halt the Karaf container.      *      * @throws Exception If the halt fails.      */
 name|void
 name|halt
 parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Halt the Karaf container.      *      * @param time shutdown delay. The time argument can have different formats.      *  First, it can be an absolute time in the format hh:mm, in which hh is the hour (1 or 2 digits) and mm      *  is the minute of the hour (in two digits). Second, it can be in the format +m, in which m is the number of minutes      *  to wait. The word now is an alias for +0.      */
+comment|/**      * Halt the Karaf container.      *      * @param time Shutdown delay. The time argument can have different formats.      *  First, it can be an absolute time in the format hh:mm, in which hh is the hour (1 or 2 digits) and mm      *  is the minute of the hour (in two digits). Second, it can be in the format +m, in which m is the number of minutes      *  to wait. The word now is an alias for +0.      * @throws Exception If the halt fails.      */
 name|void
 name|halt
 parameter_list|(
@@ -55,14 +55,14 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Reboot the Karaf container.      *      * @throws Exception      */
+comment|/**      * Reboot the Karaf container.      *      * @throws Exception If the reboot fails.      */
 name|void
 name|reboot
 parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Reboot the Karaf container.      *      * @param time reboot delay. The time argument can have different formats.      *  First, it can be an absolute time in the format hh:mm, in which hh is the hour (1 or 2 digits) and mm      *  is the minute of the hour (in two digits). Second, it can be in the format +m, in which m is the number of minutes      *  to wait. The word now is an alias for +0.      *  @param clean Force a clean restart by deleting the working directory.      */
+comment|/**      * Reboot the Karaf container.      *      * @param time The reboot delay. The time argument can have different formats.      *  First, it can be an absolute time in the format hh:mm, in which hh is the hour (1 or 2 digits) and mm      *  is the minute of the hour (in two digits). Second, it can be in the format +m, in which m is the number of minutes      *  to wait. The word now is an alias for +0.      * @param clean Force a clean restart by deleting the working directory.      * @throws Exception If the reboot fails.      */
 name|void
 name|reboot
 parameter_list|(
@@ -75,7 +75,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Set the system start level.      *      * @param startLevel the new system start level.      */
+comment|/**      * Set the system start level.      *      * @param startLevel The new system start level.      * @throws Exception If setting the start level fails.      */
 name|void
 name|setStartLevel
 parameter_list|(
@@ -85,24 +85,24 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Get the system start level.      *      * @return the current system start level.      */
+comment|/**      * Get the system start level.      *      * @return The current system start level.      * @throws Exception If an error occurs while retrieving the start level.      */
 name|int
 name|getStartLevel
 parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Get the version of the current Karaf instance      *      * @return instance version      */
+comment|/**      * Get the version of the current Karaf instance.      *      * @return The instance version.      */
 name|String
 name|getVersion
 parameter_list|()
 function_decl|;
-comment|/**      * Get the name of the current Karaf instance      *      * @return instance name      */
+comment|/**      * Get the name of the current Karaf instance.      *      * @return The instance name.      */
 name|String
 name|getName
 parameter_list|()
 function_decl|;
-comment|/**      * Set the name of the Karaf instance      *      * @param name new instance name      */
+comment|/**      * Set the name of the Karaf instance.      *      * @param name The new instance name.      */
 name|void
 name|setName
 parameter_list|(
@@ -110,12 +110,12 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Get the current OSGi framework in use.      *      * @return the name of the OSGi framework in use.      * @throws Exception      */
+comment|/**      * Get the current OSGi framework in use.      *      * @return The {@link FrameworkType} representing the OSGi framework in use.      */
 name|FrameworkType
 name|getFramework
 parameter_list|()
 function_decl|;
-comment|/**      * change OSGi framework      *      * @param framework to use.      */
+comment|/**      * Change OSGi framework to use.      *      * @param framework The new OSGi framework to use.      */
 name|void
 name|setFramework
 parameter_list|(
@@ -123,7 +123,7 @@ name|FrameworkType
 name|framework
 parameter_list|)
 function_decl|;
-comment|/**      * Enable or diable debgging      * @param debug enable if true      */
+comment|/**      * Enable or disable debugging.      *      * @param debug True to enable debugging, false else.      */
 name|void
 name|setFrameworkDebug
 parameter_list|(
@@ -131,7 +131,7 @@ name|boolean
 name|debug
 parameter_list|)
 function_decl|;
-comment|/**      * Set a system property and persist to etc/system.properties      * @param key      */
+comment|/**      * Set a system property and persist to etc/system.properties.      *      * @param key The system property key.      * @param value The system property value.      * @param persist True to persist the change in Karaf etc configuration file, false else.      * @return The system property value as set.      */
 name|String
 name|setSystemProperty
 parameter_list|(

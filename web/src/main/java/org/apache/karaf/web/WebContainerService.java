@@ -80,7 +80,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Retrieves the Web-ContextPath of the corresponding bundle      *       * @param id of the bundle.       * @return       */
+comment|/**      * Retrieve the Web-ContextPath of the corresponding bundle.      *       * @param id The ID of the bundle.      * @return The web context associated with the given bundle.      */
 name|String
 name|getWebContextPath
 parameter_list|(

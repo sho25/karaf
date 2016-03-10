@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Additional capability for a feature.  *<p/>  *<p/>  *<p>Java class for bundle complex type.  *<p/>  *<p>The following schema fragment specifies the expected content contained within this class.  *<p/>  *<pre>  *&lt;complexType name="capability">  *&lt;simpleContent>  *&lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">  *&lt;/extension>  *&lt;/simpleContent>  *&lt;/complexType>  *</pre>  */
+comment|/**  *<p>Additional capability for a feature.</p>  *  *<p>Java class for bundle complex type.</p>  *  *<p>The following schema fragment specifies the expected content contained within this class.</p>  *  *<pre>  *&lt;complexType name="capability"&gt;  *&lt;simpleContent&gt;  *&lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;  *&lt;/extension&gt;  *&lt;/simpleContent&gt;  *&lt;/complexType&gt;  *</pre>  */
 end_comment
 
 begin_class

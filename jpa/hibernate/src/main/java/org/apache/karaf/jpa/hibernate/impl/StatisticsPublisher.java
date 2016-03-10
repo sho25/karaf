@@ -226,7 +226,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Track EntityManagerFactory services for the persistence units.   * Manage on StatisticsMXBean for each persistence unit named like:  * org.hibernate.statistics:unitName=<name of persistence unit>  */
+comment|/**  * Track EntityManagerFactory services for the persistence units.   * Manage on StatisticsMXBean for each persistence unit named like:  * org.hibernate.statistics:unitName=&lt;name of persistence unit&gt;  */
 end_comment
 
 begin_class

@@ -42,7 +42,7 @@ specifier|public
 interface|interface
 name|PackageService
 block|{
-comment|/** 	 * Gets the simplified package exports of a bundle. This does not show the  	 * package versions. 	 *  	 * @param bundleId 	 * @return 	 */
+comment|/** 	 * Get the simplified package exports of a bundle. This does not show the 	 * package versions. 	 *  	 * @param bundleId The bundle ID. 	 * @return The {@link List} of package exports in the given bundle. 	 */
 name|List
 argument_list|<
 name|String
@@ -63,7 +63,7 @@ name|long
 name|bundleId
 parameter_list|)
 function_decl|;
-comment|/** 	 * Gets a map of all exported packages with their version and the bundles that export them 	 * The key is in the form packagename:version. 	 *  	 * @return  	 */
+comment|/** 	 * Get all package exports with their version, and the bundles exporting them. 	 *  	 * @return A {@link List} containing all package exports (as {@link PackageVersion}). 	 */
 name|List
 argument_list|<
 name|PackageVersion
@@ -71,7 +71,7 @@ argument_list|>
 name|getExports
 parameter_list|()
 function_decl|;
-comment|/**      * Gets a map of all package imports.       * The key is the import filter.      *        * @return      */
+comment|/** 	 * Get all package imports with their requirement.      *        * @return A {@link List} containing all package imports (as {@link PackageRequirement}).      */
 name|List
 argument_list|<
 name|PackageRequirement

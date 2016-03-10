@@ -67,7 +67,7 @@ name|String
 name|getName
 parameter_list|()
 function_decl|;
-comment|/**      * Give a textual report about the details of a bundle status      * like missing namespace handlers or service dependencies.      * Should also give the details if there are config errors      *       * @param bundle      * @return diagnostic details      */
+comment|/**      * Give a textual report about the details of a bundle status      * like missing namespace handlers or service dependencies.      * Should also give the details if there are config errors      *       * @param bundle the bundle to get diag for.      * @return diagnostic details.      */
 name|String
 name|getDiag
 parameter_list|(
@@ -75,7 +75,7 @@ name|Bundle
 name|bundle
 parameter_list|)
 function_decl|;
-comment|/**      * Report the bundle state from the framework point of view.       * If the framework is not active it should return Unknown.      *       * @param bundle      * @return status      */
+comment|/**      * Report the bundle state from the framework point of view.       * If the framework is not active it should return Unknown.      *       * @param bundle the bundle to get state for.      * @return the current bundle state.      */
 name|BundleState
 name|getState
 parameter_list|(

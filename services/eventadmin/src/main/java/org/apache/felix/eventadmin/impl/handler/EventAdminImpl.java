@@ -222,7 +222,7 @@ specifier|private
 name|boolean
 name|addSubject
 decl_stmt|;
-comment|/**      * The constructor of the<tt>EventAdmin</tt> implementation.      *      * @param syncPool The synchronous thread pool      * @param asyncPool The asynchronous thread pool      */
+comment|/**      * The constructor of the<code>EventAdmin</code> implementation.      *      * @param bundleContext The bundle context to use.      * @param syncPool The synchronous thread pool.      * @param asyncPool The asynchronous thread pool.      * @param timeout The thread execution timeout.      * @param ignoreTimeout The thread ignore timeout.      * @param requireTopic True to define the topic as required, false else.      * @param ignoreTopics The array of topics to ignore.      * @param addTimestamp True to add timestamp to the event, false else.      * @param addSubject True to add subject to the event, false else.      */
 specifier|public
 name|EventAdminImpl
 parameter_list|(
@@ -349,7 +349,7 @@ name|ignoreTopics
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Check if the event admin is active and return the tracker      * @return The tracker      * @throws IllegalArgumentException if the event admin has been stopped      */
+comment|/**      * Check if the event admin is active and return the tracker.      *      * @return The event tracker.      * @throws IllegalArgumentException If the event admin has been stopped.      */
 specifier|private
 name|EventHandlerTracker
 name|getTracker
@@ -380,7 +380,7 @@ return|return
 name|localTracker
 return|;
 block|}
-comment|/**      * Check whether the topic should be delivered at all      */
+comment|/**      * Check whether the topic should be delivered at all.      *      * @param event The event.      * @return True if the topic is delivered, false else.      */
 specifier|private
 name|boolean
 name|checkTopic
@@ -661,7 +661,7 @@ return|return
 name|event
 return|;
 block|}
-comment|/**      * Post an asynchronous event.      *      * @param event The event to be posted by this service      *      * @throws IllegalStateException - In case we are stopped      *      * @see org.osgi.service.event.EventAdmin#postEvent(org.osgi.service.event.Event)      */
+comment|/**      * Post an asynchronous event.      *      * @param event The event to be posted by this service.      * @throws IllegalStateException In case we are stopped.      *      * @see org.osgi.service.event.EventAdmin#postEvent(org.osgi.service.event.Event)      */
 specifier|public
 name|void
 name|postEvent
@@ -701,7 +701,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Send a synchronous event.      *      * @param event The event to be send by this service      *      * @throws IllegalStateException - In case we are stopped      *      * @see org.osgi.service.event.EventAdmin#sendEvent(org.osgi.service.event.Event)      */
+comment|/**      * Send a synchronous event.      *      * @param event The event to be send by this service.      * @throws IllegalStateException In case we are stopped.      *      * @see org.osgi.service.event.EventAdmin#sendEvent(org.osgi.service.event.Event)      */
 specifier|public
 name|void
 name|sendEvent
@@ -763,7 +763,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Update the event admin with new configuration.      */
+comment|/**      * Update the event admin with new configuration.      *      * @param timeout The event timeout.      * @param ignoreTimeout The event ignore timeout.      * @param requireTopic True if the event require a topic, false else.      * @param ignoreTopics The array of topic to ignore.      * @param addTimestamp True to add timestamp to the event, false else.      * @param addSubject True to add subject to the event, false else.      */
 specifier|public
 name|void
 name|update
@@ -853,7 +853,7 @@ name|ignoreTopics
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * This is a utility method that will throw a<tt>NullPointerException</tt>      * in case that the given object is null. The message will be of the form      * "${name} + may not be null".      */
+comment|/**      * This is a utility method that will throw a<code>NullPointerException</code>      * in case that the given object is null. The message will be of the form      * "${name} + may not be null".      *      * @param object The object to check.      * @param name The object name (in the event).      * @throws NullPointerException If the object is null.      */
 specifier|private
 name|void
 name|checkNull

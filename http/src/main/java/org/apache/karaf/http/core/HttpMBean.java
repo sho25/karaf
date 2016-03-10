@@ -48,7 +48,7 @@ specifier|public
 interface|interface
 name|HttpMBean
 block|{
-comment|/**      * List details for servlets.      *      * @return a tabular view of the servlets information.      * @throws Exception      */
+comment|/**      * List details for servlets.      *      * @return A {@link TabularData} containing the servlets information.      * @throws MBeanException In case of MBean failure.      */
 name|TabularData
 name|getServlets
 parameter_list|()

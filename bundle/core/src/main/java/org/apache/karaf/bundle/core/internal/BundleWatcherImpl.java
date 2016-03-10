@@ -390,7 +390,6 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
-comment|/**      * Constructor      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -1252,7 +1251,7 @@ name|incrementAndGet
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Returns the location of the Bundle inside the local maven repository.      *       * @param bundle      * @return      */
+comment|/**      * Return the location of the Bundle inside the local maven repository.      *       * @param localRepository the repository where to look for bundle update.      * @param bundle the bundle to check update.      * @return the updated file.      */
 specifier|private
 name|File
 name|getBundleExternalLocation
@@ -1380,7 +1379,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Stops the execution of the thread and releases the singleton instance      */
+comment|/**      * Stop the execution of the thread and releases the singleton instance.      */
 specifier|public
 name|void
 name|stop

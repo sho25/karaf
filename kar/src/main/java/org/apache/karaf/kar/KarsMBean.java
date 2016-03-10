@@ -40,7 +40,7 @@ specifier|public
 interface|interface
 name|KarsMBean
 block|{
-comment|/**      * List the installed KAR files.      *      * @return the list of KAR files.      * @throws Exception in case of listing failure.      */
+comment|/**      * List the installed KAR files.      *      * @return the list of KAR files.      * @throws MBeanException in case of listing failure.      */
 name|List
 argument_list|<
 name|String
@@ -50,7 +50,7 @@ parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Create a kar file for a list of feature repos      *      * @param repoName the name of features repository      * @param features the features to include in the kar      * @throws Exception in case of creation failure      */
+comment|/**      * Create a kar file for a list of feature repos      *      * @param repoName the name of features repository      * @param features the features to include in the kar      */
 name|void
 name|create
 parameter_list|(
@@ -64,7 +64,7 @@ argument_list|>
 name|features
 parameter_list|)
 function_decl|;
-comment|/**      * Install a KAR file from the given URL.      *      * @param url the JAR URL.      * @throws Exception in case of installation failure.      */
+comment|/**      * Install a KAR file from the given URL.      *      * @param url the JAR URL.      * @throws MBeanException in case of installation failure.      */
 name|void
 name|install
 parameter_list|(
@@ -74,7 +74,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Uninstall a KAR file.      *       * @param name the name of the KAR file.      * @throws Exception in case of uninstall failure.      */
+comment|/**      * Uninstall a KAR file.      *       * @param name the name of the KAR file.      * @throws MBeanException in case of uninstall failure.      */
 name|void
 name|uninstall
 parameter_list|(

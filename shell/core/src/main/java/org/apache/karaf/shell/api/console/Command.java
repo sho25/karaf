@@ -30,17 +30,17 @@ name|Command
 extends|extends
 name|Function
 block|{
-comment|/**      * Retrieve the scope of this command.      */
+comment|/**      * Retrieve the scope of this command.      *      * @return the command scope.      */
 name|String
 name|getScope
 parameter_list|()
 function_decl|;
-comment|/**      * Retrieve the name of this command.      */
+comment|/**      * Retrieve the name of this command.      *      * @return the command name.      */
 name|String
 name|getName
 parameter_list|()
 function_decl|;
-comment|/**      * Retrieve the description of this command.      * This short command description will be printed      * when using the<code>help</code> command.      */
+comment|/**      * Retrieve the description of this command.      * This short command description will be printed      * when using the<code>help</code> command.      *      * @return the command description.      */
 name|String
 name|getDescription
 parameter_list|()
@@ -53,7 +53,7 @@ name|boolean
 name|scoped
 parameter_list|)
 function_decl|;
-comment|/**      * Retrieve the parser associated with this command or null for the default one.      *      * @return      */
+comment|/**      * Retrieve the parser associated with this command or null for the default one.      *      * @return the command parser.      */
 name|Parser
 name|getParser
 parameter_list|()

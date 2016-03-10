@@ -317,7 +317,7 @@ operator|new
 name|ReentrantReadWriteLock
 argument_list|()
 decl_stmt|;
-comment|/**      * Creates new Declarative Services MBean.      *      * @throws NotCompliantMBeanException      */
+comment|/**      * Creates new Declarative Services MBean.      *      * @throws NotCompliantMBeanException If the MBean is not a valid MBean.      */
 specifier|public
 name|ScrServiceMBeanImpl
 parameter_list|()
@@ -332,7 +332,7 @@ name|class
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Service component activation call back.  Called when all dependencies are satisfied.      *      * @throws Exception      */
+comment|/**      * Service component activation call back.  Called when all dependencies are satisfied.      *      * @throws Exception If the activation fails.      */
 annotation|@
 name|Activate
 specifier|public
@@ -442,7 +442,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Service component deactivation call back.  Called after the component is in an active      * state when any dependencies become unsatisfied.      *      * @throws Exception      */
+comment|/**      * Service component deactivation call back.  Called after the component is in an active      * state when any dependencies become unsatisfied.      *      * @throws Exception If the deactivation fails.      */
 annotation|@
 name|Deactivate
 specifier|public

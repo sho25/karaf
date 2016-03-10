@@ -56,14 +56,14 @@ specifier|public
 interface|interface
 name|JdbcMBean
 block|{
-comment|/**      * Get the list of JDBC datasources.      *      * @return a tabular data containing the list of JDBC datasources.      * @throws MBeanException      */
+comment|/**      * Get the list of JDBC datasources.      *      * @return A {@link TabularData} containing the list of JDBC datasources.      * @throws MBeanException In case of MBean failure.      */
 name|TabularData
 name|getDatasources
 parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Create a JDBC datasource.      *      * @param name the JDBC datasource name      * @param driverName org.osgi.driver.name of the DataSourceFactory to use      * @param driverClass org.osgi.driver.class of the DataSourceFactory to use      * @param databaseName name of the database to access      * @param url JDBC URL      * @param user Database username      * @param password Database password      * @throws MBeanException      */
+comment|/**      * Create a JDBC datasource.      *      * @param name The JDBC datasource name.      * @param driverName The {@code org.osgi.driver.name} of the DataSourceFactory to use.      * @param driverClass The {@code org.osgi.driver.class} of the DataSourceFactory to use.      * @param databaseName The name of the database to access.      * @param url The JDBC URL.      * @param user The database username.      * @param password The database password.      * @throws MBeanException In case of MBean failure.      */
 name|void
 name|create
 parameter_list|(
@@ -91,7 +91,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Delete a JDBC datasource.      *      * @param name the JDBC datasource name (the one used at creation time).      * @throws MBeanException      */
+comment|/**      * Delete a JDBC datasource.      *      * @param name The JDBC datasource name (the one used at creation time).      * @throws MBeanException In case of MBean failure.      */
 name|void
 name|delete
 parameter_list|(
@@ -101,7 +101,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Get details about a JDBC datasource.      *      * @param datasource the JDBC datasource name.      * @return a map (property/value) containing JDBC datasource details.      * @throws MBeanException      */
+comment|/**      * Get details about a JDBC datasource.      *      * @param datasource The JDBC datasource name.      * @return A {@link Map} (property/value) containing JDBC datasource details.      * @throws MBeanException In case of MBean failure.      */
 name|Map
 argument_list|<
 name|String
@@ -116,7 +116,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Get the tables available on a JDBC datasource.      *      * @param datasource the JDBC datasource name.      * @return a tabular data containg datasource tables.      * @throws MBeanException      */
+comment|/**      * Get the tables available on a JDBC datasource.      *      * @param datasource the JDBC datasource name.      * @return A {@link TabularData} containing the datasource tables.      * @throws MBeanException In case of MBean failure.      */
 name|TabularData
 name|tables
 parameter_list|(
@@ -126,7 +126,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Execute a SQL command on a JDBC datasource.      *      * @param datasource the JDBC datasource name.      * @param command the SQL command to execute.      * @throws MBeanException      */
+comment|/**      * Execute a SQL command on a JDBC datasource.      *      * @param datasource The JDBC datasource name.      * @param command The SQL command to execute.      * @throws MBeanException In case of MBean failure.      */
 name|void
 name|execute
 parameter_list|(
@@ -139,7 +139,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Execute a SQL query on a JDBC datasource.      *      * @param datasource the JDBC datasource name.      * @param query the SQL query to execute.      * @return a tabular data with the result of execute (columns/values).      * @throws MBeanException      */
+comment|/**      * Execute a SQL query on a JDBC datasource.      *      * @param datasource The JDBC datasource name.      * @param query The SQL query to execute.      * @return A {@link TabularData} with the result of execute (columns/values).      * @throws MBeanException In case of MBean failure.      */
 name|TabularData
 name|query
 parameter_list|(

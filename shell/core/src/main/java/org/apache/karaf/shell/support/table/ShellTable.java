@@ -236,7 +236,7 @@ return|return
 name|row
 return|;
 block|}
-comment|/**      * Set text to display if there are no rows in the table      * @param text      * @return      */
+comment|/**      * Set text to display if there are no rows in the table.      *      * @param text the text to display when the table is empty.      * @return the shell table.      */
 specifier|public
 name|ShellTable
 name|emptyTableText

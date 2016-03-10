@@ -267,7 +267,6 @@ name|File
 operator|.
 name|separatorChar
 decl_stmt|;
-comment|/**      * @param features list of boot features separated by comma. Optionally contains ;version=x.x.x to specify a specific feature version      */
 specifier|public
 name|BootFeaturesInstaller
 parameter_list|(

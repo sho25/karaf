@@ -36,7 +36,7 @@ specifier|public
 interface|interface
 name|DumpDestination
 block|{
-comment|/**      * Creates new entry in dump destination.      *       * Destination does not close returned output stream by default, dump      * provider should do this after completing write operation.      *       * @param name Name of file in destination.      * @return Output stream ready to write.      * @throws Exception When entry cannot be added.      */
+comment|/**      * Create new entry in dump destination.      *       * Destination does not close returned output stream by default, dump      * provider should do this after completing write operation.      *       * @param name Name of file in destination.      * @return Output stream ready to write.      * @throws Exception When entry cannot be added.      */
 name|OutputStream
 name|add
 parameter_list|(
@@ -46,7 +46,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Complete creation of the dump.      */
+comment|/**      * Complete creation of the dump.      *      * @throws Exception If the save operation fails.      */
 name|void
 name|save
 parameter_list|()

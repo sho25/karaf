@@ -77,7 +77,6 @@ specifier|private
 name|DownloadManagers
 parameter_list|()
 block|{ }
-comment|/**      * Creates a DownloadManager      */
 specifier|public
 specifier|static
 name|DownloadManager

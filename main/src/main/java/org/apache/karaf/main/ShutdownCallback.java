@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  *<p>  * This interface is a callback interface for the stoping process.   * It's main purpose is to give the ServiceWrapper a way of waiting   * for the Framework to gracefully stop the Server.   *<p>  */
+comment|/**  *<p>  * This interface is a callback interface for the stopping process.  * It's main purpose is to give the ServiceWrapper a way of waiting   * for the Framework to gracefully stop the Server.   *</p>  */
 end_comment
 
 begin_interface
@@ -24,7 +24,7 @@ specifier|public
 interface|interface
 name|ShutdownCallback
 block|{
-comment|/** 	 * The callback method invoked to inform anyone listening that the  	 * Main class is still waiting for the completion of the shutdown.  	 */
+comment|/** 	 * The callback method invoked to inform anyone listening that the  	 * Main class is still waiting for the completion of the shutdown. 	 * 	 * @param delay The delay to wait for shutdown. 	 */
 name|void
 name|waitingForShutdown
 parameter_list|(

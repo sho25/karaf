@@ -106,7 +106,7 @@ specifier|private
 name|Thread
 name|thread
 decl_stmt|;
-comment|/**      * Create a new stream pumper.      *      * @param in                    Input stream to read data from      * @param out                   Output stream to write data to.      * @param closeWhenExhausted    If true, the output stream will be closed when      *                              the input is exhausted.      */
+comment|/**      * Create a new stream pumper.      *      * @param in The input stream to read data from.      * @param out The output stream to write data to.      * @param closeWhenExhausted If true, the output stream will be closed when the input is exhausted.      */
 specifier|public
 name|StreamPumper
 parameter_list|(
@@ -152,7 +152,7 @@ operator|=
 name|closeWhenExhausted
 expr_stmt|;
 block|}
-comment|/**      * Create a new stream pumper.      *      * @param in    Input stream to read data from      * @param out   Output stream to write data to.      */
+comment|/**      * Create a new stream pumper.      *      * @param in The input stream to read data from.      * @param out The output stream to write data to.      */
 specifier|public
 name|StreamPumper
 parameter_list|(
@@ -193,7 +193,7 @@ return|return
 name|out
 return|;
 block|}
-comment|/**      * Set whether data should be flushed through to the output stream.      *      * @param autoflush     If true, push through data; if false, let it be buffered      */
+comment|/**      * Set whether data should be flushed through to the output stream.      *      * @param autoflush If true, push through data; if false, let it be buffered.      */
 specifier|public
 name|void
 name|setAutoflush
@@ -209,7 +209,7 @@ operator|=
 name|autoflush
 expr_stmt|;
 block|}
-comment|/**      * Set whether data should be read in a non blocking way.      * @param nonBlocking   If true, data will be read in a non blocking mode      */
+comment|/**      * Set whether data should be read in a non blocking way.      *      * @param nonBlocking If true, data will be read in a non blocking mode.      */
 specifier|public
 name|void
 name|setNonBlocking
@@ -225,7 +225,7 @@ operator|=
 name|nonBlocking
 expr_stmt|;
 block|}
-comment|/**      * Copies data from the input stream to the output stream.      *      * Terminates as soon as the input stream is closed or an error occurs.      */
+comment|/**      * Copy data from the input stream to the output stream.      *      * Terminate as soon as the input stream is closed or an error occurs.      */
 specifier|public
 name|void
 name|run
@@ -489,7 +489,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Tells whether the end of the stream has been reached.      *      * @return true     If the stream has been exhausted.      */
+comment|/**      * Tell whether the end of the stream has been reached.      *      * @return true if the stream has been exhausted.      */
 specifier|public
 specifier|synchronized
 name|boolean
@@ -500,7 +500,7 @@ return|return
 name|finished
 return|;
 block|}
-comment|/**      * This method blocks until the stream pumper finishes.      *      * @see #isFinished()      */
+comment|/**      * This method blocks until the stream pumper finishes.      *      * @see #isFinished()      * @throws InterruptedException if the stream pumper has been interrupted.      */
 specifier|public
 specifier|synchronized
 name|void
@@ -521,7 +521,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Set the size in bytes of the read buffer.      *      * @param bufferSize the buffer size to use.      * @throws IllegalStateException if the StreamPumper is already running.      */
+comment|/**      * Set the size in bytes of the read buffer.      *      * @param bufferSize the buffer size to use.      */
 specifier|public
 specifier|synchronized
 name|void

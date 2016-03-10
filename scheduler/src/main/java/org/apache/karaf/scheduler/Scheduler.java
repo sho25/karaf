@@ -94,7 +94,7 @@ name|PROPERTY_SCHEDULER_NAME
 init|=
 literal|"scheduler.name"
 decl_stmt|;
-comment|/**      * Schedule a job based on the options.      *      * Note that if a job with the same name has already been added, the old job is cancelled and this new job replaces      * the old job.      *      * The job object needs either to be a {@link Job} or a {@link Runnable}. The options have to be created      * by one of the provided methods from this scheduler.      *      * @param job The job to execute (either {@link Job} or {@link Runnable}).      * @param options Required options defining how to schedule the job      * @throws SchedulerException if the job can't be scheduled      * @throws IllegalArgumentException If the preconditions are not met      * @see #NOW()      * @see #NOW(int, long)      * @see #AT(Date)      * @see #AT(Date, int, long)      * @see #EXPR(String)      */
+comment|/**      * Schedule a job based on the options.      *      * Note that if a job with the same name has already been added, the old job is cancelled and this new job replaces      * the old job.      *      * The job object needs either to be a {@link Job} or a {@link Runnable}. The options have to be created      * by one of the provided methods from this scheduler.      *      * @param job The job to execute (either {@link Job} or {@link Runnable}).      * @param options Required options defining how to schedule the job.      * @throws SchedulerException if the job can't be scheduled.      * @throws IllegalArgumentException If the preconditions are not met.      * @see #NOW()      * @see #NOW(int, long)      * @see #AT(Date)      * @see #AT(Date, int, long)      * @see #EXPR(String)      */
 name|void
 name|schedule
 parameter_list|(
@@ -109,7 +109,7 @@ name|IllegalArgumentException
 throws|,
 name|SchedulerException
 function_decl|;
-comment|/**      * Remove a scheduled job by name.      *      * @param jobName The name of the job.      * @return<code>true</code> if the job existed and could be stopped,<code>false</code> otherwise.      */
+comment|/**      * Remove a scheduled job by name.      *      * @param jobName The name of the job.      * @return<code>True</code> if the job existed and could be stopped,<code>false</code> otherwise.      */
 name|boolean
 name|unschedule
 parameter_list|(
@@ -128,12 +128,12 @@ parameter_list|()
 throws|throws
 name|SchedulerException
 function_decl|;
-comment|/**      * Create a schedule options to fire a job immediately and only once.      */
+comment|/**      * Create a schedule options to fire a job immediately and only once.      *      * @return The corresponding {@link ScheduleOptions}.      */
 name|ScheduleOptions
 name|NOW
 parameter_list|()
 function_decl|;
-comment|/**      * Create a schedule options to fire a job immediately more than once.      * @param times The number of times this job should be started (must be higher than 1 or      *              -1 for endless)      * @param period Every period seconds this job is started (must be at higher than 0).      */
+comment|/**      * Create a schedule options to fire a job immediately more than once.      * @param times The number of times this job should be started (must be higher than 1 or -1 for endless).      * @param period Every period seconds this job is started (must be at higher than 0).      * @return The corresponding {@link ScheduleOptions}.      */
 name|ScheduleOptions
 name|NOW
 parameter_list|(
@@ -144,7 +144,7 @@ name|long
 name|period
 parameter_list|)
 function_decl|;
-comment|/**      * Create a schedule options to fire a job once at a specific date      * @param date The date this job should be run.      */
+comment|/**      * Create a schedule options to fire a job once at a specific date.      *      * @param date The date this job should be run.      * @return The corresponding {@link ScheduleOptions}.      */
 name|ScheduleOptions
 name|AT
 parameter_list|(
@@ -153,7 +153,7 @@ name|Date
 name|date
 parameter_list|)
 function_decl|;
-comment|/**      * Create a schedule options to fire a job period starting at a specific date      * @param date The date this job should be run.      * @param times The number of times this job should be started (must be higher than 1 or      *              -1 for endless)      * @param period Every period seconds this job is started (must be at higher than 0).      */
+comment|/**      * Create a schedule options to fire a job period starting at a specific date.      *      * @param date The date this job should be run.      * @param times The number of times this job should be started (must be higher than 1 or -1 for endless).      * @param period Every period seconds this job is started (must be at higher than 0).      * @return The corresponding {@link ScheduleOptions}.      */
 name|ScheduleOptions
 name|AT
 parameter_list|(
@@ -168,7 +168,7 @@ name|long
 name|period
 parameter_list|)
 function_decl|;
-comment|/**      * Create a schedule options to schedule the job based on the expression      * @param expression The cron exception      */
+comment|/**      * Create a schedule options to schedule the job based on the expression.      *      * @param expression The cron exception.      * @return The corresponding {@link ScheduleOptions}.      */
 name|ScheduleOptions
 name|EXPR
 parameter_list|(

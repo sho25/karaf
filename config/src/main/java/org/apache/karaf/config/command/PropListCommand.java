@@ -161,7 +161,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * List commands never requires an update, so it always returns false.      * @param pid      * @return      */
+comment|/**      * Check if a configuration (identified by PID) requires an update or not.      *      * @param pid the configuration PID.      * @return true if the configuration requires an update, false else (always returns false).      */
 annotation|@
 name|Override
 specifier|protected

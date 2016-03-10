@@ -6205,7 +6205,7 @@ name|version
 argument_list|)
 return|;
 block|}
-comment|/**      * Actual deployment needs to be done in a separate thread.      * The reason is that if the console is refreshed, the current thread which is running      * the command may be interrupted while waiting for the refresh to be done, leading      * to bundles not being started after the refresh.      */
+comment|/**      * Actual deployment needs to be done in a separate thread.      * The reason is that if the console is refreshed, the current thread which is running      * the command may be interrupted while waiting for the refresh to be done, leading      * to bundles not being started after the refresh.      *      * @param requirements the provided requirements to match.      * @param stateChanges the current features state.      * @param state the current provisioning state.      * @param options the provisioning options.      * @throws Exception in case of provisioning failure.      */
 specifier|public
 name|void
 name|doProvisionInThread

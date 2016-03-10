@@ -166,8 +166,8 @@ decl_stmt|;
 specifier|private
 name|JDBCUtils
 parameter_list|()
-block|{      }
-comment|/**      * Looks up a datasource from the url. The datasource can be passed either as jndi name or bundles ldap filter.      */
+block|{ }
+comment|/**      * Look up a datasource from the url. The datasource can be passed either as jndi name or bundles ldap filter.      *      * @param bc the bundle context.      * @param url the datasource URL.      * @return the {@link DataSource} object.      * @throws Exception in case of datasource creation failure.      */
 specifier|public
 specifier|static
 name|DataSource

@@ -44,7 +44,7 @@ specifier|public
 interface|interface
 name|ScheduleOptions
 block|{
-comment|/**      * Add optional configuration for the job.      *      * @param config An optional configuration object - this configuration is only passed to the job the job implements {@link Job}.      */
+comment|/**      * Add optional configuration for the job.      *      * @param config An optional configuration object - this configuration is only passed to the job the job implements {@link Job}.      * @return The {@code ScheduleOptions}.      */
 name|ScheduleOptions
 name|config
 parameter_list|(
@@ -58,7 +58,7 @@ argument_list|>
 name|config
 parameter_list|)
 function_decl|;
-comment|/**      * Sets the name of the job.      * A job only needs a name if it is scheduled and should be cancelled later on. The name can then be used to cancel the job.      * If a second job with the same name is started, the second one replaces the first one.      *      * @param name The job name      */
+comment|/**      * Sets the name of the job.      * A job only needs a name if it is scheduled and should be cancelled later on. The name can then be used to cancel the job.      * If a second job with the same name is started, the second one replaces the first one.      *      * @param name The job name.      * @return The {@code ScheduleOptions}.      */
 name|ScheduleOptions
 name|name
 parameter_list|(
@@ -67,7 +67,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Flag indicating whether the job can be run concurrently.      * This defaults to false.      *      * @param flag Whether this job can run even if previous scheduled runs are still running.      */
+comment|/**      * Flag indicating whether the job can be run concurrently.      * This defaults to false.      *      * @param flag Whether this job can run even if previous scheduled runs are still running.      * @return The {@code ScheduleOptions}.      */
 name|ScheduleOptions
 name|canRunConcurrently
 parameter_list|(

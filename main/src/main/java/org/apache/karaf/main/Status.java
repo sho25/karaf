@@ -54,7 +54,7 @@ specifier|public
 class|class
 name|Status
 block|{
-comment|/**      * Checks if the shutdown port is bound. The shutdown port can be configured in config.properties      * or in the shutdown port file.      *      * @param args      * @throws Exception      */
+comment|/**      * Checks if the shutdown port is bound. The shutdown port can be configured in config.properties      * or in the shutdown port file.      *      * @param args The arguments to the status main method.      * @throws Exception If an error occurs while checking the status.      */
 specifier|public
 specifier|static
 name|void

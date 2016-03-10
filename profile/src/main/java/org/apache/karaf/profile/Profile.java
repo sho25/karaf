@@ -194,7 +194,7 @@ name|String
 name|getId
 parameter_list|()
 function_decl|;
-comment|/**      * Get the configuration file names that are available on this profile      */
+comment|/**      * Get the configuration file names that are available on this profile.      *      * @return The configuration file names in the profile.      */
 name|Set
 argument_list|<
 name|String
@@ -202,7 +202,7 @@ argument_list|>
 name|getConfigurationFileNames
 parameter_list|()
 function_decl|;
-comment|/**      * Get all file configurations      */
+comment|/**      * Get all file configurations.      *      * @return The file configurations in the profile.      */
 name|Map
 argument_list|<
 name|String
@@ -213,7 +213,7 @@ argument_list|>
 name|getFileConfigurations
 parameter_list|()
 function_decl|;
-comment|/**      * Get the configuration file for the given name      */
+comment|/**      * Get the configuration file for the given name.      *      * @param fileName The file configuration name to look for in the profile.      * @return The file configuration in the profile.      */
 name|byte
 index|[]
 name|getFileConfiguration
@@ -222,7 +222,7 @@ name|String
 name|fileName
 parameter_list|)
 function_decl|;
-comment|/**      * Get all configuration properties      */
+comment|/**      * Get all configuration properties.      *      * @return The configurations in the profile.      */
 name|Map
 argument_list|<
 name|String
@@ -237,7 +237,7 @@ argument_list|>
 name|getConfigurations
 parameter_list|()
 function_decl|;
-comment|/**      * Get the configuration properties for the given PID      * @return an empty map if the there is no configuration for the given pid      */
+comment|/**      * Get the configuration properties for the given PID.      *      * @param pid The configuration PID to look for.      * @return An empty map if the there is no configuration for the given pid.      */
 name|Map
 argument_list|<
 name|String
@@ -250,17 +250,17 @@ name|String
 name|pid
 parameter_list|)
 function_decl|;
-comment|/**      * Indicate if this profile is an overlay or not.      */
+comment|/**      * Indicate if this profile is an overlay or not.      *      * @return True if the profile is an overlay, false else.      */
 name|boolean
 name|isOverlay
 parameter_list|()
 function_decl|;
-comment|/**      * Returns true if this profile is Abstract.       * Abstract profiles should not be provisioned by default, they are intended to be inherited      */
+comment|/**      * Return true if this profile is Abstract.      * Abstract profiles should not be provisioned by default, they are intended to be inherited.      *      * @return True if the profile is abstract, false else.      */
 name|boolean
 name|isAbstract
 parameter_list|()
 function_decl|;
-comment|/**      * Returns true if this profile is hidden.        * Hidden profiles are not listed by default.      */
+comment|/**      * Return true if this profile is hidden.      * Hidden profiles are not listed by default.      *      * @return True if the profile is hidden, false else.      */
 name|boolean
 name|isHidden
 parameter_list|()

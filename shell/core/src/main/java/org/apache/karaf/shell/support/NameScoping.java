@@ -52,7 +52,7 @@ name|MULTI_SCOPE_MODE_KEY
 init|=
 literal|"MULTI_SCOPE_MODE"
 decl_stmt|;
-comment|/**      * Returns the name of the command which can omit the global scope prefix if the command starts with the      * same prefix as the current application      */
+comment|/**      * Return the name of the command which can omit the global scope prefix if the command starts with the      * same prefix as the current application.      *      * @param session the command session.      * @param key the command key.      * @return the command without the prefix.      */
 specifier|public
 specifier|static
 name|String
@@ -139,7 +139,7 @@ return|return
 name|key
 return|;
 block|}
-comment|/**      * Returns true if the given scope is the global scope so that it can be hidden from help messages      */
+comment|/**      * Return true if the given scope is the global scope so that it can be hidden from help messages.      *      * @param session the command session.      * @param scope the command scope.      * @return true if the command scope is global, false else.      */
 specifier|public
 specifier|static
 name|boolean
@@ -204,7 +204,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Returns true if we are in multi-scope mode (the default) or if we are in single scope mode which means we      * avoid prefixing commands with their scope      */
+comment|/**      * Return true if we are in multi-scope mode (the default) or if we are in single scope mode which means we      * avoid prefixing commands with their scope.      *      * @param session the command session.      * @return true if the command is multi-scoped, false else.      */
 specifier|public
 specifier|static
 name|boolean

@@ -125,7 +125,7 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * This is for long running commands to be interrupted by ctrl-c      *       * @throws InterruptedException      */
+comment|/**      * This is for long running commands to be interrupted by ctrl-c.      *       * @throws InterruptedException If the action is interrupted.      */
 specifier|public
 specifier|static
 name|void

@@ -1195,7 +1195,7 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * Required because Maven 3 returns null in {@link ArtifactRepository#getProtocol()} (see KARAF-244)      */
+comment|/**      * Required because Maven 3 returns null in {@link ArtifactRepository#getProtocol()} (see KARAF-244).      *      * @return The protocol extracted from the local Maven repository URL.      */
 specifier|private
 name|String
 name|extractProtocolFromLocalMavenRepo
@@ -1311,7 +1311,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Convert a feature resourceLocation (bundle or configuration file) into an artifact.      *      * @param resourceLocation the feature resource location (bundle or configuration file).      * @param skipNonMavenProtocols flag to skip protocol different than mvn:      * @return the artifact corresponding to the resource.      * @throws MojoExecutionException      */
+comment|/**      * Convert a feature resourceLocation (bundle or configuration file) into an artifact.      *      * @param resourceLocation The feature resource location (bundle or configuration file).      * @param skipNonMavenProtocols A flag to skip protocol different than mvn:      * @return The artifact corresponding to the resource.      * @throws MojoExecutionException If the plugin execution fails.      */
 specifier|protected
 name|Artifact
 name|resourceToArtifact
@@ -2077,7 +2077,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Make sure the target directory exists and      * that is actually a directory      * @param targetDir      * @throws IOException      */
+comment|/**      * Make sure the target directory exists and that is actually a directory.      *      * @param targetDir The target directory.      * @throws IOException If the target directory is not actually a directory or can't be created.      */
 specifier|private
 specifier|static
 name|void

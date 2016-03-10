@@ -574,7 +574,7 @@ name|in
 argument_list|)
 return|;
 block|}
-comment|/**      * encode the input data producing a base 64 encoded byte array.      *      * @return a byte array containing the base 64 encoded data.      */
+comment|/**      * Encode the input data producing a base 64 encoded byte array.      *      * @param input the String to encore as an array of byte.      * @return a byte array containing the base 64 encoded data.      */
 specifier|public
 specifier|static
 name|String

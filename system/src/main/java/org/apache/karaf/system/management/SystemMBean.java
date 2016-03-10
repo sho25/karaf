@@ -46,14 +46,14 @@ specifier|public
 interface|interface
 name|SystemMBean
 block|{
-comment|/**      * Stop the Karaf instance      *      * @throws Exception      */
+comment|/**      * Stop the Karaf instance.      *      * @throws MBeanException If a failure occurs.      */
 name|void
 name|halt
 parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Stop the Karaf instance at a given time.      *      * @param time the time when to stop the Karaf instance.      * @throws Exception      */
+comment|/**      * Stop the Karaf instance at a given time.      *      * @param time the time when to stop the Karaf instance.      * @throws MBeanException If a failure occurs.      */
 name|void
 name|halt
 parameter_list|(
@@ -63,14 +63,14 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Reboot the Karaf instance.      *      * @throws Exception      */
+comment|/**      * Reboot the Karaf instance.      *      * @throws MBeanException If a failure occurs.      */
 name|void
 name|reboot
 parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Reboot the Karaf instance at a given time.      *      * @param time the time when to reboot the Karaf instance.      * @throws Exception      */
+comment|/**      * Reboot the Karaf instance at a given time.      *      * @param time the time when to reboot the Karaf instance.      * @throws MBeanException If a failure occurs.      */
 name|void
 name|reboot
 parameter_list|(
@@ -80,7 +80,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Reboot the Karaf instance at a given time and clean the cache.      *      * @param time the time when to reboot the Karaf instance.      * @throws Exception      */
+comment|/**      * Reboot the Karaf instance at a given time and clean the cache.      *      * @param time the time when to reboot the Karaf instance.      * @throws MBeanException If a failure occurs.      */
 name|void
 name|rebootCleanCache
 parameter_list|(
@@ -90,7 +90,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Reboot the Karaf instance at a given time and clean all working files.      *      * @param time the time when to reboot the Karaf instance.      * @throws Exception      */
+comment|/**      * Reboot the Karaf instance at a given time and clean all working files.      *      * @param time the time when to reboot the Karaf instance.      * @throws MBeanException If a failure occurs.      */
 name|void
 name|rebootCleanAll
 parameter_list|(
@@ -100,7 +100,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Set the system bundle start level.      *      * @param startLevel the new system bundle start level.      * @throws Exception      */
+comment|/**      * Set the system bundle start level.      *      * @param startLevel the new system bundle start level.      * @throws MBeanException If a failure occurs.      */
 name|void
 name|setStartLevel
 parameter_list|(
@@ -110,19 +110,19 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Get the current system bundle start level.      *      * @return the current system bundle start level.      * @throws Exception      */
+comment|/**      * Get the current system bundle start level.      *      * @return the current system bundle start level.      * @throws MBeanException If a failure occurs.      */
 name|int
 name|getStartLevel
 parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Get the current OSGi framework in use.      *      * @return the name of the OSGi framework in use.      * @throws Exception      */
+comment|/**      * Get the current OSGi framework in use.      *      * @return the name of the OSGi framework in use.      */
 name|String
 name|getFramework
 parameter_list|()
 function_decl|;
-comment|/**      * change OSGi framework      *      * @param framework to use.      */
+comment|/**      * Change OSGi framework      *      * @param framework The framework to use.      */
 name|void
 name|setFramework
 parameter_list|(
@@ -130,7 +130,7 @@ name|String
 name|framework
 parameter_list|)
 function_decl|;
-comment|/**      * Enable or diable debgging      * @param debug enable if true      */
+comment|/**      * Enable or disable debugging      *      * @param debug enable if true      */
 name|void
 name|setFrameworkDebug
 parameter_list|(
@@ -156,7 +156,7 @@ name|String
 name|getVersion
 parameter_list|()
 function_decl|;
-comment|/**      * Get all system properties.      *      * @param unset if true, display the OSGi properties even if they are not defined (with "undef" value).      * @param dumpToFile if true, dump the properties into a file in the data folder.      * @return the list of system properties.      */
+comment|/**      * Get all system properties.      *      * @param unset if true, display the OSGi properties even if they are not defined (with "undef" value).      * @param dumpToFile if true, dump the properties into a file in the data folder.      * @return the list of system properties.      * @throws MBeanException If a failure occurs.      */
 name|Map
 argument_list|<
 name|String

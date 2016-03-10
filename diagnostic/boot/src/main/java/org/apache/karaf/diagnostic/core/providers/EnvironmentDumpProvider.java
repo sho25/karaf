@@ -315,7 +315,7 @@ specifier|final
 name|BundleContext
 name|bundleContext
 decl_stmt|;
-comment|/**      * Creates new dump entry which contains information about the runtime environment.      */
+comment|/**      * Create new dump entry which contains information about the runtime environment.      *      * @param context The bundle context to use in the MBean.      */
 specifier|public
 name|EnvironmentDumpProvider
 parameter_list|(
@@ -1894,7 +1894,7 @@ operator|+
 literal|" kbytes"
 return|;
 block|}
-comment|/**      * Prints the duration in a human readable format as X days Y hours Z minutes etc.      *      * @param uptime the uptime in millis      * @return the time used for displaying on screen or in logs      */
+comment|/**      * Print the duration in a human readable format as X days Y hours Z minutes etc.      *      * @param uptime The uptime in millis.      * @return The time used for displaying on screen or in logs.      */
 specifier|private
 name|String
 name|printDuration

@@ -58,14 +58,14 @@ specifier|public
 interface|interface
 name|WebMBean
 block|{
-comment|/**      * Return the list of web bundles.      *       * @return a tabular data of web bundles.      * @throws Exception in case of lookup failure.      */
+comment|/**      * Return the list of web bundles.      *       * @return a tabular data of web bundles.      * @throws MBeanException in case of lookup failure.      */
 name|TabularData
 name|getWebBundles
 parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Start web context of the given web bundle (identified by ID).      *      * @param bundleId the bundle ID.      * @throws MBeanException      */
+comment|/**      * Start web context of the given web bundle (identified by ID).      *      * @param bundleId the bundle ID.      * @throws MBeanException in case of start failure.      */
 name|void
 name|start
 parameter_list|(
@@ -75,7 +75,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Start web context of the given web bundles (identified by ID).      *       * @param bundleIds the list of bundle IDs.      *                  TODO use a BundleSelector service      * @throws Exception in case of start failure.      */
+comment|/**      * Start web context of the given web bundles (identified by ID).      *       * @param bundleIds the list of bundle IDs.      *                  TODO use a BundleSelector service      * @throws MBeanException in case of start failure.      */
 name|void
 name|start
 parameter_list|(
@@ -88,7 +88,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Stop web context of the given web bundle (identified by ID).      *      * @param bundleId the bundle ID.      * @throws MBeanException      */
+comment|/**      * Stop web context of the given web bundle (identified by ID).      *      * @param bundleId the bundle ID.      * @throws MBeanException in case of stop failure.      */
 name|void
 name|stop
 parameter_list|(
@@ -98,7 +98,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Stop web context of the given web bundles (identified by ID).      *      * @param bundleIds the list of bundle IDs.      *                  TODO use a BundleSelector service      * @throws Exception in case of stop failure      */
+comment|/**      * Stop web context of the given web bundles (identified by ID).      *      * @param bundleIds the list of bundle IDs.      *                  TODO use a BundleSelector service      * @throws MBeanException in case of stop failure      */
 name|void
 name|stop
 parameter_list|(

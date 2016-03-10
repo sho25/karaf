@@ -115,7 +115,7 @@ name|SCOPE_GLOBAL
 init|=
 literal|"*"
 decl_stmt|;
-comment|/**      * Execute a program in this session.      *      * @param commandline      * @return the result of the execution      */
+comment|/**      * Execute a program in this session.      *      * @param commandline the provided command line      * @return the result of the execution      * @throws Exception in case of execution failure.      */
 name|Object
 name|execute
 parameter_list|(
@@ -125,7 +125,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Get the value of a variable.      *      * @param name      * @return      */
+comment|/**      * Get the value of a variable.      *      * @param name the key name in the session      * @return the corresponding object      */
 name|Object
 name|get
 parameter_list|(
@@ -149,12 +149,12 @@ name|InputStream
 name|getKeyboard
 parameter_list|()
 function_decl|;
-comment|/**      * Return the PrintStream for the console. This must always be the stream      * "closest" to the user. This stream can be used to post messages that      * bypass the piping. If the output is piped to a file, then the object      * returned must be null.      *      * @return      */
+comment|/**      * Return the PrintStream for the console. This must always be the stream      * "closest" to the user. This stream can be used to post messages that      * bypass the piping. If the output is piped to a file, then the object      * returned must be null.      *      * @return the console stream      */
 name|PrintStream
 name|getConsole
 parameter_list|()
 function_decl|;
-comment|/**      * Prompt the user for a line.      *      * @param prompt      * @param mask      * @return      * @throws java.io.IOException      */
+comment|/**      * Prompt the user for a line.      *      * @param prompt the session prompt      * @param mask the session mask      * @return the corresponding line      * @throws java.io.IOException in case of prompting failure      */
 name|String
 name|readLine
 parameter_list|(
@@ -168,27 +168,27 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
-comment|/**      * Retrieve the {@link org.apache.karaf.shell.api.console.Terminal} associated      * with this<code>Session</code> or<code>null</code> if this<code>Session</code>      * is headless.      */
+comment|/**      * Retrieve the {@link org.apache.karaf.shell.api.console.Terminal} associated      * with this<code>Session</code> or<code>null</code> if this<code>Session</code>      * is headless.      *      * @return the session terminal      */
 name|Terminal
 name|getTerminal
 parameter_list|()
 function_decl|;
-comment|/**      * Retrieve the {@link org.apache.karaf.shell.api.console.History} associated      * with this<code>Session</code> or<code>null</code> if this<code>Session</code>      * is headless.      */
+comment|/**      * Retrieve the {@link org.apache.karaf.shell.api.console.History} associated      * with this<code>Session</code> or<code>null</code> if this<code>Session</code>      * is headless.      *      * @return the session history      */
 name|History
 name|getHistory
 parameter_list|()
 function_decl|;
-comment|/**      * Retrieve the {@link org.apache.karaf.shell.api.console.Registry} associated      * with this<code>Session</code>.      */
+comment|/**      * Retrieve the {@link org.apache.karaf.shell.api.console.Registry} associated      * with this<code>Session</code>.      *      * @return the session registry      */
 name|Registry
 name|getRegistry
 parameter_list|()
 function_decl|;
-comment|/**      * Retrieve the {@link org.apache.karaf.shell.api.console.SessionFactory} associated      * with this<code>Session</code>.      */
+comment|/**      * Retrieve the {@link org.apache.karaf.shell.api.console.SessionFactory} associated      * with this<code>Session</code>.      *      * @return the session factory      */
 name|SessionFactory
 name|getFactory
 parameter_list|()
 function_decl|;
-comment|/**      * Resolve a command name.  If the command name has no specified scope, the fully      * qualified command name will be returned, depending on the scopes and current      * subshell.      */
+comment|/**      * Resolve a command name.  If the command name has no specified scope, the fully      * qualified command name will be returned, depending on the scopes and current      * subshell.      *      * @param name the command name      * @return the full qualified command name      */
 name|String
 name|resolveCommand
 parameter_list|(

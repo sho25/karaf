@@ -2245,7 +2245,7 @@ name|isEmpty
 argument_list|()
 return|;
 block|}
-comment|/**      *  Returns true if the specified character is a whitespace      *  parameter. Check to ensure that the character is not      *  escaped and returns true from      *  {@link #isDelimiterChar}.      *      *  @param  buffer the complete command buffer      *  @param  pos    the index of the character in the buffer      *  @return        true if the character should be a delimiter      */
+comment|/**      * Returns true if the specified character is a whitespace      * parameter. Check to ensure that the character is not      * escaped and returns true from      * {@link #isDelimiterChar}.      *      * @param buffer the complete command buffer.      * @param pos the index of the character in the buffer.      * @return true if the character should be a delimiter, false else.      */
 specifier|public
 name|boolean
 name|isDelimiter
@@ -2314,7 +2314,7 @@ literal|1
 argument_list|)
 return|;
 block|}
-comment|/**      *  The character is a delimiter if it is whitespace, and the      *  preceeding character is not an escape character.      */
+comment|/**      * The character is a delimiter if it is whitespace, and the      * preceding character is not an escape character.      *      * @param buffer the complete command buffer.      * @param pos the index of the character in the buffer.      * @return true if the character should be a delimiter, false else.      */
 specifier|public
 name|boolean
 name|isDelimiterChar

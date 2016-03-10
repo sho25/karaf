@@ -201,7 +201,7 @@ parameter_list|)
 throws|throws
 name|MojoFailureException
 function_decl|;
-comment|/**      * Convert a Maven<code>Artifact</code> into a PAX URL mvn format.      *      * @param artifact the Maven<code>Artifact</code>.      * @return the corresponding PAX URL mvn format (mvn:groupId/artifactId/version/type/classifier)      */
+comment|/**      * Convert a Maven<code>Artifact</code> into a PAX URL mvn format.      *      * @param artifact The Maven<code>Artifact</code>.      * @return The corresponding PAX URL mvn format (mvn:groupId/artifactId/version/type/classifier)      * @throws MojoExecutionException If the plugin execution fails.      */
 specifier|public
 name|String
 name|artifactToMvn
@@ -212,7 +212,7 @@ parameter_list|)
 throws|throws
 name|MojoExecutionException
 function_decl|;
-comment|/**      * Convert an Aether (Sonatype or Eclipse) artifact into a PAX URL mvn format.      *      * @param object the Aether<code>org.sonatype|eclipse.aether.artifact.Artifact</code>.      * @return the corresponding PAX URL mvn format (mvn:groupId/artifactId/version/type/classifier)      */
+comment|/**      * Convert an Aether (Sonatype or Eclipse) artifact into a PAX URL mvn format.      *      * @param object The Aether<code>org.sonatype|eclipse.aether.artifact.Artifact</code>.      * @return The corresponding PAX URL mvn format (mvn:groupId/artifactId/version/type/classifier).      * @throws MojoExecutionException If the plugin execution fails.      */
 specifier|public
 name|String
 name|artifactToMvn
@@ -233,7 +233,7 @@ parameter_list|)
 throws|throws
 name|MojoExecutionException
 function_decl|;
-comment|/**      * Convert a PAX URL mvn format into a filesystem path.      *      * @param name PAX URL mvn format (mvn:groupId/artifactId/version/type/classifier).      * @return a filesystem path.      */
+comment|/**      * Convert a PAX URL mvn format into a filesystem path.      *      * @param name PAX URL mvn format (mvn:groupId/artifactId/version/type/classifier).      * @return The filesystem path.      * @throws MojoExecutionException If the plugin execution fails.      */
 specifier|public
 name|String
 name|pathFromMaven
@@ -244,7 +244,7 @@ parameter_list|)
 throws|throws
 name|MojoExecutionException
 function_decl|;
-comment|/**      * Convert an Aether coordinate format into a filesystem path.      *      * @param name the Aether coordinate format (groupId:artifactId[:extension[:classifier]]:version).      * @return the filesystem path.      */
+comment|/**      * Convert an Aether coordinate format into a filesystem path.      *      * @param name The Aether coordinate format (groupId:artifactId[:extension[:classifier]]:version).      * @return The filesystem path.      * @throws MojoExecutionException If the plugin execution fails.      */
 specifier|public
 name|String
 name|pathFromAether

@@ -44,7 +44,7 @@ specifier|public
 interface|interface
 name|JdbcService
 block|{
-comment|/**      * Create a JDBC datasource configuration.      *      * @param name Datasource name       * @param driverName Backend database type (osgi.jdbc.driver.name of DataSourceFactory)      * @param url JDBC URL      * @param user Database user name      * @param password Database password      * @param password2       */
+comment|/**      * Create a JDBC datasource configuration.      *      * @param name The datasource name.      * @param driverName The backend database type (osgi.jdbc.driver.name of DataSourceFactory).      * @param driverClass The JDBC driver class.      * @param databaseName The database name.      * @param url The JDBC URL.      * @param user The database user name.      * @param password The database password.      * @throws Exception If the service fails.      */
 name|void
 name|create
 parameter_list|(
@@ -72,7 +72,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Delete a JDBC datasource identified by a name. Works only      * for datasources that have a corresponding configuration      *      * @param name Datasource name      */
+comment|/**      * Delete a JDBC datasource identified by a name. Works only      * for datasources that have a corresponding configuration      *      * @param name The datasource name to delete.      * @throws Exception If the service fails.      */
 name|void
 name|delete
 parameter_list|(
@@ -82,7 +82,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * List the JDBC DataSourceFactories available.      *      * @return a list of DataSourceFactory names      */
+comment|/**      * List the JDBC DataSourceFactories available.      *      * @return a {@link List} of DataSourceFactory names.      * @throws Exception If the service fails.      */
 name|List
 argument_list|<
 name|String
@@ -92,7 +92,7 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * List the JDBC datasources available.      *      * @return a list of datasources names      */
+comment|/**      * List the JDBC datasources available.      *      * @return A {@link List} of datasources names.      * @throws Exception If the service fails.      */
 name|List
 argument_list|<
 name|String
@@ -102,7 +102,7 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Execute a SQL query on a given JDBC datasource.      *      * @param datasource the JDBC datasource name.      * @param query the SQL query to execute.      * @return the SQL query result (as a String).      */
+comment|/**      * Execute a SQL query on a given JDBC datasource.      *      * @param datasource The JDBC datasource name.      * @param query The SQL query to execute.      * @return The SQL query result (as a {@link Map}).      * @throws Exception If the service fails.      */
 name|Map
 argument_list|<
 name|String
@@ -123,7 +123,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Execute a SQL command on a given JDBC datasource.      *      * @param datasource the JDBC datasource name.      * @param command the SQL command to execute.      */
+comment|/**      * Execute a SQL command on a given JDBC datasource.      *      * @param datasource The JDBC datasource name.      * @param command The SQL command to execute.      * @throws Exception If the service fails.      */
 name|void
 name|execute
 parameter_list|(
@@ -136,7 +136,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * List the tables available on a given JDBC datasource.      *      * @param datasource the JDBC datasource name.      * @return the list of table names.      */
+comment|/**      * List the tables available on a given JDBC datasource.      *      * @param datasource the JDBC datasource name.      * @return A {@link Map} containing the tables.      * @throws Exception If the service fails.      */
 name|Map
 argument_list|<
 name|String
@@ -154,7 +154,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Get detailed info about a JDBC datasource.      *      * @param datasource the JDBC datasource name.      * @return a map of info (name/value).      */
+comment|/**      * Get detailed info about a JDBC datasource.      *      * @param datasource The JDBC datasource name.      * @return A {@link Map} of info (name/value).      * @throws Exception If the service fails.      */
 name|Map
 argument_list|<
 name|String

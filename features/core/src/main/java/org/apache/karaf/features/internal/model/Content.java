@@ -23,26 +23,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|StringReader
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|ArrayList
@@ -65,71 +45,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Enumeration
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Properties
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|regex
-operator|.
-name|Matcher
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|regex
-operator|.
-name|Pattern
 import|;
 end_import
 
@@ -224,7 +140,7 @@ name|Bundle
 argument_list|>
 name|bundle
 decl_stmt|;
-comment|/**      * Gets the value of the config property.      *<p/>      *<p/>      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the config property.      *<p/>      *<p/>      * For example, to add a new item, do as follows:      *<pre>      *    getConfig().add(newItem);      *</pre>      *<p/>      *<p/>      *<p/>      * Objects of the following type(s) are allowed in the list      * {@link Config }      */
+comment|/**      *<p>Gets the value of the config property.</p>      *      *<p>This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the config property.</p>      *      *<p>For example, to add a new item, do as follows:</p>      *<pre>      *    getConfig().add(newItem);      *</pre>      *      *<p>Objects of the following type(s) are allowed in the list      * {@link Config }</p>      *      * @return the list of config elements in a feature.      */
 specifier|public
 name|List
 argument_list|<
@@ -256,7 +172,7 @@ operator|.
 name|config
 return|;
 block|}
-comment|/**      * Gets the value of the configfile property.      *<p/>      *<p/>      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the configfile property.      *<p/>      *<p/>      * For example, to add a new item, do as follows:      *<pre>      *    getConfigfile().add(newItem);      *</pre>      *<p/>      *<p/>      *<p/>      * Objects of the following type(s) are allowed in the list      * {@link ConfigFile }      */
+comment|/**      *<p>Gets the value of the configfile property.</p>      *      *<p>This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the configfile property.</p>      *      *<p>For example, to add a new item, do as follows:</p>      *<pre>      *    getConfigfile().add(newItem);      *</pre>      *      *<p>Objects of the following type(s) are allowed in the list      * {@link ConfigFile }</p>      *      * @return the list of configfile elements in a feature.      */
 specifier|public
 name|List
 argument_list|<
@@ -286,7 +202,7 @@ operator|.
 name|configfile
 return|;
 block|}
-comment|/**      * Gets the value of the feature property.      *<p/>      *<p/>      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the feature property.      *<p/>      *<p/>      * For example, to add a new item, do as follows:      *<pre>      *    getFeatures().add(newItem);      *</pre>      *<p/>      *<p/>      *<p/>      * Objects of the following type(s) are allowed in the list      * {@link Dependency }      */
+comment|/**      *<p>Gets the value of the feature property.</p>      *      *<p>This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the feature property.</p>      *      *<p>For example, to add a new item, do as follows:</p>      *<pre>      *    getFeatures().add(newItem);      *</pre>      *      *<p>Objects of the following type(s) are allowed in the list      * {@link Dependency }</p>      *      * @return the list of dependency features in a feature.      */
 specifier|public
 name|List
 argument_list|<
@@ -316,7 +232,7 @@ operator|.
 name|feature
 return|;
 block|}
-comment|/**      * Gets the value of the bundle property.      *<p/>      *<p/>      * This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the bundle property.      *<p/>      *<p/>      * For example, to add a new item, do as follows:      *<pre>      *    getBundle().add(newItem);      *</pre>      *<p/>      *<p/>      *<p/>      * Objects of the following type(s) are allowed in the list      * {@link Bundle }      */
+comment|/**      *<p>Gets the value of the bundle property.</p>      *      *<p>This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the bundle property.</p>      *      *<p>For example, to add a new item, do as follows:</p>      *<pre>      *    getBundle().add(newItem);      *</pre>      *      *<p>Objects of the following type(s) are allowed in the list      * {@link Bundle }</p>      *      * @return the list of bundle elements in a feature.      */
 specifier|public
 name|List
 argument_list|<

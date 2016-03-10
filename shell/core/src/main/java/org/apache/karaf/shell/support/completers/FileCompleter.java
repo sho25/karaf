@@ -94,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A file name completer takes the buffer and issues a list of  * potential completions.  *<p/>  * This completer tries to behave as similar as possible to  *<i>bash</i>'s file name completion (using GNU readline)  * with the following exceptions:  *<p/>  *<ul>  *<li>Candidates that are directories will end with "/"</li>  *<li>Wildcard regular expressions are not evaluated or replaced</li>  *<li>The "~" character can be used to represent the user's home,  * but it cannot complete to other users' homes, since java does  * not provide any way of determining that easily</li>  *</ul>  *  * @author<a href="mailto:mwp1@cornell.edu">Marc Prud'hommeaux</a>  * @author<a href="mailto:jason@planet57.com">Jason Dillon</a>  * @since 2.3  */
+comment|/**  *<p>A file name completer takes the buffer and issues a list of  * potential completions.</p>  *  *<p>This completer tries to behave as similar as possible to  *<i>bash</i>'s file name completion (using GNU readline)  * with the following exceptions:</p>  *  *<ul>  *<li>Candidates that are directories will end with "/"</li>  *<li>Wildcard regular expressions are not evaluated or replaced</li>  *<li>The "~" character can be used to represent the user's home,  * but it cannot complete to other users' homes, since java does  * not provide any way of determining that easily</li>  *</ul>  *  * @author<a href="mailto:mwp1@cornell.edu">Marc Prud'hommeaux</a>  * @author<a href="mailto:jason@planet57.com">Jason Dillon</a>  * @since 2.3  */
 end_comment
 
 begin_class

@@ -707,7 +707,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Resolves and copies the given artifact to the repository path.      * Prefers to resolve using the repository of the artifact if present.      *       * @param artifact      * @param remoteRepos      */
+comment|/**      * Resolves and copies the given artifact to the repository path.      * Prefers to resolve using the repository of the artifact if present.      *       * @param artifact The artifact.      * @param remoteRepos The {@link List} of remote repositories to use for artifact resolution.      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -818,7 +818,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Populate the features by traversing the listed features and their      * dependencies if transitive is true      *        * @param featureNames      * @param features      * @param featuresMap      * @param transitive      */
+comment|/**      * Populate the features by traversing the listed features and their      * dependencies if transitive is true      *        * @param featureNames The {@link List} of feature names.      * @param features The {@link Set} of features.      * @param featuresMap The {@link Map} of features.      * @param transitive True to add transitive features, false else.      */
 specifier|protected
 name|void
 name|addFeatures
@@ -1603,7 +1603,7 @@ return|return
 name|artifact
 return|;
 block|}
-comment|/**      * Maven ArtifactResolver leaves file handles around so need to clean up      * or we will run out of file descriptors      */
+comment|/**      * Maven ArtifactResolver leaves file handles around so need to clean up      * or we will run out of file descriptors.      */
 specifier|protected
 name|void
 name|checkDoGarbageCollect

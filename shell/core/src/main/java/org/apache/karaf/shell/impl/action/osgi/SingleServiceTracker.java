@@ -122,7 +122,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Track a single service by its type.  * When tracking a single service, the dependency is always considered mandatory.  *  * @param<T>  */
+comment|/**  * Track a single service by its type.  * When tracking a single service, the dependency is always considered mandatory.  *  * @param<T> the service type (interface).  */
 end_comment
 
 begin_class

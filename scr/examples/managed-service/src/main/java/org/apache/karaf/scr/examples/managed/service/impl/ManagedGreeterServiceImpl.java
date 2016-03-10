@@ -221,7 +221,7 @@ operator|new
 name|ReentrantReadWriteLock
 argument_list|()
 decl_stmt|;
-comment|/**      * Called when all of the SCR Components required dependencies have been satisfied.      */
+comment|/**      * Called when all of the SCR Components required dependencies have been satisfied.      *      * @param properties The activation properties.      */
 annotation|@
 name|Activate
 specifier|public
@@ -399,7 +399,7 @@ name|COMPONENT_LABEL
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Called when the configuration associated with this component has been updated.      */
+comment|/**      * Called when the configuration associated with this component has been updated.      *      * @param properties The updated configuration.      */
 annotation|@
 name|Modified
 specifier|public

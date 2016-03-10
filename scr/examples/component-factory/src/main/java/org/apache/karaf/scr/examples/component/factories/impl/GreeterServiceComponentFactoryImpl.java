@@ -168,7 +168,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An implementation of the GreeterServiceComponentFactory interface. Component  * configuration includes setting the name attribute and setting the  * configuration policy to required. The default is optional and when the  * component attempts to activate it will throw a RuntimeException.  *  * @author sully6768  */
+comment|/**  * An implementation of the GreeterServiceComponentFactory interface. Component  * configuration includes setting the name attribute and setting the  * configuration policy to required. The default is optional and when the  * component attempts to activate it will throw a RuntimeException.  */
 end_comment
 
 begin_comment
@@ -252,7 +252,7 @@ operator|new
 name|ReentrantReadWriteLock
 argument_list|()
 decl_stmt|;
-comment|/**      * Called when all of the SCR Components required dependencies have been satisfied.      */
+comment|/**      * Called when all of the SCR Components required dependencies have been satisfied.      *      * @param properties The activation properties.      */
 annotation|@
 name|Activate
 specifier|public

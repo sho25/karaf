@@ -2131,7 +2131,7 @@ return|return
 name|completer
 return|;
 block|}
-comment|/**      *  If true, a completion at argument index N will only succeed      *  if all the completions from 0-(N-1) also succeed.      */
+comment|/**      * If true, a completion at argument index N will only succeed      * if all the completions from 0-(N-1) also succeed.      *      * @param strict The new value of the strict flag.      */
 specifier|public
 name|void
 name|setStrict
@@ -2148,7 +2148,7 @@ operator|=
 name|strict
 expr_stmt|;
 block|}
-comment|/**      *  Returns whether a completion at argument index N will succees      *  if all the completions from arguments 0-(N-1) also succeed.      */
+comment|/**      * Return whether a completion at argument index N will success      * if all the completions from arguments 0-(N-1) also succeed.      *      * @return The value of the strict flag.      */
 specifier|public
 name|boolean
 name|getStrict
@@ -2817,7 +2817,7 @@ operator|-
 name|argpos
 operator|)
 decl_stmt|;
-comment|/**          *  Special case: when completing in the middle of a line, and the          *  area under the cursor is a delimiter, then trim any delimiters          *  from the candidates, since we do not need to have an extra          *  delimiter.          *          *  E.g., if we have a completion for "foo", and we          *  enter "f bar" into the buffer, and move to after the "f"          *  and hit TAB, we want "foo bar" instead of "foo  bar".          */
+comment|/**          * Special case: when completing in the middle of a line, and the          * area under the cursor is a delimiter, then trim any delimiters          * from the candidates, since we do not need to have an extra          * delimiter.          *          * E.g., if we have a completion for "foo", and we          * enter "f bar" into the buffer, and move to after the "f"          * and hit TAB, we want "foo bar" instead of "foo  bar".          */
 name|String
 name|buffer
 init|=
@@ -2992,7 +2992,7 @@ name|isEmpty
 argument_list|()
 return|;
 block|}
-comment|/**      *  Returns true if the specified character is a whitespace      *  parameter. Check to ensure that the character is not      *  escaped and returns true from      *  {@link #isDelimiterChar}.      *      *  @param  buffer the complete command buffer      *  @param  pos    the index of the character in the buffer      *  @return        true if the character should be a delimiter      */
+comment|/**      * Return true if the specified character is a whitespace      * parameter. Check to ensure that the character is not      * escaped and returns true from      * {@link #isDelimiterChar}.      *      * @param buffer The complete command buffer.      * @param pos The index of the character in the buffer.      * @return True if the character should be a delimiter, false else.      */
 specifier|public
 name|boolean
 name|isDelimiter
@@ -3061,7 +3061,7 @@ literal|1
 argument_list|)
 return|;
 block|}
-comment|/**      *  The character is a delimiter if it is whitespace, and the      *  preceeding character is not an escape character.      */
+comment|/**      * The character is a delimiter if it is whitespace, and the      * preceding character is not an escape character.      *      * @param buffer The complete command buffer.      * @param pos The index of the character in the buffer.      * @return True if the character is a delimiter, false else.      */
 specifier|public
 name|boolean
 name|isDelimiterChar

@@ -261,7 +261,7 @@ argument_list|(
 literal|"(?:(?:wrap:)|(?:blueprint:))?mvn:([^/ ]+)/([^/ ]+)/([^/\\$ ]*)(/([^/\\$ ]+)(/([^/\\$ ]+))?)?(/\\$.+)?"
 argument_list|)
 decl_stmt|;
-comment|/**      * Convert PAX URL mvn format to aether coordinate format.      * N.B. we do not handle repository-url in mvn urls.      * N.B. version is required in mvn urls.      *      * @param name PAX URL mvn format: mvn-uri := [ 'wrap:' ] 'mvn:' [ repository-url '!' ] group-id '/' artifact-id [ '/' [version] [ '/' [type] [ '/' classifier ] ] ] ]      * @return aether coordinate format:<groupId>:<artifactId>[:<extension>[:<classifier>]]:<version>      */
+comment|/**      * Convert PAX URL mvn format to aether coordinate format.      * N.B. we do not handle repository-url in mvn urls.      * N.B. version is required in mvn urls.      *      * @param name PAX URL mvn format: mvn-uri := [ 'wrap:' ] 'mvn:' [ repository-url '!' ] group-id '/' artifact-id [ '/' [version] [ '/' [type] [ '/' classifier ] ] ] ]      * @return aether coordinate format:&lt;groupId&gt;:&lt;artifactId&gt;[:&lt;extension&gt;[:&lt;classifier&gt;]]:&lt;version&gt;      */
 specifier|public
 specifier|static
 name|String
@@ -481,7 +481,7 @@ name|isEmpty
 argument_list|()
 return|;
 block|}
-comment|/**      * Convert Aether coordinate format to PAX mvn format.      * N.B. we do not handle repository-url in mvn urls.      * N.B. version is required in mvn urls.      *      * @param name aether coordinate format:<groupId>:<artifactId>[:<extension>[:<classifier>]]:<version>      * @return PAX URL mvn format: mvn-uri := 'mvn:' [ repository-url '!' ] group-id '/' artifact-id [ '/' [version] [ '/' [type] [ '/' classifier ] ] ] ]      */
+comment|/**      * Convert Aether coordinate format to PAX mvn format.      * N.B. we do not handle repository-url in mvn urls.      * N.B. version is required in mvn urls.      *      * @param name aether coordinate format:&lt;groupId&gt;:&lt;artifactId&gt;[:&lt;extension&gt;[:&lt;classifier&gt;]]:&lt;version&gt;      * @return PAX URL mvn format: mvn-uri := 'mvn:' [ repository-url '!' ] group-id '/' artifact-id [ '/' [version] [ '/' [type] [ '/' classifier ] ] ] ]      */
 specifier|public
 specifier|static
 name|String

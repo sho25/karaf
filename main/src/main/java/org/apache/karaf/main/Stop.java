@@ -94,7 +94,7 @@ specifier|public
 class|class
 name|Stop
 block|{
-comment|/**      * Sends the shutdown command to the running karaf instance. Uses either a shut down port configured in config.properties or      * the port from the shutdown port file.      *      * @param args      * @throws Exception      */
+comment|/**      * Send the shutdown command to the running Karaf instance. Uses either a shut down port configured in config.properties or      * the port from the shutdown port file.      *      * @param args The arguments to the stop main method.      * @throws Exception In case of failure while stopping.      */
 specifier|public
 specifier|static
 name|void

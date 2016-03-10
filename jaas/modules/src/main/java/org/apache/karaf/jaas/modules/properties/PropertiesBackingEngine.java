@@ -224,7 +224,6 @@ specifier|private
 name|EncryptionSupport
 name|encryptionSupport
 decl_stmt|;
-comment|/**      * Constructor      *      * @param users      */
 specifier|public
 name|PropertiesBackingEngine
 parameter_list|(

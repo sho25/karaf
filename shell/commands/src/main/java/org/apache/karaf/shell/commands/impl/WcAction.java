@@ -527,7 +527,7 @@ literal|true
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Perform the main logic of counting the relevant data within a given input stream.      *<p/>      * Note, a line is considered to be terminated by linefeed '\n' or carriage return '\r'.      * A previous linefeed will be consumed.      *<p/>      * This method assumes UTF-8.      *      * @param inputStream the input stream.      * @return the word count result.      * @throws IOException in case of word count failure.      */
+comment|/**      *<p>Perform the main logic of counting the relevant data within a given input stream.</p>      *<p>Note, a line is considered to be terminated by linefeed '\n' or carriage return '\r'.</p>      *<p>A previous linefeed will be consumed.</p>      *<p>This method assumes UTF-8.</p>      *      * @param inputStream the input stream.      * @return the word count result.      * @throws IOException in case of word count failure.      */
 specifier|protected
 name|WordCounts
 name|getWordCounts

@@ -132,7 +132,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a new instance.      */
+comment|/**      * Creates a new instance.      *      * @param lock the future lock.      */
 specifier|public
 name|DefaultFuture
 parameter_list|(
@@ -567,7 +567,7 @@ name|ready
 return|;
 block|}
 block|}
-comment|/**      * Sets the result of the asynchronous operation, and mark it as finished.      */
+comment|/**      * Set the result of the asynchronous operation, and mark it as finished.      *      * @param newValue the result of the asynchronous operation.      */
 specifier|public
 name|void
 name|setValue
@@ -615,7 +615,7 @@ name|notifyListeners
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Returns the result of the asynchronous operation.      */
+comment|/**      * Return the result of the asynchronous operation.      *      * @return the result of the asynchronous operation.      */
 specifier|protected
 name|Object
 name|getValue
