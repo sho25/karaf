@@ -2442,7 +2442,13 @@ argument_list|()
 decl_stmt|;
 name|verifyResolution
 argument_list|(
-name|manager
+operator|new
+name|CustomDownloadManager
+argument_list|(
+name|resolver
+argument_list|,
+name|executor
+argument_list|)
 argument_list|,
 name|repositories
 argument_list|,
