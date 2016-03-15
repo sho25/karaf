@@ -3217,6 +3217,14 @@ name|DEFAULT_FEATURE_RESOLUTION_RANGE
 expr_stmt|;
 name|request
 operator|.
+name|serviceRequirements
+operator|=
+name|FeaturesService
+operator|.
+name|SERVICE_REQUIREMENTS_DEFAULT
+expr_stmt|;
+name|request
+operator|.
 name|overrides
 operator|=
 operator|new
