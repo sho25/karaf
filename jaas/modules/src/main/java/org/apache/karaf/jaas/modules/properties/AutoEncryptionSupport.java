@@ -278,11 +278,12 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+specifier|private
+specifier|volatile
 name|boolean
 name|running
 decl_stmt|;
 specifier|private
-specifier|volatile
 name|EncryptionSupport
 name|encryptionSupport
 decl_stmt|;
@@ -306,8 +307,6 @@ name|running
 operator|=
 literal|true
 expr_stmt|;
-name|this
-operator|.
 name|encryptionSupport
 operator|=
 operator|new
