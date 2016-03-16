@@ -161,6 +161,8 @@ name|sshd
 operator|.
 name|common
 operator|.
+name|session
+operator|.
 name|Session
 import|;
 end_import
@@ -175,6 +177,10 @@ name|sshd
 operator|.
 name|server
 operator|.
+name|auth
+operator|.
+name|password
+operator|.
 name|PasswordAuthenticator
 import|;
 end_import
@@ -188,6 +194,10 @@ operator|.
 name|sshd
 operator|.
 name|server
+operator|.
+name|auth
+operator|.
+name|pubkey
 operator|.
 name|PublickeyAuthenticator
 import|;

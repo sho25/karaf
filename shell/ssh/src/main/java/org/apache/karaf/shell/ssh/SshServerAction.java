@@ -119,6 +119,8 @@ name|apache
 operator|.
 name|sshd
 operator|.
+name|server
+operator|.
 name|SshServer
 import|;
 end_import

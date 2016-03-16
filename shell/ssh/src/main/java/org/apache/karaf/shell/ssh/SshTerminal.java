@@ -81,6 +81,8 @@ name|sshd
 operator|.
 name|common
 operator|.
+name|channel
+operator|.
 name|PtyMode
 import|;
 end_import

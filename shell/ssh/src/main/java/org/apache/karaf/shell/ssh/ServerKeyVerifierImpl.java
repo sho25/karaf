@@ -67,7 +67,11 @@ name|apache
 operator|.
 name|sshd
 operator|.
-name|ClientSession
+name|client
+operator|.
+name|keyverifier
+operator|.
+name|ServerKeyVerifier
 import|;
 end_import
 
@@ -81,7 +85,9 @@ name|sshd
 operator|.
 name|client
 operator|.
-name|ServerKeyVerifier
+name|session
+operator|.
+name|ClientSession
 import|;
 end_import
 

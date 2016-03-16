@@ -203,9 +203,11 @@ name|apache
 operator|.
 name|sshd
 operator|.
-name|common
+name|agent
 operator|.
-name|Channel
+name|local
+operator|.
+name|ChannelAgentForwardingFactory
 import|;
 end_import
 
@@ -247,7 +249,9 @@ name|sshd
 operator|.
 name|common
 operator|.
-name|Session
+name|channel
+operator|.
+name|Channel
 import|;
 end_import
 
@@ -264,6 +268,22 @@ operator|.
 name|session
 operator|.
 name|ConnectionService
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|sshd
+operator|.
+name|common
+operator|.
+name|session
+operator|.
+name|Session
 import|;
 end_import
 
@@ -373,9 +393,7 @@ parameter_list|()
 block|{
 return|return
 operator|new
-name|ChannelAgentForwarding
-operator|.
-name|Factory
+name|ChannelAgentForwardingFactory
 argument_list|()
 return|;
 block|}
@@ -392,6 +410,9 @@ block|{
 name|String
 name|proxyId
 init|=
+operator|(
+name|String
+operator|)
 name|manager
 operator|.
 name|getProperties
@@ -557,10 +578,26 @@ name|getId
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isOpen
+parameter_list|()
+block|{
+return|return
+name|proxy
+operator|.
+name|isOpen
+argument_list|()
+return|;
+block|}
 specifier|public
 name|void
 name|close
 parameter_list|()
+throws|throws
+name|IOException
 block|{
 name|proxies
 operator|.
