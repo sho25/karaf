@@ -12,6 +12,8 @@ operator|.
 name|karaf
 operator|.
 name|event
+operator|.
+name|command
 package|;
 end_package
 

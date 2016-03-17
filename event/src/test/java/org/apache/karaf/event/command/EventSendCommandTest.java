@@ -8,6 +8,8 @@ operator|.
 name|karaf
 operator|.
 name|event
+operator|.
+name|command
 package|;
 end_package
 
@@ -124,6 +126,22 @@ operator|.
 name|util
 operator|.
 name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|event
+operator|.
+name|command
+operator|.
+name|EventSendCommand
 import|;
 end_import
 
