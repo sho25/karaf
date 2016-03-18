@@ -945,7 +945,7 @@ name|msg
 init|=
 name|MessageFormatter
 operator|.
-name|format
+name|arrayFormat
 argument_list|(
 name|format
 argument_list|,
