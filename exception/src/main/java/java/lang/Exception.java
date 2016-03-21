@@ -23,6 +23,20 @@ name|Field
 import|;
 end_import
 
+begin_import
+import|import
+name|javax
+operator|.
+name|xml
+operator|.
+name|bind
+operator|.
+name|annotation
+operator|.
+name|XmlTransient
+import|;
+end_import
+
 begin_comment
 comment|/**  * {@code Exception} is the superclass of all classes that represent recoverable  * exceptions. When exceptions are thrown, they may be caught by application  * code.  *  * @see Throwable  * @see Error  * @see RuntimeException  */
 end_comment
@@ -280,10 +294,24 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|XmlTransient
+annotation|@
+name|Deprecated
 specifier|public
 name|Class
 index|[]
 name|getClassContext
+parameter_list|()
+block|{
+return|return
+name|classContext
+return|;
+block|}
+specifier|protected
+name|Class
+index|[]
+name|classContext
 parameter_list|()
 block|{
 return|return
