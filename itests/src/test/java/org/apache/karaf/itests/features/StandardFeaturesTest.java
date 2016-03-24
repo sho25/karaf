@@ -37,16 +37,6 @@ name|org
 operator|.
 name|junit
 operator|.
-name|Ignore
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
 name|Test
 import|;
 end_import
@@ -145,6 +135,15 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"===>checkInstalledFeaturesBoot"
+argument_list|)
+expr_stmt|;
 name|assertFeatureInstalled
 argument_list|(
 literal|"wrap"
@@ -233,7 +232,7 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
-comment|/** 	 * Regression test for https://issues.apache.org/jira/browse/KARAF-2566 	 * @throws Exception 	 */
+comment|/**      * Regression test for https://issues.apache.org/jira/browse/KARAF-2566      *       * @throws Exception      */
 specifier|public
 name|void
 name|checkInteractionOfHttpAndAriesAnnotationFeature
@@ -241,6 +240,15 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"====>checkInteractionOfHttpAndAriesAnnotationFeature"
+argument_list|)
+expr_stmt|;
 name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"aries-annotation"
@@ -258,11 +266,6 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
-annotation|@
-name|Ignore
-argument_list|(
-literal|"Waiting for KARAF-3181"
-argument_list|)
 specifier|public
 name|void
 name|installFrameworkSecurityFeature
@@ -283,6 +286,15 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"===>installServiceSecurityFeature"
+argument_list|)
+expr_stmt|;
 name|installAssertAndUninstallFeatures
 argument_list|(
 literal|"service-security"

@@ -143,6 +143,24 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|featureService
+operator|.
+name|installFeature
+argument_list|(
+literal|"management"
+argument_list|,
+name|EnumSet
+operator|.
+name|of
+argument_list|(
+name|FeaturesService
+operator|.
+name|Option
+operator|.
+name|NoAutoRefreshBundles
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|//Remove management and install scr
 name|featureService
 operator|.

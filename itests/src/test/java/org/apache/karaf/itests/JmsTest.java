@@ -316,6 +316,15 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"===>testCommands"
+argument_list|)
+expr_stmt|;
 comment|// jms:create command
 name|System
 operator|.
@@ -620,6 +629,15 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"===>testMBean"
+argument_list|)
+expr_stmt|;
 name|MBeanServer
 name|mbeanServer
 init|=

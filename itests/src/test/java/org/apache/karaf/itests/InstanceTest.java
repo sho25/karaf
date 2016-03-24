@@ -85,6 +85,16 @@ name|org
 operator|.
 name|junit
 operator|.
+name|Ignore
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
 name|Test
 import|;
 end_import
@@ -382,7 +392,7 @@ argument_list|)
 expr_stmt|;
 block|}
 annotation|@
-name|Test
+name|Ignore
 specifier|public
 name|void
 name|createStartCommand
@@ -398,7 +408,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"instance:create itest"
+literal|"instance:create itest666"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -420,7 +430,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"instance:start itest"
+literal|"instance:start itest666"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -429,7 +439,7 @@ name|output
 init|=
 name|executeCommand
 argument_list|(
-literal|"instance:status itest"
+literal|"instance:status itest666"
 argument_list|)
 decl_stmt|;
 name|int
@@ -474,7 +484,7 @@ name|output
 operator|=
 name|executeCommand
 argument_list|(
-literal|"instance:status itest"
+literal|"instance:status itest666"
 argument_list|)
 expr_stmt|;
 block|}
@@ -504,7 +514,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"instance:stop itest"
+literal|"instance:stop itest666"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -512,7 +522,7 @@ name|output
 operator|=
 name|executeCommand
 argument_list|(
-literal|"instance:status itest"
+literal|"instance:status itest666"
 argument_list|)
 expr_stmt|;
 name|i
@@ -556,7 +566,7 @@ name|output
 operator|=
 name|executeCommand
 argument_list|(
-literal|"instance:status itest"
+literal|"instance:status itest666"
 argument_list|)
 expr_stmt|;
 block|}
@@ -795,7 +805,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"instance:create itest"
+literal|"instance:create itest777"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -807,7 +817,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"instance:rename itest new_itest"
+literal|"instance:rename itest777 new_itest"
 argument_list|)
 argument_list|)
 expr_stmt|;
