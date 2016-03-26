@@ -147,7 +147,7 @@ literal|false
 expr_stmt|;
 name|errorMessage
 operator|=
-literal|"Error starting bundle"
+literal|"Error starting bundle "
 expr_stmt|;
 block|}
 annotation|@
