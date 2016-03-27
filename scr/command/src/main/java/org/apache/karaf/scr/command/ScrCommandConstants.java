@@ -44,7 +44,7 @@ specifier|final
 name|String
 name|LIST_FUNCTION
 init|=
-literal|"list"
+literal|"components"
 decl_stmt|;
 specifier|public
 specifier|static
