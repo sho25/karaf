@@ -596,6 +596,13 @@ throws|throws
 name|MojoExecutionException
 block|{
 comment|// Add commands from scripts to already declared commands
+if|if
+condition|(
+name|scripts
+operator|!=
+literal|null
+condition|)
+block|{
 for|for
 control|(
 name|File
@@ -688,8 +695,13 @@ argument_list|)
 throw|;
 block|}
 block|}
+block|}
 if|if
 condition|(
+name|commands
+operator|==
+literal|null
+operator|||
 name|commands
 operator|.
 name|isEmpty
