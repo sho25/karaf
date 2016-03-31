@@ -867,7 +867,7 @@ index|[
 literal|1
 index|]
 argument_list|,
-name|props
+name|properties
 argument_list|)
 expr_stmt|;
 block|}
