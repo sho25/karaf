@@ -448,6 +448,27 @@ name|archiveZip
 init|=
 literal|true
 decl_stmt|;
+comment|/**      * Whether to attach the resulting assembly to the project as an artifact.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"true"
+argument_list|)
+specifier|private
+name|boolean
+name|attach
+init|=
+literal|true
+decl_stmt|;
+comment|/**      * If supplied, the classifer for the artifact when attached.      */
+annotation|@
+name|Parameter
+specifier|private
+name|String
+name|classifier
+decl_stmt|;
 comment|/**      * use symbolic links in tar.gz or zip archives      *      * Symbolic links are not very well supported by windows Platform.      * At least, is does not work on WinXP + NTFS, so do not include them      * for now. So the default is false.      */
 annotation|@
 name|Parameter
@@ -605,6 +626,11 @@ argument_list|,
 name|artifact1
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|attach
+condition|)
+block|{
 name|projectHelper
 operator|.
 name|attachArtifact
@@ -616,11 +642,12 @@ operator|.
 name|getType
 argument_list|()
 argument_list|,
-literal|null
+name|classifier
 argument_list|,
 name|target1
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|File
