@@ -904,6 +904,11 @@ operator|new
 name|ConfigProperties
 argument_list|()
 expr_stmt|;
+name|config
+operator|.
+name|performInit
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|config
