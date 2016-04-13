@@ -1510,6 +1510,18 @@ operator|.
 name|SERVICE_REQUIREMENTS_DEFAULT
 argument_list|)
 decl_stmt|;
+name|boolean
+name|configCfgStore
+init|=
+name|getBoolean
+argument_list|(
+literal|"configCfgStore"
+argument_list|,
+name|FeaturesService
+operator|.
+name|DEFAULT_CONFIG_CFG_STORE
+argument_list|)
+decl_stmt|;
 name|StateStorage
 name|stateStorage
 init|=
@@ -1664,6 +1676,8 @@ argument_list|,
 name|scheduleMaxRun
 argument_list|,
 name|blacklisted
+argument_list|,
+name|configCfgStore
 argument_list|)
 expr_stmt|;
 name|register

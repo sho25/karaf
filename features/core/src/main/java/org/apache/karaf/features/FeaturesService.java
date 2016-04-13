@@ -140,6 +140,11 @@ init|=
 literal|60000
 decl_stmt|;
 comment|// 1 minute
+name|boolean
+name|DEFAULT_CONFIG_CFG_STORE
+init|=
+literal|true
+decl_stmt|;
 enum|enum
 name|Option
 block|{
