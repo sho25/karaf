@@ -44,7 +44,7 @@ specifier|public
 interface|interface
 name|JdbcService
 block|{
-comment|/**      * Create a JDBC datasource configuration.      *      * @param name The datasource name.      * @param driverName The backend database type (osgi.jdbc.driver.name of DataSourceFactory).      * @param driverClass The JDBC driver class.      * @param databaseName The database name.      * @param url The JDBC URL.      * @param user The database user name.      * @param password The database password.      * @throws Exception If the service fails.      */
+comment|/**      * Create a JDBC datasource configuration.      *      * @param name The datasource name.      * @param driverName The backend database type (osgi.jdbc.driver.name of DataSourceFactory).      * @param driverClass The JDBC driver class.      * @param databaseName The database name.      * @param url The JDBC URL.      * @param user The database user name.      * @param password The database password.      * @param databaseType The database type (ConnectionPoolDataSource, XADataSource or DataSource).      * @throws Exception If the service fails.      */
 name|void
 name|create
 parameter_list|(
@@ -68,6 +68,9 @@ name|user
 parameter_list|,
 name|String
 name|password
+parameter_list|,
+name|String
+name|databaseType
 parameter_list|)
 throws|throws
 name|Exception

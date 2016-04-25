@@ -341,6 +341,9 @@ name|user
 parameter_list|,
 name|String
 name|password
+parameter_list|,
+name|String
+name|databaseType
 parameter_list|)
 throws|throws
 name|Exception
@@ -477,6 +480,15 @@ operator|.
 name|JDBC_PASSWORD
 argument_list|,
 name|password
+argument_list|)
+expr_stmt|;
+name|put
+argument_list|(
+name|properties
+argument_list|,
+literal|"dataSourceType"
+argument_list|,
+name|databaseType
 argument_list|)
 expr_stmt|;
 name|Configuration

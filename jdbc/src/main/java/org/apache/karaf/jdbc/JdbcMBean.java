@@ -63,7 +63,7 @@ parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Create a JDBC datasource.      *      * @param name The JDBC datasource name.      * @param driverName The {@code org.osgi.driver.name} of the DataSourceFactory to use.      * @param driverClass The {@code org.osgi.driver.class} of the DataSourceFactory to use.      * @param databaseName The name of the database to access.      * @param url The JDBC URL.      * @param user The database username.      * @param password The database password.      * @throws MBeanException In case of MBean failure.      */
+comment|/**      * Create a JDBC datasource.      *      * @param name The JDBC datasource name.      * @param driverName The {@code org.osgi.driver.name} of the DataSourceFactory to use.      * @param driverClass The {@code org.osgi.driver.class} of the DataSourceFactory to use.      * @param databaseName The name of the database to access.      * @param url The JDBC URL.      * @param user The database username.      * @param password The database password.      * @param databaseType The database type (ConnectionPoolDataSource, XADataSource or DataSource).      * @throws MBeanException In case of MBean failure.      */
 name|void
 name|create
 parameter_list|(
@@ -87,6 +87,9 @@ name|user
 parameter_list|,
 name|String
 name|password
+parameter_list|,
+name|String
+name|databaseType
 parameter_list|)
 throws|throws
 name|MBeanException

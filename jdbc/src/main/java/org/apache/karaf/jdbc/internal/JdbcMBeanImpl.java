@@ -402,6 +402,9 @@ name|user
 parameter_list|,
 name|String
 name|password
+parameter_list|,
+name|String
+name|databaseType
 parameter_list|)
 throws|throws
 name|MBeanException
@@ -425,6 +428,8 @@ argument_list|,
 name|user
 argument_list|,
 name|password
+argument_list|,
+name|databaseType
 argument_list|)
 expr_stmt|;
 block|}
