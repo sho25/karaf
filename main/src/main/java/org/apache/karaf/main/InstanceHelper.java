@@ -214,6 +214,7 @@ specifier|final
 name|File
 name|karafHome
 parameter_list|,
+specifier|final
 name|File
 name|karafBase
 parameter_list|,
@@ -492,7 +493,7 @@ name|setProperty
 argument_list|(
 literal|"item.0.loc"
 argument_list|,
-name|karafHome
+name|karafBase
 operator|.
 name|getAbsolutePath
 argument_list|()
