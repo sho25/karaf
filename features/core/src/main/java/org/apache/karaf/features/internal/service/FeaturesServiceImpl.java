@@ -5549,33 +5549,35 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|System
+name|LOGGER
 operator|.
-name|out
-operator|.
-name|println
+name|info
 argument_list|(
-literal|"The specified feature: '"
-operator|+
-name|installedFeatures
-index|[
-name|i
-index|]
+literal|"The specified feature: '{}' version '{}' {}"
+argument_list|,
+name|f
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"' version '"
-operator|+
-name|installedFeatures
-index|[
-name|i
-index|]
+argument_list|,
+name|f
 operator|.
 name|getVersion
 argument_list|()
-operator|+
-literal|"' is already installed"
+argument_list|,
+name|f
+operator|.
+name|getVersion
+argument_list|()
+operator|.
+name|endsWith
+argument_list|(
+literal|"SNAPSHOT"
+argument_list|)
+condition|?
+literal|"has been upgraded"
+else|:
+literal|"is already installed"
 argument_list|)
 expr_stmt|;
 block|}
