@@ -146,6 +146,19 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
+comment|/**      * Get a configuration property.      *      * @param pid the configuration PID.      * @param key the property key.      * @throws MBeanException in case of MBean failure.      */
+name|String
+name|getProperty
+parameter_list|(
+name|String
+name|pid
+parameter_list|,
+name|String
+name|key
+parameter_list|)
+throws|throws
+name|MBeanException
+function_decl|;
 comment|/**      * Update a complete configuration.      *      * @param pid the configuration PID.      * @param properties the new properties to set in the configuration.      * @throws MBeanException in case of MBean failure.      */
 name|void
 name|update
