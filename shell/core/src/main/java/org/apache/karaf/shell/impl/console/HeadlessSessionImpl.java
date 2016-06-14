@@ -577,6 +577,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|session
+operator|.
+name|currentDir
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|CommandSession

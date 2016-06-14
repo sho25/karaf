@@ -25,6 +25,16 @@ name|java
 operator|.
 name|io
 operator|.
+name|Closeable
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|IOException
 import|;
 end_import
@@ -59,6 +69,8 @@ interface|interface
 name|Session
 extends|extends
 name|Runnable
+extends|,
+name|Closeable
 block|{
 comment|//
 comment|// Session properties

@@ -72,7 +72,7 @@ literal|"\u001B[1mThis is bold.\u001B[22m"
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"\u001B[1mis\u001B[22m"
+literal|"\u001B[1mis\u001B[0m"
 argument_list|,
 name|AnsiSplitter
 operator|.

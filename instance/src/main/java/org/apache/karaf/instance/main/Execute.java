@@ -375,18 +375,6 @@ name|DefaultActionPreparator
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|fusesource
-operator|.
-name|jansi
-operator|.
-name|AnsiConsole
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -583,11 +571,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|AnsiConsole
-operator|.
-name|systemInstall
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|args

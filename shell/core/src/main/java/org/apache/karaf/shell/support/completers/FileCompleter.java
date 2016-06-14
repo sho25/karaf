@@ -136,16 +136,12 @@ name|isWindows
 parameter_list|()
 block|{
 return|return
-operator|(
 name|OS
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"win"
 argument_list|)
-operator|>=
-literal|0
-operator|)
 return|;
 block|}
 specifier|public

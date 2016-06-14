@@ -683,7 +683,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"feature:repo-remove .*apache-karaf-cellar.*"
+literal|"feature:repo-remove '.*apache-karaf-cellar.*'"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -858,7 +858,7 @@ name|refreshedRepo
 init|=
 name|executeCommand
 argument_list|(
-literal|"feature:repo-refresh .*pax.*"
+literal|"feature:repo-refresh '.*pax.*'"
 argument_list|)
 decl_stmt|;
 name|assertContains
