@@ -33,7 +33,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Map
+name|Collection
 import|;
 end_import
 
@@ -109,6 +109,20 @@ name|MavenProject
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|project
+operator|.
+name|ProjectBuildingRequest
+import|;
+end_import
+
 begin_comment
 comment|/**  *<p>An interface for accessing available Aether subsystem (Sonatype for Maven 3.0.x or Eclipse for Maven 3.1.x)</p>  *  *<p>Some methods have {@link Object} parameters because they should be able to receive Aether classes from  * both Aether variants.</p>  */
 end_comment
@@ -120,11 +134,9 @@ name|DependencyHelper
 block|{
 specifier|public
 specifier|abstract
-name|Map
+name|Collection
 argument_list|<
-name|?
-argument_list|,
-name|String
+name|LocalDependency
 argument_list|>
 name|getLocalDependencies
 parameter_list|()
@@ -169,6 +181,24 @@ function_decl|;
 specifier|public
 specifier|abstract
 name|String
+name|getBaseVersion
+parameter_list|(
+name|Object
+name|artifact
+parameter_list|)
+function_decl|;
+specifier|public
+specifier|abstract
+name|String
+name|getGroupId
+parameter_list|(
+name|Object
+name|artifact
+parameter_list|)
+function_decl|;
+specifier|public
+specifier|abstract
+name|String
 name|getClassifier
 parameter_list|(
 name|Object
@@ -201,6 +231,17 @@ parameter_list|)
 throws|throws
 name|MojoFailureException
 function_decl|;
+specifier|public
+specifier|abstract
+name|void
+name|setRepositorySession
+parameter_list|(
+name|ProjectBuildingRequest
+name|request
+parameter_list|)
+throws|throws
+name|MojoExecutionException
+function_decl|;
 comment|/**      * Convert a Maven<code>Artifact</code> into a PAX URL mvn format.      *      * @param artifact The Maven<code>Artifact</code>.      * @return The corresponding PAX URL mvn format (mvn:groupId/artifactId/version/type/classifier)      * @throws MojoExecutionException If the plugin execution fails.      */
 specifier|public
 name|String
@@ -208,6 +249,9 @@ name|artifactToMvn
 parameter_list|(
 name|Artifact
 name|artifact
+parameter_list|,
+name|String
+name|versionOrRange
 parameter_list|)
 throws|throws
 name|MojoExecutionException
@@ -219,6 +263,9 @@ name|artifactToMvn
 parameter_list|(
 name|Object
 name|object
+parameter_list|,
+name|String
+name|versionOrRange
 parameter_list|)
 throws|throws
 name|MojoExecutionException
