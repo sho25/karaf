@@ -296,6 +296,13 @@ argument_list|,
 literal|"1.0.0"
 argument_list|)
 operator|.
+name|set
+argument_list|(
+literal|"Bundle-ManifestVersion"
+argument_list|,
+literal|"2"
+argument_list|)
+operator|.
 name|build
 argument_list|()
 decl_stmt|;
@@ -336,6 +343,13 @@ argument_list|(
 literal|"Bundle-Version"
 argument_list|,
 literal|"1.0.0"
+argument_list|)
+operator|.
+name|set
+argument_list|(
+literal|"Bundle-ManifestVersion"
+argument_list|,
+literal|"2"
 argument_list|)
 operator|.
 name|build
