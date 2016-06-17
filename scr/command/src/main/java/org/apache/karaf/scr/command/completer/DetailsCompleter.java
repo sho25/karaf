@@ -25,20 +25,6 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
-operator|.
-name|scr
-operator|.
-name|Component
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
 name|karaf
 operator|.
 name|shell
@@ -53,6 +39,24 @@ name|Service
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|service
+operator|.
+name|component
+operator|.
+name|runtime
+operator|.
+name|dto
+operator|.
+name|ComponentConfigurationDTO
+import|;
+end_import
+
 begin_class
 annotation|@
 name|Service
@@ -62,14 +66,14 @@ name|DetailsCompleter
 extends|extends
 name|ScrCompleterSupport
 block|{
-comment|/**      * Overrides the super method noted below. See super documentation for      * details.      *       * @see org.apache.karaf.scr.command.completer.ScrCompleterSupport#availableComponent(org.apache.felix.scr.Component)      */
+comment|/**      * Overrides the super method noted below. See super documentation for      * details.      *       * @see org.apache.karaf.scr.command.completer.ScrCompleterSupport#availableComponent(ComponentConfigurationDTO)      */
 annotation|@
 name|Override
 specifier|public
 name|boolean
 name|availableComponent
 parameter_list|(
-name|Component
+name|ComponentConfigurationDTO
 name|component
 parameter_list|)
 throws|throws
