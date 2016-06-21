@@ -103,7 +103,7 @@ literal|"user-delete"
 argument_list|,
 name|description
 operator|=
-literal|"Delete a usergit s"
+literal|"Delete a user"
 argument_list|)
 annotation|@
 name|Service
