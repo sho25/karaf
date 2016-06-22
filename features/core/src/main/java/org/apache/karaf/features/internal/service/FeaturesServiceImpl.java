@@ -1763,7 +1763,11 @@ block|}
 annotation|@
 name|SuppressWarnings
 argument_list|(
+block|{
 literal|"unchecked"
+block|,
+literal|"rawtypes"
+block|}
 argument_list|)
 specifier|private
 name|void
@@ -4950,6 +4954,8 @@ name|feature
 operator|.
 name|getId
 argument_list|()
+argument_list|,
+name|options
 argument_list|)
 expr_stmt|;
 block|}
