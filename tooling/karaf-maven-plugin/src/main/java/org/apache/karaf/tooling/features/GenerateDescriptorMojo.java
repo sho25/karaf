@@ -1539,7 +1539,7 @@ name|MojoExecutionException
 argument_list|(
 name|format
 argument_list|(
-literal|"Maven-project could not be built for artifact %"
+literal|"Maven-project could not be built for artifact %s"
 argument_list|,
 name|pomArtifact
 argument_list|)
