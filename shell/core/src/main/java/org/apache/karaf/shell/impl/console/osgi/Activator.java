@@ -313,6 +313,9 @@ name|sessionFactory
 decl_stmt|;
 specifier|private
 name|ServiceRegistration
+argument_list|<
+name|SessionFactory
+argument_list|>
 name|sessionFactoryRegistration
 decl_stmt|;
 specifier|private
@@ -605,9 +608,6 @@ argument_list|(
 name|SessionFactory
 operator|.
 name|class
-operator|.
-name|getName
-argument_list|()
 argument_list|,
 name|sessionFactory
 argument_list|,

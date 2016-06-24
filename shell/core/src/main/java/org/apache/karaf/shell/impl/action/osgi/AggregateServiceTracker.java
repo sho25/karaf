@@ -102,6 +102,11 @@ comment|/**  * Track multiple services by their type  */
 end_comment
 
 begin_class
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|public
 specifier|abstract
 class|class
@@ -180,11 +185,6 @@ operator|=
 name|bundleContext
 expr_stmt|;
 block|}
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 parameter_list|<
 name|T

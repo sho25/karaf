@@ -27,11 +27,11 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
-operator|.
-name|Assert
+name|After
 import|;
 end_import
 
@@ -41,7 +41,7 @@ name|org
 operator|.
 name|junit
 operator|.
-name|After
+name|Assert
 import|;
 end_import
 

@@ -192,6 +192,11 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|public
 class|class
 name|Converters
@@ -363,6 +368,11 @@ argument_list|)
 argument_list|,
 name|spid
 argument_list|)
+expr_stmt|;
+name|f
+operator|.
+name|close
+argument_list|()
 expr_stmt|;
 return|return
 name|sb

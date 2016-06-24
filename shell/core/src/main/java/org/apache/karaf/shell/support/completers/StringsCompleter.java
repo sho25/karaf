@@ -351,15 +351,6 @@ return|return
 name|strings
 return|;
 block|}
-annotation|@
-name|SuppressWarnings
-argument_list|(
-block|{
-literal|"rawtypes"
-block|,
-literal|"unchecked"
-block|}
-argument_list|)
 specifier|public
 name|int
 name|complete

@@ -502,11 +502,6 @@ operator|!=
 literal|null
 condition|)
 block|{
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 name|T
 name|service
 init|=
@@ -704,6 +699,9 @@ return|;
 block|}
 specifier|public
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|getTrackedClass
 parameter_list|()
 block|{

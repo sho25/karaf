@@ -24,6 +24,11 @@ comment|/**  * Provides access to a concrete type and its optional generic type 
 end_comment
 
 begin_class
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|public
 class|class
 name|ReifiedType

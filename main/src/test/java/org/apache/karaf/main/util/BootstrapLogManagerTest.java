@@ -29,6 +29,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|logging
+operator|.
+name|Handler
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -45,21 +57,9 @@ end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
-operator|.
-name|logging
-operator|.
-name|Handler
-import|;
-end_import
-
-begin_import
-import|import
 name|junit
-operator|.
-name|framework
 operator|.
 name|Assert
 import|;

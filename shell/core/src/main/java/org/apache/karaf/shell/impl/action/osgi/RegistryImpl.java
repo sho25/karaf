@@ -598,6 +598,9 @@ argument_list|(
 operator|(
 operator|(
 name|Factory
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|service
 operator|)
@@ -622,6 +625,9 @@ init|=
 operator|(
 operator|(
 name|Factory
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|service
 operator|)
@@ -645,6 +651,9 @@ name|v
 range|:
 operator|(
 name|List
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|value
 control|)
@@ -797,6 +806,9 @@ argument_list|(
 operator|(
 operator|(
 name|Factory
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|service
 operator|)
@@ -821,6 +833,9 @@ init|=
 operator|(
 operator|(
 name|Factory
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|service
 operator|)
@@ -844,6 +859,9 @@ name|v
 range|:
 operator|(
 name|List
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|value
 control|)
@@ -993,6 +1011,9 @@ argument_list|(
 operator|(
 operator|(
 name|Factory
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|service
 operator|)

@@ -484,6 +484,9 @@ name|configAdminTracker
 decl_stmt|;
 specifier|private
 name|ServiceRegistration
+argument_list|<
+name|ConfigurationListener
+argument_list|>
 name|registration
 decl_stmt|;
 specifier|public

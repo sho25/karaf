@@ -596,6 +596,9 @@ argument_list|(
 operator|(
 operator|(
 name|Factory
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|service
 operator|)
@@ -622,6 +625,9 @@ argument_list|(
 operator|(
 operator|(
 name|Factory
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|service
 operator|)
@@ -759,6 +765,9 @@ argument_list|(
 operator|(
 operator|(
 name|Factory
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|service
 operator|)
@@ -788,6 +797,9 @@ argument_list|(
 operator|(
 operator|(
 name|Factory
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|service
 operator|)
@@ -915,6 +927,9 @@ argument_list|(
 operator|(
 operator|(
 name|Factory
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|service
 operator|)

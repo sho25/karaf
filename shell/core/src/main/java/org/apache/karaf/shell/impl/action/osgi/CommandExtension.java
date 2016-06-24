@@ -408,6 +408,11 @@ comment|/**  * Commands extension  */
 end_comment
 
 begin_class
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|public
 class|class
 name|CommandExtension
@@ -875,6 +880,11 @@ name|close
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|private
 specifier|synchronized
 name|void
@@ -1325,6 +1335,11 @@ name|clazz
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|protected
 name|void
 name|track
