@@ -261,6 +261,14 @@ init|=
 literal|"karaf.local.roles"
 decl_stmt|;
 specifier|private
+specifier|static
+specifier|final
+name|String
+name|KARAF_LOCAL_ROLES_DEFAULT
+init|=
+literal|"admin,manager,viewer,systembundles"
+decl_stmt|;
+specifier|private
 name|SessionFactory
 name|sessionFactory
 decl_stmt|;
@@ -732,6 +740,8 @@ operator|.
 name|getProperty
 argument_list|(
 name|KARAF_LOCAL_ROLES
+argument_list|,
+name|KARAF_LOCAL_ROLES_DEFAULT
 argument_list|)
 decl_stmt|;
 if|if
