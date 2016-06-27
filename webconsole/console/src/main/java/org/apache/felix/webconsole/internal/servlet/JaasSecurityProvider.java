@@ -421,6 +421,8 @@ operator|=
 name|role
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|authenticate
@@ -910,6 +912,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|authenticate
@@ -1131,13 +1135,36 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-comment|// Ignore
+name|LOG
+operator|.
+name|warn
+argument_list|(
+literal|"Error during authentication"
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}
 block|}
-comment|// request authentication
-try|try
+name|requireAuthentication
+argument_list|(
+name|response
+argument_list|)
+expr_stmt|;
+comment|// inform HttpService that authentication failed
+return|return
+literal|false
+return|;
+block|}
+specifier|private
+name|void
+name|requireAuthentication
+parameter_list|(
+name|HttpServletResponse
+name|response
+parameter_list|)
 block|{
 name|response
 operator|.
@@ -1172,6 +1199,8 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
+try|try
+block|{
 name|response
 operator|.
 name|flushBuffer
@@ -1181,15 +1210,19 @@ block|}
 catch|catch
 parameter_list|(
 name|IOException
-name|ioe
+name|e
 parameter_list|)
 block|{
-comment|// failed sending the response ... cannot do anything about it
+name|LOG
+operator|.
+name|debug
+argument_list|(
+literal|"Error flushing after sending auth required"
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
 block|}
-comment|// inform HttpService that authentication failed
-return|return
-literal|false
-return|;
 block|}
 specifier|private
 specifier|static
