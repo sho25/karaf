@@ -380,6 +380,14 @@ name|BundleService
 block|{
 specifier|private
 specifier|static
+specifier|final
+name|String
+name|KARAF_SYSTEM_BUNDLES_START_LEVEL
+init|=
+literal|"karaf.systemBundlesStartLevel"
+decl_stmt|;
+specifier|private
+specifier|static
 name|Logger
 name|LOG
 init|=
@@ -877,7 +885,7 @@ name|bundleContext
 operator|.
 name|getProperty
 argument_list|(
-literal|"karaf.systemBundlesStartLevel"
+name|KARAF_SYSTEM_BUNDLES_START_LEVEL
 argument_list|)
 decl_stmt|;
 if|if
