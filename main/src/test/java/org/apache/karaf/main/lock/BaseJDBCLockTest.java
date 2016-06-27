@@ -311,7 +311,7 @@ name|connection
 operator|=
 name|EasyMock
 operator|.
-name|createMock
+name|createNiceMock
 argument_list|(
 name|Connection
 operator|.
@@ -478,6 +478,9 @@ name|andReturn
 argument_list|(
 name|metaData
 argument_list|)
+operator|.
+name|anyTimes
+argument_list|()
 expr_stmt|;
 name|expect
 argument_list|(
@@ -584,6 +587,12 @@ expr_stmt|;
 name|resultSet
 operator|.
 name|close
+argument_list|()
+expr_stmt|;
+name|expectLastCall
+argument_list|()
+operator|.
+name|atLeastOnce
 argument_list|()
 expr_stmt|;
 name|expect
@@ -791,6 +800,12 @@ expr_stmt|;
 name|resultSet
 operator|.
 name|close
+argument_list|()
+expr_stmt|;
+name|expectLastCall
+argument_list|()
+operator|.
+name|atLeastOnce
 argument_list|()
 expr_stmt|;
 name|replay

@@ -99,6 +99,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|logging
+operator|.
+name|Level
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -254,6 +266,24 @@ block|{
 return|return
 literal|1
 return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|log
+parameter_list|(
+name|Level
+name|level
+parameter_list|,
+name|String
+name|msg
+parameter_list|,
+name|Exception
+name|e
+parameter_list|)
+block|{
+comment|// Suppress log
 block|}
 block|}
 return|;
