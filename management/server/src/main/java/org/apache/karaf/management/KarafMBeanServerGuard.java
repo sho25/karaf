@@ -2494,7 +2494,7 @@ name|s
 range|:
 name|objectName
 operator|.
-name|getKeyPropertyListString
+name|getCanonicalKeyPropertyListString
 argument_list|()
 operator|.
 name|split
