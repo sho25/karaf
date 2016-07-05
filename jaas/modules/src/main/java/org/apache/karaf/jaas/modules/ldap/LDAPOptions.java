@@ -1173,7 +1173,11 @@ name|ManagedSSLSocketFactory
 operator|.
 name|setSocketFactory
 argument_list|(
+operator|new
+name|ManagedSSLSocketFactory
+argument_list|(
 name|factory
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Thread
