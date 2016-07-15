@@ -1431,6 +1431,18 @@ operator|new
 name|DefaultProjectBuildingRequest
 argument_list|()
 decl_stmt|;
+comment|// Fixes KARAF-4626; if the system properties are not transferred to the request,
+comment|// test-feature-use-version-range-transfer-properties will fail
+name|request
+operator|.
+name|setSystemProperties
+argument_list|(
+name|System
+operator|.
+name|getProperties
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|request
 operator|.
 name|setResolveDependencies
