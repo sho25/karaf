@@ -485,34 +485,6 @@ name|match
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|candidates
-operator|.
-name|size
-argument_list|()
-operator|==
-literal|1
-condition|)
-block|{
-comment|// noinspection unchecked
-name|candidates
-operator|.
-name|set
-argument_list|(
-literal|0
-argument_list|,
-name|candidates
-operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
-operator|+
-literal|" "
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|candidates
 operator|.
