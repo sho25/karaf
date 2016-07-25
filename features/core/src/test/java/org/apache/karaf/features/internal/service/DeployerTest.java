@@ -213,6 +213,10 @@ name|karaf
 operator|.
 name|features
 operator|.
+name|internal
+operator|.
+name|resolver
+operator|.
 name|Slf4jResolverLog
 import|;
 end_import

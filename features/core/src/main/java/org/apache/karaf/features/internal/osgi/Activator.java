@@ -149,20 +149,6 @@ name|felix
 operator|.
 name|resolver
 operator|.
-name|Logger
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|felix
-operator|.
-name|resolver
-operator|.
 name|ResolverImpl
 import|;
 end_import
@@ -298,6 +284,24 @@ operator|.
 name|repository
 operator|.
 name|XmlRepository
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
+operator|.
+name|resolver
+operator|.
+name|Slf4jResolverLog
 import|;
 end_import
 
@@ -679,6 +683,16 @@ name|ServiceTrackerCustomizer
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
+import|;
+end_import
+
 begin_class
 annotation|@
 name|Services
@@ -955,11 +969,16 @@ operator|new
 name|ResolverImpl
 argument_list|(
 operator|new
-name|Logger
+name|Slf4jResolverLog
 argument_list|(
-name|Logger
+name|LoggerFactory
 operator|.
-name|LOG_INFO
+name|getLogger
+argument_list|(
+name|ResolverImpl
+operator|.
+name|class
+argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -986,8 +1005,6 @@ condition|)
 block|{
 return|return;
 block|}
-comment|// Resolver
-comment|//        register(Resolver.class, new ResolverImpl(new Slf4jResolverLog(LoggerFactory.getLogger(ResolverImpl.class))));
 comment|// RegionDigraph
 name|digraph
 operator|=

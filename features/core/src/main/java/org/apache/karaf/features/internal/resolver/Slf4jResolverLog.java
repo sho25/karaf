@@ -12,6 +12,10 @@ operator|.
 name|karaf
 operator|.
 name|features
+operator|.
+name|internal
+operator|.
+name|resolver
 package|;
 end_package
 
