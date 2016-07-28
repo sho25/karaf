@@ -57,7 +57,13 @@ name|List
 import|;
 end_import
 
+begin_comment
+comment|/**  * @deprecated use {@link org.apache.karaf.shell.support.table.ShellTable} instead  */
+end_comment
+
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|ShellTable
