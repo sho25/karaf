@@ -185,13 +185,6 @@ name|InstallFeatureCommand
 extends|extends
 name|FeaturesCommandSupport
 block|{
-specifier|private
-specifier|static
-name|String
-name|DEFAULT_VERSION
-init|=
-literal|"0.0.0"
-decl_stmt|;
 annotation|@
 name|Argument
 argument_list|(
