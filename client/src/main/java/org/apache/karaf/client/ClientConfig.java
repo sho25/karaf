@@ -204,6 +204,12 @@ specifier|private
 name|String
 name|command
 decl_stmt|;
+specifier|private
+name|boolean
+name|interactiveMode
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|ClientConfig
 parameter_list|(
@@ -605,6 +611,15 @@ index|[
 name|i
 index|]
 expr_stmt|;
+name|interactiveMode
+operator|=
+literal|true
+expr_stmt|;
+name|password
+operator|=
+literal|null
+expr_stmt|;
+comment|//get chance to input the password with interactive way
 block|}
 block|}
 elseif|else
@@ -1214,6 +1229,18 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|interactiveMode
+condition|)
+block|{
+name|password
+operator|=
+literal|null
+expr_stmt|;
+block|}
+else|else
+block|{
 name|password
 operator|=
 operator|(
@@ -1256,6 +1283,7 @@ name|ROLE_DELIMITER
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
