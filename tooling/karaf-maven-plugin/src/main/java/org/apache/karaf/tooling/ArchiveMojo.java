@@ -747,16 +747,6 @@ condition|(
 name|targetFile
 operator|!=
 literal|null
-operator|&&
-name|project
-operator|.
-name|getPackaging
-argument_list|()
-operator|.
-name|equals
-argument_list|(
-literal|"karaf-assembly"
-argument_list|)
 condition|)
 block|{
 name|serverName
