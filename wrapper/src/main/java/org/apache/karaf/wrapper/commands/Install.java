@@ -1162,7 +1162,7 @@ literal|"    $ rm /etc/init.d/"
 operator|+
 name|serviceFile
 operator|.
-name|getPath
+name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
