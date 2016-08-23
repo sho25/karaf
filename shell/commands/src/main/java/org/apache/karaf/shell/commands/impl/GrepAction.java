@@ -927,6 +927,15 @@ argument_list|(
 name|sb
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|color
+operator|!=
+name|ColorOption
+operator|.
+name|never
+condition|)
+block|{
 name|sb
 operator|.
 name|append
@@ -936,6 +945,7 @@ operator|.
 name|RESET
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
