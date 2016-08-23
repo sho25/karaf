@@ -570,6 +570,8 @@ literal|null
 argument_list|,
 literal|null
 argument_list|,
+literal|null
+argument_list|,
 operator|new
 name|Storage
 argument_list|()
@@ -852,6 +854,8 @@ name|FeaturesServiceImpl
 argument_list|(
 literal|null
 argument_list|,
+literal|null
+argument_list|,
 name|bundleContext
 argument_list|,
 operator|new
@@ -1015,6 +1019,8 @@ literal|null
 argument_list|,
 literal|null
 argument_list|,
+literal|null
+argument_list|,
 operator|new
 name|Storage
 argument_list|()
@@ -1114,6 +1120,8 @@ init|=
 operator|new
 name|FeaturesServiceImpl
 argument_list|(
+literal|null
+argument_list|,
 literal|null
 argument_list|,
 literal|null
