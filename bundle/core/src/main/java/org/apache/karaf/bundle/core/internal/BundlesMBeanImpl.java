@@ -454,11 +454,15 @@ literal|"ID"
 block|,
 literal|"Name"
 block|,
+literal|"Symbolic Name"
+block|,
 literal|"Version"
 block|,
 literal|"Start Level"
 block|,
 literal|"State"
+block|,
+literal|"Update Location"
 block|}
 argument_list|,
 operator|new
@@ -469,11 +473,15 @@ literal|"ID of the Bundle"
 block|,
 literal|"Name of the Bundle"
 block|,
+literal|"Symbolic Name of the Bundle"
+block|,
 literal|"Version of the Bundle"
 block|,
 literal|"Start Level of the Bundle"
 block|,
 literal|"Current State of the Bundle"
+block|,
+literal|"Update location of the Bundle"
 block|}
 argument_list|,
 operator|new
@@ -494,7 +502,15 @@ name|STRING
 block|,
 name|SimpleType
 operator|.
+name|STRING
+block|,
+name|SimpleType
+operator|.
 name|INTEGER
+block|,
+name|SimpleType
+operator|.
+name|STRING
 block|,
 name|SimpleType
 operator|.
@@ -604,11 +620,15 @@ literal|"ID"
 block|,
 literal|"Name"
 block|,
+literal|"Symbolic Name"
+block|,
 literal|"Version"
 block|,
 literal|"Start Level"
 block|,
 literal|"State"
+block|,
+literal|"Update Location"
 block|}
 argument_list|,
 operator|new
@@ -618,6 +638,11 @@ block|{
 name|info
 operator|.
 name|getBundleId
+argument_list|()
+block|,
+name|info
+operator|.
+name|getName
 argument_list|()
 block|,
 name|info
@@ -636,6 +661,11 @@ name|getStartLevel
 argument_list|()
 block|,
 name|bundleStateString
+block|,
+name|info
+operator|.
+name|getUpdateLocation
+argument_list|()
 block|}
 argument_list|)
 decl_stmt|;
