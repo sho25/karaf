@@ -1141,11 +1141,16 @@ name|FEATURE_OSGI_REQUIREMENT_PREFIX
 init|=
 literal|"feature:"
 decl_stmt|;
-comment|/**      * Our bundle.      * We use it to check bundle operations affecting our own bundle.      */
+comment|/**      * Our bundle and corresponding bundle context.      * We use it to check bundle operations affecting our own bundle.      */
 specifier|private
 specifier|final
 name|Bundle
 name|bundle
+decl_stmt|;
+specifier|private
+specifier|final
+name|BundleContext
+name|bundleContext
 decl_stmt|;
 comment|/**      * The system bundle context.      * For all bundles related operations, we use the system bundle context      * to allow this bundle to be stopped and still allow the deployment to      * take place.      */
 specifier|private
