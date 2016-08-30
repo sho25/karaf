@@ -209,6 +209,13 @@ name|System
 operator|.
 name|in
 decl_stmt|;
+name|PrintStream
+name|output
+init|=
+name|System
+operator|.
+name|out
+decl_stmt|;
 try|try
 block|{
 name|ByteArrayInputStream
@@ -317,7 +324,7 @@ name|System
 operator|.
 name|setOut
 argument_list|(
-literal|null
+name|output
 argument_list|)
 expr_stmt|;
 block|}
