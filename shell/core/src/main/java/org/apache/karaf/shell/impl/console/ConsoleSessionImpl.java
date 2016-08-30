@@ -1919,6 +1919,15 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|command
+operator|==
+literal|null
+condition|)
+block|{
+break|break;
+block|}
 name|Object
 name|result
 init|=
