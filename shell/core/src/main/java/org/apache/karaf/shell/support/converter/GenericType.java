@@ -997,11 +997,9 @@ argument_list|)
 block|}
 return|;
 block|}
-throw|throw
-operator|new
-name|IllegalStateException
-argument_list|()
-throw|;
+return|return
+name|EMPTY
+return|;
 block|}
 specifier|static
 name|Class
