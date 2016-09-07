@@ -35,6 +35,16 @@ name|java
 operator|.
 name|io
 operator|.
+name|FileNotFoundException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|InputStream
 import|;
 end_import
@@ -814,6 +824,25 @@ block|}
 block|}
 catch|catch
 parameter_list|(
+name|FileNotFoundException
+name|e
+parameter_list|)
+block|{
+name|LOGGER
+operator|.
+name|debug
+argument_list|(
+literal|"Unable to load blacklist bundles list"
+argument_list|,
+name|e
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
 name|Exception
 name|e
 parameter_list|)
@@ -822,7 +851,7 @@ name|LOGGER
 operator|.
 name|debug
 argument_list|(
-literal|"Unable to load overrides bundles list"
+literal|"Unable to load blacklist bundles list"
 argument_list|,
 name|e
 argument_list|)
