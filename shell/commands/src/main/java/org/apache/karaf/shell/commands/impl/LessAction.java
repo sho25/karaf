@@ -575,6 +575,13 @@ operator|.
 name|getProperty
 argument_list|(
 literal|"karaf.home"
+argument_list|,
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"user.dir"
+argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
