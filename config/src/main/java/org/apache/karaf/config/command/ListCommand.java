@@ -441,11 +441,14 @@ name|key
 operator|+
 literal|" = "
 operator|+
+name|displayValue
+argument_list|(
 name|sortedProps
 operator|.
 name|get
 argument_list|(
 name|key
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
