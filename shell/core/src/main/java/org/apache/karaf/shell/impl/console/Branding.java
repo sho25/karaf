@@ -175,6 +175,13 @@ argument_list|,
 literal|"org/apache/karaf/shell/console/branding-ssh.properties"
 argument_list|)
 expr_stmt|;
+name|loadProps
+argument_list|(
+name|props
+argument_list|,
+literal|"org/apache/karaf/branding/branding.properties"
+argument_list|)
+expr_stmt|;
 return|return
 name|loadEtcBrandingFile
 argument_list|(
@@ -191,6 +198,13 @@ argument_list|(
 name|props
 argument_list|,
 literal|"org/apache/karaf/shell/console/branding.properties"
+argument_list|)
+expr_stmt|;
+name|loadProps
+argument_list|(
+name|props
+argument_list|,
+literal|"org/apache/karaf/branding/branding.properties"
 argument_list|)
 expr_stmt|;
 return|return
