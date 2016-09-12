@@ -840,6 +840,14 @@ name|ColorOption
 operator|.
 name|auto
 operator|&&
+operator|(
+name|Process
+operator|.
+name|current
+argument_list|()
+operator|==
+literal|null
+operator|||
 operator|!
 name|Process
 operator|.
@@ -850,6 +858,7 @@ name|isTty
 argument_list|(
 literal|1
 argument_list|)
+operator|)
 condition|)
 block|{
 name|color

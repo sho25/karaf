@@ -195,6 +195,10 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
+literal|"--color"
+argument_list|,
+literal|"always"
+argument_list|,
 literal|"-C"
 argument_list|,
 literal|"100"
