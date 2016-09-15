@@ -92,6 +92,8 @@ argument_list|>
 argument_list|>
 index|[]
 name|classContext
+init|=
+literal|null
 decl_stmt|;
 comment|/**      * Constructs a new {@code Exception} that includes the current stack trace.      */
 specifier|public
@@ -346,6 +348,17 @@ argument_list|>
 index|[]
 name|context
 init|=
+literal|null
+decl_stmt|;
+if|if
+condition|(
+name|classContext
+operator|!=
+literal|null
+condition|)
+block|{
+name|context
+operator|=
 operator|new
 name|Class
 argument_list|<
@@ -356,7 +369,7 @@ name|classContext
 operator|.
 name|length
 index|]
-decl_stmt|;
+expr_stmt|;
 for|for
 control|(
 name|int
@@ -404,6 +417,7 @@ else|:
 name|c
 expr_stmt|;
 block|}
+block|}
 return|return
 name|context
 return|;
@@ -432,6 +446,13 @@ argument_list|(
 name|this
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|context
+operator|!=
+literal|null
+condition|)
+block|{
 name|classContext
 operator|=
 operator|new
@@ -479,6 +500,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 specifier|protected
