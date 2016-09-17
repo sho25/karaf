@@ -285,6 +285,8 @@ operator|=
 name|session
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ParsedLine
 name|parse
@@ -294,14 +296,11 @@ name|line
 parameter_list|,
 name|int
 name|cursor
+parameter_list|,
+name|ParseContext
+name|parseContext
 parameter_list|)
 throws|throws
-name|org
-operator|.
-name|jline
-operator|.
-name|reader
-operator|.
 name|SyntaxError
 block|{
 try|try
