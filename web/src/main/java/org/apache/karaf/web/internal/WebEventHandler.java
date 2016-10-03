@@ -132,6 +132,9 @@ name|put
 argument_list|(
 name|event
 operator|.
+name|getBundle
+argument_list|()
+operator|.
 name|getBundleId
 argument_list|()
 argument_list|,
