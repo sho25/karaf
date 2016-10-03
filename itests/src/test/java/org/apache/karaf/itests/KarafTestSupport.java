@@ -1163,6 +1163,8 @@ operator|new
 name|RerunTestException
 argument_list|(
 literal|"rerun this test pls"
+argument_list|,
+name|t
 argument_list|)
 throw|;
 block|}
