@@ -1457,6 +1457,15 @@ argument_list|)
 block|,
 name|editConfigurationFilePut
 argument_list|(
+literal|"etc/org.apache.karaf.features.cfg"
+argument_list|,
+literal|"updateSnapshots"
+argument_list|,
+literal|"none"
+argument_list|)
+block|,
+name|editConfigurationFilePut
+argument_list|(
 literal|"etc/org.ops4j.pax.web.cfg"
 argument_list|,
 literal|"org.osgi.service.http.port"

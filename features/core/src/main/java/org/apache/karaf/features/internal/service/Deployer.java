@@ -7380,7 +7380,7 @@ condition|(
 operator|!
 name|oldFragments
 operator|.
-name|equals
+name|containsAll
 argument_list|(
 name|newFragments
 operator|.
