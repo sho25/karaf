@@ -8918,7 +8918,7 @@ name|url
 init|=
 name|bundle
 operator|.
-name|getResource
+name|getEntry
 argument_list|(
 literal|"META-INF/MANIFEST.MF"
 argument_list|)
