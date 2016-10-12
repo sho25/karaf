@@ -49,11 +49,11 @@ name|apache
 operator|.
 name|felix
 operator|.
-name|gogo
+name|service
 operator|.
-name|api
+name|command
 operator|.
-name|CommandSessionListener
+name|CommandSession
 import|;
 end_import
 
@@ -69,7 +69,7 @@ name|service
 operator|.
 name|command
 operator|.
-name|CommandSession
+name|CommandSessionListener
 import|;
 end_import
 

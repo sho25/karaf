@@ -89,6 +89,20 @@ name|PerClass
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|jline
+operator|.
+name|keymap
+operator|.
+name|KeyMap
+operator|.
+name|ctrl
+import|;
+end_import
+
 begin_comment
 comment|/**  * This test exercises the Shell Command ACL for the shell scope commands as defined in  * /framework/src/main/resources/resources/etc/org.apache.karaf.command.acl.shell.cfg  */
 end_comment
@@ -165,7 +179,7 @@ name|assertCommand
 argument_list|(
 name|vieweruser
 argument_list|,
-literal|"shell:edit"
+literal|"shell:nano"
 argument_list|,
 name|Result
 operator|.
@@ -220,7 +234,12 @@ name|assertCommand
 argument_list|(
 literal|"karaf"
 argument_list|,
-literal|"shell:edit"
+literal|"shell:nano\n"
+operator|+
+name|ctrl
+argument_list|(
+literal|'X'
+argument_list|)
 argument_list|,
 name|Result
 operator|.

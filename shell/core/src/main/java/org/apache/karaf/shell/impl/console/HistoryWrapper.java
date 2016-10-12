@@ -84,7 +84,7 @@ parameter_list|()
 block|{
 name|history
 operator|.
-name|clear
+name|purge
 argument_list|()
 expr_stmt|;
 block|}
