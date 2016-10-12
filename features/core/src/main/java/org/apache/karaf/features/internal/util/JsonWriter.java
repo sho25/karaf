@@ -516,7 +516,14 @@ name|getValue
 argument_list|()
 argument_list|,
 name|indent
+operator|>=
+literal|0
+condition|?
+name|indent
 operator|+
+literal|1
+else|:
+operator|-
 literal|1
 argument_list|)
 expr_stmt|;
