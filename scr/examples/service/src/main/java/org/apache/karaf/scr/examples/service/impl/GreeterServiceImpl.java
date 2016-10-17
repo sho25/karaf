@@ -23,20 +23,6 @@ end_package
 
 begin_import
 import|import
-name|aQute
-operator|.
-name|bnd
-operator|.
-name|annotation
-operator|.
-name|component
-operator|.
-name|Component
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -50,6 +36,22 @@ operator|.
 name|service
 operator|.
 name|GreeterService
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|service
+operator|.
+name|component
+operator|.
+name|annotations
+operator|.
+name|Component
 import|;
 end_import
 

@@ -25,20 +25,6 @@ end_package
 
 begin_import
 import|import
-name|aQute
-operator|.
-name|bnd
-operator|.
-name|annotation
-operator|.
-name|component
-operator|.
-name|*
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -54,6 +40,22 @@ operator|.
 name|service
 operator|.
 name|ManagedGreeterService
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|service
+operator|.
+name|component
+operator|.
+name|annotations
+operator|.
+name|*
 import|;
 end_import
 
@@ -157,7 +159,7 @@ name|configurationPolicy
 operator|=
 name|ConfigurationPolicy
 operator|.
-name|require
+name|REQUIRE
 argument_list|)
 specifier|public
 class|class
