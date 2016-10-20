@@ -2975,6 +2975,10 @@ name|isFragment
 argument_list|(
 name|resource
 argument_list|)
+operator|&&
+name|requirement
+operator|!=
+literal|null
 condition|)
 block|{
 name|List
