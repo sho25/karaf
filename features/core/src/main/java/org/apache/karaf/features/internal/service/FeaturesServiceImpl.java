@@ -4109,7 +4109,6 @@ name|repo
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 for|for
 control|(
 name|URI
@@ -4131,6 +4130,7 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 catch|catch
