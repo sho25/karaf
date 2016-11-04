@@ -126,6 +126,12 @@ name|scheduleNbRun
 init|=
 literal|0
 decl_stmt|;
+specifier|private
+name|Exception
+name|previousException
+init|=
+literal|null
+decl_stmt|;
 specifier|public
 name|AbstractRetryableDownloadTask
 parameter_list|(
@@ -205,7 +211,9 @@ name|File
 name|file
 init|=
 name|download
-argument_list|()
+argument_list|(
+name|previousException
+argument_list|)
 decl_stmt|;
 name|setFile
 argument_list|(
@@ -219,14 +227,63 @@ name|IOException
 name|e
 parameter_list|)
 block|{
+name|Retry
+name|retry
+init|=
+name|isRetryable
+argument_list|(
+name|e
+argument_list|)
+decl_stmt|;
+name|int
+name|retryCount
+init|=
+name|scheduleMaxRun
+decl_stmt|;
+if|if
+condition|(
+name|retry
+operator|==
+name|Retry
+operator|.
+name|QUICK_RETRY
+condition|)
+block|{
+name|retryCount
+operator|=
+name|retryCount
+operator|/
+literal|2
+expr_stmt|;
+comment|// arbitrary number...
+block|}
+elseif|else
+if|if
+condition|(
+name|retry
+operator|==
+name|Retry
+operator|.
+name|NO_RETRY
+condition|)
+block|{
+name|retryCount
+operator|=
+literal|0
+expr_stmt|;
+block|}
 if|if
 condition|(
 operator|++
 name|scheduleNbRun
 operator|<
-name|scheduleMaxRun
+name|retryCount
 condition|)
 block|{
+name|previousException
+operator|=
+name|e
+expr_stmt|;
 name|long
 name|delay
 init|=
@@ -265,7 +322,11 @@ operator|.
 name|getMessage
 argument_list|()
 operator|+
-literal|". Retrying in approx "
+literal|". "
+operator|+
+name|retry
+operator|+
+literal|" in approx "
 operator|+
 name|delay
 operator|+
@@ -330,13 +391,45 @@ expr_stmt|;
 block|}
 block|}
 specifier|protected
+name|Retry
+name|isRetryable
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+return|return
+name|Retry
+operator|.
+name|DEFAULT_RETRY
+return|;
+block|}
+comment|/**      * Abstract download operation that may use<em>previous exception</em> as hint for optimized retry      * @param previousException      * @return      * @throws Exception      */
+specifier|protected
 specifier|abstract
 name|File
 name|download
-parameter_list|()
+parameter_list|(
+name|Exception
+name|previousException
+parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * What kind of retry may be attempted      */
+specifier|protected
+enum|enum
+name|Retry
+block|{
+comment|/** Each retry would lead to the same result */
+name|NO_RETRY
+block|,
+comment|/** It's ok to retry 2, 3 times, but no more */
+name|QUICK_RETRY
+block|,
+comment|/** Retry with high expectation of success at some point */
+name|DEFAULT_RETRY
+block|}
 block|}
 end_class
 
