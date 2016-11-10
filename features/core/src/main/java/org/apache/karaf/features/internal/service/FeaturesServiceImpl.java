@@ -4039,6 +4039,17 @@ argument_list|()
 decl_stmt|;
 comment|// Two phase load:
 comment|// * first load dependent repositories
+name|Set
+argument_list|<
+name|String
+argument_list|>
+name|loaded
+init|=
+operator|new
+name|HashSet
+argument_list|<>
+argument_list|()
+decl_stmt|;
 name|List
 argument_list|<
 name|String
@@ -4139,6 +4150,16 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|loaded
+operator|.
+name|add
+argument_list|(
+name|uri
+argument_list|)
+condition|)
+block|{
 for|for
 control|(
 name|URI
@@ -4149,20 +4170,6 @@ operator|.
 name|getRepositories
 argument_list|()
 control|)
-block|{
-if|if
-condition|(
-operator|!
-name|toLoad
-operator|.
-name|contains
-argument_list|(
-name|u
-operator|.
-name|toString
-argument_list|()
-argument_list|)
-condition|)
 block|{
 name|toLoad
 operator|.
