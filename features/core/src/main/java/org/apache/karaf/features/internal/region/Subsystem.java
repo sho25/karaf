@@ -2533,6 +2533,17 @@ condition|(
 name|feature
 operator|!=
 literal|null
+operator|&&
+operator|!
+name|prereqs
+operator|.
+name|contains
+argument_list|(
+name|feature
+operator|.
+name|getId
+argument_list|()
+argument_list|)
 condition|)
 block|{
 for|for
