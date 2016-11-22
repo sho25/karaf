@@ -2074,6 +2074,17 @@ argument_list|)
 throw|;
 block|}
 block|}
+name|Set
+argument_list|<
+name|String
+argument_list|>
+name|allDescriptors
+init|=
+operator|new
+name|LinkedHashSet
+argument_list|<>
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|descriptors
@@ -2115,7 +2126,7 @@ literal|"framework"
 argument_list|)
 condition|)
 block|{
-name|descriptors
+name|allDescriptors
 operator|.
 name|add
 argument_list|(
@@ -2130,7 +2141,7 @@ literal|"/xml/features"
 argument_list|)
 expr_stmt|;
 block|}
-name|descriptors
+name|allDescriptors
 operator|.
 name|add
 argument_list|(
@@ -2150,6 +2161,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|allDescriptors
+operator|.
+name|addAll
+argument_list|(
+name|descriptors
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|framework
@@ -2164,7 +2182,7 @@ literal|"framework"
 argument_list|)
 condition|)
 block|{
-name|descriptors
+name|allDescriptors
 operator|.
 name|add
 argument_list|(
@@ -2235,7 +2253,7 @@ name|loadRepositories
 argument_list|(
 name|manager
 argument_list|,
-name|descriptors
+name|allDescriptors
 argument_list|)
 expr_stmt|;
 for|for
