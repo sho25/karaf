@@ -628,9 +628,6 @@ name|e
 parameter_list|)
 block|{
 throw|throw
-operator|(
-name|IOException
-operator|)
 operator|new
 name|IOException
 argument_list|(
@@ -638,10 +635,7 @@ name|e
 operator|.
 name|getMessage
 argument_list|()
-argument_list|)
-operator|.
-name|initCause
-argument_list|(
+argument_list|,
 name|e
 argument_list|)
 throw|;
