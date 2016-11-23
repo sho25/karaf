@@ -65,7 +65,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashSet
+name|Hashtable
 import|;
 end_import
 
@@ -75,7 +75,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Hashtable
+name|LinkedHashSet
 import|;
 end_import
 
@@ -574,7 +574,7 @@ argument_list|>
 name|stage
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|<>
 argument_list|()
 decl_stmt|;
@@ -630,7 +630,7 @@ expr_stmt|;
 name|stage
 operator|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|<>
 argument_list|()
 expr_stmt|;
@@ -691,7 +691,7 @@ expr_stmt|;
 name|stage
 operator|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|<>
 argument_list|()
 expr_stmt|;
