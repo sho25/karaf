@@ -63,16 +63,6 @@ end_import
 
 begin_import
 import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -94,6 +84,16 @@ operator|.
 name|easymock
 operator|.
 name|EasyMock
+import|;
+end_import
+
+begin_import
+import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
 import|;
 end_import
 
@@ -289,6 +289,13 @@ operator|.
 name|eq
 argument_list|(
 name|FACTORY_PID
+argument_list|)
+argument_list|,
+name|EasyMock
+operator|.
+name|eq
+argument_list|(
+literal|null
 argument_list|)
 argument_list|,
 name|EasyMock

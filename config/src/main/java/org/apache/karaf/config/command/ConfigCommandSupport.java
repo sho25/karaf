@@ -145,6 +145,14 @@ name|PROPERTY_FACTORY
 init|=
 literal|"ConfigCommand.Factory"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|PROPERTY_ALIAS
+init|=
+literal|"ConfigCommand.Alias"
+decl_stmt|;
 annotation|@
 name|Reference
 specifier|protected
