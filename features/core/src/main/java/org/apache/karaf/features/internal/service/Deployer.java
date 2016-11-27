@@ -3937,6 +3937,27 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|Bundle
+name|bundle
+init|=
+name|deployment
+operator|.
+name|resToBnd
+operator|.
+name|get
+argument_list|(
+name|resource
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|bundle
+operator|==
+literal|null
+condition|)
+block|{
+comment|// bundle is not present, it's provided by feature
+comment|// we are using bundleInfo and start flag
 if|if
 condition|(
 name|bundleInfo
@@ -3972,6 +3993,18 @@ argument_list|,
 name|FeatureState
 operator|.
 name|Resolved
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+comment|// if the bundle is already there, just ignore changing state by feature
+name|states
+operator|.
+name|remove
+argument_list|(
+name|resource
 argument_list|)
 expr_stmt|;
 block|}
