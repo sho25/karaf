@@ -377,7 +377,7 @@ name|getProperty
 argument_list|(
 literal|"logLevel"
 argument_list|,
-literal|"1"
+literal|"0"
 argument_list|)
 argument_list|)
 expr_stmt|;
