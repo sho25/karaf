@@ -97,6 +97,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|HashMap
 import|;
 end_import
@@ -710,6 +720,23 @@ specifier|protected
 name|String
 name|propertyFileEdits
 decl_stmt|;
+comment|/**      * Glob specifying which configuration pids in the selected boot features      * should be extracted to the etc directory.      */
+annotation|@
+name|Parameter
+specifier|protected
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|pidsToExtract
+init|=
+name|Collections
+operator|.
+name|singletonList
+argument_list|(
+literal|"*"
+argument_list|)
+decl_stmt|;
 comment|/**      * Specify a set of translated urls to use instead of downloading the artifacts      * from their original locations.  The given set will be extended with already      * built artifacts from the maven project.      */
 annotation|@
 name|Parameter
@@ -1292,6 +1319,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|builder
+operator|.
+name|pidsToExtract
+argument_list|(
+name|pidsToExtract
+argument_list|)
+expr_stmt|;
 name|Map
 argument_list|<
 name|String
