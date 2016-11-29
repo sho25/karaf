@@ -7673,6 +7673,25 @@ argument_list|)
 init|;                 OutputStream os = new FileOutputStream(outFile)
 block|)
 block|{
+if|if
+condition|(
+name|is
+operator|==
+literal|null
+condition|)
+block|{
+name|logInfo
+argument_list|(
+literal|"\tWARNING: unable to find %s"
+argument_list|,
+literal|true
+argument_list|,
+name|resource
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|copyStream
 argument_list|(
 name|is
@@ -7680,6 +7699,7 @@ argument_list|,
 name|os
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
