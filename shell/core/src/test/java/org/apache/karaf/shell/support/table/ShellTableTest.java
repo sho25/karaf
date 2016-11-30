@@ -133,6 +133,9 @@ init|=
 operator|new
 name|ShellTable
 argument_list|()
+operator|.
+name|forceAscii
+argument_list|()
 decl_stmt|;
 name|table
 operator|.
@@ -201,7 +204,7 @@ name|format
 argument_list|(
 literal|"%s%n"
 argument_list|,
-literal|"my first column value|my second column value is quite long"
+literal|"my first column value | my second column value is quite long"
 argument_list|)
 argument_list|,
 name|baos
@@ -223,6 +226,9 @@ name|table
 init|=
 operator|new
 name|ShellTable
+argument_list|()
+operator|.
+name|forceAscii
 argument_list|()
 decl_stmt|;
 name|table
@@ -299,7 +305,7 @@ name|format
 argument_list|(
 literal|"%s%n"
 argument_list|,
-literal|"my first column value|my second column value is q"
+literal|"my first column value | my second column value is q"
 argument_list|)
 argument_list|,
 name|baos
@@ -321,6 +327,9 @@ name|table
 init|=
 operator|new
 name|ShellTable
+argument_list|()
+operator|.
+name|forceAscii
 argument_list|()
 decl_stmt|;
 name|table
@@ -400,9 +409,9 @@ name|format
 argument_list|(
 literal|"%1$s\n%2$s%n"
 argument_list|,
-literal|"my first column value|my second column value is"
+literal|"my first column value | my second column value is"
 argument_list|,
-literal|"                     |quite long"
+literal|"                      | quite long"
 argument_list|)
 argument_list|,
 name|baos
