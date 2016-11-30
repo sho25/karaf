@@ -124,7 +124,7 @@ specifier|final
 name|char
 name|SEP_VERTICAL
 init|=
-literal|'|'
+literal|'│'
 decl_stmt|;
 specifier|private
 specifier|static
