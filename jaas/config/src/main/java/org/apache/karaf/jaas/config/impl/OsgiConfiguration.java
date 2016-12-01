@@ -363,7 +363,19 @@ name|void
 name|refresh
 parameter_list|()
 block|{
-comment|// Nothing to do, as we auto-update the configuration
+if|if
+condition|(
+name|defaultConfiguration
+operator|!=
+literal|null
+condition|)
+block|{
+name|defaultConfiguration
+operator|.
+name|refresh
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 block|}
 end_class
