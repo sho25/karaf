@@ -739,6 +739,13 @@ operator|.
 name|getRoleFilter
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|filter
+operator|!=
+literal|null
+condition|)
+block|{
 name|filter
 operator|=
 name|filter
@@ -829,6 +836,7 @@ argument_list|,
 name|this
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|context
@@ -1414,6 +1422,13 @@ operator|.
 name|getRoleFilter
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|filter
+operator|!=
+literal|null
+condition|)
+block|{
 name|filter
 operator|=
 name|filter
@@ -1735,6 +1750,23 @@ block|{
 comment|// Ignore
 block|}
 block|}
+block|}
+block|}
+else|else
+block|{
+name|LOGGER
+operator|.
+name|debug
+argument_list|(
+literal|"The user role filter is null so no roles are retrieved"
+argument_list|)
+expr_stmt|;
+return|return
+operator|new
+name|String
+index|[]
+block|{}
+return|;
 block|}
 block|}
 annotation|@
