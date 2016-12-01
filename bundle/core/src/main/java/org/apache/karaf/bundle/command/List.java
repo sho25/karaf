@@ -582,8 +582,6 @@ condition|(
 operator|!
 name|noEllipsis
 operator|&&
-name|showLocation
-operator|&&
 name|terminal
 operator|!=
 literal|null
