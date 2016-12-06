@@ -2276,6 +2276,14 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
+name|EndOfFileException
+name|e
+parameter_list|)
+block|{
+break|break;
+block|}
+catch|catch
+parameter_list|(
 name|UserInterruptException
 name|e
 parameter_list|)
