@@ -36,6 +36,8 @@ name|WARN
 block|,
 name|ERROR
 block|,
+name|OFF
+block|,
 name|DEFAULT
 block|;
 comment|/**      * Convert the list of values into a String array      *       * @return all the values as a String array      */

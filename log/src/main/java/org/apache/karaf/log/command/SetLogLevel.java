@@ -226,6 +226,8 @@ argument_list|,
 name|values
 operator|=
 block|{
+literal|"OFF"
+block|,
 literal|"TRACE"
 block|,
 literal|"DEBUG"
