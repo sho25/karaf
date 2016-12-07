@@ -3971,6 +3971,13 @@ operator|=
 name|def
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|prompt
+operator|!=
+literal|null
+condition|)
+block|{
 name|Matcher
 name|matcher
 init|=
@@ -4042,6 +4049,7 @@ argument_list|(
 name|prompt
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 return|return
