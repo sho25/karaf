@@ -1572,7 +1572,7 @@ argument_list|)
 block|,         }
 return|;
 block|}
-specifier|private
+specifier|protected
 name|int
 name|getAvailablePort
 parameter_list|(
