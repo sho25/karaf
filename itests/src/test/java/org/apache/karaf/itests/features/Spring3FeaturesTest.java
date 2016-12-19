@@ -718,22 +718,6 @@ literal|"spring-security"
 argument_list|)
 expr_stmt|;
 block|}
-comment|// Gemini
-annotation|@
-name|Test
-specifier|public
-name|void
-name|installGeminiBlueprintFeature
-parameter_list|()
-throws|throws
-name|Exception
-block|{
-name|installAssertAndUninstallFeatures
-argument_list|(
-literal|"gemini-blueprint"
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_class
 
