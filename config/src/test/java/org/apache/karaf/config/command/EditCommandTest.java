@@ -33,7 +33,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Properties
+name|Hashtable
 import|;
 end_import
 
@@ -80,18 +80,6 @@ operator|.
 name|console
 operator|.
 name|Session
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|framework
-operator|.
-name|BundleContext
 import|;
 end_import
 
@@ -181,10 +169,6 @@ decl_stmt|;
 specifier|private
 name|EditCommand
 name|command
-decl_stmt|;
-specifier|private
-name|BundleContext
-name|context
 decl_stmt|;
 specifier|private
 name|ConfigurationAdmin
@@ -284,10 +268,20 @@ argument_list|)
 expr_stmt|;
 comment|// the ConfigAdmin service returns a Dictionary for an existing PID
 name|Dictionary
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|props
 init|=
 operator|new
-name|Properties
+name|Hashtable
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|expect

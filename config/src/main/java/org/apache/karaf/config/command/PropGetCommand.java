@@ -177,6 +177,11 @@ name|String
 name|prop
 decl_stmt|;
 annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
+annotation|@
 name|Override
 specifier|public
 name|void

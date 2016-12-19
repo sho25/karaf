@@ -292,11 +292,6 @@ specifier|private
 name|ConfigurationAdmin
 name|configAdmin
 decl_stmt|;
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"rawtypes"
-argument_list|)
 specifier|public
 name|int
 name|complete
