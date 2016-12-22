@@ -528,6 +528,18 @@ break|break;
 block|}
 else|else
 block|{
+if|if
+condition|(
+operator|!
+name|command
+operator|.
+name|toString
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
 name|LOG
 operator|.
 name|log
@@ -546,6 +558,7 @@ operator|+
 literal|"' received"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
