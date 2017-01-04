@@ -193,7 +193,7 @@ name|installAssertAndUninstallFeature
 argument_list|(
 literal|"transaction"
 argument_list|,
-literal|"1.3.1"
+literal|"1.3.2"
 argument_list|)
 expr_stmt|;
 block|}
