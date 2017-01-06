@@ -1900,13 +1900,9 @@ parameter_list|()
 block|{
 if|if
 condition|(
-operator|!
 name|running
 condition|)
 block|{
-return|return;
-block|}
-comment|//        out.println();
 name|reader
 operator|.
 name|getHistory
@@ -1975,6 +1971,7 @@ name|e
 parameter_list|)
 block|{
 comment|// Ignore
+block|}
 block|}
 block|}
 if|if

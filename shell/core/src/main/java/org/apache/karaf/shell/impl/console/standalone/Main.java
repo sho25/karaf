@@ -1037,6 +1037,8 @@ argument_list|(
 name|jlineTerminal
 argument_list|)
 decl_stmt|;
+try|try
+init|(
 name|Session
 name|session
 init|=
@@ -1061,7 +1063,8 @@ name|err
 argument_list|,
 name|terminal
 argument_list|)
-decl_stmt|;
+init|)
+block|{
 name|session
 operator|.
 name|put
@@ -1165,6 +1168,7 @@ operator|.
 name|run
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
