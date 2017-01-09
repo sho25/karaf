@@ -481,6 +481,15 @@ name|String
 argument_list|>
 name|installedRepositories
 decl_stmt|;
+annotation|@
+name|Parameter
+specifier|private
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|blacklistedRepositories
+decl_stmt|;
 comment|/**      * List of features from runtime-scope features xml and kars to be installed into system and listed in startup.properties.      */
 annotation|@
 name|Parameter
@@ -929,6 +938,13 @@ argument_list|(
 name|blacklistedProfiles
 argument_list|)
 expr_stmt|;
+name|blacklistedRepositories
+operator|=
+name|nonNullList
+argument_list|(
+name|blacklistedRepositories
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1243,6 +1259,13 @@ operator|.
 name|blacklistProfiles
 argument_list|(
 name|blacklistedProfiles
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|blacklistRepositories
+argument_list|(
+name|blacklistedRepositories
 argument_list|)
 expr_stmt|;
 name|builder
