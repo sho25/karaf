@@ -858,7 +858,7 @@ name|refreshedRepo
 init|=
 name|executeCommand
 argument_list|(
-literal|"feature:repo-refresh '.*pax.*'"
+literal|"feature:repo-refresh '.*org.ops4j.pax.[wc].*'"
 argument_list|)
 decl_stmt|;
 name|assertContains
