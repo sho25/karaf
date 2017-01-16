@@ -3685,6 +3685,8 @@ name|overallEffective
 operator|.
 name|getLibraries
 argument_list|()
+argument_list|,
+literal|""
 argument_list|)
 expr_stmt|;
 name|downloadLibraries
@@ -3694,6 +3696,8 @@ argument_list|,
 name|configProperties
 argument_list|,
 name|libraries
+argument_list|,
+literal|""
 argument_list|)
 expr_stmt|;
 name|downloader
@@ -3728,6 +3732,13 @@ expr_stmt|;
 comment|//
 comment|// Write all configuration files
 comment|//
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"Writing configurations"
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Map
@@ -3763,6 +3774,20 @@ name|getKey
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"   adding config file: {}"
+argument_list|,
+name|homeDirectory
+operator|.
+name|relativize
+argument_list|(
+name|configFile
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|Files
 operator|.
 name|createDirectories
@@ -3895,6 +3920,20 @@ name|overallEffective
 operator|.
 name|getOverrides
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"Generating {}"
+argument_list|,
+name|homeDirectory
+operator|.
+name|relativize
+argument_list|(
+name|overrides
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Files
@@ -4041,6 +4080,20 @@ name|blacklistedBundles
 argument_list|)
 expr_stmt|;
 block|}
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"Generating {}"
+argument_list|,
+name|homeDirectory
+operator|.
+name|relativize
+argument_list|(
+name|blacklist
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|Files
 operator|.
 name|write
@@ -4291,6 +4344,9 @@ argument_list|<
 name|String
 argument_list|>
 name|libraries
+parameter_list|,
+name|String
+name|indent
 parameter_list|)
 throws|throws
 name|MalformedURLException
@@ -4500,19 +4556,6 @@ operator|.
 name|toString
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|provider
-operator|.
-name|getUrl
-argument_list|()
-operator|.
-name|startsWith
-argument_list|(
-literal|"mvn:"
-argument_list|)
-condition|)
-block|{
 name|Path
 name|libOutput
 init|=
@@ -4528,6 +4571,22 @@ argument_list|(
 name|name
 argument_list|)
 decl_stmt|;
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"{}   adding library: {}"
+argument_list|,
+name|indent
+argument_list|,
+name|homeDirectory
+operator|.
+name|relativize
+argument_list|(
+name|libOutput
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|Files
 operator|.
 name|copy
@@ -4541,6 +4600,19 @@ operator|.
 name|REPLACE_EXISTING
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|provider
+operator|.
+name|getUrl
+argument_list|()
+operator|.
+name|startsWith
+argument_list|(
+literal|"mvn:"
+argument_list|)
+condition|)
+block|{
 comment|// copy boot library in system repository
 if|if
 condition|(
@@ -4615,6 +4687,20 @@ name|name
 argument_list|)
 expr_stmt|;
 comment|// copy the file
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"{}   adding maven library: {}"
+argument_list|,
+name|indent
+argument_list|,
+name|provider
+operator|.
+name|getUrl
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|Files
 operator|.
 name|copy
@@ -4630,37 +4716,6 @@ argument_list|)
 expr_stmt|;
 comment|/* a symlink could be used instead                                  if (Files.notExists(libOutput, LinkOption.NOFOLLOW_LINKS)) {                                     try {                                         Files.createSymbolicLink(libOutput, libOutput.getParent().relativize(sysOutput));                                     } catch (FileSystemException e) {                                         Files.copy(input, libOutput, StandardCopyOption.REPLACE_EXISTING);                                     }                                 }                                 */
 block|}
-block|}
-else|else
-block|{
-name|Path
-name|output
-init|=
-name|homeDirectory
-operator|.
-name|resolve
-argument_list|(
-name|path
-argument_list|)
-operator|.
-name|resolve
-argument_list|(
-name|name
-argument_list|)
-decl_stmt|;
-name|Files
-operator|.
-name|copy
-argument_list|(
-name|input
-argument_list|,
-name|output
-argument_list|,
-name|StandardCopyOption
-operator|.
-name|REPLACE_EXISTING
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 name|boolean
@@ -4870,6 +4925,13 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"Install stage"
+argument_list|)
+expr_stmt|;
 comment|//
 comment|// Handle installed profiles
 comment|//
@@ -5012,6 +5074,18 @@ range|:
 name|installedFeatures
 control|)
 block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"   Feature {} is defined as an installed feature"
+argument_list|,
+name|feature
+operator|.
+name|getId
+argument_list|()
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Bundle
@@ -5168,6 +5242,13 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"Boot stage"
+argument_list|)
+expr_stmt|;
 comment|//
 comment|// Handle boot profiles
 comment|//
@@ -5498,11 +5579,11 @@ name|LOGGER
 operator|.
 name|info
 argument_list|(
-literal|"Feature "
+literal|"   Feature "
 operator|+
 name|feature
 operator|.
-name|getName
+name|getId
 argument_list|()
 operator|+
 literal|" is defined as a boot feature"
@@ -5895,10 +5976,9 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|Files
-operator|.
-name|write
-argument_list|(
+name|Path
+name|configFile
+init|=
 name|etcDirectory
 operator|.
 name|resolve
@@ -5910,6 +5990,26 @@ argument_list|()
 operator|+
 literal|".cfg"
 argument_list|)
+decl_stmt|;
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"      adding config file: {}"
+argument_list|,
+name|homeDirectory
+operator|.
+name|relativize
+argument_list|(
+name|configFile
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|Files
+operator|.
+name|write
+argument_list|(
+name|configFile
 argument_list|,
 name|config
 operator|.
@@ -5955,10 +6055,9 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|Files
-operator|.
-name|write
-argument_list|(
+name|Path
+name|configFile
+init|=
 name|etcDirectory
 operator|.
 name|resolve
@@ -5970,6 +6069,26 @@ argument_list|()
 operator|+
 literal|".cfg"
 argument_list|)
+decl_stmt|;
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"      adding config file: {}"
+argument_list|,
+name|homeDirectory
+operator|.
+name|relativize
+argument_list|(
+name|configFile
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|Files
+operator|.
+name|write
+argument_list|(
+name|configFile
 argument_list|,
 name|config
 operator|.
@@ -6072,6 +6191,8 @@ argument_list|,
 name|configProperties
 argument_list|,
 name|libraries
+argument_list|,
+literal|"   "
 argument_list|)
 expr_stmt|;
 name|downloader
@@ -7277,6 +7398,13 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"Startup stage"
+argument_list|)
+expr_stmt|;
 comment|//
 comment|// Compute startup
 comment|//
@@ -7311,7 +7439,7 @@ name|LOGGER
 operator|.
 name|info
 argument_list|(
-literal|"Loading repositories"
+literal|"   Loading repositories"
 argument_list|)
 expr_stmt|;
 name|Map
@@ -7341,7 +7469,7 @@ name|LOGGER
 operator|.
 name|info
 argument_list|(
-literal|"Resolving features"
+literal|"   Resolving features"
 argument_list|)
 expr_stmt|;
 name|Map
@@ -7605,7 +7733,7 @@ name|LOGGER
 operator|.
 name|info
 argument_list|(
-literal|"== Installing artifact "
+literal|"      adding maven artifact: "
 operator|+
 name|location
 argument_list|)
@@ -7766,7 +7894,7 @@ name|LOGGER
 operator|.
 name|warn
 argument_list|(
-literal|"Ignoring artifact "
+literal|"Ignoring non maven artifact "
 operator|+
 name|location
 argument_list|)

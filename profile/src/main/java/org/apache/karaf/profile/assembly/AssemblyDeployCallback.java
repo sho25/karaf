@@ -1093,18 +1093,6 @@ throw|;
 block|}
 block|}
 comment|// Install
-name|LOGGER
-operator|.
-name|info
-argument_list|(
-literal|"Installing feature config for "
-operator|+
-name|feature
-operator|.
-name|getId
-argument_list|()
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|Config
@@ -1132,8 +1120,24 @@ name|config
 operator|.
 name|getName
 argument_list|()
+operator|+
+literal|".cfg"
 argument_list|)
 decl_stmt|;
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"      adding config file: {}"
+argument_list|,
+name|homeDirectory
+operator|.
+name|relativize
+argument_list|(
+name|configFile
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1293,6 +1297,15 @@ argument_list|(
 name|path
 argument_list|)
 decl_stmt|;
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"      adding config file: {}"
+argument_list|,
+name|path
+argument_list|)
+expr_stmt|;
 name|Files
 operator|.
 name|copy
@@ -1415,6 +1428,8 @@ argument_list|,
 name|configProperties
 argument_list|,
 name|libraries
+argument_list|,
+literal|"   "
 argument_list|)
 expr_stmt|;
 block|}
@@ -1519,7 +1534,7 @@ name|LOGGER
 operator|.
 name|info
 argument_list|(
-literal|"Installing bundle "
+literal|"      adding maven artifact: "
 operator|+
 name|uri
 argument_list|)
