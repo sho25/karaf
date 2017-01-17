@@ -344,6 +344,11 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
+name|LDAPCache
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|boolean
