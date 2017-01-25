@@ -1259,13 +1259,10 @@ decl_stmt|;
 name|String
 name|path
 init|=
-name|substFinalName
-argument_list|(
 name|configFile
 operator|.
 name|getFinalname
 argument_list|()
-argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -1287,6 +1284,13 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+name|path
+operator|=
+name|substFinalName
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 name|Path
 name|output
 init|=
@@ -2060,8 +2064,6 @@ name|indexOf
 argument_list|(
 name|markerVarEnd
 argument_list|)
-operator|-
-literal|1
 argument_list|)
 decl_stmt|;
 switch|switch
@@ -2076,8 +2078,6 @@ return|return
 name|this
 operator|.
 name|homeDirectory
-operator|+
-literal|"/"
 operator|+
 name|finalname
 operator|.
@@ -2103,8 +2103,6 @@ return|return
 name|this
 operator|.
 name|etcDirectory
-operator|+
-literal|"/"
 operator|+
 name|finalname
 operator|.
