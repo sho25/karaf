@@ -1569,7 +1569,21 @@ argument_list|(
 literal|"spring42.version"
 argument_list|)
 argument_list|)
-block|,         }
+block|,
+name|editConfigurationFilePut
+argument_list|(
+literal|"etc/system.properties"
+argument_list|,
+literal|"spring43.version"
+argument_list|,
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"spring43.version"
+argument_list|)
+argument_list|)
+block|}
 return|;
 block|}
 specifier|protected
