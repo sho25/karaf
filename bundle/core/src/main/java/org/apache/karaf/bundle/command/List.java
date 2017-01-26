@@ -290,11 +290,15 @@ name|Option
 argument_list|(
 name|name
 operator|=
-literal|"--no-name"
+literal|"-name"
+argument_list|,
+name|aliases
+operator|=
+literal|"-n"
 argument_list|,
 name|description
 operator|=
-literal|"Don't show bundle name"
+literal|"Show bundle name"
 argument_list|,
 name|required
 operator|=
@@ -305,7 +309,7 @@ operator|=
 literal|false
 argument_list|)
 name|boolean
-name|dontShowName
+name|showName
 decl_stmt|;
 annotation|@
 name|Option
@@ -639,10 +643,28 @@ argument_list|(
 literal|"Version"
 argument_list|)
 expr_stmt|;
+name|boolean
+name|effectiveShowName
+init|=
+name|showName
+operator|||
+operator|(
+operator|!
+name|showLocation
+operator|&&
+operator|!
+name|showSymbolic
+operator|&&
+operator|!
+name|showUpdate
+operator|&&
+operator|!
+name|showRevisions
+operator|)
+decl_stmt|;
 if|if
 condition|(
-operator|!
-name|dontShowName
+name|effectiveShowName
 condition|)
 block|{
 name|table
@@ -943,8 +965,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|dontShowName
+name|effectiveShowName
 condition|)
 block|{
 name|String
