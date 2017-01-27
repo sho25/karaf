@@ -519,7 +519,7 @@ name|String
 name|karafBase
 parameter_list|,
 name|String
-name|karafData
+name|karStorage
 parameter_list|,
 name|FeaturesService
 name|featuresService
@@ -542,13 +542,7 @@ operator|=
 operator|new
 name|File
 argument_list|(
-operator|new
-name|File
-argument_list|(
-name|karafData
-argument_list|)
-argument_list|,
-literal|"kar"
+name|karStorage
 argument_list|)
 expr_stmt|;
 name|this
