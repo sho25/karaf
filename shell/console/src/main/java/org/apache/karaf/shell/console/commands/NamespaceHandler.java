@@ -698,13 +698,7 @@ argument_list|)
 return|;
 block|}
 return|return
-name|getClass
-argument_list|()
-operator|.
-name|getResource
-argument_list|(
-literal|"karaf-shell-1.1.0.xsd"
-argument_list|)
+literal|null
 return|;
 block|}
 specifier|public
