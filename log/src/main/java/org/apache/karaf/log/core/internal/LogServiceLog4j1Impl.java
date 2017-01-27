@@ -204,6 +204,9 @@ expr_stmt|;
 for|for
 control|(
 name|Enumeration
+argument_list|<
+name|String
+argument_list|>
 name|e
 init|=
 name|config
