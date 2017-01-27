@@ -342,7 +342,11 @@ name|end
 operator|++
 index|]
 operator|=
+operator|new
+name|KarafLogEvent
+argument_list|(
 name|element
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
