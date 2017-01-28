@@ -95,6 +95,16 @@ name|java
 operator|.
 name|net
 operator|.
+name|URI
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
 name|URL
 import|;
 end_import
@@ -306,7 +316,7 @@ operator|=
 literal|false
 argument_list|)
 specifier|private
-name|String
+name|URI
 name|script
 decl_stmt|;
 annotation|@
@@ -370,17 +380,15 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-comment|// First try a URL
 try|try
 block|{
 name|URL
 name|url
 init|=
-operator|new
-name|URL
-argument_list|(
 name|script
-argument_list|)
+operator|.
+name|toURL
+argument_list|()
 decl_stmt|;
 name|log
 operator|.
@@ -413,7 +421,7 @@ name|MalformedURLException
 name|ignore
 parameter_list|)
 block|{
-comment|// They try a file
+comment|// fallback to a file
 name|File
 name|file
 init|=
@@ -421,6 +429,9 @@ operator|new
 name|File
 argument_list|(
 name|script
+operator|.
+name|getPath
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|log
