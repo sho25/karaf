@@ -181,6 +181,16 @@ name|ManagedService
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
+import|;
+end_import
+
 begin_class
 annotation|@
 name|Services
@@ -268,7 +278,11 @@ argument_list|(
 literal|"karaf.data"
 argument_list|)
 operator|+
-literal|"/kar"
+name|File
+operator|.
+name|separator
+operator|+
+literal|"kar"
 argument_list|)
 decl_stmt|;
 name|KarServiceImpl
