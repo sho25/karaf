@@ -931,9 +931,18 @@ argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
-return|return
-literal|false
-return|;
+throw|throw
+operator|new
+name|LoginException
+argument_list|(
+literal|"Authentication failed: "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+throw|;
 block|}
 finally|finally
 block|{
