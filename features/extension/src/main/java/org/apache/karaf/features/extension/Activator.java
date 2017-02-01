@@ -840,11 +840,14 @@ name|cand
 operator|.
 name|getRevision
 argument_list|()
-operator|!=
-name|requirement
 operator|.
-name|getRevision
+name|getBundle
 argument_list|()
+operator|.
+name|getBundleId
+argument_list|()
+operator|!=
+name|sourceId
 condition|)
 block|{
 name|candIter
