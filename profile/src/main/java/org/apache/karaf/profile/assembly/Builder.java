@@ -9625,12 +9625,12 @@ name|IOException
 block|{
 try|try
 init|(
+name|ZipInputStream
+name|zis
+init|=
 operator|new
 name|ZipInputStream
 argument_list|(
-name|InputStream
-name|is
-operator|=
 name|provider
 operator|.
 name|open
