@@ -80,11 +80,6 @@ specifier|private
 name|Services
 name|listServices
 decl_stmt|;
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 name|ListServicesTest
 parameter_list|()

@@ -131,6 +131,9 @@ name|writer
 argument_list|,
 operator|new
 name|Converter
+argument_list|<
+name|T
+argument_list|>
 argument_list|()
 block|{
 specifier|public
@@ -138,6 +141,9 @@ name|String
 name|toString
 parameter_list|(
 name|Node
+argument_list|<
+name|T
+argument_list|>
 name|node
 parameter_list|)
 block|{

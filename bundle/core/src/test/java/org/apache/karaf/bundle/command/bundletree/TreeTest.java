@@ -590,6 +590,9 @@ literal|"grandchild"
 argument_list|)
 expr_stmt|;
 name|Node
+argument_list|<
+name|String
+argument_list|>
 name|child2
 init|=
 name|tree
@@ -718,6 +721,9 @@ literal|"grandchild"
 argument_list|)
 expr_stmt|;
 name|Node
+argument_list|<
+name|String
+argument_list|>
 name|child2
 init|=
 name|tree
@@ -728,6 +734,9 @@ literal|"child2"
 argument_list|)
 decl_stmt|;
 name|Node
+argument_list|<
+name|String
+argument_list|>
 name|node
 init|=
 name|child2
