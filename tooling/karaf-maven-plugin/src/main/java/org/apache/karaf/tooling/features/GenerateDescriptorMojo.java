@@ -1158,6 +1158,36 @@ specifier|private
 name|boolean
 name|simplifyBundleDependencies
 decl_stmt|;
+comment|/**      * Name of features which are prerequisites (they still need to be defined separately).      */
+annotation|@
+name|Parameter
+specifier|private
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|prerequisiteFeatures
+init|=
+operator|new
+name|ArrayList
+argument_list|<>
+argument_list|()
+decl_stmt|;
+comment|/**      * Name of features which are dependencies (they still need to be defined separately).      */
+annotation|@
+name|Parameter
+specifier|private
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|dependencyFeatures
+init|=
+operator|new
+name|ArrayList
+argument_list|<>
+argument_list|()
+decl_stmt|;
 comment|// *************************************************
 comment|// READ-ONLY MAVEN PLUGIN PARAMETERS
 comment|// *************************************************
@@ -2919,6 +2949,36 @@ name|getVersion
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|dependency
+operator|.
+name|setPrerequisite
+argument_list|(
+name|prerequisiteFeatures
+operator|.
+name|contains
+argument_list|(
+name|dependency
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|dependency
+operator|.
+name|setDependency
+argument_list|(
+name|dependencyFeatures
+operator|.
+name|contains
+argument_list|(
+name|dependency
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|// We musn't de-duplicate here, we may have seen a feature in !add mode
 name|otherFeatures
 operator|.
