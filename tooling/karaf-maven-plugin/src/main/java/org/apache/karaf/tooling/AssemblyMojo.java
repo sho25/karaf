@@ -1757,6 +1757,16 @@ operator|.
 name|getClassifier
 argument_list|()
 argument_list|)
+operator|||
+literal|"karaf"
+operator|.
+name|equals
+argument_list|(
+name|artifact
+operator|.
+name|getClassifier
+argument_list|()
+argument_list|)
 condition|)
 block|{
 name|String
