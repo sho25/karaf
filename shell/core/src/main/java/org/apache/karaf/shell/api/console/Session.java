@@ -59,6 +59,18 @@ name|PrintStream
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|nio
+operator|.
+name|file
+operator|.
+name|Path
+import|;
+end_import
+
 begin_comment
 comment|/**  * A<code>Session</code> can be used to execute commands.  *  * The {@link org.apache.karaf.shell.api.console.Registry} associated  * with this<code>Session</code> will contain:<ul>  *<li>{@link SessionFactory}</li>  *<li>{@link Command}s</li>  *<li>{@link Session}</li>  *<li>{@link Registry}</li>  *<li>{@link History}</li>  *<li>{@link Terminal}</li>  *</ul>  */
 end_comment
@@ -206,6 +218,17 @@ name|resolveCommand
 parameter_list|(
 name|String
 name|name
+parameter_list|)
+function_decl|;
+name|Path
+name|currentDir
+parameter_list|()
+function_decl|;
+name|void
+name|currentDir
+parameter_list|(
+name|Path
+name|path
 parameter_list|)
 function_decl|;
 comment|/**      * Close this session. After the session is closed, it will throw      * IllegalStateException when it is used.      */
