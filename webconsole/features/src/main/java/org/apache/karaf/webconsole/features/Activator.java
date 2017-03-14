@@ -214,15 +214,6 @@ argument_list|,
 literal|"features"
 argument_list|)
 expr_stmt|;
-name|props
-operator|.
-name|put
-argument_list|(
-literal|"alias"
-argument_list|,
-literal|"/features"
-argument_list|)
-expr_stmt|;
 name|register
 argument_list|(
 name|Servlet
