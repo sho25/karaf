@@ -1317,14 +1317,6 @@ name|equals
 argument_list|(
 name|packaging
 argument_list|)
-operator|&&
-operator|!
-literal|"feature"
-operator|.
-name|equals
-argument_list|(
-name|packaging
-argument_list|)
 expr_stmt|;
 block|}
 if|if
