@@ -467,6 +467,8 @@ name|WebBundle
 argument_list|()
 decl_stmt|;
 name|contextPath
+operator|=
+name|contextPath
 operator|.
 name|trim
 argument_list|()
