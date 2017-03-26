@@ -1174,6 +1174,18 @@ operator|::
 name|doPersistRegionDigraph
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|getBoolean
+argument_list|(
+literal|"digraphMBean"
+argument_list|,
+name|FeaturesService
+operator|.
+name|DEFAULT_DIGRAPH_MBEAN
+argument_list|)
+condition|)
+block|{
 name|StandardManageableRegionDigraph
 name|dgmb
 init|=
@@ -1194,6 +1206,7 @@ operator|.
 name|registerMBean
 argument_list|()
 expr_stmt|;
+block|}
 name|FeatureFinder
 name|featureFinder
 init|=

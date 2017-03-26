@@ -145,6 +145,11 @@ name|DEFAULT_CONFIG_CFG_STORE
 init|=
 literal|true
 decl_stmt|;
+name|boolean
+name|DEFAULT_DIGRAPH_MBEAN
+init|=
+literal|true
+decl_stmt|;
 enum|enum
 name|Option
 block|{
