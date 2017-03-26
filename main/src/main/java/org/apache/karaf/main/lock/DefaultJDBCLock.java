@@ -607,17 +607,6 @@ argument_list|()
 argument_list|,
 name|metadata
 argument_list|)
-comment|//
-operator|||
-name|checkTableExists
-argument_list|(
-name|tableName
-operator|.
-name|toLowerCase
-argument_list|()
-argument_list|,
-name|metadata
-argument_list|)
 operator|)
 return|;
 block|}
