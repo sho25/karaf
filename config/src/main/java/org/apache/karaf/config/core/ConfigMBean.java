@@ -76,6 +76,22 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
+comment|/**      * Install a cfg file.      *      * @param url The location of the cfg file.      * @param finalname The final name of the cfg file in the etc folder.      * @param override True to override the cfg file if it already exists, false else.      * @throws MBeanException in case of MBean failure.      */
+name|void
+name|install
+parameter_list|(
+name|String
+name|url
+parameter_list|,
+name|String
+name|finalname
+parameter_list|,
+name|boolean
+name|override
+parameter_list|)
+throws|throws
+name|MBeanException
+function_decl|;
 comment|/**      * Delete a configuration identified by the given PID.      *      * @param pid the configuration PID to delete.      * @throws MBeanException in case of MBean failure.      */
 name|void
 name|delete
