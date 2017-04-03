@@ -1757,6 +1757,15 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|n
+operator|==
+literal|null
+condition|)
+return|return
+literal|null
+return|;
+if|if
+condition|(
 name|precision
 operator|<=
 literal|0
