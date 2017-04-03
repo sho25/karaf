@@ -249,8 +249,10 @@ name|executorService
 init|=
 name|Executors
 operator|.
-name|newSingleThreadExecutor
-argument_list|()
+name|newFixedThreadPool
+argument_list|(
+literal|2
+argument_list|)
 decl_stmt|;
 annotation|@
 name|Override
@@ -504,6 +506,11 @@ name|minLevel
 argument_list|)
 expr_stmt|;
 block|}
+name|out
+operator|.
+name|flush
+argument_list|()
+expr_stmt|;
 comment|// Tail
 specifier|final
 name|BlockingQueue
@@ -570,6 +577,20 @@ argument_list|,
 name|minLevel
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|queue
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|out
+operator|.
+name|flush
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 block|}
 catch|catch
