@@ -36,13 +36,11 @@ init|=
 literal|"*"
 decl_stmt|;
 comment|/**      * The placeholder scheme.      *      * @return The placeholder scheme.      */
-specifier|public
 name|String
 name|getScheme
 parameter_list|()
 function_decl|;
 comment|/**      * Resolve the placeholder found inside the value, for the specific key of the pid.      *      * @param profile The current profile.      * @param pid The pid that contains the placeholder.      * @param key The key of the configuration value that contains the placeholder.      * @param value The value with the placeholder.      * @return The resolved value or EMPTY_STRING.      */
-specifier|public
 name|String
 name|resolve
 parameter_list|(

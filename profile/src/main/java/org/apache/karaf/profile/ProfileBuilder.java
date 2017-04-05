@@ -159,7 +159,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|getConfiguration
 parameter_list|(
@@ -177,7 +177,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|config
 parameter_list|)
@@ -191,7 +191,7 @@ parameter_list|,
 name|String
 name|key
 parameter_list|,
-name|String
+name|Object
 name|value
 parameter_list|)
 function_decl|;
@@ -206,7 +206,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 argument_list|>
 name|configs

@@ -199,7 +199,7 @@ name|multiValued
 operator|=
 literal|false
 argument_list|)
-name|String
+name|Object
 name|value
 decl_stmt|;
 annotation|@
