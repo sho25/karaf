@@ -46,6 +46,10 @@ name|boolean
 name|isAppend
 parameter_list|()
 function_decl|;
+name|boolean
+name|isExternal
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
