@@ -686,13 +686,6 @@ name|config
 operator|.
 name|getValue
 argument_list|()
-operator|.
-name|replaceAll
-argument_list|(
-literal|"\n\\s+"
-argument_list|,
-literal|"\n"
-argument_list|)
 decl_stmt|;
 name|props
 operator|.

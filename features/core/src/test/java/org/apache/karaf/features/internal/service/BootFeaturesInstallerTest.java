@@ -276,7 +276,11 @@ literal|null
 argument_list|,
 literal|null
 argument_list|,
-literal|""
+operator|new
+name|String
+index|[
+literal|0
+index|]
 argument_list|,
 literal|""
 argument_list|,
@@ -444,7 +448,11 @@ literal|null
 argument_list|,
 name|impl
 argument_list|,
-literal|""
+operator|new
+name|String
+index|[
+literal|0
+index|]
 argument_list|,
 literal|"config,standard,region"
 argument_list|,
@@ -608,7 +616,11 @@ literal|null
 argument_list|,
 name|impl
 argument_list|,
-literal|""
+operator|new
+name|String
+index|[
+literal|0
+index|]
 argument_list|,
 literal|"(transaction), ssh"
 argument_list|,
@@ -690,7 +702,12 @@ literal|null
 argument_list|,
 name|impl
 argument_list|,
+operator|new
+name|String
+index|[]
+block|{
 literal|"mvn:inexistent/features/1.0/xml/features"
+block|}
 argument_list|,
 literal|""
 argument_list|,

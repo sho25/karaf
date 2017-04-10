@@ -71,7 +71,7 @@ name|void
 name|testDefaultUser
 parameter_list|()
 throws|throws
-name|IOException
+name|Exception
 block|{
 name|String
 name|etc

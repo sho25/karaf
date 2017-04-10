@@ -239,6 +239,7 @@ argument_list|>
 name|factories
 parameter_list|,
 name|String
+index|[]
 name|names
 parameter_list|)
 block|{
@@ -267,11 +268,6 @@ name|String
 name|name
 range|:
 name|names
-operator|.
-name|split
-argument_list|(
-literal|","
-argument_list|)
 control|)
 block|{
 name|name
@@ -369,6 +365,7 @@ argument_list|>
 name|buildMacs
 parameter_list|(
 name|String
+index|[]
 name|names
 parameter_list|)
 block|{
@@ -402,6 +399,7 @@ argument_list|>
 name|buildCiphers
 parameter_list|(
 name|String
+index|[]
 name|names
 parameter_list|)
 block|{
@@ -451,6 +449,7 @@ argument_list|>
 name|buildKexAlgorithms
 parameter_list|(
 name|String
+index|[]
 name|names
 parameter_list|)
 block|{

@@ -939,9 +939,10 @@ literal|"simple"
 argument_list|)
 decl_stmt|;
 name|String
+index|[]
 name|authMethods
 init|=
-name|getString
+name|getStringArray
 argument_list|(
 literal|"authMethods"
 argument_list|,
@@ -969,9 +970,10 @@ literal|"RSA"
 argument_list|)
 decl_stmt|;
 name|String
+index|[]
 name|macs
 init|=
-name|getString
+name|getStringArray
 argument_list|(
 literal|"macs"
 argument_list|,
@@ -979,9 +981,10 @@ literal|"hmac-sha2-512,hmac-sha2-256,hmac-sha1"
 argument_list|)
 decl_stmt|;
 name|String
+index|[]
 name|ciphers
 init|=
-name|getString
+name|getStringArray
 argument_list|(
 literal|"ciphers"
 argument_list|,
@@ -989,9 +992,10 @@ literal|"aes128-ctr,arcfour128,aes128-cbc,3des-cbc,blowfish-cbc"
 argument_list|)
 decl_stmt|;
 name|String
+index|[]
 name|kexAlgorithms
 init|=
-name|getString
+name|getStringArray
 argument_list|(
 literal|"kexAlgorithms"
 argument_list|,
