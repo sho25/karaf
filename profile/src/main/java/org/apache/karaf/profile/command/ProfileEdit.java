@@ -1390,7 +1390,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|conf
 init|=
@@ -1511,7 +1511,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|conf
 init|=
@@ -1642,7 +1642,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|conf
 init|=
@@ -1775,7 +1775,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|conf
 init|=
@@ -1900,7 +1900,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|conf
 init|=
@@ -2096,7 +2096,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|conf
 init|=
@@ -2461,7 +2461,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|conf
 init|=
@@ -2691,7 +2691,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|conf
 init|=
@@ -2917,7 +2917,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|map
 parameter_list|,
@@ -2960,6 +2960,9 @@ argument_list|(
 name|key
 argument_list|)
 condition|?
+operator|(
+name|String
+operator|)
 name|map
 operator|.
 name|get
@@ -3131,14 +3134,14 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|map
 parameter_list|,
 name|String
 name|key
 parameter_list|,
-name|String
+name|Object
 name|value
 parameter_list|,
 name|boolean
@@ -3190,7 +3193,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|target
 parameter_list|)
@@ -3439,7 +3442,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|getConfigurationFromBuilder
 parameter_list|(

@@ -231,7 +231,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 argument_list|>
 name|getConfigurations
@@ -242,7 +242,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|getConfiguration
 parameter_list|(

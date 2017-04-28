@@ -527,7 +527,7 @@ argument_list|()
 operator|.
 name|startsWith
 argument_list|(
-literal|"repository"
+literal|"repository/"
 argument_list|)
 condition|)
 block|{
@@ -661,7 +661,7 @@ argument_list|()
 operator|.
 name|startsWith
 argument_list|(
-literal|"resource"
+literal|"resources/"
 argument_list|)
 condition|)
 block|{
@@ -675,7 +675,7 @@ argument_list|()
 operator|.
 name|substring
 argument_list|(
-literal|"resource/"
+literal|"resources/"
 operator|.
 name|length
 argument_list|()

@@ -153,6 +153,11 @@ operator|.
 name|buildCiphers
 argument_list|(
 name|ciphers
+operator|.
+name|split
+argument_list|(
+literal|","
+argument_list|)
 argument_list|)
 decl_stmt|;
 comment|// verify that all configured ciphers are actually resolved...
@@ -254,6 +259,11 @@ operator|.
 name|buildMacs
 argument_list|(
 name|macs
+operator|.
+name|split
+argument_list|(
+literal|","
+argument_list|)
 argument_list|)
 decl_stmt|;
 comment|// verify that all configured HMACs are actually resolved...
@@ -355,6 +365,11 @@ operator|.
 name|buildKexAlgorithms
 argument_list|(
 name|kexAlgorithms
+operator|.
+name|split
+argument_list|(
+literal|","
+argument_list|)
 argument_list|)
 decl_stmt|;
 comment|// verify that all configured key exchange algorithms are actually resolved...

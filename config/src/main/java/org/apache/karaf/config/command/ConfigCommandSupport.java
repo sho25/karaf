@@ -194,6 +194,11 @@ literal|"rawtypes"
 argument_list|)
 specifier|protected
 name|Dictionary
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|getEditedProps
 parameter_list|()
 throws|throws

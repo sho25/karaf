@@ -182,6 +182,8 @@ name|version
 expr_stmt|;
 block|}
 comment|/**      * Feature name should be non empty string.      *      * @return possible object is      * {@link String }      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -208,6 +210,8 @@ name|value
 expr_stmt|;
 block|}
 comment|/**      * Gets the value of the version property.      *      * @return possible object is      * {@link String }      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getVersion
@@ -248,6 +252,20 @@ name|version
 operator|=
 name|value
 expr_stmt|;
+block|}
+comment|/**      * Since version has a default value ("0.0.0"), returns whether or not the version has been set.      */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|hasVersion
+parameter_list|()
+block|{
+return|return
+name|version
+operator|!=
+literal|null
+return|;
 block|}
 annotation|@
 name|Override

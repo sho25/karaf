@@ -553,7 +553,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 argument_list|>
 name|configuration
@@ -586,7 +586,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|agentConfiguration
 init|=
@@ -659,7 +659,7 @@ name|Entry
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|entry
 range|:
@@ -677,7 +677,7 @@ operator|.
 name|getKey
 argument_list|()
 decl_stmt|;
-name|String
+name|Object
 name|value
 init|=
 name|entry
@@ -688,6 +688,15 @@ decl_stmt|;
 if|if
 condition|(
 name|value
+operator|instanceof
+name|String
+operator|&&
+operator|(
+operator|(
+name|String
+operator|)
+name|value
+operator|)
 operator|.
 name|contains
 argument_list|(
@@ -699,7 +708,12 @@ name|value
 operator|=
 literal|"\t"
 operator|+
+operator|(
+operator|(
+name|String
+operator|)
 name|value
+operator|)
 operator|.
 name|replace
 argument_list|(
@@ -1093,7 +1107,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 argument_list|>
 name|cfg
@@ -1124,7 +1138,7 @@ name|Entry
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|values
 range|:

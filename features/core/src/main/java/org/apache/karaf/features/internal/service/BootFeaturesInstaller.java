@@ -202,6 +202,7 @@ decl_stmt|;
 specifier|private
 specifier|final
 name|String
+index|[]
 name|repositories
 decl_stmt|;
 specifier|private
@@ -253,6 +254,7 @@ name|FeaturesServiceImpl
 name|featuresService
 parameter_list|,
 name|String
+index|[]
 name|repositories
 parameter_list|,
 name|String
@@ -358,11 +360,6 @@ name|String
 name|repo
 range|:
 name|repositories
-operator|.
-name|split
-argument_list|(
-literal|","
-argument_list|)
 control|)
 block|{
 name|repo

@@ -41,16 +41,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|OutputStreamWriter
 import|;
 end_import
@@ -167,7 +157,7 @@ name|utils
 operator|.
 name|properties
 operator|.
-name|Properties
+name|TypedProperties
 import|;
 end_import
 
@@ -367,6 +357,13 @@ operator|!
 name|isStartingInstance
 condition|)
 block|{
+name|boolean
+name|proceed
+init|=
+literal|true
+decl_stmt|;
+try|try
+init|(
 name|RandomAccessFile
 name|raf
 init|=
@@ -377,13 +374,7 @@ name|propertiesFile
 argument_list|,
 literal|"rw"
 argument_list|)
-decl_stmt|;
-name|boolean
-name|proceed
-init|=
-literal|true
-decl_stmt|;
-try|try
+init|)
 block|{
 name|FileLock
 name|lock
@@ -417,16 +408,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-finally|finally
-block|{
 comment|// if proceed is true than we got the lock or OverlappingFileLockException
 comment|// but we may proceed in either case
-name|raf
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
 if|if
 condition|(
 operator|!
@@ -444,21 +427,11 @@ name|execute
 argument_list|(
 name|propertiesFile
 argument_list|,
-operator|new
-name|FileLockUtils
-operator|.
-name|RunnableWithProperties
-argument_list|()
-block|{
-specifier|public
-name|void
-name|run
 parameter_list|(
-name|Properties
+name|TypedProperties
 name|props
 parameter_list|)
-throws|throws
-name|IOException
+lambda|->
 block|{
 if|if
 condition|(
@@ -471,7 +444,7 @@ block|{
 comment|// it's the first instance running, so we consider as root
 name|props
 operator|.
-name|setProperty
+name|put
 argument_list|(
 literal|"count"
 argument_list|,
@@ -480,7 +453,7 @@ argument_list|)
 expr_stmt|;
 name|props
 operator|.
-name|setProperty
+name|put
 argument_list|(
 literal|"item.0.name"
 argument_list|,
@@ -489,7 +462,7 @@ argument_list|)
 expr_stmt|;
 name|props
 operator|.
-name|setProperty
+name|put
 argument_list|(
 literal|"item.0.loc"
 argument_list|,
@@ -501,7 +474,7 @@ argument_list|)
 expr_stmt|;
 name|props
 operator|.
-name|setProperty
+name|put
 argument_list|(
 literal|"item.0.pid"
 argument_list|,
@@ -510,7 +483,7 @@ argument_list|)
 expr_stmt|;
 name|props
 operator|.
-name|setProperty
+name|put
 argument_list|(
 literal|"item.0.root"
 argument_list|,
@@ -529,10 +502,13 @@ name|parseInt
 argument_list|(
 name|props
 operator|.
-name|getProperty
+name|get
 argument_list|(
 literal|"count"
 argument_list|)
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 decl_stmt|;
 for|for
@@ -555,7 +531,7 @@ name|name
 init|=
 name|props
 operator|.
-name|getProperty
+name|get
 argument_list|(
 literal|"item."
 operator|+
@@ -563,6 +539,9 @@ name|i
 operator|+
 literal|".name"
 argument_list|)
+operator|.
+name|toString
+argument_list|()
 decl_stmt|;
 if|if
 condition|(
@@ -576,7 +555,7 @@ condition|)
 block|{
 name|props
 operator|.
-name|setProperty
+name|put
 argument_list|(
 literal|"item."
 operator|+
@@ -593,7 +572,7 @@ block|}
 comment|// it's not found, let assume it's the root instance, so 0
 name|props
 operator|.
-name|setProperty
+name|put
 argument_list|(
 literal|"item.0.name"
 argument_list|,
@@ -602,14 +581,13 @@ argument_list|)
 expr_stmt|;
 name|props
 operator|.
-name|setProperty
+name|put
 argument_list|(
 literal|"item.0.pid"
 argument_list|,
 name|pid
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 argument_list|,

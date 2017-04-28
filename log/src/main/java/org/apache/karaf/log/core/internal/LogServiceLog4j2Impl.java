@@ -358,15 +358,8 @@ name|loggerName
 operator|=
 name|getMatching
 argument_list|(
-name|namePattern
-argument_list|,
-name|key
-argument_list|)
-expr_stmt|;
 name|levelPattern
-operator|.
-name|matcher
-argument_list|(
+argument_list|,
 name|key
 argument_list|)
 expr_stmt|;

@@ -510,7 +510,7 @@ name|PrintStream
 argument_list|(
 name|out
 argument_list|,
-literal|false
+literal|true
 argument_list|,
 name|encoding
 argument_list|)
@@ -539,7 +539,7 @@ name|PrintStream
 argument_list|(
 name|err
 argument_list|,
-literal|false
+literal|true
 argument_list|,
 name|encoding
 argument_list|)
