@@ -291,6 +291,20 @@ name|karaf
 operator|.
 name|features
 operator|.
+name|DeploymentEvent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
 name|Feature
 import|;
 end_import
@@ -1322,6 +1336,13 @@ function_decl|;
 name|void
 name|callListeners
 parameter_list|(
+name|DeploymentEvent
+name|deployEvent
+parameter_list|)
+function_decl|;
+name|void
+name|callListeners
+parameter_list|(
 name|FeatureEvent
 name|featureEvent
 parameter_list|)
@@ -2310,13 +2331,17 @@ if|if
 condition|(
 name|found
 condition|)
+block|{
 break|break;
+block|}
 block|}
 if|if
 condition|(
 name|found
 condition|)
+block|{
 break|break;
+block|}
 block|}
 if|if
 condition|(
@@ -4768,6 +4793,15 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+name|callback
+operator|.
+name|callListeners
+argument_list|(
+name|DeploymentEvent
+operator|.
+name|DEPLOYMENT_STARTED
+argument_list|)
+expr_stmt|;
 comment|//
 comment|// Perform bundle operations
 comment|//
@@ -5635,11 +5669,7 @@ name|customStartLevels
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|Bundle
-argument_list|,
-name|Integer
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -6421,6 +6451,15 @@ argument_list|)
 expr_stmt|;
 name|callback
 operator|.
+name|callListeners
+argument_list|(
+name|DeploymentEvent
+operator|.
+name|BUNDLES_INSTALLED
+argument_list|)
+expr_stmt|;
+name|callback
+operator|.
 name|resolveBundles
 argument_list|(
 name|toResolve
@@ -6433,6 +6472,15 @@ argument_list|,
 name|deployment
 operator|.
 name|resToBnd
+argument_list|)
+expr_stmt|;
+name|callback
+operator|.
+name|callListeners
+argument_list|(
+name|DeploymentEvent
+operator|.
+name|BUNDLES_RESOLVED
 argument_list|)
 expr_stmt|;
 comment|// Compute bundles to start
@@ -6734,6 +6782,15 @@ expr_stmt|;
 block|}
 block|}
 block|}
+name|callback
+operator|.
+name|callListeners
+argument_list|(
+name|DeploymentEvent
+operator|.
+name|DEPLOYMENT_FINISHED
+argument_list|)
+expr_stmt|;
 name|print
 argument_list|(
 literal|"Done."
@@ -6743,6 +6800,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
+specifier|static
 name|VersionRange
 name|getRange
 parameter_list|(
@@ -6943,6 +7001,7 @@ block|}
 block|}
 block|}
 specifier|private
+specifier|static
 name|boolean
 name|isSubsystem
 parameter_list|(
@@ -6963,6 +7022,7 @@ argument_list|)
 return|;
 block|}
 specifier|private
+specifier|static
 name|boolean
 name|isBundle
 parameter_list|(
@@ -6984,6 +7044,7 @@ return|;
 block|}
 comment|/**      * Returns the most active state of the given states      */
 specifier|private
+specifier|static
 name|FeatureState
 name|mergeStates
 parameter_list|(
@@ -7043,6 +7104,7 @@ name|Installed
 return|;
 block|}
 specifier|private
+specifier|static
 name|void
 name|computeBundlesToRefresh
 parameter_list|(
@@ -7987,6 +8049,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
+specifier|static
 name|void
 name|removeFragmentsAndBundlesInState
 parameter_list|(
@@ -8065,6 +8128,7 @@ block|}
 block|}
 block|}
 specifier|private
+specifier|static
 name|void
 name|removeBundlesInState
 parameter_list|(
@@ -8790,9 +8854,7 @@ argument_list|)
 else|:
 operator|new
 name|ArrayList
-argument_list|<
-name|Resource
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|// Remove the system bundle
@@ -10087,6 +10149,8 @@ name|Bundle
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|int
 name|compare
