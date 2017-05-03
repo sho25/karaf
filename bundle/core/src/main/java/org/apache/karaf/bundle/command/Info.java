@@ -151,7 +151,7 @@ name|session
 operator|.
 name|execute
 argument_list|(
-literal|"help 'bundle|"
+literal|"*:help 'bundle|"
 operator|+
 name|bundle
 operator|.
