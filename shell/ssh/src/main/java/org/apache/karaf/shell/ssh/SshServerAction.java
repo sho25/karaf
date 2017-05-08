@@ -280,6 +280,37 @@ name|Option
 argument_list|(
 name|name
 operator|=
+literal|"-n"
+argument_list|,
+name|aliases
+operator|=
+block|{
+literal|"--nio-workers"
+block|}
+argument_list|,
+name|description
+operator|=
+literal|"The number of NIO worker threads to use"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
+argument_list|)
+specifier|private
+name|int
+name|nioWorkers
+init|=
+literal|2
+decl_stmt|;
+annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
 literal|"-w"
 argument_list|,
 name|aliases
@@ -369,6 +400,28 @@ name|idleTimeout
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|// nio-workes
+name|server
+operator|.
+name|getProperties
+argument_list|()
+operator|.
+name|put
+argument_list|(
+name|SshServer
+operator|.
+name|NIO_WORKERS
+argument_list|,
+operator|new
+name|Integer
+argument_list|(
+name|nioWorkers
+argument_list|)
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// welcome banner
 if|if
 condition|(
@@ -412,7 +465,13 @@ literal|" (idle timeout "
 operator|+
 name|idleTimeout
 operator|+
-literal|"ms)"
+literal|"ms) "
+operator|+
+literal|" (nio worker Threads "
+operator|+
+name|nioWorkers
+operator|+
+literal|") "
 argument_list|)
 expr_stmt|;
 if|if
