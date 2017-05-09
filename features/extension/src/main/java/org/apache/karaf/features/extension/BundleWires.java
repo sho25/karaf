@@ -665,7 +665,7 @@ name|indexOf
 argument_list|(
 literal|';'
 argument_list|)
-argument_list|;             if
+argument_list|;                 if
 operator|(
 name|idx
 operator|>
@@ -682,7 +682,7 @@ literal|0
 argument_list|,
 name|idx
 argument_list|)
-block|;             }
+block|;                 }
 return|return
 name|Long
 operator|.
@@ -709,7 +709,7 @@ expr_stmt|;
 end_class
 
 begin_expr_stmt
-unit|} 	 	void
+unit|}      void
 name|filterMatches
 argument_list|(
 name|BundleRequirement
@@ -809,7 +809,7 @@ block|}
 end_expr_stmt
 
 begin_function
-unit|} 	}
+unit|}     }
 specifier|private
 name|String
 name|getRequirementId
