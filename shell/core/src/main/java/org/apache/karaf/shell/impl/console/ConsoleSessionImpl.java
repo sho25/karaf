@@ -1878,6 +1878,8 @@ condition|(
 name|running
 condition|)
 block|{
+try|try
+block|{
 name|reader
 operator|.
 name|getHistory
@@ -1886,6 +1888,15 @@ operator|.
 name|save
 argument_list|()
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+comment|// ignore
+block|}
 name|running
 operator|=
 literal|false
