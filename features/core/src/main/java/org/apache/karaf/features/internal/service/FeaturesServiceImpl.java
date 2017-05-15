@@ -2559,6 +2559,7 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*      * Should never be called while holding a lock as we're calling outside our bundle.      */
 annotation|@
 name|Override
 specifier|public
@@ -2601,6 +2602,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/*      * Should never be called while holding a lock as we're calling outside our bundle.      */
 annotation|@
 name|Override
 specifier|public
@@ -2655,6 +2657,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+comment|/*      * Should never be called while holding a lock as we're calling outside our bundle.      */
 specifier|protected
 name|void
 name|callListeners
@@ -4091,6 +4094,7 @@ name|allFeatures
 argument_list|)
 return|;
 block|}
+comment|/**      * Should not be called while holding a lock.      */
 specifier|protected
 name|Map
 argument_list|<
