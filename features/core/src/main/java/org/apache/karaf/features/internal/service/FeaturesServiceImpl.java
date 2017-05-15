@@ -3867,7 +3867,7 @@ index|]
 argument_list|)
 return|;
 block|}
-specifier|protected
+specifier|private
 name|Feature
 name|getFeatureMatching
 parameter_list|(
@@ -6534,7 +6534,7 @@ argument_list|()
 return|;
 block|}
 block|}
-specifier|protected
+specifier|private
 name|String
 name|normalize
 parameter_list|(
@@ -6606,7 +6606,7 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Actual deployment needs to be done in a separate thread.      * The reason is that if the console is refreshed, the current thread which is running      * the command may be interrupted while waiting for the refresh to be done, leading      * to bundles not being started after the refresh.      *      * @param requirements the provided requirements to match.      * @param stateChanges the current features state.      * @param state the current provisioning state.      * @param options the provisioning options.      * @throws Exception in case of provisioning failure.      */
-specifier|public
+specifier|private
 name|void
 name|doProvisionInThread
 parameter_list|(
@@ -6768,7 +6768,7 @@ throw|;
 block|}
 block|}
 block|}
-specifier|protected
+specifier|private
 name|Deployer
 operator|.
 name|DeploymentState
@@ -7259,7 +7259,7 @@ return|return
 name|request
 return|;
 block|}
-specifier|public
+specifier|private
 name|void
 name|doProvision
 parameter_list|(
