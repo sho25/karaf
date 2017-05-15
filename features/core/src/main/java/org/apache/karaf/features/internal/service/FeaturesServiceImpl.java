@@ -1297,11 +1297,6 @@ name|blacklisted
 decl_stmt|;
 specifier|private
 specifier|final
-name|boolean
-name|configCfgStore
-decl_stmt|;
-specifier|private
-specifier|final
 name|ThreadLocal
 argument_list|<
 name|String
@@ -1738,12 +1733,6 @@ operator|.
 name|blacklisted
 operator|=
 name|blacklisted
-expr_stmt|;
-name|this
-operator|.
-name|configCfgStore
-operator|=
-name|configCfgStore
 expr_stmt|;
 name|this
 operator|.
