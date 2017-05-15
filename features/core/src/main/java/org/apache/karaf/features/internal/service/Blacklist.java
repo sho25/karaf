@@ -357,15 +357,6 @@ argument_list|>
 name|blacklist
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-name|blacklist
-operator|.
-name|isEmpty
-argument_list|()
-condition|)
-block|{
 name|Clause
 index|[]
 name|clauses
@@ -396,7 +387,6 @@ argument_list|,
 name|clauses
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|public
 specifier|static
