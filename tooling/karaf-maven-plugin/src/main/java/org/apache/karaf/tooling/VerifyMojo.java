@@ -6124,8 +6124,6 @@ specifier|public
 name|void
 name|saveState
 parameter_list|()
-throws|throws
-name|IOException
 block|{         }
 annotation|@
 name|Override
@@ -6135,6 +6133,20 @@ name|getDiGraphCopy
 parameter_list|()
 throws|throws
 name|BundleException
+block|{
+return|return
+literal|null
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|File
+name|getDataFile
+parameter_list|(
+name|String
+name|name
+parameter_list|)
 block|{
 return|return
 literal|null
