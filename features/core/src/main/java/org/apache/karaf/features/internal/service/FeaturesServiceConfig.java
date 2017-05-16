@@ -46,6 +46,8 @@ decl_stmt|;
 specifier|public
 name|int
 name|downloadThreads
+init|=
+literal|1
 decl_stmt|;
 specifier|public
 name|long

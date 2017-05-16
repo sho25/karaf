@@ -1826,15 +1826,6 @@ operator|=
 operator|new
 name|FeaturesServiceImpl
 argument_list|(
-name|bundleContext
-operator|.
-name|getBundle
-argument_list|()
-argument_list|,
-name|bundleContext
-argument_list|,
-name|systemBundleContext
-argument_list|,
 name|stateStorage
 argument_list|,
 name|featureFinder
