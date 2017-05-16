@@ -745,6 +745,24 @@ name|internal
 operator|.
 name|service
 operator|.
+name|BundleInstallSupport
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
+operator|.
+name|service
+operator|.
 name|State
 import|;
 end_import
@@ -934,6 +952,20 @@ operator|.
 name|project
 operator|.
 name|MavenProject
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|eclipse
+operator|.
+name|equinox
+operator|.
+name|region
+operator|.
+name|RegionDigraph
 import|;
 end_import
 
@@ -3327,6 +3359,8 @@ argument_list|()
 argument_list|)
 argument_list|,
 name|callback
+argument_list|,
+name|callback
 argument_list|)
 decl_stmt|;
 comment|// Install framework
@@ -5432,6 +5466,8 @@ implements|implements
 name|Deployer
 operator|.
 name|DeployCallback
+implements|,
+name|BundleInstallSupport
 block|{
 specifier|private
 specifier|final
@@ -5651,7 +5687,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|installFeature
+name|installConfigs
 parameter_list|(
 name|org
 operator|.
@@ -5668,6 +5704,26 @@ throws|throws
 name|IOException
 throws|,
 name|InvalidSyntaxException
+block|{         }
+annotation|@
+name|Override
+specifier|public
+name|void
+name|installLibraries
+parameter_list|(
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|Feature
+name|feature
+parameter_list|)
+throws|throws
+name|IOException
 block|{         }
 annotation|@
 name|Override
@@ -6062,6 +6118,28 @@ name|BundleException
 throws|,
 name|InvalidSyntaxException
 block|{         }
+annotation|@
+name|Override
+specifier|public
+name|void
+name|saveState
+parameter_list|()
+throws|throws
+name|IOException
+block|{         }
+annotation|@
+name|Override
+specifier|public
+name|RegionDigraph
+name|getDiGraphCopy
+parameter_list|()
+throws|throws
+name|BundleException
+block|{
+return|return
+literal|null
+return|;
+block|}
 block|}
 specifier|public
 class|class
