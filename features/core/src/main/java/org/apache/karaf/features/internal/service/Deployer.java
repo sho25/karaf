@@ -4348,6 +4348,13 @@ comment|// #8: refresh bundles
 comment|// #9: start bundles in order
 comment|// #10: send events
 comment|//
+name|Bundle
+name|serviceBundle
+init|=
+name|dstate
+operator|.
+name|serviceBundle
+decl_stmt|;
 comment|//
 comment|// Handle updates on the FeaturesService bundle
 comment|//
@@ -4378,8 +4385,6 @@ name|toDelete
 operator|.
 name|contains
 argument_list|(
-name|dstate
-operator|.
 name|serviceBundle
 argument_list|)
 condition|)
@@ -4414,8 +4419,6 @@ name|toUpdate
 operator|.
 name|containsKey
 argument_list|(
-name|dstate
-operator|.
 name|serviceBundle
 argument_list|)
 condition|)
@@ -4437,8 +4440,6 @@ name|bundleChecksums
 operator|.
 name|containsKey
 argument_list|(
-name|dstate
-operator|.
 name|serviceBundle
 operator|.
 name|getBundleId
@@ -4462,8 +4463,6 @@ name|bundleChecksums
 operator|.
 name|put
 argument_list|(
-name|dstate
-operator|.
 name|serviceBundle
 operator|.
 name|getBundleId
@@ -4475,8 +4474,6 @@ name|bundleChecksums
 operator|.
 name|get
 argument_list|(
-name|dstate
-operator|.
 name|serviceBundle
 operator|.
 name|getBundleId
@@ -4501,8 +4498,6 @@ name|toUpdate
 operator|.
 name|get
 argument_list|(
-name|dstate
-operator|.
 name|serviceBundle
 argument_list|)
 decl_stmt|;
@@ -4532,8 +4527,6 @@ name|toRefresh
 operator|.
 name|put
 argument_list|(
-name|dstate
-operator|.
 name|serviceBundle
 argument_list|,
 literal|"FeaturesService bundle is being updated"
@@ -4578,8 +4571,6 @@ name|installSupport
 operator|.
 name|stopBundle
 argument_list|(
-name|dstate
-operator|.
 name|serviceBundle
 argument_list|,
 name|STOP_TRANSIENT
@@ -4602,8 +4593,6 @@ name|installSupport
 operator|.
 name|updateBundle
 argument_list|(
-name|dstate
-operator|.
 name|serviceBundle
 argument_list|,
 name|uri
@@ -4626,8 +4615,6 @@ name|installSupport
 operator|.
 name|startBundle
 argument_list|(
-name|dstate
-operator|.
 name|serviceBundle
 argument_list|)
 expr_stmt|;
@@ -5438,12 +5425,17 @@ operator|.
 name|getValue
 argument_list|()
 decl_stmt|;
-name|installSupport
-operator|.
-name|setBundleStartLevel
-argument_list|(
 name|bundle
-argument_list|,
+operator|.
+name|adapt
+argument_list|(
+name|BundleStartLevel
+operator|.
+name|class
+argument_list|)
+operator|.
+name|setStartLevel
+argument_list|(
 name|sl
 argument_list|)
 expr_stmt|;
@@ -5802,18 +5794,28 @@ name|keySet
 argument_list|()
 control|)
 block|{
-name|installSupport
-operator|.
-name|setBundleStartLevel
-argument_list|(
-name|bundle
-argument_list|,
+name|int
+name|startLevel
+init|=
 name|customStartLevels
 operator|.
 name|get
 argument_list|(
 name|bundle
 argument_list|)
+decl_stmt|;
+name|bundle
+operator|.
+name|adapt
+argument_list|(
+name|BundleStartLevel
+operator|.
+name|class
+argument_list|)
+operator|.
+name|setStartLevel
+argument_list|(
+name|startLevel
 argument_list|)
 expr_stmt|;
 block|}
@@ -6242,8 +6244,6 @@ block|}
 comment|// Ensure all classes are loaded in case the bundle will be refreshed
 if|if
 condition|(
-name|dstate
-operator|.
 name|serviceBundle
 operator|!=
 literal|null
@@ -6252,16 +6252,12 @@ name|toRefresh
 operator|.
 name|containsKey
 argument_list|(
-name|dstate
-operator|.
 name|serviceBundle
 argument_list|)
 condition|)
 block|{
 name|ensureAllClassesLoaded
 argument_list|(
-name|dstate
-operator|.
 name|serviceBundle
 argument_list|)
 expr_stmt|;
@@ -6394,8 +6390,6 @@ name|getBundlesToStart
 argument_list|(
 name|toStart
 argument_list|,
-name|dstate
-operator|.
 name|serviceBundle
 argument_list|)
 decl_stmt|;
