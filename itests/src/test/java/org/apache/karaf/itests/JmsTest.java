@@ -81,11 +81,11 @@ begin_import
 import|import static
 name|org
 operator|.
-name|hamcrest
+name|junit
 operator|.
-name|CoreMatchers
+name|Assert
 operator|.
-name|is
+name|assertThat
 import|;
 end_import
 
@@ -97,7 +97,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertThat
+name|assertTrue
 import|;
 end_import
 
@@ -467,6 +467,21 @@ init|=
 literal|"queueMBean"
 decl_stmt|;
 specifier|private
+name|MBeanServer
+name|mbeanServer
+decl_stmt|;
+specifier|private
+name|ObjectName
+name|objName
+decl_stmt|;
+annotation|@
+name|Configuration
+specifier|public
+name|Option
+index|[]
+name|config
+parameter_list|()
+block|{
 name|MavenArtifactUrlReference
 name|activeMqUrl
 init|=
@@ -496,22 +511,6 @@ argument_list|(
 literal|"features"
 argument_list|)
 decl_stmt|;
-specifier|private
-name|MBeanServer
-name|mbeanServer
-decl_stmt|;
-specifier|private
-name|ObjectName
-name|objName
-decl_stmt|;
-annotation|@
-name|Configuration
-specifier|public
-name|Option
-index|[]
-name|config
-parameter_list|()
-block|{
 return|return
 operator|new
 name|Option
@@ -526,6 +525,7 @@ name|config
 argument_list|()
 argument_list|)
 block|,
+comment|//
 name|features
 argument_list|(
 name|activeMqUrl
@@ -557,7 +557,7 @@ annotation|@
 name|Before
 specifier|public
 name|void
-name|installJmsFeatureAndActiveMQBroker
+name|setup
 parameter_list|()
 throws|throws
 name|Exception
@@ -817,16 +817,13 @@ argument_list|,
 literal|"karaf"
 argument_list|)
 decl_stmt|;
-name|assertThat
+name|assertTrue
 argument_list|(
-literal|"Queue size"
+literal|"Queue size> 0"
 argument_list|,
 name|count
-argument_list|,
-name|is
-argument_list|(
-literal|1
-argument_list|)
+operator|>
+literal|0
 argument_list|)
 expr_stmt|;
 name|List
@@ -994,17 +991,14 @@ argument_list|,
 literal|"Connectionfactories"
 argument_list|)
 decl_stmt|;
-name|assertThat
+name|assertTrue
 argument_list|(
 name|connectionFactories
 operator|.
 name|size
 argument_list|()
-argument_list|,
-name|is
-argument_list|(
-literal|1
-argument_list|)
+operator|>
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
