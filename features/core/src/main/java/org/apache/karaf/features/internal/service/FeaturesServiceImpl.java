@@ -921,7 +921,7 @@ name|storage
 decl_stmt|;
 specifier|private
 specifier|final
-name|FeatureFinder
+name|FeatureRepoFinder
 name|featureFinder
 decl_stmt|;
 specifier|private
@@ -1064,7 +1064,7 @@ parameter_list|(
 name|StateStorage
 name|storage
 parameter_list|,
-name|FeatureFinder
+name|FeatureRepoFinder
 name|featureFinder
 parameter_list|,
 name|ConfigurationAdmin
