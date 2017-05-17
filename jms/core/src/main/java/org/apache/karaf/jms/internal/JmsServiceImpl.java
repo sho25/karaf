@@ -1694,7 +1694,7 @@ name|consumer
 operator|.
 name|receive
 argument_list|(
-literal|5000L
+literal|500L
 argument_list|)
 expr_stmt|;
 if|if
@@ -1823,7 +1823,7 @@ name|consumer
 operator|.
 name|receive
 argument_list|(
-literal|5000L
+literal|500L
 argument_list|)
 expr_stmt|;
 if|if
