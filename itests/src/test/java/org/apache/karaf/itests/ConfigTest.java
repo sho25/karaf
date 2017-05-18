@@ -23,7 +23,19 @@ name|hamcrest
 operator|.
 name|Matchers
 operator|.
-name|contains
+name|hasItem
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|hamcrest
+operator|.
+name|Matchers
+operator|.
+name|hasKey
 import|;
 end_import
 
@@ -48,18 +60,6 @@ operator|.
 name|Assert
 operator|.
 name|assertThat
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
 import|;
 end_import
 
@@ -325,7 +325,7 @@ name|assertThat
 argument_list|(
 name|configs
 argument_list|,
-name|contains
+name|hasItem
 argument_list|(
 literal|"org.apache.karaf.features"
 argument_list|)
@@ -370,17 +370,14 @@ literal|"java.lang.String"
 block|}
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertThat
 argument_list|(
 name|properties
-operator|.
-name|keySet
-argument_list|()
-operator|.
-name|size
-argument_list|()
-operator|>
-literal|0
+argument_list|,
+name|hasKey
+argument_list|(
+literal|"featuresRepositories"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
