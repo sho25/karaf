@@ -529,8 +529,7 @@ specifier|protected
 name|ServiceMonitor
 name|serviceMonitor
 decl_stmt|;
-annotation|@
-name|ProbeBuilder
+comment|//@ProbeBuilder
 specifier|public
 name|TestProbeBuilder
 name|probeConfiguration
