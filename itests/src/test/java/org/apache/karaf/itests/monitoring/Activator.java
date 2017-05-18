@@ -97,17 +97,7 @@ name|service
 operator|=
 operator|new
 name|ServiceMonitor
-argument_list|(
-name|context
-operator|.
-name|getBundle
-argument_list|(
-literal|0L
-argument_list|)
-operator|.
-name|getBundleContext
 argument_list|()
-argument_list|)
 expr_stmt|;
 name|registration
 operator|=
