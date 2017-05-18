@@ -192,7 +192,7 @@ block|}
 argument_list|,
 name|description
 operator|=
-literal|"The JMS connection factory type (ActiveMQ or WebsphereMQ)"
+literal|"The JMS connection factory type (ActiveMQ, Artemis or WebsphereMQ)"
 argument_list|,
 name|required
 operator|=
@@ -215,6 +215,8 @@ name|values
 operator|=
 block|{
 literal|"activemq"
+block|,
+literal|"artemis"
 block|,
 literal|"webspheremq"
 block|}
