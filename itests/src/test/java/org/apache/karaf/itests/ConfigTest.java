@@ -19,11 +19,35 @@ begin_import
 import|import static
 name|org
 operator|.
+name|hamcrest
+operator|.
+name|Matchers
+operator|.
+name|contains
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
 name|Assert
 operator|.
 name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertThat
 import|;
 end_import
 
@@ -297,20 +321,10 @@ argument_list|,
 literal|"Configs"
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertThat
 argument_list|(
 name|configs
-operator|.
-name|size
-argument_list|()
-operator|>
-literal|0
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-name|configs
-operator|.
+argument_list|,
 name|contains
 argument_list|(
 literal|"org.apache.karaf.features"
