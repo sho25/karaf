@@ -75,6 +75,26 @@ name|options
 operator|.
 name|KarafDistributionOption
 operator|.
+name|configureConsole
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|ops4j
+operator|.
+name|pax
+operator|.
+name|exam
+operator|.
+name|karaf
+operator|.
+name|options
+operator|.
+name|KarafDistributionOption
+operator|.
 name|configureSecurity
 import|;
 end_import
@@ -661,20 +681,6 @@ name|pax
 operator|.
 name|exam
 operator|.
-name|CoreOptions
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|ops4j
-operator|.
-name|pax
-operator|.
-name|exam
-operator|.
 name|Option
 import|;
 end_import
@@ -1116,11 +1122,6 @@ parameter_list|()
 throws|throws
 name|Throwable
 block|{
-name|Throwable
-name|caughtThrowable
-init|=
-literal|null
-decl_stmt|;
 comment|// implement retry logic here
 comment|// retry once to honor the FeatureService refresh
 try|try
@@ -1445,6 +1446,12 @@ name|configureSecurity
 argument_list|()
 operator|.
 name|disableKarafMBeanServerBuilder
+argument_list|()
+block|,
+name|configureConsole
+argument_list|()
+operator|.
+name|ignoreLocalConsole
 argument_list|()
 block|,
 name|keepRuntimeFolder
