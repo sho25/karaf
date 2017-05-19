@@ -12,6 +12,8 @@ operator|.
 name|karaf
 operator|.
 name|itests
+operator|.
+name|ssh
 package|;
 end_package
 
@@ -116,6 +118,20 @@ operator|.
 name|features
 operator|.
 name|Feature
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|itests
+operator|.
+name|KarafTestSupport
 import|;
 end_import
 

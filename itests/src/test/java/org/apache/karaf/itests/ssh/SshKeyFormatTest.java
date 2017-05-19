@@ -12,6 +12,8 @@ operator|.
 name|karaf
 operator|.
 name|itests
+operator|.
+name|ssh
 package|;
 end_package
 
@@ -276,7 +278,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-literal|"src/test/resources/org/apache/karaf/itests/test.pem"
+literal|"src/test/resources/org/apache/karaf/itests/ssh/test.pem"
 argument_list|)
 decl_stmt|;
 return|return

@@ -12,6 +12,8 @@ operator|.
 name|karaf
 operator|.
 name|itests
+operator|.
+name|ssh
 package|;
 end_package
 
