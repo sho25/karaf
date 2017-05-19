@@ -500,7 +500,7 @@ import|;
 end_import
 
 begin_comment
-comment|// don't extend, because we don't want @Rule Retry
+comment|// Don't extend KarafTestSupport, because we don't want @Rule Retry
 end_comment
 
 begin_class
@@ -539,7 +539,6 @@ name|TestProbeBuilder
 name|probe
 parameter_list|)
 block|{
-comment|/**          *  We need to import the package to be able to access the service inside the test.          *  The optional import is necessary because of a bug in pax exam          */
 name|probe
 operator|.
 name|setHeader
@@ -557,8 +556,6 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|";resolution:=optional"
 argument_list|)
 expr_stmt|;
 return|return
