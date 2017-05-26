@@ -5840,13 +5840,6 @@ operator|.
 name|getDiGraphCopy
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|regionDigraph
-operator|!=
-literal|null
-condition|)
-block|{
 name|dstate
 operator|.
 name|bundlesPerRegion
@@ -5869,7 +5862,6 @@ argument_list|(
 name|regionDigraph
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|dstate
 return|;
