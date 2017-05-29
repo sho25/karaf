@@ -136,6 +136,13 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|SuppressWarnings
+argument_list|(
+block|{
+literal|"rawtypes"
+block|}
+argument_list|)
 specifier|public
 specifier|abstract
 class|class

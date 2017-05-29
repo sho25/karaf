@@ -1325,6 +1325,11 @@ name|featureEvent
 parameter_list|)
 function_decl|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"serial"
+argument_list|)
 specifier|public
 specifier|static
 class|class
@@ -1378,6 +1383,11 @@ name|prereqs
 return|;
 block|}
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"serial"
+argument_list|)
 specifier|public
 specifier|static
 class|class
@@ -9814,6 +9824,11 @@ return|return
 name|sorted
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|protected
 name|List
 argument_list|<
@@ -10158,6 +10173,9 @@ name|int
 name|getServiceUsage
 parameter_list|(
 name|ServiceReference
+argument_list|<
+name|?
+argument_list|>
 name|ref
 parameter_list|,
 name|Collection

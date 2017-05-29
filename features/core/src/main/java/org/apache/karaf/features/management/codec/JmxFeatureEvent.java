@@ -319,6 +319,9 @@ operator|.
 name|FEATURE_EVENT
 decl_stmt|;
 name|OpenType
+argument_list|<
+name|?
+argument_list|>
 index|[]
 name|itemTypes
 init|=

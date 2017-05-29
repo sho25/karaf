@@ -65,6 +65,9 @@ parameter_list|<
 name|T
 extends|extends
 name|DefaultFuture
+parameter_list|<
+name|?
+parameter_list|>
 parameter_list|>
 block|{
 comment|/**      * A default value to indicate the future has been canceled      */

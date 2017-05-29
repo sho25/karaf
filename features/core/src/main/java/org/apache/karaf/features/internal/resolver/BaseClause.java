@@ -367,10 +367,16 @@ name|Iterable
 condition|)
 block|{
 name|Iterable
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 operator|(
 name|Iterable
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|val
 decl_stmt|;

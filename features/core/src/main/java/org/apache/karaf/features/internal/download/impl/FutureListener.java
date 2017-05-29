@@ -33,6 +33,9 @@ parameter_list|<
 name|T
 extends|extends
 name|DefaultFuture
+parameter_list|<
+name|?
+parameter_list|>
 parameter_list|>
 block|{
 comment|/**      * Invoked when the operation associated with the {@link DefaultFuture}      * has been completed even if you add the listener after the completion.      *      * @param future The source {@link DefaultFuture} which called this      *               callback.      */
