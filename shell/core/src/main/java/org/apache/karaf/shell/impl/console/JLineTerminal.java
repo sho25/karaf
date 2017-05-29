@@ -349,6 +349,17 @@ operator|::
 name|handle
 argument_list|)
 expr_stmt|;
+name|handlers
+operator|.
+name|put
+argument_list|(
+name|signal
+argument_list|,
+name|SignalHandler
+operator|.
+name|SIG_DFL
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 annotation|@
