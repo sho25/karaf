@@ -400,7 +400,7 @@ name|installAssertAndUninstallFeature
 argument_list|(
 literal|"transaction"
 argument_list|,
-literal|"1.3.2"
+literal|"1.3.3"
 argument_list|)
 expr_stmt|;
 block|}
