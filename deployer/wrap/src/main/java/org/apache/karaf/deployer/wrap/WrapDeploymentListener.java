@@ -141,6 +141,8 @@ return|return
 literal|false
 return|;
 block|}
+try|try
+init|(
 name|JarFile
 name|jar
 init|=
@@ -149,8 +151,7 @@ name|JarFile
 argument_list|(
 name|artifact
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 comment|// only handle non OSGi jar
 name|Manifest
@@ -211,14 +212,6 @@ block|}
 return|return
 literal|true
 return|;
-block|}
-finally|finally
-block|{
-name|jar
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 catch|catch

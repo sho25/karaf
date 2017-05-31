@@ -734,6 +734,8 @@ name|exists
 argument_list|()
 condition|)
 block|{
+try|try
+init|(
 name|InputStream
 name|input
 init|=
@@ -742,8 +744,7 @@ name|FileInputStream
 argument_list|(
 name|file
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 name|properties
 operator|.
@@ -751,14 +752,6 @@ name|load
 argument_list|(
 name|input
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|input
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -784,6 +777,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+try|try
+init|(
 name|OutputStream
 name|output
 init|=
@@ -792,8 +787,7 @@ name|FileOutputStream
 argument_list|(
 name|file
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 name|properties
 operator|.
@@ -803,14 +797,6 @@ name|output
 argument_list|,
 literal|null
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|output
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 block|}

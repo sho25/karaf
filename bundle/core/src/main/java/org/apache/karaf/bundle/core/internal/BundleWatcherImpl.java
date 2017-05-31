@@ -958,6 +958,8 @@ name|getLastModified
 argument_list|()
 condition|)
 block|{
+try|try
+init|(
 name|InputStream
 name|is
 init|=
@@ -966,8 +968,7 @@ name|FileInputStream
 argument_list|(
 name|location
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 name|logger
 operator|.
@@ -1105,14 +1106,6 @@ name|add
 argument_list|(
 name|bundle
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|is
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 block|}

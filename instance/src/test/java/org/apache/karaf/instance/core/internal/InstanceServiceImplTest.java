@@ -370,6 +370,8 @@ argument_list|,
 literal|"somescheme://xyz"
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|OutputStream
 name|os
 init|=
@@ -378,8 +380,7 @@ name|FileOutputStream
 argument_list|(
 name|f
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 name|p
 operator|.
@@ -389,14 +390,6 @@ name|os
 argument_list|,
 literal|"Test comment"
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|os
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 name|InstanceSettings
@@ -441,6 +434,8 @@ operator|new
 name|Properties
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|InputStream
 name|is
 init|=
@@ -449,8 +444,7 @@ name|FileInputStream
 argument_list|(
 name|f
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 name|p2
 operator|.
@@ -458,14 +452,6 @@ name|load
 argument_list|(
 name|is
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|is
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 name|assertEquals
