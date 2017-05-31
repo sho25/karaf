@@ -1125,9 +1125,7 @@ name|result
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ServletDetails
-argument_list|>
+argument_list|<>
 argument_list|(
 name|events
 operator|.
@@ -1265,11 +1263,6 @@ name|String
 index|[]
 name|urls
 init|=
-operator|(
-name|String
-index|[]
-operator|)
-operator|(
 name|event
 operator|.
 name|getUrlParameter
@@ -1288,7 +1281,6 @@ index|[]
 block|{
 literal|""
 block|}
-operator|)
 decl_stmt|;
 name|ServletDetails
 name|details
@@ -1392,9 +1384,7 @@ name|result
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|WebDetail
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -1608,11 +1598,7 @@ name|states
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Integer
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

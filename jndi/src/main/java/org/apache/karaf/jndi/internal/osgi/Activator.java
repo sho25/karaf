@@ -276,11 +276,7 @@ name|props
 init|=
 operator|new
 name|Hashtable
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|// bind the JNDI service itself in the JNDI context

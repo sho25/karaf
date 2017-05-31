@@ -199,9 +199,7 @@ name|tree
 init|=
 operator|new
 name|Tree
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"root"
 argument_list|)
@@ -259,9 +257,7 @@ name|tree
 init|=
 operator|new
 name|Tree
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"root"
 argument_list|)
@@ -379,9 +375,7 @@ name|tree
 init|=
 operator|new
 name|Tree
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"root"
 argument_list|)
@@ -462,9 +456,7 @@ name|tree
 init|=
 operator|new
 name|Tree
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"root"
 argument_list|)
@@ -562,9 +554,7 @@ name|tree
 init|=
 operator|new
 name|Tree
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"root"
 argument_list|)
@@ -693,9 +683,7 @@ name|tree
 init|=
 operator|new
 name|Tree
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"root"
 argument_list|)

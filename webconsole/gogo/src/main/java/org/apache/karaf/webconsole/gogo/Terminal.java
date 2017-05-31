@@ -661,9 +661,7 @@ name|tab_stops
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Integer
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 for|for
@@ -2974,11 +2972,7 @@ name|vt100_saved
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|vt100_saved
@@ -4255,9 +4249,7 @@ name|tab_stops
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Integer
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

@@ -51,9 +51,7 @@ name|session
 init|=
 operator|new
 name|ThreadLocal
-argument_list|<
-name|CommandSession
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public

@@ -197,9 +197,7 @@ name|namespaces
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -243,9 +241,7 @@ name|CapabilitySet
 argument_list|(
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|namespaces
 argument_list|)
@@ -289,9 +285,7 @@ name|sorted
 init|=
 operator|new
 name|LinkedHashSet
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Set
@@ -302,9 +296,7 @@ name|visited
 init|=
 operator|new
 name|LinkedHashSet
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -439,9 +431,7 @@ name|result
 init|=
 operator|new
 name|LinkedHashSet
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

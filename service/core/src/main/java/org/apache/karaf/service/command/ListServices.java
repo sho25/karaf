@@ -417,12 +417,7 @@ name|serviceRefs
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ServiceReference
-argument_list|<
-name|?
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Bundle
@@ -597,9 +592,7 @@ name|serviceNamesList
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|serviceNames
 operator|.
@@ -668,11 +661,7 @@ name|serviceNames
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Integer
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Bundle

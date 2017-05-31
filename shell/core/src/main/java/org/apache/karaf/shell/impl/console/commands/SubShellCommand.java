@@ -251,9 +251,6 @@ name|session
 argument_list|,
 name|Arrays
 operator|.
-expr|<
-name|Object
-operator|>
 name|asList
 argument_list|(
 literal|"shell|"

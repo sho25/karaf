@@ -391,9 +391,7 @@ name|consumers
 init|=
 operator|new
 name|CopyOnWriteArrayList
-argument_list|<
-name|MessageConsumer
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -406,9 +404,7 @@ name|browsers
 init|=
 operator|new
 name|CopyOnWriteArrayList
-argument_list|<
-name|QueueBrowser
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -421,9 +417,7 @@ name|sessionEventListeners
 init|=
 operator|new
 name|CopyOnWriteArrayList
-argument_list|<
-name|PooledSessionEventListener
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private

@@ -203,11 +203,7 @@ name|keyPropMap
 init|=
 operator|new
 name|Hashtable
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|int
@@ -239,9 +235,6 @@ decl_stmt|;
 name|Object
 name|value
 init|=
-operator|(
-name|Object
-operator|)
 name|keyProp
 index|[
 name|c
@@ -358,11 +351,7 @@ name|headers
 init|=
 operator|new
 name|Hashtable
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|headers

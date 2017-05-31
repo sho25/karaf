@@ -1058,9 +1058,6 @@ index|[]
 name|itemValues
 init|=
 block|{
-operator|(
-name|String
-operator|)
 name|key
 block|,
 name|props

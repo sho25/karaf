@@ -233,9 +233,7 @@ name|DOCUMENT_BUILDER_FACTORY
 init|=
 operator|new
 name|ThreadLocal
-argument_list|<
-name|DocumentBuilderFactory
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -249,9 +247,7 @@ name|TRANSFORMER_FACTORY
 init|=
 operator|new
 name|ThreadLocal
-argument_list|<
-name|TransformerFactory
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -265,9 +261,7 @@ name|SAX_PARSER_FACTORY
 init|=
 operator|new
 name|ThreadLocal
-argument_list|<
-name|SAXParserFactory
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public

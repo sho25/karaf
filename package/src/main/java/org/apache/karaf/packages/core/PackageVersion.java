@@ -83,9 +83,7 @@ name|bundles
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Bundle
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public

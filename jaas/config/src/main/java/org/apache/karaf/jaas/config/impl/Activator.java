@@ -235,11 +235,7 @@ name|keystoreInstanceServiceTracker
 operator|=
 operator|new
 name|ServiceTracker
-argument_list|<
-name|KeystoreInstance
-argument_list|,
-name|KeystoreInstance
-argument_list|>
+argument_list|<>
 argument_list|(
 name|context
 argument_list|,
@@ -364,11 +360,7 @@ name|jaasRealmServiceTracker
 operator|=
 operator|new
 name|ServiceTracker
-argument_list|<
-name|JaasRealm
-argument_list|,
-name|JaasRealm
-argument_list|>
+argument_list|<>
 argument_list|(
 name|context
 argument_list|,
@@ -436,7 +428,7 @@ parameter_list|,
 name|JaasRealm
 name|service
 parameter_list|)
-block|{            }
+block|{             }
 annotation|@
 name|Override
 specifier|public

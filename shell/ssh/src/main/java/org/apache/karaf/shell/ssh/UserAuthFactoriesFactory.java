@@ -206,9 +206,7 @@ name|methodSet
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -217,12 +215,7 @@ name|factories
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|NamedFactory
-argument_list|<
-name|UserAuth
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 for|for

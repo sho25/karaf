@@ -210,9 +210,6 @@ literal|"someopts"
 argument_list|,
 name|Collections
 operator|.
-expr|<
-name|String
-operator|>
 name|emptyList
 argument_list|()
 argument_list|,
@@ -385,17 +382,11 @@ literal|null
 argument_list|,
 name|Collections
 operator|.
-expr|<
-name|String
-operator|>
 name|emptyList
 argument_list|()
 argument_list|,
 name|Collections
 operator|.
-expr|<
-name|String
-operator|>
 name|emptyList
 argument_list|()
 argument_list|,

@@ -254,12 +254,7 @@ name|list
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|NamedFactory
-argument_list|<
-name|S
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

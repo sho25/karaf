@@ -473,11 +473,7 @@ name|params
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|params
@@ -563,9 +559,6 @@ name|req
 operator|.
 name|getParameter
 argument_list|(
-operator|(
-name|String
-operator|)
 name|EasyMock
 operator|.
 name|anyObject

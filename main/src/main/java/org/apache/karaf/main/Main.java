@@ -2029,9 +2029,7 @@ name|urls
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|URL
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|urls
@@ -2442,9 +2440,7 @@ name|bundeList
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|BundleInfo
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -2765,9 +2761,6 @@ block|{
 name|String
 name|fragmentHostHeader
 init|=
-operator|(
-name|String
-operator|)
 name|b
 operator|.
 name|getHeaders
@@ -2815,9 +2808,7 @@ name|bundleDirs
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|File
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|File

@@ -157,9 +157,7 @@ name|service
 init|=
 operator|new
 name|AtomicReference
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -175,12 +173,7 @@ name|ref
 init|=
 operator|new
 name|AtomicReference
-argument_list|<
-name|ServiceReference
-argument_list|<
-name|T
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private

@@ -198,14 +198,7 @@ name|refs
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|ServiceReference
-argument_list|<
-name|T
-argument_list|>
-argument_list|,
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -494,9 +487,7 @@ name|oldRefs
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ServiceReference
-argument_list|>
+argument_list|<>
 argument_list|(
 name|refs
 operator|.
@@ -541,9 +532,7 @@ name|svcs
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 synchronized|synchronized

@@ -913,9 +913,7 @@ name|refers
 init|=
 operator|new
 name|TreeSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|ByteArrayOutputStream

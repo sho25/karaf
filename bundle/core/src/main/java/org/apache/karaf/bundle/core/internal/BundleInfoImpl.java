@@ -244,11 +244,7 @@ name|bundleStateMap
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|Integer
-argument_list|,
-name|BundleState
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|bundleStateMap
@@ -353,9 +349,6 @@ name|this
 operator|.
 name|name
 operator|=
-operator|(
-name|String
-operator|)
 name|bundle
 operator|.
 name|getHeaders
@@ -380,9 +373,6 @@ expr_stmt|;
 name|String
 name|locationFromHeader
 init|=
-operator|(
-name|String
-operator|)
 name|bundle
 operator|.
 name|getHeaders
@@ -414,9 +404,6 @@ name|this
 operator|.
 name|version
 operator|=
-operator|(
-name|String
-operator|)
 name|bundle
 operator|.
 name|getHeaders
@@ -504,9 +491,7 @@ name|fragments
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Bundle
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -515,9 +500,7 @@ name|fragmentHosts
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Bundle
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|BundleRevisions

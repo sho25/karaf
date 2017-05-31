@@ -1066,9 +1066,7 @@ name|urls
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|URL
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Enumeration
@@ -1164,9 +1162,7 @@ name|features
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Feature
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -1187,9 +1183,7 @@ name|autoInstallFeatures
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

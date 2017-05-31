@@ -305,9 +305,7 @@ operator|new
 name|Session
 operator|.
 name|AttributeKey
-argument_list|<
-name|Subject
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private

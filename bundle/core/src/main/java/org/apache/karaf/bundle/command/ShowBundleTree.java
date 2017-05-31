@@ -460,9 +460,7 @@ name|tree
 operator|=
 operator|new
 name|Tree
-argument_list|<
-name|Bundle
-argument_list|>
+argument_list|<>
 argument_list|(
 name|bundle
 argument_list|)
@@ -766,14 +764,7 @@ name|exports
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Set
-argument_list|<
-name|Bundle
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -1433,9 +1424,7 @@ name|exporters
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Bundle
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|exporters

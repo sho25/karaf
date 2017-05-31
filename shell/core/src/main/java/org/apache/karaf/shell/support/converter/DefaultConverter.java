@@ -2973,11 +2973,7 @@ name|primitives
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|Class
-argument_list|,
-name|Class
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|primitives

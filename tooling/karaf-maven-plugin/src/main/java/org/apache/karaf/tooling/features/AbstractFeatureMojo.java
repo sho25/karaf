@@ -459,9 +459,7 @@ name|descriptorArtifacts
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|Artifact
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -1288,9 +1286,7 @@ name|featuresSet
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Feature
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 try|try
@@ -1303,9 +1299,7 @@ name|artifactsToCopy
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Map
@@ -1318,11 +1312,7 @@ name|featuresMap
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Feature
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -1355,9 +1345,7 @@ name|features
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|featuresMap
 operator|.

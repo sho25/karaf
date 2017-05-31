@@ -822,9 +822,6 @@ name|cursor
 argument_list|,
 name|Collections
 operator|.
-expr|<
-name|Token
-operator|>
 name|singletonList
 argument_list|(
 name|program

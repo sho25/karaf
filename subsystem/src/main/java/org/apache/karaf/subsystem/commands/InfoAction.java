@@ -690,11 +690,7 @@ name|otherAttribs
 init|=
 operator|new
 name|TreeMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Map
@@ -707,11 +703,7 @@ name|subsystemAttribs
 init|=
 operator|new
 name|TreeMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Map
@@ -724,11 +716,7 @@ name|serviceAttribs
 init|=
 operator|new
 name|TreeMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Map
@@ -741,11 +729,7 @@ name|packagesAttribs
 init|=
 operator|new
 name|TreeMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Map
@@ -1193,11 +1177,7 @@ name|formatters
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|ClauseFormatter
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/*         formatters.put(REQUIRE_BUNDLE_ATTRIB, new ClauseFormatter() {             public void pre(Clause clause, StringBuilder output) {                 boolean isSatisfied = checkBundle(clause.getName(), clause.getAttribute("bundle-version"));                 Ansi.ansi(output).fg(isSatisfied ? Ansi.Color.DEFAULT : Ansi.Color.RED).a("");             }             public void post(Clause clause, StringBuilder output) {                 Ansi.ansi(output).reset().a("");             }         });         formatters.put(IMPORT_PACKAGES_ATTRIB, new ClauseFormatter() {             public void pre(Clause clause, StringBuilder output) {                 boolean isSatisfied = checkPackage(clause.getName(), clause.getAttribute("version"));                 boolean isOptional = "optional".equals(clause.getDirective("resolution"));                 Ansi.ansi(output).fg(isSatisfied ? Ansi.Color.DEFAULT : Ansi.Color.RED)                         .a(isSatisfied || isOptional ? Ansi.Attribute.INTENSITY_BOLD_OFF : Ansi.Attribute.INTENSITY_BOLD)                         .a("");             }             public void post(Clause clause, StringBuilder output) {                 Ansi.ansi(output).reset().a("");             }         });         */

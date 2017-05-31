@@ -204,9 +204,7 @@ literal|"reg2"
 argument_list|,
 operator|new
 name|HashSet
-argument_list|<
-name|Long
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.

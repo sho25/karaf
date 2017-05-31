@@ -1661,9 +1661,7 @@ name|repositories
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Repository
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 if|if
@@ -1753,9 +1751,7 @@ name|features
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ExtendedFeature
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 if|if

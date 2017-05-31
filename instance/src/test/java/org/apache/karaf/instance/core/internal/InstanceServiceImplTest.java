@@ -709,11 +709,7 @@ name|textResources
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|URL
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|textResources
@@ -761,11 +757,7 @@ name|textResources
 argument_list|,
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|URL
-argument_list|>
+argument_list|<>
 argument_list|()
 argument_list|)
 decl_stmt|;

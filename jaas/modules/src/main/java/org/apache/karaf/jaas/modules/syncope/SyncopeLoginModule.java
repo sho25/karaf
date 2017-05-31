@@ -532,9 +532,7 @@ name|principals
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|Principal
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 comment|// authenticate the user on Syncope
@@ -609,9 +607,7 @@ name|roles
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 try|try
@@ -808,9 +804,7 @@ name|roles
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 if|if

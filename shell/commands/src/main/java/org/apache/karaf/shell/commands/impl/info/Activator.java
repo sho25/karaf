@@ -134,12 +134,7 @@ name|tracker
 operator|=
 operator|new
 name|BundleTracker
-argument_list|<
-name|ServiceRegistration
-argument_list|<
-name|InfoProvider
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|(
 name|context
 argument_list|,

@@ -393,11 +393,7 @@ name|tracker
 operator|=
 operator|new
 name|ServiceTracker
-argument_list|<
-name|Object
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|context
 argument_list|,

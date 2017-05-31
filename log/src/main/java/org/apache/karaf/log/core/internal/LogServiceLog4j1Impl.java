@@ -224,9 +224,6 @@ block|{
 name|String
 name|prop
 init|=
-operator|(
-name|String
-operator|)
 name|e
 operator|.
 name|nextElement

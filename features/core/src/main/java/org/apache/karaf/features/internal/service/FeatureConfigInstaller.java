@@ -1165,9 +1165,6 @@ literal|null
 argument_list|,
 literal|null
 argument_list|,
-operator|(
-name|SubstitutionCallback
-operator|)
 literal|null
 argument_list|,
 literal|true

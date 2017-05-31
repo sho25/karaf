@@ -476,9 +476,7 @@ block|{
 return|return
 operator|new
 name|HashSet
-argument_list|<
-name|Class
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
