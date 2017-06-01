@@ -1097,19 +1097,10 @@ condition|)
 block|{
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|String
+name|split
+range|:
 name|splitted
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 try|try
@@ -1121,10 +1112,7 @@ name|context
 operator|.
 name|lookup
 argument_list|(
-name|splitted
-index|[
-name|i
-index|]
+name|split
 argument_list|)
 decl_stmt|;
 if|if
@@ -1143,10 +1131,7 @@ name|NamingException
 argument_list|(
 literal|"Name "
 operator|+
-name|splitted
-index|[
-name|i
-index|]
+name|split
 operator|+
 literal|" already exists"
 argument_list|)
@@ -1163,10 +1148,7 @@ name|context
 operator|.
 name|createSubcontext
 argument_list|(
-name|splitted
-index|[
-name|i
-index|]
+name|split
 argument_list|)
 expr_stmt|;
 block|}
@@ -1179,10 +1161,7 @@ name|context
 operator|.
 name|lookup
 argument_list|(
-name|splitted
-index|[
-name|i
-index|]
+name|split
 argument_list|)
 expr_stmt|;
 block|}
