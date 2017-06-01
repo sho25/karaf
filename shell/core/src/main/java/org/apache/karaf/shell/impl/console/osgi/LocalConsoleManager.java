@@ -378,24 +378,21 @@ name|doAs
 argument_list|(
 name|subject
 argument_list|,
-operator|new
+call|(
 name|PrivilegedAction
 argument_list|<
 name|Session
 argument_list|>
+call|)
 argument_list|()
-block|{
-specifier|public
-name|Session
-name|run
-parameter_list|()
+operator|->
 block|{
 name|String
 name|encoding
-init|=
+operator|=
 name|getEncoding
 argument_list|()
-decl_stmt|;
+block|;
 name|session
 operator|=
 name|sessionFactory
@@ -439,7 +436,7 @@ name|this
 operator|::
 name|close
 argument_list|)
-expr_stmt|;
+block|;
 name|registration
 operator|=
 name|bundleContext
@@ -454,20 +451,20 @@ name|session
 argument_list|,
 literal|null
 argument_list|)
-expr_stmt|;
+block|;
 name|String
 name|name
-init|=
+operator|=
 literal|"Karaf local console user "
 operator|+
 name|ShellUtil
 operator|.
 name|getCurrentUserName
 argument_list|()
-decl_stmt|;
+block|;
 name|boolean
 name|delayconsole
-init|=
+operator|=
 name|Boolean
 operator|.
 name|parseBoolean
@@ -479,7 +476,7 @@ argument_list|(
 name|KARAF_DELAY_CONSOLE
 argument_list|)
 argument_list|)
-decl_stmt|;
+block|;
 if|if
 condition|(
 name|delayconsole
@@ -526,18 +523,29 @@ name|start
 argument_list|()
 expr_stmt|;
 block|}
-return|return
+argument_list|return
 name|session
-return|;
+argument_list|;
 block|}
-block|}
-argument_list|)
-expr_stmt|;
+block|)
+class|;
+end_class
+
+begin_comment
 comment|// TODO: register the local session so that ssh can add the agent
+end_comment
+
+begin_comment
 comment|//        registration = bundleContext.register(CommandSession.class, console.getSession(), null);
-block|}
+end_comment
+
+begin_comment
+unit|}
 comment|/**      * Get the default encoding.  Will first look at the LC_CTYPE environment variable, then the input.encoding      * system property, then the default charset according to the JVM.      *      * @return The default encoding to use when none is specified.      */
-specifier|public
+end_comment
+
+begin_function
+unit|public
 specifier|static
 name|String
 name|getEncoding
@@ -585,7 +593,13 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/**      * Parses the LC_CTYPE value to extract the encoding according to the POSIX standard, which says that the LC_CTYPE      * environment variable may be of the format<code>[language[_territory][.codeset][@modifier]]</code>      *      * @param ctype The ctype to parse, may be null      * @return The encoding, if one was present, otherwise null      */
+end_comment
+
+begin_function
 specifier|static
 name|String
 name|extractEncodingFromCtype
@@ -666,6 +680,9 @@ return|return
 literal|null
 return|;
 block|}
+end_function
+
+begin_function
 specifier|private
 name|Subject
 name|createLocalKarafSubject
@@ -770,6 +787,9 @@ return|return
 name|subject
 return|;
 block|}
+end_function
+
+begin_function
 specifier|public
 name|void
 name|stop
@@ -811,6 +831,9 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_function
 specifier|protected
 name|void
 name|close
@@ -845,8 +868,8 @@ block|{
 comment|// Ignore
 block|}
 block|}
-block|}
-end_class
+end_function
 
+unit|}
 end_unit
 

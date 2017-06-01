@@ -3201,16 +3201,8 @@ init|=
 operator|new
 name|Thread
 argument_list|(
-operator|new
-name|Runnable
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|public
-name|void
-name|run
 parameter_list|()
+lambda|->
 block|{
 while|while
 condition|(
@@ -3281,7 +3273,6 @@ name|proxyCreatorThread
 operator|=
 literal|null
 expr_stmt|;
-block|}
 block|}
 argument_list|)
 decl_stmt|;
