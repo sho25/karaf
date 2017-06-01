@@ -464,11 +464,7 @@ name|threadInfos
 init|=
 operator|new
 name|TreeMap
-argument_list|<
-name|Long
-argument_list|,
-name|ThreadInfo
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|ThreadMXBean
@@ -935,9 +931,7 @@ name|groups
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ThreadGroupData
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 for|for
@@ -1027,9 +1021,7 @@ name|threads
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ThreadData
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 for|for

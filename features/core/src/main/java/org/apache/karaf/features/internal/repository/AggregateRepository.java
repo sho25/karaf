@@ -185,14 +185,7 @@ name|result
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|Requirement
-argument_list|,
-name|Collection
-argument_list|<
-name|Capability
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -211,9 +204,7 @@ name|caps
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Capability
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

@@ -577,9 +577,7 @@ name|argumentsSet
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Argument
-argument_list|>
+argument_list|<>
 argument_list|(
 name|arguments
 operator|.
@@ -647,9 +645,7 @@ name|optionsSet
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Option
-argument_list|>
+argument_list|<>
 argument_list|(
 name|options
 operator|.

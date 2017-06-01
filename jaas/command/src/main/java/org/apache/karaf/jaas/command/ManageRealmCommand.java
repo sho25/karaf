@@ -870,9 +870,7 @@ name|commands
 operator|=
 operator|new
 name|LinkedList
-argument_list|<
-name|JaasCommandSupport
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

@@ -521,9 +521,7 @@ name|queue
 init|=
 operator|new
 name|LinkedBlockingQueue
-argument_list|<
-name|PaxLoggingEvent
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|PaxAppender

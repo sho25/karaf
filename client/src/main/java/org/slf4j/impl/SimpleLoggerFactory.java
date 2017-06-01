@@ -89,11 +89,7 @@ name|loggerMap
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Logger
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -119,9 +115,6 @@ init|)
 block|{
 name|slogger
 operator|=
-operator|(
-name|Logger
-operator|)
 name|loggerMap
 operator|.
 name|get

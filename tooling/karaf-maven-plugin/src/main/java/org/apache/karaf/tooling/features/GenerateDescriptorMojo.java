@@ -1001,9 +1001,7 @@ name|excludedArtifactIds
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/**      * The resolver to use for the feature.  Normally null or "OBR" or "(OBR)"      */
@@ -2201,11 +2199,7 @@ name|featureRepositories
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|Feature
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -3961,9 +3955,7 @@ name|addedBundles
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Bundle
-argument_list|>
+argument_list|<>
 argument_list|(
 name|feature
 operator|.
@@ -3979,9 +3971,7 @@ name|removedBundles
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Bundle
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -4106,9 +4096,7 @@ name|addedDependencys
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Dependency
-argument_list|>
+argument_list|<>
 argument_list|(
 name|feature
 operator|.
@@ -4124,9 +4112,7 @@ name|removedDependencys
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Dependency
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

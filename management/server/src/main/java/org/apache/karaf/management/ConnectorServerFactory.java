@@ -1547,9 +1547,6 @@ block|{
 name|ServerSocket
 name|serverSocket
 init|=
-operator|(
-name|ServerSocket
-operator|)
 name|ServerSocketFactory
 operator|.
 name|getDefault

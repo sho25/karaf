@@ -669,9 +669,6 @@ try|try
 block|{
 name|userInfos
 operator|=
-operator|(
-name|String
-operator|)
 name|users
 operator|.
 name|get
@@ -793,9 +790,7 @@ name|principals
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|Principal
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|principals
@@ -875,9 +870,6 @@ expr_stmt|;
 name|String
 name|groupInfo
 init|=
-operator|(
-name|String
-operator|)
 name|users
 operator|.
 name|get

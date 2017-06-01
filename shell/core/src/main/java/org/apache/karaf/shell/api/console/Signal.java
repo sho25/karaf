@@ -207,11 +207,7 @@ name|lookupTable
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Signal
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|40
 argument_list|)

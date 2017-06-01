@@ -689,11 +689,7 @@ name|multi
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|Class
-argument_list|,
-name|List
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -708,11 +704,7 @@ name|single
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|Class
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -795,9 +787,7 @@ name|missing
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

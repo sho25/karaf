@@ -541,9 +541,7 @@ name|id
 range|:
 operator|new
 name|TreeSet
-argument_list|<
-name|Long
-argument_list|>
+argument_list|<>
 argument_list|(
 name|region
 operator|.

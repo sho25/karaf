@@ -77,9 +77,7 @@ name|cols
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Col
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -91,9 +89,7 @@ name|rows
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Row
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|boolean

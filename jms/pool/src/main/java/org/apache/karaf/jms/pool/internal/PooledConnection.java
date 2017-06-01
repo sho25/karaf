@@ -271,9 +271,7 @@ name|connTempQueues
 init|=
 operator|new
 name|CopyOnWriteArrayList
-argument_list|<
-name|TemporaryQueue
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -286,9 +284,7 @@ name|connTempTopics
 init|=
 operator|new
 name|CopyOnWriteArrayList
-argument_list|<
-name|TemporaryTopic
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -301,9 +297,7 @@ name|loanedSessions
 init|=
 operator|new
 name|CopyOnWriteArrayList
-argument_list|<
-name|PooledSession
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/**      * Creates a new PooledConnection instance that uses the given ConnectionPool to create      * and manage its resources.  The ConnectionPool instance can be shared amongst many      * PooledConnection instances.      *      * @param pool      *      The connection and pool manager backing this proxy connection object.      */

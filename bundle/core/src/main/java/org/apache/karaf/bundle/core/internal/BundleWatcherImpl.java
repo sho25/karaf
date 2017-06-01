@@ -349,9 +349,7 @@ name|watchURLs
 init|=
 operator|new
 name|CopyOnWriteArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -461,9 +459,7 @@ name|watchedBundles
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Bundle
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 while|while
@@ -611,9 +607,7 @@ name|updated
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Bundle
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

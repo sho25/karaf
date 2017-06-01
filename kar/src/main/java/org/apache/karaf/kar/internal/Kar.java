@@ -330,9 +330,7 @@ name|featureRepos
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|URI
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this

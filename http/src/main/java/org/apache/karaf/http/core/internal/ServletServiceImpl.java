@@ -152,9 +152,7 @@ name|servletInfos
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ServletInfo
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Collection
@@ -298,11 +296,6 @@ name|String
 index|[]
 name|urls
 init|=
-operator|(
-name|String
-index|[]
-operator|)
-operator|(
 name|event
 operator|.
 name|getUrlParameter
@@ -321,7 +314,6 @@ index|[]
 block|{
 literal|""
 block|}
-operator|)
 decl_stmt|;
 name|ServletInfo
 name|info

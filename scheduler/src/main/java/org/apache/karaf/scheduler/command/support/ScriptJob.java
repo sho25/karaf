@@ -188,9 +188,6 @@ name|session
 argument_list|,
 name|Collections
 operator|.
-expr|<
-name|Object
-operator|>
 name|singletonList
 argument_list|(
 name|context

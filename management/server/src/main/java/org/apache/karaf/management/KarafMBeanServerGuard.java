@@ -653,9 +653,7 @@ name|sig
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -933,9 +931,7 @@ name|sig
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -1624,9 +1620,7 @@ name|allBypassObjectName
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|List
@@ -2156,9 +2150,7 @@ name|roles
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|ACLConfigurationParser
@@ -2252,10 +2244,7 @@ name|rets
 init|=
 operator|new
 name|TreeSet
-argument_list|<
-name|String
-index|[]
-argument_list|>
+argument_list|<>
 argument_list|(
 name|WILDCARD_PID_COMPARATOR
 argument_list|)
@@ -2470,9 +2459,7 @@ name|segments
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|segments
@@ -2610,9 +2597,7 @@ name|res
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

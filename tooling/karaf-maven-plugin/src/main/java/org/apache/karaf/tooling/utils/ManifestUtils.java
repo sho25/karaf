@@ -145,9 +145,7 @@ name|result
 init|=
 operator|new
 name|LinkedList
-argument_list|<
-name|Clause
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Clause
@@ -209,9 +207,7 @@ name|result
 init|=
 operator|new
 name|LinkedList
-argument_list|<
-name|Clause
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -268,9 +264,7 @@ name|result
 init|=
 operator|new
 name|LinkedList
-argument_list|<
-name|Clause
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Clause

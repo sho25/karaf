@@ -271,9 +271,7 @@ name|options
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Option
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.

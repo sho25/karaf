@@ -332,9 +332,6 @@ block|{
 name|String
 name|name
 init|=
-operator|(
-name|String
-operator|)
 name|bundle
 operator|.
 name|getHeaders

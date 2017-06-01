@@ -435,9 +435,7 @@ name|featuresSet
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|Feature
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|featuresSet
@@ -554,9 +552,7 @@ name|bundleIds
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

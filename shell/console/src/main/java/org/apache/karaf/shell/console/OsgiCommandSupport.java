@@ -320,9 +320,7 @@ name|services
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 if|if
@@ -466,12 +464,7 @@ name|usedReferences
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ServiceReference
-argument_list|<
-name|?
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

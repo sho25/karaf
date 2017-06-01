@@ -2021,12 +2021,6 @@ name|request
 operator|.
 name|setRepositories
 argument_list|(
-operator|(
-name|List
-argument_list|<
-name|RemoteRepository
-argument_list|>
-operator|)
 name|projectRepositories
 argument_list|)
 expr_stmt|;

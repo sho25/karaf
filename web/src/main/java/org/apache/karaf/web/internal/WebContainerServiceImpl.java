@@ -388,9 +388,7 @@ name|webBundles
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|WebBundle
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 if|if
@@ -412,9 +410,6 @@ comment|// first check if the bundle is a web bundle
 name|String
 name|contextPath
 init|=
-operator|(
-name|String
-operator|)
 name|bundle
 operator|.
 name|getHeaders
@@ -434,9 +429,6 @@ condition|)
 block|{
 name|contextPath
 operator|=
-operator|(
-name|String
-operator|)
 name|bundle
 operator|.
 name|getHeaders
@@ -477,9 +469,6 @@ comment|// get the bundle name
 name|String
 name|name
 init|=
-operator|(
-name|String
-operator|)
 name|bundle
 operator|.
 name|getHeaders
@@ -528,9 +517,6 @@ comment|// get the bundle version
 name|String
 name|version
 init|=
-operator|(
-name|String
-operator|)
 name|bundle
 operator|.
 name|getHeaders

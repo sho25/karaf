@@ -331,11 +331,7 @@ name|states
 operator|=
 operator|new
 name|ConcurrentHashMap
-argument_list|<
-name|Long
-argument_list|,
-name|OsgiBundleApplicationContextEvent
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

@@ -96,11 +96,7 @@ name|bundleEvents
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|Long
-argument_list|,
-name|WebEvent
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public

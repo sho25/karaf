@@ -245,11 +245,7 @@ name|states
 operator|=
 operator|new
 name|ConcurrentHashMap
-argument_list|<
-name|Long
-argument_list|,
-name|BlueprintEvent
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

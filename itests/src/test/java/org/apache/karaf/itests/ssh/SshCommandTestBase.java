@@ -388,9 +388,7 @@ name|featuresBefore
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|Feature
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.

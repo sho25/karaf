@@ -215,9 +215,7 @@ name|keystores
 init|=
 operator|new
 name|CopyOnWriteArrayIdentityList
-argument_list|<
-name|KeystoreInstance
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public

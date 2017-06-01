@@ -311,9 +311,7 @@ name|subsystems
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Subsystem
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|// Try with the id
@@ -650,9 +648,7 @@ name|ids
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Long
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -720,11 +716,7 @@ name|subsystems
 init|=
 operator|new
 name|TreeMap
-argument_list|<
-name|Long
-argument_list|,
-name|Subsystem
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|doGetSubsystems
@@ -738,9 +730,7 @@ expr_stmt|;
 return|return
 operator|new
 name|ArrayList
-argument_list|<
-name|Subsystem
-argument_list|>
+argument_list|<>
 argument_list|(
 name|subsystems
 operator|.

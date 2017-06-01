@@ -372,9 +372,6 @@ name|setRealms
 argument_list|(
 name|Arrays
 operator|.
-expr|<
-name|JaasRealm
-operator|>
 name|asList
 argument_list|(
 name|realms

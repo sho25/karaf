@@ -105,12 +105,7 @@ name|children
 init|=
 operator|new
 name|LinkedList
-argument_list|<
-name|Node
-argument_list|<
-name|T
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/**      * Create a new node. Only meant for wrapper use,      * new nodes should be added using the {@link #addChild(Object)} method      *      * @param value the node value      */
@@ -203,9 +198,7 @@ name|node
 init|=
 operator|new
 name|Node
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|(
 name|value
 argument_list|,
@@ -240,9 +233,7 @@ name|result
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|result

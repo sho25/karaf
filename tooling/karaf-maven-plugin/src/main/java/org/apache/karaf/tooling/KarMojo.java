@@ -1103,9 +1103,7 @@ name|resources
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Artifact
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 try|try

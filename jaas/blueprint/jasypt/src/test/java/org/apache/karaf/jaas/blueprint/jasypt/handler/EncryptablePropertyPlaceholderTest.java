@@ -786,11 +786,7 @@ name|headers
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -1433,9 +1429,7 @@ name|result
 init|=
 operator|new
 name|LinkedList
-argument_list|<
-name|ServiceReference
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 if|if

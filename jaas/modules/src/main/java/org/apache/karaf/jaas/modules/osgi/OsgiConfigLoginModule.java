@@ -583,9 +583,7 @@ name|principals
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|Principal
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|principals
