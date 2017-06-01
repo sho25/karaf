@@ -770,6 +770,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+try|try
+init|(
 name|Reader
 name|reader
 init|=
@@ -786,8 +788,7 @@ name|file
 argument_list|)
 argument_list|)
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 name|sb
 operator|.
@@ -829,14 +830,6 @@ name|c
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|reader
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 elseif|else
