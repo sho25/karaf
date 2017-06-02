@@ -11,13 +11,31 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|shell
+name|util
 operator|.
-name|impl
-operator|.
-name|console
+name|filesstream
 package|;
 end_package
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
+import|;
+end_import
 
 begin_import
 import|import
@@ -169,27 +187,8 @@ name|Stream
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|slf4j
-operator|.
-name|Logger
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|slf4j
-operator|.
-name|LoggerFactory
-import|;
-end_import
-
 begin_class
+specifier|public
 specifier|final
 class|class
 name|FilesStream
@@ -204,7 +203,7 @@ name|LoggerFactory
 operator|.
 name|getLogger
 argument_list|(
-name|ConsoleSessionImpl
+name|FilesStream
 operator|.
 name|class
 argument_list|)
@@ -214,6 +213,7 @@ name|FilesStream
 parameter_list|()
 block|{ 	}
 comment|/**      * Returns a stream of Paths for the given fileNames.      * The given names can be delimited by ",". A name can also contain      * {@link java.nio.file.FileSystem#getPathMatcher} syntax to refer to matching files.        *       * @param fileNames list of names       * @return Paths to the scripts       */
+specifier|public
 specifier|static
 name|Stream
 argument_list|<
