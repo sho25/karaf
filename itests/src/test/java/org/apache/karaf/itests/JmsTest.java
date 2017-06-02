@@ -494,10 +494,9 @@ argument_list|)
 operator|.
 name|until
 argument_list|(
-parameter_list|()
-lambda|->
+name|this
+operator|::
 name|jmsTransportPresent
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|mbeanServer

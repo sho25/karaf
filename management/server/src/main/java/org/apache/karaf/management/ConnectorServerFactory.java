@@ -1039,12 +1039,9 @@ name|connectorThread
 init|=
 operator|new
 name|Thread
-argument_list|()
-block|{
-specifier|public
-name|void
-name|run
+argument_list|(
 parameter_list|()
+lambda|->
 block|{
 try|try
 block|{
@@ -1163,7 +1160,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-block|}
+argument_list|)
 decl_stmt|;
 name|connectorThread
 operator|.
