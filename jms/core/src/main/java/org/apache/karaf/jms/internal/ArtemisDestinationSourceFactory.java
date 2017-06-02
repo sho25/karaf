@@ -19,6 +19,22 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|util
+operator|.
+name|json
+operator|.
+name|JsonReader
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|jms

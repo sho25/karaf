@@ -123,11 +123,9 @@ name|apache
 operator|.
 name|karaf
 operator|.
-name|features
-operator|.
-name|internal
-operator|.
 name|util
+operator|.
+name|json
 operator|.
 name|JsonReader
 import|;
