@@ -237,16 +237,6 @@ name|org
 operator|.
 name|junit
 operator|.
-name|Assert
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
 name|Before
 import|;
 end_import
@@ -390,7 +380,6 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|Resolver
 name|resolver
 init|=
@@ -1571,8 +1560,6 @@ name|a1Feature
 parameter_list|)
 throws|throws
 name|Exception
-throws|,
-name|InterruptedException
 block|{
 name|featureService
 operator|.

@@ -31,16 +31,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|SortedMap
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|management

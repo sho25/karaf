@@ -1671,9 +1671,7 @@ return|return
 name|object
 operator|==
 literal|null
-condition|?
-literal|true
-else|:
+operator|||
 name|Boolean
 operator|.
 name|parseBoolean

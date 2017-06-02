@@ -1144,14 +1144,8 @@ name|printStackTrace
 argument_list|()
 expr_stmt|;
 throw|throw
-operator|(
-name|IOException
-operator|)
 operator|new
 name|IOException
-argument_list|()
-operator|.
-name|initCause
 argument_list|(
 name|e
 argument_list|)

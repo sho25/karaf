@@ -313,7 +313,6 @@ name|Stopping
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 specifier|public
 name|BundleInfoImpl
 parameter_list|(

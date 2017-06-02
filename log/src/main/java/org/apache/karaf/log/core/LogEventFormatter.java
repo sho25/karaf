@@ -38,8 +38,6 @@ specifier|public
 interface|interface
 name|LogEventFormatter
 block|{
-specifier|public
-specifier|abstract
 name|String
 name|format
 parameter_list|(

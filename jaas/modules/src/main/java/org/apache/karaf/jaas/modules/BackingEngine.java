@@ -106,8 +106,6 @@ specifier|public
 interface|interface
 name|BackingEngine
 block|{
-specifier|static
-specifier|final
 name|String
 name|GROUP_PREFIX
 init|=

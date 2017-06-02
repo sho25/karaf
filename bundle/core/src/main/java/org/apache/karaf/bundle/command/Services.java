@@ -273,14 +273,9 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|new
-name|String
-index|[]
-block|{
 literal|"org.apache.felix.service.command.Function"
-block|,
+argument_list|,
 literal|"org.apache.karaf.shell.console.Completer"
-block|}
 argument_list|)
 argument_list|)
 decl_stmt|;

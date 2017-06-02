@@ -135,20 +135,6 @@ name|Subsystem
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|subsystem
-operator|.
-name|SubsystemConstants
-import|;
-end_import
-
 begin_class
 specifier|public
 specifier|abstract

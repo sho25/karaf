@@ -67,7 +67,6 @@ name|WILDCARD_MATCH
 block|,
 name|NO_MATCH
 block|}
-empty_stmt|;
 specifier|static
 name|String
 name|compulsoryRoles

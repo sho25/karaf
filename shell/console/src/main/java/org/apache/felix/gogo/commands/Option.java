@@ -92,9 +92,6 @@ specifier|public
 annotation_defn|@interface
 name|Option
 block|{
-specifier|public
-specifier|static
-specifier|final
 name|String
 name|DEFAULT_STRING
 init|=

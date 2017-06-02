@@ -3671,12 +3671,6 @@ name|objectFactory
 parameter_list|)
 throws|throws
 name|Exception
-throws|,
-name|IOException
-throws|,
-name|JAXBException
-throws|,
-name|XMLStreamException
 block|{
 if|if
 condition|(

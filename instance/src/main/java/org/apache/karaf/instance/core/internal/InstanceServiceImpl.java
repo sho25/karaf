@@ -7415,7 +7415,6 @@ argument_list|()
 operator|.
 name|getInputStream
 argument_list|()
-init|;
 init|)
 block|{
 name|Properties

@@ -329,17 +329,11 @@ name|e
 argument_list|)
 expr_stmt|;
 throw|throw
-operator|(
-name|IOException
-operator|)
 operator|new
 name|IOException
 argument_list|(
 literal|"Error opening features xml url"
-argument_list|)
-operator|.
-name|initCause
-argument_list|(
+argument_list|,
 name|e
 argument_list|)
 throw|;

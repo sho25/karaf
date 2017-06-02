@@ -355,7 +355,6 @@ name|NOT_FOUND
 block|,
 name|NO_CREDENTIALS
 block|}
-empty_stmt|;
 specifier|private
 name|SshClient
 name|client
@@ -625,8 +624,6 @@ name|result
 parameter_list|)
 throws|throws
 name|Exception
-throws|,
-name|IOException
 block|{
 if|if
 condition|(

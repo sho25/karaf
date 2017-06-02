@@ -87,16 +87,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|OutputStream
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|PrintStream
 import|;
 end_import
@@ -108,18 +98,6 @@ operator|.
 name|io
 operator|.
 name|Reader
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|lang
-operator|.
-name|reflect
-operator|.
-name|Method
 import|;
 end_import
 

@@ -296,7 +296,6 @@ name|PASSWORD
 block|,
 name|CERTIFICATE
 block|}
-empty_stmt|;
 specifier|private
 name|MBeanServer
 name|server

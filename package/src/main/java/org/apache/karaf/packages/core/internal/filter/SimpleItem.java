@@ -37,7 +37,6 @@ name|gt
 block|,
 name|lt
 block|}
-empty_stmt|;
 specifier|public
 name|String
 name|attr

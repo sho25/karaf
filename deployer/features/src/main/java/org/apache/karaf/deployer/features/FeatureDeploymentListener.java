@@ -685,8 +685,7 @@ return|return
 literal|true
 return|;
 block|}
-if|if
-condition|(
+return|return
 name|FeaturesNamespaces
 operator|.
 name|URI_CURRENT
@@ -695,14 +694,6 @@ name|equalsIgnoreCase
 argument_list|(
 name|uri
 argument_list|)
-condition|)
-block|{
-return|return
-literal|true
-return|;
-block|}
-return|return
-literal|false
 return|;
 block|}
 specifier|private

@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|junit
@@ -362,8 +352,6 @@ name|isAdmin
 parameter_list|)
 throws|throws
 name|Exception
-throws|,
-name|IOException
 block|{
 name|assertCommand
 argument_list|(
@@ -849,8 +837,6 @@ name|pid
 parameter_list|)
 throws|throws
 name|Exception
-throws|,
-name|IOException
 block|{
 name|assertCommand
 argument_list|(

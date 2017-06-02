@@ -2752,8 +2752,6 @@ name|maxAttempts
 parameter_list|)
 throws|throws
 name|Exception
-throws|,
-name|InterruptedException
 block|{
 name|ClientSession
 name|session

@@ -447,7 +447,6 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|Resolver
 name|resolver
 init|=

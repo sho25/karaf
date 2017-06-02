@@ -36,17 +36,14 @@ specifier|public
 interface|interface
 name|JaasRealm
 block|{
-specifier|public
 name|String
 name|getName
 parameter_list|()
 function_decl|;
-specifier|public
 name|int
 name|getRank
 parameter_list|()
 function_decl|;
-specifier|public
 name|AppConfigurationEntry
 index|[]
 name|getEntries

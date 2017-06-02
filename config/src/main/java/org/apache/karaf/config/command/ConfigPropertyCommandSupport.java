@@ -39,16 +39,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Properties
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -266,23 +256,11 @@ name|String
 name|pid
 parameter_list|)
 block|{
-if|if
-condition|(
+return|return
 name|pid
 operator|!=
 literal|null
-condition|)
-block|{
-return|return
-literal|true
 return|;
-block|}
-else|else
-block|{
-return|return
-literal|false
-return|;
-block|}
 block|}
 comment|/**      * Retrieve configuration from the pid, if used or delegates to session from getting the configuration.      *      * @return the edited dictionary.      * @throws Exception in case of configuration failure.      */
 annotation|@

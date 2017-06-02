@@ -53,24 +53,6 @@ name|BundleContext
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|profile
-operator|.
-name|impl
-operator|.
-name|Utils
-operator|.
-name|assertNotNull
-import|;
-end_import
-
 begin_class
 specifier|public
 specifier|final

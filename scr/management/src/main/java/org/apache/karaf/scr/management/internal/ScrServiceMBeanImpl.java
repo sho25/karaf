@@ -621,7 +621,6 @@ block|{
 try|try
 block|{
 return|return
-operator|(
 name|componentState
 argument_list|(
 name|componentName
@@ -630,11 +629,6 @@ operator|==
 name|Component
 operator|.
 name|STATE_ACTIVE
-operator|)
-condition|?
-literal|true
-else|:
-literal|false
 return|;
 block|}
 catch|catch

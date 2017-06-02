@@ -27,7 +27,6 @@ interface|interface
 name|Encryption
 block|{
 comment|/**      * Encrypt a password.      *       * @param plain the password in plain format.      * @return the encrypted password format.      */
-specifier|public
 name|String
 name|encryptPassword
 parameter_list|(
@@ -36,7 +35,6 @@ name|plain
 parameter_list|)
 function_decl|;
 comment|/**      * Check password.      *       * @param input password provided in plain format.      * @param password the encrypted format to compare with.      * @return true if the password match, false else.      */
-specifier|public
 name|boolean
 name|checkPassword
 parameter_list|(

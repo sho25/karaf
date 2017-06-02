@@ -962,12 +962,7 @@ condition|)
 block|{
 name|paramValue
 operator|=
-operator|(
-operator|(
-name|Token
-operator|)
 name|param
-operator|)
 operator|.
 name|toString
 argument_list|()

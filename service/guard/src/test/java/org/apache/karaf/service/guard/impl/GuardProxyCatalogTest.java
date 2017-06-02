@@ -2319,7 +2319,6 @@ name|TestServiceAPI
 implements|,
 name|TestServiceAPI2
 block|{}
-empty_stmt|;
 name|Dictionary
 argument_list|<
 name|String
@@ -3155,7 +3154,6 @@ literal|"Doing it"
 return|;
 block|}
 block|}
-empty_stmt|;
 name|Dictionary
 argument_list|<
 name|String
@@ -4479,7 +4477,6 @@ literal|"role1"
 return|;
 block|}
 block|}
-empty_stmt|;
 name|Dictionary
 argument_list|<
 name|String

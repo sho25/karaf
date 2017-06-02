@@ -38,25 +38,16 @@ specifier|public
 interface|interface
 name|BundleStateService
 block|{
-specifier|public
-specifier|final
-specifier|static
 name|String
 name|NAME_BLUEPRINT
 init|=
 literal|"Blueprint"
 decl_stmt|;
-specifier|public
-specifier|final
-specifier|static
 name|String
 name|NAME_SPRING_DM
 init|=
 literal|"Spring DM"
 decl_stmt|;
-specifier|public
-specifier|final
-specifier|static
 name|String
 name|NAME_DS
 init|=

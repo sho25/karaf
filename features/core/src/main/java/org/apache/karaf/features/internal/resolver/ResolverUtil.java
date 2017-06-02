@@ -163,22 +163,6 @@ name|CAPABILITY_TYPE_ATTRIBUTE
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|osgi
-operator|.
-name|service
-operator|.
-name|subsystem
-operator|.
-name|SubsystemConstants
-operator|.
-name|SUBSYSTEM_TYPE
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class

@@ -309,7 +309,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|private
 name|RolePolicy
 parameter_list|(
 name|String

@@ -264,7 +264,6 @@ specifier|final
 name|int
 name|numeric
 decl_stmt|;
-specifier|private
 name|Signal
 parameter_list|(
 name|int

@@ -33,7 +33,6 @@ extends|extends
 name|EventObject
 block|{
 specifier|public
-specifier|static
 enum|enum
 name|EventType
 block|{

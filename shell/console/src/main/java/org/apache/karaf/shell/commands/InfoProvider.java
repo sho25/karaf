@@ -38,12 +38,10 @@ specifier|public
 interface|interface
 name|InfoProvider
 block|{
-specifier|public
 name|String
 name|getName
 parameter_list|()
 function_decl|;
-specifier|public
 name|Properties
 name|getProperties
 parameter_list|()

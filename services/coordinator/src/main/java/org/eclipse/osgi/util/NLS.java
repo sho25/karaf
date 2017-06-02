@@ -431,14 +431,8 @@ name|e
 parameter_list|)
 block|{
 throw|throw
-operator|(
-name|IllegalArgumentException
-operator|)
 operator|new
 name|IllegalArgumentException
-argument_list|()
-operator|.
-name|initCause
 argument_list|(
 name|e
 argument_list|)

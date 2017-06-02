@@ -313,14 +313,9 @@ name|getDeclaredMethod
 argument_list|(
 literal|"parseStringList"
 argument_list|,
-operator|new
-name|Class
-index|[]
-block|{
 name|String
 operator|.
 name|class
-block|}
 argument_list|)
 decl_stmt|;
 name|m

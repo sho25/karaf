@@ -220,14 +220,12 @@ expr_stmt|;
 block|}
 comment|/**      * Interface to convert node values to string.      *      * @param<T> the object type for the node value      */
 specifier|public
-specifier|static
 interface|interface
 name|Converter
 parameter_list|<
 name|T
 parameter_list|>
 block|{
-specifier|public
 name|String
 name|toString
 parameter_list|(

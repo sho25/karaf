@@ -1378,8 +1378,6 @@ name|Instance
 name|instance
 parameter_list|)
 throws|throws
-name|IOException
-throws|,
 name|Exception
 block|{
 name|jw

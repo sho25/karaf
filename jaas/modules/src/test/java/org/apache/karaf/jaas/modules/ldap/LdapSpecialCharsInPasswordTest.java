@@ -513,8 +513,6 @@ literal|"portno"
 argument_list|,
 literal|""
 operator|+
-name|super
-operator|.
 name|getLdapServer
 argument_list|()
 operator|.
@@ -636,8 +634,6 @@ name|LdapNetworkConnection
 argument_list|(
 literal|"localhost"
 argument_list|,
-name|super
-operator|.
 name|getLdapServer
 argument_list|()
 operator|.
@@ -708,8 +704,6 @@ name|LdapNetworkConnection
 argument_list|(
 literal|"localhost"
 argument_list|,
-name|super
-operator|.
 name|getLdapServer
 argument_list|()
 operator|.

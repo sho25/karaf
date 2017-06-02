@@ -57,8 +57,6 @@ interface|interface
 name|JMXSecurityMBean
 block|{
 comment|/**      * The Tabular Type returned by the {@link #canInvoke(Map)} operation. The rows consist of      * {@link #CAN_INVOKE_RESULT_ROW_TYPE} entries.      * It has a composite key composed by the "ObjectName" and "Method" columns.      */
-specifier|static
-specifier|final
 name|TabularType
 name|CAN_INVOKE_TABULAR_TYPE
 init|=
@@ -67,8 +65,6 @@ operator|.
 name|TABULAR_TYPE
 decl_stmt|;
 comment|/**      * A row as returned by the {@link #CAN_INVOKE_TABULAR_TYPE}. The columns of the row are defined      * by {@link #CAN_INVOKE_RESULT_COLUMNS}      */
-specifier|static
-specifier|final
 name|CompositeType
 name|CAN_INVOKE_RESULT_ROW_TYPE
 init|=
@@ -77,8 +73,6 @@ operator|.
 name|ROW_TYPE
 decl_stmt|;
 comment|/**      * The columns contained in a {@link #CAN_INVOKE_RESULT_ROW_TYPE}. The data types for these columns are      * as follows:      *<ul>      *<li>"ObjectName": {@link SimpleType#STRING}</li>      *<li>"Method": {@link SimpleType#STRING}</li>      *<li>"CanInvoke": {@link SimpleType#BOOLEAN}</li>      *</ul>      */
-specifier|static
-specifier|final
 name|String
 index|[]
 name|CAN_INVOKE_RESULT_COLUMNS
@@ -146,7 +140,6 @@ throws|throws
 name|Exception
 function_decl|;
 comment|// a member class is used to initialize final fields, as this needs to do some exception handling...
-specifier|static
 class|class
 name|SecurityMBeanOpenTypeInitializer
 block|{

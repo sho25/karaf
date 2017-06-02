@@ -92,9 +92,6 @@ specifier|public
 annotation_defn|@interface
 name|Argument
 block|{
-specifier|public
-specifier|static
-specifier|final
 name|String
 name|DEFAULT_STRING
 init|=

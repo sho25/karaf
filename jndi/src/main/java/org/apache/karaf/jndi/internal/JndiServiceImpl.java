@@ -1567,17 +1567,12 @@ argument_list|)
 operator|!=
 literal|null
 operator|&&
-operator|(
-operator|(
-name|String
-operator|)
 name|service
 operator|.
 name|getProperty
 argument_list|(
 name|OSGI_JNDI_SERVICE_PROPERTY
 argument_list|)
-operator|)
 operator|.
 name|equals
 argument_list|(

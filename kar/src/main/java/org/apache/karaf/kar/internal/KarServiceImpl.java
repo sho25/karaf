@@ -121,16 +121,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|UnsupportedEncodingException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|net
 operator|.
 name|URI
@@ -2155,8 +2145,6 @@ name|URI
 name|repoUri
 parameter_list|)
 throws|throws
-name|UnsupportedEncodingException
-throws|,
 name|IOException
 block|{
 name|String

@@ -233,8 +233,9 @@ argument_list|(
 name|MULTI_SCOPE_MODE_KEY
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
+return|return
+operator|!
+operator|(
 name|value
 operator|!=
 literal|null
@@ -245,14 +246,7 @@ name|equals
 argument_list|(
 literal|"false"
 argument_list|)
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
-literal|true
+operator|)
 return|;
 block|}
 block|}

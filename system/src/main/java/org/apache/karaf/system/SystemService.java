@@ -25,7 +25,6 @@ interface|interface
 name|SystemService
 block|{
 comment|/**      * Types defining what to remove on a restart of Karaf      */
-specifier|public
 enum|enum
 name|Swipe
 block|{

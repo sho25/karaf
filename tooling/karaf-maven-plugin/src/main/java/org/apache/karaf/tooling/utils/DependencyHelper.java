@@ -132,8 +132,6 @@ specifier|public
 interface|interface
 name|DependencyHelper
 block|{
-specifier|public
-specifier|abstract
 name|Collection
 argument_list|<
 name|LocalDependency
@@ -141,14 +139,10 @@ argument_list|>
 name|getLocalDependencies
 parameter_list|()
 function_decl|;
-specifier|public
-specifier|abstract
 name|String
 name|getTreeListing
 parameter_list|()
 function_decl|;
-specifier|public
-specifier|abstract
 name|void
 name|getDependencies
 parameter_list|(
@@ -161,7 +155,6 @@ parameter_list|)
 throws|throws
 name|MojoExecutionException
 function_decl|;
-specifier|public
 name|boolean
 name|isArtifactAFeature
 parameter_list|(
@@ -169,8 +162,6 @@ name|Object
 name|artifact
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|String
 name|getArtifactId
 parameter_list|(
@@ -178,8 +169,6 @@ name|Object
 name|artifact
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|String
 name|getBaseVersion
 parameter_list|(
@@ -187,8 +176,6 @@ name|Object
 name|artifact
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|String
 name|getGroupId
 parameter_list|(
@@ -196,8 +183,6 @@ name|Object
 name|artifact
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|String
 name|getClassifier
 parameter_list|(
@@ -205,8 +190,6 @@ name|Object
 name|artifact
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|File
 name|resolve
 parameter_list|(
@@ -217,8 +200,6 @@ name|Log
 name|log
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|File
 name|resolveById
 parameter_list|(
@@ -231,8 +212,6 @@ parameter_list|)
 throws|throws
 name|MojoFailureException
 function_decl|;
-specifier|public
-specifier|abstract
 name|void
 name|setRepositorySession
 parameter_list|(
@@ -243,7 +222,6 @@ throws|throws
 name|MojoExecutionException
 function_decl|;
 comment|/**      * Convert a Maven<code>Artifact</code> into a PAX URL mvn format.      *      * @param artifact The Maven<code>Artifact</code>.      * @return The corresponding PAX URL mvn format (mvn:groupId/artifactId/version/type/classifier)      * @throws MojoExecutionException If the plugin execution fails.      */
-specifier|public
 name|String
 name|artifactToMvn
 parameter_list|(
@@ -257,7 +235,6 @@ throws|throws
 name|MojoExecutionException
 function_decl|;
 comment|/**      * Convert an Aether (Sonatype or Eclipse) artifact into a PAX URL mvn format.      *      * @param object The Aether<code>org.sonatype|eclipse.aether.artifact.Artifact</code>.      * @return The corresponding PAX URL mvn format (mvn:groupId/artifactId/version/type/classifier).      * @throws MojoExecutionException If the plugin execution fails.      */
-specifier|public
 name|String
 name|artifactToMvn
 parameter_list|(
@@ -270,7 +247,6 @@ parameter_list|)
 throws|throws
 name|MojoExecutionException
 function_decl|;
-specifier|public
 name|Artifact
 name|mvnToArtifact
 parameter_list|(
@@ -281,7 +257,6 @@ throws|throws
 name|MojoExecutionException
 function_decl|;
 comment|/**      * Convert a PAX URL mvn format into a filesystem path.      *      * @param name PAX URL mvn format (mvn:groupId/artifactId/version/type/classifier).      * @return The filesystem path.      * @throws MojoExecutionException If the plugin execution fails.      */
-specifier|public
 name|String
 name|pathFromMaven
 parameter_list|(
@@ -292,7 +267,6 @@ throws|throws
 name|MojoExecutionException
 function_decl|;
 comment|/**      * Convert an Aether coordinate format into a filesystem path.      *      * @param name The Aether coordinate format (groupId:artifactId[:extension[:classifier]]:version).      * @return The filesystem path.      * @throws MojoExecutionException If the plugin execution fails.      */
-specifier|public
 name|String
 name|pathFromAether
 parameter_list|(

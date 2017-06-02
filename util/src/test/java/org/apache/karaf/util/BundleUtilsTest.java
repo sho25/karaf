@@ -61,16 +61,6 @@ name|FileInputStream
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|net
-operator|.
-name|URL
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class

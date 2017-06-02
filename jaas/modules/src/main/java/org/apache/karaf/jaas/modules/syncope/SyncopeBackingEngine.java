@@ -257,16 +257,6 @@ end_import
 
 begin_import
 import|import
-name|javax
-operator|.
-name|naming
-operator|.
-name|OperationNotSupportedException
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|security

@@ -965,7 +965,6 @@ class|class
 name|Scanner
 block|{
 specifier|private
-specifier|static
 enum|enum
 name|Accept
 block|{
@@ -1000,7 +999,6 @@ specifier|final
 name|boolean
 name|local
 decl_stmt|;
-specifier|private
 name|Accept
 parameter_list|(
 name|boolean

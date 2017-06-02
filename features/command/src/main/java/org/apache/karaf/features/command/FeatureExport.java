@@ -856,8 +856,6 @@ name|File
 name|directory
 parameter_list|)
 throws|throws
-name|FileNotFoundException
-throws|,
 name|IOException
 block|{
 if|if
