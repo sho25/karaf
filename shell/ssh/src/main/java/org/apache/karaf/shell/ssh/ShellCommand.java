@@ -320,8 +320,6 @@ name|ShellCommand
 implements|implements
 name|Command
 implements|,
-name|Runnable
-implements|,
 name|SessionAware
 block|{
 specifier|public
@@ -531,6 +529,8 @@ operator|new
 name|Thread
 argument_list|(
 name|this
+operator|::
+name|run
 argument_list|)
 operator|.
 name|start
@@ -653,30 +653,25 @@ name|doAs
 argument_list|(
 name|subject
 argument_list|,
-operator|new
+call|(
 name|PrivilegedExceptionAction
 argument_list|<
 name|Object
 argument_list|>
+call|)
 argument_list|()
-block|{
-specifier|public
-name|Object
-name|run
-parameter_list|()
-throws|throws
-name|Exception
+operator|->
 block|{
 name|String
 name|scriptFileName
-init|=
+operator|=
 name|System
 operator|.
 name|getProperty
 argument_list|(
 name|EXEC_INIT_SCRIPT
 argument_list|)
-decl_stmt|;
+block|;
 if|if
 condition|(
 name|scriptFileName
@@ -710,9 +705,8 @@ name|command
 argument_list|)
 return|;
 block|}
-block|}
-argument_list|)
-expr_stmt|;
+block|)
+empty_stmt|;
 block|}
 catch|catch
 parameter_list|(
@@ -806,6 +800,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_class
+
+begin_catch
 catch|catch
 parameter_list|(
 name|Exception
@@ -826,6 +823,9 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+end_catch
+
+begin_finally
 finally|finally
 block|{
 name|StreamUtils
@@ -847,12 +847,17 @@ name|exitStatus
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-specifier|public
+end_finally
+
+begin_function
+unit|}      public
 name|void
 name|destroy
 parameter_list|()
 block|{ 	}
+end_function
+
+begin_function
 specifier|private
 name|void
 name|executeScript
@@ -884,6 +889,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
 specifier|private
 name|void
 name|doExecuteScript
@@ -959,8 +967,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
-end_class
+end_function
 
+unit|}
 end_unit
 

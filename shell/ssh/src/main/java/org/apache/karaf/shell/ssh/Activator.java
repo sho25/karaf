@@ -55,7 +55,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
+name|Collections
 import|;
 end_import
 
@@ -1225,10 +1225,14 @@ argument_list|()
 operator|.
 name|withDelegate
 argument_list|(
+name|cmd
+lambda|->
 operator|new
-name|ShellCommandFactory
+name|ShellCommand
 argument_list|(
 name|sessionFactory
+argument_list|,
+name|cmd
 argument_list|)
 argument_list|)
 operator|.
@@ -1240,9 +1244,9 @@ name|server
 operator|.
 name|setSubsystemFactories
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 operator|new
 name|SftpSubsystemFactory
@@ -1351,14 +1355,12 @@ name|SshServer
 operator|.
 name|NIO_WORKERS
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|toString
 argument_list|(
 name|nioWorkers
 argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
