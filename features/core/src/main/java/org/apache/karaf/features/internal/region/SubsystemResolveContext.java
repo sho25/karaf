@@ -1612,13 +1612,20 @@ name|Set
 argument_list|<
 name|Resource
 argument_list|>
-name|newRes
+name|oldRes
 init|=
 operator|new
 name|HashSet
 argument_list|<>
-argument_list|()
+argument_list|(
+name|providers
+argument_list|)
 decl_stmt|;
+name|providers
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
 name|String
 name|r1
 init|=
@@ -1640,7 +1647,7 @@ control|(
 name|Resource
 name|r
 range|:
-name|providers
+name|oldRes
 control|)
 block|{
 name|String
@@ -1700,7 +1707,7 @@ operator|instanceof
 name|BundleRevision
 condition|)
 block|{
-name|newRes
+name|providers
 operator|.
 name|add
 argument_list|(
@@ -1720,7 +1727,7 @@ operator|instanceof
 name|BundleRevision
 condition|)
 block|{
-name|newRes
+name|providers
 operator|.
 name|add
 argument_list|(
@@ -1748,7 +1755,7 @@ name|r2
 argument_list|)
 condition|)
 block|{
-name|newRes
+name|providers
 operator|.
 name|add
 argument_list|(
@@ -1771,7 +1778,7 @@ name|r1
 argument_list|)
 condition|)
 block|{
-name|newRes
+name|providers
 operator|.
 name|add
 argument_list|(
@@ -1781,7 +1788,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|newRes
+name|providers
 operator|.
 name|add
 argument_list|(
@@ -1792,7 +1799,7 @@ block|}
 block|}
 else|else
 block|{
-name|newRes
+name|providers
 operator|.
 name|add
 argument_list|(
@@ -1807,7 +1814,7 @@ operator|!
 name|superceded
 condition|)
 block|{
-name|newRes
+name|providers
 operator|.
 name|add
 argument_list|(
@@ -1815,10 +1822,6 @@ name|resource
 argument_list|)
 expr_stmt|;
 block|}
-name|providers
-operator|=
-name|newRes
-expr_stmt|;
 block|}
 block|}
 for|for
