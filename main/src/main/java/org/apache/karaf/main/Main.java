@@ -825,6 +825,8 @@ block|{
 if|if
 condition|(
 name|restartJvm
+operator|&&
+name|restart
 condition|)
 block|{
 name|System
