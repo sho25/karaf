@@ -268,6 +268,13 @@ condition|(
 name|logger
 operator|==
 literal|null
+operator|||
+name|logger
+operator|.
+name|equals
+argument_list|(
+literal|"ALL"
+argument_list|)
 condition|)
 block|{
 name|Map
