@@ -792,6 +792,16 @@ specifier|volatile
 name|boolean
 name|running
 decl_stmt|;
+specifier|private
+name|AtomicBoolean
+name|closed
+init|=
+operator|new
+name|AtomicBoolean
+argument_list|(
+literal|false
+argument_list|)
+decl_stmt|;
 specifier|final
 name|SessionFactory
 name|factory
@@ -1891,6 +1901,18 @@ parameter_list|()
 block|{
 if|if
 condition|(
+name|closed
+operator|.
+name|compareAndSet
+argument_list|(
+literal|false
+argument_list|,
+literal|true
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
 name|running
 condition|)
 block|{
@@ -1912,6 +1934,7 @@ name|e
 parameter_list|)
 block|{
 comment|// ignore
+block|}
 block|}
 name|running
 operator|=
@@ -1975,7 +1998,6 @@ block|{
 comment|// Ignore
 block|}
 block|}
-block|}
 if|if
 condition|(
 name|session
@@ -1987,6 +2009,7 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|void

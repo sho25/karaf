@@ -140,6 +140,17 @@ argument_list|)
 decl_stmt|;
 specifier|private
 specifier|final
+name|AtomicBoolean
+name|stopped
+init|=
+operator|new
+name|AtomicBoolean
+argument_list|(
+literal|false
+argument_list|)
+decl_stmt|;
+specifier|private
+specifier|final
 name|InputStream
 name|in
 decl_stmt|;
@@ -286,6 +297,12 @@ name|started
 operator|.
 name|get
 argument_list|()
+operator|&&
+operator|!
+name|stopped
+operator|.
+name|get
+argument_list|()
 condition|)
 block|{
 if|if
@@ -358,6 +375,15 @@ parameter_list|)
 block|{
 comment|// Ignore
 block|}
+if|if
+condition|(
+operator|!
+name|stopped
+operator|.
+name|get
+argument_list|()
+condition|)
+block|{
 comment|// Signal to the main module that it can stop displaying the startup progress
 name|System
 operator|.
@@ -381,6 +407,20 @@ name|console
 operator|.
 name|run
 argument_list|()
+expr_stmt|;
+block|}
+block|}
+specifier|public
+name|void
+name|stopDelayed
+parameter_list|()
+block|{
+name|stopped
+operator|.
+name|set
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
 block|}
 specifier|public
