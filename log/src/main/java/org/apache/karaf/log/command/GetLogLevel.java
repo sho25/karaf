@@ -271,7 +271,7 @@ literal|null
 operator|||
 name|logger
 operator|.
-name|equals
+name|equalsIgnoreCase
 argument_list|(
 literal|"ALL"
 argument_list|)
