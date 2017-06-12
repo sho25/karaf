@@ -681,7 +681,7 @@ specifier|final
 name|String
 name|DEFAULT_JAVA_OPTS
 init|=
-literal|"-server -Xmx512M -Dcom.sun.management.jmxremote -XX:+UnlockDiagnosticVMOptions -XX:+UnsyncloadClass"
+literal|"-server -Xmx512M -Dcom.sun.management.jmxremote -XX:+UnlockDiagnosticVMOptions"
 decl_stmt|;
 specifier|private
 name|LinkedHashMap
