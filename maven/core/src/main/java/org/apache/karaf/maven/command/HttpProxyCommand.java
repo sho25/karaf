@@ -155,7 +155,7 @@ specifier|public
 class|class
 name|HttpProxyCommand
 extends|extends
-name|MavenConfigurationSupport
+name|MavenSecuritySupport
 block|{
 annotation|@
 name|Option

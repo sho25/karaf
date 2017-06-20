@@ -171,7 +171,7 @@ specifier|public
 class|class
 name|RepositoryListCommand
 extends|extends
-name|MavenConfigurationSupport
+name|MavenSecuritySupport
 block|{
 annotation|@
 name|Option
