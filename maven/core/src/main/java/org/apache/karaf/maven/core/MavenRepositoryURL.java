@@ -146,7 +146,6 @@ name|m_id
 decl_stmt|;
 comment|/**      * Repository URL.      */
 specifier|private
-specifier|final
 name|URL
 name|m_repositoryURL
 decl_stmt|;
@@ -158,37 +157,31 @@ name|m_file
 decl_stmt|;
 comment|/**      * True if the repository contains snapshots.      */
 specifier|private
-specifier|final
 name|boolean
 name|m_snapshotsEnabled
 decl_stmt|;
 comment|/**      * True if the repository contains releases.      */
 specifier|private
-specifier|final
 name|boolean
 name|m_releasesEnabled
 decl_stmt|;
 comment|/**      * Repository update policy      */
 specifier|private
-specifier|final
 name|String
 name|m_releasesUpdatePolicy
 decl_stmt|;
 comment|/**      * Repository update policy      */
 specifier|private
-specifier|final
 name|String
 name|m_snapshotsUpdatePolicy
 decl_stmt|;
 comment|/**      * Repository checksum policy      */
 specifier|private
-specifier|final
 name|String
 name|m_releasesChecksumPolicy
 decl_stmt|;
 comment|/**      * Repository checksum policy      */
 specifier|private
-specifier|final
 name|String
 name|m_snapshotsChecksumPolicy
 decl_stmt|;
@@ -1161,6 +1154,21 @@ return|return
 name|m_repositoryURL
 return|;
 block|}
+specifier|public
+name|void
+name|setURL
+parameter_list|(
+name|URL
+name|url
+parameter_list|)
+block|{
+name|this
+operator|.
+name|m_repositoryURL
+operator|=
+name|url
+expr_stmt|;
+block|}
 comment|/**      * Getter.      *      * @return repository file      */
 specifier|public
 name|File
@@ -1181,6 +1189,19 @@ return|return
 name|m_releasesEnabled
 return|;
 block|}
+specifier|public
+name|void
+name|setReleasesEnabled
+parameter_list|(
+name|boolean
+name|enabled
+parameter_list|)
+block|{
+name|m_releasesEnabled
+operator|=
+name|enabled
+expr_stmt|;
+block|}
 comment|/**      * Getter.      *      * @return true if the repository contains snapshots      */
 specifier|public
 name|boolean
@@ -1190,6 +1211,19 @@ block|{
 return|return
 name|m_snapshotsEnabled
 return|;
+block|}
+specifier|public
+name|void
+name|setSnapshotsEnabled
+parameter_list|(
+name|boolean
+name|enabled
+parameter_list|)
+block|{
+name|m_snapshotsEnabled
+operator|=
+name|enabled
+expr_stmt|;
 block|}
 specifier|public
 name|String
@@ -1226,6 +1260,58 @@ block|{
 return|return
 name|m_snapshotsChecksumPolicy
 return|;
+block|}
+specifier|public
+name|void
+name|setReleasesUpdatePolicy
+parameter_list|(
+name|String
+name|policy
+parameter_list|)
+block|{
+name|m_releasesUpdatePolicy
+operator|=
+name|policy
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|setSnapshotsUpdatePolicy
+parameter_list|(
+name|String
+name|policy
+parameter_list|)
+block|{
+name|m_snapshotsUpdatePolicy
+operator|=
+name|policy
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|setReleasesChecksumPolicy
+parameter_list|(
+name|String
+name|policy
+parameter_list|)
+block|{
+name|m_releasesChecksumPolicy
+operator|=
+name|policy
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|setSnapshotsChecksumPolicy
+parameter_list|(
+name|String
+name|policy
+parameter_list|)
+block|{
+name|m_snapshotsChecksumPolicy
+operator|=
+name|policy
+expr_stmt|;
 block|}
 specifier|public
 name|FROM
@@ -1521,7 +1607,7 @@ operator|&&
 name|m_releasesEnabled
 condition|)
 block|{
-comment|// compact snapshots& release update& checksum policies?
+comment|// compact snapshots& release update& checksum policies
 if|if
 condition|(
 name|m_releasesUpdatePolicy
