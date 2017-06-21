@@ -397,6 +397,15 @@ name|masterPassword
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"You can use this encrypted password when defining repositories and proxies"
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 if|if
@@ -512,6 +521,7 @@ operator|+
 literal|" bundle"
 argument_list|)
 expr_stmt|;
+return|return;
 block|}
 name|File
 name|newSecuritySettingsFile

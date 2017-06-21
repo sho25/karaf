@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Dictionary
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -84,7 +94,20 @@ name|Override
 specifier|protected
 name|void
 name|edit
-parameter_list|()
+parameter_list|(
+name|String
+name|prefix
+parameter_list|,
+name|Dictionary
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
+name|config
+parameter_list|)
+throws|throws
+name|Exception
 block|{      }
 block|}
 end_class
