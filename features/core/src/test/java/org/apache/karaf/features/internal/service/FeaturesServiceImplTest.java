@@ -612,7 +612,7 @@ argument_list|,
 name|Feature
 argument_list|>
 argument_list|>
-name|getFeatures
+name|getFeatureCache
 parameter_list|()
 throws|throws
 name|Exception
@@ -750,7 +750,7 @@ argument_list|,
 name|Feature
 argument_list|>
 argument_list|>
-name|getFeatures
+name|getFeatureCache
 parameter_list|()
 throws|throws
 name|Exception
@@ -884,7 +884,7 @@ argument_list|,
 name|Feature
 argument_list|>
 argument_list|>
-name|getFeatures
+name|getFeatureCache
 parameter_list|()
 throws|throws
 name|Exception
@@ -1034,7 +1034,7 @@ argument_list|,
 name|Feature
 argument_list|>
 argument_list|>
-name|getFeatures
+name|getFeatureCache
 parameter_list|()
 throws|throws
 name|Exception
@@ -1184,7 +1184,7 @@ argument_list|)
 expr_stmt|;
 name|impl
 operator|.
-name|getFeatures
+name|getFeatureCache
 argument_list|()
 expr_stmt|;
 block|}
