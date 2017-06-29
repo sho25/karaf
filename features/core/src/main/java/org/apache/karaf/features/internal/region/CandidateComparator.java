@@ -550,15 +550,27 @@ argument_list|(
 name|resource2
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|n1
+operator|!=
+literal|null
+operator|&&
+name|n2
+operator|!=
+literal|null
+condition|)
+block|{
 name|c
 operator|=
-name|n1
+name|n2
 operator|.
 name|compareTo
 argument_list|(
-name|n2
+name|n1
 argument_list|)
 expr_stmt|;
+block|}
 comment|// Resources looks like identical, but it required by different features/subsystems/regions
 comment|// so use this difference for deterministic heuristic
 if|if
@@ -604,12 +616,11 @@ comment|// TODO: this may not be fully correct, as we'd need to separate names/v
 comment|// TODO: and do a real version comparison
 name|c
 operator|=
-operator|-
-name|o1
+name|o2
 operator|.
 name|compareTo
 argument_list|(
-name|o2
+name|o1
 argument_list|)
 expr_stmt|;
 block|}
