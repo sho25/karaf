@@ -2402,6 +2402,25 @@ name|Throwable
 name|t
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+operator|(
+name|command
+operator|.
+name|endsWith
+argument_list|(
+literal|"logout"
+argument_list|)
+operator|&&
+name|t
+operator|instanceof
+name|InterruptedException
+operator|)
+condition|)
+block|{
+comment|//command logout will interrupt this seesion thread, so this exception
+comment|//is expected, don't need log it as a error message
 name|ShellUtil
 operator|.
 name|logException
@@ -2411,6 +2430,17 @@ argument_list|,
 name|t
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|LOGGER
+operator|.
+name|debug
+argument_list|(
+literal|"a console session is closed as the peer just logout"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 name|close
