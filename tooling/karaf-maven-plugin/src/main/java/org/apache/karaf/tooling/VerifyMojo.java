@@ -991,15 +991,13 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|eclipse
 operator|.
-name|maven
+name|aether
 operator|.
 name|repository
 operator|.
-name|internal
-operator|.
-name|MavenWorkspaceReader
+name|WorkspaceReader
 import|;
 end_import
 
@@ -1412,7 +1410,7 @@ name|Component
 argument_list|(
 name|role
 operator|=
-name|MavenWorkspaceReader
+name|WorkspaceReader
 operator|.
 name|class
 argument_list|,
@@ -1421,7 +1419,7 @@ operator|=
 literal|"reactor"
 argument_list|)
 specifier|protected
-name|MavenWorkspaceReader
+name|WorkspaceReader
 name|reactor
 decl_stmt|;
 annotation|@
