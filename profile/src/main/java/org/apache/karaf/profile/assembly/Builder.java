@@ -3047,6 +3047,13 @@ block|}
 comment|//
 comment|// Propagate feature installation from repositories
 comment|//
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"   Loading repositories"
+argument_list|)
+expr_stmt|;
 name|Map
 argument_list|<
 name|String
@@ -5033,6 +5040,13 @@ name|createDownloader
 argument_list|()
 decl_stmt|;
 comment|// Load startup repositories
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"   Loading repositories"
+argument_list|)
+expr_stmt|;
 name|Map
 argument_list|<
 name|String
@@ -5342,6 +5356,13 @@ literal|false
 argument_list|)
 decl_stmt|;
 comment|// Load startup repositories
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"   Loading repositories"
+argument_list|)
+expr_stmt|;
 name|Map
 argument_list|<
 name|String
@@ -8733,6 +8754,17 @@ name|TYPE_REPOSITORY
 argument_list|)
 condition|)
 block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"      feature repository "
+operator|+
+name|url
+operator|+
+literal|" is blacklisted"
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 synchronized|synchronized
@@ -8780,6 +8812,15 @@ name|path
 operator|.
 name|getParent
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"      adding feature repository: "
+operator|+
+name|url
 argument_list|)
 expr_stmt|;
 name|Files
