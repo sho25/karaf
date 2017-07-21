@@ -538,11 +538,6 @@ name|minLevel
 argument_list|)
 expr_stmt|;
 block|}
-name|out
-operator|.
-name|flush
-argument_list|()
-expr_stmt|;
 block|}
 specifier|protected
 specifier|static

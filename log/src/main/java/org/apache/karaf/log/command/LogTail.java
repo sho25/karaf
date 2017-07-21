@@ -224,6 +224,7 @@ argument_list|(
 name|level
 argument_list|)
 decl_stmt|;
+comment|// Do not use System.out as it may write to the wrong console depending on the thread that calls our log handler
 name|PrintStream
 name|out
 init|=
@@ -238,6 +239,11 @@ name|out
 argument_list|,
 name|minLevel
 argument_list|)
+expr_stmt|;
+name|out
+operator|.
+name|flush
+argument_list|()
 expr_stmt|;
 name|PaxAppender
 name|appender
