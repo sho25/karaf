@@ -638,17 +638,16 @@ name|JaxbUtil
 operator|.
 name|unmarshal
 argument_list|(
-name|translateFromMaven
-argument_list|(
-name|uri
+name|descriptor
 operator|.
-name|replaceAll
-argument_list|(
-literal|" "
-argument_list|,
-literal|"%20"
-argument_list|)
-argument_list|)
+name|getFile
+argument_list|()
+operator|.
+name|toURI
+argument_list|()
+operator|.
+name|toString
+argument_list|()
 argument_list|,
 literal|true
 argument_list|)
