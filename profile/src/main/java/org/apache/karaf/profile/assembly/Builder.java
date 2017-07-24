@@ -9135,8 +9135,6 @@ argument_list|,
 name|resolver
 argument_list|,
 name|callback
-argument_list|,
-name|callback
 argument_list|)
 decl_stmt|;
 comment|// Install framework

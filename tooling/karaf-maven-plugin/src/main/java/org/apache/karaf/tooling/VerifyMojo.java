@@ -3390,8 +3390,6 @@ argument_list|()
 argument_list|)
 argument_list|,
 name|callback
-argument_list|,
-name|callback
 argument_list|)
 decl_stmt|;
 comment|// Install framework
