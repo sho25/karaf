@@ -615,9 +615,6 @@ operator|=
 name|digraph
 expr_stmt|;
 block|}
-comment|/* (non-Javadoc)      * @see org.apache.karaf.features.internal.service.Regions#print(java.lang.String, boolean)      */
-annotation|@
-name|Override
 specifier|public
 name|void
 name|print
@@ -652,7 +649,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* (non-Javadoc)      * @see org.apache.karaf.features.internal.service.Regions#refreshPackages(java.util.Collection)      */
 annotation|@
 name|Override
 specifier|public
@@ -744,7 +740,6 @@ name|await
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* (non-Javadoc)      * @see org.apache.karaf.features.internal.service.Regions#installBundle(java.lang.String, java.lang.String, java.io.InputStream)      */
 annotation|@
 name|Override
 specifier|public
@@ -810,7 +805,6 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/* (non-Javadoc)      * @see org.apache.karaf.features.internal.service.Regions#updateBundle(org.osgi.framework.Bundle, java.lang.String, java.io.InputStream)      */
 annotation|@
 name|Override
 specifier|public
@@ -878,7 +872,6 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/* (non-Javadoc)      * @see org.apache.karaf.features.internal.service.Regions#uninstall(org.osgi.framework.Bundle)      */
 annotation|@
 name|Override
 specifier|public
@@ -934,7 +927,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/* (non-Javadoc)      * @see org.apache.karaf.features.internal.service.Regions#stopBundle(org.osgi.framework.Bundle, int)      */
 annotation|@
 name|Override
 specifier|public
@@ -958,7 +950,6 @@ name|options
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* (non-Javadoc)      * @see org.apache.karaf.features.internal.service.Regions#setBundleStartLevel(org.osgi.framework.Bundle, int)      */
 annotation|@
 name|Override
 specifier|public
@@ -987,7 +978,6 @@ name|startLevel
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* (non-Javadoc)      * @see org.apache.karaf.features.internal.service.Regions#resolveBundles(java.util.Set, java.util.Map, java.util.Map)      */
 annotation|@
 name|Override
 specifier|public
@@ -1448,7 +1438,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/* (non-Javadoc)      * @see org.apache.karaf.features.internal.service.Regions#replaceDigraph(java.util.Map, java.util.Map)      */
 annotation|@
 name|Override
 specifier|public
@@ -1761,7 +1750,6 @@ name|temp
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* (non-Javadoc)      * @see org.apache.karaf.features.internal.service.Regions#saveDigraph()      */
 annotation|@
 name|Override
 specifier|public
@@ -1784,7 +1772,6 @@ name|digraph
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* (non-Javadoc)      * @see org.apache.karaf.features.internal.service.Regions#getGraph()      */
 annotation|@
 name|Override
 specifier|public
