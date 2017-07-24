@@ -1761,12 +1761,12 @@ name|temp
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* (non-Javadoc)      * @see org.apache.karaf.features.internal.service.Regions#saveState()      */
+comment|/* (non-Javadoc)      * @see org.apache.karaf.features.internal.service.Regions#saveDigraph()      */
 annotation|@
 name|Override
 specifier|public
 name|void
-name|saveState
+name|saveDigraph
 parameter_list|()
 block|{
 name|DigraphHelper

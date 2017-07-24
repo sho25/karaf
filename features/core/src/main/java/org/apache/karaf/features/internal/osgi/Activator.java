@@ -1195,7 +1195,7 @@ parameter_list|()
 lambda|->
 name|installSupport
 operator|.
-name|saveState
+name|saveDigraph
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2153,7 +2153,7 @@ condition|)
 block|{
 name|installSupport
 operator|.
-name|saveState
+name|saveDigraph
 argument_list|()
 expr_stmt|;
 block|}

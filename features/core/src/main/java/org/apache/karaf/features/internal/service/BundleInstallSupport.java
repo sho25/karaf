@@ -354,7 +354,7 @@ throws|,
 name|InvalidSyntaxException
 function_decl|;
 name|void
-name|saveState
+name|saveDigraph
 parameter_list|()
 function_decl|;
 name|RegionDigraph

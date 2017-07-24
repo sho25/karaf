@@ -350,7 +350,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|saveState
+name|saveDigraph
 parameter_list|()
 block|{     }
 annotation|@

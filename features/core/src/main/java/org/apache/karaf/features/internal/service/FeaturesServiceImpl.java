@@ -1588,7 +1588,7 @@ argument_list|)
 expr_stmt|;
 name|installSupport
 operator|.
-name|saveState
+name|saveDigraph
 argument_list|()
 expr_stmt|;
 block|}
