@@ -355,6 +355,17 @@ name|Resource
 name|resource
 parameter_list|)
 block|{
+if|if
+condition|(
+name|out
+operator|!=
+literal|null
+operator|&&
+name|resource
+operator|!=
+literal|null
+condition|)
+block|{
 comment|// OBR R5 per Spec has no presentation name
 name|String
 name|resourceId
@@ -635,6 +646,7 @@ name|getPropertiesAsMap
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
