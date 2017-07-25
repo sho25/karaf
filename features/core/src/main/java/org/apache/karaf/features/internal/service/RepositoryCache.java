@@ -208,6 +208,16 @@ name|blacklisted
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|Clause
+index|[]
+name|getBlacklisted
+parameter_list|()
+block|{
+return|return
+name|blacklisted
+return|;
+block|}
 specifier|private
 specifier|static
 name|Clause
