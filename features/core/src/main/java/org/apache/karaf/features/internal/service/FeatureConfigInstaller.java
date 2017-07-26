@@ -1545,9 +1545,9 @@ name|findExistingConfiguration
 argument_list|(
 name|configAdmin
 argument_list|,
-name|factoryPid
-argument_list|,
 name|pid
+argument_list|,
+name|factoryPid
 argument_list|)
 decl_stmt|;
 comment|// update the cfg file depending of the configuration
