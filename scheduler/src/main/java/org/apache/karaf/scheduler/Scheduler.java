@@ -35,16 +35,6 @@ name|Map
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|quartz
-operator|.
-name|SchedulerException
-import|;
-end_import
-
 begin_comment
 comment|/**  * A scheduler to schedule time/cron based jobs.  * A job is an object that is executed/fired by the scheduler. The object  * should either implement the {@link Job} interface or the {@link Runnable}  * interface.  *  * A job can be scheduled either by creating a {@link ScheduleOptions} instance  * through one of the scheduler methods and then calling {@link #schedule(Object, ScheduleOptions)}  * or  * by using the whiteboard pattern and registering a Runnable service with either  * the {@link #PROPERTY_SCHEDULER_EXPRESSION} or {@link #PROPERTY_SCHEDULER_PERIOD}  * property. Services registered by the whiteboard pattern can by default run concurrently,  * which usually is not wanted. Therefore it is advisable to also set the  * {@link #PROPERTY_SCHEDULER_CONCURRENT} property with Boolean.FALSE.  */
 end_comment
@@ -84,7 +74,7 @@ name|PROPERTY_SCHEDULER_NAME
 init|=
 literal|"scheduler.name"
 decl_stmt|;
-comment|/**      * Schedule a job based on the options.      *      * Note that if a job with the same name has already been added, the old job is cancelled and this new job replaces      * the old job.      *      * The job object needs either to be a {@link Job} or a {@link Runnable}. The options have to be created      * by one of the provided methods from this scheduler.      *      * @param job The job to execute (either {@link Job} or {@link Runnable}).      * @param options Required options defining how to schedule the job.      * @throws SchedulerException if the job can't be scheduled.      * @throws IllegalArgumentException If the preconditions are not met.      * @see #NOW()      * @see #NOW(int, long)      * @see #AT(Date)      * @see #AT(Date, int, long)      * @see #EXPR(String)      */
+comment|/**      * Schedule a job based on the options.      *      * Note that if a job with the same name has already been added, the old job is cancelled and this new job replaces      * the old job.      *      * The job object needs either to be a {@link Job} or a {@link Runnable}. The options have to be created      * by one of the provided methods from this scheduler.      *      * @param job The job to execute (either {@link Job} or {@link Runnable}).      * @param options Required options defining how to schedule the job.      * @throws SchedulerError if the job can't be scheduled.      * @throws IllegalArgumentException If the preconditions are not met.      * @see #NOW()      * @see #NOW(int, long)      * @see #AT(Date)      * @see #AT(Date, int, long)      * @see #EXPR(String)      */
 name|void
 name|schedule
 parameter_list|(
@@ -97,7 +87,7 @@ parameter_list|)
 throws|throws
 name|IllegalArgumentException
 throws|,
-name|SchedulerException
+name|SchedulerError
 function_decl|;
 comment|/**      * Remove a scheduled job by name.      *      * @param jobName The name of the job.      * @return<code>True</code> if the job existed and could be stopped,<code>false</code> otherwise.      */
 name|boolean
@@ -116,7 +106,7 @@ argument_list|>
 name|getJobs
 parameter_list|()
 throws|throws
-name|SchedulerException
+name|SchedulerError
 function_decl|;
 comment|/**      * Create a schedule options to fire a job immediately and only once.      *      * @return The corresponding {@link ScheduleOptions}.      */
 name|ScheduleOptions
