@@ -267,11 +267,7 @@ name|LogServiceImpl
 argument_list|(
 name|configAdmin
 argument_list|,
-operator|new
-name|LruList
-argument_list|(
 literal|100
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|logMBean
