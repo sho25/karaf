@@ -844,6 +844,17 @@ parameter_list|()
 block|{
 try|try
 block|{
+if|if
+condition|(
+name|started
+operator|.
+name|getCount
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
+comment|// Check to avoid InterruptedException in case we do not have to wait at all
 name|started
 operator|.
 name|await
@@ -856,6 +867,7 @@ name|MILLISECONDS
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 catch|catch
 parameter_list|(
 name|InterruptedException
@@ -866,7 +878,14 @@ name|LOGGER
 operator|.
 name|warn
 argument_list|(
-literal|"The wait for bundle being started before destruction has been interrupted."
+literal|"The wait for bundle "
+operator|+
+name|bundle
+operator|.
+name|getSymbolicName
+argument_list|()
+operator|+
+literal|" being started before destruction has been interrupted."
 argument_list|,
 name|e
 argument_list|)
