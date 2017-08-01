@@ -441,6 +441,17 @@ operator|::
 name|close
 argument_list|)
 block|;
+name|session
+operator|.
+name|put
+argument_list|(
+name|Session
+operator|.
+name|IS_LOCAL
+argument_list|,
+literal|true
+argument_list|)
+block|;
 name|registration
 operator|=
 name|bundleContext

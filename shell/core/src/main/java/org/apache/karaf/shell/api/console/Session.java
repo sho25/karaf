@@ -115,6 +115,11 @@ init|=
 literal|"karaf.ignoreInterrupts"
 decl_stmt|;
 name|String
+name|IS_LOCAL
+init|=
+literal|"karaf.shell.local"
+decl_stmt|;
+name|String
 name|COMPLETION_MODE
 init|=
 literal|"karaf.completionMode"
