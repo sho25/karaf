@@ -1971,6 +1971,10 @@ name|Thread
 operator|.
 name|currentThread
 argument_list|()
+operator|&&
+name|thread
+operator|!=
+literal|null
 condition|)
 block|{
 name|thread
