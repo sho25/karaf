@@ -531,7 +531,7 @@ name|Exception
 block|{
 name|execute
 argument_list|(
-literal|"jms:create -t ActiveMQ -u karaf -p karaf --url tcp://localhost:61616 test"
+literal|"jms:create -t activemq -u karaf -p karaf --url tcp://localhost:61616 test"
 argument_list|)
 expr_stmt|;
 name|waitForConnectionFactory

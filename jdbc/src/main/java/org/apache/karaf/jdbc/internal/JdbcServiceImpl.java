@@ -563,7 +563,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"(%s=%s)"
+literal|"(&(service.factoryPid=org.ops4j.datasource)(%s=%s))"
 argument_list|,
 name|DataSourceFactory
 operator|.
