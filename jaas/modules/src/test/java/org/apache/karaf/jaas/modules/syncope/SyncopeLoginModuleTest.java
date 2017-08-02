@@ -58,7 +58,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testRolesExtraction
+name|testRolesExtractionSyncope1
 parameter_list|()
 throws|throws
 name|Exception
@@ -221,7 +221,338 @@ name|roles
 init|=
 name|syncopeLoginModule
 operator|.
-name|extractingRoles
+name|extractingRolesSyncope1
+argument_list|(
+name|syncopeResponse
+argument_list|)
+decl_stmt|;
+name|Assert
+operator|.
+name|assertEquals
+argument_list|(
+literal|2
+argument_list|,
+name|roles
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|Assert
+operator|.
+name|assertEquals
+argument_list|(
+literal|"admin"
+argument_list|,
+name|roles
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|Assert
+operator|.
+name|assertEquals
+argument_list|(
+literal|"another"
+argument_list|,
+name|roles
+operator|.
+name|get
+argument_list|(
+literal|1
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testRolesExtractionSyncope2
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|String
+name|syncopeResponse
+init|=
+literal|"{\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"@class\":\"org.apache.syncope.common.lib.to.UserTO\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"creator\":\"admin\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"creationDate\":\"2017-07-31T08:36:41.000+0000\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"lastModifier\":\"admin\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"lastChangeDate\":\"2017-08-01T08:46:19.236+0000\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"key\":\"e5a131b0-eb66-4115-a131-b0eb66511579\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"type\":\"USER\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"realm\":\"/karaf\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"status\":\"created\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"password\":null,\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"token\":null,\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"tokenExpireTime\":null,\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"username\":\"karaf\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"lastLoginDate\":\"2017-08-01T08:46:19.224+0000\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"changePwdDate\":null,\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"failedLogins\":0,\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"securityQuestion\":null,\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"securityAnswer\":null,\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"mustChangePassword\":false,\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"auxClasses\":[\n"
+operator|+
+literal|"\n"
+operator|+
+literal|" \n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   ],\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"plainAttrs\":[\n"
+operator|+
+literal|"\n"
+operator|+
+literal|" \n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   ],\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"derAttrs\":[\n"
+operator|+
+literal|"\n"
+operator|+
+literal|" \n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   ],\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"virAttrs\":[\n"
+operator|+
+literal|"\n"
+operator|+
+literal|" \n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   ],\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"resources\":[\n"
+operator|+
+literal|"\n"
+operator|+
+literal|" \n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   ],\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"roles\":[\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"      \"admin\", \"another\"\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   ],\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"dynRoles\":[\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"      \"admin\"\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   ],\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"relationships\":[\n"
+operator|+
+literal|"\n"
+operator|+
+literal|" \n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   ],\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"memberships\":[\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"      {\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"         \"type\":\"Membership\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"         \"rightType\":\"GROUP\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"         \"rightKey\":\"3847aa78-3202-4d8f-87aa-7832026d8fba\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"         \"groupName\":\"manager\",\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"         \"plainAttrs\":[\n"
+operator|+
+literal|"\n"
+operator|+
+literal|" \n"
+operator|+
+literal|"\n"
+operator|+
+literal|"         ],\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"         \"derAttrs\":[\n"
+operator|+
+literal|"\n"
+operator|+
+literal|" \n"
+operator|+
+literal|"\n"
+operator|+
+literal|"         ],\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"         \"virAttrs\":[\n"
+operator|+
+literal|"\n"
+operator|+
+literal|" \n"
+operator|+
+literal|"\n"
+operator|+
+literal|"         ]\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"      }\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   ],\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   \"dynGroups\":[\n"
+operator|+
+literal|"\n"
+operator|+
+literal|" \n"
+operator|+
+literal|"\n"
+operator|+
+literal|"   ]\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"}"
+decl_stmt|;
+name|SyncopeLoginModule
+name|syncopeLoginModule
+init|=
+operator|new
+name|SyncopeLoginModule
+argument_list|()
+decl_stmt|;
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|roles
+init|=
+name|syncopeLoginModule
+operator|.
+name|extractingRolesSyncope2
 argument_list|(
 name|syncopeResponse
 argument_list|)
