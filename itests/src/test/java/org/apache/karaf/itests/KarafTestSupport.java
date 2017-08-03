@@ -1528,6 +1528,16 @@ literal|"/etc/org.ops4j.pax.logging.cfg"
 argument_list|)
 argument_list|)
 block|,
+name|replaceConfigurationFile
+argument_list|(
+literal|"etc/host.key"
+argument_list|,
+name|getConfigFile
+argument_list|(
+literal|"/etc/host.key"
+argument_list|)
+argument_list|)
+block|,
 name|editConfigurationFilePut
 argument_list|(
 literal|"etc/org.apache.karaf.features.cfg"
@@ -1665,6 +1675,16 @@ argument_list|(
 literal|"spring43.version"
 argument_list|)
 argument_list|)
+block|,
+name|editConfigurationFilePut
+argument_list|(
+literal|"etc/branding.properties"
+argument_list|,
+literal|"welcome"
+argument_list|,
+literal|""
+argument_list|)
+comment|// No welcome banner
 block|}
 return|;
 block|}
