@@ -1684,7 +1684,16 @@ literal|"welcome"
 argument_list|,
 literal|""
 argument_list|)
+block|,
 comment|// No welcome banner
+name|editConfigurationFilePut
+argument_list|(
+literal|"etc/branding-ssh.properties"
+argument_list|,
+literal|"welcome"
+argument_list|,
+literal|""
+argument_list|)
 block|}
 return|;
 block|}
