@@ -196,6 +196,8 @@ argument_list|(
 name|items
 argument_list|)
 decl_stmt|;
+try|try
+init|(
 name|FileOutputStream
 name|os
 init|=
@@ -204,7 +206,8 @@ name|FileOutputStream
 argument_list|(
 name|keyFile
 argument_list|)
-decl_stmt|;
+init|)
+block|{
 name|os
 operator|.
 name|write
@@ -212,11 +215,7 @@ argument_list|(
 name|bytes
 argument_list|)
 expr_stmt|;
-name|os
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+block|}
 block|}
 block|}
 end_class

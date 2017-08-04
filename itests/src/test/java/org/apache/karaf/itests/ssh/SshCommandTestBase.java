@@ -760,12 +760,6 @@ operator|.
 name|getSession
 argument_list|()
 expr_stmt|;
-return|return
-literal|true
-return|;
-block|}
-argument_list|)
-expr_stmt|;
 name|Set
 argument_list|<
 name|ClientSessionEvent
@@ -855,6 +849,12 @@ literal|"Could not open SSH channel"
 argument_list|)
 throw|;
 block|}
+return|return
+literal|true
+return|;
+block|}
+argument_list|)
+expr_stmt|;
 name|channel
 operator|=
 name|session
