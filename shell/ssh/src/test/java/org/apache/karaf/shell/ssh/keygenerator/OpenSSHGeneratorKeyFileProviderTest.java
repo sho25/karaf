@@ -165,6 +165,12 @@ operator|new
 name|OpenSSHKeyPairProvider
 argument_list|(
 name|temp
+argument_list|,
+name|KeyUtils
+operator|.
+name|RSA_ALGORITHM
+argument_list|,
+literal|1024
 argument_list|)
 decl_stmt|;
 name|KeyPair

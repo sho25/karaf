@@ -1528,16 +1528,7 @@ literal|"/etc/org.ops4j.pax.logging.cfg"
 argument_list|)
 argument_list|)
 block|,
-name|replaceConfigurationFile
-argument_list|(
-literal|"etc/host.key"
-argument_list|,
-name|getConfigFile
-argument_list|(
-literal|"/etc/host.key"
-argument_list|)
-argument_list|)
-block|,
+comment|//replaceConfigurationFile("etc/host.key", getConfigFile("/etc/host.key")),
 name|editConfigurationFilePut
 argument_list|(
 literal|"etc/org.apache.karaf.features.cfg"
