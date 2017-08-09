@@ -118,6 +118,7 @@ name|TreeSet
 argument_list|<>
 argument_list|()
 decl_stmt|;
+comment|// Map from region name to Set of feature requirements (name/version range)
 specifier|public
 specifier|final
 name|Map
@@ -136,6 +137,7 @@ name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
+comment|// Map from region name to Set of feature id (name/version)
 specifier|public
 specifier|final
 name|Map
