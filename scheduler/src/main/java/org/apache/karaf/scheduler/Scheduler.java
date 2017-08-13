@@ -108,6 +108,16 @@ parameter_list|()
 throws|throws
 name|SchedulerError
 function_decl|;
+comment|/**      * Triggers a scheduled job.      *      * @param jobName The name of the job.      * @return<code>true</code> if the job was triggered, otherwise<code>false</code>      * @throws SchedulerError  if the job can't be triggered.      */
+name|boolean
+name|trigger
+parameter_list|(
+name|String
+name|jobName
+parameter_list|)
+throws|throws
+name|SchedulerError
+function_decl|;
 comment|/**      * Create a schedule options to fire a job immediately and only once.      *      * @return The corresponding {@link ScheduleOptions}.      */
 name|ScheduleOptions
 name|NOW
