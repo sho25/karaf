@@ -2138,9 +2138,8 @@ name|uri
 init|=
 literal|"src/test/resources/org/apache/karaf/shell/features/repo1.xml"
 decl_stmt|;
-name|RepositoryImpl
-name|r
-init|=
+try|try
+block|{
 operator|new
 name|RepositoryImpl
 argument_list|(
@@ -2150,13 +2149,6 @@ argument_list|(
 name|uri
 argument_list|)
 argument_list|)
-decl_stmt|;
-try|try
-block|{
-name|r
-operator|.
-name|load
-argument_list|()
 expr_stmt|;
 block|}
 catch|catch
