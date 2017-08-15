@@ -1091,6 +1091,9 @@ name|getBundleContext
 argument_list|()
 decl_stmt|;
 name|ServiceReference
+argument_list|<
+name|KeystoreManager
+argument_list|>
 name|ref
 init|=
 literal|null
@@ -1138,17 +1141,11 @@ argument_list|(
 name|KeystoreManager
 operator|.
 name|class
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|KeystoreManager
 name|manager
 init|=
-operator|(
-name|KeystoreManager
-operator|)
 name|bundleContext
 operator|.
 name|getService

@@ -1030,6 +1030,9 @@ name|filter
 argument_list|)
 expr_stmt|;
 name|NamingEnumeration
+argument_list|<
+name|SearchResult
+argument_list|>
 name|namingEnumeration
 init|=
 name|context
@@ -1082,9 +1085,6 @@ expr_stmt|;
 name|SearchResult
 name|result
 init|=
-operator|(
-name|SearchResult
-operator|)
 name|namingEnumeration
 operator|.
 name|next
@@ -1532,6 +1532,9 @@ name|filter
 argument_list|)
 expr_stmt|;
 name|NamingEnumeration
+argument_list|<
+name|SearchResult
+argument_list|>
 name|namingEnumeration
 init|=
 name|context
@@ -1572,9 +1575,6 @@ block|{
 name|SearchResult
 name|result
 init|=
-operator|(
-name|SearchResult
-operator|)
 name|namingEnumeration
 operator|.
 name|next
