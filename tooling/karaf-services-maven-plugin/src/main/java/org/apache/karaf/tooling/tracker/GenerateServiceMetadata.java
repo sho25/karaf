@@ -1353,17 +1353,6 @@ name|toURL
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"classpath: "
-operator|+
-name|file
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 name|ClassLoader
