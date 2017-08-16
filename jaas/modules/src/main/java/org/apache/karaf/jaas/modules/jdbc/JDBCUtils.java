@@ -392,6 +392,9 @@ index|]
 expr_stmt|;
 block|}
 name|ServiceReference
+argument_list|<
+name|?
+argument_list|>
 index|[]
 name|references
 init|=
@@ -412,6 +415,9 @@ literal|null
 condition|)
 block|{
 name|ServiceReference
+argument_list|<
+name|?
+argument_list|>
 name|ref
 init|=
 name|references
