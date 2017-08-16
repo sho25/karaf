@@ -31,7 +31,7 @@ name|jaas
 operator|.
 name|modules
 operator|.
-name|PrincipalAssert
+name|PrincipalHelper
 operator|.
 name|names
 import|;
