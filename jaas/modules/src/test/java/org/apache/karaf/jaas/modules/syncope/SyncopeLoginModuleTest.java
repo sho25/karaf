@@ -20,22 +20,92 @@ package|;
 end_package
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|junit
+name|hamcrest
 operator|.
-name|Test
+name|Matchers
+operator|.
+name|containsInAnyOrder
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
 name|junit
 operator|.
 name|Assert
+operator|.
+name|assertThat
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
+name|URI
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
+name|URISyntaxException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|nio
+operator|.
+name|charset
+operator|.
+name|Charset
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|nio
+operator|.
+name|file
+operator|.
+name|Files
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|nio
+operator|.
+name|file
+operator|.
+name|Paths
 import|;
 end_import
 
@@ -46,6 +116,28 @@ operator|.
 name|util
 operator|.
 name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|stream
+operator|.
+name|Collectors
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
 import|;
 end_import
 
@@ -66,145 +158,10 @@ block|{
 name|String
 name|syncopeResponse
 init|=
-literal|"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
-operator|+
-literal|"<user>\n"
-operator|+
-literal|"<attributes>\n"
-operator|+
-literal|"<attribute>\n"
-operator|+
-literal|"<readonly>false</readonly>\n"
-operator|+
-literal|"<schema>cool</schema>\n"
-operator|+
-literal|"<value>false</value>\n"
-operator|+
-literal|"</attribute>\n"
-operator|+
-literal|"<attribute>\n"
-operator|+
-literal|"<readonly>false</readonly>\n"
-operator|+
-literal|"<schema>email</schema>\n"
-operator|+
-literal|"<value>karaf@example.net</value>\n"
-operator|+
-literal|"</attribute>\n"
-operator|+
-literal|"<attribute>\n"
-operator|+
-literal|"<readonly>false</readonly>\n"
-operator|+
-literal|"<schema>fullname</schema>\n"
-operator|+
-literal|"<value>karaf</value>\n"
-operator|+
-literal|"</attribute>\n"
-operator|+
-literal|"<attribute>\n"
-operator|+
-literal|"<readonly>false</readonly>\n"
-operator|+
-literal|"<schema>gender</schema>\n"
-operator|+
-literal|"<value>M</value>\n"
-operator|+
-literal|"</attribute>\n"
-operator|+
-literal|"<attribute>\n"
-operator|+
-literal|"<readonly>false</readonly>\n"
-operator|+
-literal|"<schema>surname</schema>\n"
-operator|+
-literal|"<value>karaf</value>\n"
-operator|+
-literal|"</attribute>\n"
-operator|+
-literal|"<attribute>\n"
-operator|+
-literal|"<readonly>false</readonly>\n"
-operator|+
-literal|"<schema>userId</schema>\n"
-operator|+
-literal|"<value>karaf@example.net</value>\n"
-operator|+
-literal|"</attribute>\n"
-operator|+
-literal|"</attributes>\n"
-operator|+
-literal|"<derivedAttributes/>\n"
-operator|+
-literal|"<id>100</id>\n"
-operator|+
-literal|"<propagationStatuses/>\n"
-operator|+
-literal|"<resources/>\n"
-operator|+
-literal|"<virtualAttributes/>\n"
-operator|+
-literal|"<creationDate>2014-08-12T18:37:09.202+02:00</creationDate>\n"
-operator|+
-literal|"<failedLogins>0</failedLogins>\n"
-operator|+
-literal|"<lastLoginDate>2014-08-13T09:38:02.204+02:00</lastLoginDate>\n"
-operator|+
-literal|"<memberships>\n"
-operator|+
-literal|"<membership>\n"
-operator|+
-literal|"<attributes/>\n"
-operator|+
-literal|"<derivedAttributes/>\n"
-operator|+
-literal|"<id>100</id>\n"
-operator|+
-literal|"<propagationStatuses/>\n"
-operator|+
-literal|"<resources/>\n"
-operator|+
-literal|"<virtualAttributes/>\n"
-operator|+
-literal|"<resources/>\n"
-operator|+
-literal|"<roleId>100</roleId>\n"
-operator|+
-literal|"<roleName>admin</roleName>\n"
-operator|+
-literal|"</membership>\n"
-operator|+
-literal|"<membership>\n"
-operator|+
-literal|"<attributes/>\n"
-operator|+
-literal|"<derivedAttributes/>\n"
-operator|+
-literal|"<id>101</id>\n"
-operator|+
-literal|"<propagationStatuses/>\n"
-operator|+
-literal|"<resources/>\n"
-operator|+
-literal|"<virtualAttributes/>\n"
-operator|+
-literal|"<resources/>\n"
-operator|+
-literal|"<roleId>101</roleId>\n"
-operator|+
-literal|"<roleName>another</roleName>\n"
-operator|+
-literal|"</membership>\n"
-operator|+
-literal|"</memberships>\n"
-operator|+
-literal|"<password>36460D3A3C1E27C0DB2AF23344475EE712DD3C9D</password>\n"
-operator|+
-literal|"<status>active</status>\n"
-operator|+
-literal|"<username>karaf</username>\n"
-operator|+
-literal|"</user>\n"
+name|read
+argument_list|(
+literal|"syncope1Response.xml"
+argument_list|)
 decl_stmt|;
 name|SyncopeLoginModule
 name|syncopeLoginModule
@@ -226,43 +183,15 @@ argument_list|(
 name|syncopeResponse
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
-name|assertEquals
+name|assertThat
 argument_list|(
-literal|2
-argument_list|,
 name|roles
-operator|.
-name|size
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|Assert
-operator|.
-name|assertEquals
+argument_list|,
+name|containsInAnyOrder
 argument_list|(
 literal|"admin"
 argument_list|,
-name|roles
-operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|Assert
-operator|.
-name|assertEquals
-argument_list|(
 literal|"another"
-argument_list|,
-name|roles
-operator|.
-name|get
-argument_list|(
-literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -279,263 +208,10 @@ block|{
 name|String
 name|syncopeResponse
 init|=
-literal|"{\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"@class\":\"org.apache.syncope.common.lib.to.UserTO\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"creator\":\"admin\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"creationDate\":\"2017-07-31T08:36:41.000+0000\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"lastModifier\":\"admin\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"lastChangeDate\":\"2017-08-01T08:46:19.236+0000\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"key\":\"e5a131b0-eb66-4115-a131-b0eb66511579\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"type\":\"USER\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"realm\":\"/karaf\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"status\":\"created\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"password\":null,\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"token\":null,\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"tokenExpireTime\":null,\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"username\":\"karaf\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"lastLoginDate\":\"2017-08-01T08:46:19.224+0000\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"changePwdDate\":null,\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"failedLogins\":0,\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"securityQuestion\":null,\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"securityAnswer\":null,\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"mustChangePassword\":false,\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"auxClasses\":[\n"
-operator|+
-literal|"\n"
-operator|+
-literal|" \n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   ],\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"plainAttrs\":[\n"
-operator|+
-literal|"\n"
-operator|+
-literal|" \n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   ],\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"derAttrs\":[\n"
-operator|+
-literal|"\n"
-operator|+
-literal|" \n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   ],\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"virAttrs\":[\n"
-operator|+
-literal|"\n"
-operator|+
-literal|" \n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   ],\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"resources\":[\n"
-operator|+
-literal|"\n"
-operator|+
-literal|" \n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   ],\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"roles\":[\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"      \"admin\", \"another\"\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   ],\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"dynRoles\":[\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"      \"admin\"\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   ],\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"relationships\":[\n"
-operator|+
-literal|"\n"
-operator|+
-literal|" \n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   ],\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"memberships\":[\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"      {\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"         \"type\":\"Membership\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"         \"rightType\":\"GROUP\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"         \"rightKey\":\"3847aa78-3202-4d8f-87aa-7832026d8fba\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"         \"groupName\":\"manager\",\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"         \"plainAttrs\":[\n"
-operator|+
-literal|"\n"
-operator|+
-literal|" \n"
-operator|+
-literal|"\n"
-operator|+
-literal|"         ],\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"         \"derAttrs\":[\n"
-operator|+
-literal|"\n"
-operator|+
-literal|" \n"
-operator|+
-literal|"\n"
-operator|+
-literal|"         ],\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"         \"virAttrs\":[\n"
-operator|+
-literal|"\n"
-operator|+
-literal|" \n"
-operator|+
-literal|"\n"
-operator|+
-literal|"         ]\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"      }\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   ],\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   \"dynGroups\":[\n"
-operator|+
-literal|"\n"
-operator|+
-literal|" \n"
-operator|+
-literal|"\n"
-operator|+
-literal|"   ]\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"}"
+name|read
+argument_list|(
+literal|"syncope2Response.json"
+argument_list|)
 decl_stmt|;
 name|SyncopeLoginModule
 name|syncopeLoginModule
@@ -557,46 +233,77 @@ argument_list|(
 name|syncopeResponse
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
-name|assertEquals
+name|assertThat
 argument_list|(
-literal|2
-argument_list|,
 name|roles
-operator|.
-name|size
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|Assert
-operator|.
-name|assertEquals
+argument_list|,
+name|containsInAnyOrder
 argument_list|(
 literal|"admin"
 argument_list|,
-name|roles
-operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|Assert
-operator|.
-name|assertEquals
-argument_list|(
 literal|"another"
-argument_list|,
-name|roles
-operator|.
-name|get
-argument_list|(
-literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+specifier|private
+name|String
+name|read
+parameter_list|(
+name|String
+name|resourceName
+parameter_list|)
+throws|throws
+name|URISyntaxException
+throws|,
+name|IOException
+block|{
+name|URI
+name|response
+init|=
+name|this
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getResource
+argument_list|(
+name|resourceName
+argument_list|)
+operator|.
+name|toURI
+argument_list|()
+decl_stmt|;
+return|return
+name|Files
+operator|.
+name|lines
+argument_list|(
+name|Paths
+operator|.
+name|get
+argument_list|(
+name|response
+argument_list|)
+argument_list|,
+name|Charset
+operator|.
+name|forName
+argument_list|(
+literal|"UTF-8"
+argument_list|)
+argument_list|)
+operator|.
+name|collect
+argument_list|(
+name|Collectors
+operator|.
+name|joining
+argument_list|(
+literal|"\n"
+argument_list|)
+argument_list|)
+return|;
 block|}
 block|}
 end_class
