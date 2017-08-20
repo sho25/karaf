@@ -337,13 +337,16 @@ range|:
 name|set
 control|)
 block|{
+if|if
+condition|(
 name|features
 operator|.
 name|add
 argument_list|(
 name|f
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
 for|for
 control|(
 name|Dependency
@@ -370,6 +373,7 @@ name|dep
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
