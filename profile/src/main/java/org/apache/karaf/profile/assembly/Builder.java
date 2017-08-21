@@ -4998,7 +4998,7 @@ name|installedFeatures
 init|=
 name|selector
 operator|.
-name|selectMatching
+name|getMatching
 argument_list|(
 name|installedEffective
 operator|.
@@ -5518,7 +5518,7 @@ name|bootFeatures
 init|=
 name|selector
 operator|.
-name|selectMatching
+name|getMatching
 argument_list|(
 name|singletonList
 argument_list|(

@@ -234,12 +234,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * Features matching the given feature selectors including dependent features      *       * @param features feature selector name, name/version, name/version-range      *       * @return matching features       */
 specifier|public
 name|Set
 argument_list|<
 name|Feature
 argument_list|>
-name|selectMatching
+name|getMatching
 parameter_list|(
 name|List
 argument_list|<
