@@ -335,6 +335,11 @@ literal|null
 argument_list|)
 decl_stmt|;
 name|Dictionary
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|properties
 init|=
 name|config

@@ -176,14 +176,6 @@ init|=
 literal|"org.apache.karaf.jaas.modules.audit.EventAdminAuditLoginModule"
 decl_stmt|;
 specifier|private
-specifier|static
-specifier|final
-name|String
-name|MODULE
-init|=
-literal|"org.apache.karaf.jaas.module"
-decl_stmt|;
-specifier|private
 specifier|final
 name|BundleContext
 name|bundleContext

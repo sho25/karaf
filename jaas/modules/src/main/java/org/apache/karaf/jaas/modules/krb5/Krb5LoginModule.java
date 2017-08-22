@@ -122,6 +122,11 @@ comment|/**  * Karaf Kerberos login module.  */
 end_comment
 
 begin_class
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"restriction"
+argument_list|)
 specifier|public
 class|class
 name|Krb5LoginModule
