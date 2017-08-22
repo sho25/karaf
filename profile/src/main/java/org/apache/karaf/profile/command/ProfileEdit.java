@@ -2867,25 +2867,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|String
-name|id
-init|=
-name|profile
-operator|.
-name|getId
-argument_list|()
-decl_stmt|;
-name|String
-name|location
-init|=
-name|id
-operator|+
-literal|" "
-operator|+
-name|resource
-decl_stmt|;
-comment|//Call the editor
-comment|/* TODO:JLINE         ConsoleEditor editor = editorFactory.create("simple", getTerminal());         editor.setTitle("Profile");         editor.setOpenEnabled(false);         editor.setContentManager(new DatastoreContentManager(profileService));         editor.open(location, id);         editor.start();         */
+comment|/* TODO:JLINE         String id = profile.getId();         String location = id + " " + resource;         //Call the editor         ConsoleEditor editor = editorFactory.create("simple", getTerminal());         editor.setTitle("Profile");         editor.setOpenEnabled(false);         editor.setContentManager(new DatastoreContentManager(profileService));         editor.open(location, id);         editor.start();         */
 block|}
 specifier|public
 name|void
@@ -3207,6 +3189,11 @@ literal|0
 condition|)
 block|{
 name|Dictionary
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|dictionary
 init|=
 name|configuration
@@ -3218,6 +3205,9 @@ name|getProperties
 argument_list|()
 decl_stmt|;
 name|Enumeration
+argument_list|<
+name|String
+argument_list|>
 name|keyEnumeration
 init|=
 name|dictionary
