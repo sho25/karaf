@@ -223,6 +223,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|function
+operator|.
+name|Function
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -9537,8 +9549,6 @@ specifier|protected
 parameter_list|<
 name|T
 parameter_list|>
-name|MapUtils
-operator|.
 name|Function
 argument_list|<
 name|Bundle
@@ -9567,8 +9577,6 @@ argument_list|)
 return|;
 block|}
 specifier|protected
-name|MapUtils
-operator|.
 name|Function
 argument_list|<
 name|Bundle
@@ -9585,8 +9593,6 @@ name|getBundleId
 return|;
 block|}
 specifier|protected
-name|MapUtils
-operator|.
 name|Function
 argument_list|<
 name|Resource
