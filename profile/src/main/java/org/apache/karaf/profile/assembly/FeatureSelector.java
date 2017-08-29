@@ -468,7 +468,7 @@ operator|.
 name|getVersionRange
 argument_list|()
 operator|.
-name|includes
+name|contains
 argument_list|(
 name|VersionTable
 operator|.
