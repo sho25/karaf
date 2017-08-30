@@ -796,7 +796,7 @@ expr_stmt|;
 block|}
 block|}
 specifier|static
-name|void
+name|AutoCloseable
 name|setupShutdown
 parameter_list|(
 name|ConfigProperties
@@ -939,7 +939,7 @@ name|close
 argument_list|()
 expr_stmt|;
 block|}
-name|Thread
+name|ShutdownSocketThread
 name|thread
 init|=
 operator|new
@@ -954,16 +954,12 @@ argument_list|)
 decl_stmt|;
 name|thread
 operator|.
-name|setDaemon
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-name|thread
-operator|.
 name|start
 argument_list|()
 expr_stmt|;
+return|return
+name|thread
+return|;
 block|}
 block|}
 catch|catch
@@ -978,6 +974,9 @@ name|printStackTrace
 argument_list|()
 expr_stmt|;
 block|}
+return|return
+literal|null
+return|;
 block|}
 block|}
 end_class
