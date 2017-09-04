@@ -607,7 +607,6 @@ name|config
 argument_list|)
 expr_stmt|;
 block|}
-return|return;
 block|}
 block|}
 annotation|@

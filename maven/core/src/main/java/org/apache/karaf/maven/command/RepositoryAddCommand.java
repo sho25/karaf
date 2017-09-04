@@ -799,7 +799,10 @@ operator|.
 name|OPTION_ID
 operator|+
 literal|"="
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|id
 argument_list|)
 expr_stmt|;
@@ -854,7 +857,10 @@ operator|.
 name|OPTION_UPDATE
 operator|+
 literal|"="
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|updatePolicy
 argument_list|)
 expr_stmt|;
@@ -871,7 +877,10 @@ operator|.
 name|OPTION_CHECKSUM
 operator|+
 literal|"="
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|checksumPolicy
 argument_list|)
 expr_stmt|;
