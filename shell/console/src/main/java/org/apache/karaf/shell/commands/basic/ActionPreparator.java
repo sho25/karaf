@@ -72,11 +72,6 @@ comment|/**      * Check if the arguments are valid for the action and inject th
 name|boolean
 name|prepare
 parameter_list|(
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"deprecation"
-argument_list|)
 name|Action
 name|action
 parameter_list|,
