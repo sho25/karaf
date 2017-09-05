@@ -1053,9 +1053,12 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|""
-operator|+
+name|Integer
+operator|.
+name|toString
+argument_list|(
 name|rc
+argument_list|)
 argument_list|)
 throw|;
 block|}
