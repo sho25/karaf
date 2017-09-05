@@ -2958,6 +2958,13 @@ name|Field
 name|field
 parameter_list|)
 block|{
+if|if
+condition|(
+name|field
+operator|!=
+literal|null
+condition|)
+block|{
 try|try
 block|{
 name|field
@@ -2986,6 +2993,10 @@ return|return
 literal|null
 return|;
 block|}
+block|}
+return|return
+literal|null
+return|;
 block|}
 specifier|private
 name|String
