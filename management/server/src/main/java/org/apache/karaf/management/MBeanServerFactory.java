@@ -223,6 +223,8 @@ argument_list|()
 expr_stmt|;
 block|}
 return|return
+name|this
+operator|.
 name|server
 return|;
 block|}
@@ -262,11 +264,6 @@ argument_list|(
 name|agentId
 argument_list|)
 decl_stmt|;
-name|MBeanServer
-name|server
-init|=
-literal|null
-decl_stmt|;
 if|if
 condition|(
 name|servers
@@ -298,6 +295,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|this
+operator|.
 name|server
 operator|==
 literal|null
