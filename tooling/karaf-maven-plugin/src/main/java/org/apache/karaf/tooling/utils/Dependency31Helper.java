@@ -461,8 +461,10 @@ name|projectRepositories
 decl_stmt|;
 comment|// dependencies we are interested in
 specifier|protected
-name|Set
+name|Map
 argument_list|<
+name|Artifact
+argument_list|,
 name|LocalDependency
 argument_list|>
 name|localDependencies
@@ -568,7 +570,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Set
+name|Collection
 argument_list|<
 name|LocalDependency
 argument_list|>
@@ -577,6 +579,9 @@ parameter_list|()
 block|{
 return|return
 name|localDependencies
+operator|.
+name|values
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -1043,14 +1048,16 @@ block|}
 comment|// all the dependencies needed, with provided dependencies removed
 specifier|private
 specifier|final
-name|Set
+name|Map
 argument_list|<
+name|Artifact
+argument_list|,
 name|LocalDependency
 argument_list|>
 name|localDependencies
 init|=
 operator|new
-name|LinkedHashSet
+name|LinkedHashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
@@ -1125,6 +1132,9 @@ name|useTransitiveDependencies
 condition|)
 block|{
 name|localDependencies
+operator|.
+name|keySet
+argument_list|()
 operator|.
 name|removeAll
 argument_list|(
@@ -1280,6 +1290,9 @@ if|if
 condition|(
 name|localDependencies
 operator|.
+name|keySet
+argument_list|()
+operator|.
 name|contains
 argument_list|(
 name|dependencyNode
@@ -1319,8 +1332,16 @@ block|}
 comment|// TODO resolve scope conflicts
 name|localDependencies
 operator|.
-name|add
+name|put
 argument_list|(
+name|dependencyNode
+operator|.
+name|getDependency
+argument_list|()
+operator|.
+name|getArtifact
+argument_list|()
+argument_list|,
 operator|new
 name|LocalDependency
 argument_list|(
