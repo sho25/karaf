@@ -921,6 +921,16 @@ literal|"karaf"
 argument_list|)
 decl_stmt|;
 name|String
+name|sshRole
+init|=
+name|getString
+argument_list|(
+literal|"sshRole"
+argument_list|,
+literal|null
+argument_list|)
+decl_stmt|;
+name|String
 name|hostKey
 init|=
 name|getString
@@ -1054,6 +1064,8 @@ operator|new
 name|KarafJaasAuthenticator
 argument_list|(
 name|sshRealm
+argument_list|,
+name|sshRole
 argument_list|)
 decl_stmt|;
 name|UserAuthFactoriesFactory
