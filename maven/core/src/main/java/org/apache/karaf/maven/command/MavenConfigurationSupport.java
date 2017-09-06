@@ -2764,11 +2764,6 @@ block|}
 block|}
 block|}
 comment|/**      * Returns list of configured remote (<code>remote=true</code>) or default (<code>remote=false</code>)      * repositories.      * @param remote      * @return      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|protected
 name|MavenRepositoryURL
 index|[]

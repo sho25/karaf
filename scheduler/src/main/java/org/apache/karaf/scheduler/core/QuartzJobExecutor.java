@@ -200,11 +200,6 @@ operator|.
 name|Job
 condition|)
 block|{
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|final
 name|InternalScheduleOptions
 name|options

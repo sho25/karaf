@@ -392,11 +392,6 @@ name|SHOW_ALL_ALIAS
 argument_list|)
 return|;
 block|}
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"rawtypes"
-argument_list|)
 specifier|public
 specifier|static
 name|boolean

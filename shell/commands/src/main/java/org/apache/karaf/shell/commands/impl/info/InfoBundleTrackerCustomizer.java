@@ -171,11 +171,6 @@ name|class
 argument_list|)
 decl_stmt|;
 comment|/**      * {@inheritDoc}      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 name|ServiceRegistration
 argument_list|<

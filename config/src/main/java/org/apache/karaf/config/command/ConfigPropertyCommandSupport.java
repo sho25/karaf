@@ -137,15 +137,6 @@ specifier|protected
 name|String
 name|pid
 decl_stmt|;
-annotation|@
-name|SuppressWarnings
-argument_list|(
-block|{
-literal|"rawtypes"
-block|,
-literal|"unchecked"
-block|}
-argument_list|)
 specifier|protected
 name|Object
 name|doExecute
@@ -263,11 +254,6 @@ literal|null
 return|;
 block|}
 comment|/**      * Retrieve configuration from the pid, if used or delegates to session from getting the configuration.      *      * @return the edited dictionary.      * @throws Exception in case of configuration failure.      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"rawtypes"
-argument_list|)
 annotation|@
 name|Override
 specifier|protected

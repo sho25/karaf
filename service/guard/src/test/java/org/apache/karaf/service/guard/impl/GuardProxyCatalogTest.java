@@ -10342,11 +10342,7 @@ begin_expr_stmt
 unit|}      @
 name|SuppressWarnings
 argument_list|(
-block|{
 literal|"unchecked"
-block|,
-literal|"rawtypes"
-block|}
 argument_list|)
 specifier|public
 name|Object
@@ -10388,35 +10384,27 @@ argument_list|)
 return|;
 end_return
 
-begin_expr_stmt
-unit|}      @
-name|SuppressWarnings
-argument_list|(
-literal|"rawtypes"
-argument_list|)
-specifier|public
+begin_function
+unit|}      public
 name|Object
 name|testCreateProxy
-argument_list|(
+parameter_list|(
 name|BundleContext
 name|bc
-argument_list|,
+parameter_list|,
 name|Class
 argument_list|<
 name|?
 argument_list|>
 index|[]
 name|objectClasses
-operator|,
+parameter_list|,
 name|Object
 name|testService
-argument_list|)
+parameter_list|)
 throws|throws
 name|Exception
 block|{
-end_expr_stmt
-
-begin_return
 return|return
 name|testCreateProxy
 argument_list|(
@@ -10434,10 +10422,11 @@ argument_list|<>
 argument_list|()
 argument_list|)
 return|;
-end_return
+block|}
+end_function
 
-begin_expr_stmt
-unit|}      @
+begin_function
+annotation|@
 name|SuppressWarnings
 argument_list|(
 literal|"rawtypes"
@@ -10445,20 +10434,20 @@ argument_list|)
 specifier|public
 name|Object
 name|testCreateProxy
-argument_list|(
+parameter_list|(
 name|BundleContext
 name|bc
-argument_list|,
+parameter_list|,
 name|Class
 argument_list|<
 name|?
 argument_list|>
 index|[]
 name|objectClasses
-operator|,
+parameter_list|,
 name|Object
 name|testService
-operator|,
+parameter_list|,
 name|Map
 argument_list|<
 name|ServiceReference
@@ -10466,13 +10455,10 @@ argument_list|,
 name|Object
 argument_list|>
 name|serviceMap
-argument_list|)
+parameter_list|)
 throws|throws
 name|Exception
 block|{
-end_expr_stmt
-
-begin_return
 return|return
 name|testCreateProxy
 argument_list|(
@@ -10487,10 +10473,11 @@ argument_list|,
 name|serviceMap
 argument_list|)
 return|;
-end_return
+block|}
+end_function
 
-begin_expr_stmt
-unit|}      @
+begin_function
+annotation|@
 name|SuppressWarnings
 argument_list|(
 block|{
@@ -10502,23 +10489,23 @@ argument_list|)
 specifier|public
 name|Object
 name|testCreateProxy
-argument_list|(
+parameter_list|(
 name|BundleContext
 name|bc
-argument_list|,
+parameter_list|,
 name|Class
 index|[]
 name|objectClasses
-argument_list|,
-name|final
+parameter_list|,
+specifier|final
 name|Class
 index|[]
 name|proxyRegClasses
-argument_list|,
+parameter_list|,
 name|Object
 name|testService
-argument_list|,
-name|final
+parameter_list|,
+specifier|final
 name|Map
 argument_list|<
 name|ServiceReference
@@ -10526,12 +10513,12 @@ argument_list|,
 name|Object
 argument_list|>
 name|serviceMap
-argument_list|)
+parameter_list|)
 throws|throws
 name|Exception
 block|{
 comment|// A linked hash map to keep iteration order over the keys predictable
-name|final
+specifier|final
 name|LinkedHashMap
 argument_list|<
 name|String
@@ -10539,15 +10526,12 @@ argument_list|,
 name|Class
 argument_list|>
 name|objClsMap
-operator|=
+init|=
 operator|new
 name|LinkedHashMap
 argument_list|<>
 argument_list|()
-expr_stmt|;
-end_expr_stmt
-
-begin_for
+decl_stmt|;
 for|for
 control|(
 name|Class
@@ -10569,13 +10553,7 @@ name|cls
 argument_list|)
 expr_stmt|;
 block|}
-end_for
-
-begin_comment
 comment|// A linked hash map to keep iteration order over the keys predictable
-end_comment
-
-begin_decl_stmt
 specifier|final
 name|LinkedHashMap
 argument_list|<
@@ -10590,9 +10568,6 @@ name|LinkedHashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
-end_decl_stmt
-
-begin_for
 for|for
 control|(
 name|Class
@@ -10614,13 +10589,7 @@ name|cls
 argument_list|)
 expr_stmt|;
 block|}
-end_for
-
-begin_comment
 comment|// Create the object that is actually being tested here
-end_comment
-
-begin_decl_stmt
 name|GuardProxyCatalog
 name|gpc
 init|=
@@ -10630,13 +10599,7 @@ argument_list|(
 name|bc
 argument_list|)
 decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|// The service being proxied has these properties
-end_comment
-
-begin_decl_stmt
 name|long
 name|serviceID
 init|=
@@ -10644,9 +10607,6 @@ name|Long
 operator|.
 name|MAX_VALUE
 decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 specifier|final
 name|Hashtable
 argument_list|<
@@ -10661,9 +10621,6 @@ name|Hashtable
 argument_list|<>
 argument_list|()
 decl_stmt|;
-end_decl_stmt
-
-begin_expr_stmt
 name|serviceProps
 operator|.
 name|put
@@ -10686,9 +10643,6 @@ block|{}
 argument_list|)
 argument_list|)
 expr_stmt|;
-end_expr_stmt
-
-begin_expr_stmt
 name|serviceProps
 operator|.
 name|put
@@ -10700,9 +10654,6 @@ argument_list|,
 name|serviceID
 argument_list|)
 expr_stmt|;
-end_expr_stmt
-
-begin_expr_stmt
 name|serviceProps
 operator|.
 name|put
@@ -10719,13 +10670,7 @@ literal|"everyone"
 argument_list|)
 argument_list|)
 expr_stmt|;
-end_expr_stmt
-
-begin_comment
 comment|// will be overwritten
-end_comment
-
-begin_expr_stmt
 name|serviceProps
 operator|.
 name|put
@@ -10735,13 +10680,7 @@ argument_list|,
 literal|"foo"
 argument_list|)
 expr_stmt|;
-end_expr_stmt
-
-begin_comment
 comment|// The mock bundle context for the bundle providing the service is set up here
-end_comment
-
-begin_decl_stmt
 name|BundleContext
 name|providerBC
 init|=
@@ -10754,13 +10693,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|// These are the expected service properties of the proxy registration. Note the proxy marker...
-end_comment
-
-begin_decl_stmt
 specifier|final
 name|Hashtable
 argument_list|<
@@ -10777,9 +10710,6 @@ argument_list|(
 name|serviceProps
 argument_list|)
 decl_stmt|;
-end_decl_stmt
-
-begin_expr_stmt
 name|expectedProxyProps
 operator|.
 name|put
@@ -10793,13 +10723,7 @@ operator|.
 name|TRUE
 argument_list|)
 expr_stmt|;
-end_expr_stmt
-
-begin_comment
 comment|// This will check that the right proxy is being registered.
-end_comment
-
-begin_expr_stmt
 name|EasyMock
 operator|.
 name|expect
@@ -10986,12 +10910,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-end_expr_stmt
+block|}
+end_function
 
-begin_expr_stmt
-unit|}                      ServiceRegistration
+begin_decl_stmt
+name|ServiceRegistration
 name|reg
-operator|=
+init|=
 name|EasyMock
 operator|.
 name|createMock
@@ -11000,8 +10925,8 @@ name|ServiceRegistration
 operator|.
 name|class
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 name|ServiceReference
