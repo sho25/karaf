@@ -412,14 +412,12 @@ name|SshServer
 operator|.
 name|NIO_WORKERS
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|toString
 argument_list|(
 name|nioWorkers
 argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// welcome banner
