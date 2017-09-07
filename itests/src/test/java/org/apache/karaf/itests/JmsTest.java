@@ -408,6 +408,10 @@ specifier|private
 name|ObjectName
 name|objName
 decl_stmt|;
+specifier|private
+name|String
+name|activemqVersion
+decl_stmt|;
 annotation|@
 name|Configuration
 specifier|public
@@ -514,6 +518,15 @@ argument_list|(
 literal|"org.apache.karaf:type=jms,name=root"
 argument_list|)
 expr_stmt|;
+name|activemqVersion
+operator|=
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"activemq.version"
+argument_list|)
+expr_stmt|;
 block|}
 annotation|@
 name|Test
@@ -571,7 +584,7 @@ name|and
 argument_list|(
 name|containsString
 argument_list|(
-literal|"5.14.4"
+name|activemqVersion
 argument_list|)
 argument_list|)
 argument_list|)
