@@ -381,6 +381,12 @@ name|manageruser
 operator|+
 literal|" viewer"
 operator|+
+literal|";jaas:role-add "
+operator|+
+name|manageruser
+operator|+
+literal|" ssh"
+operator|+
 literal|";jaas:user-add "
 operator|+
 name|vieweruser
@@ -394,6 +400,12 @@ operator|+
 name|vieweruser
 operator|+
 literal|" viewer"
+operator|+
+literal|";jaas:role-add "
+operator|+
+name|vieweruser
+operator|+
+literal|" ssh"
 operator|+
 literal|";jaas:update;jaas:realm-manage --realm=karaf;jaas:user-list\n"
 operator|)
@@ -477,6 +489,12 @@ operator|+
 name|vieweruser
 operator|+
 literal|" viewer"
+operator|+
+literal|";jaas:role-add "
+operator|+
+name|vieweruser
+operator|+
+literal|" ssh"
 operator|+
 literal|";jaas:update;jaas:realm-manage --realm=karaf;jaas:user-list\n"
 operator|)
