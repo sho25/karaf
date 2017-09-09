@@ -199,7 +199,7 @@ literal|"stop"
 argument_list|,
 name|description
 operator|=
-literal|"Start features with the specified name and version."
+literal|"Stop features with the specified name and version."
 argument_list|)
 annotation|@
 name|Service
