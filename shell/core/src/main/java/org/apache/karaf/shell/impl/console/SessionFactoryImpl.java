@@ -673,8 +673,6 @@ literal|"ls"
 block|,
 literal|"less"
 block|,
-literal|"watch"
-block|,
 literal|"nano"
 block|,
 literal|"head"

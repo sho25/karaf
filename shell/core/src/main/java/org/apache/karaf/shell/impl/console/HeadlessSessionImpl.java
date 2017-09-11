@@ -529,6 +529,15 @@ name|session
 operator|.
 name|put
 argument_list|(
+literal|".processor"
+argument_list|,
+name|processor
+argument_list|)
+expr_stmt|;
+name|session
+operator|.
+name|put
+argument_list|(
 literal|".session"
 argument_list|,
 name|this
