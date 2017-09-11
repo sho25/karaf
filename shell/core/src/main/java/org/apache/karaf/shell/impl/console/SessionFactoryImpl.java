@@ -686,6 +686,10 @@ block|,
 literal|"wc"
 block|,
 literal|"date"
+block|,
+literal|"tmux"
+block|,
+literal|"ttop"
 block|}
 control|)
 block|{
