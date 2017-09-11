@@ -233,6 +233,24 @@ name|Session
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|shell
+operator|.
+name|api
+operator|.
+name|console
+operator|.
+name|SessionFactory
+import|;
+end_import
+
 begin_class
 annotation|@
 name|Command
@@ -371,6 +389,11 @@ annotation|@
 name|Reference
 name|Session
 name|session
+decl_stmt|;
+annotation|@
+name|Reference
+name|SessionFactory
+name|sessionFactory
 decl_stmt|;
 annotation|@
 name|Override
@@ -534,6 +557,8 @@ argument_list|(
 operator|new
 name|ScriptJob
 argument_list|(
+name|sessionFactory
+argument_list|,
 name|session
 argument_list|,
 name|script
