@@ -162,6 +162,14 @@ argument_list|,
 name|multiValued
 operator|=
 literal|false
+argument_list|,
+name|censor
+operator|=
+literal|true
+argument_list|,
+name|mask
+operator|=
+literal|'#'
 argument_list|)
 specifier|private
 name|String
