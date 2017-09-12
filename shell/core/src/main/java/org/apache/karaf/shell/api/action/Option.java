@@ -138,6 +138,20 @@ parameter_list|()
 default|default
 name|DEFAULT_STRING
 function_decl|;
+comment|/**      * Censor the argument in the console. Characters will be replaced with {@link Argument#mask()}.      * This is useful for hiding sensitive data like passwords.      *      * @return true if the argument should be censored in the console.      */
+name|boolean
+name|censor
+parameter_list|()
+default|default
+literal|false
+function_decl|;
+comment|/**      * Character to use when censoring the argument in the console.      *      * @return the Character to use when censoring the argument in the console.      */
+name|char
+name|mask
+parameter_list|()
+default|default
+literal|'*'
+function_decl|;
 block|}
 end_annotation_defn
 
