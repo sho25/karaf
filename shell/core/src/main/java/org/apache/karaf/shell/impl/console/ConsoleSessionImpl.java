@@ -2643,6 +2643,9 @@ argument_list|,
 name|getRPrompt
 argument_list|()
 argument_list|,
+operator|(
+name|Character
+operator|)
 literal|null
 argument_list|,
 literal|null
