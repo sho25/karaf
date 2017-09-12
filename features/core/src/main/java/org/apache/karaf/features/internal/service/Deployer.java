@@ -3996,6 +3996,9 @@ name|bundleInfo
 operator|.
 name|isStart
 argument_list|()
+operator|&&
+operator|!
+name|noStart
 condition|)
 block|{
 name|states
