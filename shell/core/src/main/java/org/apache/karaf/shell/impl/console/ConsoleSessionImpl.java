@@ -681,6 +681,18 @@ name|jline
 operator|.
 name|reader
 operator|.
+name|MaskingCallback
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|jline
+operator|.
+name|reader
+operator|.
 name|ParsedLine
 import|;
 end_import
@@ -2644,7 +2656,7 @@ name|getRPrompt
 argument_list|()
 argument_list|,
 operator|(
-name|Character
+name|MaskingCallback
 operator|)
 literal|null
 argument_list|,
