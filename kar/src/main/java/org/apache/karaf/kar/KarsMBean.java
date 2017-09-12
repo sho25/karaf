@@ -64,12 +64,25 @@ argument_list|>
 name|features
 parameter_list|)
 function_decl|;
-comment|/**      * Install a KAR file from the given URL.      *      * @param url the JAR URL.      * @throws MBeanException in case of installation failure.      */
+comment|/**      * Install a KAR file from the given URL.      *      * @param url the KAR URL.      * @throws MBeanException in case of installation failure.      */
 name|void
 name|install
 parameter_list|(
 name|String
 name|url
+parameter_list|)
+throws|throws
+name|MBeanException
+function_decl|;
+comment|/**      * Install a KAR file from a given URL and decide to start or not the bundles.      *      * @param url the KAR URL.      * @param noAutoStartBundles true to not automatically start the bundles, false else.      * @throws MBeanException in case of installation failure.      */
+name|void
+name|install
+parameter_list|(
+name|String
+name|url
+parameter_list|,
+name|boolean
+name|noAutoStartBundles
 parameter_list|)
 throws|throws
 name|MBeanException

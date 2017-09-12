@@ -74,7 +74,20 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Install a kar with manually given repository and       * resource directories.      *       * @param karUri Uri of the kar to be installed      * @param repoDir destination for the repository contents of the kar      * @param resourceDir destination for the resource contents of the kar      * @throws Exception in case of installation failure.      */
+comment|/**      * Install KAR from a given URI      *      * @param karUri URI of the kar to install      * @param noAutoStartBundles true to not start automatically the bundles, false else      * @throws Exception in case of installation failure      */
+name|void
+name|install
+parameter_list|(
+name|URI
+name|karUri
+parameter_list|,
+name|boolean
+name|noAutoStartBundles
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * Install a kar with manually given repository and       * resource directories.      *       * @param karUri Uri of the kar to be installed      * @param repoDir destination for the repository contents of the kar      * @param resourceDir destination for the resource contents of the kar      * @throws Exception in case of installation failure      */
 name|void
 name|install
 parameter_list|(
@@ -86,6 +99,25 @@ name|repoDir
 parameter_list|,
 name|File
 name|resourceDir
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * Install a kar with manually given repository and resource directories.      *      * @param karUri Uri of the kar to be installed.      * @param repoDir destination for the repository contents of the kar      * @param resourceDir destination for the resource contents of the kar      * @param noAutoStartBundles true to not start automatically the bundles, false else      * @throws Exception in case of installation failure      */
+name|void
+name|install
+parameter_list|(
+name|URI
+name|karUri
+parameter_list|,
+name|File
+name|repoDir
+parameter_list|,
+name|File
+name|resourceDir
+parameter_list|,
+name|boolean
+name|noAutoStartBundles
 parameter_list|)
 throws|throws
 name|Exception
