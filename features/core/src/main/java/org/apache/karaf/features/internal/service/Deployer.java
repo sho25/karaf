@@ -4028,17 +4028,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-else|else
-block|{
-comment|// if the bundle is already there, just ignore changing state by feature
-name|states
-operator|.
-name|remove
-argument_list|(
-name|resource
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 comment|// Only keep bundles resources
 name|states
