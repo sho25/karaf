@@ -33,6 +33,8 @@ begin_interface
 specifier|public
 interface|interface
 name|DownloadManager
+extends|extends
+name|AutoCloseable
 block|{
 name|Downloader
 name|createDownloader
@@ -47,6 +49,11 @@ argument_list|>
 name|getProviders
 parameter_list|()
 function_decl|;
+specifier|default
+name|void
+name|close
+parameter_list|()
+block|{     }
 block|}
 end_interface
 

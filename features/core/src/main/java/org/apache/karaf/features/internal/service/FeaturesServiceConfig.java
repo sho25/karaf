@@ -19,6 +19,20 @@ name|service
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|FeaturesService
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -81,9 +95,13 @@ name|this
 argument_list|(
 literal|null
 argument_list|,
-literal|null
+name|FeaturesService
+operator|.
+name|DEFAULT_FEATURE_RESOLUTION_RANGE
 argument_list|,
-literal|null
+name|FeaturesService
+operator|.
+name|DEFAULT_BUNDLE_UPDATE_RANGE
 argument_list|,
 literal|null
 argument_list|,
