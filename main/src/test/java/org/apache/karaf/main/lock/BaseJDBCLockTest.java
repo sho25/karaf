@@ -932,7 +932,7 @@ name|resultSet
 argument_list|)
 expr_stmt|;
 name|boolean
-name|lockAquired
+name|lockAcquired
 init|=
 name|lock
 operator|.
@@ -954,7 +954,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|lockAquired
+name|lockAcquired
 argument_list|)
 expr_stmt|;
 block|}
@@ -1113,7 +1113,7 @@ name|resultSet
 argument_list|)
 expr_stmt|;
 name|boolean
-name|lockAquired
+name|lockAcquired
 init|=
 name|lock
 operator|.
@@ -1135,7 +1135,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|lockAquired
+name|lockAcquired
 argument_list|)
 expr_stmt|;
 block|}
@@ -1294,7 +1294,7 @@ name|resultSet
 argument_list|)
 expr_stmt|;
 name|boolean
-name|lockAquired
+name|lockAcquired
 init|=
 name|lock
 operator|.
@@ -1316,7 +1316,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|lockAquired
+name|lockAcquired
 argument_list|)
 expr_stmt|;
 block|}
@@ -2133,7 +2133,7 @@ name|resultSet
 argument_list|)
 expr_stmt|;
 name|boolean
-name|lockAquired
+name|lockAcquired
 init|=
 name|lock
 operator|.
@@ -2155,7 +2155,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|lockAquired
+name|lockAcquired
 argument_list|)
 expr_stmt|;
 block|}

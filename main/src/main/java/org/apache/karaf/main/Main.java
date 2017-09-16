@@ -1724,7 +1724,7 @@ condition|)
 block|{
 name|lockCallback
 operator|.
-name|lockAquired
+name|lockAcquired
 argument_list|()
 expr_stmt|;
 for|for
@@ -3673,7 +3673,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|lockAquired
+name|lockAcquired
 parameter_list|()
 block|{
 name|LOG

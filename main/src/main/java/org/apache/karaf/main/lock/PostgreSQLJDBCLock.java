@@ -60,7 +60,7 @@ block|}
 annotation|@
 name|Override
 name|boolean
-name|aquireLock
+name|acquireLock
 parameter_list|()
 block|{
 name|this
@@ -72,7 +72,7 @@ expr_stmt|;
 return|return
 name|super
 operator|.
-name|aquireLock
+name|acquireLock
 argument_list|()
 return|;
 block|}

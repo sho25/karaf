@@ -123,7 +123,7 @@ return|return
 name|statements
 return|;
 block|}
-comment|/**      * When we perform an update on a long lived locked table, Oracle will save      * a copy of the transaction in it's UNDO table space. Eventually this can      * cause the UNDO table to become full, disrupting all locks in the DB instance.      * A select query just touches the table, ensuring we can still read the DB but      * doesn't add to the UNDO.       */
+comment|/**      * When we perform an update on a long lived locked table, Oracle will save      * a copy of the transaction in it's UNDO table space. Eventually this can      * cause the UNDO table to become full, disrupting all locks in the DB instance.      * A select query just touches the table, ensuring we can still read the DB but      * doesn't add to the UNDO.      */
 annotation|@
 name|Override
 specifier|public
@@ -132,11 +132,11 @@ name|lock
 parameter_list|()
 block|{
 return|return
-name|aquireLock
+name|acquireLock
 argument_list|()
 return|;
 block|}
-comment|/**      * When we perform an update on a long lived locked table, Oracle will save      * a copy of the transaction in it's UNDO table space. Eventually this can      * cause the UNDO table to become full, disrupting all locks in the DB instance.      * A select query just touches the table, ensuring we can still read the DB but      * doesn't add to the UNDO.       */
+comment|/**      * When we perform an update on a long lived locked table, Oracle will save      * a copy of the transaction in it's UNDO table space. Eventually this can      * cause the UNDO table to become full, disrupting all locks in the DB instance.      * A select query just touches the table, ensuring we can still read the DB but      * doesn't add to the UNDO.      */
 annotation|@
 name|Override
 name|boolean
@@ -144,21 +144,21 @@ name|updateLock
 parameter_list|()
 block|{
 return|return
-name|aquireLock
+name|acquireLock
 argument_list|()
 return|;
 block|}
-comment|/**      * A SELECT FOR UPDATE does not create a database lock when the SELECT FOR UPDATE is performed      * on an empty selection. So a succesfull call to {@link DefaultJDBCLock#aquireLock()} is not sufficient to       * ensure that we are the only one who have acquired the lock.      */
+comment|/**      * A SELECT FOR UPDATE does not create a database lock when the SELECT FOR UPDATE is performed      * on an empty selection. So a succesfull call to {@link DefaultJDBCLock#acquireLock()} is not sufficient to      * ensure that we are the only one who have acquired the lock.      */
 annotation|@
 name|Override
 name|boolean
-name|aquireLock
+name|acquireLock
 parameter_list|()
 block|{
 return|return
 name|super
 operator|.
-name|aquireLock
+name|acquireLock
 argument_list|()
 operator|&&
 name|lockAcquiredOnNonEmptySelection
@@ -185,7 +185,7 @@ init|=
 literal|null
 decl_stmt|;
 name|boolean
-name|lockAquired
+name|lockAcquired
 init|=
 literal|false
 decl_stmt|;
@@ -224,7 +224,7 @@ name|next
 argument_list|()
 condition|)
 block|{
-name|lockAquired
+name|lockAcquired
 operator|=
 name|rs
 operator|.
@@ -272,7 +272,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|lockAquired
+name|lockAcquired
 return|;
 block|}
 block|}
