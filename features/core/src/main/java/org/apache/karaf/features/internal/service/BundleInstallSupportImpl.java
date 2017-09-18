@@ -1742,6 +1742,17 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|// Verify that no other bundles have been installed externally in the mean time
+name|DigraphHelper
+operator|.
+name|verifyUnmanagedBundles
+argument_list|(
+name|systemBundleContext
+argument_list|,
+name|temp
+argument_list|)
+expr_stmt|;
+comment|// Do replace
 name|digraph
 operator|.
 name|replace
