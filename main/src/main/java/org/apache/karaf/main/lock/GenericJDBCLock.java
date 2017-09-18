@@ -1160,7 +1160,7 @@ init|)
 block|{
 comment|// Try to acquire/update the lock state
 name|boolean
-name|lockAquired
+name|lockAcquired
 init|=
 name|acquireLock
 argument_list|(
@@ -1184,7 +1184,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|lockAquired
+name|lockAcquired
 condition|)
 block|{
 name|String
@@ -1294,7 +1294,7 @@ condition|)
 block|{
 comment|// The state was not been updated for more than twice the lock_delay value of the current master...
 comment|// Try to steal the lock....
-name|lockAquired
+name|lockAcquired
 operator|=
 name|acquireLock
 argument_list|(
@@ -1404,7 +1404,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|lockAquired
+name|lockAcquired
 return|;
 block|}
 catch|catch

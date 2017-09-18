@@ -27,7 +27,7 @@ interface|interface
 name|LockCallBack
 block|{
 name|void
-name|lockAquired
+name|lockAcquired
 parameter_list|()
 function_decl|;
 name|void

@@ -676,7 +676,7 @@ block|{
 name|boolean
 name|result
 init|=
-name|aquireLock
+name|acquireLock
 argument_list|()
 decl_stmt|;
 if|if
@@ -695,7 +695,7 @@ name|result
 return|;
 block|}
 name|boolean
-name|aquireLock
+name|acquireLock
 parameter_list|()
 block|{
 name|String
@@ -712,7 +712,7 @@ init|=
 literal|null
 decl_stmt|;
 name|boolean
-name|lockAquired
+name|lockAcquired
 init|=
 literal|false
 decl_stmt|;
@@ -735,7 +735,7 @@ argument_list|(
 name|timeout
 argument_list|)
 expr_stmt|;
-name|lockAquired
+name|lockAcquired
 operator|=
 name|preparedStatement
 operator|.
@@ -771,7 +771,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|lockAquired
+name|lockAcquired
 return|;
 block|}
 name|boolean
