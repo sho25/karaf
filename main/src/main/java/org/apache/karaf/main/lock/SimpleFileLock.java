@@ -312,6 +312,7 @@ throw|;
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|boolean
 name|lock
 parameter_list|()
@@ -430,6 +431,7 @@ literal|null
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|boolean
 name|isAlive
 parameter_list|()
