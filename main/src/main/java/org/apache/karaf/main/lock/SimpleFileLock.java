@@ -381,6 +381,7 @@ literal|null
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|release
 parameter_list|()
