@@ -1796,6 +1796,7 @@ name|wiring
 return|;
 block|}
 specifier|private
+specifier|static
 name|Object
 name|toJson
 parameter_list|(
@@ -1992,6 +1993,7 @@ name|wires
 return|;
 block|}
 specifier|private
+specifier|static
 name|String
 name|toString
 parameter_list|(
@@ -2017,6 +2019,7 @@ argument_list|)
 return|;
 block|}
 specifier|private
+specifier|static
 name|String
 name|toString
 parameter_list|(
@@ -2049,6 +2052,7 @@ argument_list|)
 return|;
 block|}
 specifier|private
+specifier|static
 name|String
 name|toString
 parameter_list|(
@@ -2081,6 +2085,7 @@ argument_list|)
 return|;
 block|}
 specifier|private
+specifier|static
 name|Object
 name|toJson
 parameter_list|(
@@ -2108,17 +2113,9 @@ operator|.
 name|emptyMap
 argument_list|()
 argument_list|,
-operator|new
-name|SimpleFilter
-argument_list|(
-literal|null
-argument_list|,
-literal|null
-argument_list|,
 name|SimpleFilter
 operator|.
-name|MATCH_ALL
-argument_list|)
+name|MATCH_ALL_FILTER
 argument_list|)
 decl_stmt|;
 name|Collection
@@ -2207,6 +2204,7 @@ name|resources
 return|;
 block|}
 specifier|private
+specifier|static
 name|Object
 name|toJson
 parameter_list|(
@@ -2838,7 +2836,7 @@ return|return
 name|bundlesPerRegions
 return|;
 block|}
-comment|/**      *       * @return map of bundles and the region they are deployed in      */
+comment|/**      *      * @return map of bundles and the region they are deployed in      */
 specifier|public
 name|Map
 argument_list|<
@@ -2974,7 +2972,7 @@ return|return
 name|features
 return|;
 block|}
-comment|/**      *       * @param resourceFilter      * @return map from resource to region name      */
+comment|/**      *      * @param resourceFilter      * @return map from resource to region name      */
 specifier|private
 name|Map
 argument_list|<
@@ -3387,6 +3385,7 @@ literal|null
 return|;
 block|}
 specifier|private
+specifier|static
 name|Capability
 name|findMatchingCapability
 parameter_list|(
@@ -3430,6 +3429,7 @@ literal|null
 return|;
 block|}
 specifier|private
+specifier|static
 name|Wire
 name|findMatchingWire
 parameter_list|(
@@ -3481,6 +3481,7 @@ literal|null
 return|;
 block|}
 specifier|private
+specifier|static
 name|SimpleFilter
 name|createFilter
 parameter_list|(
@@ -3630,6 +3631,7 @@ block|}
 block|}
 block|}
 specifier|private
+specifier|static
 name|boolean
 name|isFlat
 parameter_list|(
@@ -3650,9 +3652,11 @@ argument_list|()
 operator|==
 literal|null
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 return|return
 name|subsystem
 operator|.
@@ -3673,6 +3677,7 @@ literal|null
 return|;
 block|}
 specifier|private
+specifier|static
 name|Subsystem
 name|getOrCreateChild
 parameter_list|(
@@ -3830,6 +3835,7 @@ expr_stmt|;
 block|}
 block|}
 specifier|private
+specifier|static
 name|RegionFilterBuilder
 name|createRegionFilterBuilder
 parameter_list|(
