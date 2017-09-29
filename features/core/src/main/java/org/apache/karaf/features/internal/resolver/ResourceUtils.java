@@ -665,7 +665,9 @@ init|=
 operator|new
 name|HashMap
 argument_list|<>
-argument_list|()
+argument_list|(
+literal|1
+argument_list|)
 decl_stmt|;
 name|Map
 argument_list|<
@@ -678,7 +680,9 @@ init|=
 operator|new
 name|HashMap
 argument_list|<>
-argument_list|()
+argument_list|(
+literal|4
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -860,7 +864,9 @@ init|=
 operator|new
 name|HashMap
 argument_list|<>
-argument_list|()
+argument_list|(
+literal|1
+argument_list|)
 decl_stmt|;
 name|dirs
 operator|.
@@ -886,7 +892,9 @@ init|=
 operator|new
 name|HashMap
 argument_list|<>
-argument_list|()
+argument_list|(
+literal|4
+argument_list|)
 decl_stmt|;
 name|attrs
 operator|.
@@ -1003,7 +1011,9 @@ init|=
 operator|new
 name|HashMap
 argument_list|<>
-argument_list|()
+argument_list|(
+literal|4
+argument_list|)
 decl_stmt|;
 name|attrs
 operator|.
@@ -1132,7 +1142,9 @@ init|=
 operator|new
 name|HashMap
 argument_list|<>
-argument_list|()
+argument_list|(
+literal|1
+argument_list|)
 decl_stmt|;
 name|Map
 argument_list|<
@@ -1145,7 +1157,9 @@ init|=
 operator|new
 name|HashMap
 argument_list|<>
-argument_list|()
+argument_list|(
+literal|4
+argument_list|)
 decl_stmt|;
 name|attrs
 operator|.
