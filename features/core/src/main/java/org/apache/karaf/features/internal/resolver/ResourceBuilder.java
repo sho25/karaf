@@ -2224,7 +2224,9 @@ init|=
 operator|new
 name|LinkedHashMap
 argument_list|<>
-argument_list|()
+argument_list|(
+literal|2
+argument_list|)
 decl_stmt|;
 name|dirs
 operator|.
@@ -7092,7 +7094,9 @@ init|=
 operator|new
 name|LinkedHashMap
 argument_list|<>
-argument_list|()
+argument_list|(
+literal|1
+argument_list|)
 decl_stmt|;
 specifier|public
 specifier|final
@@ -7107,7 +7111,9 @@ init|=
 operator|new
 name|LinkedHashMap
 argument_list|<>
-argument_list|()
+argument_list|(
+literal|1
+argument_list|)
 decl_stmt|;
 specifier|public
 specifier|final
@@ -7122,7 +7128,9 @@ init|=
 operator|new
 name|LinkedHashMap
 argument_list|<>
-argument_list|()
+argument_list|(
+literal|1
+argument_list|)
 decl_stmt|;
 block|}
 block|}
