@@ -9417,14 +9417,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|Collections
-operator|.
-name|sort
-argument_list|(
 name|deployment
 operator|.
 name|toInstall
-argument_list|,
+operator|.
+name|sort
+argument_list|(
 operator|new
 name|ResourceComparator
 argument_list|()
