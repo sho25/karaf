@@ -279,10 +279,10 @@ block|{
 specifier|public
 specifier|static
 specifier|final
-name|String
+name|char
 name|VERSION_SEPARATOR
 init|=
-literal|"/"
+literal|'/'
 decl_stmt|;
 specifier|public
 specifier|static
@@ -628,10 +628,7 @@ name|substring
 argument_list|(
 name|idx
 operator|+
-name|VERSION_SEPARATOR
-operator|.
-name|length
-argument_list|()
+literal|1
 argument_list|,
 name|str
 operator|.
