@@ -302,7 +302,7 @@ name|property
 operator|.
 name|endsWith
 argument_list|(
-literal|".file"
+literal|".fileName"
 argument_list|)
 condition|)
 block|{
