@@ -3819,7 +3819,7 @@ name|etcDirectory
 operator|.
 name|resolve
 argument_list|(
-literal|"override.properties"
+literal|"overrides.properties"
 argument_list|)
 decl_stmt|;
 name|List
