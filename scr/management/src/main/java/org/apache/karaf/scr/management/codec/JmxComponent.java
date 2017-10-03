@@ -25,11 +25,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
 name|scr
 operator|.
-name|Component
+name|management
+operator|.
+name|ScrServiceMBean
 import|;
 end_import
 
@@ -45,7 +47,9 @@ name|scr
 operator|.
 name|management
 operator|.
-name|ScrServiceMBean
+name|internal
+operator|.
+name|ScrService
 import|;
 end_import
 
@@ -157,6 +161,16 @@ name|TabularType
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -169,7 +183,7 @@ specifier|static
 name|CompositeType
 name|COMPONENT
 init|=
-name|createComponenetType
+name|createComponentType
 argument_list|()
 decl_stmt|;
 comment|/**      * The TabularType which represents a list of components      */
@@ -190,6 +204,8 @@ decl_stmt|;
 specifier|public
 name|JmxComponent
 parameter_list|(
+name|ScrService
+operator|.
 name|Component
 name|component
 parameter_list|)
@@ -320,8 +336,36 @@ specifier|static
 name|TabularData
 name|tableFrom
 parameter_list|(
+name|ScrService
+operator|.
 name|Component
 modifier|...
+name|components
+parameter_list|)
+block|{
+return|return
+name|tableFrom
+argument_list|(
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|components
+argument_list|)
+argument_list|)
+return|;
+block|}
+specifier|public
+specifier|static
+name|TabularData
+name|tableFrom
+parameter_list|(
+name|Iterable
+argument_list|<
+name|ScrService
+operator|.
+name|Component
+argument_list|>
 name|components
 parameter_list|)
 block|{
@@ -336,6 +380,8 @@ argument_list|)
 decl_stmt|;
 for|for
 control|(
+name|ScrService
+operator|.
 name|Component
 name|component
 range|:
@@ -364,7 +410,7 @@ block|}
 specifier|private
 specifier|static
 name|CompositeType
-name|createComponenetType
+name|createComponentType
 parameter_list|()
 block|{
 try|try
@@ -560,12 +606,14 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns a literal for the {@link Component} state.      * @param component     The target {@link Component}.      * @return      */
+comment|/**      * Returns a literal for the {@link ScrService.Component} state.      * @param component     The target {@link ScrService.Component}.      * @return      */
 specifier|private
 specifier|static
 name|String
 name|getState
 parameter_list|(
+name|ScrService
+operator|.
 name|Component
 name|component
 parameter_list|)
@@ -579,6 +627,8 @@ argument_list|()
 condition|)
 block|{
 case|case
+name|ScrService
+operator|.
 name|Component
 operator|.
 name|STATE_ACTIVE
@@ -587,6 +637,8 @@ return|return
 literal|"Active"
 return|;
 case|case
+name|ScrService
+operator|.
 name|Component
 operator|.
 name|STATE_ACTIVATING
@@ -595,6 +647,8 @@ return|return
 literal|"Activating"
 return|;
 case|case
+name|ScrService
+operator|.
 name|Component
 operator|.
 name|STATE_DEACTIVATING
@@ -603,6 +657,8 @@ return|return
 literal|"Deactivating"
 return|;
 case|case
+name|ScrService
+operator|.
 name|Component
 operator|.
 name|STATE_DISABLED
@@ -611,6 +667,8 @@ return|return
 literal|"Disabled"
 return|;
 case|case
+name|ScrService
+operator|.
 name|Component
 operator|.
 name|STATE_DISABLING
@@ -619,6 +677,8 @@ return|return
 literal|"Disabling"
 return|;
 case|case
+name|ScrService
+operator|.
 name|Component
 operator|.
 name|STATE_DISPOSED
@@ -627,6 +687,8 @@ return|return
 literal|"Disposed"
 return|;
 case|case
+name|ScrService
+operator|.
 name|Component
 operator|.
 name|STATE_DISPOSING
@@ -635,6 +697,8 @@ return|return
 literal|"Disposing"
 return|;
 case|case
+name|ScrService
+operator|.
 name|Component
 operator|.
 name|STATE_ENABLING
@@ -643,6 +707,8 @@ return|return
 literal|"Enabling"
 return|;
 case|case
+name|ScrService
+operator|.
 name|Component
 operator|.
 name|STATE_FACTORY
@@ -651,6 +717,8 @@ return|return
 literal|"Factory"
 return|;
 case|case
+name|ScrService
+operator|.
 name|Component
 operator|.
 name|STATE_REGISTERED
@@ -659,6 +727,8 @@ return|return
 literal|"Registered"
 return|;
 case|case
+name|ScrService
+operator|.
 name|Component
 operator|.
 name|STATE_UNSATISFIED

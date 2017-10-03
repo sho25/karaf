@@ -25,11 +25,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|felix
+name|karaf
 operator|.
 name|scr
 operator|.
-name|Reference
+name|management
+operator|.
+name|ScrServiceMBean
 import|;
 end_import
 
@@ -45,7 +47,9 @@ name|scr
 operator|.
 name|management
 operator|.
-name|ScrServiceMBean
+name|internal
+operator|.
+name|ScrService
 import|;
 end_import
 
@@ -215,6 +219,8 @@ comment|//String[] COMPONENT = { REFERENCE_NAME, REFERENCE_STATE, REFERENCE_CARD
 specifier|public
 name|JmxReference
 parameter_list|(
+name|ScrService
+operator|.
 name|Reference
 name|reference
 parameter_list|)
@@ -345,6 +351,8 @@ specifier|static
 name|TabularData
 name|tableFrom
 parameter_list|(
+name|ScrService
+operator|.
 name|Reference
 modifier|...
 name|references
@@ -368,6 +376,8 @@ condition|)
 block|{
 for|for
 control|(
+name|ScrService
+operator|.
 name|Reference
 name|reference
 range|:
@@ -620,12 +630,14 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns a literal for the {@link Reference} cardinality.      * @param reference     The target {@link Reference}.      * @return              "Multiple" or "Single".      */
+comment|/**      * Returns a literal for the {@link ScrService.Reference} cardinality.      * @param reference     The target {@link ScrService.Reference}.      * @return              "Multiple" or "Single".      */
 specifier|private
 specifier|static
 name|String
 name|getCardinality
 parameter_list|(
+name|ScrService
+operator|.
 name|Reference
 name|reference
 parameter_list|)
@@ -653,12 +665,14 @@ name|REFERENCE_CARDINALITY_SINGLE
 return|;
 block|}
 block|}
-comment|/**      * Returns a literal for the {@link Reference} availability.      * @param reference     The target {@link Reference}.      * @return              "Mandatory" or "Optional".      */
+comment|/**      * Returns a literal for the {@link ScrService.Reference} availability.      * @param reference     The target {@link ScrService.Reference}.      * @return              "Mandatory" or "Optional".      */
 specifier|private
 specifier|static
 name|String
 name|getAvailability
 parameter_list|(
+name|ScrService
+operator|.
 name|Reference
 name|reference
 parameter_list|)
@@ -686,12 +700,14 @@ name|REFERENCE_AVAILABILITY_MANDATORY
 return|;
 block|}
 block|}
-comment|/**      * Returns a literal for the {@link Reference} policy.      * @param reference     The target {@link Reference}.      * @return              "Static" or "Dynamic".      */
+comment|/**      * Returns a literal for the {@link ScrService.Reference} policy.      * @param reference     The target {@link ScrService.Reference}.      * @return              "Static" or "Dynamic".      */
 specifier|private
 specifier|static
 name|String
 name|getPolicy
 parameter_list|(
+name|ScrService
+operator|.
 name|Reference
 name|reference
 parameter_list|)
@@ -719,13 +735,15 @@ name|REFERENCE_POLICY_DYNAMIC
 return|;
 block|}
 block|}
-comment|/**      * Returns The bound service ids.      * @param reference     The target {@link Reference}.      * @return      */
+comment|/**      * Returns The bound service ids.      * @param reference     The target {@link ScrService.Reference}.      * @return      */
 specifier|private
 specifier|static
 name|String
 index|[]
 name|getBoundServices
 parameter_list|(
+name|ScrService
+operator|.
 name|Reference
 name|reference
 parameter_list|)
