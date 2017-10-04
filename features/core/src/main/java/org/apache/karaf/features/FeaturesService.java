@@ -756,6 +756,13 @@ name|String
 name|featureId
 parameter_list|)
 function_decl|;
+name|String
+name|getFeatureXml
+parameter_list|(
+name|Feature
+name|feature
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
