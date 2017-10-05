@@ -190,6 +190,17 @@ name|endsWith
 argument_list|(
 literal|".xml"
 argument_list|)
+operator|&&
+operator|!
+name|artifact
+operator|.
+name|getName
+argument_list|()
+operator|.
+name|startsWith
+argument_list|(
+literal|"maven-metadata"
+argument_list|)
 condition|)
 block|{
 name|Document
