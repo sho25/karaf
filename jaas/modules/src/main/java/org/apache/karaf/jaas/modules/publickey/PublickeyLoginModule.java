@@ -989,7 +989,8 @@ return|return
 literal|true
 return|;
 block|}
-specifier|private
+specifier|public
+specifier|static
 name|String
 name|getString
 parameter_list|(
@@ -1212,6 +1213,7 @@ throw|;
 block|}
 block|}
 specifier|private
+specifier|static
 name|void
 name|write
 parameter_list|(
@@ -1257,6 +1259,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
+specifier|static
 name|void
 name|write
 parameter_list|(
