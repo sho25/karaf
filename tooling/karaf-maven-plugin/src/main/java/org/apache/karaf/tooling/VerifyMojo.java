@@ -3742,10 +3742,21 @@ name|features
 operator|+
 literal|"\nMessage: "
 operator|+
+operator|(
+name|e
+operator|instanceof
+name|ResolutionException
+condition|?
 name|e
 operator|.
 name|getMessage
 argument_list|()
+else|:
+name|e
+operator|.
+name|toString
+argument_list|()
+operator|)
 operator|+
 literal|"\nRepositories: "
 operator|+

@@ -1839,6 +1839,13 @@ condition|(
 name|distance
 operator|!=
 literal|null
+operator|&&
+name|caps
+operator|.
+name|size
+argument_list|()
+operator|>
+literal|1
 condition|)
 block|{
 name|caps
