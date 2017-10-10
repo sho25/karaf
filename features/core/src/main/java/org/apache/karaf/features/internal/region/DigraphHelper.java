@@ -1425,6 +1425,13 @@ name|ROOT_REGION
 argument_list|)
 expr_stmt|;
 block|}
+name|dg
+operator|.
+name|setDefaultRegion
+argument_list|(
+name|defaultRegion
+argument_list|)
+expr_stmt|;
 comment|// Add all unknown bundle to default region
 name|Set
 argument_list|<
