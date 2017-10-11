@@ -151,17 +151,7 @@ argument_list|)
 expr_stmt|;
 name|assertFeatureInstalled
 argument_list|(
-literal|"aries-blueprint"
-argument_list|)
-expr_stmt|;
-name|assertFeatureInstalled
-argument_list|(
 literal|"shell"
-argument_list|)
-expr_stmt|;
-name|assertFeatureInstalled
-argument_list|(
-literal|"shell-compat"
 argument_list|)
 expr_stmt|;
 name|assertFeatureInstalled

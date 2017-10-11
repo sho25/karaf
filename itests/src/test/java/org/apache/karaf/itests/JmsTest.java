@@ -471,6 +471,8 @@ argument_list|,
 literal|"jms"
 argument_list|,
 literal|"activemq-broker-noweb"
+argument_list|,
+literal|"shell-compat"
 argument_list|)
 block|}
 return|;

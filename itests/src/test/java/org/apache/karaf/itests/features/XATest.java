@@ -565,6 +565,8 @@ literal|"pax-jdbc-pool-transx"
 argument_list|,
 literal|"jdbc"
 argument_list|,
+literal|"shell-compat"
+argument_list|,
 literal|"camel-blueprint"
 argument_list|,
 literal|"camel-spring"
