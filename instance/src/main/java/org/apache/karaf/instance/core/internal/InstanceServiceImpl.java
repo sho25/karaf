@@ -3292,56 +3292,53 @@ argument_list|)
 expr_stmt|;
 block|}
 name|String
-name|command
-init|=
-literal|"\""
-operator|+
-operator|new
-name|File
-argument_list|(
+name|jdkOpts
+decl_stmt|;
+if|if
+condition|(
+operator|!
 name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"java.home"
-argument_list|)
-argument_list|,
-name|ScriptUtils
-operator|.
-name|isWindows
-argument_list|()
-condition|?
-literal|"bin\\java.exe"
-else|:
-literal|"bin/java"
+literal|"java.version"
 argument_list|)
 operator|.
-name|getCanonicalPath
-argument_list|()
-operator|+
-literal|"\" "
-operator|+
-name|opts
-operator|+
-literal|" "
-operator|+
-name|karafOpts
-operator|+
-literal|" -Djava.util.logging.config.file=\""
-operator|+
-operator|new
-name|File
+name|startsWith
 argument_list|(
-name|location
-argument_list|,
-literal|"etc/java.util.logging.properties"
+literal|"1."
 argument_list|)
-operator|.
-name|getCanonicalPath
-argument_list|()
+condition|)
+block|{
+name|jdkOpts
+operator|=
+literal|" --add-opens java.base/java.security=ALL-UNNAMED"
 operator|+
-literal|"\""
+literal|" --add-opens java.base/java.net=ALL-UNNAMED"
 operator|+
+literal|" --add-opens java.base/java.lang=ALL-UNNAMED"
+operator|+
+literal|" --add-opens java.base/java.util=ALL-UNNAMED"
+operator|+
+literal|" --add-exports=java.base/sun.net.www.protocol.http=ALL-UNNAMED"
+operator|+
+literal|" --add-exports=java.base/sun.net.www.protocol.https=ALL-UNNAMED"
+operator|+
+literal|" --add-exports=java.base/sun.net.www.protocol.jar=ALL-UNNAMED"
+operator|+
+literal|" --add-exports=java.xml.bind/com.sun.xml.internal.bind.v2.runtime=ALL-UNNAMED"
+operator|+
+literal|" --add-exports=jdk.xml.dom/org.w3c.dom.html=ALL-UNNAMED"
+operator|+
+literal|" --add-exports=jdk.naming.rmi/com.sun.jndi.url.rmi=ALL-UNNAMED"
+operator|+
+literal|" --add-modules java.xml.ws.annotation,java.corba,java.transaction,java.xml.bind,java.xml.ws"
+expr_stmt|;
+block|}
+else|else
+block|{
+name|jdkOpts
+operator|=
 literal|" -Djava.endorsed.dirs=\""
 operator|+
 operator|new
@@ -3481,6 +3478,62 @@ argument_list|(
 name|libDir
 argument_list|,
 literal|"ext"
+argument_list|)
+operator|.
+name|getCanonicalPath
+argument_list|()
+operator|+
+literal|"\""
+expr_stmt|;
+block|}
+name|String
+name|command
+init|=
+literal|"\""
+operator|+
+operator|new
+name|File
+argument_list|(
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"java.home"
+argument_list|)
+argument_list|,
+name|ScriptUtils
+operator|.
+name|isWindows
+argument_list|()
+condition|?
+literal|"bin\\java.exe"
+else|:
+literal|"bin/java"
+argument_list|)
+operator|.
+name|getCanonicalPath
+argument_list|()
+operator|+
+literal|"\" "
+operator|+
+name|opts
+operator|+
+literal|" "
+operator|+
+name|karafOpts
+operator|+
+literal|" "
+operator|+
+name|jdkOpts
+operator|+
+literal|" -Djava.util.logging.config.file=\""
+operator|+
+operator|new
+name|File
+argument_list|(
+name|location
+argument_list|,
+literal|"etc/java.util.logging.properties"
 argument_list|)
 operator|.
 name|getCanonicalPath
