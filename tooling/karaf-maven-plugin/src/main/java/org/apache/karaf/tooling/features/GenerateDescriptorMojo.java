@@ -1386,8 +1386,8 @@ argument_list|,
 name|outputFile
 argument_list|)
 expr_stmt|;
-block|}
 return|return;
+block|}
 block|}
 name|this
 operator|.
