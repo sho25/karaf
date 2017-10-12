@@ -265,6 +265,8 @@ index|]
 decl_stmt|;
 name|int
 name|length
+init|=
+literal|0
 decl_stmt|;
 try|try
 block|{
@@ -406,6 +408,10 @@ operator|=
 name|this
 operator|.
 name|finish
+operator|||
+name|length
+operator|<
+literal|0
 expr_stmt|;
 block|}
 if|if

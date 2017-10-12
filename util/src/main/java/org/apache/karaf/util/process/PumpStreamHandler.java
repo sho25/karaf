@@ -840,13 +840,7 @@ argument_list|,
 name|closeWhenExhausted
 argument_list|)
 decl_stmt|;
-name|pumper
-operator|.
-name|setNonBlocking
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
+comment|//        pumper.setNonBlocking(true);
 name|pumper
 operator|.
 name|setAutoflush
