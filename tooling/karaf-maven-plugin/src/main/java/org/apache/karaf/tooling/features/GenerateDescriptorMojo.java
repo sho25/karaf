@@ -1310,7 +1310,6 @@ argument_list|()
 decl_stmt|;
 name|enableGeneration
 operator|=
-operator|!
 literal|"feature"
 operator|.
 name|equals
@@ -1386,8 +1385,8 @@ argument_list|,
 name|outputFile
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
+return|return;
 block|}
 name|this
 operator|.
