@@ -8278,6 +8278,15 @@ name|print
 argument_list|(
 literal|"    "
 operator|+
+name|ResourceUtils
+operator|.
+name|getType
+argument_list|(
+name|r
+argument_list|)
+operator|+
+literal|": "
+operator|+
 name|ResolverUtil
 operator|.
 name|getSymbolicName
@@ -8313,6 +8322,15 @@ block|{
 name|print
 argument_list|(
 literal|"        "
+operator|+
+name|ResourceUtils
+operator|.
+name|getType
+argument_list|(
+name|w
+argument_list|)
+operator|+
+literal|": "
 operator|+
 name|ResolverUtil
 operator|.
