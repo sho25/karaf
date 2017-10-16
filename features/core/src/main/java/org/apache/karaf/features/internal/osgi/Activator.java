@@ -1156,6 +1156,15 @@ argument_list|(
 name|bundleContext
 argument_list|)
 decl_stmt|;
+name|DigraphHelper
+operator|.
+name|verifyUnmanagedBundles
+argument_list|(
+name|bundleContext
+argument_list|,
+name|dg
+argument_list|)
+expr_stmt|;
 name|registerRegionDiGraph
 argument_list|(
 name|dg
