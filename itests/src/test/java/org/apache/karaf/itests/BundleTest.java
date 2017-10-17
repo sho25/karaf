@@ -75,6 +75,40 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|bundle
+operator|.
+name|core
+operator|.
+name|BundleService
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|jaas
+operator|.
+name|boot
+operator|.
+name|principal
+operator|.
+name|RolePrincipal
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|junit
 operator|.
 name|Test
@@ -174,10 +208,39 @@ name|class
 argument_list|)
 specifier|public
 class|class
-name|BundleTests
+name|BundleTest
 extends|extends
 name|KarafTestSupport
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|RolePrincipal
+index|[]
+name|ADMIN_ROLES
+init|=
+block|{
+operator|new
+name|RolePrincipal
+argument_list|(
+name|BundleService
+operator|.
+name|SYSTEM_BUNDLES_ROLE
+argument_list|)
+block|,
+operator|new
+name|RolePrincipal
+argument_list|(
+literal|"admin"
+argument_list|)
+block|,
+operator|new
+name|RolePrincipal
+argument_list|(
+literal|"manager"
+argument_list|)
+block|}
+decl_stmt|;
 annotation|@
 name|Test
 specifier|public
@@ -193,6 +256,8 @@ init|=
 name|executeCommand
 argument_list|(
 literal|"bundle:list -t 0"
+argument_list|,
+name|ADMIN_ROLES
 argument_list|)
 decl_stmt|;
 name|System
@@ -280,6 +345,8 @@ init|=
 name|executeCommand
 argument_list|(
 literal|"bundle:capabilities"
+argument_list|,
+name|ADMIN_ROLES
 argument_list|)
 decl_stmt|;
 name|System
@@ -305,6 +372,8 @@ init|=
 name|executeCommand
 argument_list|(
 literal|"bundle:capabilities org.apache.aries.jmx.whiteboard"
+argument_list|,
+name|ADMIN_ROLES
 argument_list|)
 decl_stmt|;
 name|System
@@ -322,7 +391,7 @@ name|jmxWhiteboardBundleCapabilitiesOutput
 operator|.
 name|contains
 argument_list|(
-literal|"osgi.wiring.bundle; org.apache.aries.jmx.whiteboard 1.0.0 [UNUSED]"
+literal|"osgi.wiring.bundle; org.apache.aries.jmx.whiteboard 1.1.5 [UNUSED]"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -342,6 +411,8 @@ init|=
 name|executeCommand
 argument_list|(
 literal|"bundle:classes"
+argument_list|,
+name|ADMIN_ROLES
 argument_list|)
 decl_stmt|;
 name|assertFalse
@@ -358,6 +429,8 @@ init|=
 name|executeCommand
 argument_list|(
 literal|"bundle:classes org.apache.aries.jmx.whiteboard"
+argument_list|,
+name|ADMIN_ROLES
 argument_list|)
 decl_stmt|;
 name|System
@@ -457,6 +530,8 @@ init|=
 name|executeCommand
 argument_list|(
 literal|"bundle:headers org.apache.aries.jmx.whiteboard"
+argument_list|,
+name|ADMIN_ROLES
 argument_list|)
 decl_stmt|;
 name|System
@@ -494,6 +569,8 @@ init|=
 name|executeCommand
 argument_list|(
 literal|"bundle:info org.apache.karaf.management.server"
+argument_list|,
+name|ADMIN_ROLES
 argument_list|)
 decl_stmt|;
 name|System
@@ -528,6 +605,8 @@ block|{
 name|executeCommand
 argument_list|(
 literal|"bundle:install mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-lang/2.4_6"
+argument_list|,
+name|ADMIN_ROLES
 argument_list|)
 expr_stmt|;
 name|assertBundleInstalled
@@ -538,6 +617,8 @@ expr_stmt|;
 name|executeCommand
 argument_list|(
 literal|"bundle:uninstall org.apache.servicemix.bundles.commons-lang"
+argument_list|,
+name|ADMIN_ROLES
 argument_list|)
 expr_stmt|;
 name|assertBundleNotInstalled
@@ -561,6 +642,8 @@ init|=
 name|executeCommand
 argument_list|(
 literal|"bundle:tree-show org.apache.karaf.management.server"
+argument_list|,
+name|ADMIN_ROLES
 argument_list|)
 decl_stmt|;
 name|System
@@ -596,6 +679,8 @@ init|=
 name|executeCommand
 argument_list|(
 literal|"bundle:status org.apache.karaf.management.server"
+argument_list|,
+name|ADMIN_ROLES
 argument_list|)
 decl_stmt|;
 name|System

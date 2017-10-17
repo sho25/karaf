@@ -1793,9 +1793,15 @@ parameter_list|()
 block|{
 return|return
 name|terminal
+operator|!=
+literal|null
+condition|?
+name|terminal
 operator|.
 name|getWidth
 argument_list|()
+else|:
+literal|0
 return|;
 block|}
 specifier|protected
