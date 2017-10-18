@@ -1351,7 +1351,7 @@ return|return;
 block|}
 block|}
 block|}
-comment|// nobody is using this group any more, remote it
+comment|// nobody is using this group any more, remove it
 name|deleteUser
 argument_list|(
 name|GROUP_PREFIX
