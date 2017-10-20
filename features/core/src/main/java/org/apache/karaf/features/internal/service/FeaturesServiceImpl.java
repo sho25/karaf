@@ -6280,6 +6280,13 @@ argument_list|(
 name|cfg
 operator|.
 name|downloadThreads
+argument_list|,
+name|ThreadUtils
+operator|.
+name|namedThreadFactory
+argument_list|(
+literal|"downloader"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|executor
