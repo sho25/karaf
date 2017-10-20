@@ -394,6 +394,10 @@ name|FrameworkInfo
 name|getInfo
 parameter_list|()
 function_decl|;
+name|void
+name|unregister
+parameter_list|()
+function_decl|;
 class|class
 name|FrameworkInfo
 block|{

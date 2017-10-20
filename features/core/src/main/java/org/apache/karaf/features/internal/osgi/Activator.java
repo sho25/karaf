@@ -2341,6 +2341,11 @@ condition|)
 block|{
 name|installSupport
 operator|.
+name|unregister
+argument_list|()
+expr_stmt|;
+name|installSupport
+operator|.
 name|saveDigraph
 argument_list|()
 expr_stmt|;
