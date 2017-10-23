@@ -589,22 +589,6 @@ throw|throw
 name|ex
 throw|;
 block|}
-else|else
-block|{
-name|System
-operator|.
-name|err
-operator|.
-name|println
-argument_list|(
-literal|"WARN: "
-operator|+
-name|configPropURL
-operator|+
-literal|" is not found, so not loaded"
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 catch|catch
 parameter_list|(
