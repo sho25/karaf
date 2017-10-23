@@ -1191,7 +1191,7 @@ name|console
 operator|.
 name|readLine
 argument_list|(
-literal|"Enter user : "
+literal|"Enter user: "
 argument_list|)
 decl_stmt|;
 if|if
