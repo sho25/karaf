@@ -19,11 +19,17 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Dictionary
+name|felix
+operator|.
+name|utils
+operator|.
+name|properties
+operator|.
+name|TypedProperties
 import|;
 end_import
 
@@ -134,17 +140,12 @@ name|String
 name|prop
 decl_stmt|;
 annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"rawtypes"
-argument_list|)
-annotation|@
 name|Override
 specifier|public
 name|void
 name|propertyAction
 parameter_list|(
-name|Dictionary
+name|TypedProperties
 name|props
 parameter_list|)
 block|{

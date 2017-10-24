@@ -29,11 +29,17 @@ end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Dictionary
+name|felix
+operator|.
+name|utils
+operator|.
+name|properties
+operator|.
+name|TypedProperties
 import|;
 end_import
 
@@ -193,12 +199,7 @@ argument_list|(
 literal|"rawtypes"
 argument_list|)
 specifier|protected
-name|Dictionary
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+name|TypedProperties
 name|getEditedProps
 parameter_list|()
 throws|throws
@@ -206,7 +207,7 @@ name|Exception
 block|{
 return|return
 operator|(
-name|Dictionary
+name|TypedProperties
 operator|)
 name|this
 operator|.

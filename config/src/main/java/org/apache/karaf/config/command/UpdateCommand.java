@@ -19,11 +19,17 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Dictionary
+name|felix
+operator|.
+name|utils
+operator|.
+name|properties
+operator|.
+name|TypedProperties
 import|;
 end_import
 
@@ -107,7 +113,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Dictionary
+name|TypedProperties
 name|props
 init|=
 name|getEditedProps

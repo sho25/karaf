@@ -410,6 +410,10 @@ name|Assert
 operator|.
 name|assertTrue
 argument_list|(
+literal|"Result should contain 'x = yz': "
+operator|+
+name|result
+argument_list|,
 name|result
 operator|.
 name|contains
@@ -422,6 +426,10 @@ name|Assert
 operator|.
 name|assertTrue
 argument_list|(
+literal|"Result should contain 'a = b': "
+operator|+
+name|result
+argument_list|,
 name|result
 operator|.
 name|contains
@@ -458,6 +466,10 @@ name|Assert
 operator|.
 name|assertTrue
 argument_list|(
+literal|"Result should contain 'x = yz': "
+operator|+
+name|result2
+argument_list|,
 name|result2
 operator|.
 name|contains
@@ -470,6 +482,10 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
+literal|"Result should contain 'a = b': "
+operator|+
+name|result2
+argument_list|,
 name|result2
 operator|.
 name|contains

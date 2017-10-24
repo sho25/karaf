@@ -19,11 +19,17 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Dictionary
+name|felix
+operator|.
+name|utils
+operator|.
+name|properties
+operator|.
+name|TypedProperties
 import|;
 end_import
 
@@ -251,7 +257,7 @@ block|{}
 argument_list|,
 name|description
 operator|=
-literal|"Define this config as a factory config. Will be crearted on calling update"
+literal|"Define this config as a factory config. Will be created on calling update"
 argument_list|,
 name|required
 operator|=
@@ -467,14 +473,14 @@ literal|"The --alias only works in case of a factory configuration. Add the --fa
 argument_list|)
 expr_stmt|;
 block|}
-name|Dictionary
+name|TypedProperties
 name|props
 init|=
 name|this
 operator|.
 name|configRepository
 operator|.
-name|getConfigProperties
+name|getConfig
 argument_list|(
 name|pid
 argument_list|)

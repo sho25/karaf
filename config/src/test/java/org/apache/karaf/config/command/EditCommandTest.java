@@ -53,6 +53,22 @@ name|org
 operator|.
 name|apache
 operator|.
+name|felix
+operator|.
+name|utils
+operator|.
+name|properties
+operator|.
+name|TypedProperties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|karaf
 operator|.
 name|config
@@ -326,7 +342,7 @@ name|PROPERTY_CONFIG_PID
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|assertSame
+name|assertEquals
 argument_list|(
 literal|"The Dictionary returned by the ConfigAdmin service should be set on the session"
 argument_list|,
@@ -434,11 +450,11 @@ name|PROPERTY_CONFIG_PID
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Dictionary
+name|TypedProperties
 name|props
 init|=
 operator|(
-name|Dictionary
+name|TypedProperties
 operator|)
 name|session
 operator|.

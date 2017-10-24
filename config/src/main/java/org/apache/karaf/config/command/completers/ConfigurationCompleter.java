@@ -421,6 +421,8 @@ name|config
 operator|.
 name|getPid
 argument_list|()
+operator|+
+literal|" "
 argument_list|)
 expr_stmt|;
 block|}
@@ -517,6 +519,8 @@ operator|.
 name|remove
 argument_list|(
 name|pid
+operator|+
+literal|" "
 argument_list|)
 expr_stmt|;
 block|}
@@ -541,6 +545,8 @@ operator|.
 name|add
 argument_list|(
 name|pid
+operator|+
+literal|" "
 argument_list|)
 expr_stmt|;
 block|}
