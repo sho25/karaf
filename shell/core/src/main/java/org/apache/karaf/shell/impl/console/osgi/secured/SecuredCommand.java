@@ -301,9 +301,11 @@ name|factory
 operator|.
 name|checkSecurity
 argument_list|(
-name|this
+name|getScope
+argument_list|()
 argument_list|,
-name|session
+name|getName
+argument_list|()
 argument_list|,
 name|arguments
 argument_list|)
