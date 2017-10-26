@@ -221,8 +221,6 @@ operator|.
 name|add
 argument_list|(
 name|connectionFactory
-operator|+
-literal|" "
 argument_list|)
 expr_stmt|;
 block|}

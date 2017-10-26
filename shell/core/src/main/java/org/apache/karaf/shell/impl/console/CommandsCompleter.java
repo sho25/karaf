@@ -714,12 +714,12 @@ argument_list|(
 operator|new
 name|StringsCompleter
 argument_list|(
-operator|new
-name|String
-index|[]
-block|{
+name|Collections
+operator|.
+name|singletonList
+argument_list|(
 literal|"exit"
-block|}
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
