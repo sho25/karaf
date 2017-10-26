@@ -385,14 +385,11 @@ argument_list|(
 name|jmxWhiteboardBundleCapabilitiesOutput
 argument_list|)
 expr_stmt|;
-name|assertTrue
-argument_list|(
-name|jmxWhiteboardBundleCapabilitiesOutput
-operator|.
-name|contains
+name|assertContains
 argument_list|(
 literal|"osgi.wiring.bundle; org.apache.aries.jmx.whiteboard 1.1.5 [UNUSED]"
-argument_list|)
+argument_list|,
+name|jmxWhiteboardBundleCapabilitiesOutput
 argument_list|)
 expr_stmt|;
 block|}
@@ -442,14 +439,11 @@ argument_list|(
 name|jmxWhiteboardBundleClassesOutput
 argument_list|)
 expr_stmt|;
-name|assertTrue
-argument_list|(
-name|jmxWhiteboardBundleClassesOutput
-operator|.
-name|contains
+name|assertContains
 argument_list|(
 literal|"org/apache/aries/jmx/whiteboard/Activator$MBeanTracker.class"
-argument_list|)
+argument_list|,
+name|jmxWhiteboardBundleClassesOutput
 argument_list|)
 expr_stmt|;
 block|}
@@ -543,14 +537,11 @@ argument_list|(
 name|headersOutput
 argument_list|)
 expr_stmt|;
-name|assertTrue
-argument_list|(
-name|headersOutput
-operator|.
-name|contains
+name|assertContains
 argument_list|(
 literal|"Bundle-Activator = org.apache.aries.jmx.whiteboard.Activator"
-argument_list|)
+argument_list|,
+name|headersOutput
 argument_list|)
 expr_stmt|;
 block|}
@@ -582,14 +573,11 @@ argument_list|(
 name|infoOutput
 argument_list|)
 expr_stmt|;
-name|assertTrue
-argument_list|(
-name|infoOutput
-operator|.
-name|contains
+name|assertContains
 argument_list|(
 literal|"This bundle starts the Karaf embedded MBean server"
-argument_list|)
+argument_list|,
+name|infoOutput
 argument_list|)
 expr_stmt|;
 block|}

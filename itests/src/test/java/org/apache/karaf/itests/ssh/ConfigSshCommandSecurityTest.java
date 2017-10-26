@@ -406,36 +406,11 @@ operator|.
 name|OK
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
-name|assertTrue
-argument_list|(
-literal|"Result should contain 'x = yz': "
-operator|+
-name|result
-argument_list|,
-name|result
-operator|.
-name|contains
-argument_list|(
-literal|"x = yz"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|Assert
-operator|.
-name|assertTrue
-argument_list|(
-literal|"Result should contain 'a = b': "
-operator|+
-name|result
-argument_list|,
-name|result
-operator|.
-name|contains
+name|assertContains
 argument_list|(
 literal|"a = b"
-argument_list|)
+argument_list|,
+name|result
 argument_list|)
 expr_stmt|;
 name|String
@@ -462,36 +437,18 @@ operator|.
 name|OK
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
-name|assertTrue
-argument_list|(
-literal|"Result should contain 'x = yz': "
-operator|+
-name|result2
-argument_list|,
-name|result2
-operator|.
-name|contains
+name|assertContains
 argument_list|(
 literal|"x = yz"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|Assert
-operator|.
-name|assertFalse
-argument_list|(
-literal|"Result should contain 'a = b': "
-operator|+
-name|result2
 argument_list|,
 name|result2
-operator|.
-name|contains
+argument_list|)
+expr_stmt|;
+name|assertContainsNot
 argument_list|(
 literal|"a = b"
-argument_list|)
+argument_list|,
+name|result2
 argument_list|)
 expr_stmt|;
 if|if
@@ -532,28 +489,18 @@ operator|.
 name|OK
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
-name|assertFalse
-argument_list|(
-name|result3
-operator|.
-name|contains
+name|assertContainsNot
 argument_list|(
 literal|"x = yz"
-argument_list|)
+argument_list|,
+name|result3
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
-name|assertFalse
-argument_list|(
-name|result3
-operator|.
-name|contains
+name|assertContainsNot
 argument_list|(
 literal|"a = b"
-argument_list|)
+argument_list|,
+name|result3
 argument_list|)
 expr_stmt|;
 block|}
@@ -592,30 +539,18 @@ operator|.
 name|OK
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
-name|assertTrue
-argument_list|(
-literal|"The delete command should have had no effect"
-argument_list|,
-name|result3
-operator|.
-name|contains
+name|assertContains
 argument_list|(
 literal|"x = yz"
-argument_list|)
+argument_list|,
+name|result3
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
-name|assertFalse
-argument_list|(
-name|result3
-operator|.
-name|contains
+name|assertContainsNot
 argument_list|(
 literal|"a = b"
-argument_list|)
+argument_list|,
+name|result3
 argument_list|)
 expr_stmt|;
 block|}
@@ -889,10 +824,10 @@ operator|.
 name|OK
 condition|)
 block|{
-name|Assert
-operator|.
-name|assertTrue
+name|assertContains
 argument_list|(
+literal|"a.b.c = d.e.f.g.h"
+argument_list|,
 name|assertCommand
 argument_list|(
 name|user
@@ -904,11 +839,6 @@ argument_list|,
 name|Result
 operator|.
 name|OK
-argument_list|)
-operator|.
-name|contains
-argument_list|(
-literal|"a.b.c = d.e.f.g.h"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -935,10 +865,10 @@ operator|.
 name|OK
 condition|)
 block|{
-name|Assert
-operator|.
-name|assertFalse
+name|assertContainsNot
 argument_list|(
+literal|"a.b.c"
+argument_list|,
 name|assertCommand
 argument_list|(
 name|user
@@ -950,11 +880,6 @@ argument_list|,
 name|Result
 operator|.
 name|OK
-argument_list|)
-operator|.
-name|contains
-argument_list|(
-literal|"a.b.c"
 argument_list|)
 argument_list|)
 expr_stmt|;
