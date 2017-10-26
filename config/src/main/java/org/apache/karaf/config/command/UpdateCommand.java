@@ -132,7 +132,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"No configuration is being edited--run the edit command first"
+literal|"No configuration is being edited. Run the edit command first."
 argument_list|)
 expr_stmt|;
 return|return
