@@ -315,6 +315,12 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+specifier|final
+name|String
+name|finalLocation
+init|=
+name|location
+decl_stmt|;
 name|downloader
 operator|.
 name|download
@@ -338,7 +344,7 @@ name|blacklist
 operator|.
 name|isBundleBlacklisted
 argument_list|(
-name|uri
+name|finalLocation
 argument_list|)
 condition|)
 block|{
@@ -348,7 +354,7 @@ name|RuntimeException
 argument_list|(
 literal|"Bundle "
 operator|+
-name|uri
+name|finalLocation
 operator|+
 literal|" is blacklisted"
 argument_list|)
@@ -361,7 +367,7 @@ name|pathFromProviderUrl
 argument_list|(
 name|systemDirectory
 argument_list|,
-name|uri
+name|finalLocation
 argument_list|)
 decl_stmt|;
 synchronized|synchronized
