@@ -875,7 +875,7 @@ literal|null
 condition|?
 name|objFilter
 else|:
-literal|"&("
+literal|"(&"
 operator|+
 name|nameFilter
 operator|+
