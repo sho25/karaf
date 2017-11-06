@@ -33,6 +33,8 @@ begin_interface
 specifier|public
 interface|interface
 name|Feature
+extends|extends
+name|Blacklisting
 block|{
 name|String
 name|DEFAULT_INSTALL_MODE

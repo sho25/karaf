@@ -925,7 +925,7 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-literal|"mvn:org.apache.karaf.admin/org.apache.karaf.admin.command/2.3.0.redhat-61033X"
+literal|"mvn:org.apache.karaf.admin/org.apache.karaf.admin.command/2.3.0.61033X"
 argument_list|)
 condition|)
 block|{
@@ -943,7 +943,7 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-literal|"mvn:org.apache.karaf.admin/org.apache.karaf.admin.core/2.3.0.redhat-61033X"
+literal|"mvn:org.apache.karaf.admin/org.apache.karaf.admin.core/2.3.0.61033X"
 argument_list|)
 condition|)
 block|{

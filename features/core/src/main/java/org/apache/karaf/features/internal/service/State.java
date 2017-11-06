@@ -91,6 +91,10 @@ name|MapUtils
 import|;
 end_import
 
+begin_comment
+comment|/**  *<p>Representation of the state of system from the point of view of<em>requirements</em>.  * It's a collection of:<ul>  *<li>used repositories</li>  *<li>region -&gt; requirements</li>  *<li>region -&gt; installed features</li>  *<li>region -&gt; installed features -&gt; state of feature installation</li>  *<li>region -&gt; bundle ids</li>  *<li>bundle id -&gt; checksum</li>  *</ul></p>  *<p>State is replaced (swapped) after uninstalling/updating/installing all the bundles as requested, but  * before resolving/refreshing them.</p>  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -118,7 +122,7 @@ name|TreeSet
 argument_list|<>
 argument_list|()
 decl_stmt|;
-comment|// Map from region name to Set of feature requirements (name/version range)
+comment|/** Map from region name to Set of feature requirements (name/version range) */
 specifier|public
 specifier|final
 name|Map
@@ -137,7 +141,7 @@ name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
-comment|// Map from region name to Set of feature id (name/version)
+comment|/** Map from region name to Set of feature id (name/version) */
 specifier|public
 specifier|final
 name|Map
@@ -156,7 +160,7 @@ name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
-comment|// State of features by region and feature id (name/version)
+comment|/** State of features by region and feature id (name/version) */
 specifier|public
 specifier|final
 name|Map
@@ -177,6 +181,7 @@ name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
+comment|/** Map from region name to Set of installed bundle ids */
 specifier|public
 specifier|final
 name|Map
@@ -195,6 +200,7 @@ name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
+comment|/** Map from bundle id to bundle's java.util.zip.CRC32 */
 specifier|public
 specifier|final
 name|Map

@@ -23,9 +23,15 @@ begin_interface
 specifier|public
 interface|interface
 name|BundleInfo
+extends|extends
+name|Blacklisting
 block|{
 name|String
 name|getLocation
+parameter_list|()
+function_decl|;
+name|String
+name|getOriginalLocation
 parameter_list|()
 function_decl|;
 name|int
@@ -38,6 +44,10 @@ parameter_list|()
 function_decl|;
 name|boolean
 name|isDependency
+parameter_list|()
+function_decl|;
+name|boolean
+name|isOverriden
 parameter_list|()
 function_decl|;
 block|}

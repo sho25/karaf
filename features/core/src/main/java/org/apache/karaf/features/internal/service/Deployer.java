@@ -1642,27 +1642,33 @@ name|missing
 return|;
 block|}
 block|}
+comment|/**      *<p>Representation of the state of system from the point of view of<em>bundles</em> and<em>features</em></p>      */
 specifier|public
 specifier|static
 class|class
 name|DeploymentState
 block|{
+comment|/** Current {@link State} of system */
 specifier|public
 name|State
 name|state
 decl_stmt|;
+comment|/** A {@link Bundle} providing {@link FeaturesService} */
 specifier|public
 name|Bundle
 name|serviceBundle
 decl_stmt|;
+comment|/** {@link org.osgi.framework.startlevel.FrameworkStartLevel#getInitialBundleStartLevel()} */
 specifier|public
 name|int
 name|initialBundleStartLevel
 decl_stmt|;
+comment|/** {@link org.osgi.framework.startlevel.FrameworkStartLevel#getStartLevel()} */
 specifier|public
 name|int
 name|currentStartLevel
 decl_stmt|;
+comment|/** bundle-id -&gt; bundle for all currently installed bundles */
 specifier|public
 name|Map
 argument_list|<
@@ -1672,6 +1678,7 @@ name|Bundle
 argument_list|>
 name|bundles
 decl_stmt|;
+comment|/** feature-name/feature-id -&gt; feature for all available features (not only installed) */
 specifier|public
 name|Map
 argument_list|<
@@ -1681,6 +1688,7 @@ name|Feature
 argument_list|>
 name|features
 decl_stmt|;
+comment|/** region-name -&gt; ids for bundles installed in region */
 specifier|public
 name|Map
 argument_list|<
@@ -1693,6 +1701,7 @@ argument_list|>
 argument_list|>
 name|bundlesPerRegion
 decl_stmt|;
+comment|/** region-name -&gt; connected, filtered, region-name -&gt; filter-namespace -&gt; filters */
 specifier|public
 name|Map
 argument_list|<
@@ -1716,6 +1725,7 @@ argument_list|>
 name|filtersPerRegion
 decl_stmt|;
 block|}
+comment|/**      *<p>A request to change current {@link State state} of system</p>      *<p>{@link #requirements} specify target set of system requirements. If new features are installed,      * requirements should include currently installed features and new ones. If features are being uninstalled,      * requirements should include currently installed features minus the ones that are removed.</p>      */
 specifier|public
 specifier|static
 class|class

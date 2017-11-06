@@ -7977,11 +7977,9 @@ if|if
 condition|(
 name|repoBlacklist
 operator|.
-name|isBlacklisted
+name|isRepositoryBlacklisted
 argument_list|(
 name|url
-argument_list|,
-name|TYPE_REPOSITORY
 argument_list|)
 condition|)
 block|{

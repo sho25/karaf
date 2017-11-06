@@ -105,6 +105,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|LinkedHashSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Map
 import|;
 end_import
@@ -261,7 +271,7 @@ specifier|final
 class|class
 name|Overrides
 block|{
-specifier|protected
+specifier|public
 specifier|static
 specifier|final
 name|String
@@ -579,7 +589,7 @@ argument_list|>
 name|overrides
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|<>
 argument_list|()
 decl_stmt|;
