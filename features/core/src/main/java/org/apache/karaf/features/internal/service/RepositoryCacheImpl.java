@@ -209,6 +209,7 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// maybe it could be done better - first we have to set if entire repo is blacklisted
 name|repository
 operator|.
 name|setBlacklisted
@@ -221,6 +222,7 @@ name|uri
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|// processing features will take the above flag into account to blacklist (if needed) the features
 name|repository
 operator|.
 name|processFeatures
