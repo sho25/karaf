@@ -1219,6 +1219,20 @@ name|framework
 operator|.
 name|Bundle
 operator|.
+name|STARTING
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
+name|Bundle
+operator|.
 name|STOPPING
 import|;
 end_import
@@ -4823,6 +4837,8 @@ operator||
 name|RESOLVED
 operator||
 name|STOPPING
+operator||
+name|STARTING
 argument_list|)
 expr_stmt|;
 if|if
