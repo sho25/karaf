@@ -214,21 +214,6 @@ name|Option
 argument_list|(
 name|name
 operator|=
-literal|"--version"
-argument_list|,
-name|description
-operator|=
-literal|"The profile version. Defaults to the current default version."
-argument_list|)
-specifier|private
-name|String
-name|versionId
-decl_stmt|;
-annotation|@
-name|Option
-argument_list|(
-name|name
-operator|=
 literal|"--parents"
 argument_list|,
 name|multiValued
