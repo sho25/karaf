@@ -1698,7 +1698,7 @@ operator|=
 operator|new
 name|AbstractAdapter
 index|[
-literal|4
+literal|3
 index|]
 expr_stmt|;
 name|m_adapters
@@ -1740,19 +1740,8 @@ argument_list|,
 name|admin
 argument_list|)
 expr_stmt|;
-name|m_adapters
-index|[
-literal|3
-index|]
-operator|=
-operator|new
-name|LogEventAdapter
-argument_list|(
-name|m_bundleContext
-argument_list|,
-name|admin
-argument_list|)
-expr_stmt|;
+comment|// KARAF: disable log events as they are published by PaxLogging
+comment|//m_adapters[3] = new LogEventAdapter(m_bundleContext, admin);
 block|}
 specifier|private
 name|Object
