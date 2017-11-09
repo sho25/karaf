@@ -2565,11 +2565,6 @@ name|pid
 parameter_list|)
 block|{
 name|String
-name|ret
-init|=
-literal|""
-decl_stmt|;
-name|String
 index|[]
 name|pidStrArray
 init|=
