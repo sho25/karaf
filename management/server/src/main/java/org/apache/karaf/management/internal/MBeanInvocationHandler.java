@@ -361,6 +361,15 @@ argument_list|()
 throw|;
 block|}
 block|}
+specifier|public
+name|MBeanServer
+name|getDelegate
+parameter_list|()
+block|{
+return|return
+name|wrapped
+return|;
+block|}
 block|}
 end_class
 
