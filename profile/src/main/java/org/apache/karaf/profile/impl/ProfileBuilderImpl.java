@@ -188,20 +188,6 @@ implements|implements
 name|ProfileBuilder
 block|{
 specifier|private
-specifier|static
-specifier|final
-name|String
-name|PARENTS_ATTRIBUTE_KEY
-init|=
-name|Profile
-operator|.
-name|ATTRIBUTE_PREFIX
-operator|+
-name|Profile
-operator|.
-name|PARENTS
-decl_stmt|;
-specifier|private
 name|String
 name|profileId
 decl_stmt|;
@@ -308,7 +294,9 @@ name|config
 operator|.
 name|get
 argument_list|(
-name|PARENTS_ATTRIBUTE_KEY
+name|Profile
+operator|.
+name|PARENTS
 argument_list|)
 decl_stmt|;
 name|String
@@ -542,7 +530,9 @@ name|config
 operator|.
 name|remove
 argument_list|(
-name|PARENTS_ATTRIBUTE_KEY
+name|Profile
+operator|.
+name|PARENTS
 argument_list|)
 expr_stmt|;
 if|if
@@ -559,7 +549,9 @@ name|config
 operator|.
 name|put
 argument_list|(
-name|PARENTS_ATTRIBUTE_KEY
+name|Profile
+operator|.
+name|PARENTS
 argument_list|,
 name|parentsAttributeValue
 argument_list|(
@@ -1065,7 +1057,7 @@ argument_list|>
 name|values
 parameter_list|)
 block|{
-name|addAgentConfiguration
+name|addProfileConfiguration
 argument_list|(
 name|ConfigListType
 operator|.
@@ -1088,7 +1080,7 @@ name|String
 name|value
 parameter_list|)
 block|{
-name|addAgentConfiguration
+name|addProfileConfiguration
 argument_list|(
 name|ConfigListType
 operator|.
@@ -1114,7 +1106,7 @@ argument_list|>
 name|values
 parameter_list|)
 block|{
-name|addAgentConfiguration
+name|addProfileConfiguration
 argument_list|(
 name|ConfigListType
 operator|.
@@ -1137,7 +1129,7 @@ name|String
 name|value
 parameter_list|)
 block|{
-name|addAgentConfiguration
+name|addProfileConfiguration
 argument_list|(
 name|ConfigListType
 operator|.
@@ -1163,7 +1155,7 @@ argument_list|>
 name|values
 parameter_list|)
 block|{
-name|addAgentConfiguration
+name|addProfileConfiguration
 argument_list|(
 name|ConfigListType
 operator|.
@@ -1186,7 +1178,7 @@ name|String
 name|value
 parameter_list|)
 block|{
-name|addAgentConfiguration
+name|addProfileConfiguration
 argument_list|(
 name|ConfigListType
 operator|.
@@ -1212,7 +1204,7 @@ argument_list|>
 name|values
 parameter_list|)
 block|{
-name|addAgentConfiguration
+name|addProfileConfiguration
 argument_list|(
 name|ConfigListType
 operator|.
@@ -1238,7 +1230,7 @@ argument_list|>
 name|values
 parameter_list|)
 block|{
-name|addAgentConfiguration
+name|addProfileConfiguration
 argument_list|(
 name|ConfigListType
 operator|.
@@ -1419,7 +1411,7 @@ return|;
 block|}
 specifier|private
 name|void
-name|addAgentConfiguration
+name|addProfileConfiguration
 parameter_list|(
 name|ConfigListType
 name|type
@@ -1520,7 +1512,7 @@ expr_stmt|;
 block|}
 specifier|private
 name|void
-name|addAgentConfiguration
+name|addProfileConfiguration
 parameter_list|(
 name|ConfigListType
 name|type

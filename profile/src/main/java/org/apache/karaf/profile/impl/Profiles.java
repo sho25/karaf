@@ -247,6 +247,10 @@ name|assertNotNull
 import|;
 end_import
 
+begin_comment
+comment|/**  * Static utilities to work with {@link Profile profiles}.  */
+end_comment
+
 begin_class
 specifier|public
 specifier|final
@@ -261,6 +265,7 @@ name|PROFILE_FOLDER_SUFFIX
 init|=
 literal|".profile"
 decl_stmt|;
+comment|/**      *<p>Loads profiles from given directory path. A profile is represented as directory with<code>.profile</code>      * extension. Subdirectories constitute part of {@linl Profile#getId} - directory separators are changed to      *<code>-</code>.</p>      *<p>For example, profile contained in directory<code>mq/broker/standalone.profile</code> will have      * id =<code>mq-broker-standalone</code>.</p>      * @param root      * @return      * @throws IOException      */
 specifier|public
 specifier|static
 name|Map
@@ -320,8 +325,6 @@ parameter_list|,
 name|BasicFileAttributes
 name|attrs
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|Path
 name|fileName
@@ -587,6 +590,7 @@ return|return
 name|profiles
 return|;
 block|}
+comment|/**      * Deletes profile by given {@link Profile#getId()} from<code>root</code> path.      * @param root      * @param id      * @throws IOException      */
 specifier|public
 specifier|static
 name|void
@@ -710,6 +714,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * Writes given {@link Profile} under a path specified as<code>root</code>. Directory name to store a profile is      * derived from {@link Profile#getId()}      * @param root      * @param profile      * @throws IOException      */
 specifier|public
 specifier|static
 name|void
@@ -807,6 +812,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      *<p>Gets an<em>overlay</em> profile for given<code>profile</code>, where passed in map of additional profiles      * is searched for possible parent profiles of given<code>profile</code>.</p>      * @param profile      * @param profiles      * @return      */
 specifier|public
 specifier|static
 name|Profile
@@ -835,6 +841,7 @@ literal|null
 argument_list|)
 return|;
 block|}
+comment|/**      *<p>Gets an<em>overlay</em> profile for given<code>profile</code>, where passed in map of additional profiles      * is searched for possible parent profiles of given<code>profile</code>.</p>      *<p><code>environment</code> may be used to select different<em>variants</em> of profile configuration files.      * For example, if<code>environment</code> is specified, configuration for<code>my.pid</code> PID will be read      * from<code>my.pid.cfg#&lt;environment&gt;</code>.</p>      * @param profile      * @param profiles      * @param environment      * @return      */
 specifier|public
 specifier|static
 name|Profile
@@ -926,6 +933,7 @@ argument_list|()
 return|;
 block|}
 block|}
+comment|/**      * Gets an<code>effective</code> profile with single property placeholder resolver for<code>${profile:xxx}</code>      * placeholders and with<code>finalSubstitution</code> set to<code>true</code>.      * @param profile      * @return      */
 specifier|public
 specifier|static
 name|Profile
@@ -945,6 +953,7 @@ literal|true
 argument_list|)
 return|;
 block|}
+comment|/**      * Gets an<code>effective</code> profile with single property placeholder resolver for<code>${profile:xxx}</code>      * placeholders.      * @param profile      * @param finalSubstitution      * @return      */
 specifier|public
 specifier|static
 name|Profile
@@ -978,6 +987,7 @@ name|finalSubstitution
 argument_list|)
 return|;
 block|}
+comment|/**      * Gets an<code>effective</code> profile with<code>finalSubstitution</code> set to<code>true</code>.      * @param profile      * @param resolvers      * @return      */
 specifier|public
 specifier|static
 name|Profile
@@ -1006,6 +1016,7 @@ literal|true
 argument_list|)
 return|;
 block|}
+comment|/**      *<p>Gets an<em>effective</em> profile for given<code>profile</code>. Effective profile has all property      * placeholders resolved. When<code>finalSubstitution</code> is<code>true</code>, placeholders that can't      * be resolved are replaced with empty strings. When it's<code>false</code>, placeholders are left unchanged.</p>      * @param profile      * @param resolvers      * @param finalSubstitution      * @return      */
 specifier|public
 specifier|static
 name|Profile
@@ -1492,6 +1503,7 @@ name|getProfile
 argument_list|()
 return|;
 block|}
+comment|/**      *<p>Helper internal class to configure {@link ProfileBuilder} used to create an<em>overlay</em> profile.</p>      *<p>There are strict rules built on a concept of profiles being<em>containers of file configurations</em>.      * Each profile may contain files with the same name. Profiles may be set in multi-parent - child relationship.      * Such graph of profiles is searched in depth-first fashion, while child (being a root of the graph) has      * highest priority.</p>      *<p>Files from higher-priority profile override files from parent profiles. Special case are PID files (with      * {@link Profile#PROPERTIES_SUFFIX} extension). These files are not simply taken from child profiles. Child      * profiles may have own version of given PID configuration file, but these files are overwritten at property      * level.</p>      *<p>For example, if parent profile specifies:<pre>      * property1 = v1      * property2 = v2      *</pre> and child profile specifies:<pre>      * property1 = v1a      * property3 = v3a      *</pre>an<em>overlay</em> profile for child profile uses:<pre>      * property1 = v1a      * property2 = v2      * property3 = v3a      *</pre></p>      */
 specifier|static
 specifier|private
 class|class
