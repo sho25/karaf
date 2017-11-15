@@ -12,10 +12,6 @@ operator|.
 name|karaf
 operator|.
 name|features
-operator|.
-name|internal
-operator|.
-name|service
 package|;
 end_package
 
@@ -134,7 +130,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>Helper class to compare Maven URIs that may use globs and version ranges.</p>  *<p>Each Maven URI may contain these components: groupId, artifactId, optional version, optional type and optional  * classifier. Concrete URIs do not use globs and use precise versions (we not consider<code>LATEST</code>  * and<code>RELEASE</code> here).</p>  *<p>When comparing two Maven URIs, we split them to components and may use RegExps and  * {@link org.apache.felix.utils.version.VersionRange}s</p>  *<p>When pattern URI doesn't use<code>mvn:</code> scheme, plain {@link String#equals(Object)} is used or  * {@link Matcher#matches()} when pattern uses<code>*</code> glob.</p>  */
+comment|/**  *<p>Helper class to compare Maven URIs (and falling back to other URIs) that may use globs and version ranges.</p>  *  *<p>Each Maven URI may contain these components: groupId, artifactId, optional version, optional type and optional  * classifier. Concrete URIs do not use globs and use precise versions (we do not consider<code>LATEST</code>  * and<code>RELEASE</code> Maven versions here).</p>  *  *<p>When comparing two Maven URIs, we split them to components and may use RegExps and  * {@link org.apache.felix.utils.version.VersionRange}s</p>  *  *<p>When pattern URI doesn't use<code>mvn:</code> scheme, plain {@link String#equals(Object)} is used or  * {@link Matcher#matches()} when pattern uses<code>*</code> glob.</p>  */
 end_comment
 
 begin_class
@@ -515,7 +511,7 @@ block|}
 block|}
 block|}
 comment|/**      * Converts a String with one special character (<code>*</code>) into working {@link Pattern}      * @param value      * @return      */
-specifier|private
+specifier|static
 name|Pattern
 name|toRegExp
 parameter_list|(
@@ -601,27 +597,6 @@ name|matches
 argument_list|()
 return|;
 block|}
-if|if
-condition|(
-operator|!
-name|otherUri
-operator|.
-name|startsWith
-argument_list|(
-literal|"mvn:"
-argument_list|)
-condition|)
-block|{
-comment|// other pattern is not mvn:
-return|return
-name|originalUri
-operator|.
-name|equals
-argument_list|(
-name|otherUri
-argument_list|)
-return|;
-block|}
 name|LocationPattern
 name|other
 decl_stmt|;
@@ -653,6 +628,20 @@ operator|+
 literal|"\" as Maven URI. Ignoring."
 argument_list|)
 expr_stmt|;
+return|return
+literal|false
+return|;
+block|}
+if|if
+condition|(
+name|other
+operator|.
+name|originalPattern
+operator|!=
+literal|null
+condition|)
+block|{
+comment|// other pattern is not mvn:
 return|return
 literal|false
 return|;

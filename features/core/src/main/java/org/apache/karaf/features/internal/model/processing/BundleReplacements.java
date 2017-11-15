@@ -145,10 +145,6 @@ name|karaf
 operator|.
 name|features
 operator|.
-name|internal
-operator|.
-name|service
-operator|.
 name|LocationPattern
 import|;
 end_import
@@ -350,7 +346,7 @@ return|return
 name|originalUriPattern
 return|;
 block|}
-comment|/**          * Changes String for<code>originalUri</code> into {@link org.apache.karaf.features.internal.service.LocationPattern}          */
+comment|/**          * Changes String for<code>originalUri</code> into {@link LocationPattern}          */
 specifier|public
 name|void
 name|compile
