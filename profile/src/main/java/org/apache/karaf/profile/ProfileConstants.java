@@ -52,6 +52,12 @@ name|HIDDEN
 init|=
 literal|"hidden"
 decl_stmt|;
+comment|/**      * The attribute key for the<em>overlay</em> flag meaning the parents are already included/merged in the profile.      */
+name|String
+name|OVERLAY
+init|=
+literal|"overlay"
+decl_stmt|;
 comment|/**      *<p>Key indicating a deletion.</p>      *<p>This value can appear as the value of a key in a configuration      * or as a key itself.  If used as a key, the whole configuration      * is flagged as deleted from its parent when computing the overlay.</p>      */
 name|String
 name|DELETED

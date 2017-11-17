@@ -3041,7 +3041,6 @@ argument_list|(
 literal|"Unzipping kars"
 argument_list|)
 expr_stmt|;
-comment|//        Map<String, RepositoryInfo> repositories = new LinkedHashMap<>(this.repositories);
 name|Downloader
 name|downloader
 init|=
@@ -3190,7 +3189,6 @@ argument_list|(
 literal|"Loading repositories"
 argument_list|)
 expr_stmt|;
-comment|//        Map<String, Stage> features = new LinkedHashMap<>(this.features);
 name|Map
 argument_list|<
 name|String
