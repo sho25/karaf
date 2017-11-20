@@ -649,7 +649,7 @@ name|TimeZone
 operator|.
 name|getTimeZone
 argument_list|(
-literal|"CET"
+literal|"GMT+01:00"
 argument_list|)
 argument_list|,
 name|Locale
@@ -1009,7 +1009,7 @@ name|TimeZone
 operator|.
 name|getTimeZone
 argument_list|(
-literal|"CET"
+literal|"GMT+01:00"
 argument_list|)
 argument_list|)
 decl_stmt|;
