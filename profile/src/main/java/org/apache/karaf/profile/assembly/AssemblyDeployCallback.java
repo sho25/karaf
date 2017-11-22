@@ -505,18 +505,6 @@ name|osgi
 operator|.
 name|framework
 operator|.
-name|InvalidSyntaxException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|osgi
-operator|.
-name|framework
-operator|.
 name|startlevel
 operator|.
 name|BundleStartLevel
@@ -672,8 +660,6 @@ name|Features
 argument_list|>
 name|repositories
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|this
 operator|.
@@ -687,32 +673,8 @@ name|builder
 operator|=
 name|builder
 expr_stmt|;
-name|this
-operator|.
-name|featureBlacklist
-operator|=
-operator|new
-name|Blacklist
-argument_list|(
-name|builder
-operator|.
-name|getBlacklistedFeatures
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|bundleBlacklist
-operator|=
-operator|new
-name|Blacklist
-argument_list|(
-name|builder
-operator|.
-name|getBlacklistedBundles
-argument_list|()
-argument_list|)
-expr_stmt|;
+comment|//        this.featureBlacklist = new Blacklist(builder.getBlacklistedFeatures());
+comment|//        this.bundleBlacklist = new Blacklist(builder.getBlacklistedBundles());
 name|this
 operator|.
 name|homeDirectory
@@ -998,8 +960,6 @@ operator|.
 name|DeploymentRequest
 name|request
 parameter_list|)
-throws|throws
-name|IOException
 block|{     }
 annotation|@
 name|Override
@@ -1020,8 +980,6 @@ name|feature
 parameter_list|)
 throws|throws
 name|IOException
-throws|,
-name|InvalidSyntaxException
 block|{
 name|assertNotBlacklisted
 argument_list|(
@@ -1559,54 +1517,11 @@ name|Feature
 name|feature
 parameter_list|)
 block|{
-if|if
-condition|(
-name|featureBlacklist
-operator|.
-name|isFeatureBlacklisted
-argument_list|(
-name|feature
-operator|.
-name|getName
-argument_list|()
-argument_list|,
-name|feature
-operator|.
-name|getVersion
-argument_list|()
-argument_list|)
-condition|)
-block|{
-if|if
-condition|(
-name|builder
-operator|.
-name|getBlacklistPolicy
-argument_list|()
-operator|==
-name|Builder
-operator|.
-name|BlacklistPolicy
-operator|.
-name|Fail
-condition|)
-block|{
-throw|throw
-operator|new
-name|RuntimeException
-argument_list|(
-literal|"Feature "
-operator|+
-name|feature
-operator|.
-name|getId
-argument_list|()
-operator|+
-literal|" is blacklisted"
-argument_list|)
-throw|;
-block|}
-block|}
+comment|//        if (featureBlacklist.isFeatureBlacklisted(feature.getName(), feature.getVersion())) {
+comment|//            if (builder.getBlacklistPolicy() == Builder.BlacklistPolicy.Fail) {
+comment|//                throw new RuntimeException("Feature " + feature.getId() + " is blacklisted");
+comment|//            }
+comment|//        }
 block|}
 annotation|@
 name|Override
@@ -1647,43 +1562,11 @@ throws|throws
 name|BundleException
 block|{
 comment|// Check blacklist
-if|if
-condition|(
-name|bundleBlacklist
-operator|.
-name|isBundleBlacklisted
-argument_list|(
-name|uri
-argument_list|)
-condition|)
-block|{
-if|if
-condition|(
-name|builder
-operator|.
-name|getBlacklistPolicy
-argument_list|()
-operator|==
-name|Builder
-operator|.
-name|BlacklistPolicy
-operator|.
-name|Fail
-condition|)
-block|{
-throw|throw
-operator|new
-name|RuntimeException
-argument_list|(
-literal|"Bundle "
-operator|+
-name|uri
-operator|+
-literal|" is blacklisted"
-argument_list|)
-throw|;
-block|}
-block|}
+comment|//        if (bundleBlacklist.isBundleBlacklisted(uri)) {
+comment|//            if (builder.getBlacklistPolicy() == Builder.BlacklistPolicy.Fail) {
+comment|//                throw new RuntimeException("Bundle " + uri + " is blacklisted");
+comment|//            }
+comment|//        }
 comment|// Install
 name|LOGGER
 operator|.

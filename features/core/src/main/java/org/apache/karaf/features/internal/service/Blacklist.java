@@ -238,7 +238,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper class to deal with blacklisted features and bundles. It doesn't process JAXB model at all - it only  * provides information about repository/feature/bundle being blacklisted.  */
+comment|/**  * Helper class to deal with blacklisted features and bundles. It doesn't process JAXB model at all - it only  * provides information about repository/feature/bundle being blacklisted.  * The task of actual blacklisting (altering JAXB model) is performed in {@link FeaturesProcessor}  */
 end_comment
 
 begin_class
@@ -1205,6 +1205,75 @@ name|Features
 name|featuresModel
 parameter_list|)
 block|{     }
+end_function
+
+begin_comment
+comment|/**      * Directly add {@link LocationPattern} as blacklisted features XML repository URI      * @param locationPattern      */
+end_comment
+
+begin_function
+specifier|public
+name|void
+name|blacklistRepository
+parameter_list|(
+name|LocationPattern
+name|locationPattern
+parameter_list|)
+block|{
+name|repositoryBlacklist
+operator|.
+name|add
+argument_list|(
+name|locationPattern
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**      * Directly add {@link FeaturePattern} as blacklisted feature ID      * @param featurePattern      */
+end_comment
+
+begin_function
+specifier|public
+name|void
+name|blacklistFeature
+parameter_list|(
+name|FeaturePattern
+name|featurePattern
+parameter_list|)
+block|{
+name|featureBlacklist
+operator|.
+name|add
+argument_list|(
+name|featurePattern
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**      * Directly add {@link LocationPattern} as blacklisted bundle URI      * @param locationPattern      */
+end_comment
+
+begin_function
+specifier|public
+name|void
+name|blacklistBundle
+parameter_list|(
+name|LocationPattern
+name|locationPattern
+parameter_list|)
+block|{
+name|bundleBlacklist
+operator|.
+name|add
+argument_list|(
+name|locationPattern
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 unit|}

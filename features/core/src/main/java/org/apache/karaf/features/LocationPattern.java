@@ -511,6 +511,7 @@ block|}
 block|}
 block|}
 comment|/**      * Converts a String with one special character (<code>*</code>) into working {@link Pattern}      * @param value      * @return      */
+specifier|public
 specifier|static
 name|Pattern
 name|toRegExp

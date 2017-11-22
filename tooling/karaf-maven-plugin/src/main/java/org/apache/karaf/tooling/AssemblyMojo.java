@@ -647,6 +647,15 @@ specifier|private
 name|String
 name|environment
 decl_stmt|;
+comment|/**      * Default start level for bundles in features that don't specify it.      */
+annotation|@
+name|Parameter
+specifier|protected
+name|int
+name|defaultStartLevel
+init|=
+literal|30
+decl_stmt|;
 comment|/**      * List of compile-scope features XML files to be used in startup stage (etc/startup.properties)      */
 annotation|@
 name|Parameter
@@ -1262,6 +1271,13 @@ operator|.
 name|environment
 argument_list|(
 name|environment
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|defaultStartLevel
+argument_list|(
+name|defaultStartLevel
 argument_list|)
 expr_stmt|;
 comment|// Set up remote repositories from Maven build, to be used by pax-url-aether resolver

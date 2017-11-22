@@ -18,28 +18,6 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|features
-operator|.
-name|internal
-operator|.
-name|download
-operator|.
-name|impl
-operator|.
-name|DownloadManagerHelper
-operator|.
-name|stripUrl
-import|;
-end_import
-
-begin_import
 import|import
 name|java
 operator|.
@@ -104,16 +82,6 @@ operator|.
 name|file
 operator|.
 name|StandardCopyOption
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
 import|;
 end_import
 
@@ -189,6 +157,28 @@ name|LoggerFactory
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|internal
+operator|.
+name|download
+operator|.
+name|impl
+operator|.
+name|DownloadManagerHelper
+operator|.
+name|stripUrl
+import|;
+end_import
+
 begin_comment
 comment|/**  * Downloads a maven artifact and installs it into the given system directory.  * The layout follows the conventions of a maven local repository.  */
 end_comment
@@ -234,11 +224,8 @@ parameter_list|,
 name|Downloader
 name|downloader
 parameter_list|,
-name|List
-argument_list|<
-name|String
-argument_list|>
-name|blacklisted
+name|Blacklist
+name|blacklist
 parameter_list|)
 block|{
 name|this
@@ -257,11 +244,7 @@ name|this
 operator|.
 name|blacklist
 operator|=
-operator|new
-name|Blacklist
-argument_list|(
-name|blacklisted
-argument_list|)
+name|blacklist
 expr_stmt|;
 block|}
 specifier|public

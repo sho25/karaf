@@ -21,16 +21,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|net
-operator|.
-name|URI
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -74,7 +64,7 @@ comment|/**      * Checks whether given repository URI is<em>blacklisted</em>   
 name|boolean
 name|isRepositoryBlacklisted
 parameter_list|(
-name|URI
+name|String
 name|uri
 parameter_list|)
 function_decl|;

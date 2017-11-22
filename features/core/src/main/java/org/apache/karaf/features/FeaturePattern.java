@@ -109,6 +109,10 @@ name|String
 name|originalId
 decl_stmt|;
 specifier|private
+name|String
+name|nameString
+decl_stmt|;
+specifier|private
 name|Pattern
 name|namePattern
 decl_stmt|;
@@ -152,14 +156,13 @@ name|originalId
 operator|=
 name|featureId
 expr_stmt|;
-name|String
-name|name
-init|=
+name|nameString
+operator|=
 name|originalId
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
-name|name
+name|originalId
 operator|.
 name|indexOf
 argument_list|(
@@ -169,7 +172,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|name
+name|nameString
 operator|=
 name|originalId
 operator|.
@@ -205,7 +208,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|name
+name|originalId
 operator|.
 name|contains
 argument_list|(
@@ -239,7 +242,7 @@ name|originalId
 block|}
 argument_list|)
 decl_stmt|;
-name|name
+name|nameString
 operator|=
 name|c
 index|[
@@ -268,7 +271,7 @@ name|LocationPattern
 operator|.
 name|toRegExp
 argument_list|(
-name|name
+name|nameString
 argument_list|)
 expr_stmt|;
 if|if
@@ -374,7 +377,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns<code>if this feature pattern</code> matches given feature/version      * @param featureName      * @param featureVersion      * @return      */
+comment|/**      * Returns<code>true</code> if this feature pattern matches given feature/version      * @param featureName      * @param featureVersion      * @return      */
 specifier|public
 name|boolean
 name|matches
