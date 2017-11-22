@@ -625,6 +625,13 @@ specifier|protected
 name|File
 name|workDirectory
 decl_stmt|;
+comment|/**      * Optional location for custom features processing XML configuration      * (<code>etc/org.apache.karaf.features.cfg</code>)      */
+annotation|@
+name|Parameter
+specifier|protected
+name|File
+name|featuresProcessing
+decl_stmt|;
 comment|/*      * There are three builder stages related to maven dependency scopes:      *  - Stage.Startup : scope=compile      *  - Stage.Boot : scope=runtime      *  - Stage.Installed : scope=provided      * There's special category not related to stage - Blacklisted      *      * There are five kinds of artifacts/dependencies that may go into any of the above stages/categories/scopes:      *  - kars: maven artifacts with "kar" type      *  - repositories: maven artifacts with "features" classifier      *  - features: Karaf feature names (name[/version])      *  - bundles: maven artifacts with "jar" or "bundle" type      *  - profiles: directories with Karaf 4 profiles      * (Not all artifacts/dependencies may be connected with every stage/category/scope.)      *      * Blacklisting:      *  - kars: there are no blacklisted kars      *  - repositories: won't be processed at all (also affects transitive repositories)      *  - features: will be removed from JAXB model of features XML after loading      *  - bundles: will be removed from features of JAXB model after loading      *  - profiles: will be removed      *      * Stage.Startup:      *  - bundles: will be put to etc/startup.properties      *  - features: their bundles will be put to etc/startup.properties      *  - repositories: will be used to resolve startup bundles/feature before adding them to etc/startup.properties      *  - kars: unpacked to assembly, detected features XML repositories added as Stage.Startup repositories      *      * Stage.Boot:      *  - bundles: special etc/<UUID>.xml features XML file will be created with<UUID> feature.      *      etc/org.apacha.karaf.features.cfg will have this features XML file in featuresRepositories property and      *      the feature itself in featuresBoot property      *  - features: will be added to etc/org.apacha.karaf.features.cfg file, featuresBoot property      *      also features from Stage.Startup will be used here.      *  - repositories: will be added to etc/org.apacha.karaf.features.cfg file, featuresRepositories property      *      also repositories from Stage.Startup will be used here.      *  - kars: unpacked to assembly, detected features XML repositories added as Stage.Boot repositories      *      * Stage.Installed:      *  - bundles: will be copied to system/      *  - features: their bundles and config files will be copied to system/      *  - repositories: will be used to find Stage.Installed features      *      also repositories from Stage.Boot will be searched for Stage.Installed features      *  - kars: unpacked to assembly, detected features XML repositories added as Stage.Installed repositories      */
 comment|/**      * For given stage (startup, boot, install) if there are no stage-specific features and profiles, all features      * from stage-specific repositories will be used.      */
 annotation|@
@@ -1280,6 +1287,24 @@ argument_list|(
 name|defaultStartLevel
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|featuresProcessing
+operator|!=
+literal|null
+condition|)
+block|{
+name|builder
+operator|.
+name|setFeaturesProcessing
+argument_list|(
+name|featuresProcessing
+operator|.
+name|toPath
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 comment|// Set up remote repositories from Maven build, to be used by pax-url-aether resolver
 name|String
 name|remoteRepositories

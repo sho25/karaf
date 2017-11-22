@@ -510,6 +510,15 @@ expr_stmt|;
 block|}
 block|}
 block|}
+specifier|public
+name|String
+name|getOriginalUri
+parameter_list|()
+block|{
+return|return
+name|originalUri
+return|;
+block|}
 comment|/**      * Converts a String with one special character (<code>*</code>) into working {@link Pattern}      * @param value      * @return      */
 specifier|public
 specifier|static
