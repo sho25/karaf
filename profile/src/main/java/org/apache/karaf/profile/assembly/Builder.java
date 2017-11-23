@@ -1304,7 +1304,7 @@ decl_stmt|;
 name|String
 name|javase
 init|=
-literal|"1.7"
+literal|"1.8"
 decl_stmt|;
 name|KarafVersion
 name|karafVersion
@@ -4412,17 +4412,33 @@ name|TYPE_DEFAULT
 decl_stmt|;
 if|if
 condition|(
-name|type
-operator|==
+operator|!
+name|javase
+operator|.
+name|startsWith
+argument_list|(
+literal|"1."
+argument_list|)
+operator|&&
+operator|(
 name|Library
 operator|.
 name|TYPE_ENDORSED
-operator|||
+operator|.
+name|equals
+argument_list|(
 name|type
-operator|==
+argument_list|)
+operator|||
 name|Library
 operator|.
 name|TYPE_EXTENSION
+operator|.
+name|equals
+argument_list|(
+name|type
+argument_list|)
+operator|)
 condition|)
 block|{
 name|LOGGER
@@ -4433,11 +4449,11 @@ literal|"Ignoring library "
 operator|+
 name|library
 operator|+
-literal|" which is of an unsupported type "
+literal|" of type "
 operator|+
 name|type
 operator|+
-literal|"."
+literal|" which is only supported for Java 1.8."
 argument_list|)
 expr_stmt|;
 continue|continue;
