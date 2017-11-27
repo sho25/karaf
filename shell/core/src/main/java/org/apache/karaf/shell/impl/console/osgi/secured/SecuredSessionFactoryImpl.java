@@ -790,7 +790,7 @@ argument_list|)
 return|;
 block|}
 block|}
-specifier|protected
+specifier|public
 name|boolean
 name|isVisible
 parameter_list|(
