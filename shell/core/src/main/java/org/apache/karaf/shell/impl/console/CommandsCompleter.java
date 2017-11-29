@@ -2011,7 +2011,7 @@ operator|)
 name|factory
 operator|)
 operator|.
-name|isVisible
+name|isAliasVisible
 argument_list|(
 name|scope
 argument_list|,

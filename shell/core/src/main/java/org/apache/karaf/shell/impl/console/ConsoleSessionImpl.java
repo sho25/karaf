@@ -1466,6 +1466,8 @@ name|factory
 operator|.
 name|getRegistry
 argument_list|()
+argument_list|,
+name|this
 argument_list|)
 expr_stmt|;
 name|registry
