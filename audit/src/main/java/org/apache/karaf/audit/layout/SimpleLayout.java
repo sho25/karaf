@@ -122,8 +122,6 @@ operator|+
 literal|" "
 operator|+
 name|procId
-operator|+
-literal|" "
 expr_stmt|;
 block|}
 annotation|@
