@@ -1781,6 +1781,9 @@ argument_list|,
 name|FeaturesService
 operator|.
 name|DEFAULT_UPDATE_SNAPSHOTS
+operator|.
+name|getValue
+argument_list|()
 argument_list|)
 argument_list|,
 name|getInt
@@ -1854,7 +1857,12 @@ literal|"serviceRequirements"
 argument_list|,
 name|FeaturesService
 operator|.
-name|SERVICE_REQUIREMENTS_DEFAULT
+name|ServiceRequirementsBehavior
+operator|.
+name|Default
+operator|.
+name|getValue
+argument_list|()
 argument_list|)
 argument_list|)
 return|;

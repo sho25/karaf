@@ -48,10 +48,12 @@ name|String
 name|getType
 parameter_list|()
 function_decl|;
+comment|/**      * Whether given library's exported packages should be added to<code>org.osgi.framework.system.packages.extra</code>      * property in<code>${karaf.etc}/config.properties</code>.      * @return      */
 name|boolean
 name|isExport
 parameter_list|()
 function_decl|;
+comment|/**      * Whether given library's exported packages should be added to<code>org.osgi.framework.bootdelegation</code>      * property in<code>${karaf.etc}/config.properties</code>      * @return      */
 name|boolean
 name|isDelegate
 parameter_list|()

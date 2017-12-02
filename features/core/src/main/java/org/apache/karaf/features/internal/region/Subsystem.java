@@ -85,6 +85,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
@@ -869,6 +879,10 @@ name|REQUIREMENT_FILTER_DIRECTIVE
 import|;
 end_import
 
+begin_comment
+comment|/**  * A {@link Resource} representing ...  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -993,21 +1007,25 @@ name|SUBSYSTEM_FILTER
 argument_list|)
 argument_list|)
 decl_stmt|;
+comment|// name of the subsystem: region or region#feature[-version]
 specifier|private
 specifier|final
 name|String
 name|name
 decl_stmt|;
+comment|// works only with feature scoping. region subsystems by default accept deps
 specifier|private
 specifier|final
 name|boolean
 name|acceptDependencies
 decl_stmt|;
+comment|// parent Subsystem for child subsystems representing child regions or regions' features
 specifier|private
 specifier|final
 name|Subsystem
 name|parent
 decl_stmt|;
+comment|// feature for Subsystem representing a feature
 specifier|private
 specifier|final
 name|Feature
@@ -1031,6 +1049,7 @@ name|ArrayList
 argument_list|<>
 argument_list|()
 decl_stmt|;
+comment|// a set of filters applied when child subsystem needs capabilities from parent subsystem
 specifier|private
 specifier|final
 name|Map
@@ -1044,6 +1063,7 @@ argument_list|>
 argument_list|>
 name|importPolicy
 decl_stmt|;
+comment|// a set of filters applied when parent subsystem needs capabilities from child subsystem
 specifier|private
 specifier|final
 name|Map
@@ -1057,6 +1077,9 @@ argument_list|>
 argument_list|>
 name|exportPolicy
 decl_stmt|;
+comment|// contains subsystems representing features of this region, child subsystems for child regions, system resources(?),
+comment|// bundle resources added explicitly as reqs for this Subsystem, feature resources for subsystems representing
+comment|// features, ...
 specifier|private
 specifier|final
 name|List
@@ -1070,6 +1093,9 @@ name|ArrayList
 argument_list|<>
 argument_list|()
 decl_stmt|;
+comment|// mapping from "symbolic-name|version" to a DependencyInfo wrapping a Resource
+comment|//<bundle dependency="false"> are collected directly in feature's subsystem
+comment|//<bundle dependency="true"> are collected in first parent subsystem of feature or in subsystem of scoped feature
 specifier|private
 specifier|final
 name|Map
@@ -1085,6 +1111,8 @@ name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
+comment|// non-mandatory dependant features (<feature>/<feature>) collected from current and child subsystems representing
+comment|// features (unless some subsystem for feature has<scoping acceptDependencies="true">)
 specifier|private
 specifier|final
 name|List
@@ -1098,6 +1126,8 @@ name|ArrayList
 argument_list|<>
 argument_list|()
 decl_stmt|;
+comment|// direct bundle URI dependencies - not added by FeaturesService, but used in startup stage of assembly builder
+comment|// these bundles will be downloaded
 specifier|private
 specifier|final
 name|List
@@ -1111,6 +1141,7 @@ name|ArrayList
 argument_list|<>
 argument_list|()
 decl_stmt|;
+comment|/**      *<p>Constructs root subsystem {@link Resource} for {@link FeaturesService#ROOT_REGION} that imports/exports only      * caps/reqs with<code>(type=karaf.subsystem)</code></p>      *<p>Root subsystem by default accepts dependencies - will gather dependant features of child feature subsystems,      * effectively _flattening_ the set of features within single region's subsystem.</p>      *      * @param name      */
 specifier|public
 name|Subsystem
 parameter_list|(
@@ -1172,6 +1203,7 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
+comment|/**      *<p>Constructs subsystem for a feature that either imports/exports all caps or (see {@link Feature#getScoping()})      * has configurable import/export policy +<code>(|(type=karaf.subsystem)(type=karaf.feature))</code> filter in      * {@link org.osgi.framework.namespace.IdentityNamespace#IDENTITY_NAMESPACE}</p>      *<p>Such subsystem requires<code>type=karaf.feature; osgi.identity=feature-name[; version=feature-version]</code></p>      * @param name      * @param feature      * @param parent      * @param mandatory      */
 specifier|public
 name|Subsystem
 parameter_list|(
@@ -1359,6 +1391,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      *<p>Constructs child subsystem {@link Resource} for {@link FeaturesService#ROOT_REGION}'s child      * that imports all caps and exports only caps with<code>(type=karaf.subsystem)</code></p>      * @param name      * @param parent      * @param acceptDependencies      * @param mandatory      */
 specifier|public
 name|Subsystem
 parameter_list|(
@@ -1561,6 +1594,7 @@ return|return
 name|feature
 return|;
 block|}
+comment|/**      * Create child subsystem for this subsystem. Child will become parent's mandatory requirement to force its resolution.      *      * @param name      * @param acceptDependencies      * @return      */
 specifier|public
 name|Subsystem
 name|createSubsystem
@@ -1973,32 +2007,43 @@ specifier|public
 name|void
 name|build
 parameter_list|(
-name|Collection
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|List
 argument_list|<
 name|Feature
 argument_list|>
-name|features
+argument_list|>
+name|allFeatures
 parameter_list|)
 throws|throws
 name|Exception
 block|{
 name|doBuild
 argument_list|(
-name|features
+name|allFeatures
 argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      *      * @param allFeatures      * @param mandatory      * @throws Exception      */
 specifier|private
 name|void
 name|doBuild
 parameter_list|(
-name|Collection
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|List
 argument_list|<
 name|Feature
 argument_list|>
-name|features
+argument_list|>
+name|allFeatures
 parameter_list|,
 name|boolean
 name|mandatory
@@ -2018,7 +2063,7 @@ name|child
 operator|.
 name|doBuild
 argument_list|(
-name|features
+name|allFeatures
 argument_list|,
 literal|true
 argument_list|)
@@ -2031,6 +2076,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// each dependant feature becomes a non-mandatory (why?) requirement of first parent that
+comment|// accepts dependencies
 for|for
 control|(
 name|Dependency
@@ -2082,6 +2129,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+comment|// each conditional feature becomes a child subsystem of this feature's subsystem
 for|for
 control|(
 name|Conditional
@@ -2167,7 +2215,7 @@ name|fs
 operator|.
 name|doBuild
 argument_list|(
-name|features
+name|allFeatures
 argument_list|,
 literal|false
 argument_list|)
@@ -2240,6 +2288,8 @@ condition|)
 block|{
 break|break;
 block|}
+comment|// for each feature requirement on this subsystem (osgi.identity;type=karaf.feature), we create a
+comment|// Subsystem representing mandatory feature.
 for|for
 control|(
 name|Requirement
@@ -2304,6 +2354,13 @@ name|equals
 argument_list|(
 name|type
 argument_list|)
+operator|&&
+name|allFeatures
+operator|.
+name|containsKey
+argument_list|(
+name|name
+argument_list|)
 condition|)
 block|{
 for|for
@@ -2311,22 +2368,16 @@ control|(
 name|Feature
 name|feature
 range|:
-name|features
+name|allFeatures
+operator|.
+name|get
+argument_list|(
+name|name
+argument_list|)
 control|)
 block|{
 if|if
 condition|(
-name|feature
-operator|.
-name|getName
-argument_list|()
-operator|.
-name|equals
-argument_list|(
-name|name
-argument_list|)
-operator|&&
-operator|(
 name|range
 operator|==
 literal|null
@@ -2345,7 +2396,6 @@ name|getVersion
 argument_list|()
 argument_list|)
 argument_list|)
-operator|)
 condition|)
 block|{
 if|if
@@ -2431,7 +2481,7 @@ name|fs
 operator|.
 name|build
 argument_list|(
-name|features
+name|allFeatures
 argument_list|)
 expr_stmt|;
 name|installable
@@ -2588,6 +2638,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+comment|// our feature is already among prerequisites, so ...
 name|match
 operator|=
 literal|true
@@ -2595,6 +2646,7 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+comment|// ... we won't be adding its prerequisites - they'll be handled after another PartialDeploymentException
 if|if
 condition|(
 operator|!
@@ -2635,6 +2687,7 @@ block|}
 block|}
 block|}
 block|}
+comment|/**      * Downloads bundles for all the features in current and child subsystems. But also collects bundles      * as {@link DependencyInfo}.      * @param manager      * @param featureResolutionRange      * @param serviceRequirements      * @param repos      * @throws Exception      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -2647,21 +2700,20 @@ parameter_list|(
 name|DownloadManager
 name|manager
 parameter_list|,
-name|Set
-argument_list|<
-name|String
-argument_list|>
-name|overrides
-parameter_list|,
 name|String
 name|featureResolutionRange
 parameter_list|,
 specifier|final
-name|String
+name|FeaturesService
+operator|.
+name|ServiceRequirementsBehavior
 name|serviceRequirements
 parameter_list|,
 name|RepositoryManager
 name|repos
+parameter_list|,
+name|SubsystemResolverCallback
+name|callback
 parameter_list|)
 throws|throws
 name|Exception
@@ -2680,39 +2732,17 @@ name|downloadBundles
 argument_list|(
 name|manager
 argument_list|,
-name|overrides
-argument_list|,
 name|featureResolutionRange
 argument_list|,
 name|serviceRequirements
 argument_list|,
 name|repos
+argument_list|,
+name|callback
 argument_list|)
 expr_stmt|;
 block|}
-specifier|final
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|ResourceImpl
-argument_list|>
-name|bundles
-init|=
-operator|new
-name|ConcurrentHashMap
-argument_list|<>
-argument_list|()
-decl_stmt|;
-specifier|final
-name|Downloader
-name|downloader
-init|=
-name|manager
-operator|.
-name|createDownloader
-argument_list|()
-decl_stmt|;
+comment|// collect BundleInfos for given feature - both direct<feature>/<bundle>s and<feature>/<conditional>/<bundle>s
 specifier|final
 name|Map
 argument_list|<
@@ -2725,6 +2755,15 @@ init|=
 operator|new
 name|HashMap
 argument_list|<>
+argument_list|()
+decl_stmt|;
+specifier|final
+name|Downloader
+name|downloader
+init|=
+name|manager
+operator|.
+name|createDownloader
 argument_list|()
 decl_stmt|;
 if|if
@@ -2757,6 +2796,7 @@ name|getBundles
 argument_list|()
 control|)
 block|{
+comment|// bundles from conditional features will be added as non-mandatory requirements
 name|infos
 operator|.
 name|put
@@ -2790,101 +2830,112 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|boolean
-name|removeServiceRequirements
+comment|// features model doesn't have blacklisted entries removed, but marked as blacklisted - we now don't have
+comment|// to download them
+comment|//infos.keySet().removeIf(Blacklisting::isBlacklisted);
+for|for
+control|(
+name|Iterator
+argument_list|<
+name|BundleInfo
+argument_list|>
+name|iterator
+init|=
+name|infos
+operator|.
+name|keySet
+argument_list|()
+operator|.
+name|iterator
+argument_list|()
+init|;
+name|iterator
+operator|.
+name|hasNext
+argument_list|()
+condition|;
+control|)
+block|{
+name|BundleInfo
+name|bi
+init|=
+name|iterator
+operator|.
+name|next
+argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|FeaturesService
+name|bi
 operator|.
-name|SERVICE_REQUIREMENTS_DISABLE
-operator|.
-name|equals
-argument_list|(
-name|serviceRequirements
-argument_list|)
+name|isBlacklisted
+argument_list|()
 condition|)
 block|{
-name|removeServiceRequirements
-operator|=
-literal|true
+name|iterator
+operator|.
+name|remove
+argument_list|()
 expr_stmt|;
-block|}
-elseif|else
 if|if
 condition|(
-name|feature
+name|callback
 operator|!=
 literal|null
-operator|&&
-name|FeaturesService
-operator|.
-name|SERVICE_REQUIREMENTS_DEFAULT
-operator|.
-name|equals
-argument_list|(
-name|serviceRequirements
-argument_list|)
 condition|)
 block|{
-name|removeServiceRequirements
-operator|=
-name|FeaturesNamespaces
+name|callback
 operator|.
-name|URI_1_0_0
-operator|.
-name|equals
+name|bundleBlacklisted
 argument_list|(
-name|feature
-operator|.
-name|getNamespace
-argument_list|()
-argument_list|)
-operator|||
-name|FeaturesNamespaces
-operator|.
-name|URI_1_1_0
-operator|.
-name|equals
-argument_list|(
-name|feature
-operator|.
-name|getNamespace
-argument_list|()
-argument_list|)
-operator|||
-name|FeaturesNamespaces
-operator|.
-name|URI_1_2_0
-operator|.
-name|equals
-argument_list|(
-name|feature
-operator|.
-name|getNamespace
-argument_list|()
-argument_list|)
-operator|||
-name|FeaturesNamespaces
-operator|.
-name|URI_1_2_1
-operator|.
-name|equals
-argument_list|(
-name|feature
-operator|.
-name|getNamespace
-argument_list|()
+name|bi
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
-name|removeServiceRequirements
-operator|=
-literal|false
-expr_stmt|;
 block|}
+block|}
+comment|// all downloaded bundles
+specifier|final
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|ResourceImpl
+argument_list|>
+name|bundles
+init|=
+operator|new
+name|ConcurrentHashMap
+argument_list|<>
+argument_list|()
+decl_stmt|;
+comment|// resources for locations that were overriden in OSGi mode - to check whether the override should actually
+comment|// take place, by checking resource's headers
+specifier|final
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|ResourceImpl
+argument_list|>
+name|overrides
+init|=
+operator|new
+name|ConcurrentHashMap
+argument_list|<>
+argument_list|()
+decl_stmt|;
+name|boolean
+name|removeServiceRequirements
+init|=
+name|serviceRequirementsBehavior
+argument_list|(
+name|feature
+argument_list|,
+name|serviceRequirements
+argument_list|)
+decl_stmt|;
+comment|// download collected BundleInfo locations
 for|for
 control|(
 name|Map
@@ -2930,12 +2981,10 @@ argument_list|,
 name|provider
 lambda|->
 block|{
-name|bundles
-operator|.
-name|put
-argument_list|(
-name|loc
-argument_list|,
+comment|// always download location (could be overriden)
+name|ResourceImpl
+name|resource
+init|=
 name|createResource
 argument_list|(
 name|loc
@@ -2947,12 +2996,94 @@ argument_list|)
 argument_list|,
 name|removeServiceRequirements
 argument_list|)
+decl_stmt|;
+name|bundles
+operator|.
+name|put
+argument_list|(
+name|loc
+argument_list|,
+name|resource
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|bi
+operator|.
+name|isOverriden
+argument_list|()
+operator|==
+name|BundleInfo
+operator|.
+name|BundleOverrideMode
+operator|.
+name|OSGI
+condition|)
+block|{
+comment|// also download original from original bundle URI to check if we should override by comparing
+comment|// symbolic name - requires MANIFEST.MF header access. If there should be no override, we'll get
+comment|// back to original URI
+name|downloader
+operator|.
+name|download
+argument_list|(
+name|bi
+operator|.
+name|getOriginalLocation
+argument_list|()
+argument_list|,
+name|provider2
+lambda|->
+block|{
+name|ResourceImpl
+name|originalResource
+init|=
+name|createResource
+argument_list|(
+name|bi
+operator|.
+name|getOriginalLocation
+argument_list|()
+argument_list|,
+name|getMetadata
+argument_list|(
+name|provider2
+argument_list|)
+argument_list|,
+name|removeServiceRequirements
+argument_list|)
+decl_stmt|;
+name|bundles
+operator|.
+name|put
+argument_list|(
+name|bi
+operator|.
+name|getOriginalLocation
+argument_list|()
+argument_list|,
+name|originalResource
+argument_list|)
+expr_stmt|;
+comment|// an entry in overrides map means that given location was overriden
+name|overrides
+operator|.
+name|put
+argument_list|(
+name|loc
+argument_list|,
+name|originalResource
 argument_list|)
 expr_stmt|;
 block|}
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+argument_list|)
+expr_stmt|;
+block|}
+comment|// download direct bundle: requirements - without consulting overrides
 for|for
 control|(
 name|Clause
@@ -3023,57 +3154,9 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
-for|for
-control|(
-name|String
-name|override
-range|:
-name|overrides
-control|)
-block|{
-specifier|final
-name|String
-name|loc
-init|=
-name|Overrides
-operator|.
-name|extractUrl
-argument_list|(
-name|override
-argument_list|)
-decl_stmt|;
-name|downloader
-operator|.
-name|download
-argument_list|(
-name|loc
-argument_list|,
-name|provider
-lambda|->
-block|{
-name|bundles
-operator|.
-name|put
-argument_list|(
-name|loc
-argument_list|,
-name|createResource
-argument_list|(
-name|loc
-argument_list|,
-name|getMetadata
-argument_list|(
-name|provider
-argument_list|)
-argument_list|,
-name|removeServiceRequirements
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-argument_list|)
-expr_stmt|;
-block|}
+comment|// we *don't* have to download overrides separately - they're already taken into account from processed model
+comment|// download additional libraries - only exported, so they're capabilities are taken into account during
+comment|// resolution process
 if|if
 condition|(
 name|feature
@@ -3148,6 +3231,9 @@ operator|.
 name|await
 argument_list|()
 expr_stmt|;
+comment|// opposite to what we had before. Currently bundles are already overriden at model level, but
+comment|// as we finally have access to headers, we can compare symbolic names and if override mode is OSGi, then
+comment|// we can restore original resource if there should be no override.
 name|Overrides
 operator|.
 name|override
@@ -3205,6 +3291,7 @@ argument_list|,
 name|bundles
 argument_list|)
 decl_stmt|;
+comment|// feature's subsystem will optionally require conditional feature resource
 name|addIdentityRequirement
 argument_list|(
 name|this
@@ -3214,6 +3301,7 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
+comment|// but it's a mandatory requirement in other way
 name|addIdentityRequirement
 argument_list|(
 name|resCond
@@ -3240,7 +3328,7 @@ name|resCond
 argument_list|)
 expr_stmt|;
 block|}
-comment|// Add features
+comment|// Add features and make it require given subsystem that represents logical feature requirement
 name|FeatureResource
 name|resFeature
 init|=
@@ -3352,6 +3440,7 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// bundle of conditional feature will have mandatory requirement on it
 name|addIdentityRequirement
 argument_list|(
 name|res
@@ -3720,6 +3809,7 @@ argument_list|,
 name|blacklisted
 argument_list|)
 expr_stmt|;
+comment|// non dependency bundle will be added as osgi.identity req on type=osgi.bundle
 name|addIdentityRequirement
 argument_list|(
 name|this
@@ -3755,6 +3845,8 @@ operator|.
 name|resource
 argument_list|)
 expr_stmt|;
+comment|// bundle resource will have a requirement on its feature's subsystem too
+comment|// when bundle is declared with dependency="true", it will have a requirement on its region's subsystem
 name|addIdentityRequirement
 argument_list|(
 name|info
@@ -3768,6 +3860,108 @@ operator|.
 name|mandatory
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+comment|/**      * How to handle requirements from {@link org.osgi.namespace.service.ServiceNamespace#SERVICE_NAMESPACE} for      * given feature.      * @param feature      * @param serviceRequirements      * @return      */
+specifier|private
+name|boolean
+name|serviceRequirementsBehavior
+parameter_list|(
+name|Feature
+name|feature
+parameter_list|,
+name|FeaturesService
+operator|.
+name|ServiceRequirementsBehavior
+name|serviceRequirements
+parameter_list|)
+block|{
+if|if
+condition|(
+name|FeaturesService
+operator|.
+name|ServiceRequirementsBehavior
+operator|.
+name|Disable
+operator|==
+name|serviceRequirements
+condition|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+elseif|else
+if|if
+condition|(
+name|feature
+operator|!=
+literal|null
+operator|&&
+name|FeaturesService
+operator|.
+name|ServiceRequirementsBehavior
+operator|.
+name|Default
+operator|==
+name|serviceRequirements
+condition|)
+block|{
+return|return
+name|FeaturesNamespaces
+operator|.
+name|URI_1_0_0
+operator|.
+name|equals
+argument_list|(
+name|feature
+operator|.
+name|getNamespace
+argument_list|()
+argument_list|)
+operator|||
+name|FeaturesNamespaces
+operator|.
+name|URI_1_1_0
+operator|.
+name|equals
+argument_list|(
+name|feature
+operator|.
+name|getNamespace
+argument_list|()
+argument_list|)
+operator|||
+name|FeaturesNamespaces
+operator|.
+name|URI_1_2_0
+operator|.
+name|equals
+argument_list|(
+name|feature
+operator|.
+name|getNamespace
+argument_list|()
+argument_list|)
+operator|||
+name|FeaturesNamespaces
+operator|.
+name|URI_1_2_1
+operator|.
+name|equals
+argument_list|(
+name|feature
+operator|.
+name|getNamespace
+argument_list|()
+argument_list|)
+return|;
+block|}
+else|else
+block|{
+return|return
+literal|false
+return|;
 block|}
 block|}
 name|ResourceImpl
@@ -4108,6 +4302,7 @@ literal|" does not contain a manifest"
 argument_list|)
 throw|;
 block|}
+comment|/**      * Adds a {@link Resource} as dependency if this subsystem {@link Subsystem#isAcceptDependencies() accepts dependencies},      * otherwise, the dependency is added to parent subsystem, effectively searching for first parent subsystem representing      * region or scoped feature.      * @param resource      * @param mandatory      * @param start      * @param startLevel      * @param blacklisted      */
 name|void
 name|addDependency
 parameter_list|(
@@ -4166,6 +4361,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * Adds a {@link Resource} to this subsystem      * @param resource      * @param mandatory      * @param start      * @param startLevel      * @param blacklisted      */
 specifier|private
 name|void
 name|doAddDependency
@@ -4236,6 +4432,7 @@ name|merge
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Merges two dependencies by taking lower start level, stronger<code>mandatory</code> option and stronger      *<code>start</code> option.      * @param di1      * @param di2      * @return      */
 specifier|private
 name|DependencyInfo
 name|merge
@@ -4360,27 +4557,11 @@ argument_list|()
 operator|+
 literal|". First resource requires "
 operator|+
-operator|(
 name|r1
-operator|!=
-literal|null
-condition|?
-name|r1
-else|:
-literal|"nothing"
-operator|)
 operator|+
 literal|" while the second requires "
 operator|+
-operator|(
 name|r2
-operator|!=
-literal|null
-condition|?
-name|r2
-else|:
-literal|"nothing"
-operator|)
 argument_list|)
 throw|;
 block|}
@@ -4523,6 +4704,7 @@ return|return
 literal|null
 return|;
 block|}
+comment|/**      * TODOCUMENT: More generic than just {@link BundleInfo}      */
 class|class
 name|DependencyInfo
 implements|implements
@@ -4543,7 +4725,9 @@ decl_stmt|;
 name|boolean
 name|blacklisted
 decl_stmt|;
-name|boolean
+name|BundleInfo
+operator|.
+name|BundleOverrideMode
 name|overriden
 decl_stmt|;
 specifier|public
@@ -4677,7 +4861,9 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|boolean
+name|BundleInfo
+operator|.
+name|BundleOverrideMode
 name|isOverriden
 parameter_list|()
 block|{
@@ -4689,7 +4875,9 @@ specifier|public
 name|void
 name|setOverriden
 parameter_list|(
-name|boolean
+name|BundleInfo
+operator|.
+name|BundleOverrideMode
 name|overriden
 parameter_list|)
 block|{

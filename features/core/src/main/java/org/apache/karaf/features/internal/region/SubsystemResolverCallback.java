@@ -15,7 +15,7 @@ name|features
 operator|.
 name|internal
 operator|.
-name|service
+name|region
 package|;
 end_package
 
@@ -29,59 +29,25 @@ name|karaf
 operator|.
 name|features
 operator|.
-name|Repository
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|karaf
-operator|.
-name|features
-operator|.
-name|internal
-operator|.
-name|model
-operator|.
-name|Features
+name|BundleInfo
 import|;
 end_import
 
 begin_comment
-comment|/**  * Service that can process (enhance, modify, trim, ...) a set of features read from {@link Repository}.  */
+comment|/**  * Additional callback methods that may be invoked from {@link SubsystemResolver}  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|FeaturesProcessor
+name|SubsystemResolverCallback
 block|{
-comment|/**      * Checks whether given repository URI is<em>blacklisted</em>      * @param uri      * @return      */
-name|boolean
-name|isRepositoryBlacklisted
-parameter_list|(
-name|String
-name|uri
-parameter_list|)
-function_decl|;
-comment|/**      * Checks whether given bundle URI is<em>blacklisted</em>      * @param uri      * @return      */
-name|boolean
-name|isBundleBlacklisted
-parameter_list|(
-name|String
-name|uri
-parameter_list|)
-function_decl|;
-comment|/**      * Processes original {@link Features JAXB model of features}      * @param features      */
+comment|/**      * Notification about {@link BundleInfo bundle} being blacklisted      * @param bundleInfo      */
 name|void
-name|process
+name|bundleBlacklisted
 parameter_list|(
-name|Features
-name|features
+name|BundleInfo
+name|bundleInfo
 parameter_list|)
 function_decl|;
 block|}

@@ -273,6 +273,7 @@ operator|new
 name|FeaturesProcessingSerializer
 argument_list|()
 decl_stmt|;
+comment|// empty, but fully functional features processing configuration
 specifier|private
 name|FeaturesProcessing
 name|processing
@@ -341,13 +342,13 @@ parameter_list|)
 block|{
 name|LOG
 operator|.
-name|warn
+name|debug
 argument_list|(
 literal|"Can't find feature processing file ("
 operator|+
 name|featureModificationsURI
 operator|+
-literal|")"
+literal|"), skipping"
 argument_list|)
 expr_stmt|;
 block|}
@@ -519,10 +520,20 @@ name|getFeature
 argument_list|()
 control|)
 block|{
+name|boolean
+name|allBlacklisted
+init|=
+name|features
+operator|.
+name|isBlacklisted
+argument_list|()
+decl_stmt|;
 name|feature
 operator|.
 name|setBlacklisted
 argument_list|(
+name|allBlacklisted
+operator|||
 name|isFeatureBlacklisted
 argument_list|(
 name|feature
@@ -536,6 +547,8 @@ name|feature
 operator|.
 name|getBundle
 argument_list|()
+argument_list|,
+name|allBlacklisted
 argument_list|)
 expr_stmt|;
 for|for
@@ -555,6 +568,8 @@ name|c
 operator|.
 name|getBundle
 argument_list|()
+argument_list|,
+name|allBlacklisted
 argument_list|)
 expr_stmt|;
 block|}
@@ -572,6 +587,9 @@ argument_list|<
 name|Bundle
 argument_list|>
 name|bundles
+parameter_list|,
+name|boolean
+name|allBlacklisted
 parameter_list|)
 block|{
 for|for
@@ -585,6 +603,8 @@ block|{
 name|boolean
 name|bundleBlacklisted
 init|=
+name|allBlacklisted
+operator|||
 name|isBundleBlacklisted
 argument_list|(
 name|bundle
@@ -627,6 +647,17 @@ name|Bundle
 name|bundle
 parameter_list|)
 block|{
+name|bundle
+operator|.
+name|setOverriden
+argument_list|(
+name|BundleInfo
+operator|.
+name|BundleOverrideMode
+operator|.
+name|NONE
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|BundleReplacements
@@ -692,13 +723,46 @@ argument_list|(
 name|originalLocation
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|override
+operator|.
+name|getMode
+argument_list|()
+operator|==
+name|BundleReplacements
+operator|.
+name|BundleOverrideMode
+operator|.
+name|MAVEN
+condition|)
+block|{
 name|bundle
 operator|.
 name|setOverriden
 argument_list|(
-literal|true
+name|BundleInfo
+operator|.
+name|BundleOverrideMode
+operator|.
+name|MAVEN
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|bundle
+operator|.
+name|setOverriden
+argument_list|(
+name|BundleInfo
+operator|.
+name|BundleOverrideMode
+operator|.
+name|OSGI
+argument_list|)
+expr_stmt|;
+block|}
 name|bundle
 operator|.
 name|setLocation
@@ -709,7 +773,7 @@ name|getReplacement
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// last rule wins - no break!!!
+comment|// TOCHECK: last rule wins - no break!!!
 comment|//break;
 block|}
 block|}
@@ -785,7 +849,9 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Matching location of the bundle, checks whether this bundle is blacklisted      * @param location      * @return      */
-specifier|private
+annotation|@
+name|Override
+specifier|public
 name|boolean
 name|isBundleBlacklisted
 parameter_list|(

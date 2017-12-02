@@ -168,6 +168,8 @@ name|features
 operator|.
 name|Conditional
 block|{
+comment|// TODO: use type that really reflects<xs:element name="condition" type="tns:dependency" /> ?
+comment|// i.e., org.apache.karaf.features.internal.model.Dependency
 annotation|@
 name|XmlElement
 argument_list|(

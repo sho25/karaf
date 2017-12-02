@@ -1380,6 +1380,12 @@ name|featureBundle
 operator|.
 name|isOverriden
 argument_list|()
+operator|!=
+name|BundleInfo
+operator|.
+name|BundleOverrideMode
+operator|.
+name|NONE
 condition|)
 block|{
 name|sb

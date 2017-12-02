@@ -515,6 +515,17 @@ return|return
 name|match
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|originalId
+return|;
+block|}
 block|}
 end_class
 

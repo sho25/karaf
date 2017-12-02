@@ -261,6 +261,7 @@ operator|=
 name|blacklist
 expr_stmt|;
 block|}
+comment|/**      * Installs a {@link BundleInfo} into<code>system/</code> directory taking into account<em>blacklisted</em>      * and<em>overriden</em> flags.      * @param bundle      * @throws Exception      */
 specifier|public
 name|void
 name|installArtifact
@@ -299,6 +300,12 @@ name|bundle
 operator|.
 name|isOverriden
 argument_list|()
+operator|!=
+name|BundleInfo
+operator|.
+name|BundleOverrideMode
+operator|.
+name|NONE
 condition|)
 block|{
 name|LOGGER
@@ -453,6 +460,7 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Installs generic artifact to<code>system/</code> directory. For bundles, dedicated {@link #installArtifact(BundleInfo)}      * should be used.      * @param location      * @throws Exception      */
 specifier|public
 name|void
 name|installArtifact

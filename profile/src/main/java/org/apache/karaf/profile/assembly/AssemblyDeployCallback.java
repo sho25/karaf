@@ -131,6 +131,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|LinkedList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
@@ -196,6 +206,20 @@ operator|.
 name|properties
 operator|.
 name|Properties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|BundleInfo
 import|;
 end_import
 
@@ -381,7 +405,7 @@ name|internal
 operator|.
 name|service
 operator|.
-name|Blacklist
+name|Deployer
 import|;
 end_import
 
@@ -399,7 +423,7 @@ name|internal
 operator|.
 name|service
 operator|.
-name|Deployer
+name|FeaturesProcessor
 import|;
 end_import
 
@@ -545,6 +569,10 @@ name|LoggerFactory
 import|;
 end_import
 
+begin_comment
+comment|/**  * Callback through which {@link Deployer} will interact with the distribution that's being assembled.  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -580,14 +608,6 @@ specifier|private
 specifier|final
 name|Builder
 name|builder
-decl_stmt|;
-specifier|private
-name|Blacklist
-name|featureBlacklist
-decl_stmt|;
-specifier|private
-name|Blacklist
-name|bundleBlacklist
 decl_stmt|;
 specifier|private
 specifier|final
@@ -629,6 +649,11 @@ argument_list|)
 decl_stmt|;
 specifier|private
 specifier|final
+name|FeaturesProcessor
+name|processor
+decl_stmt|;
+specifier|private
+specifier|final
 name|Map
 argument_list|<
 name|String
@@ -642,6 +667,7 @@ name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
+comment|/**      * Create a {@link Deployer.DeployCallback} performing actions on runtime with single system bundle installed      * and with access to all non-blacklisted features.      * @param manager      * @param builder      * @param systemBundle      * @param repositories      * @param processor      */
 specifier|public
 name|AssemblyDeployCallback
 parameter_list|(
@@ -659,6 +685,9 @@ argument_list|<
 name|Features
 argument_list|>
 name|repositories
+parameter_list|,
+name|FeaturesProcessor
+name|processor
 parameter_list|)
 block|{
 name|this
@@ -673,8 +702,6 @@ name|builder
 operator|=
 name|builder
 expr_stmt|;
-comment|//        this.featureBlacklist = new Blacklist(builder.getBlacklistedFeatures());
-comment|//        this.bundleBlacklist = new Blacklist(builder.getBlacklistedBundles());
 name|this
 operator|.
 name|homeDirectory
@@ -713,6 +740,12 @@ name|builder
 operator|.
 name|defaultStartLevel
 expr_stmt|;
+name|this
+operator|.
+name|processor
+operator|=
+name|processor
+expr_stmt|;
 name|dstate
 operator|=
 operator|new
@@ -724,15 +757,6 @@ expr_stmt|;
 name|dstate
 operator|.
 name|bundles
-operator|=
-operator|new
-name|HashMap
-argument_list|<>
-argument_list|()
-expr_stmt|;
-name|dstate
-operator|.
-name|features
 operator|=
 operator|new
 name|HashMap
@@ -794,6 +818,25 @@ name|getBundle
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|Collection
+argument_list|<
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|Feature
+argument_list|>
+name|features
+init|=
+operator|new
+name|LinkedList
+argument_list|<>
+argument_list|()
+decl_stmt|;
 for|for
 control|(
 name|Features
@@ -802,6 +845,16 @@ range|:
 name|repositories
 control|)
 block|{
+if|if
+condition|(
+name|repo
+operator|.
+name|isBlacklisted
+argument_list|()
+condition|)
+block|{
+continue|continue;
+block|}
 for|for
 control|(
 name|Feature
@@ -813,23 +866,34 @@ name|getFeature
 argument_list|()
 control|)
 block|{
-name|dstate
-operator|.
-name|features
-operator|.
-name|put
-argument_list|(
+if|if
+condition|(
+operator|!
 name|f
 operator|.
-name|getId
+name|isBlacklisted
 argument_list|()
-argument_list|,
+condition|)
+block|{
+name|features
+operator|.
+name|add
+argument_list|(
 name|f
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 block|}
+name|dstate
+operator|.
+name|partitionFeatures
+argument_list|(
+name|features
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Get startup bundles with related start-level      * @return      */
 specifier|public
 name|Map
 argument_list|<
@@ -1517,11 +1581,44 @@ name|Feature
 name|feature
 parameter_list|)
 block|{
-comment|//        if (featureBlacklist.isFeatureBlacklisted(feature.getName(), feature.getVersion())) {
-comment|//            if (builder.getBlacklistPolicy() == Builder.BlacklistPolicy.Fail) {
-comment|//                throw new RuntimeException("Feature " + feature.getId() + " is blacklisted");
-comment|//            }
-comment|//        }
+if|if
+condition|(
+name|feature
+operator|.
+name|isBlacklisted
+argument_list|()
+condition|)
+block|{
+if|if
+condition|(
+name|builder
+operator|.
+name|getBlacklistPolicy
+argument_list|()
+operator|==
+name|Builder
+operator|.
+name|BlacklistPolicy
+operator|.
+name|Fail
+condition|)
+block|{
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"Feature "
+operator|+
+name|feature
+operator|.
+name|getId
+argument_list|()
+operator|+
+literal|" is blacklisted"
+argument_list|)
+throw|;
+block|}
+block|}
 block|}
 annotation|@
 name|Override
@@ -1562,11 +1659,43 @@ throws|throws
 name|BundleException
 block|{
 comment|// Check blacklist
-comment|//        if (bundleBlacklist.isBundleBlacklisted(uri)) {
-comment|//            if (builder.getBlacklistPolicy() == Builder.BlacklistPolicy.Fail) {
-comment|//                throw new RuntimeException("Bundle " + uri + " is blacklisted");
-comment|//            }
-comment|//        }
+if|if
+condition|(
+name|processor
+operator|.
+name|isBundleBlacklisted
+argument_list|(
+name|uri
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|builder
+operator|.
+name|getBlacklistPolicy
+argument_list|()
+operator|==
+name|Builder
+operator|.
+name|BlacklistPolicy
+operator|.
+name|Fail
+condition|)
+block|{
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"Bundle "
+operator|+
+name|uri
+operator|+
+literal|" is blacklisted"
+argument_list|)
+throw|;
+block|}
+block|}
 comment|// Install
 name|LOGGER
 operator|.
@@ -1881,6 +2010,29 @@ operator|.
 name|setStartLevel
 argument_list|(
 name|startLevel
+argument_list|)
+expr_stmt|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|bundleBlacklisted
+parameter_list|(
+name|BundleInfo
+name|bundleInfo
+parameter_list|)
+block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"      skipping blacklisted bundle: {}"
+argument_list|,
+name|bundleInfo
+operator|.
+name|getLocation
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

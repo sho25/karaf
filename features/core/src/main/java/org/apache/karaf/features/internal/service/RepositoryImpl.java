@@ -366,6 +366,13 @@ name|blacklisted
 operator|=
 name|blacklisted
 expr_stmt|;
+name|features
+operator|.
+name|setBlacklisted
+argument_list|(
+name|blacklisted
+argument_list|)
+expr_stmt|;
 block|}
 specifier|private
 name|void

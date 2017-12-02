@@ -1759,7 +1759,7 @@ operator|!
 name|fileContent
 operator|.
 name|generated
-operator|&&
+operator|||
 operator|!
 operator|(
 name|isOverlay

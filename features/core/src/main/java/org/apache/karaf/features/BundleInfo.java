@@ -46,10 +46,25 @@ name|boolean
 name|isDependency
 parameter_list|()
 function_decl|;
-name|boolean
+name|BundleInfo
+operator|.
+name|BundleOverrideMode
 name|isOverriden
 parameter_list|()
 function_decl|;
+specifier|public
+enum|enum
+name|BundleOverrideMode
+block|{
+comment|/**          * No override          */
+name|NONE
+block|,
+comment|/**          * Compatibility with<code>${karaf.etc}/overrides.properties</code> - requires access to original and          * replacement bundle's headers to compare version and symbolic name.          */
+name|OSGI
+block|,
+comment|/**          * Simpler option that's just static override - doesn't require accessing and checking the bundle/resource          * being overriden.          */
+name|MAVEN
+block|}
 block|}
 end_interface
 

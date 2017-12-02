@@ -21,26 +21,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|net
-operator|.
-name|MalformedURLException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|nio
 operator|.
 name|file
@@ -215,6 +195,10 @@ name|LoggerFactory
 import|;
 end_import
 
+begin_comment
+comment|/**  * Installs PID configuration to<code>${karaf.etc}</code> and<code>system/</code> directory.  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -271,7 +255,6 @@ name|pidsToExtract
 operator|=
 name|pidsToExtract
 expr_stmt|;
-comment|// TODO Auto-generated constructor stub
 block|}
 specifier|public
 name|void
@@ -288,10 +271,6 @@ name|installer
 parameter_list|)
 throws|throws
 name|Exception
-throws|,
-name|MalformedURLException
-throws|,
-name|IOException
 block|{
 name|List
 argument_list|<
