@@ -106,6 +106,8 @@ operator|.
 name|Format
 operator|.
 name|Json
+argument_list|,
+literal|4096
 argument_list|)
 argument_list|)
 expr_stmt|;
