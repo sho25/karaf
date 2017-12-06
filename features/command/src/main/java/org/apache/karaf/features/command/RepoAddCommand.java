@@ -305,6 +305,31 @@ name|nameOrUrl
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|featuresService
+operator|.
+name|isRepositoryUriBlacklisted
+argument_list|(
+name|uri
+argument_list|)
+condition|)
+block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Feature URL "
+operator|+
+name|uri
+operator|+
+literal|" is blacklisted"
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 name|System
 operator|.
 name|out

@@ -361,6 +361,13 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+name|boolean
+name|isRepositoryUriBlacklisted
+parameter_list|(
+name|URI
+name|uri
+parameter_list|)
+function_decl|;
 name|void
 name|addRepository
 parameter_list|(
