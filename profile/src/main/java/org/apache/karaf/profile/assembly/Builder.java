@@ -3509,16 +3509,149 @@ expr_stmt|;
 block|}
 block|}
 comment|//
-comment|// Handle blacklist - we'll use SINGLE instance iof Blacklist for all further downloads
+comment|// Load profiles
+comment|//
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"Loading profiles from:"
+argument_list|)
+expr_stmt|;
+name|profilesUris
+operator|.
+name|forEach
+argument_list|(
+name|p
+lambda|->
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"   "
+operator|+
+name|p
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|allProfiles
+operator|=
+name|loadExternalProfiles
+argument_list|(
+name|profilesUris
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|allProfiles
+operator|.
+name|size
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
+name|StringBuilder
+name|sb
+init|=
+operator|new
+name|StringBuilder
+argument_list|()
+decl_stmt|;
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"   Found profiles: "
+operator|+
+name|allProfiles
+operator|.
+name|keySet
+argument_list|()
+operator|.
+name|stream
+argument_list|()
+operator|.
+name|collect
+argument_list|(
+name|Collectors
+operator|.
+name|joining
+argument_list|(
+literal|", "
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+comment|// Generate initial profile to collect overrides and blacklisting instructions
+name|Profile
+name|initialProfile
+init|=
+name|ProfileBuilder
+operator|.
+name|Factory
+operator|.
+name|create
+argument_list|(
+literal|"initial"
+argument_list|)
+operator|.
+name|setParents
+argument_list|(
+operator|new
+name|ArrayList
+argument_list|<>
+argument_list|(
+name|profiles
+operator|.
+name|keySet
+argument_list|()
+argument_list|)
+argument_list|)
+operator|.
+name|getProfile
+argument_list|()
+decl_stmt|;
+name|Profile
+name|initialOverlay
+init|=
+name|Profiles
+operator|.
+name|getOverlay
+argument_list|(
+name|initialProfile
+argument_list|,
+name|allProfiles
+argument_list|,
+name|environment
+argument_list|)
+decl_stmt|;
+name|Profile
+name|initialEffective
+init|=
+name|Profiles
+operator|.
+name|getEffective
+argument_list|(
+name|initialOverlay
+argument_list|,
+literal|false
+argument_list|)
+decl_stmt|;
+comment|//
+comment|// Handle blacklist - we'll use SINGLE instance of Blacklist for all further downloads
 comment|//
 name|blacklist
 operator|=
 name|processBlacklist
-argument_list|()
+argument_list|(
+name|initialEffective
+argument_list|)
 expr_stmt|;
-comment|// we can't yet have full feature processor, because some overrides may be defined in profiles and
-comment|// profiles are generated after reading features from repositories
-comment|// so for now, we can only configure blacklisting features processor
+comment|//
+comment|// Configure blacklisting and overriding features processor
+comment|//
 name|boolean
 name|needFeaturesProcessorFileCopy
 init|=
@@ -3662,7 +3795,6 @@ expr_stmt|;
 block|}
 comment|// now we can configure blacklisting features processor which may have already defined (in XML)
 comment|// configuration for bundle replacements or feature overrides.
-comment|// we'll add overrides from profiles later.
 name|FeaturesProcessorImpl
 name|processor
 init|=
@@ -3681,6 +3813,28 @@ argument_list|<>
 argument_list|()
 argument_list|)
 decl_stmt|;
+comment|// add overrides from initialProfile
+name|Set
+argument_list|<
+name|String
+argument_list|>
+name|overrides
+init|=
+name|processOverrides
+argument_list|(
+name|initialEffective
+operator|.
+name|getOverrides
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|processor
+operator|.
+name|addOverrides
+argument_list|(
+name|overrides
+argument_list|)
+expr_stmt|;
 comment|//
 comment|// Propagate feature installation from repositories
 comment|//
@@ -3819,82 +3973,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-block|}
-comment|//
-comment|// Load profiles
-comment|//
-name|LOGGER
-operator|.
-name|info
-argument_list|(
-literal|"Loading profiles from:"
-argument_list|)
-expr_stmt|;
-name|profilesUris
-operator|.
-name|forEach
-argument_list|(
-name|p
-lambda|->
-name|LOGGER
-operator|.
-name|info
-argument_list|(
-literal|"   "
-operator|+
-name|p
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|allProfiles
-operator|=
-name|loadExternalProfiles
-argument_list|(
-name|profilesUris
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|allProfiles
-operator|.
-name|size
-argument_list|()
-operator|>
-literal|0
-condition|)
-block|{
-name|StringBuilder
-name|sb
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|LOGGER
-operator|.
-name|info
-argument_list|(
-literal|"   Found profiles: "
-operator|+
-name|allProfiles
-operator|.
-name|keySet
-argument_list|()
-operator|.
-name|stream
-argument_list|()
-operator|.
-name|collect
-argument_list|(
-name|Collectors
-operator|.
-name|joining
-argument_list|(
-literal|", "
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 comment|//
 comment|// Generate profiles. If user has configured additional profiles, they'll be used as parents
@@ -4108,7 +4186,35 @@ name|v
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// profile with all the parents configured
+comment|// profile with all the parents configured and stage-agnostic blacklisting configuration added
+name|blacklistedRepositoryURIs
+operator|.
+name|forEach
+argument_list|(
+name|builder
+operator|::
+name|addBlacklistedRepository
+argument_list|)
+expr_stmt|;
+name|blacklistedFeatureIdentifiers
+operator|.
+name|forEach
+argument_list|(
+name|builder
+operator|::
+name|addBlacklistedFeature
+argument_list|)
+expr_stmt|;
+name|blacklistedBundleURIs
+operator|.
+name|forEach
+argument_list|(
+name|builder
+operator|::
+name|addBlacklistedBundle
+argument_list|)
+expr_stmt|;
+comment|// final profilep
 name|Profile
 name|overallProfile
 init|=
@@ -4147,31 +4253,6 @@ argument_list|,
 literal|false
 argument_list|)
 decl_stmt|;
-comment|//
-comment|// Handle overrides - existing (unzipped from KAR) and defined in profile
-comment|//
-name|Set
-argument_list|<
-name|String
-argument_list|>
-name|overrides
-init|=
-name|processOverrides
-argument_list|(
-name|overallEffective
-operator|.
-name|getOverrides
-argument_list|()
-argument_list|)
-decl_stmt|;
-comment|// we can now add overrides from profiles.
-name|processor
-operator|.
-name|addOverrides
-argument_list|(
-name|overrides
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|writeProfiles
@@ -4845,11 +4926,14 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Checks existing and configured blacklisting definitions      * @return      * @throws IOException      */
+comment|/**      * Checks existing and configured blacklisting definitions      * @param initialProfile      * @return      * @throws IOException      */
 specifier|private
 name|Blacklist
 name|processBlacklist
-parameter_list|()
+parameter_list|(
+name|Profile
+name|initialProfile
+parameter_list|)
 throws|throws
 name|IOException
 block|{
@@ -4922,6 +5006,7 @@ range|:
 name|blacklistedRepositoryURIs
 control|)
 block|{
+comment|// from Maven/Builder configuration
 try|try
 block|{
 name|blacklist
@@ -4938,7 +5023,7 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|MalformedURLException
+name|IllegalArgumentException
 name|e
 parameter_list|)
 block|{
@@ -4955,12 +5040,33 @@ block|}
 block|}
 for|for
 control|(
+name|LocationPattern
+name|br
+range|:
+name|initialProfile
+operator|.
+name|getBlacklistedRepositories
+argument_list|()
+control|)
+block|{
+comment|// from profile configuration
+name|blacklist
+operator|.
+name|blacklistRepository
+argument_list|(
+name|br
+argument_list|)
+expr_stmt|;
+block|}
+for|for
+control|(
 name|String
 name|bf
 range|:
 name|blacklistedFeatureIdentifiers
 control|)
 block|{
+comment|// from Maven/Builder configuration
 name|blacklist
 operator|.
 name|blacklistFeature
@@ -4975,12 +5081,33 @@ expr_stmt|;
 block|}
 for|for
 control|(
+name|FeaturePattern
+name|bf
+range|:
+name|initialProfile
+operator|.
+name|getBlacklistedFeatures
+argument_list|()
+control|)
+block|{
+comment|// from profile configuration
+name|blacklist
+operator|.
+name|blacklistFeature
+argument_list|(
+name|bf
+argument_list|)
+expr_stmt|;
+block|}
+for|for
+control|(
 name|String
 name|bb
 range|:
 name|blacklistedBundleURIs
 control|)
 block|{
+comment|// from Maven/Builder configuration
 try|try
 block|{
 name|blacklist
@@ -4997,7 +5124,7 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|MalformedURLException
+name|IllegalArgumentException
 name|e
 parameter_list|)
 block|{
@@ -5011,6 +5138,26 @@ name|bb
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+for|for
+control|(
+name|LocationPattern
+name|bb
+range|:
+name|initialProfile
+operator|.
+name|getBlacklistedBundles
+argument_list|()
+control|)
+block|{
+comment|// from profile configuration
+name|blacklist
+operator|.
+name|blacklistBundle
+argument_list|(
+name|bb
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(

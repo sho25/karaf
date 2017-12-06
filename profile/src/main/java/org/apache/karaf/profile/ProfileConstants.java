@@ -26,6 +26,12 @@ name|ATTRIBUTE_PREFIX
 init|=
 literal|"attribute."
 decl_stmt|;
+comment|/**      * Prefix for blacklisting attributes      */
+name|String
+name|BLACKLISTED_PREFIX
+init|=
+literal|"blacklisted."
+decl_stmt|;
 comment|/**      * The attribute key for whitespace-separated list of parent profile IDs      */
 name|String
 name|PARENTS
@@ -104,6 +110,30 @@ comment|/**      * The prefix for attributes that specify bundle URIs to install
 name|String
 name|BUNDLE_PREFIX
 init|=
+literal|"bundle."
+decl_stmt|;
+comment|/**      * The prefix for attributes that specify URIs of blacklisted features XML files      */
+name|String
+name|BLACKLISTED_REPOSITORY_PREFIX
+init|=
+name|BLACKLISTED_PREFIX
+operator|+
+literal|"repository."
+decl_stmt|;
+comment|/**      * The prefix for attributes that specify blacklisted feature names (<code>name[/version]</code>)      */
+name|String
+name|BLACKLISTED_FEATURE_PREFIX
+init|=
+name|BLACKLISTED_PREFIX
+operator|+
+literal|"feature."
+decl_stmt|;
+comment|/**      * The prefix for attributes that specify blacklisted bundle URIs      */
+name|String
+name|BLACKLISTED_BUNDLE_PREFIX
+init|=
+name|BLACKLISTED_PREFIX
+operator|+
 literal|"bundle."
 decl_stmt|;
 comment|/**      * The prefix for attributes that specify additional libraries to add to<code>${karaf.home}/lib</code>.      * These are native libraries only. JARs that should be available in app classpath should go to      *<code>${karaf.home}/lib/boot</code> and use {@link #BOOT_PREFIX}.      */
