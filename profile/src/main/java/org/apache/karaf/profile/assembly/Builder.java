@@ -6991,12 +6991,31 @@ comment|// Add feature dependencies
 for|for
 control|(
 name|String
-name|dependency
+name|nameOrPattern
 range|:
 name|bootEffective
 operator|.
 name|getFeatures
 argument_list|()
+control|)
+block|{
+comment|// KARAF-5273: feature may be a pattern
+for|for
+control|(
+name|String
+name|dependency
+range|:
+name|FeatureSelector
+operator|.
+name|getMatchingFeatures
+argument_list|(
+name|nameOrPattern
+argument_list|,
+name|bootRepositories
+operator|.
+name|values
+argument_list|()
+argument_list|)
 control|)
 block|{
 name|Dependency
@@ -7053,6 +7072,7 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|// Add bundles
 for|for
@@ -9447,13 +9467,29 @@ argument_list|,
 name|optionals
 argument_list|)
 expr_stmt|;
-comment|// Specify feature requirements (already prefixed with "feature:")
+comment|// Specify feature requirements
 for|for
 control|(
 name|String
 name|feature
 range|:
 name|features
+control|)
+block|{
+comment|// KARAF-5273: feature may be a pattern
+for|for
+control|(
+name|String
+name|featureName
+range|:
+name|FeatureSelector
+operator|.
+name|getMatchingFeatures
+argument_list|(
+name|feature
+argument_list|,
+name|repositories
+argument_list|)
 control|)
 block|{
 name|MapUtils
@@ -9468,9 +9504,10 @@ name|FeaturesService
 operator|.
 name|ROOT_REGION
 argument_list|,
-name|feature
+name|featureName
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|// Specify bundle requirements
 for|for
