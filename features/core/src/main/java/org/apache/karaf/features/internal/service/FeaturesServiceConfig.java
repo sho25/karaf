@@ -91,6 +91,12 @@ specifier|final
 name|String
 name|featureModifications
 decl_stmt|;
+comment|/**      * Location of<code>etc/versions.properties</code> to read properties to resolve placeholders in      * {@link #featureModifications}      */
+specifier|public
+specifier|final
+name|String
+name|featureProcessingVersions
+decl_stmt|;
 comment|/**      * Location of<code>etc/overrides.properties</code>      */
 annotation|@
 name|Deprecated
@@ -110,6 +116,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -118,6 +126,9 @@ name|FeaturesServiceConfig
 parameter_list|(
 name|String
 name|featureModifications
+parameter_list|,
+name|String
+name|featureProcessingVersions
 parameter_list|)
 block|{
 name|this
@@ -143,6 +154,8 @@ argument_list|,
 literal|null
 argument_list|,
 name|featureModifications
+argument_list|,
+name|featureProcessingVersions
 argument_list|,
 literal|null
 argument_list|)
@@ -161,6 +174,9 @@ name|blacklisted
 parameter_list|,
 name|String
 name|featureModifications
+parameter_list|,
+name|String
+name|featureProcessingVersions
 parameter_list|)
 block|{
 name|this
@@ -186,6 +202,8 @@ argument_list|,
 name|blacklisted
 argument_list|,
 name|featureModifications
+argument_list|,
+name|featureProcessingVersions
 argument_list|,
 literal|null
 argument_list|)
@@ -216,6 +234,9 @@ name|String
 name|featureModifications
 parameter_list|,
 name|String
+name|featureProcessingVersions
+parameter_list|,
+name|String
 name|serviceRequirements
 parameter_list|)
 block|{
@@ -272,6 +293,12 @@ operator|.
 name|featureModifications
 operator|=
 name|featureModifications
+expr_stmt|;
+name|this
+operator|.
+name|featureProcessingVersions
+operator|=
+name|featureProcessingVersions
 expr_stmt|;
 name|this
 operator|.
@@ -313,6 +340,9 @@ name|String
 name|featureModifications
 parameter_list|,
 name|String
+name|featureProcessingVersions
+parameter_list|,
+name|String
 name|serviceRequirements
 parameter_list|)
 block|{
@@ -369,6 +399,12 @@ operator|.
 name|featureModifications
 operator|=
 name|featureModifications
+expr_stmt|;
+name|this
+operator|.
+name|featureProcessingVersions
+operator|=
+name|featureProcessingVersions
 expr_stmt|;
 name|this
 operator|.

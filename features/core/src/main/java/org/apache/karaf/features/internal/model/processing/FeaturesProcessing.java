@@ -1609,7 +1609,14 @@ name|vfloor
 argument_list|,
 name|v
 argument_list|,
-literal|true
+name|v
+operator|.
+name|compareTo
+argument_list|(
+name|vfloor
+argument_list|)
+operator|>
+literal|0
 argument_list|)
 operator|.
 name|toString

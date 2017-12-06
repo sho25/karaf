@@ -3671,6 +3671,8 @@ name|FeaturesProcessorImpl
 argument_list|(
 name|existingProcessorDefinitionURI
 argument_list|,
+literal|null
+argument_list|,
 name|blacklist
 argument_list|,
 operator|new
