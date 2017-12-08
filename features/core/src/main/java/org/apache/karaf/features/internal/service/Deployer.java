@@ -4506,7 +4506,7 @@ block|}
 comment|//
 comment|// Execute deployment
 comment|//
-comment|// #1: stop bundles that needs to be updated or uninstalled in order
+comment|// #1: stop bundles that needs to be updated or uninstalled or refreshed in order
 comment|// #2: uninstall needed bundles
 comment|// #3: update regions
 comment|// #4: update bundles
@@ -4828,6 +4828,38 @@ name|toDelete
 argument_list|)
 expr_stmt|;
 block|}
+name|Set
+argument_list|<
+name|Bundle
+argument_list|>
+name|toRefreshToStopEarly
+init|=
+operator|new
+name|HashSet
+argument_list|<>
+argument_list|(
+name|toRefresh
+operator|.
+name|keySet
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|toRefreshToStopEarly
+operator|.
+name|remove
+argument_list|(
+name|dstate
+operator|.
+name|serviceBundle
+argument_list|)
+expr_stmt|;
+name|toStop
+operator|.
+name|addAll
+argument_list|(
+name|toRefreshToStopEarly
+argument_list|)
+expr_stmt|;
 name|removeFragmentsAndBundlesInState
 argument_list|(
 name|toStop
