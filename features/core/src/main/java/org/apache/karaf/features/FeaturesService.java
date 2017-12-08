@@ -946,6 +946,18 @@ name|Feature
 name|feature
 parameter_list|)
 function_decl|;
+name|void
+name|refreshFeatures
+parameter_list|(
+name|EnumSet
+argument_list|<
+name|Option
+argument_list|>
+name|options
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 block|}
 end_interface
 
