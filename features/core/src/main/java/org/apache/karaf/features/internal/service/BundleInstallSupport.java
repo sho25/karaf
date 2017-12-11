@@ -187,6 +187,10 @@ name|Wire
 import|;
 end_import
 
+begin_comment
+comment|/**  *<p>Interface to interact with OSGi framework.</p>  *<p>Bundles are installed into {@link org.eclipse.equinox.region.Region regions} and {@link Feature features}  * are used only to get their configs and libraries.</p>  */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface
@@ -398,6 +402,7 @@ name|void
 name|unregister
 parameter_list|()
 function_decl|;
+comment|/**      *<p>Low-level state of system, provides information about start levels (initial and current), system bundle,      * bundle of features service and entire map of bundle IDs to {@link Bundle} instances.</p>      *<p>There's no relation to {@link org.eclipse.equinox.region.Region regions}.</p>      */
 class|class
 name|FrameworkInfo
 block|{

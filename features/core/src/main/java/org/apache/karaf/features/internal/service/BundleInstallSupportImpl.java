@@ -529,6 +529,10 @@ name|LoggerFactory
 import|;
 end_import
 
+begin_comment
+comment|/**  * Interaction with OSGi framework, where bundles are installed into it via {@link RegionDigraph}. After a bundle  * is installed, it may be controlled in standard way via {@link Bundle} interface.  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -2057,7 +2061,7 @@ name|bundles
 operator|.
 name|get
 argument_list|(
-literal|0
+literal|0L
 argument_list|)
 expr_stmt|;
 return|return

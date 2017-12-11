@@ -90,6 +90,12 @@ name|feature
 operator|.
 name|isHidden
 argument_list|()
+operator|&&
+operator|!
+name|feature
+operator|.
+name|isBlacklisted
+argument_list|()
 return|;
 block|}
 block|}

@@ -372,8 +372,6 @@ specifier|public
 name|Object
 name|execute
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|displayProfile
 argument_list|(
@@ -588,7 +586,7 @@ name|String
 argument_list|,
 name|Object
 argument_list|>
-name|agentConfiguration
+name|profileConfiguration
 init|=
 name|profile
 operator|.
@@ -603,7 +601,7 @@ name|List
 argument_list|<
 name|String
 argument_list|>
-name|agentProperties
+name|profileProperties
 init|=
 operator|new
 name|ArrayList
@@ -644,7 +642,7 @@ name|Object
 argument_list|>
 name|entry
 range|:
-name|agentConfiguration
+name|profileConfiguration
 operator|.
 name|entrySet
 argument_list|()
@@ -821,7 +819,7 @@ literal|"attribute."
 argument_list|)
 condition|)
 block|{
-name|agentProperties
+name|profileProperties
 operator|.
 name|add
 argument_list|(
@@ -994,7 +992,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|agentProperties
+name|profileProperties
 operator|.
 name|size
 argument_list|()
@@ -1004,11 +1002,11 @@ condition|)
 block|{
 name|printConfigList
 argument_list|(
-literal|"Agent Properties : "
+literal|"Profile Properties : "
 argument_list|,
 name|output
 argument_list|,
-name|agentProperties
+name|profileProperties
 argument_list|)
 expr_stmt|;
 block|}

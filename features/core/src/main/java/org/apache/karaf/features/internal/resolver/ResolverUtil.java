@@ -235,6 +235,7 @@ return|return
 literal|null
 return|;
 block|}
+comment|/**      * Returns name of owning {@link org.apache.karaf.features.internal.region.Subsystem} for given resource      * @param resource      * @return      */
 specifier|public
 specifier|static
 name|String

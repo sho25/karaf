@@ -161,6 +161,20 @@ name|XmlType
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|Blacklisting
+import|;
+end_import
+
 begin_comment
 comment|/**  *<p>Root element of Feature definition. It contains optional attribute which allow  * name of repository. This name will be used in shell to display source repository  * of given feature.</p>  *<p>Java class for featuresRoot complex type.</p>  *<p>The following schema fragment specifies the expected content contained within this class.</p>  *<pre>  *&lt;complexType name="features"&gt;  *&lt;complexContent&gt;  *&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;  *&lt;sequence&gt;  *&lt;element name="repository" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded" minOccurs="0"/&gt;  *&lt;element name="resource-repository" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded" minOccurs="0"/&gt;  *&lt;element name="feature" type="{http://karaf.apache.org/xmlns/features/v1.0.0}feature" maxOccurs="unbounded" minOccurs="0"/&gt;  *&lt;/sequence&gt;  *&lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;  *&lt;/restriction&gt;  *&lt;/complexContent&gt;  *&lt;/complexType&gt;  *</pre>  */
 end_comment
@@ -214,6 +228,8 @@ argument_list|)
 specifier|public
 class|class
 name|Features
+implements|implements
+name|Blacklisting
 block|{
 annotation|@
 name|XmlSchemaType
@@ -324,6 +340,12 @@ name|XmlTransient
 specifier|private
 name|String
 name|namespace
+decl_stmt|;
+annotation|@
+name|XmlTransient
+specifier|private
+name|boolean
+name|blacklisted
 decl_stmt|;
 comment|/**      *<p>Get the value of the repository property.</p>      *      *<p>This accessor method returns a reference to the live list,      * not a snapshot. Therefore any modification you make to the      * returned list will be present inside the JAXB object.      * This is why there is not a<CODE>set</CODE> method for the repository property.</p>      *      *<p>For example, to add a new item, do as follows:</p>      *      *<pre>      *    getRepository().add(newItem);      *</pre>      *      *<p>Objects of the following type(s) are allowed in the list      * {@link String}.</p>      *      * @return the list of inner repositories.      */
 specifier|public
@@ -582,6 +604,32 @@ block|{
 return|return
 name|namespace
 return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isBlacklisted
+parameter_list|()
+block|{
+return|return
+name|blacklisted
+return|;
+block|}
+specifier|public
+name|void
+name|setBlacklisted
+parameter_list|(
+name|boolean
+name|blacklisted
+parameter_list|)
+block|{
+name|this
+operator|.
+name|blacklisted
+operator|=
+name|blacklisted
+expr_stmt|;
 block|}
 block|}
 end_class

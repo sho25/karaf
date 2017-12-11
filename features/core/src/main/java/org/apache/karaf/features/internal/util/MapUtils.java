@@ -233,6 +233,7 @@ return|return
 name|inverted
 return|;
 block|}
+comment|/**      * Changes mapping from<code>S</code> -&gt;<code>Set&lt;T&gt;</code> to mapping      *<code>S</code> -&gt;<code>Set&lt;U&gt;</code> using {@link Function} that can change<code>T</code> to      *<code>U</code>.      *      * @param mapset      * @param function      * @param<S> A key that maps to set of values in input and result map      * @param<T> A type of input set of values      * @param<U> A type of result set of values      * @return      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -733,6 +734,7 @@ return|return
 name|set
 return|;
 block|}
+comment|/**      * Produces a map where each set value in<code>from</code> map has every element that's in<code>to</code>      * map's set value removed. If<code>from</code> map is left with empty set value, entire set is removed.      * @param from      * @param to      * @param<S>      * @param<T>      * @return      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -1010,6 +1012,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+comment|/**      * Removes all values from<code>toRemove</code> map from<code>from</code> map. After removal, set values      * in<code>from</code> map may be smaller or removed entirely (if there are no more values in given set).      * @param from      * @param toRemove      * @param<S>      * @param<T>      */
 specifier|public
 specifier|static
 parameter_list|<

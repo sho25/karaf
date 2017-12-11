@@ -89,6 +89,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|stream
+operator|.
+name|Collectors
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -128,6 +140,20 @@ operator|.
 name|features
 operator|.
 name|Feature
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|FeaturesService
 import|;
 end_import
 
@@ -721,6 +747,10 @@ begin_class
 specifier|public
 class|class
 name|SubsystemResolver
+implements|implements
+name|SubsystemResolverResolution
+implements|,
+name|SubsystemResolverResult
 block|{
 specifier|private
 specifier|static
@@ -839,6 +869,10 @@ argument_list|>
 argument_list|>
 name|bundleInfos
 decl_stmt|;
+specifier|private
+name|SubsystemResolverCallback
+name|callback
+decl_stmt|;
 specifier|public
 name|SubsystemResolver
 parameter_list|(
@@ -864,11 +898,33 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
+name|setDeployCallback
+parameter_list|(
+name|SubsystemResolverCallback
+name|callback
+parameter_list|)
+block|{
+name|this
+operator|.
+name|callback
+operator|=
+name|callback
+expr_stmt|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
 name|prepare
 parameter_list|(
-name|Collection
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|List
 argument_list|<
 name|Feature
+argument_list|>
 argument_list|>
 name|allFeatures
 parameter_list|,
@@ -897,7 +953,13 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// Build subsystems on the fly
+comment|// #1. Build subsystems on the fly
+comment|//  - regions use hierarchical names with root region called "root" and child regions named "root/child",
+comment|//    "root/child/grandchild", etc.
+comment|//  - there can be only one root region and even if equinox Regions can be configured as digraph, only tree
+comment|//    structure is used
+comment|//  - each region will have corresponding Subsystem created and (being an OSGi Resource), will _require_
+comment|//    related requirements. Each region's subsystem will also _require_ all child subsystems
 for|for
 control|(
 name|Map
@@ -1012,11 +1074,44 @@ name|i
 operator|++
 control|)
 block|{
+name|String
+name|childName
+init|=
+name|Arrays
+operator|.
+name|stream
+argument_list|(
+name|Arrays
+operator|.
+name|copyOfRange
+argument_list|(
+name|parts
+argument_list|,
+literal|0
+argument_list|,
+name|i
+operator|+
+literal|1
+argument_list|)
+argument_list|)
+operator|.
+name|collect
+argument_list|(
+name|Collectors
+operator|.
+name|joining
+argument_list|(
+literal|"/"
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|ss
 operator|=
 name|getOrCreateChild
 argument_list|(
 name|ss
+argument_list|,
+name|childName
 argument_list|,
 name|parts
 index|[
@@ -1036,6 +1131,10 @@ name|getValue
 argument_list|()
 control|)
 block|{
+comment|// #1a. each "[feature:]*" and "requirement:*" requirements are added directly as resource requirements:
+comment|//  - feature: ns=osgi.identity, 'osgi.identity=f1; type=karaf.feature; filter:="(&(osgi.identity=f1)(type=karaf.feature))"'
+comment|//  - requirement: as-is
+comment|//  - bundle: added only as downloadable bundle - used only by assembly builder
 name|ss
 operator|.
 name|require
@@ -1054,7 +1153,12 @@ condition|)
 block|{
 return|return;
 block|}
-comment|// Pre-resolve
+comment|// #2. Pre-resolve
+comment|//  - for each region's subsystem X, feature requirements are changed into child subsystems of X
+comment|//  - for each feature, any dependant features (<feature>/<feature>) will become non-mandatory (why?)
+comment|//    child subsystem of the same region's subsystem as original feature
+comment|//  - for each feature, any conditional (<feature>/<conditional>) will become mandatory (why?)
+comment|//    child subsystem of the original feature's subsystem
 name|root
 operator|.
 name|build
@@ -1062,7 +1166,10 @@ argument_list|(
 name|allFeatures
 argument_list|)
 expr_stmt|;
-comment|// Add system resources
+comment|// #3. Add system resources
+comment|//  - from all unmanaged bundles we'll gather Provide-Capability headers' clauses in "osgi.service" namespace
+comment|//    and Export-Service headers
+comment|//  - these capabilities will be added to "dummy" Resource added as o.a.k.features.internal.region.Subsystem.installable
 name|BundleRevision
 name|sysBundleRev
 init|=
@@ -1421,6 +1528,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Set
 argument_list|<
@@ -1428,8 +1537,6 @@ name|String
 argument_list|>
 name|collectPrerequisites
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -1452,6 +1559,8 @@ argument_list|<>
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Map
 argument_list|<
@@ -1464,16 +1573,12 @@ argument_list|>
 argument_list|>
 name|resolve
 parameter_list|(
-name|Set
-argument_list|<
-name|String
-argument_list|>
-name|overrides
-parameter_list|,
 name|String
 name|featureResolutionRange
 parameter_list|,
-name|String
+name|FeaturesService
+operator|.
+name|ServiceRequirementsBehavior
 name|serviceRequirements
 parameter_list|,
 specifier|final
@@ -1501,26 +1606,21 @@ argument_list|()
 return|;
 block|}
 comment|// Download bundles
-name|RepositoryManager
-name|repos
-init|=
-operator|new
-name|RepositoryManager
-argument_list|()
-decl_stmt|;
 name|root
 operator|.
 name|downloadBundles
 argument_list|(
 name|manager
 argument_list|,
-name|overrides
-argument_list|,
 name|featureResolutionRange
 argument_list|,
 name|serviceRequirements
 argument_list|,
-name|repos
+operator|new
+name|RepositoryManager
+argument_list|()
+argument_list|,
+name|callback
 argument_list|)
 expr_stmt|;
 comment|// Populate digraph and resolve
@@ -1623,6 +1723,7 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
+comment|// this is where the magic happens...
 name|wiring
 operator|=
 name|resolver
@@ -1733,6 +1834,7 @@ block|}
 block|}
 else|else
 block|{
+comment|// this is where the magic happens...
 name|wiring
 operator|=
 name|resolver
@@ -2351,6 +2453,8 @@ return|return
 name|obj
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Map
 argument_list|<
@@ -2460,6 +2564,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Map
 argument_list|<
@@ -2477,6 +2583,8 @@ name|getProviders
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Map
 argument_list|<
@@ -2494,6 +2602,8 @@ return|return
 name|wiring
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|RegionDigraph
 name|getFlatDigraph
@@ -2767,6 +2877,7 @@ return|return
 name|flatDigraph
 return|;
 block|}
+comment|/**      * A mapping from subsystem, to parent subsystem representing a region or {@link Feature#getScoping() scoped feature}.      * @return      */
 specifier|public
 name|Map
 argument_list|<
@@ -2803,6 +2914,8 @@ return|return
 name|flatSubsystemsMap
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Map
 argument_list|<
@@ -2836,7 +2949,7 @@ return|return
 name|bundlesPerRegions
 return|;
 block|}
-comment|/**      *      * @return map of bundles and the region they are deployed in      */
+comment|/**      * @return map of bundles and the region they are deployed in      */
 specifier|public
 name|Map
 argument_list|<
@@ -2896,6 +3009,8 @@ return|return
 name|bundles
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Map
 argument_list|<
@@ -2929,6 +3044,7 @@ return|return
 name|featuresPerRegions
 return|;
 block|}
+comment|/**      * @return map of features and the region they are deployed in      */
 specifier|public
 name|Map
 argument_list|<
@@ -2972,7 +3088,7 @@ return|return
 name|features
 return|;
 block|}
-comment|/**      *      * @param resourceFilter      * @return map from resource to region name      */
+comment|/**      * Returns a mapping for resources that match given filter, to a subsystem that represents region or scoped feature.      * @param resourceFilter      * @return map from resource to region name      */
 specifier|private
 name|Map
 argument_list|<
@@ -3550,6 +3666,7 @@ name|attrs
 argument_list|)
 return|;
 block|}
+comment|/**      * Collect a mapping from every subsystem to their first parent subsystem that is not<em>flat</em>, i.e.,      * is not a subsystem for feature or represents a feature with scoping.      * @param subsystem      * @param toFlatten      */
 specifier|private
 name|void
 name|findSubsystemsToFlatten
@@ -3630,6 +3747,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+comment|/**      * Subsystem is<em>flat</em> if it represents a feature and doesn't declare scoping      * @param subsystem      * @return      */
 specifier|private
 specifier|static
 name|boolean
@@ -3685,7 +3803,10 @@ name|Subsystem
 name|ss
 parameter_list|,
 name|String
-name|name
+name|childName
+parameter_list|,
+name|String
+name|newName
 parameter_list|)
 block|{
 name|Subsystem
@@ -3695,7 +3816,7 @@ name|ss
 operator|.
 name|getChild
 argument_list|(
-name|name
+name|childName
 argument_list|)
 decl_stmt|;
 return|return
@@ -3709,12 +3830,13 @@ name|ss
 operator|.
 name|createSubsystem
 argument_list|(
-name|name
+name|newName
 argument_list|,
 literal|true
 argument_list|)
 return|;
 block|}
+comment|/**      *<p>Fills {@link RegionDigraph} using information in populated {@link Subsystem}. Each subsystem, not only      * subsystem representing a region, will be mapped to distinct region. We have subsystems created for:<ul>      *<li>regions: "region", ..., "region/sub/region"</li>      *<li>features: "region/sub/region#fx-version", ..., "region/sub/region#fz-version"</li>      *<li>conditional features: "region/sub/region#fx#fx-condition-fy-version", ...</li>      *</ul></p>      * @param digraph      * @param subsystem      * @throws BundleException      * @throws InvalidSyntaxException      */
 specifier|private
 name|void
 name|populateDigraph
@@ -3753,6 +3875,7 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// there's always a parent, since we're traversing breadth-first
 name|Region
 name|parent
 init|=

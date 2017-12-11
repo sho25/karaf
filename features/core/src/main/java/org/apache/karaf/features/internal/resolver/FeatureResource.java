@@ -222,7 +222,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  */
+comment|/**  *<p>An OSGi {@link Resource} representing Karaf feature. It has requirements on all its non-dependency  * (<code>dependency="false"</code>) bundles.</p>  *<p>It'll also use arbitrary capabilities ({@code<feature>/<capability>}) and requirements  * ({@code<feature>/<requirement>}).</p>  *<p>Dependant features ({@code<feature>/<feature>}) without<code>dependency="true"</code> will also be added  * as<code>osgi.identity</code> requirements with<code>type=karaf.feature</code>.</p>  */
 end_comment
 
 begin_class
@@ -288,6 +288,7 @@ operator|=
 name|feature
 expr_stmt|;
 block|}
+comment|/**      * Constructs a {@link Resource} for conditional of a feature      * @param feature      * @param conditional      * @param featureRange      * @param locToRes      * @return      * @throws BundleException      */
 specifier|public
 specifier|static
 name|FeatureResource
@@ -356,6 +357,9 @@ literal|"req:"
 argument_list|)
 condition|)
 block|{
+comment|//<conditional>/<condition>req:xxx</condition>
+comment|// conditional feature will require all its bundles and will have all declared, generic
+comment|// requirements
 name|cond
 operator|=
 name|cond
@@ -393,6 +397,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|//<conditional>/<condition>xxx</condition>
+comment|// conditional feature will require all its bundles and will require the features that are the
+comment|// conditions with "condition:=true" directive
 name|org
 operator|.
 name|apache
@@ -529,6 +536,7 @@ name|getVersion
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|// conditional feature will also require parent feature - also with "condition:=true" directive
 name|addDependency
 argument_list|(
 name|resource
@@ -544,6 +552,7 @@ return|return
 name|resource
 return|;
 block|}
+comment|/**      * Constructs {@link Resource} for given non-conditional feature.      * @param feature      * @param featureRange      * @param locToRes      * @return      * @throws BundleException      */
 specifier|public
 specifier|static
 name|FeatureResource
@@ -594,6 +603,12 @@ operator|!
 name|info
 operator|.
 name|isDependency
+argument_list|()
+operator|&&
+operator|!
+name|info
+operator|.
+name|isBlacklisted
 argument_list|()
 condition|)
 block|{

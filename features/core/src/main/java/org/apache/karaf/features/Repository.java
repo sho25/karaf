@@ -19,16 +19,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|net
 operator|.
 name|URI
@@ -36,44 +26,43 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A repository of features.  */
+comment|/**  *<p>A repository of features. A runtime representation of JAXB model read from feature XML files.</p>  *  *<p>Original model may be subject to further processing (e.g., blacklisting)</p>  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
 name|Repository
+extends|extends
+name|Blacklisting
 block|{
+comment|/**      * Logical name of the {@link Repository}      * @return      */
 name|String
 name|getName
 parameter_list|()
-throws|throws
-name|IOException
 function_decl|;
+comment|/**      * Original URI of the {@link Repository}, where feature declarations were loaded from      * @return      */
 name|URI
 name|getURI
 parameter_list|()
 function_decl|;
+comment|/**      * An array of referenced repository URIs (<code>/features/repository</code>)      * @return      */
 name|URI
 index|[]
 name|getRepositories
 parameter_list|()
-throws|throws
-name|Exception
 function_decl|;
+comment|/**      * An array of referenced resource repository URIs (<code>/features/resource-repository</code>)      * @return      */
 name|URI
 index|[]
 name|getResourceRepositories
 parameter_list|()
-throws|throws
-name|Exception
 function_decl|;
+comment|/**      * An array of {@link Feature features} in this {@link Repository} after possible processing.      * @return      */
 name|Feature
 index|[]
 name|getFeatures
 parameter_list|()
-throws|throws
-name|Exception
 function_decl|;
 block|}
 end_interface

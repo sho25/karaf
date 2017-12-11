@@ -462,6 +462,7 @@ return|return
 literal|null
 return|;
 block|}
+comment|/**      * If the resource has<code>type=karaf.feature</code> capability, returns its ID (name[/version]).      * @param resource      * @return      */
 specifier|public
 specifier|static
 name|String
@@ -1142,6 +1143,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+comment|/**      *<p>Changes feature identifier (<code>name[/version]</code>) into a requirement specification.</p>      *<p>The OSGi manifest header for a feature will be:<code>osgi.identity;osgi.identity=feature-name;type=karaf.feature[;version=feature-version];filter:=filter-from-attrs</code></p>      * @param feature      * @return      */
 specifier|public
 specifier|static
 name|String
