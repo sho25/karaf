@@ -4872,6 +4872,13 @@ argument_list|(
 name|toRefreshToStopEarly
 argument_list|)
 expr_stmt|;
+name|toStart
+operator|.
+name|addAll
+argument_list|(
+name|toRefreshToStopEarly
+argument_list|)
+expr_stmt|;
 block|}
 name|removeFragmentsAndBundlesInState
 argument_list|(
