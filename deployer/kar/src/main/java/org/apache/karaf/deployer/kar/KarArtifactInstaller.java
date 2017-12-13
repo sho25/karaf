@@ -167,10 +167,10 @@ argument_list|()
 operator|.
 name|contains
 argument_list|(
+name|getKarName
+argument_list|(
 name|file
-operator|.
-name|getName
-argument_list|()
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -283,7 +283,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-specifier|private
 name|String
 name|getKarName
 parameter_list|(
