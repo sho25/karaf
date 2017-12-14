@@ -89,6 +89,21 @@ name|IllegalArgumentException
 throws|,
 name|SchedulerError
 function_decl|;
+comment|/**      * Update the scheduling of an existing job.      * @param jobName      * @param options      * @throws IllegalArgumentException      * @throws SchedulerError      */
+name|void
+name|reschedule
+parameter_list|(
+name|String
+name|jobName
+parameter_list|,
+name|ScheduleOptions
+name|options
+parameter_list|)
+throws|throws
+name|IllegalArgumentException
+throws|,
+name|SchedulerError
+function_decl|;
 comment|/**      * Remove a scheduled job by name.      *      * @param jobName The name of the job.      * @return<code>True</code> if the job existed and could be stopped,<code>false</code> otherwise.      */
 name|boolean
 name|unschedule
