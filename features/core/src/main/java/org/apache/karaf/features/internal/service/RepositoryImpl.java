@@ -341,6 +341,15 @@ index|]
 argument_list|)
 return|;
 block|}
+specifier|public
+name|Features
+name|getFeaturesInternal
+parameter_list|()
+block|{
+return|return
+name|features
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public

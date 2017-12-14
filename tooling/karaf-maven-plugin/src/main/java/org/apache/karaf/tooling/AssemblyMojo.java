@@ -845,6 +845,13 @@ specifier|private
 name|boolean
 name|writeProfiles
 decl_stmt|;
+comment|/**      * When assembly custom distribution, we can also generate an XML/XSLT report with the summary of bundles.      * This parameter specifies target directory, to which<code>bundle-report.xml</code> and<code>bundle-report-full.xml</code>      * (along with XSLT stylesheet) will be written.      */
+annotation|@
+name|Parameter
+specifier|private
+name|String
+name|generateConsistencyReport
+decl_stmt|;
 comment|/*      * KARs are not configured using Maven plugin configuration, but rather detected from dependencies.      * All KARs are just unzipped into the assembly being constructed, but additionally KAR's embedded      * features XML repositories are added to relevant stage.      */
 specifier|private
 name|List
@@ -1271,6 +1278,13 @@ operator|.
 name|writeProfiles
 argument_list|(
 name|writeProfiles
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|generateConsistencyReport
+argument_list|(
+name|generateConsistencyReport
 argument_list|)
 expr_stmt|;
 name|builder
