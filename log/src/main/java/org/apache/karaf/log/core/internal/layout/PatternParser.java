@@ -154,7 +154,7 @@ comment|/**  * Copied from log4j  */
 end_comment
 
 begin_comment
-comment|/**    Most of the work of the {@link org.apache.log4j.PatternLayout} class    is delegated to the PatternParser class.     @since 0.8.2 */
+comment|/**    Most of the work of the {@code org.apache.log4j.PatternLayout} class    is delegated to the PatternParser class.     @since 0.8.2 */
 end_comment
 
 begin_class

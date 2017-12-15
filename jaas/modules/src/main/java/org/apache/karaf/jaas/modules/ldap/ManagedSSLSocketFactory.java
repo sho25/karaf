@@ -343,7 +343,7 @@ name|localPort
 argument_list|)
 return|;
 block|}
-comment|/**      * For com.sun.jndi.ldap.ClientId#invokeComparator(com.sun.jndi.ldap.ClientId, com.sun.jndi.ldap.ClientId)      * @param f1      * @param f2      * @return      */
+comment|/**      * For com.sun.jndi.ldap.ClientId#invokeComparator(com.sun.jndi.ldap.ClientId, com.sun.jndi.ldap.ClientId).      */
 specifier|public
 name|int
 name|compare

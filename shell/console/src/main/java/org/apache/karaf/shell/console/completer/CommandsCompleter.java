@@ -304,7 +304,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Like the {@link org.apache.karaf.shell.console.completer.CommandsCompleter} but does not use OSGi but is  * instead used from the non-OSGi {@link org.apache.karaf.shell.console.impl.Main}  */
+comment|/**  * Like the {@link org.apache.karaf.shell.console.completer.CommandsCompleter} but does not use OSGi but is  * instead used from the non-OSGi {@code org.apache.karaf.shell.console.impl.Main}.  */
 end_comment
 
 begin_class

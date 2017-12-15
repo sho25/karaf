@@ -222,7 +222,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>An OSGi {@link Resource} representing Karaf feature. It has requirements on all its non-dependency  * (<code>dependency="false"</code>) bundles.</p>  *<p>It'll also use arbitrary capabilities ({@code<feature>/<capability>}) and requirements  * ({@code<feature>/<requirement>}).</p>  *<p>Dependant features ({@code<feature>/<feature>}) without<code>dependency="true"</code> will also be added  * as<code>osgi.identity</code> requirements with<code>type=karaf.feature</code>.</p>  */
+comment|/**  * An OSGi {@link Resource} representing Karaf feature. It has requirements on all its non-dependency  * (<code>dependency="false"</code>) bundles.  * It'll also use arbitrary capabilities ({@code<feature>/<capability>}) and requirements  * ({@code<feature>/<requirement>}).  * Dependant features ({@code<feature>/<feature>}) without<code>dependency="true"</code> will also be added  * as<code>osgi.identity</code> requirements with<code>type=karaf.feature</code>.  */
 end_comment
 
 begin_class
@@ -288,7 +288,7 @@ operator|=
 name|feature
 expr_stmt|;
 block|}
-comment|/**      * Constructs a {@link Resource} for conditional of a feature      * @param feature      * @param conditional      * @param featureRange      * @param locToRes      * @return      * @throws BundleException      */
+comment|/**      * Constructs a {@link Resource} for conditional of a feature.      */
 specifier|public
 specifier|static
 name|FeatureResource
@@ -552,7 +552,7 @@ return|return
 name|resource
 return|;
 block|}
-comment|/**      * Constructs {@link Resource} for given non-conditional feature.      * @param feature      * @param featureRange      * @param locToRes      * @return      * @throws BundleException      */
+comment|/**      * Constructs {@link Resource} for given non-conditional feature.      */
 specifier|public
 specifier|static
 name|FeatureResource

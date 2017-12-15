@@ -152,7 +152,7 @@ specifier|public
 interface|interface
 name|SubsystemResolverResolution
 block|{
-comment|/**      *<p>Prepares the resolver by configuring {@link Subsystem} hierarchy</p>      *<p>The input is a mapping from {@link Region region names} to a set of logical requirements.<br/>      * The effect is:<ul>      *<li>A tree of {@link Subsystem subsystems} where the root subsystem represents {@link FeaturesService#ROOT_REGION}      *      with regions like<code>root/app1</code> represented as child subsystems.</li>      *<li>A subsystem is created for each feature requirement and added as child and requirement for given region's subsystem</li>      *<li>Each subsystem for a feature has optional requirements for conditional features</li>      *</ul></p>      *      * @param allFeatures all currently available features partitioned by name      * @param requirements desired mapping from regions to logical requirements      * @param system mapping from regions to unmanaged {@link BundleRevision}s      * @throws Exception      */
+comment|/**      * Prepares the resolver by configuring {@link Subsystem} hierarchy.      * The input is a mapping from {@link Region region names} to a set of logical requirements.      * The effect is:<ul>      *<li>A tree of {@link Subsystem subsystems} where the root subsystem represents {@link FeaturesService#ROOT_REGION}      *      with regions like<code>root/app1</code> represented as child subsystems.</li>      *<li>A subsystem is created for each feature requirement and added as child and requirement for given region's subsystem</li>      *<li>Each subsystem for a feature has optional requirements for conditional features</li>      *</ul>      *      * @param allFeatures all currently available features partitioned by name.      * @param requirements desired mapping from regions to logical requirements.      * @param system mapping from regions to unmanaged {@link BundleRevision}s.      */
 name|void
 name|prepare
 parameter_list|(
@@ -192,7 +192,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Before attempting {@link #resolve resolution}, we can collect features' prerequisites. If there are any,      * caller may decide to deploy another set of requirements<strong>before</strong> the initial ones.      * Prerequisites allow to install for example<code>wrap</code> feature before installing a feature with bundle      * using<code>wrap:</code> protocol.      * @return      */
+comment|/**      * Before attempting {@link #resolve resolution}, we can collect features' prerequisites. If there are any,      * caller may decide to deploy another set of requirements<strong>before</strong> the initial ones.      * Prerequisites allow to install for example<code>wrap</code> feature before installing a feature with bundle      * using<code>wrap:</code> protocol.      *      * @return The collected prerequisistes.      */
 name|Set
 argument_list|<
 name|String
@@ -200,7 +200,6 @@ argument_list|>
 name|collectPrerequisites
 parameter_list|()
 function_decl|;
-comment|/**      *      * @param featureResolutionRange      * @param serviceRequirements how to handle requirements from {@link org.osgi.namespace.service.ServiceNamespace#SERVICE_NAMESPACE}      * namespace      * @param globalRepository      * @param outputFile      * @return      * @throws Exception      */
 specifier|public
 name|Map
 argument_list|<

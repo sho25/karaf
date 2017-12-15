@@ -1141,7 +1141,7 @@ name|ArrayList
 argument_list|<>
 argument_list|()
 decl_stmt|;
-comment|/**      *<p>Constructs root subsystem {@link Resource} for {@link FeaturesService#ROOT_REGION} that imports/exports only      * caps/reqs with<code>(type=karaf.subsystem)</code></p>      *<p>Root subsystem by default accepts dependencies - will gather dependant features of child feature subsystems,      * effectively _flattening_ the set of features within single region's subsystem.</p>      *      * @param name      */
+comment|/**      * Constructs root subsystem {@link Resource} for {@link FeaturesService#ROOT_REGION} that imports/exports only      * caps/reqs with<code>(type=karaf.subsystem)</code>.      * Root subsystem by default accepts dependencies - will gather dependant features of child feature subsystems,      * effectively _flattening_ the set of features within single region's subsystem.      *      * @param name The name of the subsystem.      */
 specifier|public
 name|Subsystem
 parameter_list|(
@@ -1203,7 +1203,7 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-comment|/**      *<p>Constructs subsystem for a feature that either imports/exports all caps or (see {@link Feature#getScoping()})      * has configurable import/export policy +<code>(|(type=karaf.subsystem)(type=karaf.feature))</code> filter in      * {@link org.osgi.framework.namespace.IdentityNamespace#IDENTITY_NAMESPACE}</p>      *<p>Such subsystem requires<code>type=karaf.feature; osgi.identity=feature-name[; version=feature-version]</code></p>      * @param name      * @param feature      * @param parent      * @param mandatory      */
+comment|/**      * Constructs subsystem for a feature that either imports/exports all caps or (see {@link Feature#getScoping()})      * has configurable import/export policy +<code>(|(type=karaf.subsystem)(type=karaf.feature))</code> filter in      * {@link org.osgi.framework.namespace.IdentityNamespace#IDENTITY_NAMESPACE}.      * Such subsystem requires<code>type=karaf.feature; osgi.identity=feature-name[; version=feature-version]</code>.      *      * @param name The subsystem name.      * @param feature The feature.      * @param parent The parent subsystem.      * @param mandatory True if mandatory, false else.      */
 specifier|public
 name|Subsystem
 parameter_list|(
@@ -1391,7 +1391,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      *<p>Constructs child subsystem {@link Resource} for {@link FeaturesService#ROOT_REGION}'s child      * that imports all caps and exports only caps with<code>(type=karaf.subsystem)</code></p>      * @param name      * @param parent      * @param acceptDependencies      * @param mandatory      */
+comment|/**      * Constructs child subsystem {@link Resource} for {@link FeaturesService#ROOT_REGION}'s child      * that imports all caps and exports only caps with<code>(type=karaf.subsystem)</code>.      *      * @param name The subsystem name.      * @param parent The parent subsystem.      * @param acceptDependencies True to accept dependencies, false else.      * @param mandatory True to mandatory, false else.      */
 specifier|public
 name|Subsystem
 parameter_list|(
@@ -1594,7 +1594,7 @@ return|return
 name|feature
 return|;
 block|}
-comment|/**      * Create child subsystem for this subsystem. Child will become parent's mandatory requirement to force its resolution.      *      * @param name      * @param acceptDependencies      * @return      */
+comment|/**      * Create child subsystem for this subsystem. Child will become parent's mandatory requirement to force its resolution.      *      * @param name The subsystem name.      * @param acceptDependencies True to accept dependencies, false else.      */
 specifier|public
 name|Subsystem
 name|createSubsystem
@@ -2029,7 +2029,6 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      *      * @param allFeatures      * @param mandatory      * @throws Exception      */
 specifier|private
 name|void
 name|doBuild
@@ -2687,7 +2686,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Downloads bundles for all the features in current and child subsystems. But also collects bundles      * as {@link DependencyInfo}.      * @param manager      * @param featureResolutionRange      * @param serviceRequirements      * @param repos      * @throws Exception      */
+comment|/**      * Downloads bundles for all the features in current and child subsystems. But also collects bundles      * as {@link DependencyInfo}.      *      * @param manager The {@link DownloadManager} to use.      * @param featureResolutionRange The feature resolution range to use.      * @param serviceRequirements The {@link FeaturesService.ServiceRequirementsBehavior} behavior to use.      * @param repos The {@link RepositoryManager} to use.      * @param callback The {@link SubsystemResolverCallback} to use.      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -3862,7 +3861,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * How to handle requirements from {@link org.osgi.namespace.service.ServiceNamespace#SERVICE_NAMESPACE} for      * given feature.      * @param feature      * @param serviceRequirements      * @return      */
+comment|/**      * How to handle requirements from {@link org.osgi.namespace.service.ServiceNamespace#SERVICE_NAMESPACE} for      * given feature.      */
 specifier|private
 name|boolean
 name|serviceRequirementsBehavior
@@ -4302,7 +4301,7 @@ literal|" does not contain a manifest"
 argument_list|)
 throw|;
 block|}
-comment|/**      * Adds a {@link Resource} as dependency if this subsystem {@link Subsystem#isAcceptDependencies() accepts dependencies},      * otherwise, the dependency is added to parent subsystem, effectively searching for first parent subsystem representing      * region or scoped feature.      * @param resource      * @param mandatory      * @param start      * @param startLevel      * @param blacklisted      */
+comment|/**      * Adds a {@link Resource} as dependency if this subsystem {@link Subsystem#isAcceptDependencies() accepts dependencies},      * otherwise, the dependency is added to parent subsystem, effectively searching for first parent subsystem representing      * region or scoped feature.      */
 name|void
 name|addDependency
 parameter_list|(
@@ -4361,7 +4360,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Adds a {@link Resource} to this subsystem      * @param resource      * @param mandatory      * @param start      * @param startLevel      * @param blacklisted      */
+comment|/**      * Adds a {@link Resource} to this subsystem.      */
 specifier|private
 name|void
 name|doAddDependency
@@ -4432,7 +4431,7 @@ name|merge
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Merges two dependencies by taking lower start level, stronger<code>mandatory</code> option and stronger      *<code>start</code> option.      * @param di1      * @param di2      * @return      */
+comment|/**      * Merges two dependencies by taking lower start level, stronger<code>mandatory</code> option and stronger      *<code>start</code> option.      */
 specifier|private
 name|DependencyInfo
 name|merge
@@ -4704,7 +4703,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * TODOCUMENT: More generic than just {@link BundleInfo}      */
+comment|/**      * TODO DOCUMENT: More generic than just {@link BundleInfo}      */
 class|class
 name|DependencyInfo
 implements|implements

@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * {@link org.apache.karaf.shell.console.Completer} for available features.  */
+comment|/**  * {@link FeatureCompleterSupport} for all available features.  */
 end_comment
 
 begin_class

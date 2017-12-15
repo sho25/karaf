@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>Helper class to compare feature identifiers that may use globs and version ranges.</p>  *  *<p>Following feature identifiers are supported:<ul>  *<li>name (simple name)</li>  *<li>name/version (Karaf feature ID syntax)</li>  *<li>name/version-range (Karaf feature ID syntax using version-range)</li>  *<li>name;range=version (OSGi manifest header with<code>range</code><em>attribute</em>)</li>  *<li>name;range=version-range (OSGi manifest header with<code>range</code><em>attribute</em>)</li>  *</ul></p>  */
+comment|/**  * Helper class to compare feature identifiers that may use globs and version ranges.  *  * Following feature identifiers are supported:<ul>  *<li>name (simple name)</li>  *<li>name/version (Karaf feature ID syntax)</li>  *<li>name/version-range (Karaf feature ID syntax using version-range)</li>  *<li>name;range=version (OSGi manifest header with<code>range</code><em>attribute</em>)</li>  *<li>name;range=version-range (OSGi manifest header with<code>range</code><em>attribute</em>)</li>  *</ul>  */
 end_comment
 
 begin_class

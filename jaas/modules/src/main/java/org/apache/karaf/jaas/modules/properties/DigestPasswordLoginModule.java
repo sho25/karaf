@@ -690,7 +690,7 @@ return|return
 name|passwdDigest
 return|;
 block|}
-comment|/**      * Generate a (SHA1) digest of the input bytes. The MessageDigest instance that backs this      * method is cached for efficiency.        * @param inputBytes the bytes to digest      * @return the digest of the input bytes      * @throws WSSecurityException      */
+comment|/**      * Generate a (SHA1) digest of the input bytes. The MessageDigest instance that backs this      * method is cached for efficiency.        * @param inputBytes the bytes to digest      * @return the digest of the input bytes      */
 specifier|public
 specifier|synchronized
 name|byte

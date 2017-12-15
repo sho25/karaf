@@ -568,7 +568,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>Creates a customized Karaf distribution by installing features and setting up  * configuration files.</p>  *  *<p>The plugin gets features from feature.xml files and KAR  * archives declared as dependencies or as files configured with the  * [startup|boot|installed]Respositories parameters. It picks up other files, such as config files,  * from ${project.build.directory}/classes. Thus, a file in src/main/resources/etc  * will be copied by the resource plugin to ${project.build.directory}/classes/etc,  * and then added to the assembly by this goal.</p>  */
+comment|/**  * Creates a customized Karaf distribution by installing features and setting up  * configuration files.  *  *<p>The plugin gets features from feature.xml files and KAR  * archives declared as dependencies or as files configured with the  * [startup|boot|installed]Respositories parameters. It picks up other files, such as config files,  * from ${project.build.directory}/classes. Thus, a file in src/main/resources/etc  * will be copied by the resource plugin to ${project.build.directory}/classes/etc,  * and then added to the assembly by this goal.  */
 end_comment
 
 begin_class
@@ -916,7 +916,7 @@ specifier|protected
 name|boolean
 name|ignoreDependencyFlag
 decl_stmt|;
-comment|/**      *<p>Additional libraries to add into assembled distribution. Libraries are specified using      *<code>name[;url:=&lt;url&gt;][;type:=&lt;type&gt;][;export:=true|false][;delegate:=true|false]</code>      * syntax. If there's no<code>url</code> header directive,<code>name</code> is used as URI. Otherwise      *<code>name</code> is used as target file name to use.</p>      *      *<p><code>type</code> may be:<ul>      *<li>endorsed - library will be added to<code>${karaf.home}/lib/endorsed</code></li>      *<li>extension - library will be added to<code>${karaf.home}/lib/ext</code></li>      *<li>boot - library will be added to<code>${karaf.home}/lib/boot</code></li>      *<li>by default, library is put directly into<code>${karaf.home}/lib</code> - these libraries will      *     be used in default classloader for OSGi framework which will load {@link FrameworkFactory} implementation.</li>      *</ul></p>      *      *<p><code>export</code> flag determines whether packages from<code>Export-Package</code> manifest      * header of the library will be added to<code>org.osgi.framework.system.packages.extra</code> property in      *<code>${karaf.etc}/config.properties</code>.</p>      *      *<p><code>delegate</code> flag determines whether packages from<code>Export-Pavkage</code> manifest      * header of the library will be added to<code>org.osgi.framework.bootdelegation</code> property in      *<code>${karaf.etc}/config.properties</code>.</p>      */
+comment|/**      *<p>Additional libraries to add into assembled distribution. Libraries are specified using      *<code>name[;url:=&lt;url&gt;][;type:=&lt;type&gt;][;export:=true|false][;delegate:=true|false]</code>      * syntax. If there's no<code>url</code> header directive,<code>name</code> is used as URI. Otherwise      *<code>name</code> is used as target file name to use.      *      *<p><code>type</code> may be:<ul>      *<li>endorsed - library will be added to<code>${karaf.home}/lib/endorsed</code></li>      *<li>extension - library will be added to<code>${karaf.home}/lib/ext</code></li>      *<li>boot - library will be added to<code>${karaf.home}/lib/boot</code></li>      *<li>by default, library is put directly into<code>${karaf.home}/lib</code> - these libraries will      *     be used in default classloader for OSGi framework which will load {@link FrameworkFactory} implementation.</li>      *</ul>      *      *<p><code>export</code> flag determines whether packages from<code>Export-Package</code> manifest      * header of the library will be added to<code>org.osgi.framework.system.packages.extra</code> property in      *<code>${karaf.etc}/config.properties</code>.      *      *<p><code>delegate</code> flag determines whether packages from<code>Export-Pavkage</code> manifest      * header of the library will be added to<code>org.osgi.framework.bootdelegation</code> property in      *<code>${karaf.etc}/config.properties</code>.      */
 annotation|@
 name|Parameter
 specifier|protected
@@ -968,7 +968,7 @@ name|KarafVersion
 operator|.
 name|v4x
 decl_stmt|;
-comment|/**      *<p>Specify the version of Java SE to be assumed for osgi.ee. The value will be used in      *<code>etc/config.properties</code> file, in<code>java.specification.version</code> placeholder used in      * several properties:<ul>      *<li><code>org.osgi.framework.system.packages</code></li>      *<li><code>org.osgi.framework.system.capabilities</code></li>      *</ul></p>      *<p>Valid values are: 1.6, 1.7, 1.8, 9</p>      */
+comment|/**      * Specify the version of Java SE to be assumed for osgi.ee. The value will be used in      *<code>etc/config.properties</code> file, in<code>java.specification.version</code> placeholder used in      * several properties:<ul>      *<li><code>org.osgi.framework.system.packages</code></li>      *<li><code>org.osgi.framework.system.capabilities</code></li>      *</ul>      *<p>Valid values are: 1.6, 1.7, 1.8, 9      */
 annotation|@
 name|Parameter
 argument_list|(

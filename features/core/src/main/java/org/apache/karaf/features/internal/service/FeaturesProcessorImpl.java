@@ -314,7 +314,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>Configurable {@link FeaturesProcessor}, controlled by several files from<code>etc/</code> directory:<ul>  *<li><code>etc/overrides.properties</code>: may alter bundle versions in features</li>  *<li><code>etc/blacklisted.properties</code>: may filter out some features/bundles</li>  *<li><code>etc/org.apache.karaf.features.xml</code> (<strong>new!</strong>): incorporates two above files  *     and may define additional processing (changing G/A/V, adding bundles to features, changing<code>dependency</code>  *     attributes, ...)</li>  *</ul></p>  */
+comment|/**  * Configurable {@link FeaturesProcessor}, controlled by several files from<code>etc/</code> directory:<ul>  *<li><code>etc/overrides.properties</code>: may alter bundle versions in features</li>  *<li><code>etc/blacklisted.properties</code>: may filter out some features/bundles</li>  *<li><code>etc/org.apache.karaf.features.xml</code> (<strong>new!</strong>): incorporates two above files  *     and may define additional processing (changing G/A/V, adding bundles to features, changing<code>dependency</code>  *     attributes, ...)</li>  *</ul>  */
 end_comment
 
 begin_class
@@ -355,7 +355,7 @@ operator|new
 name|FeaturesProcessing
 argument_list|()
 decl_stmt|;
-comment|/**      *<p>Creates instance of features processor using 1 external URI, additional {@link Blacklist} instance      * and additional set of override clauses.</p>      * @param featureModificationsURI      * @param featureProcessingVersions      * @param blacklistDefinitions      * @param overrides      */
+comment|/**      * Creates instance of features processor using 1 external URI, additional {@link Blacklist} instance      * and additional set of override clauses.      */
 specifier|public
 name|FeaturesProcessorImpl
 parameter_list|(
@@ -523,7 +523,7 @@ name|overrides
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      *<p>Creates instance of features processor using 3 external (optional) URIs.</p>      * @param featureModificationsURI      * @param featureProcessingVersions      * @param blacklistedURI      * @param overridesURI      */
+comment|/**      * Creates instance of features processor using 3 external (optional) URIs.      */
 specifier|public
 name|FeaturesProcessorImpl
 parameter_list|(
@@ -561,7 +561,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      *<p>Creates instance of features processor using {@link FeaturesServiceConfig configuration object} where      * three files may be specified: overrides.properties, blacklisted.properties and org.apache.karaf.features.xml.</p>      * @param configuration      */
+comment|/**      * Creates instance of features processor using {@link FeaturesServiceConfig configuration object} where      * three files may be specified: overrides.properties, blacklisted.properties and org.apache.karaf.features.xml.      */
 specifier|public
 name|FeaturesProcessorImpl
 parameter_list|(
@@ -589,7 +589,7 @@ name|overrides
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Writes model to output stream.      * @param output      */
+comment|/**      * Writes model to output stream.      */
 specifier|public
 name|void
 name|writeInstructions
@@ -617,7 +617,7 @@ return|return
 name|processing
 return|;
 block|}
-comment|/**      * For the purpose of assembly builder, we can configure additional overrides that are read from profiles      * @param overrides      */
+comment|/**      * For the purpose of assembly builder, we can configure additional overrides that are read from profiles.      */
 specifier|public
 name|void
 name|addOverrides
@@ -1068,7 +1068,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Processes {@link Bundle bundle definition} and (according to override instructions) maybe sets different target      * location and {@link BundleInfo#isOverriden()} flag      * @param bundle      */
+comment|/**      * Processes {@link Bundle bundle definition} and (according to override instructions) maybe sets different target      * location and {@link BundleInfo#isOverriden()} flag.      */
 specifier|private
 name|void
 name|staticOverrideBundle
@@ -1248,7 +1248,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Matching name and version of given feature, checks whether this feature is blacklisted      * @param feature      * @return      */
+comment|/**      * Matching name and version of given feature, checks whether this feature is blacklisted.      */
 specifier|private
 name|boolean
 name|isFeatureBlacklisted
@@ -1278,7 +1278,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Matching location of the bundle, checks whether this bundle is blacklisted      * @param location      * @return      */
+comment|/**      * Matching location of the bundle, checks whether this bundle is blacklisted.      */
 annotation|@
 name|Override
 specifier|public
@@ -1302,7 +1302,7 @@ name|location
 argument_list|)
 return|;
 block|}
-comment|/**      * Checks whether the configuration in this processor contains any instructions (for bundles, repositories,      * overrides, ...)      * @return      */
+comment|/**      * Checks whether the configuration in this processor contains any instructions (for bundles, repositories,      * overrides, ...).      */
 specifier|public
 name|boolean
 name|hasInstructions

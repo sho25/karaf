@@ -2877,7 +2877,7 @@ return|return
 name|flatDigraph
 return|;
 block|}
-comment|/**      * A mapping from subsystem, to parent subsystem representing a region or {@link Feature#getScoping() scoped feature}.      * @return      */
+comment|/**      * A mapping from subsystem, to parent subsystem representing a region or {@link Feature#getScoping() scoped feature}.      *      * @return The map of subsystems.      */
 specifier|public
 name|Map
 argument_list|<

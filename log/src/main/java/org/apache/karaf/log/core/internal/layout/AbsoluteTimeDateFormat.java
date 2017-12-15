@@ -96,7 +96,7 @@ name|AbsoluteTimeDateFormat
 extends|extends
 name|DateFormat
 block|{
-comment|/**      String constant used to specify {@link      org.apache.log4j.helpers.AbsoluteTimeDateFormat} in layouts. Current      value is<b>ABSOLUTE</b>.  */
+comment|/**      String constant used to specify {@link AbsoluteTimeDateFormat} in layouts. Current      value is<b>ABSOLUTE</b>.  */
 specifier|public
 specifier|final
 specifier|static
@@ -105,7 +105,7 @@ name|ABS_TIME_DATE_FORMAT
 init|=
 literal|"ABSOLUTE"
 decl_stmt|;
-comment|/**      String constant used to specify {@link      org.apache.log4j.helpers.DateTimeDateFormat} in layouts.  Current      value is<b>DATE</b>.   */
+comment|/**      String constant used to specify {@link DateTimeDateFormat} in layouts.  Current      value is<b>DATE</b>.   */
 specifier|public
 specifier|final
 specifier|static
@@ -114,7 +114,7 @@ name|DATE_AND_TIME_DATE_FORMAT
 init|=
 literal|"DATE"
 decl_stmt|;
-comment|/**      String constant used to specify {@link      org.apache.log4j.helpers.ISO8601DateFormat} in layouts. Current      value is<b>ISO8601</b>.   */
+comment|/**      String constant used to specify {@link ISO8601DateFormat} in layouts. Current      value is<b>ISO8601</b>.   */
 specifier|public
 specifier|final
 specifier|static

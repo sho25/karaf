@@ -869,7 +869,7 @@ name|expression
 argument_list|)
 return|;
 block|}
-comment|/**      * Schedule a job      * @see org.apache.karaf.scheduler.Scheduler#schedule(java.lang.Object, org.apache.karaf.scheduler.ScheduleOptions)      * @throws SchedulerException if the job can't be scheduled      * @throws IllegalArgumentException If the preconditions are not met      */
+comment|/**      * Schedule a job      * @see org.apache.karaf.scheduler.Scheduler#schedule(java.lang.Object, org.apache.karaf.scheduler.ScheduleOptions)      * @throws SchedulerError if the job can't be scheduled      * @throws IllegalArgumentException If the preconditions are not met      */
 specifier|public
 name|void
 name|schedule

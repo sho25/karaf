@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>A<em>profile</em> is a container for configuration that can be applied to Karaf distribution.</p>  *  *<p>Profiles may inherit from other (single or multiple) profiles. An<em>overlay</em> profile is single  * profile with all the configurations, attributes and files from parent profiles, while configurations,  * attributes and files from<em>child</em> profile overwrites corresponding data from parent profiles.</p>  *  *<p>Configuration include:<ul>  *<li>Attributes</li>  *<li>ConfigAdmin configurations (PIDs) to put into<code>${karaf.etc}</code> directory</li>  *<li>Other resources to put into<code>${karaf.etc}</code> directory</li>  *</ul></p>  *  *<p>Attributes are properties in special file<code>profile.cfg</code> (<code>profile</code> PID) and may specify:<ul>  *<li>OSGi bundles to install (prefix:<code>bundle.</code>)</li>  *<li>Karaf features to install (prefix:<code>feature.</code>)</li>  *<li>Feature XML repositories to use to resolve bundles and features (prefix:<code>repository.</code>)</li>  *<li>Identifiers of parent profiles (property name:<code>attribute.parents</code>)</li>  *<li>Indication of abstract profile (property name:<code>abstract</code>)</li>  *<li>Indication of hidden profile (property name:<code>hidden</code>)</li>  *<li>Different attributes (prefix:<code>attribute.</code>)</li>  *<li>Properties to be added to<code>etc/config.properties</code> (prefix:<code>config.</code>)</li>  *<li>Properties to be added to<code>etc/system.properties</code> (prefix:<code>system.</code>)</li>  *<li>Additional libraries to be added to<code>lib</code> (prefix:<code>library.</code>)</li>  *<li>Additional libraries to be added to<code>lib/boot</code> (prefix:<code>boot.</code>)</li>  *<li>Additional libraries to be added to<code>lib/endorsed</code> (prefix:<code>endorsed.</code>)</li>  *<li>Additional libraries to be added to<code>lib/ext</code> (prefix:<code>ext.</code>)</li>  *<li>Bundle override definitions to be added to<code>etc/overrides.properties</code> (prefix:<code>override.</code>)</li>  *<li>Optional {@link org.osgi.resource.Resource resources} to be used during resolution (prefix:<code>optional.</code>)</li>  *</ul></p>  */
+comment|/**  * A<em>profile</em> is a container for configuration that can be applied to Karaf distribution.  *  *<p>Profiles may inherit from other (single or multiple) profiles. An<em>overlay</em> profile is single  * profile with all the configurations, attributes and files from parent profiles, while configurations,  * attributes and files from<em>child</em> profile overwrites corresponding data from parent profiles.  *  *<p>Configuration include:<ul>  *<li>Attributes</li>  *<li>ConfigAdmin configurations (PIDs) to put into<code>${karaf.etc}</code> directory</li>  *<li>Other resources to put into<code>${karaf.etc}</code> directory</li>  *</ul>  *  *<p>Attributes are properties in special file<code>profile.cfg</code> (<code>profile</code> PID) and may specify:<ul>  *<li>OSGi bundles to install (prefix:<code>bundle.</code>)</li>  *<li>Karaf features to install (prefix:<code>feature.</code>)</li>  *<li>Feature XML repositories to use to resolve bundles and features (prefix:<code>repository.</code>)</li>  *<li>Identifiers of parent profiles (property name:<code>attribute.parents</code>)</li>  *<li>Indication of abstract profile (property name:<code>abstract</code>)</li>  *<li>Indication of hidden profile (property name:<code>hidden</code>)</li>  *<li>Different attributes (prefix:<code>attribute.</code>)</li>  *<li>Properties to be added to<code>etc/config.properties</code> (prefix:<code>config.</code>)</li>  *<li>Properties to be added to<code>etc/system.properties</code> (prefix:<code>system.</code>)</li>  *<li>Additional libraries to be added to<code>lib</code> (prefix:<code>library.</code>)</li>  *<li>Additional libraries to be added to<code>lib/boot</code> (prefix:<code>boot.</code>)</li>  *<li>Additional libraries to be added to<code>lib/endorsed</code> (prefix:<code>endorsed.</code>)</li>  *<li>Additional libraries to be added to<code>lib/ext</code> (prefix:<code>ext.</code>)</li>  *<li>Bundle override definitions to be added to<code>etc/overrides.properties</code> (prefix:<code>override.</code>)</li>  *<li>Optional {@link org.osgi.resource.Resource resources} to be used during resolution (prefix:<code>optional.</code>)</li>  *</ul>  */
 end_comment
 
 begin_interface
@@ -84,7 +84,7 @@ name|Profile
 extends|extends
 name|ProfileConstants
 block|{
-comment|/**      * Returns an attribute map of this profile      * @return      */
+comment|/**      * Returns an attribute map of this profile.      */
 name|Map
 argument_list|<
 name|String
@@ -94,7 +94,7 @@ argument_list|>
 name|getAttributes
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a property map for additional properties to be added to<code>${karaf.etc}/config.properties</code>      * @return      */
+comment|/**      * Returns a property map for additional properties to be added to<code>${karaf.etc}/config.properties</code>.      */
 name|Map
 argument_list|<
 name|String
@@ -104,7 +104,7 @@ argument_list|>
 name|getConfig
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a property map for additional properties to be added to<code>${karaf.etc}/system.properties</code>      * @return      */
+comment|/**      * Returns a property map for additional properties to be added to<code>${karaf.etc}/system.properties</code>.      */
 name|Map
 argument_list|<
 name|String
@@ -114,12 +114,12 @@ argument_list|>
 name|getSystem
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a unique identifier of this profile      * @return      */
+comment|/**      * Returns a unique identifier of this profile.      */
 name|String
 name|getId
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of parent profile identifiers for this profile      * @return      */
+comment|/**      * Returns a list of parent profile identifiers for this profile.      */
 name|List
 argument_list|<
 name|String
@@ -127,7 +127,7 @@ argument_list|>
 name|getParentIds
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of bundles (bundle URIs) defined in this profile      * @return      */
+comment|/**      * Returns a list of bundles (bundle URIs) defined in this profile.      */
 name|List
 argument_list|<
 name|String
@@ -135,7 +135,7 @@ argument_list|>
 name|getBundles
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of features (<code>feature-name[/feature-version]</code>) defined in this profile      * @return      */
+comment|/**      * Returns a list of features (<code>feature-name[/feature-version]</code>) defined in this profile.      */
 name|List
 argument_list|<
 name|String
@@ -143,7 +143,7 @@ argument_list|>
 name|getFeatures
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of features XML repositories (URIs) defined in this profile      * @return      */
+comment|/**      * Returns a list of features XML repositories (URIs) defined in this profile.      */
 name|List
 argument_list|<
 name|String
@@ -151,7 +151,7 @@ argument_list|>
 name|getRepositories
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of blacklisted bundles (URIs) (as {@link LocationPattern location patterns}      * @return      */
+comment|/**      * Returns a list of blacklisted bundles (URIs) (as {@link LocationPattern location patterns}.      */
 name|List
 argument_list|<
 name|LocationPattern
@@ -159,7 +159,7 @@ argument_list|>
 name|getBlacklistedBundles
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of blacklisted {@link FeaturePattern feature patterns}      * @return      */
+comment|/**      * Returns a list of blacklisted {@link FeaturePattern feature patterns}.      */
 name|List
 argument_list|<
 name|FeaturePattern
@@ -167,7 +167,7 @@ argument_list|>
 name|getBlacklistedFeatures
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of blacklisted features XML repositories (URIs) (as {@link LocationPattern location patterns}      * @return      */
+comment|/**      * Returns a list of blacklisted features XML repositories (URIs) (as {@link LocationPattern location patterns}.      */
 name|List
 argument_list|<
 name|LocationPattern
@@ -175,7 +175,7 @@ argument_list|>
 name|getBlacklistedRepositories
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of libraries (to be added to<code>${karaf.home}/lib</code>) defined in this profile      * @return      */
+comment|/**      * Returns a list of libraries (to be added to<code>${karaf.home}/lib</code>) defined in this profile.      */
 name|List
 argument_list|<
 name|String
@@ -183,7 +183,7 @@ argument_list|>
 name|getLibraries
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of boot libraries (to be added to<code>${karaf.home}/lib/boot</code>) defined in this profile      * @return      */
+comment|/**      * Returns a list of boot libraries (to be added to<code>${karaf.home}/lib/boot</code>) defined in this profile.      */
 name|List
 argument_list|<
 name|String
@@ -191,7 +191,7 @@ argument_list|>
 name|getBootLibraries
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of endorsed libraries (to be added to<code>${karaf.home}/lib/endorsed</code>) defined in this profile      * @return      */
+comment|/**      * Returns a list of endorsed libraries (to be added to<code>${karaf.home}/lib/endorsed</code>) defined in this profile.      */
 name|List
 argument_list|<
 name|String
@@ -199,7 +199,7 @@ argument_list|>
 name|getEndorsedLibraries
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of extension libraries (to be added to<code>${karaf.home}/lib/ext</code>) defined in this profile      * @return      */
+comment|/**      * Returns a list of extension libraries (to be added to<code>${karaf.home}/lib/ext</code>) defined in this profile.      */
 name|List
 argument_list|<
 name|String
@@ -207,7 +207,7 @@ argument_list|>
 name|getExtLibraries
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of bundle override definitions (to be added to<code>${karaf.etc}/overrides.properties</code>)      * defined in this profile      * @return      */
+comment|/**      * Returns a list of bundle override definitions (to be added to<code>${karaf.etc}/overrides.properties</code>)      * defined in this profile.      */
 name|List
 argument_list|<
 name|String
@@ -215,7 +215,7 @@ argument_list|>
 name|getOverrides
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of optional {@link org.osgi.resource.Resource resources} (URIs) to be used during      * resolution      * @return      */
+comment|/**      * Returns a list of optional {@link org.osgi.resource.Resource resources} (URIs) to be used during      * resolution.      */
 name|List
 argument_list|<
 name|String
