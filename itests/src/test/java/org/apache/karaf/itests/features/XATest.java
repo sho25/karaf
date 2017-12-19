@@ -415,7 +415,7 @@ name|version
 operator|+
 literal|"/xml/features, "
 operator|+
-literal|"mvn:org.apache.karaf.features/spring/"
+literal|"mvn:org.apache.karaf.features/spring-legacy/"
 operator|+
 name|version
 operator|+
