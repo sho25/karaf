@@ -322,14 +322,6 @@ name|BackingEngineFactory
 operator|.
 name|class
 argument_list|)
-block|,
-annotation|@
-name|ProvideService
-argument_list|(
-name|EncryptionService
-operator|.
-name|class
-argument_list|)
 block|}
 argument_list|)
 specifier|public
