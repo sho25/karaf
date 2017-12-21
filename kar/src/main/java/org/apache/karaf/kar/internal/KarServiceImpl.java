@@ -2366,6 +2366,9 @@ name|bundleInfo
 operator|.
 name|getLocation
 argument_list|()
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|copyResourceToJar
@@ -2399,6 +2402,9 @@ argument_list|(
 name|configFileInfo
 operator|.
 name|getLocation
+argument_list|()
+operator|.
+name|trim
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -2445,6 +2451,9 @@ name|bundleInfo
 operator|.
 name|getLocation
 argument_list|()
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|copyResourceToJar
@@ -2477,6 +2486,9 @@ argument_list|(
 name|configFileInfo
 operator|.
 name|getLocation
+argument_list|()
+operator|.
+name|trim
 argument_list|()
 argument_list|)
 decl_stmt|;
