@@ -1127,7 +1127,7 @@ argument_list|()
 decl_stmt|;
 name|ACLConfigurationParser
 operator|.
-name|getRolesForInvocation
+name|getRolesForInvocationForAlias
 argument_list|(
 name|name
 argument_list|,
@@ -1747,7 +1747,7 @@ name|s
 init|=
 name|ACLConfigurationParser
 operator|.
-name|getRolesForInvocation
+name|getRolesForInvocationForAlias
 argument_list|(
 name|aliasCommand
 operator|.
