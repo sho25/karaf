@@ -7616,6 +7616,30 @@ range|:
 name|installedFeatures
 control|)
 block|{
+if|if
+condition|(
+name|feature
+operator|.
+name|isBlacklisted
+argument_list|()
+condition|)
+block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"   Feature "
+operator|+
+name|feature
+operator|.
+name|getId
+argument_list|()
+operator|+
+literal|" is blacklisted, ignoring"
+argument_list|)
+expr_stmt|;
+continue|continue;
+block|}
 name|LOGGER
 operator|.
 name|info
@@ -8139,7 +8163,30 @@ range|:
 name|bootFeatures
 control|)
 block|{
-comment|// the feature is a startup feature, updating startup.properties file
+if|if
+condition|(
+name|feature
+operator|.
+name|isBlacklisted
+argument_list|()
+condition|)
+block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"   Feature "
+operator|+
+name|feature
+operator|.
+name|getId
+argument_list|()
+operator|+
+literal|" is blacklisted, ignoring"
+argument_list|)
+expr_stmt|;
+continue|continue;
+block|}
 name|LOGGER
 operator|.
 name|info
