@@ -7147,7 +7147,14 @@ name|requirements
 argument_list|,
 name|ROOT_REGION
 argument_list|,
+operator|new
+name|FeatureReq
+argument_list|(
 name|prereq
+argument_list|)
+operator|.
+name|toRequirement
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
