@@ -2937,8 +2937,8 @@ decl_stmt|;
 if|if
 condition|(
 name|result
-operator|!=
-literal|null
+operator|instanceof
+name|String
 condition|)
 block|{
 name|session
