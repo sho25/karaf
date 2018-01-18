@@ -1205,6 +1205,17 @@ operator|.
 name|loadBrandingProperties
 argument_list|(
 name|terminal
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|.
+name|endsWith
+argument_list|(
+literal|"SshTerminal"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// Create session
