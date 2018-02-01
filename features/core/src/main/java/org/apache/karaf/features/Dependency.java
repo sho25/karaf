@@ -19,6 +19,8 @@ begin_interface
 specifier|public
 interface|interface
 name|Dependency
+extends|extends
+name|Blacklisting
 block|{
 name|String
 name|getName

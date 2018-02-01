@@ -29,6 +29,8 @@ begin_interface
 specifier|public
 interface|interface
 name|Conditional
+extends|extends
+name|Blacklisting
 block|{
 name|List
 argument_list|<

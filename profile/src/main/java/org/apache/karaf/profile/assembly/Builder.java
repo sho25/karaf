@@ -7721,6 +7721,29 @@ name|getConditional
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|cond
+operator|.
+name|isBlacklisted
+argument_list|()
+condition|)
+block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"   Conditionial "
+operator|+
+name|cond
+operator|.
+name|getConditionId
+argument_list|()
+operator|+
+literal|" is blacklisted, ignoring"
+argument_list|)
+expr_stmt|;
+block|}
 for|for
 control|(
 name|Bundle
@@ -8256,6 +8279,29 @@ name|getConditional
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|cond
+operator|.
+name|isBlacklisted
+argument_list|()
+condition|)
+block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"   Conditionial "
+operator|+
+name|cond
+operator|.
+name|getConditionId
+argument_list|()
+operator|+
+literal|" is blacklisted, ignoring"
+argument_list|)
+expr_stmt|;
+block|}
 for|for
 control|(
 name|Bundle
