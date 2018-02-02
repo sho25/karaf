@@ -775,6 +775,22 @@ operator|!=
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+name|result
+operator|instanceof
+name|Integer
+condition|)
+block|{
+comment|// if it is an integer it's interpreted as a return code
+name|exitStatus
+operator|=
+operator|(
+name|Integer
+operator|)
+name|result
+expr_stmt|;
+block|}
 comment|// TODO: print the result of the command ?
 comment|//                    session.getConsole().println(session.format(result, Converter.INSPECT));
 block|}
