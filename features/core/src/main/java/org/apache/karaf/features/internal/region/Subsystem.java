@@ -2424,6 +2424,12 @@ operator|!=
 name|this
 operator|.
 name|feature
+operator|&&
+operator|!
+name|feature
+operator|.
+name|isBlacklisted
+argument_list|()
 condition|)
 block|{
 name|String
