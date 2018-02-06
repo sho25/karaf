@@ -2863,6 +2863,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|pl
+operator|!=
+literal|null
+condition|)
+block|{
 name|command
 operator|=
 name|pl
@@ -2870,6 +2877,7 @@ operator|.
 name|line
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 block|}
 catch|catch
