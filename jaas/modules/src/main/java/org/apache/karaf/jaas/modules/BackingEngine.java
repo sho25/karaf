@@ -138,6 +138,14 @@ argument_list|>
 name|listUsers
 parameter_list|()
 function_decl|;
+comment|/**      * Retrieve the {@link UserPrincipal} corresponding to an username, or {@code null} if user doesn't exist.      *      * @param username The username.      * @return The {@link UserPrincipal} or {@code null}.      */
+name|UserPrincipal
+name|lookupUser
+parameter_list|(
+name|String
+name|username
+parameter_list|)
+function_decl|;
 comment|/**      * List groups that a user is member of.      *      * @param user the {@link UserPrincipal}.      * @return the list of {@link GroupPrincipal}.      */
 name|List
 argument_list|<
