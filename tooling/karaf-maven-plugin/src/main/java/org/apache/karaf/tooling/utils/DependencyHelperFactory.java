@@ -162,7 +162,7 @@ specifier|public
 class|class
 name|DependencyHelperFactory
 block|{
-comment|/**      *<p>Create a new {@link DependencyHelper} based on what has been found in {@link      * org.codehaus.plexus.PlexusContainer}</p>      *      * @param container    The Maven Plexus container to use.      * @param mavenProject The Maven project to use.      * @param mavenSession The Maven session.      * @param log          The log to use for the messages.      *      * @return The {@link DependencyHelper} depending of the Maven version used.      *      * @throws MojoExecutionException If the plugin execution fails.      */
+comment|/**      *<p>Create a new {@link DependencyHelper} based on what has been found in {@link      * org.codehaus.plexus.PlexusContainer}</p>      *      * @param container    The Maven Plexus container to use.      * @param mavenProject The Maven project to use.      * @param mavenSession The Maven session.      * @param cacheSize    Size of the artifact->file LRU cache      * @param log          The log to use for the messages.      *      * @return The {@link DependencyHelper} depending of the Maven version used.      *      * @throws MojoExecutionException If the plugin execution fails.      */
 specifier|public
 specifier|static
 name|DependencyHelper
@@ -176,6 +176,9 @@ name|mavenProject
 parameter_list|,
 name|MavenSession
 name|mavenSession
+parameter_list|,
+name|int
+name|cacheSize
 parameter_list|,
 name|Log
 name|log
@@ -228,6 +231,8 @@ argument_list|,
 name|session
 argument_list|,
 name|system
+argument_list|,
+name|cacheSize
 argument_list|)
 return|;
 block|}

@@ -235,16 +235,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|WeakHashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|jar
 operator|.
 name|JarInputStream
@@ -518,6 +508,22 @@ operator|.
 name|utils
 operator|.
 name|MojoSupport
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|tooling
+operator|.
+name|utils
+operator|.
+name|SimpleLRUCache
 import|;
 end_import
 
@@ -922,7 +928,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates the features XML file starting with an optional source feature.xml and adding  * project dependencies as bundles and feature/car dependencies.  *   * NB this requires a recent maven-install-plugin such as 2.3.1  */
+comment|/**  * Generates the features XML file starting with an optional source feature.xml and adding  * project dependencies as bundles and feature/car dependencies.  *  * NB this requires a recent maven-install-plugin such as 2.3.1  */
 end_comment
 
 begin_class
@@ -1176,6 +1182,30 @@ specifier|private
 name|boolean
 name|simplifyBundleDependencies
 decl_stmt|;
+comment|/**      * Maximum size of the artifact LRU cache. This cache is used to prevent repeated artifact-to-file resolution.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"1024"
+argument_list|)
+specifier|private
+name|int
+name|artifactCacheSize
+decl_stmt|;
+comment|/**      * Maximum size of the Features LRU cache. This cache is used to prevent repeated deserialization of features      * XML files.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"256"
+argument_list|)
+specifier|private
+name|int
+name|featuresCacheSize
+decl_stmt|;
 comment|/**      * Name of features which are prerequisites (they still need to be defined separately).      */
 annotation|@
 name|Parameter
@@ -1280,6 +1310,8 @@ name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|execute
@@ -1408,6 +1440,10 @@ argument_list|,
 name|this
 operator|.
 name|mavenSession
+argument_list|,
+name|this
+operator|.
+name|artifactCacheSize
 argument_list|,
 name|getLog
 argument_list|()
@@ -2202,7 +2238,9 @@ name|cache
 init|=
 operator|new
 name|FeaturesCache
-argument_list|()
+argument_list|(
+name|featuresCacheSize
+argument_list|)
 decl_stmt|;
 for|for
 control|(
@@ -3515,7 +3553,6 @@ return|;
 block|}
 block|}
 block|}
-specifier|private
 specifier|static
 name|Features
 name|readFeaturesFile
@@ -3547,6 +3584,8 @@ literal|false
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setLog
@@ -3562,6 +3601,8 @@ operator|=
 name|log
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Log
 name|getLog
@@ -4928,19 +4969,30 @@ name|FeaturesCache
 block|{
 specifier|private
 specifier|final
-name|Map
+name|SimpleLRUCache
 argument_list|<
 name|File
 argument_list|,
 name|Features
 argument_list|>
-name|map
-init|=
-operator|new
-name|WeakHashMap
-argument_list|<>
-argument_list|()
+name|cache
 decl_stmt|;
+name|FeaturesCache
+parameter_list|(
+name|int
+name|featuresCacheSize
+parameter_list|)
+block|{
+name|cache
+operator|=
+operator|new
+name|SimpleLRUCache
+argument_list|<>
+argument_list|(
+name|featuresCacheSize
+argument_list|)
+expr_stmt|;
+block|}
 name|Features
 name|get
 parameter_list|(
@@ -4959,7 +5011,7 @@ specifier|final
 name|Features
 name|existing
 init|=
-name|map
+name|cache
 operator|.
 name|get
 argument_list|(
@@ -4986,7 +5038,7 @@ argument_list|(
 name|featuresFile
 argument_list|)
 decl_stmt|;
-name|map
+name|cache
 operator|.
 name|put
 argument_list|(
