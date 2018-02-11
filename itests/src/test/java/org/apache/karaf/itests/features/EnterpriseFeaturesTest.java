@@ -507,7 +507,7 @@ name|installAssertAndUninstallFeature
 argument_list|(
 literal|"openjpa"
 argument_list|,
-literal|"2.4.1"
+literal|"2.4.2"
 argument_list|)
 expr_stmt|;
 block|}
