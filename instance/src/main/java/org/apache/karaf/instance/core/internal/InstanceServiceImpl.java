@@ -3320,6 +3320,8 @@ literal|" --add-opens java.base/java.lang=ALL-UNNAMED"
 operator|+
 literal|" --add-opens java.base/java.util=ALL-UNNAMED"
 operator|+
+literal|" --add-opens java.rmi/sun.rmi.transport.tcp=ALL-UNNAMED"
+operator|+
 literal|" --add-exports=java.base/sun.net.www.protocol.http=ALL-UNNAMED"
 operator|+
 literal|" --add-exports=java.base/sun.net.www.protocol.https=ALL-UNNAMED"
