@@ -587,6 +587,29 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|// Spring Security
+annotation|@
+name|Test
+specifier|public
+name|void
+name|installSpringSecurityFeature
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|installAssertAndUninstallFeature
+argument_list|(
+literal|"spring-security"
+argument_list|,
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"spring.security42.version"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 

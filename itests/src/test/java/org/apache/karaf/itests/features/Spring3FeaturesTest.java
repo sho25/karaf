@@ -909,9 +909,16 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|installAssertAndUninstallFeatures
+name|installAssertAndUninstallFeature
 argument_list|(
 literal|"spring-security"
+argument_list|,
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"spring.security31.version"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
