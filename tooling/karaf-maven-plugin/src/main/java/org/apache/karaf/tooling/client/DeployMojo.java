@@ -1375,7 +1375,7 @@ name|createChannel
 argument_list|(
 literal|"exec"
 argument_list|,
-name|print
+name|writer
 operator|.
 name|toString
 argument_list|()
