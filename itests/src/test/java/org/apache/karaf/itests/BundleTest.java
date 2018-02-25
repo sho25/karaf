@@ -387,7 +387,7 @@ argument_list|)
 expr_stmt|;
 name|assertContains
 argument_list|(
-literal|"osgi.wiring.bundle; org.apache.aries.jmx.whiteboard 1.1.5 [UNUSED]"
+literal|"osgi.wiring.bundle; org.apache.aries.jmx.whiteboard 1.2.0 [UNUSED]"
 argument_list|,
 name|jmxWhiteboardBundleCapabilitiesOutput
 argument_list|)
