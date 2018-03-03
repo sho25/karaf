@@ -1121,7 +1121,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Main processing method. Most of the work involves configuring and invoking {@link Builder a profile builder}.      * @throws Exception      */
+comment|/**      * Main processing method. Most of the work involves configuring and invoking {@link Builder a profile builder}.      */
 specifier|protected
 name|void
 name|doExecute
