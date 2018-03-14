@@ -415,6 +415,10 @@ name|Bundle
 name|systemBundle
 decl_stmt|;
 specifier|public
+name|Bundle
+name|cmBundle
+decl_stmt|;
+specifier|public
 name|int
 name|initialBundleStartLevel
 decl_stmt|;
