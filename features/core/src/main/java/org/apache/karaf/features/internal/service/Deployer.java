@@ -839,6 +839,20 @@ begin_import
 import|import
 name|org
 operator|.
+name|osgi
+operator|.
+name|util
+operator|.
+name|tracker
+operator|.
+name|ServiceTracker
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|slf4j
 operator|.
 name|Logger
@@ -1648,6 +1662,11 @@ comment|/** A {@link Bundle} providing {@link FeaturesService} */
 specifier|public
 name|Bundle
 name|serviceBundle
+decl_stmt|;
+comment|/** A {@link Bundle} providing {@link org.osgi.service.cm.ConfigurationAdmin} service */
+specifier|public
+name|Bundle
+name|configadminBundle
 decl_stmt|;
 comment|/** {@link org.osgi.framework.startlevel.FrameworkStartLevel#getInitialBundleStartLevel()} */
 specifier|public
@@ -4530,6 +4549,13 @@ name|dstate
 operator|.
 name|serviceBundle
 decl_stmt|;
+name|Bundle
+name|configadminBundle
+init|=
+name|dstate
+operator|.
+name|configadminBundle
+decl_stmt|;
 comment|//
 comment|// Handle updates on the FeaturesService bundle
 comment|//
@@ -4863,6 +4889,15 @@ argument_list|(
 name|dstate
 operator|.
 name|serviceBundle
+argument_list|)
+expr_stmt|;
+name|toRefreshToStopEarly
+operator|.
+name|remove
+argument_list|(
+name|dstate
+operator|.
+name|configadminBundle
 argument_list|)
 expr_stmt|;
 name|toStop

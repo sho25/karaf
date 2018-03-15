@@ -6105,6 +6105,14 @@ name|ourBundle
 expr_stmt|;
 name|dstate
 operator|.
+name|configadminBundle
+operator|=
+name|info
+operator|.
+name|cmBundle
+expr_stmt|;
+name|dstate
+operator|.
 name|initialBundleStartLevel
 operator|=
 name|info
@@ -6486,6 +6494,22 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
+block|}
+catch|catch
+parameter_list|(
+name|Throwable
+name|t
+parameter_list|)
+block|{
+comment|// Print stack trace to stdout, there may be no log anymore
+name|t
+operator|.
+name|printStackTrace
+argument_list|()
+expr_stmt|;
+throw|throw
+name|t
+throw|;
 block|}
 block|}
 block|}

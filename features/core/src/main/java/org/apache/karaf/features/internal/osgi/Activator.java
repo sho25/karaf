@@ -1317,6 +1317,16 @@ name|bundleContext
 argument_list|,
 name|systemBundleContext
 argument_list|,
+name|getTrackedServiceRef
+argument_list|(
+name|ConfigurationAdmin
+operator|.
+name|class
+argument_list|)
+operator|.
+name|getBundle
+argument_list|()
+argument_list|,
 name|configInstaller
 argument_list|,
 name|dg
@@ -2386,6 +2396,10 @@ name|installSupport
 operator|.
 name|saveDigraph
 argument_list|()
+expr_stmt|;
+name|installSupport
+operator|=
+literal|null
 expr_stmt|;
 block|}
 block|}
