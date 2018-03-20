@@ -35,16 +35,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|HashMap
 import|;
 end_import
@@ -56,6 +46,16 @@ operator|.
 name|util
 operator|.
 name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
 import|;
 end_import
 
@@ -162,7 +162,7 @@ block|}
 comment|/** 	 * @return the servletEvents 	 */
 specifier|public
 specifier|synchronized
-name|Collection
+name|List
 argument_list|<
 name|ServletEvent
 argument_list|>
