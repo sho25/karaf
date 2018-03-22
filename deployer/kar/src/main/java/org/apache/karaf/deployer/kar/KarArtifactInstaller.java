@@ -326,15 +326,10 @@ name|File
 name|file
 parameter_list|)
 block|{
-comment|// If the file ends with .kar, then we can handle it!
+comment|// If the file or directory ends with .kar, then we can handle it!
 comment|//
 if|if
 condition|(
-name|file
-operator|.
-name|isFile
-argument_list|()
-operator|&&
 name|file
 operator|.
 name|getName
