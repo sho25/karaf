@@ -787,6 +787,13 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|artifactLocations
+operator|!=
+literal|null
+condition|)
+block|{
 name|artifacts
 operator|.
 name|addAll
@@ -794,6 +801,7 @@ argument_list|(
 name|artifactLocations
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|useSsh
