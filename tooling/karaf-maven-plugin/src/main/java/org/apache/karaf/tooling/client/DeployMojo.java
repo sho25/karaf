@@ -808,13 +808,13 @@ name|useSsh
 condition|)
 name|deployWithSsh
 argument_list|(
-name|artifactLocations
+name|artifacts
 argument_list|)
 expr_stmt|;
 else|else
 name|deployWithJmx
 argument_list|(
-name|artifactLocations
+name|artifacts
 argument_list|)
 expr_stmt|;
 block|}
@@ -1619,6 +1619,11 @@ name|Throwable
 name|t
 parameter_list|)
 block|{
+name|t
+operator|.
+name|printStackTrace
+argument_list|()
+expr_stmt|;
 throw|throw
 operator|new
 name|MojoExecutionException
