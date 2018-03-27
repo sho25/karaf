@@ -4697,6 +4697,33 @@ name|getKey
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|Files
+operator|.
+name|exists
+argument_list|(
+name|configFile
+argument_list|)
+condition|)
+block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"   not changing existing config file: {}"
+argument_list|,
+name|homeDirectory
+operator|.
+name|relativize
+argument_list|(
+name|configFile
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|LOGGER
 operator|.
 name|info
@@ -4733,6 +4760,7 @@ name|getValue
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|// 'improve' configuration files.
 if|if
