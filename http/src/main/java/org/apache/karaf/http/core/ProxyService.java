@@ -19,28 +19,6 @@ end_package
 
 begin_import
 import|import
-name|javax
-operator|.
-name|management
-operator|.
-name|MBeanException
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|management
-operator|.
-name|openmbean
-operator|.
-name|TabularData
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|util
@@ -49,23 +27,11 @@ name|Map
 import|;
 end_import
 
-begin_comment
-comment|/**  * HTTP MBean.  */
-end_comment
-
 begin_interface
 specifier|public
 interface|interface
-name|HttpMBean
+name|ProxyService
 block|{
-comment|/**      * List details for servlets.      *      * @return A {@link TabularData} containing the servlets information.      * @throws MBeanException In case of MBean failure.      */
-name|TabularData
-name|getServlets
-parameter_list|()
-throws|throws
-name|MBeanException
-function_decl|;
-comment|/**      * List configured HTTP proxies.      */
 name|Map
 argument_list|<
 name|String
@@ -74,10 +40,7 @@ name|String
 argument_list|>
 name|getProxies
 parameter_list|()
-throws|throws
-name|MBeanException
 function_decl|;
-comment|/**      * Add a new HTTP proxy using URL, proxyTo and prefix.      */
 name|void
 name|addProxy
 parameter_list|(
@@ -88,9 +51,8 @@ name|String
 name|proxyTo
 parameter_list|)
 throws|throws
-name|MBeanException
+name|Exception
 function_decl|;
-comment|/**      * Remove an existing HTTP proxy identified by URL.      */
 name|void
 name|removeProxy
 parameter_list|(
@@ -98,7 +60,7 @@ name|String
 name|url
 parameter_list|)
 throws|throws
-name|MBeanException
+name|Exception
 function_decl|;
 block|}
 end_interface
