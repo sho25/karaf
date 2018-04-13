@@ -224,7 +224,7 @@ name|strippedUrl
 operator|.
 name|contains
 argument_list|(
-literal|";"
+literal|";start-level="
 argument_list|)
 condition|)
 block|{
@@ -240,7 +240,7 @@ name|strippedUrl
 operator|.
 name|indexOf
 argument_list|(
-literal|';'
+literal|";start-level="
 argument_list|)
 argument_list|)
 expr_stmt|;
