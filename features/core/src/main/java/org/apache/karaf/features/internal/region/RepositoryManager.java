@@ -59,11 +59,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|karaf
+name|felix
 operator|.
-name|features
-operator|.
-name|internal
+name|utils
 operator|.
 name|repository
 operator|.
