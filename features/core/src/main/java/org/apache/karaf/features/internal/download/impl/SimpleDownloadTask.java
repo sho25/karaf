@@ -370,7 +370,7 @@ name|URL
 argument_list|(
 name|DownloadManagerHelper
 operator|.
-name|stripUrl
+name|stripStartLevel
 argument_list|(
 name|urlObj
 operator|.
