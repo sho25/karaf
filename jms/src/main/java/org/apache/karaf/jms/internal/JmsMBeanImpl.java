@@ -229,6 +229,9 @@ name|username
 parameter_list|,
 name|String
 name|password
+parameter_list|,
+name|String
+name|pool
 parameter_list|)
 throws|throws
 name|MBeanException
@@ -248,6 +251,8 @@ argument_list|,
 name|username
 argument_list|,
 name|password
+argument_list|,
+name|pool
 argument_list|)
 expr_stmt|;
 block|}

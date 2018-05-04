@@ -92,7 +92,7 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
-comment|/**      * Create a JMS connection factory.      *      * @param name The JMS connection factory name.      * @param type The JMS connection factory type (ActiveMQ or WebsphereMQ).      * @param url The JMS connection factory URL. NB: when type is WebsphereMQ, the URL has the format host/port/queuemanager/channel.      * @param username The JMS connection factory authentication username.      * @param password The JMS connection factory authentication password.      * @throws MBeanException If the MBean fails.      */
+comment|/**      * Create a JMS connection factory.      *      * @param name The JMS connection factory name.      * @param type The JMS connection factory type (ActiveMQ or WebsphereMQ).      * @param url The JMS connection factory URL. NB: when type is WebsphereMQ, the URL has the format host/port/queuemanager/channel.      * @param username The JMS connection factory authentication username.      * @param password The JMS connection factory authentication password.      * @param pool The JMS connection factory pooling to use.      * @throws MBeanException If the MBean fails.      */
 name|void
 name|create
 parameter_list|(
@@ -110,6 +110,9 @@ name|username
 parameter_list|,
 name|String
 name|password
+parameter_list|,
+name|String
+name|pool
 parameter_list|)
 throws|throws
 name|MBeanException
