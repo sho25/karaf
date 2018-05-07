@@ -107,13 +107,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|karaf
+name|felix
 operator|.
-name|features
+name|utils
 operator|.
-name|internal
-operator|.
-name|resolver
+name|resource
 operator|.
 name|ResourceBuilder
 import|;
