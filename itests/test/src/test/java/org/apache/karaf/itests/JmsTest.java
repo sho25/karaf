@@ -527,6 +527,8 @@ name|activeMqUrl
 argument_list|,
 literal|"jms"
 argument_list|,
+literal|"pax-jms-activemq"
+argument_list|,
 literal|"activemq-broker-noweb"
 argument_list|,
 literal|"shell-compat"
@@ -942,6 +944,8 @@ argument_list|,
 literal|"karaf"
 argument_list|,
 literal|"karaf"
+argument_list|,
+literal|"transx"
 argument_list|)
 expr_stmt|;
 name|waitForConnectionFactory

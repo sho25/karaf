@@ -80,7 +80,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Create a new JMS connection factory.      *      * @param name The JMS connection factory name.      * @param type The JMS connection factory type (ActiveMQ, WebsphereMQ, ...).      * @param url The JMS URL to use.      * @param username The username to use.      * @param password The password to use.      * @throws Exception If the service fails.      */
+comment|/**      * Create a new JMS connection factory.      *      * @param name The JMS connection factory name.      * @param type The JMS connection factory type (ActiveMQ, WebsphereMQ, ...).      * @param url The JMS URL to use.      * @param username The username to use.      * @param password The password to use.      * @param pool Kind of pool to use.      * @throws Exception If the service fails.      */
 name|void
 name|create
 parameter_list|(
@@ -98,6 +98,9 @@ name|username
 parameter_list|,
 name|String
 name|password
+parameter_list|,
+name|String
+name|pool
 parameter_list|)
 throws|throws
 name|Exception
