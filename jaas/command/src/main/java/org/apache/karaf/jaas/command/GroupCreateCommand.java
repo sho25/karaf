@@ -103,7 +103,7 @@ literal|"group-create"
 argument_list|,
 name|description
 operator|=
-literal|"create a group in a realm"
+literal|"Create a group in a realm"
 argument_list|)
 annotation|@
 name|Service
