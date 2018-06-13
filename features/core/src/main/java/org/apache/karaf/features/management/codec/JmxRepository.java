@@ -328,6 +328,16 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|itemValues
+index|[
+literal|4
+index|]
+operator|=
+name|repository
+operator|.
+name|isBlacklisted
+argument_list|()
+expr_stmt|;
 name|data
 operator|=
 operator|new
@@ -681,6 +691,15 @@ name|JmxFeature
 operator|.
 name|FEATURE_IDENTIFIER_TABLE
 expr_stmt|;
+name|itemTypes
+index|[
+literal|4
+index|]
+operator|=
+name|SimpleType
+operator|.
+name|BOOLEAN
+expr_stmt|;
 name|itemDescriptions
 index|[
 literal|0
@@ -708,6 +727,13 @@ literal|3
 index|]
 operator|=
 literal|"The list of included features"
+expr_stmt|;
+name|itemDescriptions
+index|[
+literal|4
+index|]
+operator|=
+literal|"Whether the repository is blacklisted"
 expr_stmt|;
 return|return
 operator|new

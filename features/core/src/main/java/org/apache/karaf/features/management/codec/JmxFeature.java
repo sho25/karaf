@@ -473,6 +473,16 @@ index|]
 operator|=
 name|installed
 expr_stmt|;
+name|itemValues
+index|[
+literal|7
+index|]
+operator|=
+name|feature
+operator|.
+name|isBlacklisted
+argument_list|()
+expr_stmt|;
 name|data
 operator|=
 operator|new
@@ -1886,6 +1896,15 @@ name|SimpleType
 operator|.
 name|BOOLEAN
 expr_stmt|;
+name|itemTypes
+index|[
+literal|7
+index|]
+operator|=
+name|SimpleType
+operator|.
+name|BOOLEAN
+expr_stmt|;
 name|itemDescriptions
 index|[
 literal|0
@@ -1934,6 +1953,13 @@ literal|6
 index|]
 operator|=
 literal|"Whether the feature is installed"
+expr_stmt|;
+name|itemDescriptions
+index|[
+literal|7
+index|]
+operator|=
+literal|"Whether the feature is blacklisted"
 expr_stmt|;
 return|return
 operator|new

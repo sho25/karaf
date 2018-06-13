@@ -70,6 +70,11 @@ init|=
 literal|"Installed"
 decl_stmt|;
 name|String
+name|FEATURE_BLACKLISTED
+init|=
+literal|"Blacklisted"
+decl_stmt|;
+name|String
 name|FEATURE_CONFIG_PID
 init|=
 literal|"Pid"
@@ -144,6 +149,8 @@ block|,
 name|FEATURE_CONFIGURATIONFILES
 block|,
 name|FEATURE_INSTALLED
+block|,
+name|FEATURE_BLACKLISTED
 block|}
 decl_stmt|;
 name|String
@@ -221,6 +228,11 @@ name|REPOSITORY_FEATURES
 init|=
 literal|"Features"
 decl_stmt|;
+name|String
+name|REPOSITORY_BLACKLISTED
+init|=
+literal|"Blacklisted"
+decl_stmt|;
 comment|/**      * The type of the event which is emitted for repositories events      */
 name|String
 name|REPOSITORY_EVENT_TYPE
@@ -255,6 +267,8 @@ block|,
 name|REPOSITORY_REPOSITORIES
 block|,
 name|REPOSITORY_FEATURES
+block|,
+name|REPOSITORY_BLACKLISTED
 block|}
 decl_stmt|;
 comment|/**      * The item names in the CompositeData representing the event raised for      * feature events within the OSGi container by this bean      */
