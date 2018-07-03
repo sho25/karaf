@@ -161,6 +161,15 @@ name|toMillis
 argument_list|(
 literal|5
 argument_list|)
+operator|+
+name|TimeUnit
+operator|.
+name|HOURS
+operator|.
+name|toMillis
+argument_list|(
+literal|1
+argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
