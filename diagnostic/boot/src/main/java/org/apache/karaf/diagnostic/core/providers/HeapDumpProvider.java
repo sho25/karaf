@@ -196,7 +196,7 @@ name|createTempFile
 argument_list|(
 literal|"heapdump"
 argument_list|,
-literal|".txt"
+literal|".hprof"
 argument_list|)
 expr_stmt|;
 name|heapDumpFile
@@ -251,7 +251,7 @@ name|destination
 operator|.
 name|add
 argument_list|(
-literal|"heapdump.txt"
+literal|"heapdump.hprof"
 argument_list|)
 expr_stmt|;
 name|byte
