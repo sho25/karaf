@@ -370,6 +370,9 @@ name|feature
 parameter_list|,
 name|boolean
 name|installed
+parameter_list|,
+name|boolean
+name|required
 parameter_list|)
 block|{
 try|try
@@ -482,6 +485,13 @@ name|feature
 operator|.
 name|isBlacklisted
 argument_list|()
+expr_stmt|;
+name|itemValues
+index|[
+literal|8
+index|]
+operator|=
+name|required
 expr_stmt|;
 name|data
 operator|=
@@ -1905,6 +1915,15 @@ name|SimpleType
 operator|.
 name|BOOLEAN
 expr_stmt|;
+name|itemTypes
+index|[
+literal|8
+index|]
+operator|=
+name|SimpleType
+operator|.
+name|BOOLEAN
+expr_stmt|;
 name|itemDescriptions
 index|[
 literal|0
@@ -1960,6 +1979,13 @@ literal|7
 index|]
 operator|=
 literal|"Whether the feature is blacklisted"
+expr_stmt|;
+name|itemDescriptions
+index|[
+literal|8
+index|]
+operator|=
+literal|"Whether the feature is required"
 expr_stmt|;
 return|return
 operator|new

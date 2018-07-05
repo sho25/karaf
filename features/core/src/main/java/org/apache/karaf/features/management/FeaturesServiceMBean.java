@@ -75,6 +75,11 @@ init|=
 literal|"Blacklisted"
 decl_stmt|;
 name|String
+name|FEATURE_REQUIRED
+init|=
+literal|"Required"
+decl_stmt|;
+name|String
 name|FEATURE_CONFIG_PID
 init|=
 literal|"Pid"
@@ -151,6 +156,8 @@ block|,
 name|FEATURE_INSTALLED
 block|,
 name|FEATURE_BLACKLISTED
+block|,
+name|FEATURE_REQUIRED
 block|}
 decl_stmt|;
 name|String
