@@ -1016,19 +1016,14 @@ argument_list|,
 name|log4jConfigPath
 argument_list|)
 expr_stmt|;
+comment|/* KARAF-5798: write the PID whether or not the lock has been acquired */
 name|InstanceHelper
 operator|.
-name|updateInstancePid
+name|writePid
 argument_list|(
 name|config
 operator|.
-name|karafHome
-argument_list|,
-name|config
-operator|.
-name|karafBase
-argument_list|,
-literal|true
+name|pidFile
 argument_list|)
 expr_stmt|;
 name|BootstrapLogManager
@@ -3720,6 +3715,22 @@ operator|+
 name|config
 operator|.
 name|defaultStartLevel
+argument_list|)
+expr_stmt|;
+comment|/* KARAF-5798: instance PID should reflect the current running master */
+name|InstanceHelper
+operator|.
+name|updateInstancePid
+argument_list|(
+name|config
+operator|.
+name|karafHome
+argument_list|,
+name|config
+operator|.
+name|karafBase
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|shutdownThread
