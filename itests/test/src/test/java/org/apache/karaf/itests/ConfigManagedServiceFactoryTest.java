@@ -31,6 +31,18 @@ begin_import
 import|import static
 name|org
 operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
 name|ops4j
 operator|.
 name|pax
@@ -315,7 +327,7 @@ expr_stmt|;
 name|checkEditByFactoryPid
 argument_list|()
 expr_stmt|;
-name|CheckEditByArbitraryAttribute
+name|checkEditByArbitraryAttribute
 argument_list|()
 expr_stmt|;
 block|}
@@ -387,6 +399,13 @@ init|=
 name|readConfig
 argument_list|()
 decl_stmt|;
+name|assertNotNull
+argument_list|(
+literal|"The configuration is null"
+argument_list|,
+name|config
+argument_list|)
+expr_stmt|;
 name|assertEquals
 argument_list|(
 literal|"data1"
@@ -481,7 +500,7 @@ expr_stmt|;
 block|}
 specifier|private
 name|void
-name|CheckEditByArbitraryAttribute
+name|checkEditByArbitraryAttribute
 parameter_list|()
 throws|throws
 name|IOException
