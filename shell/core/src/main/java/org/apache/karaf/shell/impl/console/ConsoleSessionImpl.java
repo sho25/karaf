@@ -1180,20 +1180,11 @@ name|processor
 operator|.
 name|createSession
 argument_list|(
-name|jlineTerminal
-operator|.
-name|input
-argument_list|()
+name|in
 argument_list|,
-name|jlineTerminal
-operator|.
-name|output
-argument_list|()
+name|out
 argument_list|,
-name|jlineTerminal
-operator|.
-name|output
-argument_list|()
+name|err
 argument_list|)
 expr_stmt|;
 comment|// Completers
