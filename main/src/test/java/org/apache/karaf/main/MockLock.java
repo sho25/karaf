@@ -110,7 +110,25 @@ parameter_list|(
 name|Properties
 name|props
 parameter_list|)
-block|{     }
+block|{
+comment|/* KARAF-5798: allow tests to simulate slave instances */
+name|lock
+operator|=
+name|Boolean
+operator|.
+name|valueOf
+argument_list|(
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"test.karaf.mocklock.initiallyLocked"
+argument_list|,
+literal|"true"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|boolean
 name|lock
