@@ -179,6 +179,18 @@ name|assertEquals
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNull
+import|;
+end_import
+
 begin_comment
 comment|/**  * Test the property editing system.  * See src/test/resources/.../test-edit.xml.  */
 end_comment
@@ -445,6 +457,16 @@ operator|.
 name|getProperty
 argument_list|(
 literal|"test-add-two"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertNull
+argument_list|(
+name|properties
+operator|.
+name|getProperty
+argument_list|(
+literal|"test-add-three"
 argument_list|)
 argument_list|)
 expr_stmt|;
