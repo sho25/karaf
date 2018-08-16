@@ -172,7 +172,7 @@ throws|throws
 name|DatatypeConfigurationException
 block|{
 return|return
-name|FactoryFinder
+name|$FactoryFinder
 operator|.
 name|find
 argument_list|(
@@ -199,7 +199,7 @@ throws|throws
 name|DatatypeConfigurationException
 block|{
 return|return
-name|FactoryFinder
+name|$FactoryFinder
 operator|.
 name|newInstance
 argument_list|(
