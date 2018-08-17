@@ -3468,6 +3468,25 @@ argument_list|()
 block|}
 argument_list|)
 expr_stmt|;
+comment|// just put some delay to avoid KARAF-5845
+try|try
+block|{
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|3000
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Throwable
+name|t
+parameter_list|)
+block|{
+comment|// nothing to do
+block|}
 name|Map
 argument_list|<
 name|?
