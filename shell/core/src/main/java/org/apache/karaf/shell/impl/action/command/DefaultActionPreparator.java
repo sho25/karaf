@@ -790,6 +790,9 @@ operator|.
 name|equals
 argument_list|(
 name|param
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -813,6 +816,16 @@ argument_list|()
 else|:
 literal|80
 decl_stmt|;
+name|termWidth
+operator|=
+name|termWidth
+operator|==
+literal|0
+condition|?
+literal|80
+else|:
+name|termWidth
+expr_stmt|;
 name|boolean
 name|globalScope
 init|=
