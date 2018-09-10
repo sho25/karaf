@@ -44,6 +44,8 @@ literal|"scheduler.name=example"
 block|,
 literal|"scheduler.period:Long=10"
 block|,
+literal|"scheduler.times:Integer=5"
+block|,
 literal|"scheduler.concurrent:Boolean=false"
 block|}
 argument_list|)

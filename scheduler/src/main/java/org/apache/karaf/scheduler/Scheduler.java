@@ -50,6 +50,12 @@ name|PROPERTY_SCHEDULER_PERIOD
 init|=
 literal|"scheduler.period"
 decl_stmt|;
+comment|/**      * Name of the configuration property to defined the number of iterations for a job.      * The times is expressed in iterations.      * This property needs to be of numeric type.      */
+name|String
+name|PROPERTY_SCHEDULER_TIMES
+init|=
+literal|"scheduler.times"
+decl_stmt|;
 comment|/**      * Name of the configuration property to define if a periodically job should be scheduled immediate.      * Default is to not startup immediate, the job is started the first time after the period has expired.      * This property needs to be of type Boolean.      */
 name|String
 name|PROPERTY_SCHEDULER_IMMEDIATE
