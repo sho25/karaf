@@ -2785,6 +2785,24 @@ name|e
 operator|.
 name|getMessage
 argument_list|()
+operator|+
+literal|": "
+operator|+
+name|id
+argument_list|)
+expr_stmt|;
+name|getLog
+argument_list|()
+operator|.
+name|warn
+argument_list|(
+name|e
+operator|.
+name|getCause
+argument_list|()
+operator|.
+name|getMessage
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
