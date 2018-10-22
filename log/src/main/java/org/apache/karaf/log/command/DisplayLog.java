@@ -815,6 +815,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|out
+operator|.
+name|flush
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_class
