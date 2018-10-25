@@ -259,9 +259,7 @@ name|jaas
 operator|.
 name|modules
 operator|.
-name|properties
-operator|.
-name|PropertiesBackingEngine
+name|BackingEngine
 import|;
 end_import
 
@@ -838,7 +836,7 @@ argument_list|()
 operator|.
 name|startsWith
 argument_list|(
-name|PropertiesBackingEngine
+name|BackingEngine
 operator|.
 name|GROUP_PREFIX
 argument_list|)
@@ -862,7 +860,7 @@ argument_list|()
 operator|.
 name|substring
 argument_list|(
-name|PropertiesBackingEngine
+name|BackingEngine
 operator|.
 name|GROUP_PREFIX
 operator|.
