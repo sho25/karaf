@@ -704,6 +704,12 @@ name|dep
 operator|.
 name|isDependency
 argument_list|()
+operator|&&
+operator|!
+name|dep
+operator|.
+name|isBlacklisted
+argument_list|()
 condition|)
 block|{
 name|addDependency

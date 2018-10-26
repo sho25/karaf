@@ -600,6 +600,15 @@ name|getFeature
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+operator|!
+name|dep
+operator|.
+name|isBlacklisted
+argument_list|()
+condition|)
+block|{
 name|addFeatures
 argument_list|(
 name|dep
@@ -615,6 +624,7 @@ name|dep
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
