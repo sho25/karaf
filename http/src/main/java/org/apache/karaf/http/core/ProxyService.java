@@ -62,6 +62,10 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+name|void
+name|initProxies
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
