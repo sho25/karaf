@@ -49,7 +49,7 @@ name|command
 operator|.
 name|completers
 operator|.
-name|DataSourcesFileNameCompleter
+name|DataSourcesNameCompleter
 import|;
 end_import
 
@@ -177,7 +177,7 @@ argument_list|)
 annotation|@
 name|Completion
 argument_list|(
-name|DataSourcesFileNameCompleter
+name|DataSourcesNameCompleter
 operator|.
 name|class
 argument_list|)

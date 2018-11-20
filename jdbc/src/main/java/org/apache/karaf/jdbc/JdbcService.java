@@ -105,6 +105,16 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+comment|/**      * List service IDs of JDBC datasource OSGi services available      *      * @return A {@link List} of datasources OSGi service IDs.      * @throws Exception If the service fails.      */
+name|List
+argument_list|<
+name|Long
+argument_list|>
+name|datasourceServiceIds
+parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
 comment|/**      * Execute a SQL query on a given JDBC datasource.      *      * @param datasource The JDBC datasource name.      * @param query The SQL query to execute.      * @return The SQL query result (as a {@link Map}).      * @throws Exception If the service fails.      */
 name|Map
 argument_list|<

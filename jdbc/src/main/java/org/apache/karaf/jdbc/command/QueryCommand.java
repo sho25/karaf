@@ -263,7 +263,7 @@ literal|"datasource"
 argument_list|,
 name|description
 operator|=
-literal|"The JDBC datasource to use"
+literal|"The JDBC datasource name, its JNDI name or service.id to use"
 argument_list|,
 name|required
 operator|=
