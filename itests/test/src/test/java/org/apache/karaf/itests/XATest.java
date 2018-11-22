@@ -12,8 +12,6 @@ operator|.
 name|karaf
 operator|.
 name|itests
-operator|.
-name|features
 package|;
 end_package
 
