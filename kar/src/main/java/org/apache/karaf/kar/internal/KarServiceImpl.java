@@ -663,8 +663,6 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|Kar
 name|kar
 init|=
@@ -674,6 +672,8 @@ argument_list|(
 name|karUri
 argument_list|)
 decl_stmt|;
+try|try
+block|{
 name|kar
 operator|.
 name|extract
@@ -905,6 +905,32 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+comment|// cleanup state if exception occurs during installation
+name|deleteRecursively
+argument_list|(
+operator|new
+name|File
+argument_list|(
+name|storage
+argument_list|,
+name|kar
+operator|.
+name|getKarName
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|// throw the exception to the "clients"
+throw|throw
+name|e
+throw|;
 block|}
 finally|finally
 block|{
