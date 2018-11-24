@@ -2036,7 +2036,7 @@ block|{
 name|Dependency
 name|toDisplay
 init|=
-name|dependencies
+name|conditionDependencies
 operator|.
 name|get
 argument_list|(
