@@ -487,6 +487,29 @@ name|MojoExecutionException
 throws|,
 name|MojoFailureException
 block|{
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|artifact
+operator|.
+name|Artifact
+name|artifact
+init|=
+name|project
+operator|.
+name|getArtifact
+argument_list|()
+decl_stmt|;
+name|artifact
+operator|.
+name|setFile
+argument_list|(
+name|targetFile
+argument_list|)
+expr_stmt|;
 try|try
 block|{
 comment|//now pack up the server.
@@ -686,7 +709,7 @@ name|target1
 argument_list|)
 expr_stmt|;
 block|}
-name|artifact1
+name|artifact2
 operator|.
 name|setFile
 argument_list|(
@@ -697,7 +720,7 @@ name|project
 operator|.
 name|setArtifact
 argument_list|(
-name|artifact1
+name|artifact2
 argument_list|)
 expr_stmt|;
 block|}
