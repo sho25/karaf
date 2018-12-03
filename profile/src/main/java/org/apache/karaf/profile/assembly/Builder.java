@@ -10197,6 +10197,29 @@ name|getRepository
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|processor
+operator|.
+name|isRepositoryBlacklisted
+argument_list|(
+name|innerRepository
+argument_list|)
+condition|)
+block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"   referenced feature repository "
+operator|+
+name|innerRepository
+operator|+
+literal|" is blacklisted"
+argument_list|)
+expr_stmt|;
+continue|continue;
+block|}
 name|downloader
 operator|.
 name|download
