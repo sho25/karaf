@@ -207,7 +207,7 @@ name|Pattern
 operator|.
 name|compile
 argument_list|(
-literal|"log4j2\\.logger\\.([a-zA-Z_]+)\\.name"
+literal|"log4j2\\.logger\\.([a-zA-Z0-9_]+)\\.name"
 argument_list|)
 expr_stmt|;
 name|levelPattern
@@ -216,7 +216,7 @@ name|Pattern
 operator|.
 name|compile
 argument_list|(
-literal|"log4j2\\.logger\\.([a-zA-Z_]+)\\.level"
+literal|"log4j2\\.logger\\.([a-zA-Z0-9_]+)\\.level"
 argument_list|)
 expr_stmt|;
 block|}
