@@ -763,7 +763,7 @@ name|getProperty
 argument_list|(
 name|LOG4J_APPENDER_FILE
 argument_list|,
-literal|"${karaf.data}/log/karaf.log"
+literal|"${karaf.log}/karaf.log"
 argument_list|)
 return|;
 block|}

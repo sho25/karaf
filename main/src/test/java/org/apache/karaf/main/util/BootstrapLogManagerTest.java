@@ -96,9 +96,9 @@ name|configProps
 operator|.
 name|put
 argument_list|(
-literal|"karaf.data"
+literal|"karaf.log"
 argument_list|,
-literal|"target"
+literal|"target/log"
 argument_list|)
 expr_stmt|;
 return|return
