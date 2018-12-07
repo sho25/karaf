@@ -498,14 +498,7 @@ name|properties
 argument_list|,
 literal|"role"
 argument_list|,
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"karaf.admin.role"
-argument_list|,
 literal|"admin"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|sessionTimeout
