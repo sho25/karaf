@@ -249,11 +249,6 @@ argument_list|)
 decl_stmt|;
 while|while
 condition|(
-literal|true
-condition|)
-block|{
-if|if
-condition|(
 operator|!
 name|output
 operator|.
@@ -277,11 +272,6 @@ argument_list|(
 literal|"camel:route-list"
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-break|break;
-block|}
 block|}
 name|System
 operator|.
