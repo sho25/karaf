@@ -112,11 +112,6 @@ parameter_list|()
 function_decl|;
 name|String
 index|[]
-name|listPrivateKeys
-parameter_list|()
-function_decl|;
-name|String
-index|[]
 name|listTrustCertificates
 parameter_list|()
 function_decl|;
