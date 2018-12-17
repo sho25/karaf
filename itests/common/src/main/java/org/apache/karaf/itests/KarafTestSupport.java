@@ -780,7 +780,7 @@ specifier|final
 name|String
 name|MAX_RMI_SERVER_PORT
 init|=
-literal|"66666"
+literal|"65534"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -1155,6 +1155,18 @@ index|[]
 name|config
 parameter_list|()
 block|{
+name|String
+name|karafVersion
+init|=
+name|MavenUtils
+operator|.
+name|getArtifactVersion
+argument_list|(
+literal|"org.apache.karaf"
+argument_list|,
+literal|"apache-karaf"
+argument_list|)
+decl_stmt|;
 name|MavenArtifactUrlReference
 name|karafUrl
 init|=
@@ -1753,7 +1765,7 @@ name|getProperty
 argument_list|(
 literal|"karaf.version"
 argument_list|,
-literal|"4.2.2-SNAPSHOT"
+name|karafVersion
 argument_list|)
 operator|+
 literal|".jar"
@@ -1776,7 +1788,7 @@ name|getProperty
 argument_list|(
 literal|"karaf.version"
 argument_list|,
-literal|"4.2.2-SNAPSHOT"
+name|karafVersion
 argument_list|)
 operator|+
 literal|".jar"
