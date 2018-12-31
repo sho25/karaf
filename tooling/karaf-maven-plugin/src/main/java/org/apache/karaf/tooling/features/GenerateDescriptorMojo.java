@@ -3494,8 +3494,6 @@ parameter_list|(
 name|File
 name|file
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 specifier|final
 name|InputStream
@@ -3602,6 +3600,26 @@ return|return
 name|m
 return|;
 block|}
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+name|getLog
+argument_list|()
+operator|.
+name|warn
+argument_list|(
+literal|"Error while reading artifact"
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
 block|}
 block|}
 specifier|static
