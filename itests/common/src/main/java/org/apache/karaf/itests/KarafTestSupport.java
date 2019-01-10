@@ -1155,18 +1155,6 @@ index|[]
 name|config
 parameter_list|()
 block|{
-name|String
-name|karafVersion
-init|=
-name|MavenUtils
-operator|.
-name|getArtifactVersion
-argument_list|(
-literal|"org.apache.karaf"
-argument_list|,
-literal|"apache-karaf"
-argument_list|)
-decl_stmt|;
 name|MavenArtifactUrlReference
 name|karafUrl
 init|=
@@ -1764,8 +1752,6 @@ operator|.
 name|getProperty
 argument_list|(
 literal|"karaf.version"
-argument_list|,
-name|karafVersion
 argument_list|)
 operator|+
 literal|".jar"
@@ -1787,8 +1773,6 @@ operator|.
 name|getProperty
 argument_list|(
 literal|"karaf.version"
-argument_list|,
-name|karafVersion
 argument_list|)
 operator|+
 literal|".jar"
