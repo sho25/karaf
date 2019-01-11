@@ -8905,7 +8905,7 @@ argument_list|)
 expr_stmt|;
 name|repoUrl
 operator|=
-literal|"file:${karaf.home}/etc/"
+literal|"file:${karaf.etc}/"
 operator|+
 name|output
 operator|.
