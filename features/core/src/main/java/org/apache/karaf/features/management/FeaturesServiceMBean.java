@@ -301,6 +301,15 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
+name|TabularData
+name|repositoryProvidedFeatures
+parameter_list|(
+name|String
+name|url
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 name|void
 name|addRepository
 parameter_list|(
