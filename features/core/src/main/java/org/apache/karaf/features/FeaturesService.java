@@ -368,6 +368,16 @@ name|URI
 name|uri
 parameter_list|)
 function_decl|;
+name|Feature
+index|[]
+name|repositoryProvidedFeatures
+parameter_list|(
+name|URI
+name|uri
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 name|void
 name|addRepository
 parameter_list|(
