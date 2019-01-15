@@ -472,6 +472,14 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|10000
+argument_list|)
+expr_stmt|;
+comment|//wait until artemis up
 name|String
 name|output
 init|=
