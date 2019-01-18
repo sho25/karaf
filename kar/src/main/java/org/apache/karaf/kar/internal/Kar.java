@@ -517,6 +517,16 @@ name|contains
 argument_list|(
 literal|".."
 argument_list|)
+operator|||
+name|entry
+operator|.
+name|getName
+argument_list|()
+operator|.
+name|contains
+argument_list|(
+literal|"%2e%2e"
+argument_list|)
 condition|)
 block|{
 name|LOGGER
