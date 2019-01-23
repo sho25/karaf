@@ -852,6 +852,30 @@ specifier|private
 name|String
 name|generateConsistencyReport
 decl_stmt|;
+comment|/**      * When generating consistency report, we can specify project name. By default it's "Apache Karaf"      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"Apache Karaf"
+argument_list|)
+specifier|private
+name|String
+name|consistencyReportProjectName
+decl_stmt|;
+comment|/**      * When generating consistency report, we can specify project version. By default it's "${project.version}"      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project.version}"
+argument_list|)
+specifier|private
+name|String
+name|consistencyReportProjectVersion
+decl_stmt|;
 comment|/*      * KARs are not configured using Maven plugin configuration, but rather detected from dependencies.      * All KARs are just unzipped into the assembly being constructed, but additionally KAR's embedded      * features XML repositories are added to relevant stage.      */
 specifier|private
 name|List
@@ -1285,6 +1309,20 @@ operator|.
 name|generateConsistencyReport
 argument_list|(
 name|generateConsistencyReport
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|setConsistencyReportProjectName
+argument_list|(
+name|consistencyReportProjectName
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|setConsistencyReportProjectVersion
+argument_list|(
+name|consistencyReportProjectVersion
 argument_list|)
 expr_stmt|;
 name|builder
