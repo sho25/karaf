@@ -474,6 +474,8 @@ argument_list|,
 name|in
 argument_list|,
 name|out
+argument_list|,
+name|encoding
 argument_list|)
 expr_stmt|;
 specifier|final
