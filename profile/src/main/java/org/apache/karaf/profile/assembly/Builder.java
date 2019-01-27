@@ -5243,6 +5243,20 @@ name|feature
 argument_list|)
 return|;
 block|}
+function|@Override                         public boolean include
+parameter_list|(
+name|BundleInfo
+name|bundle
+parameter_list|)
+block|{
+return|return
+operator|!
+name|bundle
+operator|.
+name|isBlacklisted
+argument_list|()
+return|;
+block|}
 function|}             };
 for|for
 control|(
@@ -5393,6 +5407,16 @@ name|bundle
 lambda|->
 block|{
 comment|// normal bundles of feature
+if|if
+condition|(
+name|flavor
+operator|.
+name|include
+argument_list|(
+name|bundle
+argument_list|)
+condition|)
+block|{
 name|bundle2featureId
 operator|.
 name|computeIfAbsent
@@ -5422,6 +5446,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 argument_list|)
 expr_stmt|;
 name|feature
@@ -5448,6 +5473,16 @@ name|bundle
 lambda|->
 block|{
 comment|// conditional bundles of feature
+if|if
+condition|(
+name|flavor
+operator|.
+name|include
+argument_list|(
+name|bundle
+argument_list|)
+condition|)
+block|{
 name|bundle2featureId
 operator|.
 name|computeIfAbsent
@@ -5476,6 +5511,7 @@ name|getId
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 argument_list|)
 expr_stmt|;
@@ -5968,6 +6004,13 @@ argument_list|(
 name|Feature
 name|feature
 argument_list|)
+block|;
+name|boolean
+name|include
+argument_list|(
+name|BundleInfo
+name|bundle
+argument_list|)
 block|;     }
 specifier|private
 name|ReportFlavor
@@ -6010,6 +6053,20 @@ name|include
 parameter_list|(
 name|Feature
 name|feature
+parameter_list|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|include
+parameter_list|(
+name|BundleInfo
+name|bundle
 parameter_list|)
 block|{
 return|return
@@ -6068,6 +6125,24 @@ block|{
 return|return
 operator|!
 name|feature
+operator|.
+name|isBlacklisted
+argument_list|()
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|include
+parameter_list|(
+name|BundleInfo
+name|bundle
+parameter_list|)
+block|{
+return|return
+operator|!
+name|bundle
 operator|.
 name|isBlacklisted
 argument_list|()
