@@ -409,7 +409,7 @@ name|profileId
 operator|=
 name|profileId
 operator|.
-name|replaceAll
+name|replace
 argument_list|(
 name|root
 operator|.
@@ -614,7 +614,7 @@ name|resolve
 argument_list|(
 name|id
 operator|.
-name|replaceAll
+name|replace
 argument_list|(
 literal|"-"
 argument_list|,
@@ -741,7 +741,7 @@ operator|.
 name|getId
 argument_list|()
 operator|.
-name|replaceAll
+name|replace
 argument_list|(
 literal|"-"
 argument_list|,
