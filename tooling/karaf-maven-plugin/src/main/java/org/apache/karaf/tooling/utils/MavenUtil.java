@@ -1196,7 +1196,7 @@ literal|"-"
 operator|+
 name|artifact
 operator|.
-name|getBaseVersion
+name|getVersion
 argument_list|()
 operator|+
 operator|(
