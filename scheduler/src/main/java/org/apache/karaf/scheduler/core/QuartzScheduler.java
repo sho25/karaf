@@ -258,6 +258,14 @@ name|DATA_MAP_OPTIONS
 init|=
 literal|"QuartzJobScheduler.Options"
 decl_stmt|;
+comment|/** Map key for non serializable context. */
+specifier|static
+specifier|final
+name|String
+name|DATA_MAP_CONTEXT
+init|=
+literal|"QuarteJobScheduler.Context"
+decl_stmt|;
 comment|/** Map key for the logger. */
 specifier|static
 specifier|final
@@ -326,11 +334,11 @@ name|getClassLoader
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|StdSchedulerFactory
+name|KarafStdSchedulerFactory
 name|factory
 init|=
 operator|new
-name|StdSchedulerFactory
+name|KarafStdSchedulerFactory
 argument_list|(
 name|configuration
 argument_list|)
@@ -507,15 +515,15 @@ operator|new
 name|JobDataMap
 argument_list|()
 decl_stmt|;
-name|jobDataMap
-operator|.
-name|put
-argument_list|(
-name|DATA_MAP_OBJECT
-argument_list|,
-name|job
-argument_list|)
-expr_stmt|;
+specifier|final
+name|JobDataMap
+name|jobContextMap
+init|=
+operator|new
+name|JobDataMap
+argument_list|()
+decl_stmt|;
+comment|// serializable data
 name|jobDataMap
 operator|.
 name|put
@@ -529,6 +537,25 @@ name|jobDataMap
 operator|.
 name|put
 argument_list|(
+name|DATA_MAP_OPTIONS
+argument_list|,
+name|options
+argument_list|)
+expr_stmt|;
+comment|// non serializable data
+name|jobContextMap
+operator|.
+name|put
+argument_list|(
+name|DATA_MAP_OBJECT
+argument_list|,
+name|job
+argument_list|)
+expr_stmt|;
+name|jobContextMap
+operator|.
+name|put
+argument_list|(
 name|DATA_MAP_LOGGER
 argument_list|,
 name|this
@@ -536,13 +563,14 @@ operator|.
 name|logger
 argument_list|)
 expr_stmt|;
+comment|// temporary storage
 name|jobDataMap
 operator|.
 name|put
 argument_list|(
-name|DATA_MAP_OPTIONS
+name|DATA_MAP_CONTEXT
 argument_list|,
-name|options
+name|jobContextMap
 argument_list|)
 expr_stmt|;
 return|return
@@ -821,21 +849,6 @@ name|InternalScheduleOptions
 operator|)
 name|options
 decl_stmt|;
-if|if
-condition|(
-name|opts
-operator|.
-name|argumentException
-operator|!=
-literal|null
-condition|)
-block|{
-throw|throw
-name|opts
-operator|.
-name|argumentException
-throw|;
-block|}
 comment|// as this method might be called from unbind and during
 comment|// unbind a deactivate could happen, we check the scheduler first
 specifier|final
@@ -982,7 +995,8 @@ name|trigger
 init|=
 name|opts
 operator|.
-name|trigger
+name|compile
+argument_list|()
 operator|.
 name|withIdentity
 argument_list|(
@@ -1182,7 +1196,8 @@ name|trigger
 init|=
 name|opts
 operator|.
-name|trigger
+name|compile
+argument_list|()
 operator|.
 name|withIdentity
 argument_list|(
@@ -1363,7 +1378,7 @@ name|Override
 specifier|public
 name|Map
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|ScheduleOptions
 argument_list|>
@@ -1376,7 +1391,7 @@ try|try
 block|{
 name|Map
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|ScheduleOptions
 argument_list|>
@@ -1460,24 +1475,14 @@ argument_list|(
 name|DATA_MAP_OPTIONS
 argument_list|)
 decl_stmt|;
-name|Object
-name|job
-init|=
-name|detail
-operator|.
-name|getJobDataMap
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|DATA_MAP_OBJECT
-argument_list|)
-decl_stmt|;
 name|jobs
 operator|.
 name|put
 argument_list|(
-name|job
+name|key
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|options
 argument_list|)

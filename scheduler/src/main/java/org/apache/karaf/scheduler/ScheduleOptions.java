@@ -43,6 +43,8 @@ begin_interface
 specifier|public
 interface|interface
 name|ScheduleOptions
+extends|extends
+name|Serializable
 block|{
 comment|/**      * Add optional configuration for the job.      *      * @param config An optional configuration object - this configuration is only passed to the job the job implements {@link Job}.      * @return The {@code ScheduleOptions}.      */
 name|ScheduleOptions

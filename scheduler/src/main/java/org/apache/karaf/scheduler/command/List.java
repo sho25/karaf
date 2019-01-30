@@ -210,7 +210,7 @@ argument_list|)
 expr_stmt|;
 name|Map
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|ScheduleOptions
 argument_list|>
@@ -227,7 +227,7 @@ name|Map
 operator|.
 name|Entry
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|ScheduleOptions
 argument_list|>
@@ -248,10 +248,7 @@ name|addContent
 argument_list|(
 name|entry
 operator|.
-name|getValue
-argument_list|()
-operator|.
-name|name
+name|getKey
 argument_list|()
 argument_list|,
 name|entry

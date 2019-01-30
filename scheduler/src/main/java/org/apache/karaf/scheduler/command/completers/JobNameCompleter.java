@@ -223,7 +223,7 @@ try|try
 block|{
 name|Map
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|ScheduleOptions
 argument_list|>
@@ -240,7 +240,7 @@ name|Map
 operator|.
 name|Entry
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|ScheduleOptions
 argument_list|>
@@ -257,10 +257,7 @@ name|name
 init|=
 name|job
 operator|.
-name|getValue
-argument_list|()
-operator|.
-name|name
+name|getKey
 argument_list|()
 decl_stmt|;
 name|delegate

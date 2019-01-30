@@ -120,7 +120,7 @@ parameter_list|)
 function_decl|;
 name|Map
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|ScheduleOptions
 argument_list|>
