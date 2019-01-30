@@ -8320,6 +8320,8 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+try|try
+block|{
 name|Set
 argument_list|<
 name|PosixFilePermission
@@ -8394,6 +8396,23 @@ argument_list|,
 name|filePermissions
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|UnsupportedOperationException
+name|ex
+parameter_list|)
+block|{
+name|serviceFile
+operator|.
+name|setExecutable
+argument_list|(
+literal|true
+argument_list|,
+literal|false
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
