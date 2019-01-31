@@ -261,7 +261,7 @@ literal|"scheduler"
 argument_list|,
 name|name
 operator|=
-literal|"schedule"
+literal|"schedule-script"
 argument_list|,
 name|description
 operator|=
@@ -271,7 +271,7 @@ annotation|@
 name|Service
 specifier|public
 class|class
-name|Schedule
+name|ScheduleScript
 implements|implements
 name|Action
 block|{
