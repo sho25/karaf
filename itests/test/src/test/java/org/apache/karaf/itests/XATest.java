@@ -466,11 +466,11 @@ name|add
 argument_list|(
 name|replaceConfigurationFile
 argument_list|(
-literal|"etc/org.ops4j.datasource-derby.cfg"
+literal|"etc/org.ops4j.datasource-h2.cfg"
 argument_list|,
 name|getConfigFile
 argument_list|(
-literal|"/org/apache/karaf/itests/features/org.ops4j.datasource-derby.cfg"
+literal|"/org/apache/karaf/itests/features/org.ops4j.datasource-h2.cfg"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -576,7 +576,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"== Installing Derby"
+literal|"== Installing H2"
 argument_list|)
 expr_stmt|;
 name|featureService
@@ -592,7 +592,7 @@ name|featureService
 operator|.
 name|installFeature
 argument_list|(
-literal|"pax-jdbc-derby"
+literal|"pax-jdbc-h2"
 argument_list|,
 name|NO_AUTO_REFRESH
 argument_list|)
@@ -712,7 +712,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"== Creating tables in Derby"
+literal|"== Creating tables in H2"
 argument_list|)
 expr_stmt|;
 name|System
@@ -723,7 +723,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"jdbc:execute derby CREATE TABLE messages (id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY, message VARCHAR(1024) NOT NULL, CONSTRAINT primary_key PRIMARY KEY (id))"
+literal|"jdbc:execute h2 CREATE TABLE messages (id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY, message VARCHAR(1024) NOT NULL, CONSTRAINT primary_key PRIMARY KEY (id))"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -733,7 +733,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"== Sending a message in Artemis broker that should be consumed by Camel route and inserted into the Derby database"
+literal|"== Sending a message in Artemis broker that should be consumed by Camel route and inserted into the H2 database"
 argument_list|)
 expr_stmt|;
 name|System
@@ -760,7 +760,7 @@ name|output
 init|=
 name|executeCommand
 argument_list|(
-literal|"jdbc:query derby select * from messages"
+literal|"jdbc:query h2 select * from messages"
 argument_list|)
 decl_stmt|;
 name|System
