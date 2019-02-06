@@ -331,7 +331,16 @@ name|version
 operator|+
 literal|"/xml/features, "
 operator|+
-literal|"mvn:org.apache.activemq/activemq-karaf/5.15.8/xml/features"
+literal|"mvn:org.apache.activemq/activemq-karaf/"
+operator|+
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"activemq.version"
+argument_list|)
+operator|+
+literal|"/xml/features"
 argument_list|)
 argument_list|)
 expr_stmt|;
