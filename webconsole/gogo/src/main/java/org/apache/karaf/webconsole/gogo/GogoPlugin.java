@@ -967,6 +967,15 @@ else|else
 block|{
 name|response
 operator|.
+name|setHeader
+argument_list|(
+literal|"Content-Type"
+argument_list|,
+literal|"text/html"
+argument_list|)
+expr_stmt|;
+name|response
+operator|.
 name|getOutputStream
 argument_list|()
 operator|.
