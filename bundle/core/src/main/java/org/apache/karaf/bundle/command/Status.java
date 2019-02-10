@@ -103,11 +103,20 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-return|return
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
 name|getState
 argument_list|(
 name|bundle
 argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
 return|;
 block|}
 comment|/**      * Return a String representation of a bundle state      */
