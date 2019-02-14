@@ -380,10 +380,10 @@ argument_list|)
 expr_stmt|;
 block|}
 annotation|@
-name|Ignore
+name|Test
 specifier|public
 name|void
-name|createStartCommand
+name|createStartStopDestroyCommand
 parameter_list|()
 throws|throws
 name|Exception
@@ -574,6 +574,11 @@ argument_list|(
 literal|"Stopped"
 argument_list|,
 name|output
+argument_list|)
+expr_stmt|;
+name|executeCommand
+argument_list|(
+literal|"instance:destroy itest666"
 argument_list|)
 expr_stmt|;
 block|}
