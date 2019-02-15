@@ -366,6 +366,34 @@ name|ServletException
 throws|,
 name|IOException
 block|{
+comment|// Add some standard security HTTP headers
+name|res
+operator|.
+name|setHeader
+argument_list|(
+literal|"X-FRAME-OPTIONS"
+argument_list|,
+literal|"SAMEORIGIN"
+argument_list|)
+expr_stmt|;
+name|res
+operator|.
+name|setHeader
+argument_list|(
+literal|"X-XSS-Protection"
+argument_list|,
+literal|"1; mode=block"
+argument_list|)
+expr_stmt|;
+name|res
+operator|.
+name|setHeader
+argument_list|(
+literal|"X-Content-Type-Options"
+argument_list|,
+literal|"nosniff"
+argument_list|)
+expr_stmt|;
 name|super
 operator|.
 name|service
