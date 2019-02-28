@@ -51,7 +51,7 @@ literal|"exit"
 argument_list|,
 name|description
 operator|=
-literal|"Exit from the current shell"
+literal|"Exit from the current subshell"
 argument_list|)
 annotation|@
 name|Deprecated
