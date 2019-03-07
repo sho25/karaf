@@ -65,7 +65,7 @@ name|getDescription
 parameter_list|()
 block|{
 return|return
-literal|"Exit from the current shell"
+literal|"Exit from the current subshell"
 return|;
 block|}
 annotation|@
