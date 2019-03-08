@@ -1505,6 +1505,15 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|config
+operator|.
+name|isBatch
+argument_list|()
+condition|)
+block|{
 operator|new
 name|Thread
 argument_list|()
@@ -1571,6 +1580,7 @@ operator|.
 name|start
 argument_list|()
 expr_stmt|;
+block|}
 name|channel
 operator|.
 name|setAgentForwarding
