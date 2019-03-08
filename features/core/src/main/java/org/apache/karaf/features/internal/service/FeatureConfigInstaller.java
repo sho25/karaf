@@ -735,8 +735,6 @@ condition|(
 name|storage
 operator|!=
 literal|null
-operator|&&
-name|configCfgStore
 condition|)
 block|{
 name|cfgFile
