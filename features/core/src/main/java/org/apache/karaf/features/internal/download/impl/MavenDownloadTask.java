@@ -180,6 +180,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+try|try
+block|{
 return|return
 name|resolver
 operator|.
@@ -190,6 +192,35 @@ argument_list|,
 name|previousException
 argument_list|)
 return|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|ex
+parameter_list|)
+block|{
+comment|//try again with removing timestamp from snapshot
+return|return
+name|resolver
+operator|.
+name|resolve
+argument_list|(
+name|Parser
+operator|.
+name|pathToMaven
+argument_list|(
+name|Parser
+operator|.
+name|pathFromMaven
+argument_list|(
+name|url
+argument_list|)
+argument_list|)
+argument_list|,
+name|previousException
+argument_list|)
+return|;
+block|}
 block|}
 comment|/**      * Maven artifact may be looked up in several repositories. Only if exception for<strong>each</strong>      * repository is not retryable, we won't retry.      * @param e      * @return      */
 annotation|@
