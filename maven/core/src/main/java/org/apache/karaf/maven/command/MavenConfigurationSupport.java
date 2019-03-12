@@ -3096,7 +3096,10 @@ argument_list|(
 name|ServiceConstants
 operator|.
 name|SEPARATOR_OPTIONS
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|ServiceConstants
 operator|.
 name|OPTION_DISALLOW_RELEASES
@@ -3177,7 +3180,10 @@ argument_list|(
 name|ServiceConstants
 operator|.
 name|SEPARATOR_OPTIONS
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|ServiceConstants
 operator|.
 name|OPTION_ALLOW_SNAPSHOTS

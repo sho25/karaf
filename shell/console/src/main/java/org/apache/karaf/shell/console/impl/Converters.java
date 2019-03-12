@@ -400,7 +400,10 @@ operator|.
 name|append
 argument_list|(
 name|del
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|getShortName
 argument_list|(
 name|s
