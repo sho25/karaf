@@ -549,7 +549,10 @@ operator|.
 name|append
 argument_list|(
 literal|"/"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|pair
 operator|.
 name|getName
@@ -761,7 +764,10 @@ operator|.
 name|append
 argument_list|(
 literal|"/"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|pair
 operator|.
 name|getName
