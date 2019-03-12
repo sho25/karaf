@@ -1529,6 +1529,13 @@ name|startsWith
 argument_list|(
 literal|"http://"
 argument_list|)
+operator|||
+name|resourceLocation
+operator|.
+name|startsWith
+argument_list|(
+literal|"https://"
+argument_list|)
 condition|)
 block|{
 specifier|final
