@@ -462,7 +462,7 @@ name|attach
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * If supplied, the classifer for the artifact when attached.      */
+comment|/**      * If supplied, the classifier for the artifact when attached.      */
 annotation|@
 name|Parameter
 specifier|private
