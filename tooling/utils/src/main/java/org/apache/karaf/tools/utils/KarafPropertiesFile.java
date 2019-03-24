@@ -89,16 +89,6 @@ name|IOException
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Properties
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -106,7 +96,7 @@ name|KarafPropertiesFile
 block|{
 specifier|private
 specifier|final
-name|Properties
+name|SortedProperties
 name|properties
 decl_stmt|;
 specifier|private
@@ -151,7 +141,7 @@ expr_stmt|;
 name|properties
 operator|=
 operator|new
-name|Properties
+name|SortedProperties
 argument_list|()
 expr_stmt|;
 block|}
