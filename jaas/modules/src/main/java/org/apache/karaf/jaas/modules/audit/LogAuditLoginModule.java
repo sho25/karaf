@@ -254,11 +254,14 @@ name|logger
 operator|.
 name|debug
 argument_list|(
-literal|"{} - {}"
+literal|"{} - {} - {}"
 argument_list|,
 name|actionStr
 argument_list|,
 name|username
+argument_list|,
+name|getPrincipalInfo
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -277,11 +280,14 @@ name|logger
 operator|.
 name|trace
 argument_list|(
-literal|"{} - {}"
+literal|"{} - {} - {}"
 argument_list|,
 name|actionStr
 argument_list|,
 name|username
+argument_list|,
+name|getPrincipalInfo
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -300,11 +306,14 @@ name|logger
 operator|.
 name|warn
 argument_list|(
-literal|"{} - {}"
+literal|"{} - {} - {}"
 argument_list|,
 name|actionStr
 argument_list|,
 name|username
+argument_list|,
+name|getPrincipalInfo
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -323,11 +332,14 @@ name|logger
 operator|.
 name|error
 argument_list|(
-literal|"{} - {}"
+literal|"{} - {} - {}"
 argument_list|,
 name|actionStr
 argument_list|,
 name|username
+argument_list|,
+name|getPrincipalInfo
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -337,11 +349,14 @@ name|logger
 operator|.
 name|info
 argument_list|(
-literal|"{} - {}"
+literal|"{} - {} - {}"
 argument_list|,
 name|actionStr
 argument_list|,
 name|username
+argument_list|,
+name|getPrincipalInfo
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

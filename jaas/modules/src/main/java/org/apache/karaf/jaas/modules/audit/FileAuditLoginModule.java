@@ -385,6 +385,11 @@ operator|+
 literal|" - "
 operator|+
 name|username
+operator|+
+literal|" - "
+operator|+
+name|getPrincipalInfo
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|writer
