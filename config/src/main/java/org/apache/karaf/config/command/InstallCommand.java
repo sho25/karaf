@@ -299,6 +299,24 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+if|if
+condition|(
+name|finalname
+operator|.
+name|contains
+argument_list|(
+literal|".."
+argument_list|)
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"For security reason, relative path is not allowed in config file final name"
+argument_list|)
+throw|;
+block|}
 name|File
 name|etcFolder
 init|=
