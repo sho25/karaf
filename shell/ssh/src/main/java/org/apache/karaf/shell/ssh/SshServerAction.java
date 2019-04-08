@@ -311,6 +311,38 @@ name|Option
 argument_list|(
 name|name
 operator|=
+literal|"-c"
+argument_list|,
+name|aliases
+operator|=
+block|{
+literal|"--max-concurrent-sessions"
+block|}
+argument_list|,
+name|description
+operator|=
+literal|"The maximum number of concurrent sessions opened on the ssh server"
+argument_list|,
+name|required
+operator|=
+literal|false
+argument_list|,
+name|multiValued
+operator|=
+literal|false
+argument_list|)
+specifier|private
+name|int
+name|maxConcurrentSessions
+init|=
+operator|-
+literal|1
+decl_stmt|;
+annotation|@
+name|Option
+argument_list|(
+name|name
+operator|=
 literal|"-w"
 argument_list|,
 name|aliases
@@ -400,7 +432,7 @@ name|idleTimeout
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// nio-workes
+comment|// nio-workers
 name|server
 operator|.
 name|getProperties
@@ -420,6 +452,35 @@ name|nioWorkers
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|// max-concurrent-sessions
+if|if
+condition|(
+name|maxConcurrentSessions
+operator|!=
+operator|-
+literal|1
+condition|)
+block|{
+name|server
+operator|.
+name|getProperties
+argument_list|()
+operator|.
+name|put
+argument_list|(
+name|SshServer
+operator|.
+name|MAX_CONCURRENT_SESSIONS
+argument_list|,
+name|Integer
+operator|.
+name|toString
+argument_list|(
+name|maxConcurrentSessions
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 comment|// welcome banner
 if|if
 condition|(
