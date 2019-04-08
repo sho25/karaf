@@ -180,6 +180,11 @@ end_import
 begin_class
 annotation|@
 name|Component
+argument_list|(
+name|name
+operator|=
+literal|"ServiceComponentRuntimeBundleStateService"
+argument_list|)
 specifier|public
 class|class
 name|ScrBundleStateService
