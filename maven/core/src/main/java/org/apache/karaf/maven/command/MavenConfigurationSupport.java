@@ -3677,11 +3677,9 @@ name|format
 argument_list|(
 name|fileNameFormat
 argument_list|,
-operator|new
-name|Date
-argument_list|()
+name|System
 operator|.
-name|getTime
+name|currentTimeMillis
 argument_list|()
 argument_list|)
 argument_list|)
