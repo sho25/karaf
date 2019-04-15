@@ -403,31 +403,7 @@ name|util
 operator|.
 name|function
 operator|.
-name|BiPredicate
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|function
-operator|.
 name|Function
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|function
-operator|.
-name|Predicate
 import|;
 end_import
 
@@ -7481,7 +7457,7 @@ lambda|->
 block|{
 synchronized|synchronized
 init|(
-name|provider
+name|downloader
 init|)
 block|{
 name|Path
@@ -7697,7 +7673,7 @@ operator|.
 name|REPLACE_EXISTING
 argument_list|)
 expr_stmt|;
-comment|/* a symlink could be used instead                                  if (Files.notExists(libOutput, LinkOption.NOFOLLOW_LINKS)) {                                     try {                                         Files.createSymbolicLink(libOutput, libOutput.getParent().relativize(sysOutput));                                     } catch (FileSystemException e) {                                         Files.copy(input, libOutput, StandardCopyOption.REPLACE_EXISTING);                                     }                                 }                                 */
+comment|/* a symlink could be used instead                              if (Files.notExists(libOutput, LinkOption.NOFOLLOW_LINKS)) {                                 try {                                     Files.createSymbolicLink(libOutput, libOutput.getParent().relativize(sysOutput));                                 } catch (FileSystemException e) {                                     Files.copy(input, libOutput, StandardCopyOption.REPLACE_EXISTING);                                 }                             }                             */
 block|}
 block|}
 block|}
@@ -7737,6 +7713,11 @@ name|export
 operator|||
 name|delegate
 condition|)
+block|{
+synchronized|synchronized
+init|(
+name|config
+init|)
 block|{
 name|Map
 argument_list|<
@@ -7910,6 +7891,7 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
