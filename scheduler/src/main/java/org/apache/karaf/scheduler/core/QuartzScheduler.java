@@ -264,7 +264,7 @@ specifier|final
 name|String
 name|DATA_MAP_CONTEXT
 init|=
-literal|"QuarteJobScheduler.Context"
+literal|"QuartzJobScheduler.Context"
 decl_stmt|;
 comment|/** Map key for the logger. */
 specifier|static
@@ -1088,7 +1088,7 @@ name|void
 name|reschedule
 parameter_list|(
 name|String
-name|name
+name|jobName
 parameter_list|,
 name|ScheduleOptions
 name|options
@@ -1110,7 +1110,7 @@ name|scheduler
 decl_stmt|;
 if|if
 condition|(
-name|name
+name|jobName
 operator|==
 literal|null
 condition|)
@@ -1130,7 +1130,7 @@ name|JobKey
 operator|.
 name|jobKey
 argument_list|(
-name|name
+name|jobName
 argument_list|)
 decl_stmt|;
 if|if
@@ -1146,7 +1146,7 @@ name|IllegalStateException
 argument_list|(
 literal|"No job found with name "
 operator|+
-name|name
+name|jobName
 argument_list|)
 throw|;
 block|}
@@ -1162,16 +1162,42 @@ argument_list|(
 name|key
 argument_list|)
 decl_stmt|;
-name|Object
-name|job
+specifier|final
+name|String
+name|contextKey
 init|=
-name|detail
+name|key
 operator|.
-name|getJobDataMap
+name|toString
+argument_list|()
+decl_stmt|;
+name|JobDataMap
+name|karafContext
+init|=
+operator|(
+operator|(
+name|KarafStdScheduler
+operator|)
+name|s
+operator|)
+operator|.
+name|getStorage
 argument_list|()
 operator|.
 name|get
 argument_list|(
+name|contextKey
+argument_list|)
+decl_stmt|;
+name|Object
+name|job
+init|=
+name|karafContext
+operator|.
+name|get
+argument_list|(
+name|QuartzScheduler
+operator|.
 name|DATA_MAP_OBJECT
 argument_list|)
 decl_stmt|;
@@ -1201,7 +1227,7 @@ argument_list|()
 operator|.
 name|withIdentity
 argument_list|(
-name|name
+name|jobName
 argument_list|)
 operator|.
 name|build
@@ -1214,7 +1240,7 @@ name|this
 operator|.
 name|initDataMap
 argument_list|(
-name|name
+name|jobName
 argument_list|,
 name|job
 argument_list|,
@@ -1225,7 +1251,7 @@ name|detail
 operator|=
 name|createJobDetail
 argument_list|(
-name|name
+name|jobName
 argument_list|,
 name|jobDataMap
 argument_list|,
@@ -1242,7 +1268,7 @@ literal|"Update job scheduling {} with name {} and trigger {}"
 argument_list|,
 name|job
 argument_list|,
-name|name
+name|jobName
 argument_list|,
 name|trigger
 argument_list|)
