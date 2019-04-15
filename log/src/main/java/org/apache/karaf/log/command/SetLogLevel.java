@@ -204,7 +204,7 @@ literal|"level"
 argument_list|,
 name|description
 operator|=
-literal|"The log level to set (TRACE, DEBUG, INFO, WARN, ERROR) or DEFAULT to unset"
+literal|"The log level to set (OFF, TRACE, DEBUG, INFO, WARN, ERROR) or DEFAULT to unset"
 argument_list|,
 name|required
 operator|=
