@@ -312,6 +312,17 @@ name|CopyFileBasedDescriptor
 argument_list|>
 name|copyFileBasedDescriptors
 decl_stmt|;
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"false"
+argument_list|)
+specifier|private
+name|boolean
+name|timestampedSnapshot
+decl_stmt|;
 specifier|public
 name|void
 name|execute
@@ -716,6 +727,8 @@ operator|.
 name|getFileName
 argument_list|(
 name|artifact
+argument_list|,
+name|timestampedSnapshot
 argument_list|)
 decl_stmt|;
 return|return
