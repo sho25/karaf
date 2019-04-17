@@ -170,6 +170,17 @@ name|File
 name|assembly
 decl_stmt|;
 annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"[\"karaf\", \"run\"]"
+argument_list|)
+specifier|private
+name|String
+name|command
+decl_stmt|;
+annotation|@
 name|Override
 specifier|public
 name|void
@@ -297,7 +308,12 @@ name|buffer
 operator|.
 name|append
 argument_list|(
-literal|"CMD [\"karaf\", \"run\"]"
+literal|"CMD "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|command
 argument_list|)
 operator|.
 name|append
