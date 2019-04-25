@@ -1398,7 +1398,7 @@ argument_list|()
 operator|.
 name|split
 argument_list|(
-literal|","
+literal|"\\s*,\\s*"
 argument_list|)
 return|;
 block|}
