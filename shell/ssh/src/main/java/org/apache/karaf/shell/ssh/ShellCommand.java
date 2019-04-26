@@ -870,7 +870,7 @@ unit|}      public
 name|void
 name|destroy
 parameter_list|()
-block|{ 	}
+block|{     }
 end_function
 
 begin_function
@@ -963,6 +963,16 @@ argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+operator|(
+name|e
+operator|instanceof
+name|InterruptedException
+operator|)
+condition|)
+block|{
 name|System
 operator|.
 name|err
@@ -981,6 +991,7 @@ name|getMessage
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
