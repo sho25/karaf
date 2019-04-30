@@ -192,7 +192,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Before attempting {@link #resolve resolution}, we can collect features' prerequisites. If there are any,      * caller may decide to deploy another set of requirements<strong>before</strong> the initial ones.      * Prerequisites allow to install for example<code>wrap</code> feature before installing a feature with bundle      * using<code>wrap:</code> protocol.      *      * @return The collected prerequisistes.      */
+comment|/**      * Before attempting {@link #resolve resolution}, we can collect features' prerequisites. If there are any,      * caller may decide to deploy another set of requirements<strong>before</strong> the initial ones.      * Prerequisites allow to install for example<code>wrap</code> feature before installing a feature with bundle      * using<code>wrap:</code> protocol.      *      * @return The collected prerequisites.      */
 name|Set
 argument_list|<
 name|String
