@@ -2413,6 +2413,11 @@ argument_list|(
 name|bundleFile
 argument_list|)
 decl_stmt|;
+name|boolean
+name|bundleNeedsWrapping
+init|=
+literal|false
+decl_stmt|;
 if|if
 condition|(
 name|manifest
@@ -2434,7 +2439,7 @@ literal|"wrap:"
 operator|+
 name|bundleName
 expr_stmt|;
-name|needWrap
+name|bundleNeedsWrapping
 operator|=
 literal|true
 expr_stmt|;
@@ -2543,6 +2548,10 @@ name|add
 argument_list|(
 name|bundle
 argument_list|)
+expr_stmt|;
+name|needWrap
+operator||=
+name|bundleNeedsWrapping
 expr_stmt|;
 block|}
 block|}
