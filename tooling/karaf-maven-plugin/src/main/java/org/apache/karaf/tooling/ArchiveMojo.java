@@ -510,20 +510,9 @@ argument_list|(
 name|targetFile
 argument_list|)
 expr_stmt|;
-try|try
-block|{
+comment|// abort if there are no archives to be created
 if|if
 condition|(
-name|project
-operator|.
-name|getPackaging
-argument_list|()
-operator|.
-name|equals
-argument_list|(
-literal|"karaf-assembly"
-argument_list|)
-operator|&&
 operator|!
 name|archiveTarGz
 operator|&&
@@ -531,14 +520,10 @@ operator|!
 name|archiveZip
 condition|)
 block|{
-throw|throw
-operator|new
-name|IllegalArgumentException
-argument_list|(
-literal|"For karaf-assembly packaging, you have to specify at least one archive type (tar.gz or zip)"
-argument_list|)
-throw|;
+return|return;
 block|}
+try|try
+block|{
 if|if
 condition|(
 name|project
