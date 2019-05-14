@@ -667,13 +667,7 @@ block|}
 catch|catch
 parameter_list|(
 name|IOException
-name|e
-parameter_list|)
-block|{
-comment|//Ignore
-block|}
-catch|catch
-parameter_list|(
+decl||
 name|InvalidSyntaxException
 name|e
 parameter_list|)
