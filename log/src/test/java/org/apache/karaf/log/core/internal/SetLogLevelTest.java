@@ -110,7 +110,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Test cases for {@link SetLogLevel}  */
+comment|/**  * Test cases for {@link org.apache.karaf.log.command.SetLogLevel}  */
 end_comment
 
 begin_class
