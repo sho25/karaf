@@ -551,9 +551,6 @@ argument_list|)
 expr_stmt|;
 name|expect
 argument_list|(
-operator|(
-name|DataSource
-operator|)
 name|context
 operator|.
 name|getService

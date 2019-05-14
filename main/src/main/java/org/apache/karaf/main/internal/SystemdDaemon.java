@@ -51,9 +51,6 @@ block|{
 name|SystemdDaemon
 name|INSTANCE
 init|=
-operator|(
-name|SystemdDaemon
-operator|)
 name|Native
 operator|.
 name|loadLibrary
