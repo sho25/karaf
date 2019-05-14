@@ -93,7 +93,8 @@ argument_list|)
 operator|+
 literal|".properties"
 decl_stmt|;
-specifier|final
+try|try
+init|(
 name|InputStream
 name|input
 init|=
@@ -106,8 +107,7 @@ name|getResourceAsStream
 argument_list|(
 name|resource
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 name|Properties
 name|properties
@@ -190,25 +190,6 @@ name|e
 parameter_list|)
 block|{
 comment|// ignore
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|input
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-comment|// ignore
-block|}
 block|}
 block|}
 specifier|public

@@ -976,6 +976,8 @@ operator|+
 name|factoryId
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|BufferedReader
 name|br
 init|=
@@ -993,8 +995,7 @@ argument_list|,
 literal|"UTF-8"
 argument_list|)
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 name|String
 name|factoryClassName
@@ -1058,14 +1059,6 @@ name|readLine
 argument_list|()
 expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|br
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 block|}
