@@ -5442,7 +5442,6 @@ name|forEach
 argument_list|(
 name|cond
 lambda|->
-block|{
 name|cond
 operator|.
 name|asFeature
@@ -5457,15 +5456,9 @@ name|bundle
 lambda|->
 block|{
 comment|// conditional bundles of feature
-if|if
-condition|(
-name|flavor
-operator|.
-name|include
-argument_list|(
-name|bundle
+block|if (flavor.include(bundle
 argument_list|)
-condition|)
+argument_list|)
 block|{
 name|bundle2featureId
 operator|.
@@ -5498,19 +5491,23 @@ expr_stmt|;
 block|}
 block|}
 argument_list|)
-expr_stmt|;
-block|}
-argument_list|)
-expr_stmt|;
+block|)
+empty_stmt|;
 block|}
 block|}
-argument_list|)
-expr_stmt|;
+init|)
+decl_stmt|;
 block|}
 block|}
-argument_list|)
-expr_stmt|;
+block|)
+class|;
+end_class
+
+begin_comment
 comment|// collect bundle URIs - for now, only wrap:mvn: and mvn: are interesting
+end_comment
+
+begin_expr_stmt
 name|bundle2featureId
 operator|.
 name|keySet
@@ -5677,6 +5674,9 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_expr_stmt
 name|ga2uri
 operator|.
 name|values
@@ -5708,6 +5708,9 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_expr_stmt
 name|writer
 operator|.
 name|write
@@ -5715,6 +5718,9 @@ argument_list|(
 literal|"<duplicates>\n"
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_expr_stmt
 name|ga2uri
 operator|.
 name|forEach
@@ -5833,12 +5839,14 @@ parameter_list|(
 name|IOException
 name|ignored
 parameter_list|)
-block|{
-block|}
+block|{                         }
 block|}
 block|}
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_expr_stmt
 name|writer
 operator|.
 name|write
@@ -5846,6 +5854,9 @@ argument_list|(
 literal|"</duplicates>\n"
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_expr_stmt
 name|writer
 operator|.
 name|write
@@ -5853,6 +5864,9 @@ argument_list|(
 literal|"<bundles>\n"
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_for
 for|for
 control|(
 name|String
@@ -5924,6 +5938,9 @@ literal|"</bundle>\n"
 argument_list|)
 expr_stmt|;
 block|}
+end_for
+
+begin_expr_stmt
 name|writer
 operator|.
 name|write
@@ -5931,6 +5948,9 @@ argument_list|(
 literal|"</bundles>\n"
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_expr_stmt
 name|writer
 operator|.
 name|write
@@ -5938,23 +5958,27 @@ argument_list|(
 literal|"</report>\n"
 argument_list|)
 expr_stmt|;
-block|}
-name|writer
+end_expr_stmt
+
+begin_expr_stmt
+unit|}             writer
 operator|.
 name|write
 argument_list|(
 literal|"</consistency-report>\n"
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
+end_expr_stmt
+
+begin_expr_stmt
+unit|} catch
+operator|(
 name|IOException
 name|e
-parameter_list|)
+operator|)
 block|{
 throw|throw
-operator|new
+argument_list|new
 name|RuntimeException
 argument_list|(
 name|e
@@ -5964,42 +5988,47 @@ argument_list|()
 argument_list|,
 name|e
 argument_list|)
-throw|;
-block|}
-block|}
-specifier|private
-expr|interface
+block|;         }
+end_expr_stmt
+
+begin_interface
+unit|}      private
+interface|interface
 name|ReportFlavor
 block|{
 name|String
 name|name
-argument_list|()
-block|;
+parameter_list|()
+function_decl|;
 name|boolean
 name|include
-argument_list|(
+parameter_list|(
 name|Features
 name|repository
-argument_list|)
-block|;
+parameter_list|)
+function_decl|;
 name|boolean
 name|include
-argument_list|(
+parameter_list|(
 name|Feature
 name|feature
-argument_list|)
-block|;
+parameter_list|)
+function_decl|;
 name|boolean
 name|include
-argument_list|(
+parameter_list|(
 name|BundleInfo
 name|bundle
-argument_list|)
-block|;     }
+parameter_list|)
+function_decl|;
+block|}
+end_interface
+
+begin_decl_stmt
 specifier|private
 name|ReportFlavor
 name|all
-operator|=
+init|=
 operator|new
 name|ReportFlavor
 argument_list|()
@@ -6059,6 +6088,9 @@ return|;
 block|}
 block|}
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 specifier|private
 name|ReportFlavor
 name|notBlacklisted
@@ -6134,7 +6166,13 @@ return|;
 block|}
 block|}
 decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/**      * Sanitize before putting to XML      * @param uri      * @return      */
+end_comment
+
+begin_function
 specifier|public
 name|String
 name|sanitize
@@ -6175,7 +6213,13 @@ literal|"&quot;"
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/**      * Similar to {@link FeaturesProcessorImpl#hasInstructions()}, we check if there are any builder configuration      * options for blacklisted repos/features/bundles or overwrites.      * @return      */
+end_comment
+
+begin_function
 specifier|private
 name|boolean
 name|hasOwnInstructions
@@ -6213,7 +6257,13 @@ operator|>
 literal|0
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/**      * Checks existing (etc/overrides.properties) and configured (in profiles) overrides definitions      * @param profileOverrides      * @return      */
+end_comment
+
+begin_function
 specifier|private
 name|Set
 argument_list|<
@@ -6307,7 +6357,13 @@ return|return
 name|result
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/**      * Checks existing and configured blacklisting definitions      * @param initialProfile      * @return      * @throws IOException      */
+end_comment
+
+begin_function
 specifier|private
 name|Blacklist
 name|processBlacklist
@@ -6559,6 +6615,9 @@ return|return
 name|blacklist
 return|;
 block|}
+end_function
+
+begin_function
 specifier|private
 name|MavenResolver
 name|createMavenResolver
@@ -6653,7 +6712,13 @@ name|resolver
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/**      * Loads all profiles declared in profile URIs. These will be used in addition to generated      *<em>startup</em>,<em>boot</em> and<em>installed</em> profiles.      */
+end_comment
+
+begin_function
 specifier|private
 name|Map
 argument_list|<
@@ -7040,6 +7105,9 @@ return|return
 name|filteredProfiles
 return|;
 block|}
+end_function
+
+begin_function
 specifier|private
 name|void
 name|reformatClauses
@@ -7215,6 +7283,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_function
 name|void
 name|downloadLibraries
 parameter_list|(
@@ -7900,6 +7971,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_function
 specifier|private
 name|Set
 argument_list|<
@@ -8274,6 +8348,9 @@ return|return
 name|allInstalledFeatures
 return|;
 block|}
+end_function
+
+begin_function
 specifier|private
 name|Set
 argument_list|<
@@ -9655,6 +9732,9 @@ return|return
 name|allBootFeatures
 return|;
 block|}
+end_function
+
+begin_function
 specifier|private
 name|String
 name|getRepos
@@ -9719,6 +9799,9 @@ name|toString
 argument_list|()
 return|;
 block|}
+end_function
+
+begin_function
 specifier|private
 name|String
 name|getBootFeatures
@@ -9934,6 +10017,9 @@ name|toString
 argument_list|()
 return|;
 block|}
+end_function
+
+begin_function
 specifier|private
 name|Dependency
 name|createDependency
@@ -9996,6 +10082,9 @@ return|return
 name|dep
 return|;
 block|}
+end_function
+
+begin_function
 specifier|private
 name|Profile
 name|startupStage
@@ -10376,7 +10465,13 @@ return|return
 name|startupEffective
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/**      * Gets a list of objects (bundle URIs, profile IDs, feature IDs) configured for given stage      * @param stage      * @param data      * @return      */
+end_comment
+
+begin_function
 specifier|private
 name|List
 argument_list|<
@@ -10443,7 +10538,13 @@ return|return
 name|staged
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/**      * Gets a list of features XML repository URIs configured for given stage. There's one special rule - startup      * repositories are added as boot repositories as well.      * @param stage      * @param data      * @return      */
+end_comment
+
+begin_function
 specifier|private
 name|List
 argument_list|<
@@ -10532,6 +10633,9 @@ return|return
 name|staged
 return|;
 block|}
+end_function
+
+begin_function
 specifier|private
 name|Map
 argument_list|<
@@ -10844,7 +10948,13 @@ return|return
 name|loaded
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/**      * Generate internal profile (for the purpose of custom assembly builder) for given<code>stage</code>.      * @param stage a {@link Stage} for which the profile is being generated      * @param parentProfiles all profiles for given stage will be used as parent profiles      * @param repositories repositories to use in generated profile      * @param features features to declare in generated profile      * @param bundles bundles to declare in generated profile      * @return      */
+end_comment
+
+begin_function
 specifier|private
 name|Profile
 name|generateProfile
@@ -11005,7 +11115,13 @@ name|getProfile
 argument_list|()
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/**      *<p>Resolves set of features and bundles using OSGi resolver to calculate startup stage bundles.</p>      *<p>Startup stage means that<em>current</em> state of the OSGi framework is just single system bundle installed      * and bundles+features are being resolved against this single<em>bundle 0</em>.</p>      *      * @param manager {@link DownloadManager} to help downloading bundles and resources      * @param resolver OSGi resolver which will resolve features and bundles in framework with only system bundle installed      * @param repositories all available (not only to-be-installed) features      * @param features feature identifiers to resolve      * @param bundles bundle locations to resolve      * @param optionals optional URI locations that'll be available through {@link org.osgi.service.repository.Repository},      * used in resolution process      * @param processor {@link FeaturesProcessor} to process repositories/features/bundles      * @return map from bundle URI to bundle start-level      * @throws Exception      */
+end_comment
+
+begin_function
 specifier|private
 name|Map
 argument_list|<
@@ -11202,7 +11318,13 @@ name|getStartupBundles
 argument_list|()
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/**      * Optional resource URIs will be made available through OSGi {@link Repository}      * @param manager      * @param optionals      * @return      * @throws Exception      */
+end_comment
+
+begin_function
 specifier|private
 name|Repository
 name|repositoryOfOptionalResources
@@ -11304,7 +11426,13 @@ name|resources
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/**      * Prepares {@link BundleRevision} that represents System Bundle (a.k.a.<em>bundle 0</em>)      * @return      * @throws Exception      */
+end_comment
+
+begin_function
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -11567,6 +11695,9 @@ literal|0L
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_function
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -11713,8 +11844,8 @@ literal|" does not contain a manifest"
 argument_list|)
 throw|;
 block|}
-block|}
-end_class
+end_function
 
+unit|}
 end_unit
 

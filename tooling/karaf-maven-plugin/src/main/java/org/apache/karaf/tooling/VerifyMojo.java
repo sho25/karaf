@@ -4535,7 +4535,6 @@ name|forEach
 argument_list|(
 name|lp
 lambda|->
-block|{
 name|processor
 operator|.
 name|getInstructions
@@ -4552,8 +4551,6 @@ argument_list|(
 name|lp
 argument_list|)
 argument_list|)
-expr_stmt|;
-block|}
 argument_list|)
 expr_stmt|;
 block|}

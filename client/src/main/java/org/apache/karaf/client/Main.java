@@ -1516,12 +1516,9 @@ condition|)
 block|{
 operator|new
 name|Thread
-argument_list|()
-block|{
-specifier|public
-name|void
-name|run
+argument_list|(
 parameter_list|()
+lambda|->
 block|{
 while|while
 condition|(
@@ -1575,7 +1572,7 @@ comment|//ignore
 block|}
 block|}
 block|}
-block|}
+argument_list|)
 operator|.
 name|start
 argument_list|()
