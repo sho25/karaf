@@ -930,12 +930,16 @@ parameter_list|)
 throws|throws
 name|BundleException
 block|{
-comment|// We need to wrap the bundle to insert a Bundle-UpdateLocation header
-try|try
-block|{
 name|File
 name|file
 init|=
+literal|null
+decl_stmt|;
+comment|// We need to wrap the bundle to insert a Bundle-UpdateLocation header
+try|try
+block|{
+name|file
+operator|=
 name|BundleUtils
 operator|.
 name|fixBundleWithUpdateLocation
@@ -944,7 +948,7 @@ name|is
 argument_list|,
 name|uri
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|bundle
 operator|.
 name|update
@@ -955,11 +959,6 @@ argument_list|(
 name|file
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|file
-operator|.
-name|delete
-argument_list|()
 expr_stmt|;
 block|}
 catch|catch
@@ -977,6 +976,22 @@ argument_list|,
 name|e
 argument_list|)
 throw|;
+block|}
+finally|finally
+block|{
+if|if
+condition|(
+name|file
+operator|!=
+literal|null
+condition|)
+block|{
+name|file
+operator|.
+name|delete
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 block|}
 annotation|@
