@@ -638,29 +638,19 @@ operator|)
 condition|?
 literal|"Subsystem "
 operator|+
-name|Long
-operator|.
-name|toString
-argument_list|(
 name|subsystem
 operator|.
 name|getSubsystemId
 argument_list|()
-argument_list|)
 else|:
 name|name
 operator|+
 literal|" ("
 operator|+
-name|Long
-operator|.
-name|toString
-argument_list|(
 name|subsystem
 operator|.
 name|getSubsystemId
 argument_list|()
-argument_list|)
 operator|+
 literal|")"
 return|;

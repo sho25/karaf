@@ -1950,12 +1950,7 @@ name|sb
 operator|.
 name|append
 argument_list|(
-name|String
-operator|.
-name|valueOf
-argument_list|(
 name|o
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|sb

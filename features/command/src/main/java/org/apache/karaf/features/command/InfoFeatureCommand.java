@@ -1393,12 +1393,18 @@ operator|.
 name|append
 argument_list|(
 literal|" (overriden from "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|featureBundle
 operator|.
 name|getOriginalLocation
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|")"
 argument_list|)
 expr_stmt|;

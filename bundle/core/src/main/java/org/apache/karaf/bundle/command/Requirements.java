@@ -367,9 +367,7 @@ operator|.
 name|out
 operator|.
 name|println
-argument_list|(
-literal|""
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 comment|// Print out any matching generic requirements.

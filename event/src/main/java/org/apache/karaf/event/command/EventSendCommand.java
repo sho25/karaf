@@ -380,11 +380,6 @@ argument_list|(
 name|splitAt
 operator|+
 literal|1
-argument_list|,
-name|keyValue
-operator|.
-name|length
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|properties

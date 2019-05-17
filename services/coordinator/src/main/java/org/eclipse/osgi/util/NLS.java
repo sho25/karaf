@@ -558,13 +558,10 @@ operator|.
 name|append
 argument_list|(
 name|message
-operator|.
-name|substring
-argument_list|(
+argument_list|,
 name|nextIndex
 argument_list|,
 name|index
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|i

@@ -309,29 +309,19 @@ operator|)
 condition|?
 literal|"Bundle "
 operator|+
-name|Long
-operator|.
-name|toString
-argument_list|(
 name|bundle
 operator|.
 name|getBundleId
 argument_list|()
-argument_list|)
 else|:
 name|name
 operator|+
 literal|" ("
 operator|+
-name|Long
-operator|.
-name|toString
-argument_list|(
 name|bundle
 operator|.
 name|getBundleId
 argument_list|()
-argument_list|)
 operator|+
 literal|")"
 return|;
