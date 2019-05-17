@@ -228,9 +228,7 @@ name|synchronizedSet
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|Session
-argument_list|>
+argument_list|<>
 argument_list|()
 argument_list|)
 decl_stmt|;

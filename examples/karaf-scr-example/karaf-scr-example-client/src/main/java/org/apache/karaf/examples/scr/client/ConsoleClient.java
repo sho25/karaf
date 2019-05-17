@@ -224,16 +224,8 @@ init|=
 operator|new
 name|Thread
 argument_list|(
-operator|new
-name|Runnable
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|public
-name|void
-name|run
 parameter_list|()
+lambda|->
 block|{
 while|while
 condition|(
@@ -252,7 +244,7 @@ expr_stmt|;
 for|for
 control|(
 name|Booking
-name|booking
+name|booking1
 range|:
 name|bookingService
 operator|.
@@ -282,21 +274,21 @@ name|out
 operator|.
 name|println
 argument_list|(
-name|booking
+name|booking1
 operator|.
 name|getId
 argument_list|()
 operator|+
 literal|" - "
 operator|+
-name|booking
+name|booking1
 operator|.
 name|getFlight
 argument_list|()
 operator|+
 literal|" - "
 operator|+
-name|booking
+name|booking1
 operator|.
 name|getCustomer
 argument_list|()
@@ -311,7 +303,6 @@ name|e
 parameter_list|)
 block|{
 comment|// nothing to do
-block|}
 block|}
 block|}
 block|}

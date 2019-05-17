@@ -790,13 +790,10 @@ operator|.
 name|toLowerCase
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"gzip"
 argument_list|)
-operator|>
-operator|-
-literal|1
 operator|)
 decl_stmt|;
 name|SessionTerminal

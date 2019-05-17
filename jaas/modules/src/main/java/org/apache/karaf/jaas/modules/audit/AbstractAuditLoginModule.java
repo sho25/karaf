@@ -503,12 +503,9 @@ argument_list|()
 operator|.
 name|map
 argument_list|(
-name|r
-lambda|->
-name|r
-operator|.
+name|ClientPrincipal
+operator|::
 name|getName
-argument_list|()
 argument_list|)
 operator|.
 name|collect

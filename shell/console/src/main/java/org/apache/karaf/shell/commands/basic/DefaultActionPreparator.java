@@ -598,11 +598,7 @@ name|optionValues
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|Option
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Map
@@ -615,11 +611,7 @@ name|argumentValues
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|Argument
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|boolean
@@ -991,9 +983,7 @@ name|l
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|optionValues
@@ -1121,9 +1111,7 @@ name|l
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|argumentValues

@@ -3151,7 +3151,6 @@ name|loc
 argument_list|,
 name|provider
 lambda|->
-block|{
 name|bundles
 operator|.
 name|put
@@ -3170,8 +3169,6 @@ argument_list|,
 name|removeServiceRequirements
 argument_list|)
 argument_list|)
-expr_stmt|;
-block|}
 argument_list|)
 expr_stmt|;
 block|}
@@ -3221,7 +3218,6 @@ name|loc
 argument_list|,
 name|provider
 lambda|->
-block|{
 name|bundles
 operator|.
 name|put
@@ -3240,8 +3236,6 @@ argument_list|,
 name|removeServiceRequirements
 argument_list|)
 argument_list|)
-expr_stmt|;
-block|}
 argument_list|)
 expr_stmt|;
 block|}

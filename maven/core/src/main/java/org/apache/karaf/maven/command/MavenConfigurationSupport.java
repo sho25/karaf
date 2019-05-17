@@ -2924,14 +2924,6 @@ name|Profile
 argument_list|>
 name|profiles
 init|=
-operator|(
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Profile
-argument_list|>
-operator|)
 name|mavenSettings
 operator|.
 name|getProfilesAsMap
@@ -3651,9 +3643,6 @@ operator|.
 name|collect
 argument_list|(
 name|TreeSet
-argument_list|<
-name|String
-argument_list|>
 operator|::
 operator|new
 argument_list|,
