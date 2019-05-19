@@ -2657,6 +2657,13 @@ argument_list|(
 name|r
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|rep
+operator|!=
+literal|null
+condition|)
+block|{
 name|repos
 operator|.
 name|addAll
@@ -2669,6 +2676,21 @@ name|rep
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"Repository URI "
+operator|+
+name|uri
+operator|+
+literal|" seems to have changed, can't remove repository"
+argument_list|)
+throw|;
+block|}
 block|}
 block|}
 for|for
