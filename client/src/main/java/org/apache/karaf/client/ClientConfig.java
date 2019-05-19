@@ -1585,6 +1585,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+try|try
+block|{
 return|return
 name|Integer
 operator|.
@@ -1596,6 +1598,32 @@ name|toString
 argument_list|()
 argument_list|)
 return|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+literal|"Invalid value for "
+operator|+
+name|key
+operator|+
+literal|", using default "
+operator|+
+name|def
+argument_list|)
+expr_stmt|;
+return|return
+name|def
+return|;
+block|}
 block|}
 block|}
 return|return
@@ -1657,6 +1685,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+try|try
+block|{
 return|return
 name|Long
 operator|.
@@ -1668,6 +1698,32 @@ name|toString
 argument_list|()
 argument_list|)
 return|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+literal|"Invalid value for "
+operator|+
+name|key
+operator|+
+literal|", using default "
+operator|+
+name|def
+argument_list|)
+expr_stmt|;
+return|return
+name|def
+return|;
+block|}
 block|}
 block|}
 return|return
