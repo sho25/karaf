@@ -65,6 +65,42 @@ parameter_list|()
 throws|throws
 name|MBeanException
 function_decl|;
+comment|/**      * Install a web application artifact.      *      * @param location The location of the web application artifact.      * @param contextPath The web context path of the web application.      * @throws MBeanException In case of installation exception.      */
+name|void
+name|install
+parameter_list|(
+name|String
+name|location
+parameter_list|,
+name|String
+name|contextPath
+parameter_list|)
+throws|throws
+name|MBeanException
+function_decl|;
+comment|/**      * Uninstall a web application.      *      * @param bundleId the bundle ID.      * @throws MBeanException in case of uninstall failure.      */
+name|void
+name|uninstall
+parameter_list|(
+name|Long
+name|bundleId
+parameter_list|)
+throws|throws
+name|MBeanException
+function_decl|;
+comment|/**      * Uninstall web applications.      *      * @param bundleIds The list of bundle IDs (TODO use a BundleSelector service).      * @throws MBeanException in case of uninstall failure.      */
+name|void
+name|uninstall
+parameter_list|(
+name|List
+argument_list|<
+name|Long
+argument_list|>
+name|bundleIds
+parameter_list|)
+throws|throws
+name|MBeanException
+function_decl|;
 comment|/**      * Start web context of the given web bundle (identified by ID).      *      * @param bundleId the bundle ID.      * @throws MBeanException in case of start failure.      */
 name|void
 name|start
