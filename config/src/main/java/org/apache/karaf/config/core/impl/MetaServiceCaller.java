@@ -169,6 +169,13 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|ref
+operator|!=
+literal|null
+condition|)
+block|{
 try|try
 block|{
 name|MetaTypeService
@@ -200,6 +207,10 @@ name|ref
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+return|return
+literal|null
+return|;
 block|}
 specifier|public
 specifier|static
@@ -241,6 +252,13 @@ operator|.
 name|getBundles
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|metatypeService
+operator|!=
+literal|null
+condition|)
+block|{
 for|for
 control|(
 name|Bundle
@@ -319,6 +337,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 return|return
