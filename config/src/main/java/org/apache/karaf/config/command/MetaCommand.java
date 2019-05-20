@@ -812,6 +812,13 @@ name|String
 name|pid
 parameter_list|)
 block|{
+if|if
+condition|(
+name|metaTypeService
+operator|!=
+literal|null
+condition|)
+block|{
 for|for
 control|(
 name|Bundle
@@ -879,6 +886,7 @@ argument_list|,
 literal|null
 argument_list|)
 return|;
+block|}
 block|}
 block|}
 block|}
