@@ -379,6 +379,17 @@ throws|,
 name|InvalidSyntaxException
 function_decl|;
 name|void
+name|deleteConfigs
+parameter_list|(
+name|Feature
+name|feature
+parameter_list|)
+throws|throws
+name|IOException
+throws|,
+name|InvalidSyntaxException
+function_decl|;
+name|void
 name|installLibraries
 parameter_list|(
 name|Feature

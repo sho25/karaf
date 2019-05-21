@@ -170,6 +170,8 @@ block|,
 name|DisplayFeaturesWiring
 block|,
 name|DisplayAllWiring
+block|,
+name|DeleteConfigurations
 block|}
 comment|/**      * Configuration options for handling requirements from {@link ServiceNamespace#SERVICE_NAMESPACE} namespace      */
 enum|enum

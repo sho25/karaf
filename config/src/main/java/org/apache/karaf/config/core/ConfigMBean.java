@@ -102,6 +102,16 @@ parameter_list|)
 throws|throws
 name|MBeanException
 function_decl|;
+comment|/**      * Check if a configuration identified by the given PID exists.      *      * @param pid The configuration PID to check.      * @return true if the configuration exists, false else.      * @throws MBeanException in case of MBean failure.      */
+name|boolean
+name|exists
+parameter_list|(
+name|String
+name|pid
+parameter_list|)
+throws|throws
+name|MBeanException
+function_decl|;
 comment|/**      * Get the list of properties for a configuration PID.      *      * @param pid the configuration PID.      * @return the list of properties.      * @throws MBeanException in case of MBean failure.      */
 name|Map
 argument_list|<
