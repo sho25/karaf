@@ -543,8 +543,9 @@ else|else
 block|{
 name|concurrent
 operator|=
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|String
@@ -880,8 +881,9 @@ else|else
 block|{
 name|immediate
 operator|=
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|String

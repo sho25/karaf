@@ -835,8 +835,9 @@ name|getProperties
 argument_list|()
 argument_list|)
 block|,
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|configInfo
 operator|.
