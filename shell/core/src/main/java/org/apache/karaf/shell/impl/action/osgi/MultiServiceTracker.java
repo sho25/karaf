@@ -514,11 +514,6 @@ argument_list|<
 name|T
 argument_list|>
 name|svcs
-init|=
-operator|new
-name|ArrayList
-argument_list|<>
-argument_list|()
 decl_stmt|;
 synchronized|synchronized
 init|(
@@ -526,8 +521,10 @@ name|refs
 init|)
 block|{
 name|svcs
-operator|.
-name|addAll
+operator|=
+operator|new
+name|ArrayList
+argument_list|<>
 argument_list|(
 name|refs
 operator|.

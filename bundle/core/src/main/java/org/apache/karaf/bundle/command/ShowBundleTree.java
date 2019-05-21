@@ -1421,11 +1421,6 @@ init|=
 operator|new
 name|HashSet
 argument_list|<>
-argument_list|()
-decl_stmt|;
-name|exporters
-operator|.
-name|addAll
 argument_list|(
 name|bundleService
 operator|.
@@ -1437,7 +1432,7 @@ operator|.
 name|values
 argument_list|()
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|Bundle

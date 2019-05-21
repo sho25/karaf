@@ -6296,11 +6296,6 @@ operator|=
 operator|new
 name|HashSet
 argument_list|<>
-argument_list|()
-expr_stmt|;
-name|toStop
-operator|.
-name|addAll
 argument_list|(
 name|toRefresh
 operator|.

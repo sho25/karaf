@@ -730,15 +730,10 @@ init|=
 operator|new
 name|HashMap
 argument_list|<>
-argument_list|()
-decl_stmt|;
-name|eventadminOptions
-operator|.
-name|putAll
 argument_list|(
 name|properties
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|eventadminOptions
 operator|.
 name|put
