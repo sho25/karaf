@@ -593,11 +593,6 @@ init|=
 operator|new
 name|HashSet
 argument_list|<>
-argument_list|()
-decl_stmt|;
-name|set
-operator|.
-name|addAll
 argument_list|(
 name|registry
 operator|.
@@ -614,7 +609,7 @@ name|getRawClass
 argument_list|()
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|registry

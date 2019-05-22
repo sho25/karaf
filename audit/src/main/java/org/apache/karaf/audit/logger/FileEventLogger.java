@@ -1289,13 +1289,10 @@ name|date
 operator|+
 literal|"-"
 operator|+
-name|Integer
-operator|.
-name|toString
-argument_list|(
+operator|(
 operator|++
 name|idx
-argument_list|)
+operator|)
 operator|+
 name|fix
 index|[

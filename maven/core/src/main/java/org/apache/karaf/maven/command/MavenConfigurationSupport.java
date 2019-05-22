@@ -2877,11 +2877,6 @@ init|=
 operator|new
 name|LinkedList
 argument_list|<>
-argument_list|()
-decl_stmt|;
-name|newRepositories
-operator|.
-name|addAll
 argument_list|(
 name|Arrays
 operator|.
@@ -2890,7 +2885,7 @@ argument_list|(
 name|repositories
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 comment|// append all repositories from all active profiles from available settings.xml
 if|if
 condition|(

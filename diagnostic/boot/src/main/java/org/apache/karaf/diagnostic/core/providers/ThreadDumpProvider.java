@@ -210,31 +210,54 @@ name|sb
 init|=
 operator|new
 name|StringBuilder
+argument_list|()
+decl_stmt|;
+name|sb
+operator|.
+name|append
 argument_list|(
 literal|"\""
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|threadInfo
 operator|.
 name|getThreadName
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"\""
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|" Id="
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|threadInfo
 operator|.
 name|getThreadId
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|" "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|threadInfo
 operator|.
 name|getThreadState
 argument_list|()
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|threadInfo
@@ -250,7 +273,10 @@ operator|.
 name|append
 argument_list|(
 literal|" on "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|threadInfo
 operator|.
 name|getLockName
@@ -273,14 +299,23 @@ operator|.
 name|append
 argument_list|(
 literal|" owned by \""
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|threadInfo
 operator|.
 name|getLockOwnerName
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"\" Id="
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|threadInfo
 operator|.
 name|getLockOwnerId
@@ -367,7 +402,10 @@ operator|.
 name|append
 argument_list|(
 literal|"\tat "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|ste
 operator|.
 name|toString
@@ -418,7 +456,10 @@ operator|.
 name|append
 argument_list|(
 literal|"\t-  blocked on "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|threadInfo
 operator|.
 name|getLockInfo
@@ -441,7 +482,10 @@ operator|.
 name|append
 argument_list|(
 literal|"\t-  waiting on "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|threadInfo
 operator|.
 name|getLockInfo
@@ -464,7 +508,10 @@ operator|.
 name|append
 argument_list|(
 literal|"\t-  waiting on "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|threadInfo
 operator|.
 name|getLockInfo
@@ -508,7 +555,10 @@ operator|.
 name|append
 argument_list|(
 literal|"\t-  locked "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|mi
 argument_list|)
 expr_stmt|;
@@ -569,7 +619,10 @@ operator|.
 name|append
 argument_list|(
 literal|"\n\tNumber of locked synchronizers = "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|locks
 operator|.
 name|length
@@ -595,7 +648,10 @@ operator|.
 name|append
 argument_list|(
 literal|"\t- "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|li
 argument_list|)
 expr_stmt|;

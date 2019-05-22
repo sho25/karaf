@@ -248,11 +248,6 @@ literal|"."
 argument_list|)
 operator|+
 literal|1
-argument_list|,
-name|servletClassName
-operator|.
-name|length
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -297,11 +292,6 @@ literal|"."
 argument_list|)
 operator|+
 literal|1
-argument_list|,
-name|servletName
-operator|.
-name|length
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

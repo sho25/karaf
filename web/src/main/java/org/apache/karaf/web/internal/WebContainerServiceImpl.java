@@ -1065,10 +1065,14 @@ operator|.
 name|getBundleEvents
 argument_list|()
 decl_stmt|;
-name|String
+name|StringBuilder
 name|topic
 init|=
+operator|new
+name|StringBuilder
+argument_list|(
 literal|"Unknown    "
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -1105,7 +1109,11 @@ name|DEPLOYING
 case|:
 name|topic
 operator|=
+operator|new
+name|StringBuilder
+argument_list|(
 literal|"Deploying  "
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -1115,7 +1123,11 @@ name|DEPLOYED
 case|:
 name|topic
 operator|=
+operator|new
+name|StringBuilder
+argument_list|(
 literal|"Deployed   "
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -1125,7 +1137,11 @@ name|UNDEPLOYING
 case|:
 name|topic
 operator|=
+operator|new
+name|StringBuilder
+argument_list|(
 literal|"Undeploying"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -1135,7 +1151,11 @@ name|UNDEPLOYED
 case|:
 name|topic
 operator|=
+operator|new
+name|StringBuilder
+argument_list|(
 literal|"Undeployed "
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -1145,7 +1165,11 @@ name|FAILED
 case|:
 name|topic
 operator|=
+operator|new
+name|StringBuilder
+argument_list|(
 literal|"Failed     "
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -1155,13 +1179,21 @@ name|WAITING
 case|:
 name|topic
 operator|=
+operator|new
+name|StringBuilder
+argument_list|(
 literal|"Waiting    "
+argument_list|)
 expr_stmt|;
 break|break;
 default|default:
 name|topic
 operator|=
+operator|new
+name|StringBuilder
+argument_list|(
 literal|"Failed     "
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -1176,12 +1208,18 @@ literal|11
 condition|)
 block|{
 name|topic
-operator|+=
+operator|.
+name|append
+argument_list|(
 literal|" "
+argument_list|)
 expr_stmt|;
 block|}
 return|return
 name|topic
+operator|.
+name|toString
+argument_list|()
 return|;
 block|}
 comment|/**      * Return a string representation of the bundle state.      *       * TODO use an util method provided by bundle core      *       * @param bundle the target bundle.      * @return the string representation of the state      */

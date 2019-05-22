@@ -1098,13 +1098,17 @@ range|:
 name|optionsSet
 control|)
 block|{
-name|String
+name|StringBuilder
 name|opt
 init|=
+operator|new
+name|StringBuilder
+argument_list|(
 name|option
 operator|.
 name|name
 argument_list|()
+argument_list|)
 decl_stmt|;
 for|for
 control|(
@@ -1118,10 +1122,16 @@ argument_list|()
 control|)
 block|{
 name|opt
-operator|+=
+operator|.
+name|append
+argument_list|(
 literal|", "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|alias
+argument_list|)
 expr_stmt|;
 block|}
 name|out

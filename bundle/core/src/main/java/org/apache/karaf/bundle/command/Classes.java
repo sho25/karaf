@@ -439,7 +439,10 @@ name|bundle
 operator|.
 name|getBundleId
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|" | "
 argument_list|)
 expr_stmt|;
@@ -449,7 +452,10 @@ operator|.
 name|append
 argument_list|(
 name|resource
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|" | "
 argument_list|)
 expr_stmt|;
@@ -458,7 +464,10 @@ operator|.
 name|append
 argument_list|(
 literal|"exported: "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|isExported
 argument_list|(
 name|resource

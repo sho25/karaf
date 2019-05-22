@@ -645,11 +645,6 @@ argument_list|(
 name|idx
 operator|+
 literal|1
-argument_list|,
-name|str
-operator|.
-name|length
-argument_list|()
 argument_list|)
 decl_stmt|;
 return|return

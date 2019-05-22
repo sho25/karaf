@@ -1657,7 +1657,10 @@ operator|.
 name|append
 argument_list|(
 literal|" on lock="
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|info
 operator|.
 name|getLockName

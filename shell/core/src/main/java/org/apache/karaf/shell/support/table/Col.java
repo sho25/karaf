@@ -573,11 +573,6 @@ init|=
 operator|new
 name|ArrayList
 argument_list|<>
-argument_list|()
-decl_stmt|;
-name|lines
-operator|.
-name|addAll
 argument_list|(
 name|Arrays
 operator|.
@@ -591,7 +586,7 @@ literal|"\n"
 argument_list|)
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|wrap
