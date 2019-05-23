@@ -4463,6 +4463,20 @@ annotation|@
 name|Override
 specifier|public
 name|void
+name|deleteConfigs
+parameter_list|(
+name|Feature
+name|feature
+parameter_list|)
+throws|throws
+name|IOException
+throws|,
+name|InvalidSyntaxException
+block|{          }
+annotation|@
+name|Override
+specifier|public
+name|void
 name|installLibraries
 parameter_list|(
 name|Feature

@@ -1167,6 +1167,18 @@ name|osgi
 operator|.
 name|framework
 operator|.
+name|InvalidSyntaxException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|framework
+operator|.
 name|Version
 import|;
 end_import
@@ -5929,6 +5941,28 @@ operator|.
 name|Feature
 name|feature
 parameter_list|)
+block|{         }
+annotation|@
+name|Override
+specifier|public
+name|void
+name|deleteConfigs
+parameter_list|(
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|features
+operator|.
+name|Feature
+name|feature
+parameter_list|)
+throws|throws
+name|IOException
+throws|,
+name|InvalidSyntaxException
 block|{         }
 annotation|@
 name|Override

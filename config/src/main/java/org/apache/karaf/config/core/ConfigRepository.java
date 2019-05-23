@@ -108,6 +108,15 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
+name|boolean
+name|exists
+parameter_list|(
+name|String
+name|pid
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
 name|void
 name|update
 parameter_list|(
