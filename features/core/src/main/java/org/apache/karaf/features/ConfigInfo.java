@@ -47,6 +47,10 @@ name|isAppend
 parameter_list|()
 function_decl|;
 name|boolean
+name|isOverride
+parameter_list|()
+function_decl|;
+name|boolean
 name|isExternal
 parameter_list|()
 function_decl|;

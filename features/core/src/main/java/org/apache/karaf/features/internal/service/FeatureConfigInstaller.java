@@ -723,6 +723,11 @@ condition|(
 name|cfg
 operator|==
 literal|null
+operator|||
+name|config
+operator|.
+name|isOverride
+argument_list|()
 condition|)
 block|{
 name|File
@@ -758,6 +763,11 @@ operator|!
 name|cfgFile
 operator|.
 name|exists
+argument_list|()
+operator|||
+name|config
+operator|.
+name|isOverride
 argument_list|()
 condition|)
 block|{

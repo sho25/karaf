@@ -919,6 +919,16 @@ operator|=
 literal|"/org/apache/karaf/features/karaf-features-1.5.0.xsd"
 expr_stmt|;
 break|break;
+case|case
+name|FeaturesNamespaces
+operator|.
+name|URI_1_6_0
+case|:
+name|schemaLocation
+operator|=
+literal|"/org/apache/karaf/features/karaf-features-1.6.0.xsd"
+expr_stmt|;
+break|break;
 default|default:
 throw|throw
 operator|new

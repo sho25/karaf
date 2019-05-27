@@ -212,6 +212,14 @@ name|external
 init|=
 literal|false
 decl_stmt|;
+annotation|@
+name|XmlAttribute
+specifier|private
+name|Boolean
+name|override
+init|=
+literal|false
+decl_stmt|;
 comment|/**      * Gets the value of the value property.      *      * @return possible object is      * {@link String }      */
 specifier|public
 name|String
@@ -312,6 +320,38 @@ operator|.
 name|external
 operator|=
 name|external
+expr_stmt|;
+block|}
+comment|/** 	 * Gets the value of the override property. 	 * 	 * @return possible object is 	 * {@link Boolean } 	 */
+specifier|public
+name|boolean
+name|isOverride
+parameter_list|()
+block|{
+return|return
+name|override
+operator|==
+literal|null
+condition|?
+literal|false
+else|:
+name|override
+return|;
+block|}
+comment|/** 	 * Sets the value of the override property. 	 * 	 * @param value allowed object is 	 *              {@link Boolean } 	 */
+specifier|public
+name|void
+name|setOverride
+parameter_list|(
+name|Boolean
+name|value
+parameter_list|)
+block|{
+name|this
+operator|.
+name|override
+operator|=
+name|value
 expr_stmt|;
 block|}
 specifier|public
