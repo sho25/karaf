@@ -533,6 +533,12 @@ argument_list|,
 name|cands
 argument_list|)
 expr_stmt|;
+comment|// cleanup candidates to avoid to pollute depending of completion mode
+name|candidates
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
 for|for
 control|(
 name|Candidate
