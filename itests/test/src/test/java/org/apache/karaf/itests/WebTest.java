@@ -550,7 +550,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"web:uninstall 126"
+literal|"web:uninstall 125"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -570,6 +570,31 @@ argument_list|(
 name|listOutput
 argument_list|)
 expr_stmt|;
+while|while
+condition|(
+name|listOutput
+operator|.
+name|contains
+argument_list|(
+literal|"/test"
+argument_list|)
+condition|)
+block|{
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|500
+argument_list|)
+expr_stmt|;
+name|listOutput
+operator|=
+name|executeCommand
+argument_list|(
+literal|"web:list"
+argument_list|)
+expr_stmt|;
+block|}
 name|assertContainsNot
 argument_list|(
 literal|"/test"
