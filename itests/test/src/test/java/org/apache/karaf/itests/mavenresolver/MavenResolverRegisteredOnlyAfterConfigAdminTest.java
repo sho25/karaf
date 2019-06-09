@@ -295,11 +295,11 @@ argument_list|)
 argument_list|)
 block|,
 comment|// etc/config.properties which have org.ops4j.pax.url.mvn.requireConfigAdminConfig=true
-name|editConfigurationFileExtend
+name|editConfigurationFilePut
 argument_list|(
 literal|"etc/config.properties"
 argument_list|,
-literal|"etc/org.apache.karaf.features.cfg"
+literal|"org.ops4j.pax.url.mvn.requireConfigAdminConfig"
 argument_list|,
 literal|"true"
 argument_list|)
