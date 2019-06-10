@@ -590,7 +590,7 @@ name|Class
 operator|.
 name|forName
 argument_list|(
-literal|"og.apache.http.impl.client.SystemDefaultHttpClient"
+literal|"org.apache.http.impl.client.SystemDefaultHttpClient"
 argument_list|)
 decl_stmt|;
 name|Constructor
