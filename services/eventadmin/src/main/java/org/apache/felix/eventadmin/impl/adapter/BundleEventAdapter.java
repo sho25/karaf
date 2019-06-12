@@ -142,7 +142,7 @@ name|AbstractAdapter
 implements|implements
 name|SynchronousBundleListener
 block|{
-comment|/**      * The constructor of the adapter. This will register the adapter with the given      * context as a<tt>BundleListener</tt> and subsequently, will post received      * events via the given EventAdmin.      *      * @param context The bundle context with which to register as a listener.      * @param admin The<tt>EventAdmin</tt> to use for posting events.      */
+comment|/**      * The constructor of the adapter. This will register the adapter with the given      * context as a<code>BundleListener</code> and subsequently, will post received      * events via the given EventAdmin.      *      * @param context The bundle context with which to register as a listener.      * @param admin The<code>EventAdmin</code> to use for posting events.      */
 specifier|public
 name|BundleEventAdapter
 parameter_list|(
@@ -186,7 +186,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Once a bundle event is received this method assembles and posts an event via      * the<tt>EventAdmin</tt> as specified in 113.6.4 OSGi R4 compendium.      *      * @param event The event to adapt.      */
+comment|/**      * Once a bundle event is received this method assembles and posts an event via      * the<code>EventAdmin</code> as specified in 113.6.4 OSGi R4 compendium.      *      * @param event The event to adapt.      */
 annotation|@
 name|Override
 specifier|public

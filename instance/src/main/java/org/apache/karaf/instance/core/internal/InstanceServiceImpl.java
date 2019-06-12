@@ -715,7 +715,7 @@ specifier|final
 name|String
 name|DEFAULT_JAVA_OPTS
 init|=
-literal|"-server -Xmx512M -Dcom.sun.management.jmxremote -XX:+UnlockDiagnosticVMOptions"
+literal|"-Xmx512M -Dcom.sun.management.jmxremote -XX:+UnlockDiagnosticVMOptions"
 decl_stmt|;
 specifier|private
 name|LinkedHashMap
@@ -3378,8 +3378,89 @@ literal|"1."
 argument_list|)
 condition|)
 block|{
+name|StringBuilder
+name|jdk9Classpath
+init|=
+name|classpathFromLibDir
+argument_list|(
+operator|new
+name|File
+argument_list|(
+operator|new
+name|File
+argument_list|(
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"karaf.home"
+argument_list|)
+argument_list|,
+literal|"lib"
+argument_list|)
+argument_list|,
+literal|"jdk9plus"
+argument_list|)
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|jdk9Classpath
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
+name|classpath
+operator|.
+name|append
+argument_list|(
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"path.separator"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|classpath
+operator|.
+name|append
+argument_list|(
+name|jdk9Classpath
+argument_list|)
+expr_stmt|;
+block|}
 name|jdkOpts
 operator|=
+literal|" --add-reads=java.xml=java.logging"
+operator|+
+literal|" --add-exports=java.base/org.apache.karaf.specs.locator=java.xml,ALL-UNNAMED"
+operator|+
+literal|" --patch-module java.base=lib/endorsed/org.apache.karaf.specs.locator-"
+operator|+
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"karaf.version"
+argument_list|)
+operator|+
+literal|".jar"
+operator|+
+literal|" --patch-module java.xml=lib/endorsed/org.apache.karaf.specs.java.xml-"
+operator|+
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"karaf.version"
+argument_list|)
+operator|+
+literal|".jar"
+operator|+
 literal|" --add-opens java.base/java.security=ALL-UNNAMED"
 operator|+
 literal|" --add-opens java.base/java.net=ALL-UNNAMED"
@@ -3398,13 +3479,9 @@ literal|" --add-exports=java.base/sun.net.www.protocol.https=ALL-UNNAMED"
 operator|+
 literal|" --add-exports=java.base/sun.net.www.protocol.jar=ALL-UNNAMED"
 operator|+
-literal|" --add-exports=java.xml.bind/com.sun.xml.internal.bind.v2.runtime=ALL-UNNAMED"
-operator|+
 literal|" --add-exports=jdk.xml.dom/org.w3c.dom.html=ALL-UNNAMED"
 operator|+
 literal|" --add-exports=jdk.naming.rmi/com.sun.jndi.url.rmi=ALL-UNNAMED"
-operator|+
-literal|" --add-modules java.xml.ws.annotation,java.corba,java.transaction,java.xml.bind,java.xml.ws"
 expr_stmt|;
 block|}
 else|else
@@ -3708,22 +3785,24 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
+operator|new
+name|File
+argument_list|(
 name|location
 argument_list|)
 operator|.
-name|getCanonicalPath
+name|getCanonicalFile
 argument_list|()
 argument_list|,
 literal|"data"
-operator|+
-name|File
-operator|.
-name|separator
-operator|+
+argument_list|)
+argument_list|,
 literal|"tmp"
 argument_list|)
 operator|+
 literal|"\""
+operator|+
+literal|" -Dkaraf.restart.jvm.supported=true"
 operator|+
 literal|" -Dkaraf.startLocalConsole=false"
 operator|+
