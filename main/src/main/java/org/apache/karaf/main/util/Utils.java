@@ -1082,11 +1082,11 @@ literal|"-"
 operator|+
 name|version
 decl_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|sb
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 if|if
@@ -1430,11 +1430,11 @@ name|tokenList
 init|=
 literal|"\" "
 decl_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|tokBuf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 literal|10
 argument_list|)
@@ -1544,7 +1544,7 @@ expr_stmt|;
 name|tokBuf
 operator|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 literal|10
 argument_list|)

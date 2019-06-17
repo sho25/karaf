@@ -2380,11 +2380,11 @@ name|println
 argument_list|()
 expr_stmt|;
 block|}
-name|StringBuffer
+name|StringBuilder
 name|syntax
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 if|if

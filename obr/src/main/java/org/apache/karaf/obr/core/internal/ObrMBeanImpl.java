@@ -960,11 +960,11 @@ comment|// It was not a number, so ignore.
 block|}
 comment|// The targetId may be a bundle name or a bundle symbolic name,
 comment|// so create the appropriate LDAP query.
-name|StringBuffer
+name|StringBuilder
 name|sb
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 literal|"(|(presentationname="
 argument_list|)

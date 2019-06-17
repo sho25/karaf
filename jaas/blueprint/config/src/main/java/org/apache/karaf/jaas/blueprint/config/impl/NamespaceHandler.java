@@ -1340,11 +1340,11 @@ name|Element
 name|element
 parameter_list|)
 block|{
-name|StringBuffer
+name|StringBuilder
 name|value
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|NodeList

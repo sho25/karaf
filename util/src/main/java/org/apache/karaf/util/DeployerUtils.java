@@ -139,11 +139,11 @@ return|;
 block|}
 else|else
 block|{
-name|StringBuffer
+name|StringBuilder
 name|v
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|String
@@ -355,7 +355,7 @@ specifier|static
 name|void
 name|cleanupModifier
 parameter_list|(
-name|StringBuffer
+name|StringBuilder
 name|result
 parameter_list|,
 name|String
