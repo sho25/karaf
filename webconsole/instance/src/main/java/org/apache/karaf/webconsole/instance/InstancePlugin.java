@@ -1813,11 +1813,11 @@ expr_stmt|;
 block|}
 block|}
 specifier|final
-name|StringBuffer
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|buffer

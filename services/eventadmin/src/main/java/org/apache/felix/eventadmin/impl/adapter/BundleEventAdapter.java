@@ -286,11 +286,11 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 specifier|final
-name|StringBuffer
+name|StringBuilder
 name|topic
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 name|BundleEvent
 operator|.
