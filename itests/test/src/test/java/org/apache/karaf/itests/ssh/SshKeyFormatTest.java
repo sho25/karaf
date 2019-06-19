@@ -304,15 +304,6 @@ name|getAbsolutePath
 argument_list|()
 argument_list|)
 argument_list|,
-name|editConfigurationFilePut
-argument_list|(
-literal|"etc/org.apache.karaf.shell.cfg"
-argument_list|,
-literal|"hostKeyFormat"
-argument_list|,
-literal|"PEM"
-argument_list|)
-argument_list|,
 name|bundle
 argument_list|(
 literal|"mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.not-yet-commons-ssl/0.3.11_1"
