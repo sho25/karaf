@@ -413,6 +413,18 @@ begin_import
 import|import
 name|java
 operator|.
+name|nio
+operator|.
+name|file
+operator|.
+name|Files
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|List
@@ -1386,7 +1398,7 @@ block|{
 name|File
 name|uncompressedFile
 init|=
-name|File
+name|Files
 operator|.
 name|createTempFile
 argument_list|(
@@ -1394,6 +1406,9 @@ literal|"uncompressedTarGz-"
 argument_list|,
 literal|".tar"
 argument_list|)
+operator|.
+name|toFile
+argument_list|()
 decl_stmt|;
 name|extractGzArchive
 argument_list|(
