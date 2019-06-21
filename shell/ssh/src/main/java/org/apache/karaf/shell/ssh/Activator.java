@@ -1011,7 +1011,7 @@ name|getStringArray
 argument_list|(
 literal|"macs"
 argument_list|,
-literal|"hmac-sha2-512,hmac-sha2-256,hmac-sha1"
+literal|"hmac-sha2-512,hmac-sha2-256"
 argument_list|)
 decl_stmt|;
 name|String
@@ -1022,7 +1022,7 @@ name|getStringArray
 argument_list|(
 literal|"ciphers"
 argument_list|,
-literal|"aes128-ctr,arcfour128,aes128-cbc,3des-cbc,blowfish-cbc"
+literal|"aes256-ctr,aes192-ctr,aes128-ctr"
 argument_list|)
 decl_stmt|;
 name|String
@@ -1033,7 +1033,7 @@ name|getStringArray
 argument_list|(
 literal|"kexAlgorithms"
 argument_list|,
-literal|"diffie-hellman-group-exchange-sha256,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1"
+literal|"ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256"
 argument_list|)
 decl_stmt|;
 name|String
