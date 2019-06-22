@@ -91,6 +91,18 @@ begin_import
 import|import
 name|java
 operator|.
+name|nio
+operator|.
+name|file
+operator|.
+name|Files
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|HashMap
@@ -469,13 +481,13 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-comment|//File input = File.createTempFile("jpm.", ".input");
-comment|//File output = File.createTempFile("jpm.", ".output");
-comment|//File error = File.createTempFile("jpm.", ".error");
+comment|//File input = Files.createTempFile("jpm.", ".input").toFile();
+comment|//File output = Files.createTempFile("jpm.", ".output").toFile();
+comment|//File error = Files.createTempFile("jpm.", ".error").toFile();
 name|File
 name|pidFile
 init|=
-name|File
+name|Files
 operator|.
 name|createTempFile
 argument_list|(
@@ -483,6 +495,9 @@ literal|"jpm."
 argument_list|,
 literal|".pid"
 argument_list|)
+operator|.
+name|toFile
+argument_list|()
 decl_stmt|;
 try|try
 block|{

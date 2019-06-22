@@ -115,6 +115,18 @@ name|Method
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|nio
+operator|.
+name|file
+operator|.
+name|Files
+import|;
+end_import
+
 begin_comment
 comment|/**  * Create a heap dump.  */
 end_comment
@@ -190,7 +202,7 @@ argument_list|)
 decl_stmt|;
 name|heapDumpFile
 operator|=
-name|File
+name|Files
 operator|.
 name|createTempFile
 argument_list|(
@@ -198,6 +210,9 @@ literal|"heapdump"
 argument_list|,
 literal|".hprof"
 argument_list|)
+operator|.
+name|toFile
+argument_list|()
 expr_stmt|;
 name|heapDumpFile
 operator|.

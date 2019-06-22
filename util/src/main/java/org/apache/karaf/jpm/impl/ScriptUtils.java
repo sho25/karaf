@@ -91,6 +91,18 @@ begin_import
 import|import
 name|java
 operator|.
+name|nio
+operator|.
+name|file
+operator|.
+name|Files
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Map
@@ -134,7 +146,7 @@ block|{
 name|File
 name|script
 init|=
-name|File
+name|Files
 operator|.
 name|createTempFile
 argument_list|(
@@ -142,6 +154,9 @@ literal|"jpm."
 argument_list|,
 literal|".script"
 argument_list|)
+operator|.
+name|toFile
+argument_list|()
 decl_stmt|;
 try|try
 block|{
