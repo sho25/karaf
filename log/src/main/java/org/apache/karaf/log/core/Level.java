@@ -36,6 +36,8 @@ name|WARN
 block|,
 name|ERROR
 block|,
+name|FATAL
+block|,
 name|OFF
 block|,
 name|DEFAULT
