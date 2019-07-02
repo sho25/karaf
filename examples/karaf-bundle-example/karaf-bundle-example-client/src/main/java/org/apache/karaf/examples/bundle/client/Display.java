@@ -82,15 +82,14 @@ name|void
 name|init
 parameter_list|()
 block|{
-name|BookingDisplayThread
 name|thread
-init|=
+operator|=
 operator|new
 name|BookingDisplayThread
 argument_list|(
 name|clientService
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|thread
 operator|.
 name|start
