@@ -279,18 +279,6 @@ name|jline
 operator|.
 name|reader
 operator|.
-name|ParsedLine
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|jline
-operator|.
-name|reader
-operator|.
 name|Parser
 import|;
 end_import
@@ -364,18 +352,6 @@ operator|.
 name|Assert
 operator|.
 name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
 import|;
 end_import
 
