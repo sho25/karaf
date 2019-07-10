@@ -299,6 +299,9 @@ name|algorithm
 parameter_list|,
 name|int
 name|keySize
+parameter_list|,
+name|String
+name|password
 parameter_list|)
 block|{
 name|this
@@ -324,6 +327,12 @@ operator|.
 name|keySize
 operator|=
 name|keySize
+expr_stmt|;
+name|this
+operator|.
+name|password
+operator|=
+name|password
 expr_stmt|;
 block|}
 annotation|@
@@ -390,6 +399,8 @@ operator|.
 name|getKeyPair
 argument_list|(
 name|is
+argument_list|,
+name|password
 argument_list|)
 decl_stmt|;
 name|cachedKey
