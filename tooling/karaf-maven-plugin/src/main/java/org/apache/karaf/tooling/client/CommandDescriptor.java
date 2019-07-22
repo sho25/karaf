@@ -23,7 +23,7 @@ class|class
 name|CommandDescriptor
 block|{
 specifier|private
-name|int
+name|double
 name|rank
 decl_stmt|;
 specifier|private
@@ -31,7 +31,7 @@ name|String
 name|command
 decl_stmt|;
 specifier|public
-name|int
+name|double
 name|getRank
 parameter_list|()
 block|{
@@ -43,7 +43,7 @@ specifier|public
 name|void
 name|setRank
 parameter_list|(
-name|int
+name|double
 name|rank
 parameter_list|)
 block|{

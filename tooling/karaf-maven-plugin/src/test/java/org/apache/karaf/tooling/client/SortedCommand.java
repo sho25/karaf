@@ -166,7 +166,7 @@ name|comparator
 init|=
 name|Comparator
 operator|.
-name|comparingInt
+name|comparingDouble
 argument_list|(
 name|CommandDescriptor
 operator|::
