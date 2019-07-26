@@ -526,7 +526,7 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"web:uninstall 125"
+literal|"web:uninstall 124"
 argument_list|)
 argument_list|)
 expr_stmt|;
