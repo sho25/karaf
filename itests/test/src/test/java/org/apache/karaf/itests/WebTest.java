@@ -518,6 +518,30 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|String
+name|name
+init|=
+literal|"mvn_org.apache.karaf.examples_karaf-war-example-webapp_"
+operator|+
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"karaf.version"
+argument_list|)
+operator|+
+literal|"_war"
+decl_stmt|;
+name|String
+name|bundleId
+init|=
+name|executeCommand
+argument_list|(
+literal|"bundle:id "
+operator|+
+name|name
+argument_list|)
+decl_stmt|;
 name|System
 operator|.
 name|out
@@ -526,7 +550,9 @@ name|println
 argument_list|(
 name|executeCommand
 argument_list|(
-literal|"web:uninstall 124"
+literal|"web:uninstall "
+operator|+
+name|bundleId
 argument_list|)
 argument_list|)
 expr_stmt|;
