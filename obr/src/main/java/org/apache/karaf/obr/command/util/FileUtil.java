@@ -537,6 +537,31 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|target
+operator|.
+name|getCanonicalPath
+argument_list|()
+operator|.
+name|startsWith
+argument_list|(
+name|dir
+operator|.
+name|getCanonicalPath
+argument_list|()
+argument_list|)
+condition|)
+block|{
+throw|throw
+operator|new
+name|IOException
+argument_list|(
+literal|"JAR resource cannot contain paths with .. characters"
+argument_list|)
+throw|;
+block|}
 comment|// Check to see if the JAR entry is a directory.
 if|if
 condition|(
