@@ -207,6 +207,15 @@ parameter_list|)
 throws|throws
 name|BundleException
 block|{
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+literal|"Update bundle is not supported in the static installer"
+argument_list|)
+expr_stmt|;
 throw|throw
 operator|new
 name|UnsupportedOperationException
@@ -225,6 +234,15 @@ parameter_list|)
 throws|throws
 name|BundleException
 block|{
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+literal|"Uninstall bundle is not supported in the static installer"
+argument_list|)
+expr_stmt|;
 throw|throw
 operator|new
 name|UnsupportedOperationException
