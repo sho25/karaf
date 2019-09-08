@@ -105,6 +105,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -495,15 +505,25 @@ operator|.
 name|getProperties
 argument_list|()
 decl_stmt|;
-for|for
-control|(
-name|Object
-name|key
-range|:
+comment|// iterating over sysProps.keySet() directly is not thread-safe and may throw ConcurrentMod.Ex.,
+comment|// so first get the keys and then query their values
+name|Set
+argument_list|<
+name|String
+argument_list|>
+name|keys
+init|=
 name|sysProps
 operator|.
-name|keySet
+name|stringPropertyNames
 argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|String
+name|key
+range|:
+name|keys
 control|)
 block|{
 name|session
@@ -511,18 +531,16 @@ operator|.
 name|put
 argument_list|(
 name|key
-operator|.
-name|toString
-argument_list|()
 argument_list|,
 name|sysProps
 operator|.
-name|get
+name|getProperty
 argument_list|(
 name|key
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|// value can be null if removed in meantime, but unlikely
 block|}
 block|}
 name|session
