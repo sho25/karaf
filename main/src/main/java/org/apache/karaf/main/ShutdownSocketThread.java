@@ -585,14 +585,7 @@ name|Level
 operator|.
 name|WARNING
 argument_list|,
-literal|"Karaf shutdown socket:  Invalid command '"
-operator|+
-name|command
-operator|.
-name|toString
-argument_list|()
-operator|+
-literal|"' received"
+literal|"Karaf shutdown socket:  Invalid command received"
 argument_list|)
 expr_stmt|;
 block|}
