@@ -337,6 +337,20 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|codehaus
+operator|.
+name|plexus
+operator|.
+name|util
+operator|.
+name|StringUtils
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -1174,7 +1188,7 @@ name|useTransitiveDependencies
 argument_list|,
 literal|false
 argument_list|,
-literal|""
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -1214,12 +1228,24 @@ parameter_list|,
 name|boolean
 name|isFromFeature
 parameter_list|,
-name|String
-name|indent
+name|int
+name|transitiveLevel
 parameter_list|)
 throws|throws
 name|MojoExecutionException
 block|{
+name|String
+name|indent
+init|=
+name|StringUtils
+operator|.
+name|repeat
+argument_list|(
+literal|" "
+argument_list|,
+name|transitiveLevel
+argument_list|)
+decl_stmt|;
 name|Accept
 name|accept
 init|=
@@ -1405,6 +1431,10 @@ operator|.
 name|getScope
 argument_list|()
 argument_list|,
+name|transitiveLevel
+operator|>
+literal|0
+argument_list|,
 name|dependencyNode
 operator|.
 name|getDependency
@@ -1481,9 +1511,9 @@ name|useTransitiveDependencies
 argument_list|,
 name|isFromFeature
 argument_list|,
-name|indent
+name|transitiveLevel
 operator|+
-literal|" "
+literal|1
 argument_list|)
 expr_stmt|;
 block|}

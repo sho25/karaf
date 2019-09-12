@@ -1002,6 +1002,30 @@ specifier|private
 name|boolean
 name|includeTransitiveDependency
 decl_stmt|;
+comment|/**      * Flag indicating whether the plugin should mark transitive dependencies'<code>&lt;bundle&gt;</code> elements as a dependency.      * This flag has only an effect when {@link #includeTransitiveDependency} is<code>true</code>.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"false"
+argument_list|)
+specifier|private
+name|boolean
+name|markTransitiveAsDependency
+decl_stmt|;
+comment|/**      * Flag indicating whether the plugin should mark dependencies' in the<code>runtime</code> scope<code>&lt;bundle&gt;</code> elements as a dependency.      * This flag has only an effect when {@link #includeTransitiveDependency} is<code>true</code>.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"true"
+argument_list|)
+specifier|private
+name|boolean
+name|markRuntimeScopeAsDependency
+decl_stmt|;
 comment|/**      * The standard behavior is to add dependencies as<code>&lt;bundle&gt;</code> elements to a<code>&lt;feature&gt;</code>      * with the same name as the artifactId of the project.  This flag disables that behavior.      * If this parameter is<code>true</code>, then two other parameters refine the list of bundles added to the primary feature:      *<code>excludedArtifactIds</code> and<code>ignoreScopeProvided</code>. Each of these specifies dependent artifacts      * that should<strong>not</strong> be added to the primary feature.      *<p>      *     Note that you may tune the<code>bundle</code> elements by including them in the<code>inputFile</code>.      *     If the<code>inputFile</code> has a<code>feature</code> element for the primary feature, the plugin will      *     respect it, so that you can, for example, set the<code>startLevel</code> or<code>start</code> attribute.      *</p>      *      */
 annotation|@
 name|Parameter
@@ -2557,6 +2581,9 @@ block|}
 block|}
 if|if
 condition|(
+operator|(
+name|markRuntimeScopeAsDependency
+operator|&&
 literal|"runtime"
 operator|.
 name|equals
@@ -2566,6 +2593,16 @@ operator|.
 name|getScope
 argument_list|()
 argument_list|)
+operator|)
+operator|||
+operator|(
+name|markTransitiveAsDependency
+operator|&&
+name|entry
+operator|.
+name|isTransitive
+argument_list|()
+operator|)
 condition|)
 block|{
 name|bundle
