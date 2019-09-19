@@ -309,6 +309,22 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|jaas
+operator|.
+name|modules
+operator|.
+name|JAASUtils
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|slf4j
 operator|.
 name|Logger
@@ -407,13 +423,12 @@ argument_list|)
 expr_stmt|;
 name|usersFile
 operator|=
-operator|(
-name|String
-operator|)
-name|options
+name|JAASUtils
 operator|.
-name|get
+name|getString
 argument_list|(
+name|options
+argument_list|,
 name|USER_FILE
 argument_list|)
 expr_stmt|;
@@ -706,7 +721,7 @@ return|return
 name|passwdDigest
 return|;
 block|}
-comment|/**      * Generate a (SHA1) digest of the input bytes. The MessageDigest instance that backs this      * method is cached for efficiency.        * @param inputBytes the bytes to digest      * @return the digest of the input bytes      */
+comment|/**      * Generate a (SHA1) digest of the input bytes. The MessageDigest instance that backs this      * method is cached for efficiency.      * @param inputBytes the bytes to digest      * @return the digest of the input bytes      */
 specifier|public
 specifier|synchronized
 name|byte

@@ -140,6 +140,22 @@ import|;
 end_import
 
 begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|jaas
+operator|.
+name|modules
+operator|.
+name|JAASUtils
+import|;
+end_import
+
+begin_import
 import|import static
 name|java
 operator|.
@@ -227,13 +243,12 @@ name|Boolean
 operator|.
 name|parseBoolean
 argument_list|(
-operator|(
-name|String
-operator|)
-name|options
+name|JAASUtils
 operator|.
-name|get
+name|getString
 argument_list|(
+name|options
+argument_list|,
 literal|"enabled"
 argument_list|)
 argument_list|)
