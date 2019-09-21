@@ -463,6 +463,17 @@ condition|)
 block|{
 return|return;
 block|}
+if|if
+condition|(
+operator|!
+name|ensureStartupConfiguration
+argument_list|(
+literal|"org.apache.karaf.management"
+argument_list|)
+condition|)
+block|{
+return|return;
+block|}
 name|EventAdminLogger
 name|logger
 init|=
