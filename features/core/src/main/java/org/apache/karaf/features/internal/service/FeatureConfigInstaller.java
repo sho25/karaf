@@ -1149,19 +1149,6 @@ name|cfgFile
 operator|.
 name|exists
 argument_list|()
-operator|&&
-name|cfgFile
-operator|.
-name|getCanonicalPath
-argument_list|()
-operator|.
-name|startsWith
-argument_list|(
-name|storage
-operator|.
-name|getCanonicalPath
-argument_list|()
-argument_list|)
 condition|)
 block|{
 name|cfgFile
@@ -1219,21 +1206,6 @@ name|cfgFile
 operator|.
 name|exists
 argument_list|()
-operator|&&
-name|cfgFile
-operator|.
-name|getCanonicalPath
-argument_list|()
-operator|.
-name|startsWith
-argument_list|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"karaf.etc"
-argument_list|)
-argument_list|)
 condition|)
 block|{
 name|cfgFile
@@ -1315,7 +1287,7 @@ return|return
 name|cfgProps
 return|;
 block|}
-comment|/**      * Substitute variables in the final name and append prefix if necessary.      *      *<ol>      *<li>If the final name does not start with '${' it is prefixed with      * karaf.base (+ file separator).</li>      *<li>It substitute also all variables (scheme ${...}) with the respective      * configuration values and system properties.</li>      *<li>All unknown variables kept unchanged.</li>      *<li>If the substituted string starts with an variable that could not be      * substituted, it will be prefixed with karaf.base (+ file separator), too.      *</li>      *</ol>      *      * @param finalname      *            The final name that should be processed.      * @return the location in the file system that should be accesses.      */
+comment|/**      * Substitute variables in the final name and append prefix if necessary.      *      *<ol>      *<li>If the final name does not start with '${' it is prefixed with      * karaf.base (+ file separator).</li>      *<li>It substitute also all variables (scheme ${...}) with the respective      * configuration values and system properties.</li>      *<li>All unknown variables kept unchanged.</li>      *<li>If the substituted string starts with an variable that could not be      * substituted, it will be prefixed with karaf.base (+ file separator), too.      *</li>      *</ol>      *       * @param finalname      *            The final name that should be processed.      * @return the location in the file system that should be accesses.      */
 specifier|protected
 specifier|static
 name|String
@@ -1547,33 +1519,6 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-operator|!
-name|file
-operator|.
-name|getCanonicalPath
-argument_list|()
-operator|.
-name|startsWith
-argument_list|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"karaf.etc"
-argument_list|)
-argument_list|)
-condition|)
-block|{
-throw|throw
-operator|new
-name|IOException
-argument_list|(
-literal|"Configuration file path must be in the 'karaf.etc' directory"
-argument_list|)
-throw|;
-block|}
-if|if
-condition|(
 name|file
 operator|.
 name|exists
@@ -1590,7 +1535,7 @@ name|LOGGER
 operator|.
 name|debug
 argument_list|(
-literal|"Configuration file {} already exists, don't override it"
+literal|"Configuration file {} already exist, don't override it"
 argument_list|,
 name|finalname
 argument_list|)
@@ -1603,7 +1548,7 @@ name|LOGGER
 operator|.
 name|info
 argument_list|(
-literal|"Configuration file {} already exists, overriding it"
+literal|"Configuration file {} already exist, overriding it"
 argument_list|,
 name|finalname
 argument_list|)
@@ -1757,31 +1702,6 @@ argument_list|(
 name|cid
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|cfgFile
-operator|.
-name|getCanonicalPath
-argument_list|()
-operator|.
-name|startsWith
-argument_list|(
-name|storage
-operator|.
-name|getCanonicalPath
-argument_list|()
-argument_list|)
-condition|)
-block|{
-throw|throw
-operator|new
-name|IOException
-argument_list|(
-literal|"Config name cannot contain .. characters"
-argument_list|)
-throw|;
-block|}
 if|if
 condition|(
 operator|!
