@@ -91,7 +91,7 @@ name|utils
 operator|.
 name|properties
 operator|.
-name|TypedProperties
+name|Properties
 import|;
 end_import
 
@@ -287,7 +287,7 @@ name|Runnable
 argument_list|<
 name|?
 super|super
-name|TypedProperties
+name|Properties
 argument_list|>
 name|callback
 parameter_list|,
@@ -304,7 +304,7 @@ argument_list|,
 name|raf
 lambda|->
 block|{
-name|TypedProperties
+name|Properties
 name|props
 init|=
 name|load
@@ -351,7 +351,7 @@ name|Callable
 argument_list|<
 name|?
 super|super
-name|TypedProperties
+name|Properties
 argument_list|,
 name|T
 argument_list|>
@@ -371,7 +371,7 @@ argument_list|,
 name|raf
 lambda|->
 block|{
-name|TypedProperties
+name|Properties
 name|props
 init|=
 name|load
@@ -411,7 +411,7 @@ return|;
 block|}
 specifier|private
 specifier|static
-name|TypedProperties
+name|Properties
 name|load
 parameter_list|(
 name|RandomAccessFile
@@ -443,11 +443,11 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
-name|TypedProperties
+name|Properties
 name|props
 init|=
 operator|new
-name|TypedProperties
+name|Properties
 argument_list|()
 decl_stmt|;
 name|props
@@ -470,7 +470,7 @@ specifier|static
 name|void
 name|save
 parameter_list|(
-name|TypedProperties
+name|Properties
 name|props
 parameter_list|,
 name|RandomAccessFile
