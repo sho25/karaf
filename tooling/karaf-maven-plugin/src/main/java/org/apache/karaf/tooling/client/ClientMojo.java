@@ -832,8 +832,8 @@ block|{
 name|rankSuffix
 operator|=
 name|rankSuffix
-operator|*
-literal|0.1
+operator|+
+literal|0.00001
 expr_stmt|;
 block|}
 name|descriptor
