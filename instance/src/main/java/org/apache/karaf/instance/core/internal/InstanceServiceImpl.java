@@ -6024,6 +6024,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+try|try
+init|(
 name|BufferedReader
 name|r
 init|=
@@ -6040,7 +6042,8 @@ name|portFile
 argument_list|)
 argument_list|)
 argument_list|)
-decl_stmt|;
+init|)
+block|{
 name|String
 name|portStr
 init|=
@@ -6058,11 +6061,7 @@ argument_list|(
 name|portStr
 argument_list|)
 expr_stmt|;
-name|r
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+block|}
 block|}
 comment|// We found the port, try to send the command
 if|if

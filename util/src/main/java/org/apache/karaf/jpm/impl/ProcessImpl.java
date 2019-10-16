@@ -277,6 +277,8 @@ operator|.
 name|start
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|BufferedReader
 name|r
 init|=
@@ -292,7 +294,8 @@ name|getInputStream
 argument_list|()
 argument_list|)
 argument_list|)
-decl_stmt|;
+init|)
+block|{
 name|r
 operator|.
 name|readLine
@@ -329,6 +332,7 @@ expr_stmt|;
 return|return
 name|running
 return|;
+block|}
 block|}
 catch|catch
 parameter_list|(
