@@ -710,21 +710,10 @@ argument_list|)
 operator|.
 name|openStream
 argument_list|()
-init|)
+init|;                     BufferedReader reader = new BufferedReader(new InputStreamReader(is)
+block|)
+block|)
 block|{
-name|BufferedReader
-name|reader
-init|=
-operator|new
-name|BufferedReader
-argument_list|(
-operator|new
-name|InputStreamReader
-argument_list|(
-name|is
-argument_list|)
-argument_list|)
-decl_stmt|;
 name|String
 name|line
 decl_stmt|;
@@ -778,6 +767,9 @@ block|}
 block|}
 block|}
 block|}
+end_class
+
+begin_catch
 catch|catch
 parameter_list|(
 name|FileNotFoundException
@@ -797,6 +789,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+end_catch
+
+begin_catch
 catch|catch
 parameter_list|(
 name|Exception
@@ -813,11 +808,16 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+end_catch
+
+begin_return
 return|return
 name|overrides
 return|;
-block|}
-specifier|public
+end_return
+
+begin_function
+unit|}      public
 specifier|static
 name|String
 name|extractUrl
@@ -871,8 +871,8 @@ name|getName
 argument_list|()
 return|;
 block|}
-block|}
-end_class
+end_function
 
+unit|}
 end_unit
 
