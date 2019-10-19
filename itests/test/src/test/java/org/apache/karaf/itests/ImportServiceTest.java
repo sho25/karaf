@@ -232,7 +232,7 @@ specifier|public
 class|class
 name|ImportServiceTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 specifier|private
 specifier|static

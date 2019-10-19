@@ -641,7 +641,7 @@ argument_list|)
 specifier|public
 class|class
 name|MavenTest
-comment|/*extends KarafTestSupport*/
+comment|/*extends BaseTest*/
 block|{
 specifier|public
 specifier|static

@@ -184,7 +184,7 @@ specifier|public
 class|class
 name|EquinoxTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Configuration

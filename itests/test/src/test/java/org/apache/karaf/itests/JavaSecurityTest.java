@@ -346,7 +346,7 @@ specifier|public
 class|class
 name|JavaSecurityTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Configuration

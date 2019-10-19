@@ -214,7 +214,7 @@ specifier|public
 class|class
 name|WebTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Before

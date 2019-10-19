@@ -282,7 +282,7 @@ specifier|public
 class|class
 name|XATest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 specifier|private
 specifier|static

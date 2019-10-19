@@ -234,7 +234,7 @@ specifier|public
 class|class
 name|OverrideConfigTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Test

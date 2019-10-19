@@ -162,7 +162,7 @@ specifier|public
 class|class
 name|KarTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Test

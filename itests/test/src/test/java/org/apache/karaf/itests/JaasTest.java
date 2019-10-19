@@ -234,7 +234,7 @@ specifier|public
 class|class
 name|JaasTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Test
