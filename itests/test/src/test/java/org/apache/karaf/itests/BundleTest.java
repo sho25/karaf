@@ -210,7 +210,7 @@ specifier|public
 class|class
 name|BundleTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 specifier|private
 specifier|static

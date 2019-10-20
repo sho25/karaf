@@ -296,7 +296,7 @@ specifier|public
 class|class
 name|FeatureTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Configuration

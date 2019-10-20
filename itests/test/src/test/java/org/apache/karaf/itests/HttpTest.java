@@ -174,7 +174,7 @@ specifier|public
 class|class
 name|HttpTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Before

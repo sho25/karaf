@@ -258,7 +258,7 @@ specifier|public
 class|class
 name|ConfigManagedServiceFactoryTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Inject

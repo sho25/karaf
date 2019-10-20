@@ -268,7 +268,7 @@ specifier|public
 class|class
 name|PackageTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Inject

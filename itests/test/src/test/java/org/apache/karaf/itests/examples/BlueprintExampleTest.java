@@ -81,7 +81,7 @@ name|karaf
 operator|.
 name|itests
 operator|.
-name|KarafTestSupport
+name|BaseTest
 import|;
 end_import
 
@@ -198,7 +198,7 @@ specifier|public
 class|class
 name|BlueprintExampleTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Test

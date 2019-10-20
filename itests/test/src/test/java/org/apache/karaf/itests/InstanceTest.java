@@ -172,7 +172,7 @@ specifier|public
 class|class
 name|InstanceTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Test

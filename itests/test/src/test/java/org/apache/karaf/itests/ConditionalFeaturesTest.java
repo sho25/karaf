@@ -132,7 +132,7 @@ specifier|public
 class|class
 name|ConditionalFeaturesTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Test

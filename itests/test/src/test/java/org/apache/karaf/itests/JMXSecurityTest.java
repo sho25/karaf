@@ -540,7 +540,7 @@ specifier|public
 class|class
 name|JMXSecurityTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 specifier|private
 specifier|static

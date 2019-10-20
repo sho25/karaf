@@ -242,7 +242,7 @@ specifier|public
 class|class
 name|ExternalConfigTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Test

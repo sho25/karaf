@@ -170,7 +170,7 @@ specifier|public
 class|class
 name|SystemTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 specifier|private
 specifier|static

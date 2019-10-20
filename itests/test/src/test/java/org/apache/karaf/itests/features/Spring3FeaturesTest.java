@@ -27,7 +27,7 @@ name|karaf
 operator|.
 name|itests
 operator|.
-name|KarafTestSupport
+name|BaseTest
 import|;
 end_import
 
@@ -226,7 +226,7 @@ specifier|public
 class|class
 name|Spring3FeaturesTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 comment|// Spring DM
 annotation|@

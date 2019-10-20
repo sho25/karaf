@@ -158,7 +158,7 @@ specifier|public
 class|class
 name|FelixHttpTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Before

@@ -140,7 +140,7 @@ specifier|public
 class|class
 name|DiagnosticTest
 extends|extends
-name|KarafTestSupport
+name|BaseTest
 block|{
 annotation|@
 name|Test
