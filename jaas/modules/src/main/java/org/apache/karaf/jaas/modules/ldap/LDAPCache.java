@@ -45,6 +45,16 @@ name|javax
 operator|.
 name|naming
 operator|.
+name|PartialResultException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|naming
+operator|.
 name|directory
 operator|.
 name|Attribute
@@ -1593,8 +1603,8 @@ name|LOGGER
 operator|.
 name|debug
 argument_list|(
-literal|"  base DN: "
-operator|+
+literal|"  base DN: {}"
+argument_list|,
 name|options
 operator|.
 name|getRoleBaseDn
@@ -1605,8 +1615,8 @@ name|LOGGER
 operator|.
 name|debug
 argument_list|(
-literal|"  filter: "
-operator|+
+literal|"  filter: {}"
+argument_list|,
 name|filter
 argument_list|)
 expr_stmt|;
@@ -1630,8 +1640,6 @@ argument_list|,
 name|controls
 argument_list|)
 decl_stmt|;
-try|try
-block|{
 name|List
 argument_list|<
 name|String
@@ -1643,6 +1651,8 @@ name|ArrayList
 argument_list|<>
 argument_list|()
 decl_stmt|;
+try|try
+block|{
 while|while
 condition|(
 name|namingEnumeration
@@ -1778,21 +1788,38 @@ block|}
 block|}
 block|}
 block|}
-return|return
-name|rolesList
+block|}
+catch|catch
+parameter_list|(
+name|PartialResultException
+name|e
+parameter_list|)
+block|{
+comment|// Workaround for AD servers not handling referrals correctly.
+if|if
+condition|(
+name|options
 operator|.
-name|toArray
-argument_list|(
-operator|new
-name|String
-index|[
-name|rolesList
-operator|.
-name|size
+name|getIgnorePartialResultException
 argument_list|()
-index|]
+condition|)
+block|{
+name|LOGGER
+operator|.
+name|debug
+argument_list|(
+literal|"PartialResultException encountered and ignored"
+argument_list|,
+name|e
 argument_list|)
-return|;
+expr_stmt|;
+block|}
+else|else
+block|{
+throw|throw
+name|e
+throw|;
+block|}
 block|}
 finally|finally
 block|{
@@ -1821,6 +1848,21 @@ comment|// Ignore
 block|}
 block|}
 block|}
+return|return
+name|rolesList
+operator|.
+name|toArray
+argument_list|(
+operator|new
+name|String
+index|[
+name|rolesList
+operator|.
+name|size
+argument_list|()
+index|]
+argument_list|)
+return|;
 block|}
 else|else
 block|{
