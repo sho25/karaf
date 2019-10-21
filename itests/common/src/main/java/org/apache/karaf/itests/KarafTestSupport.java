@@ -525,26 +525,6 @@ name|pax
 operator|.
 name|exam
 operator|.
-name|container
-operator|.
-name|remote
-operator|.
-name|options
-operator|.
-name|RBCLookupTimeoutOption
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|ops4j
-operator|.
-name|pax
-operator|.
-name|exam
-operator|.
 name|karaf
 operator|.
 name|container
@@ -855,21 +835,21 @@ specifier|final
 name|Long
 name|COMMAND_TIMEOUT
 init|=
-literal|30000L
+literal|3600000L
 decl_stmt|;
 specifier|static
 specifier|final
 name|Long
 name|SERVICE_TIMEOUT
 init|=
-literal|30000L
+literal|3600000L
 decl_stmt|;
 specifier|static
 specifier|final
 name|long
 name|BUNDLE_TIMEOUT
 init|=
-literal|30000L
+literal|3600000L
 decl_stmt|;
 specifier|private
 specifier|static
@@ -1396,6 +1376,20 @@ argument_list|)
 block|,
 name|CoreOptions
 operator|.
+name|systemTimeout
+argument_list|(
+literal|3600000
+argument_list|)
+block|,
+name|RBCRemoteTargetOptions
+operator|.
+name|waitForRBCFor
+argument_list|(
+literal|3600000
+argument_list|)
+block|,
+name|CoreOptions
+operator|.
 name|mavenBundle
 argument_list|()
 operator|.
@@ -1793,14 +1787,14 @@ name|CoreOptions
 operator|.
 name|systemTimeout
 argument_list|(
-literal|360000
+literal|3600000
 argument_list|)
 block|,
 name|RBCRemoteTargetOptions
 operator|.
 name|waitForRBCFor
 argument_list|(
-literal|360000
+literal|3600000
 argument_list|)
 block|,
 name|CoreOptions
@@ -2027,7 +2021,7 @@ literal|"Can't find available network ports"
 argument_list|)
 throw|;
 block|}
-comment|/**      * Executes a shell command and returns output as a String.      * Commands have a default timeout of 10 seconds.      *      * @param command The command to execute      * @param principals The principals (e.g. RolePrincipal objects) to run the command under      * @return      */
+comment|/**      * Executes a shell command and returns output as a String.      *      * @param command The command to execute      * @param principals The principals (e.g. RolePrincipal objects) to run the command under      * @return      */
 specifier|public
 name|String
 name|executeCommand
@@ -2054,7 +2048,7 @@ name|principals
 argument_list|)
 return|;
 block|}
-comment|/**      * Executes a shell command and returns output as a String.      * Commands have a default timeout of 10 seconds.      *      * @param command    The command to execute.      * @param timeout    The amount of time in millis to wait for the command to execute.      * @param silent     Specifies if the command should be displayed in the screen.      * @param principals The principals (e.g. RolePrincipal objects) to run the command under      * @return      */
+comment|/**      * Executes a shell command and returns output as a String.      *      * @param command    The command to execute.      * @param timeout    The amount of time in millis to wait for the command to execute.      * @param silent     Specifies if the command should be displayed in the screen.      * @param principals The principals (e.g. RolePrincipal objects) to run the command under      * @return      */
 specifier|public
 name|String
 name|executeCommand
