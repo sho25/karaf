@@ -2522,7 +2522,11 @@ name|decrypter
 init|=
 operator|new
 name|DefaultSettingsDecrypter
+argument_list|(
+operator|new
+name|DefaultSecDispatcher
 argument_list|()
+argument_list|)
 decl_stmt|;
 try|try
 block|{
