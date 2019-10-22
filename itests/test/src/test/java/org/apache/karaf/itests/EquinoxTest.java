@@ -262,7 +262,11 @@ literal|"org.eclipse.osgi"
 argument_list|,
 name|executeCommand
 argument_list|(
-literal|"info"
+literal|"shell:info"
+argument_list|,
+literal|36000L
+argument_list|,
+literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
