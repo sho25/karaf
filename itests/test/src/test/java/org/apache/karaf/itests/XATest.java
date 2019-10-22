@@ -622,7 +622,7 @@ name|Thread
 operator|.
 name|sleep
 argument_list|(
-literal|5000
+literal|20000
 argument_list|)
 expr_stmt|;
 name|System
@@ -683,7 +683,7 @@ name|Thread
 operator|.
 name|sleep
 argument_list|(
-literal|5000
+literal|15000
 argument_list|)
 expr_stmt|;
 name|String
