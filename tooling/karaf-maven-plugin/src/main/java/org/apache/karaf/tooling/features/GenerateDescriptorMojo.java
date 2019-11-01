@@ -2578,7 +2578,6 @@ operator||=
 name|bundleNeedsWrapping
 expr_stmt|;
 block|}
-block|}
 if|if
 condition|(
 operator|(
@@ -2612,6 +2611,7 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
