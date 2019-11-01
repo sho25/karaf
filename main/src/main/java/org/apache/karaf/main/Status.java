@@ -70,6 +70,22 @@ specifier|public
 class|class
 name|Status
 block|{
+specifier|private
+specifier|final
+specifier|static
+name|String
+name|RUNNING
+init|=
+literal|"Running ..."
+decl_stmt|;
+specifier|private
+specifier|final
+specifier|static
+name|String
+name|NOT_RUNNING
+init|=
+literal|"Not Running ..."
+decl_stmt|;
 comment|/**      * Checks if the shutdown port is bound. The shutdown port can be configured in config.properties      * or in the shutdown port file.      *      * @param args The arguments to the status main method.      * @throws Exception If an error occurs while checking the status.      */
 specifier|public
 specifier|static
@@ -127,17 +143,14 @@ parameter_list|)
 block|{
 name|System
 operator|.
-name|err
+name|out
 operator|.
 name|println
 argument_list|(
-name|config
-operator|.
-name|portFile
-operator|+
-literal|" shutdown port file doesn't exist. The container is not running."
+name|NOT_RUNNING
 argument_list|)
 expr_stmt|;
+comment|// cause with exit code 3: shutdown port file doesn't exist. The container is not running.
 name|System
 operator|.
 name|exit
@@ -154,24 +167,14 @@ parameter_list|)
 block|{
 name|System
 operator|.
-name|err
+name|out
 operator|.
 name|println
 argument_list|(
-literal|"Can't read "
-operator|+
-name|config
-operator|.
-name|portFile
-operator|+
-literal|" port file: "
-operator|+
-name|ioe
-operator|.
-name|getMessage
-argument_list|()
+name|NOT_RUNNING
 argument_list|)
 expr_stmt|;
+comment|// cause with exit code 4: can't read port file
 name|System
 operator|.
 name|exit
@@ -222,7 +225,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Running ..."
+name|RUNNING
 argument_list|)
 expr_stmt|;
 name|System
@@ -241,7 +244,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Not Running ..."
+name|NOT_RUNNING
 argument_list|)
 expr_stmt|;
 name|System
@@ -265,7 +268,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Not Running ..."
+name|NOT_RUNNING
 argument_list|)
 expr_stmt|;
 name|System
@@ -327,7 +330,9 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Running ... (pid "
+name|RUNNING
+operator|+
+literal|" (pid "
 operator|+
 name|pid
 operator|+
@@ -350,7 +355,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Not Running ..."
+name|NOT_RUNNING
 argument_list|)
 expr_stmt|;
 name|System
