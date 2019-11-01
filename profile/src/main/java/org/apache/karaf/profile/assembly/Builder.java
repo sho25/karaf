@@ -8695,7 +8695,7 @@ name|intLevel
 operator|=
 name|Integer
 operator|.
-name|valueOf
+name|parseInt
 argument_list|(
 name|level
 argument_list|)

@@ -827,7 +827,7 @@ name|w
 init|=
 name|Integer
 operator|.
-name|valueOf
+name|parseInt
 argument_list|(
 name|this
 operator|.
@@ -849,7 +849,7 @@ name|h
 init|=
 name|Integer
 operator|.
-name|valueOf
+name|parseInt
 argument_list|(
 name|this
 operator|.
@@ -1020,7 +1020,7 @@ name|w
 init|=
 name|Integer
 operator|.
-name|valueOf
+name|parseInt
 argument_list|(
 name|this
 operator|.
@@ -1042,7 +1042,7 @@ name|h
 init|=
 name|Integer
 operator|.
-name|valueOf
+name|parseInt
 argument_list|(
 name|this
 operator|.

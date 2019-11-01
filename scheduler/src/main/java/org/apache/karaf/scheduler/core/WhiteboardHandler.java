@@ -706,8 +706,9 @@ else|else
 block|{
 name|times
 operator|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|v
 operator|.
@@ -770,8 +771,9 @@ else|else
 block|{
 name|period
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|String

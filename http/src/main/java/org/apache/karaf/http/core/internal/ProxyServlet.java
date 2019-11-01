@@ -1017,7 +1017,7 @@ condition|)
 block|{
 throw|throw
 operator|(
-name|IOException
+name|ServletException
 operator|)
 name|e
 throw|;
@@ -2380,9 +2380,6 @@ name|asciiQueryChars
 operator|.
 name|get
 argument_list|(
-operator|(
-name|int
-operator|)
 name|c
 argument_list|)
 condition|)
@@ -2573,9 +2570,6 @@ name|asciiQueryChars
 operator|.
 name|set
 argument_list|(
-operator|(
-name|int
-operator|)
 name|c
 argument_list|)
 expr_stmt|;
@@ -2597,9 +2591,6 @@ name|asciiQueryChars
 operator|.
 name|set
 argument_list|(
-operator|(
-name|int
-operator|)
 name|c
 argument_list|)
 expr_stmt|;
@@ -2621,9 +2612,6 @@ name|asciiQueryChars
 operator|.
 name|set
 argument_list|(
-operator|(
-name|int
-operator|)
 name|c
 argument_list|)
 expr_stmt|;
@@ -2638,9 +2626,6 @@ name|asciiQueryChars
 operator|.
 name|set
 argument_list|(
-operator|(
-name|int
-operator|)
 name|c
 argument_list|)
 expr_stmt|;
@@ -2655,9 +2640,6 @@ name|asciiQueryChars
 operator|.
 name|set
 argument_list|(
-operator|(
-name|int
-operator|)
 name|c
 argument_list|)
 expr_stmt|;
@@ -2672,9 +2654,6 @@ name|asciiQueryChars
 operator|.
 name|set
 argument_list|(
-operator|(
-name|int
-operator|)
 name|c
 argument_list|)
 expr_stmt|;
@@ -2682,9 +2661,6 @@ name|asciiQueryChars
 operator|.
 name|set
 argument_list|(
-operator|(
-name|int
-operator|)
 literal|'%'
 argument_list|)
 expr_stmt|;

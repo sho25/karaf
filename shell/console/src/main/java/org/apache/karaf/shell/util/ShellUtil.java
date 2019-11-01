@@ -787,7 +787,7 @@ name|sbsl
 operator|=
 name|Integer
 operator|.
-name|valueOf
+name|parseInt
 argument_list|(
 name|sbslProp
 argument_list|)

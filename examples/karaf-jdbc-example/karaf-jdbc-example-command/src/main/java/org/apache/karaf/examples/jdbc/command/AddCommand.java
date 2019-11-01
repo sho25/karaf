@@ -319,8 +319,9 @@ argument_list|()
 decl_stmt|;
 name|id
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|random
 operator|.
