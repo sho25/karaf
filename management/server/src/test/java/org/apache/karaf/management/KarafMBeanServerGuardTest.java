@@ -1391,8 +1391,9 @@ operator|new
 name|Object
 index|[]
 block|{
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|17
 argument_list|)
@@ -1428,8 +1429,9 @@ operator|new
 name|Object
 index|[]
 block|{
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|18
 argument_list|)
@@ -3239,8 +3241,9 @@ operator|new
 name|Object
 index|[]
 block|{
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|17
 argument_list|)
@@ -3759,8 +3762,9 @@ operator|new
 name|Object
 index|[]
 block|{
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|17
 argument_list|)

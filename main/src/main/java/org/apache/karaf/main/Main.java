@@ -2635,8 +2635,9 @@ name|bi
 operator|.
 name|startLevel
 operator|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|startlevelSt
 argument_list|)

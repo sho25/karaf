@@ -6641,15 +6641,12 @@ name|put
 argument_list|(
 name|key
 argument_list|,
-name|Integer
+name|String
 operator|.
 name|valueOf
 argument_list|(
 name|port
 argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
