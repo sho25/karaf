@@ -205,6 +205,9 @@ argument_list|<
 name|T
 argument_list|>
 name|service
+parameter_list|,
+name|String
+name|filter
 parameter_list|)
 block|{
 if|if
@@ -234,6 +237,8 @@ argument_list|(
 name|bundleContext
 argument_list|,
 name|service
+argument_list|,
+name|filter
 argument_list|)
 block|{
 annotation|@
@@ -286,6 +291,9 @@ name|service
 parameter_list|,
 name|boolean
 name|optional
+parameter_list|,
+name|String
+name|filter
 parameter_list|)
 block|{
 name|this
@@ -330,6 +338,8 @@ argument_list|(
 name|bundleContext
 argument_list|,
 name|service
+argument_list|,
+name|filter
 argument_list|)
 block|{
 annotation|@

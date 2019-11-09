@@ -94,6 +94,12 @@ specifier|public
 annotation_defn|@interface
 name|Reference
 block|{
+name|String
+name|filter
+parameter_list|()
+default|default
+literal|""
+function_decl|;
 name|boolean
 name|optional
 parameter_list|()
