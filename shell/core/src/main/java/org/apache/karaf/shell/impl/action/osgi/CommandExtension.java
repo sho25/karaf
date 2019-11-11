@@ -800,7 +800,7 @@ name|LOGGER
 operator|.
 name|info
 argument_list|(
-literal|"Command registration delayed for bundle {}/{}. Missing dependencies: {}"
+literal|"Command registration delayed for bundle {}/{}. Missing service: {}"
 argument_list|,
 name|bundle
 operator|.
@@ -1333,6 +1333,11 @@ name|ref
 operator|.
 name|optional
 argument_list|()
+argument_list|,
+name|ref
+operator|.
+name|filter
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1362,6 +1367,9 @@ name|type
 parameter_list|,
 name|boolean
 name|optional
+parameter_list|,
+name|String
+name|filter
 parameter_list|)
 block|{
 if|if
@@ -1395,6 +1403,8 @@ operator|.
 name|trackList
 argument_list|(
 name|clazzRef
+argument_list|,
+name|filter
 argument_list|)
 expr_stmt|;
 block|}
@@ -1416,6 +1426,8 @@ argument_list|(
 name|clazzRef
 argument_list|,
 name|optional
+argument_list|,
+name|filter
 argument_list|)
 expr_stmt|;
 block|}
