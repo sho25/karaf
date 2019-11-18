@@ -111,6 +111,20 @@ name|PaxLoggingEvent
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|osgi
+operator|.
+name|service
+operator|.
+name|log
+operator|.
+name|LogLevel
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -125,7 +139,7 @@ decl_stmt|;
 specifier|private
 name|Map
 argument_list|<
-name|Integer
+name|LogLevel
 argument_list|,
 name|String
 argument_list|>
@@ -155,7 +169,7 @@ specifier|public
 name|void
 name|setColor
 parameter_list|(
-name|int
+name|LogLevel
 name|level
 parameter_list|,
 name|String
@@ -435,9 +449,6 @@ argument_list|(
 name|event
 operator|.
 name|getLevel
-argument_list|()
-operator|.
-name|toInt
 argument_list|()
 argument_list|)
 return|;
