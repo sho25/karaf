@@ -172,6 +172,7 @@ name|COLOR_RED
 operator|+
 literal|"Error executing command: "
 operator|+
+operator|(
 name|getMessage
 argument_list|()
 operator|!=
@@ -185,6 +186,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+operator|)
 operator|+
 name|SimpleAnsi
 operator|.
