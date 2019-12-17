@@ -3157,7 +3157,7 @@ operator|.
 name|getRetryDelay
 argument_list|()
 operator|*
-literal|1000
+literal|1000L
 argument_list|)
 expr_stmt|;
 name|System

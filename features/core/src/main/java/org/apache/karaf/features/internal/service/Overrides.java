@@ -780,7 +780,7 @@ name|LOGGER
 operator|.
 name|debug
 argument_list|(
-literal|"Unable to load overrides bundles list"
+literal|"Unable to load overrides bundles list {}"
 argument_list|,
 name|e
 operator|.

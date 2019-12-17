@@ -400,6 +400,8 @@ condition|(
 name|extract
 condition|)
 block|{
+try|try
+init|(
 name|JarInputStream
 name|jis
 init|=
@@ -412,7 +414,8 @@ argument_list|(
 name|file
 argument_list|)
 argument_list|)
-decl_stmt|;
+init|)
+block|{
 name|out
 operator|.
 name|println
@@ -427,11 +430,7 @@ argument_list|,
 name|dir
 argument_list|)
 expr_stmt|;
-name|jis
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+block|}
 name|file
 operator|.
 name|delete

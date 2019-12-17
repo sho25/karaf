@@ -1617,7 +1617,7 @@ name|MetadataXpp3Writer
 argument_list|()
 decl_stmt|;
 try|try
-block|{
+init|(
 name|Writer
 name|writer
 init|=
@@ -1626,7 +1626,8 @@ name|FileWriter
 argument_list|(
 name|metadataTarget
 argument_list|)
-decl_stmt|;
+init|)
+block|{
 name|metadataWriter
 operator|.
 name|write
