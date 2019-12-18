@@ -37,7 +37,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
+name|Collections
 import|;
 end_import
 
@@ -424,6 +424,8 @@ specifier|private
 name|int
 name|idCounter
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|URL
 name|getSchemaLocation
@@ -455,6 +457,8 @@ literal|null
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Set
 argument_list|<
@@ -468,9 +472,9 @@ operator|new
 name|HashSet
 argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|EncryptablePropertyPlaceholder
 operator|.
@@ -479,6 +483,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Metadata
 name|parse
@@ -541,6 +547,8 @@ literal|"'"
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ComponentMetadata
 name|decorate

@@ -237,9 +237,9 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 literal|"hello"
 argument_list|)
@@ -252,9 +252,9 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 literal|"b"
 argument_list|)

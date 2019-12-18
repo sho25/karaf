@@ -37,7 +37,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
+name|Collections
 import|;
 end_import
 
@@ -249,9 +249,9 @@ name|execute
 argument_list|(
 name|session
 argument_list|,
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 literal|"shell|"
 operator|+
