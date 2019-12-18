@@ -1105,7 +1105,7 @@ decl_stmt|;
 if|if
 condition|(
 name|locationHeader
-operator|!=
+operator|==
 literal|null
 condition|)
 block|{

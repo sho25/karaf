@@ -490,7 +490,7 @@ name|LOGGER
 operator|.
 name|debug
 argument_list|(
-literal|"Unable to load blacklist bundles list"
+literal|"Unable to load blacklist bundles list {}"
 argument_list|,
 name|e
 operator|.
