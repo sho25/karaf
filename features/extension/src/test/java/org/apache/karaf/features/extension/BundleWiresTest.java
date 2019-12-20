@@ -121,7 +121,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
+name|Collections
 import|;
 end_import
 
@@ -439,9 +439,9 @@ name|bundle
 init|=
 name|wiredBundle
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|wire
 argument_list|)

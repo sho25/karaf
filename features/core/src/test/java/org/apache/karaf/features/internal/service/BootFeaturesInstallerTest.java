@@ -55,6 +55,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|EnumSet
 import|;
 end_import
@@ -345,7 +355,9 @@ name|Assert
 operator|.
 name|assertEquals
 argument_list|(
-name|asList
+name|Collections
+operator|.
+name|singletonList
 argument_list|(
 name|setOf
 argument_list|(

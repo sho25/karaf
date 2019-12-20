@@ -95,7 +95,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
+name|Collections
 import|;
 end_import
 
@@ -126,22 +126,6 @@ operator|.
 name|util
 operator|.
 name|Properties
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|felix
-operator|.
-name|utils
-operator|.
-name|properties
-operator|.
-name|TypedProperties
 import|;
 end_import
 
@@ -426,9 +410,9 @@ literal|null
 argument_list|,
 literal|null
 argument_list|,
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 literal|"test"
 argument_list|)

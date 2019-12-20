@@ -212,9 +212,9 @@ operator|new
 name|ArrayList
 argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 literal|"http://something"
 argument_list|)

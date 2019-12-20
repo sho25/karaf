@@ -35,7 +35,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
+name|Collections
 import|;
 end_import
 
@@ -714,9 +714,9 @@ operator|new
 name|HashSet
 argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|BlueprintCommand
 operator|.

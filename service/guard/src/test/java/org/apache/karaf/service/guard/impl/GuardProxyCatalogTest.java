@@ -6819,9 +6819,9 @@ name|GuardProxyCatalog
 operator|.
 name|SERVICE_GUARD_ROLES_PROPERTY
 argument_list|,
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 literal|"someone"
 argument_list|)
@@ -10651,9 +10651,9 @@ name|GuardProxyCatalog
 operator|.
 name|SERVICE_GUARD_ROLES_PROPERTY
 argument_list|,
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 literal|"everyone"
 argument_list|)
@@ -10860,9 +10860,9 @@ argument_list|(
 literal|"The roles property should have been overwritten"
 argument_list|,
 operator|!
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 literal|"everyone"
 argument_list|)
@@ -11576,9 +11576,9 @@ argument_list|(
 literal|"The roles property should have been overwritten"
 argument_list|,
 operator|!
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 literal|"everyone"
 argument_list|)
