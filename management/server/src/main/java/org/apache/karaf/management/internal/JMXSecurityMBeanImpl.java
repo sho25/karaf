@@ -722,9 +722,14 @@ literal|"{} (objectName = \"{}\", method = \"{}\")"
 argument_list|,
 name|e
 argument_list|,
+operator|new
+name|Object
+index|[]
+block|{
 name|objectName
-argument_list|,
+block|,
 name|method
+block|}
 argument_list|)
 expr_stmt|;
 block|}
