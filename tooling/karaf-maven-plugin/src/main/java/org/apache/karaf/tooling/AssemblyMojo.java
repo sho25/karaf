@@ -663,6 +663,16 @@ name|defaultStartLevel
 init|=
 literal|30
 decl_stmt|;
+comment|/**      * List of additional allowed protocols on bundles location URI      */
+annotation|@
+name|Parameter
+specifier|private
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|extraProtocols
+decl_stmt|;
 comment|/**      * List of compile-scope features XML files to be used in startup stage (etc/startup.properties)      */
 annotation|@
 name|Parameter
@@ -1202,6 +1212,13 @@ name|newInstance
 argument_list|()
 decl_stmt|;
 comment|// Set up miscellaneous options
+name|builder
+operator|.
+name|extraProtocols
+argument_list|(
+name|extraProtocols
+argument_list|)
+expr_stmt|;
 name|builder
 operator|.
 name|offline
@@ -3111,6 +3128,13 @@ operator|=
 name|nonNullList
 argument_list|(
 name|blacklistedRepositories
+argument_list|)
+expr_stmt|;
+name|extraProtocols
+operator|=
+name|nonNullList
+argument_list|(
+name|extraProtocols
 argument_list|)
 expr_stmt|;
 name|startupBundles
