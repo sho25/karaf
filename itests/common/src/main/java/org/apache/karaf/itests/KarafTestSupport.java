@@ -1147,17 +1147,13 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-annotation|@
-name|Configuration
+comment|/**      * Override this method if you want to change the Karaf distribution in use.      */
 specifier|public
-name|Option
-index|[]
-name|config
+name|MavenArtifactUrlReference
+name|getKarafDistribution
 parameter_list|()
 block|{
-name|MavenArtifactUrlReference
-name|karafUrl
-init|=
+return|return
 name|CoreOptions
 operator|.
 name|maven
@@ -1180,7 +1176,16 @@ name|type
 argument_list|(
 literal|"tar.gz"
 argument_list|)
-decl_stmt|;
+return|;
+block|}
+annotation|@
+name|Configuration
+specifier|public
+name|Option
+index|[]
+name|config
+parameter_list|()
+block|{
 name|String
 name|httpPort
 init|=
@@ -1318,7 +1323,7 @@ operator|new
 name|Option
 index|[]
 block|{
-comment|//debugConfiguration("8889", true),
+comment|// debugConfiguration("8889", true),
 name|KarafDistributionOption
 operator|.
 name|karafDistributionConfiguration
@@ -1326,7 +1331,8 @@ argument_list|()
 operator|.
 name|frameworkUrl
 argument_list|(
-name|karafUrl
+name|getKarafDistribution
+argument_list|()
 argument_list|)
 operator|.
 name|name
@@ -1735,7 +1741,8 @@ argument_list|()
 operator|.
 name|frameworkUrl
 argument_list|(
-name|karafUrl
+name|getKarafDistribution
+argument_list|()
 argument_list|)
 operator|.
 name|name
