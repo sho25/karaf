@@ -45,6 +45,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Map
 import|;
 end_import
@@ -70,9 +80,19 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Proxy
 argument_list|>
 name|getProxies
+parameter_list|()
+throws|throws
+name|MBeanException
+function_decl|;
+comment|/**      * List the available balancing policies.      */
+name|Collection
+argument_list|<
+name|String
+argument_list|>
+name|getProxyBalancingPolicies
 parameter_list|()
 throws|throws
 name|MBeanException
@@ -86,6 +106,9 @@ name|url
 parameter_list|,
 name|String
 name|proxyTo
+parameter_list|,
+name|String
+name|balancingPolicy
 parameter_list|)
 throws|throws
 name|MBeanException
