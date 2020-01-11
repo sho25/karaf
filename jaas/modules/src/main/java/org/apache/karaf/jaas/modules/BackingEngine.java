@@ -101,6 +101,24 @@ name|UserPrincipal
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|karaf
+operator|.
+name|jaas
+operator|.
+name|config
+operator|.
+name|impl
+operator|.
+name|Module
+import|;
+end_import
+
 begin_interface
 specifier|public
 interface|interface
