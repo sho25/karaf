@@ -684,7 +684,7 @@ name|config
 argument_list|,
 name|ENCRYPTION_NAME
 argument_list|,
-literal|""
+literal|"basic"
 argument_list|)
 expr_stmt|;
 name|populate
