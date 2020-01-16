@@ -128,7 +128,7 @@ argument_list|(
 operator|new
 name|URI
 argument_list|(
-literal|"http://repo1.maven.org/maven2/org/apache/karaf/features/framework/4.2.2/framework-4.2.2.kar"
+literal|"https://repo1.maven.org/maven2/org/apache/karaf/features/framework/4.2.2/framework-4.2.2.kar"
 argument_list|)
 argument_list|)
 decl_stmt|;
