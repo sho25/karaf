@@ -1171,7 +1171,10 @@ name|JarFile
 argument_list|(
 name|url
 operator|.
-name|getFile
+name|toURI
+argument_list|()
+operator|.
+name|getPath
 argument_list|()
 argument_list|)
 init|)
