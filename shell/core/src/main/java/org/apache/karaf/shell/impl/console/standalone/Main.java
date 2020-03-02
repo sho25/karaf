@@ -117,6 +117,16 @@ name|java
 operator|.
 name|net
 operator|.
+name|URISyntaxException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
 name|URL
 import|;
 end_import
@@ -1141,6 +1151,8 @@ name|urls
 parameter_list|)
 throws|throws
 name|IOException
+throws|,
+name|URISyntaxException
 block|{
 name|List
 argument_list|<
